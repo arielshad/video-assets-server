@@ -1,0 +1,181 @@
+# video-assets-server (video.shep.bot) — unified search + download gateway for music
+# samples (drums, 808s, loops, vocals, FX, foley, instruments): web UI at /,
+# REST API at /v1/*, MCP (Streamable HTTP) at /mcp.
+#
+# Image tag is set by kustomization.yaml (pinned by CI on every push to main).
+#
+# Caches only: HTTP responses in memory, and audio analyses (plus, when CLAP
+# embeddings are on, vectors and the model) in SQLite on the video-assets-server-data
+# PVC (pvc.yaml) at /data. Server-side downloads over MCP stay disabled
+# (VIDEO_SERVER_HTTP_DOWNLOADS unset): the HTTP download endpoint streams zips
+# straight to the client and never touches disk.
+#
+# Turning on CLAP embeddings (find-similar for every source, text→audio
+# re-ranking, zero-shot category fallback) needs three changes here:
+#   1. the glibc image variant: `docker build --target ml` (onnxruntime-node
+#      does not run on the default Alpine image) — tag it e.g. sha-<commit>-ml
+#      and set that tag in kustomization.yaml;
+#   2. memory: limits.memory 1536Mi, requests.memory 768Mi (both CLAP halves
+#      loaded measured ~490 MiB on top of the ~150 MiB server);
+#   3. env VIDEO_SERVER_EMBEDDINGS=1 (see the commented block below).
+#
+# Optional `video-assets-server-env` Secret, synced from Infisical by
+# externalsecret.yaml; the pod starts fine without it. It is read both as env
+# vars (at start) and as files under /var/run/secrets/video-assets-server (re-read
+# every minute), so a key added later works without a restart:
+#   FREESOUND_API_KEY            enables Freesound (free key from
+#                                https://freesound.org/apiv2/apply; without it
+#                                Freesound shows as "disabled" and Openverse
+#                                still covers part of its catalogue)
+#   OPENVERSE_CLIENT_ID, OPENVERSE_CLIENT_SECRET
+#                                optional, raises Openverse's anonymous limit
+#                                (200 requests/day)
+#   VIDEO_SERVER_API_KEY         locks /v1/* and /mcp behind a key
+# Never put FREESOUND_OAUTH_TOKEN here: it is a personal token for local use,
+# and on a public server it would download originals with that person's account.
+# For the MCP client attribution metrics it can also hold:
+#   VIDEO_SERVER_SESSION_SECRET  signs MCP session IDs (else random per pod,
+#                                and sessions lose their label on restart)
+#   MAXMIND_ACCOUNT_ID, MAXMIND_LICENSE_KEY
+#                                free GeoLite2-ASN download for the `network`
+#                                label (cached in /tmp, refreshed weekly);
+#                                without them ISP and cloud callers show as
+#                                `unknown`
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: video-assets-server
+  namespace: video-assets-server
+spec:
+  replicas: 1
+  # Recreate, not RollingUpdate: the SQLite store on the RWO local-path volume
+  # has a single writer. A surge pod would open the same database (and keep
+  # its own in-memory vector index) while the old one still writes. Costs a
+  # few seconds of downtime per rollout (the pod is ready in ~3 s).
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: video-assets-server
+  template:
+    metadata:
+      labels:
+        app: video-assets-server
+    spec:
+      # Only needed if the GHCR package is private; a missing pull secret is
+      # ignored and the public image is pulled anonymously.
+      imagePullSecrets:
+        - name: ghcr-pull
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        # Makes the data volume group-writable for the app where the volume
+        # plugin supports it (local-path creates its directories world-writable).
+        fsGroup: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: video-assets-server
+          image: ghcr.io/arielshad/video-assets-server
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PORT
+              value: "8787"
+            # TLS terminates at the edge Caddy, so the request origin seen by
+            # the pod is http://; links handed to MCP clients must be https.
+            - name: VIDEO_SERVER_PUBLIC_URL
+              value: https://video.shep.bot
+            # Wikimedia and others ask for a descriptive User-Agent with contact details.
+            - name: VIDEO_SERVER_USER_AGENT
+              value: "video-assets-server/0.1 (+https://video.shep.bot; https://github.com/arielshad/video-assets-server)"
+            # Prometheus metrics on a separate port (Service-internal only, not
+            # routed by the Ingress) + JSON event log lines for Loki.
+            - name: METRICS_PORT
+              value: "9464"
+            # The /stats page reads 24h / 7d totals back from the cluster
+            # Prometheus (shep-infra: kube-prometheus-stack, 10-day retention),
+            # which scrapes the port above via servicemonitor.yaml.
+            - name: PROMETHEUS_URL
+              value: http://kube-prometheus-stack-prometheus.monitoring.svc:9090
+            # Cookieless visit counts in the cluster's self-hosted Umami. The website
+            # is registered with this fixed id by shep-infra
+            # (apps/umami/manifests/website-sound-shep-bot-job.yaml).
+            - name: UMAMI_WEBSITE_ID
+              value: 8e0e0af1-287f-4d51-8438-f6f1f2e59094
+            - name: UMAMI_HOST
+              value: https://stats.shep.bot
+            - name: VIDEO_SERVER_SECRETS_DIR
+              value: /var/run/secrets/video-assets-server
+            # Install telemetry is opt-in and off here; this instance is
+            # measured by the metrics above.
+            - name: VIDEO_SERVER_TELEMETRY
+              value: "0"
+            # Audio analysis (get_sample analyze=true) decodes previews with ffmpeg
+            # into /tmp; keep downloads for analysis small.
+            - name: VIDEO_SERVER_ANALYSIS_MAX_BYTES
+              value: "26214400"
+            # Persistent store (SQLite, node:sqlite): analyses are reused for
+            # 30 days across restarts instead of re-downloading and decoding.
+            - name: VIDEO_SERVER_DATA_DIR
+              value: /data
+            # CLAP embeddings stay OFF here (VIDEO_SERVER_EMBEDDINGS unset): they
+            # need the `ml` image and ≥1.5Gi memory (see the header). To turn on:
+            # - name: VIDEO_SERVER_EMBEDDINGS
+            #   value: "1"
+            # - name: VIDEO_SERVER_INDEX_PER_MINUTE   # background previews embedded per minute
+            #   value: "20"
+          envFrom:
+            - secretRef:
+                name: video-assets-server-env
+                optional: true
+          ports:
+            - name: http
+              containerPort: 8787
+            - name: metrics
+              containerPort: 9464
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 10
+            timeoutSeconds: 2
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 30
+            timeoutSeconds: 3
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: data
+              mountPath: /data
+            - name: secrets
+              mountPath: /var/run/secrets/video-assets-server
+              readOnly: true
+          resources:
+            requests:
+              cpu: 50m
+              memory: 160Mi
+            limits:
+              cpu: "1"
+              memory: 768Mi
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 1Gi
+        - name: data
+          persistentVolumeClaim:
+            claimName: video-assets-server-data
+        - name: secrets
+          secret:
+            secretName: video-assets-server-env
+            optional: true
