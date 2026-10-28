@@ -1,0 +1,16 @@
+# Prometheus (kube-prometheus-stack, which selects ServiceMonitors in every
+# namespace) scrapes product + runtime metrics. Dashboard: "Video Assets Server" in
+# Grafana (shep-infra: infra/kube-prometheus-stack/manifests).
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: video-assets-server
+  namespace: video-assets-server
+spec:
+  selector:
+    matchLabels:
+      app: video-assets-server
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s

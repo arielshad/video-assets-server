@@ -1,0 +1,70 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SequenceBuilder from "@/components/sequence/SequenceBuilder";
+import { breadcrumbs, howTo } from "@/lib/schema";
+import { MCP_NAME, MCP_URL, SITE } from "@/lib/site";
+
+const title = "B-roll sequence builder";
+const description = "Turn a shot list into a b-roll edit: one free stock clip per shot, matched to your frame, with OpenTimelineIO, ffmpeg and Remotion exports plus the credits.";
+const steps = [
+  { name: "Write the shot list", text: "One shot per line, described like a search ('city skyline at night'). Add '(3s)' to set a shot's length; the others share the total." },
+  { name: "Pick the frame", text: "16:9, 9:16 or 1:1, a frame rate and an optional total length. Commercial-safe is on by default." },
+  { name: "Review the picks", text: "Each shot gets the best matching clip with direct files, at least 1080p where possible and long enough for the shot, plus alternatives. Hover to preview, check the verdicts and notes." },
+  { name: "Export", text: "Download timeline.otio for your editor, concat.sh to render with ffmpeg, remotion.json for a Remotion composition, and ATTRIBUTION.md for the credits." },
+];
+---
+
+<BaseLayout title={title} description={description} schema={[howTo({ title, description, path: "/sequence", steps }), breadcrumbs([{ name: "Home", path: "/" }, { name: title, path: "/sequence" }])]}>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <header class="max-w-3xl">
+      <p class="text-sm font-medium text-primary">Sequence builder</p>
+      <h1 class="mt-2 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">From a shot list to a b-roll edit</h1>
+      <p class="mt-3 text-pretty text-muted-foreground">
+        Write the shots you need. Each one is searched across every source with your frame shape, a minimum of 1080p where possible and its length, and the best clip with direct files is picked, with alternatives. Watch the picks here, then take the edit into DaVinci Resolve, ffmpeg or Remotion. The media stays on the sources: the exports point at their files.
+      </p>
+    </header>
+    <div class="mt-8">
+      <SequenceBuilder client:load />
+    </div>
+    <noscript>
+      <p class="mt-6 text-sm text-muted-foreground">
+        The sequence builder needs JavaScript. Without it, call the API: <code>curl -X POST {SITE.url}/v1/sequences -H "content-type: application/json" -d '&#123;"shots":"city skyline at night (4s)\ncoffee pour close-up (3s)","orientation":"portrait"&#125;'</code>
+      </p>
+    </noscript>
+
+    <section class="mt-16 grid max-w-5xl gap-10 lg:grid-cols-2" aria-labelledby="how">
+      <div>
+        <h2 id="how" class="text-xl font-semibold tracking-tight">How it picks the clips</h2>
+        <ol class="mt-4 space-y-3 text-sm text-muted-foreground">
+          {steps.map((s, i) => (
+            <li class="flex gap-3"><span class="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-[11px] font-semibold text-primary">{i + 1}</span><span><strong class="font-medium text-foreground">{s.name}.</strong> {s.text}</span></li>
+          ))}
+        </ol>
+        <p class="mt-4 text-sm text-muted-foreground">
+          A clip is never used twice. On long archive films the in-point skips the opening, where title cards usually are. When a pick is shorter than its shot, smaller than the frame or the wrong shape, the shot says so: the ffmpeg script holds the last frame, upscales or centre-crops.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight">What the exports do</h2>
+        <dl class="mt-4 space-y-3 text-sm">
+          <div><dt class="font-mono text-xs font-medium">timeline.otio</dt><dd class="mt-0.5 text-muted-foreground"><a class="text-primary underline underline-offset-2" href="https://opentimeline.io" rel="noopener">OpenTimelineIO</a> with one video track: import it in DaVinci Resolve or Kdenlive, or convert it for Premiere Pro and Final Cut Pro with an OTIO adapter.</dd></div>
+          <div><dt class="font-mono text-xs font-medium">concat.sh</dt><dd class="mt-0.5 text-muted-foreground">A POSIX shell script for ffmpeg: trims each shot, scales it to cover the frame, centre-crops, conforms the frame rate, encodes h264 without audio and joins the parts.</dd></div>
+          <div><dt class="font-mono text-xs font-medium">remotion.json</dt><dd class="mt-0.5 text-muted-foreground">Clip sources, start frames and lengths in frames for a <a class="text-primary underline underline-offset-2" href="https://www.remotion.dev" rel="noopener">Remotion</a> <code class="text-xs">&lt;Series&gt;</code> of <code class="text-xs">&lt;OffthreadVideo&gt;</code>.</dd></div>
+          <div><dt class="font-mono text-xs font-medium">ATTRIBUTION.md, credits.json</dt><dd class="mt-0.5 text-muted-foreground">Every clip with its source, author, licence and credit line, ready for the description or end credits.</dd></div>
+        </dl>
+        <p class="mt-4 text-sm"><a href="/guides/b-roll-sequence-from-shot-list" class="text-primary underline underline-offset-2">Step-by-step guide: build a b-roll sequence from a shot list →</a></p>
+      </div>
+    </section>
+
+    <section class="mt-16 max-w-3xl" aria-labelledby="api">
+      <h2 id="api" class="text-xl font-semibold tracking-tight">From code or an agent</h2>
+      <p class="mt-2 text-sm text-muted-foreground">The same sequence over the REST API:</p>
+      <pre class="mt-2 overflow-x-auto rounded-lg border bg-[#0d0d12] p-3 text-xs text-zinc-200"><code>{`curl -X POST ${SITE.url}/v1/sequences \\
+  -H "content-type: application/json" \\
+  -d '{"shots":["city skyline at night (4s)","coffee pour close-up (3s)","people walking in the rain"],"orientation":"portrait","fps":30,"totalDuration":15}'`}</code></pre>
+      <p class="mt-3 text-sm text-muted-foreground">
+        From a terminal: <code class="text-xs">npx video-assets-server sequence shots.txt --orientation portrait --total 30</code>. Or connect <code class="text-xs">{MCP_URL}</code> to your agent (as <code class="text-xs">{MCP_NAME}</code>) and ask for “a 30-second vertical b-roll sequence: …”. Run locally, <code class="text-xs">build_sequence</code> with <code class="text-xs">download=true</code> also saves the clips next to the exports, which then use the local files. <a href="/docs/mcp" class="text-primary underline underline-offset-2 hover:decoration-2">Agent setup</a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>

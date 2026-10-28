@@ -1,0 +1,272 @@
+{
+    "id": 5686,
+    "url": "http://svs.gsfc.nasa.gov/5686/",
+    "page_type": "Visualization",
+    "title": "Lucy Mission Trajectory with Jupiter Trojans and Main Belt Asteroids",
+    "description": "Visualization showing the updated trajectory of NASA’s Lucy spacecraft as it travels through the solar system to explore Jupiter’s Trojan asteroids. The visualization also includes the locations of thousands of Jupiter Trojan and main belt asteroids, providing context for Lucy’s journey.",
+    "release_date": "2026-10-27T08:00:00-04:00",
+    "update_date": "2026-10-28T10:19:17.291035-04:00",
+    "main_image": {
+        "id": 1206116,
+        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled.02510_preview.jpg",
+        "filename": "lucy_trajectory_2026_labeled.02510_preview.jpg",
+        "media_type": "Image",
+        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids.",
+        "width": 1920,
+        "height": 1080,
+        "pixels": 2073600
+    },
+    "main_video": {
+        "id": 1206118,
+        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled_1080p60.mp4",
+        "filename": "lucy_trajectory_2026_labeled_1080p60.mp4",
+        "media_type": "Movie",
+        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids.",
+        "width": 1920,
+        "height": 1080,
+        "pixels": 2073600
+    },
+    "main_credits": {
+        "Visualizations by": [
+            {
+                "name": "Kel Elkins",
+                "employer": "Science and Technology Corporation"
+            }
+        ]
+    },
+    "progress": "Complete",
+    "media_groups": [
+        {
+            "id": 381055,
+            "url": "http://svs.gsfc.nasa.gov/5686/#media_group_381055",
+            "widget": "Video player",
+            "title": "",
+            "caption": "This visualization shows the trajectory of NASA’s Lucy spacecraft as it travels to the Jupiter L4 Lagrange point. Trojan asteroids are represented by light orange dots, while main belt asteroids are shown as white dots.",
+            "description": "",
+            "items": [
+                {
+                    "id": 525758,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206116,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled.02510_preview.jpg",
+                        "filename": "lucy_trajectory_2026_labeled.02510_preview.jpg",
+                        "media_type": "Image",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525759,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206117,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled.02510.jpg",
+                        "filename": "lucy_trajectory_2026_labeled.02510.jpg",
+                        "media_type": "Image",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 525760,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206118,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled_1080p60.mp4",
+                        "filename": "lucy_trajectory_2026_labeled_1080p60.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525761,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206119,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled_2160p60.mp4",
+                        "filename": "lucy_trajectory_2026_labeled_2160p60.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 381057,
+            "url": "http://svs.gsfc.nasa.gov/5686/#media_group_381057",
+            "widget": "Basic text",
+            "title": "",
+            "caption": "",
+            "description": "This visualization tracks NASA’s Lucy spacecraft from its October 2021 launch to its arrival at the L4 Trojan asteroids. Having traveled over 2.2 billion miles, Lucy is the first spacecraft to reach the L4 Lagrange point, a stable region in space where thousands of primitive asteroids share Jupiter's orbit around the Sun. Scientists expect that studying these ancient bodies up close, starting with the asteroid Eurybates in August 2027, will help refine theories on how our solar system formed 4.5 billion years ago.",
+            "items": [],
+            "extra_data": {}
+        },
+        {
+            "id": 381056,
+            "url": "http://svs.gsfc.nasa.gov/5686/#media_group_381056",
+            "widget": "Video player",
+            "title": "",
+            "caption": "",
+            "description": "This visualization shows the trajectory of NASA’s Lucy spacecraft as it travels to the Jupiter L4 Lagrange point. Trojan asteroids are represented by light orange dots, while main belt asteroids are shown as white dots. This version has no asteroid labels.",
+            "items": [
+                {
+                    "id": 525762,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206120,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026.02510_preview.jpg",
+                        "filename": "lucy_trajectory_2026.02510_preview.jpg",
+                        "media_type": "Image",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids. This version has no asteroid labels.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525763,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206121,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026.02510.jpg",
+                        "filename": "lucy_trajectory_2026.02510.jpg",
+                        "media_type": "Image",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids. This version has no asteroid labels.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 525764,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206122,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_1080p60.mp4",
+                        "filename": "lucy_trajectory_2026_1080p60.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids. This version has no asteroid labels.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525765,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1206123,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_2160p60.mp4",
+                        "filename": "lucy_trajectory_2026_2160p60.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "A view of the solar system showing a line tracing the path of the Lucy spacecraft as it travels outward toward Jupiter's orbit. A dense ring of white dots circles the Sun, representing the main asteroid belt. Further out, a large cluster of light orange dots leads Jupiter along its orbital path, representing the L4 Trojan asteroids. This version has no asteroid labels.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                }
+            ],
+            "extra_data": {}
+        }
+    ],
+    "studio": "svs",
+    "funding_sources": [],
+    "credits": [
+        {
+            "role": "Data visualizer",
+            "people": [
+                {
+                    "name": "Kel Elkins",
+                    "employer": "Science and Technology Corporation"
+                }
+            ]
+        },
+        {
+            "role": "Scientist",
+            "people": [
+                {
+                    "name": "Katherine Kretke",
+                    "employer": "SwRI"
+                },
+                {
+                    "name": "Simone Marchi",
+                    "employer": "SwRI"
+                },
+                {
+                    "name": "John Spencer",
+                    "employer": "Southwest Research Institute"
+                }
+            ]
+        },
+        {
+            "role": "Science writer",
+            "people": [
+                {
+                    "name": "Lonnie Shekhtman",
+                    "employer": "ADNET Systems, Inc."
+                }
+            ]
+        }
+    ],
+    "missions": [
+        "Lucy"
+    ],
+    "series": [],
+    "tapes": [],
+    "papers": [],
+    "datasets": [],
+    "nasa_science_categories": [
+        "Planets & Moons",
+        "Universe"
+    ],
+    "keywords": [
+        "Asteroid",
+        "Lagrange Points",
+        "Lucy",
+        "Orbit",
+        "Trojan Asteroid"
+    ],
+    "recommended_pages": [],
+    "related": [],
+    "sources": [],
+    "products": [],
+    "newer_versions": [],
+    "older_versions": [],
+    "alternate_versions": []
+}

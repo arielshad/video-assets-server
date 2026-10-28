@@ -1,0 +1,185 @@
+{
+  "countedAt": "2026-10-28T16:20:22.459Z",
+  "totals": {
+    "listings": {
+      "count": 520959,
+      "atLeast": true
+    },
+    "free": {
+      "count": 520959,
+      "atLeast": true
+    },
+    "cc0": {
+      "count": 0
+    },
+    "directDownload": {
+      "count": 520959,
+      "atLeast": true
+    },
+    "addedLast30Days": 0,
+    "sourcesCounted": 3,
+    "sourcesLinked": 19
+  },
+  "byCategory": {
+    "archive": {
+      "count": 10461
+    },
+    "space": {
+      "count": 10601
+    }
+  },
+  "byLicense": {
+    "Public domain / CC0": 335850,
+    "CC BY / BY-SA": 166776
+  },
+  "sources": [
+    {
+      "id": "internetarchive",
+      "name": "Internet Archive",
+      "homepage": "https://archive.org",
+      "pricing": "free",
+      "supportsDownload": true,
+      "total": 502626,
+      "free": 502626,
+      "byCategory": {
+        "archive": 10461
+      },
+      "byLicense": {
+        "Public domain / CC0": 335850,
+        "CC BY / BY-SA": 166776
+      },
+      "categories": {
+        "Prelinger Archives": 10461
+      },
+      "method": "advancedsearch.php numFound for movies with a CC0, public-domain or CC BY(-SA) licenseurl, TV captures and trailers excluded",
+      "countedAt": "2026-10-28T16:20:22.459Z"
+    },
+    {
+      "id": "nasasvs",
+      "name": "NASA Scientific Visualization Studio",
+      "homepage": "https://svs.gsfc.nasa.gov",
+      "pricing": "free",
+      "supportsDownload": true,
+      "total": 10601,
+      "free": 10601,
+      "byCategory": {
+        "space": 10601
+      },
+      "method": "SVS search API count for all pages (some pages hold only images)",
+      "countedAt": "2026-10-28T16:20:22.459Z"
+    },
+    {
+      "id": "nasa",
+      "name": "NASA Image and Video Library",
+      "homepage": "https://images.nasa.gov",
+      "pricing": "free",
+      "supportsDownload": true,
+      "total": 7732,
+      "atLeast": true,
+      "free": 7732,
+      "byCategory": {},
+      "categories": {
+        "launches": 3435
+      },
+      "method": "images-api.nasa.gov search total_hits for media_type=video (q=nasa matches almost every item, so it is a lower bound)",
+      "countedAt": "2026-10-28T16:20:22.459Z"
+    }
+  ],
+  "linked": [
+    {
+      "id": "pexels",
+      "name": "Pexels",
+      "homepage": "https://www.pexels.com/videos/"
+    },
+    {
+      "id": "pixabay",
+      "name": "Pixabay",
+      "homepage": "https://pixabay.com/videos/"
+    },
+    {
+      "id": "coverr",
+      "name": "Coverr",
+      "homepage": "https://coverr.co"
+    },
+    {
+      "id": "mixkit",
+      "name": "Mixkit",
+      "homepage": "https://mixkit.co/free-stock-video/"
+    },
+    {
+      "id": "freepik",
+      "name": "Freepik videos (Videvo)",
+      "homepage": "https://www.freepik.com/videos"
+    },
+    {
+      "id": "vecteezy",
+      "name": "Vecteezy",
+      "homepage": "https://www.vecteezy.com/free-videos"
+    },
+    {
+      "id": "videezy",
+      "name": "Videezy",
+      "homepage": "https://www.videezy.com"
+    },
+    {
+      "id": "europeana",
+      "name": "Europeana",
+      "homepage": "https://www.europeana.eu"
+    },
+    {
+      "id": "loc",
+      "name": "Library of Congress",
+      "homepage": "https://www.loc.gov/film-and-videos/"
+    },
+    {
+      "id": "actionvfx",
+      "name": "ActionVFX",
+      "homepage": "https://www.actionvfx.com"
+    },
+    {
+      "id": "productioncrate",
+      "name": "ProductionCrate (FootageCrate)",
+      "homepage": "https://footagecrate.com"
+    },
+    {
+      "id": "shutterstock",
+      "name": "Shutterstock",
+      "homepage": "https://www.shutterstock.com/video"
+    },
+    {
+      "id": "adobestock",
+      "name": "Adobe Stock",
+      "homepage": "https://stock.adobe.com/video"
+    },
+    {
+      "id": "gettyimages",
+      "name": "Getty Images",
+      "homepage": "https://www.gettyimages.com/footage"
+    },
+    {
+      "id": "istock",
+      "name": "iStock",
+      "homepage": "https://www.istockphoto.com/stock-videos"
+    },
+    {
+      "id": "storyblocks",
+      "name": "Storyblocks",
+      "homepage": "https://www.storyblocks.com/video"
+    },
+    {
+      "id": "pond5",
+      "name": "Pond5",
+      "homepage": "https://www.pond5.com"
+    },
+    {
+      "id": "envato",
+      "name": "Envato Elements",
+      "homepage": "https://elements.envato.com/stock-video"
+    },
+    {
+      "id": "artgrid",
+      "name": "Artgrid",
+      "homepage": "https://artgrid.io"
+    }
+  ]
+}

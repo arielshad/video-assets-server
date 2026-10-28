@@ -1,0 +1,362 @@
+{
+  "slug": "free-drone-footage",
+  "search": {
+    "q": "drone",
+    "categories": [
+      "aerial"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:30.060Z",
+  "clips": [
+    {
+      "id": "nasa:KSC-20211228-MH-MTD01-0001-Launch_Complex_49_Area_DRONE-3294138",
+      "provider": "nasa",
+      "title": "Launch Complex 49 Area Drone Footage.",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/KSC-20211228-MH-MTD01-0001-Launch_Complex_49_Area_DRONE-3294138",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20211228-MH-MTD01-0001-Launch_Complex_49_Area_DRONE-3294138/KSC-20211228-MH-MTD01-0001-Launch_Complex_49_Area_DRONE-3294138~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20211228-MH-MTD01-0001-Launch_Complex_49_Area_DRONE-3294138/KSC-20211228-MH-MTD01-0001-Launch_Complex_49_Area_DRONE-3294138~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Mike Downs",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "nasa:KSC-20201030-MH-JBP01_0001-Mobile_Launcher_Roll_Back_to_VAB_Drone-3262087",
+      "provider": "nasa",
+      "title": "Mobile Launcher Roll Back to VAB - Drone",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/KSC-20201030-MH-JBP01_0001-Mobile_Launcher_Roll_Back_to_VAB_Drone-3262087",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20201030-MH-JBP01_0001-Mobile_Launcher_Roll_Back_to_VAB_Drone-3262087/KSC-20201030-MH-JBP01_0001-Mobile_Launcher_Roll_Back_to_VAB_Drone-3262087~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20201030-MH-JBP01_0001-Mobile_Launcher_Roll_Back_to_VAB_Drone-3262087/KSC-20201030-MH-JBP01_0001-Mobile_Launcher_Roll_Back_to_VAB_Drone-3262087~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jamie Peer",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "nasa:KSC-20210729-MH-JBP01-0001-Boeing_OFT_2_Rollout_to_Pad_for_Launch_DRONE_WON_3282269",
+      "provider": "nasa",
+      "title": "Boeing OFT-2 Rollout to Pad for Launch - DRONE",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/KSC-20210729-MH-JBP01-0001-Boeing_OFT_2_Rollout_to_Pad_for_Launch_DRONE_WON_3282269",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20210729-MH-JBP01-0001-Boeing_OFT_2_Rollout_to_Pad_for_Launch_DRONE_WON_3282269/KSC-20210729-MH-JBP01-0001-Boeing_OFT_2_Rollout_to_Pad_for_Launch_DRONE_WON_3282269~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20210729-MH-JBP01-0001-Boeing_OFT_2_Rollout_to_Pad_for_Launch_DRONE_WON_3282269/KSC-20210729-MH-JBP01-0001-Boeing_OFT_2_Rollout_to_Pad_for_Launch_DRONE_WON_3282269~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jamie Peer",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "nasa:KSC-20190524-MH-MTD01-0001-Drone_Footage_Shoreline_Beach_House_VAB_Pad_41_Pad_39A-3222188",
+      "provider": "nasa",
+      "title": "Drone Footage of Shoreline, Beach House, VAB, SLC-41, SLC-39A",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/KSC-20190524-MH-MTD01-0001-Drone_Footage_Shoreline_Beach_House_VAB_Pad_41_Pad_39A-3222188",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20190524-MH-MTD01-0001-Drone_Footage_Shoreline_Beach_House_VAB_Pad_41_Pad_39A-3222188/KSC-20190524-MH-MTD01-0001-Drone_Footage_Shoreline_Beach_House_VAB_Pad_41_Pad_39A-3222188~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20190524-MH-MTD01-0001-Drone_Footage_Shoreline_Beach_House_VAB_Pad_41_Pad_39A-3222188/KSC-20190524-MH-MTD01-0001-Drone_Footage_Shoreline_Beach_House_VAB_Pad_41_Pad_39A-3222188~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Michael Downs",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasa:ARC-20210216-AAV3307-UTM-TCL4Wrap-Shareable-NASAWeb",
+      "provider": "nasa",
+      "title": "NASA’s Drone Traffic Management System Completes Final Tests",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/ARC-20210216-AAV3307-UTM-TCL4Wrap-Shareable-NASAWeb",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/ARC-20210216-AAV3307-UTM-TCL4Wrap-Shareable-NASAWeb/ARC-20210216-AAV3307-UTM-TCL4Wrap-Shareable-NASAWeb~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/ARC-20210216-AAV3307-UTM-TCL4Wrap-Shareable-NASAWeb/ARC-20210216-AAV3307-UTM-TCL4Wrap-Shareable-NASAWeb~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Ames Research Center",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "nasa:ARC-20200925-AAV3288-UTM-AR-NASAWeb",
+      "provider": "nasa",
+      "title": "Augmented Reality for Drone Air Traffic Management",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/ARC-20200925-AAV3288-UTM-AR-NASAWeb",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/ARC-20200925-AAV3288-UTM-AR-NASAWeb/ARC-20200925-AAV3288-UTM-AR-NASAWeb~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/ARC-20200925-AAV3288-UTM-AR-NASAWeb/ARC-20200925-AAV3288-UTM-AR-NASAWeb~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Ames Research Center",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "nasa:KSC-20190914-RV-ILW01_0001-Nominal_Wet_Flow_Test_at_Pad_39B-3231741",
+      "provider": "nasa",
+      "title": "Nominal Wet Flow Test at Pad 39B - DRONE",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/KSC-20190914-RV-ILW01_0001-Nominal_Wet_Flow_Test_at_Pad_39B-3231741",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20190914-RV-ILW01_0001-Nominal_Wet_Flow_Test_at_Pad_39B-3231741/KSC-20190914-RV-ILW01_0001-Nominal_Wet_Flow_Test_at_Pad_39B-3231741~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20190914-RV-ILW01_0001-Nominal_Wet_Flow_Test_at_Pad_39B-3231741/KSC-20190914-RV-ILW01_0001-Nominal_Wet_Flow_Test_at_Pad_39B-3231741~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Mike Downs",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasa:KSC-20210502-MH-JBP01_0001-SpaceX_Crew_1_Splashdown_Drone_Imagery-3275583",
+      "provider": "nasa",
+      "title": "SpaceX Crew-1 Splashdown - DRONE",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/KSC-20210502-MH-JBP01_0001-SpaceX_Crew_1_Splashdown_Drone_Imagery-3275583",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20210502-MH-JBP01_0001-SpaceX_Crew_1_Splashdown_Drone_Imagery-3275583/KSC-20210502-MH-JBP01_0001-SpaceX_Crew_1_Splashdown_Drone_Imagery-3275583~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20210502-MH-JBP01_0001-SpaceX_Crew_1_Splashdown_Drone_Imagery-3275583/KSC-20210502-MH-JBP01_0001-SpaceX_Crew_1_Splashdown_Drone_Imagery-3275583~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jamie Peer",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "nasa:ARC-20191204-AAV3241-Multirotor-WindTunnel-TestRun-NASAWeb",
+      "provider": "nasa",
+      "title": "Testing Air Taxis, Drones and More with NASA’s Multirotor Test Bed",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/ARC-20191204-AAV3241-Multirotor-WindTunnel-TestRun-NASAWeb",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/ARC-20191204-AAV3241-Multirotor-WindTunnel-TestRun-NASAWeb/ARC-20191204-AAV3241-Multirotor-WindTunnel-TestRun-NASAWeb~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/ARC-20191204-AAV3241-Multirotor-WindTunnel-TestRun-NASAWeb/ARC-20191204-AAV3241-Multirotor-WindTunnel-TestRun-NASAWeb~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA Ames Research Center",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasa:ARC-20190815-AAV3213-UTM-TCL4-TexasBRoll-NASAWeb",
+      "provider": "nasa",
+      "title": "ARC-20190815-AAV3213-UTM-TCL4-TexasBRoll-NASAWeb",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/ARC-20190815-AAV3213-UTM-TCL4-TexasBRoll-NASAWeb",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/ARC-20190815-AAV3213-UTM-TCL4-TexasBRoll-NASAWeb/ARC-20190815-AAV3213-UTM-TCL4-TexasBRoll-NASAWeb~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/ARC-20190815-AAV3213-UTM-TCL4-TexasBRoll-NASAWeb/ARC-20190815-AAV3213-UTM-TCL4-TexasBRoll-NASAWeb~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA Ames Research Center",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasa:ARC-20210729-AAV3350-STEReO-CalFireTest-ReporterPkg-NASAWeb-1080p",
+      "provider": "nasa",
+      "title": "How New NASA Tech Could Help Fight Fires",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/ARC-20210729-AAV3350-STEReO-CalFireTest-ReporterPkg-NASAWeb-1080p",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/ARC-20210729-AAV3350-STEReO-CalFireTest-ReporterPkg-NASAWeb-1080p/ARC-20210729-AAV3350-STEReO-CalFireTest-ReporterPkg-NASAWeb-1080p~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/ARC-20210729-AAV3350-STEReO-CalFireTest-ReporterPkg-NASAWeb-1080p/ARC-20210729-AAV3350-STEReO-CalFireTest-ReporterPkg-NASAWeb-1080p~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Ames Research Center",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "nasa:HDV BVOLOS_1080p",
+      "provider": "nasa",
+      "title": "HDV BVOLOS first flight",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/HDV%20BVOLOS_1080p",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/HDV BVOLOS_1080p/HDV BVOLOS_1080p~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/HDV%20BVOLOS_1080p/HDV%20BVOLOS_1080p~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA LaRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2023
+    },
+    {
+      "id": "nasa:NHQ20200706ARMD004",
+      "provider": "nasa",
+      "title": "What is AAM?",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/NHQ20200706ARMD004",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ20200706ARMD004/NHQ20200706ARMD004~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ20200706ARMD004/NHQ20200706ARMD004~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Stephen Kirsche",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "nasa:LA8FlightTest_Documentation",
+      "provider": "nasa",
+      "title": "LRC-10282021-H1-V-LA8 Flight Test",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/LA8FlightTest_Documentation",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/LA8FlightTest_Documentation/LA8FlightTest_Documentation~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/LA8FlightTest_Documentation/LA8FlightTest_Documentation~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Gary Banziger",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    }
+  ]
+}

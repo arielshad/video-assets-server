@@ -1,0 +1,139 @@
+{
+  "slug": "free-city-footage",
+  "search": {
+    "q": "city",
+    "categories": [
+      "city"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:18.758Z",
+  "clips": [
+    {
+      "id": "internetarchive:CityTheP1939",
+      "provider": "internetarchive",
+      "title": "City, The (Part I)",
+      "category": "city",
+      "url": "https://archive.org/details/CityTheP1939",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/CityTheP1939",
+      "author": "American Documentary Films, Inc.",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 948,
+      "year": 1939
+    },
+    {
+      "id": "internetarchive:BerlinSymphonyofaGreatCity",
+      "provider": "internetarchive",
+      "title": "Berlin: Symphony of a Great City",
+      "category": "city",
+      "url": "https://archive.org/details/BerlinSymphonyofaGreatCity",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/BerlinSymphonyofaGreatCity",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:DetroitC1965",
+      "provider": "internetarchive",
+      "title": "Detroit: City on the Move",
+      "category": "city",
+      "url": "https://archive.org/details/DetroitC1965",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/DetroitC1965",
+      "author": "Handy (Jam) Organization",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1092,
+      "year": 1965
+    },
+    {
+      "id": "internetarchive:HorrorHotel1960",
+      "provider": "internetarchive",
+      "title": "Horror Hotel (1960)",
+      "category": "city",
+      "url": "https://archive.org/details/HorrorHotel1960",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/HorrorHotel1960",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4588
+    },
+    {
+      "id": "internetarchive:ThirdAve1950",
+      "provider": "internetarchive",
+      "title": "Third Avenue El",
+      "category": "city",
+      "url": "https://archive.org/details/ThirdAve1950",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/ThirdAve1950",
+      "author": "Davidson (Carson)",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 632,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:StreetScene1931",
+      "provider": "internetarchive",
+      "title": "Street Scene",
+      "category": "city",
+      "url": "https://archive.org/details/StreetScene1931",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/StreetScene1931",
+      "author": "Samuel Goldwyn",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4712,
+      "year": 1931
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2026-10-28",
+    "listings": 520959,
+    "free": 520959,
+    "byCategory": {
+      "archive": 10461,
+      "space": 10601
+    },
+    "sources": {
+      "internetarchive": 502626,
+      "nasasvs": 10601,
+      "nasa": 7732
+    }
+  }
+]

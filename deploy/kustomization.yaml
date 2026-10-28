@@ -1,0 +1,20 @@
+# Production manifests for video.shep.bot, deployed by ArgoCD from this repo's
+# main branch (registered in shep-ai/shep-infra:
+# bootstrap/apps/89-video-assets-server.yaml, which also creates the
+# `video-assets-server` namespace).
+#
+# CI (.github/workflows/ci.yml) builds ghcr.io/arielshad/video-assets-server on
+# every push to main and commits the new sha tag to `newTag` below — that
+# commit is the deploy.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: video-assets-server
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - servicemonitor.yaml
+images:
+  - name: ghcr.io/arielshad/video-assets-server
+    # Replaced by CI with the first image built from main.
+    newTag: latest

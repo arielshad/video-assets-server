@@ -1,0 +1,192 @@
+{
+ "responseHeader": {
+  "status": 0,
+  "QTime": 116,
+  "params": {
+   "query": "(title:city OR subject:city OR description:city) AND mediatype:movies AND licenseurl:*creativecommons.org* AND NOT licenseurl:*nc* AND NOT licenseurl:*nd* AND NOT licenseurl:*sampling* AND NOT collection:(tvnews OR tvarchive OR movie_trailers OR fanvids OR vlogs OR gamevideos OR speedrunsdotcom OR machinima)",
+   "qin": "(title:city OR subject:city OR description:city) AND mediatype:movies AND licenseurl:*creativecommons.org* AND NOT licenseurl:*nc* AND NOT licenseurl:*nd* AND NOT licenseurl:*sampling* AND NOT collection:(tvnews OR tvarchive OR movie_trailers OR fanvids OR vlogs OR gamevideos OR speedrunsdotcom OR machinima)",
+   "fields": "identifier,title,creator,licenseurl,subject,date,year,downloads,runtime,collection,color,sound,description",
+   "wt": "json",
+   "sort": "downloads desc",
+   "rows": 5,
+   "start": 0
+  }
+ },
+ "response": {
+  "numFound": 11000,
+  "start": 0,
+  "docs": [
+   {
+    "collection": [
+     "prelinger"
+    ],
+    "color": "color",
+    "creator": "Tullio Pellegrini",
+    "description": "Cinemascope homage to the city of San Francisco made by amateur filmmaker and inventor Tullio Pellegrini.",
+    "downloads": 656406,
+    "identifier": "SanFrancisco1955CinemascopeFilm",
+    "licenseurl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "runtime": "21:28",
+    "sound": "sound",
+    "subject": [
+     "san francisco",
+     "amateur film",
+     "widescreen",
+     "Cinemascope, pasta1"
+    ],
+    "title": "San Francisco (1955 Cinemascope film)"
+   },
+   {
+    "collection": [
+     "Film_Noir",
+     "feature_films",
+     "moviesandfilms"
+    ],
+    "color": "b&w",
+    "date": "1949-01-01T00:00:00Z",
+    "description": "\"Wealthy businessman survives attempt by wife to have him killed, makes it look like she succeeded and starts a new life in small town as auto mechanic. Variation on idea elevated to noir importance by The Killers (1946), where victim of femme fatale tries to abandon the city and his past identity.\"",
+    "downloads": 496937,
+    "identifier": "impact",
+    "licenseurl": "http://creativecommons.org/licenses/publicdomain/",
+    "runtime": "1:49:37",
+    "sound": "sound",
+    "subject": "pdmovies",
+    "title": "Impact",
+    "year": 1949
+   },
+   {
+    "collection": [
+     "SciFi_Horror",
+     "feature_films",
+     "moviesandfilms"
+    ],
+    "color": "b&w",
+    "creator": "Ben Arbeid",
+    "date": "1960-01-01T00:00:00Z",
+    "description": "College student Nan Barlow visits the village of Whitewood as research for her paper on witchcraft in New England, particularly the case of Elizabeth Selwyn. Her tutor, Professor Alan Driscoll(Lee), recommends the Raven's Inn, run by a Mrs. Newless. Rather unwisely, given the amount of low-hanging f",
+    "downloads": 339318,
+    "identifier": "Horror_Hotel",
+    "licenseurl": "http://creativecommons.org/licenses/publicdomain/",
+    "runtime": "1:15:54",
+    "sound": "sound",
+    "subject": [
+     "Horror",
+     "Witchcraft",
+     "Christopher Lee",
+     "1960s"
+    ],
+    "title": "City of the Dead/Horror Hotel",
+    "year": 1960
+   },
+   {
+    "collection": [
+     "silent_films",
+     "feature_films",
+     "moviesandfilms"
+    ],
+    "description": "A classic silent film dedicated to Berlin shot in 1927 by Walter Ruttmann. See http://imdb.com/title/tt0017668/ for further details.",
+    "downloads": 268884,
+    "identifier": "BerlinSymphonyofaGreatCity",
+    "licenseurl": "http://creativecommons.org/licenses/publicdomain/",
+    "subject": "berlin",
+    "title": "Berlin: Symphony of a Great City"
+   },
+   {
+    "collection": [
+     "mirrortube",
+     "social-media-video",
+     "deemphasize"
+    ],
+    "creator": "Kanye West",
+    "date": "2024-09-10T00:00:00Z",
+    "description": "YE + TY DOLLA SIGN LIVE IN KOREA Direction & Stage Design YE & AUS TAYLOR Movement BLACK HAINE Costume RENE LOU EP JAKE KASHETA Front Of House MARK ALSTON Playback HANNS-MARTIN CAMBELL",
+    "downloads": 268244,
+    "identifier": "youtube-pfg7V-S2dL4",
+    "licenseurl": "https://creativecommons.org/licenses/by/4.0/",
+    "subject": [
+     "Kanye West",
+     "Ye",
+     "TY$",
+     "TY Dollar Sign",
+     "STARS",
+     "PAID",
+     "TALKING",
+     "EVERYBODY",
+     "BACK TO ME",
+     "DO IT",
+     "BURN",
+     "FUK SUMN",
+     "CARNIVAL",
+     "SLIDE",
+     "FIELD TRIP",
+     "FRIED",
+     "PROMOTION",
+     "530",
+     "DEAD",
+     "FOREVER ROLLING",
+     "BOMB",
+     "RIVER",
+     "LIFESTYLE",
+     "SKY CITY",
+     "All Falls Down",
+     "Jesus Walks",
+     "Through The Wire",
+     "Hey Mama",
+     "Heard 'Em Say",
+     "Touch The Sky",
+     "Gold Digger",
+     "Diamonds From Sierra Leone",
+     "Late",
+     "Good Morning",
+     "Stronger",
+     "I Wonder",
+     "Good Life",
+     "Can't Tell Me Nothing",
+     "Flashing Lights",
+     "Homecoming",
+     "Heartless",
+     "Run This Town",
+     "POWER",
+     "All Of The Lights",
+     "Monster",
+     "Devil In A New Dress",
+     "Runaway",
+     "Hell Of A Life",
+     "Mercy.1",
+     "Cruel Summer",
+     "Clique",
+     "On Sight",
+     "Black Skinhead",
+     "New Slaves",
+     "Blood On The Leaves",
+     "Bound 2",
+     "No Church In The Wild",
+     "Niggas In Paris",
+     "Otis",
+     "All Day",
+     "Only One",
+     "FourFiveSeconds",
+     "Ultralight Beam",
+     "Father Stretch My Hands Pt. 1",
+     "Famous",
+     "Wolves",
+     "Fade",
+     "Yikes",
+     "All Mine",
+     "Ghost Town",
+     "Violent Crimes",
+     "Feel The Love",
+     "Hurricane",
+     "Moon",
+     "Off The Grid",
+     "Jail",
+     "Praise God",
+     "Come To Life",
+     "24"
+    ],
+    "title": "YE TY$ KOREA",
+    "year": 2024
+   }
+  ]
+ }
+}

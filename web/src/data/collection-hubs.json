@@ -1,0 +1,198 @@
+[
+  {
+    "id": "nature",
+    "name": "Nature footage",
+    "title": "Free nature footage: oceans, skies and aerials",
+    "description": "Free nature stock video: ocean waves, clouds and sunsets, forests, mountains and drone shots, from public-domain and Creative Commons archives.",
+    "intro": "Nature is the most used b-roll there is: waves under an intro, clouds racing behind a title, a slow aerial over hills while someone talks. These collections group free nature footage by what it shows, from NASA, Wikimedia Commons and the Internet Archive, with deep links into Pexels, Pixabay and the paid libraries for anything they don't have. Every card shows its resolution, shape and length, plays a preview when you hover it, and says whether you can use it in a commercial video.",
+    "categories": ["nature", "aerial"],
+    "aliases": ["nature b-roll", "landscape footage", "nature stock video", "outdoor footage"],
+    "sections": [
+      {
+        "heading": "Choosing nature b-roll",
+        "body": "Match the energy of the edit: slow, wide shots (a calm sea, drifting clouds) sit under voice-over without competing; close, fast shots (breaking waves, a timelapse storm) work as transitions and openers. Keep the light consistent across a sequence: golden-hour shots next to midday ones look stitched together. Shoot or pick wider than you need, since a 4K source lets you reframe and punch in on a 1080p timeline."
+      },
+      {
+        "heading": "Where free nature footage comes from",
+        "body": "Wikimedia Commons holds hundreds of thousands of freely licensed videos, many of them nature and timelapse clips, each with its licence recorded per file. NASA's libraries add Earth seen from orbit and its weather. The Internet Archive's public-domain films include mid-century nature and travel reels. Free stock sites such as Pexels and Pixabay have large modern nature libraries too; they can't be searched automatically, so each search links straight to the same query there."
+      },
+      {
+        "heading": "Licences for nature footage",
+        "body": "Landscapes rarely need releases, which makes nature one of the safest kinds of stock to use commercially. Check the licence itself: CC0 and public-domain clips need nothing, CC BY needs a credit line, and CC BY-SA would require your whole video to be released under the same licence. Recognisable private property and people in frame can still need releases for ads."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is nature footage safe to use in ads?",
+        "a": "Usually, if the licence allows commercial use: landscapes, skies and seas don't need model releases. Watch for people, logos or private buildings in frame, which can need a release for advertising."
+      },
+      {
+        "q": "What resolution should nature b-roll be?",
+        "a": "At least the resolution of your timeline. A 4K clip in a 1080p edit leaves room to crop, stabilise or slowly zoom without losing sharpness, which nature shots often benefit from."
+      }
+    ],
+    "guides": ["free-stock-footage-commercial-use", "credit-cc-by-video", "video-resolution-codecs-containers"]
+  },
+  {
+    "id": "cities",
+    "name": "City footage",
+    "title": "Free city footage: streets, skylines, timelapses",
+    "description": "Free city stock video: skylines, busy streets, traffic and night lights, plus timelapses of cities and skies, with resolution, length and licence on every clip.",
+    "intro": "Cities say 'modern', 'busy' or 'business' in a second, which is why skylines and street scenes open so many explainers and promos. These collections bring together free city footage and timelapses from the sources searched directly, with links to the stock sites that can't be. Street footage is also where licences meet people and brands, so each clip shows whether it is cleared for commercial use and flags editorial-only footage.",
+    "categories": ["city", "transport", "people"],
+    "styles": ["timelapse"],
+    "aliases": ["city b-roll", "urban footage", "street footage", "skyline video"],
+    "sections": [
+      {
+        "heading": "People, signs and logos in street footage",
+        "body": "A crowded street contains people who never signed a release, shop signs and branded cars. For news, documentary and education that is normal; for an ad or a product video it can be a problem, because a recognisable face or logo can suggest endorsement. Prefer wide shots, night shots and timelapses where nobody is identifiable, or check the clip's editorial flag and the source page."
+      },
+      {
+        "heading": "Timelapses and hyperlapses",
+        "body": "A timelapse compresses minutes or hours into seconds: traffic becomes light trails, clouds stream over towers. They make strong openers and transitions and rarely show identifiable people. Many are long enough to cut several shots from; check the frame rate, since a 24 fps timelapse in a 30 fps edit will need conforming."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use street footage with people in it for a commercial?",
+        "a": "Only if the people aren't identifiable or have signed releases. A free licence covers the copyright in the footage, not the rights of the people in it. Use such clips for editorial work, or pick shots where faces can't be made out."
+      },
+      {
+        "q": "Why are there fewer free city clips than nature clips?",
+        "a": "Public-domain and Creative Commons archives lean towards science, nature and history. Modern city footage is the speciality of free stock sites like Pexels and Pixabay, which every search links to."
+      }
+    ],
+    "guides": ["editorial-vs-commercial-footage", "free-stock-footage-commercial-use", "b-roll-sequence-from-shot-list"]
+  },
+  {
+    "id": "space",
+    "name": "Space and science footage",
+    "title": "Free space footage: launches, Earth and NASA",
+    "description": "Free space and science video from NASA: rocket launches, Earth from orbit, the Sun and planets, and data visualisations in 1080p and 4K, with usage rules.",
+    "intro": "NASA is the single richest source of free space footage: about nine thousand videos in its Image and Video Library and about ten thousand visualisation pages from its Scientific Visualization Studio, much of it in 1080p or 4K. These collections group that footage by subject, alongside space clips from Wikimedia Commons. NASA media is generally not copyrighted in the US, but it comes with rules about credit, endorsement and the NASA insignia, which every card reflects.",
+    "categories": ["space", "science"],
+    "styles": ["visualization"],
+    "aliases": ["nasa footage", "space b-roll", "rocket footage", "earth from space video"],
+    "sections": [
+      {
+        "heading": "NASA's rules, briefly",
+        "body": "Credit NASA. Don't use the NASA insignia (the 'meatball') or logotype, and don't suggest NASA endorses you, your product or your channel. Identifiable astronauts and staff need permission before they appear in ads. Footage that NASA distributes for a partner, such as a launch company, may be that partner's copyright: those clips are marked 'check the terms'. Because of the endorsement and insignia rules, every NASA clip is flagged editorial here."
+      },
+      {
+        "heading": "Visualisations make great backgrounds",
+        "body": "The Scientific Visualization Studio renders measured and simulated data: sea surface temperatures, hurricanes, solar flares, the Moon's terrain, galaxies. They have no people or logos in them, are often 4K at 30 to 60 fps, and some come in vertical versions, which makes them some of the best free motion backgrounds available."
+      },
+      {
+        "heading": "Launch footage",
+        "body": "Launch videos range from wide pad shots to tracking cameras and slow-motion engine close-ups, often from several angles of the same launch. Check the credit line: launches of commercial rockets are sometimes filmed by the launch company rather than NASA."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use NASA footage on a monetised YouTube channel?",
+        "a": "Generally yes: NASA media is not copyrighted in the US and NASA allows commercial use with credit. Don't use the NASA logo, don't imply endorsement, and check the credit line for third-party copyright."
+      },
+      {
+        "q": "Is NASA footage public domain outside the US?",
+        "a": "US copyright law doesn't apply abroad, and NASA only states that its material is generally not copyrighted in the US. In practice it is widely used worldwide, but if you work in another country, check how your local law treats US government works."
+      }
+    ],
+    "guides": ["nasa-footage-rules", "editorial-vs-commercial-footage", "free-stock-footage-commercial-use"]
+  },
+  {
+    "id": "archive",
+    "name": "Archive films",
+    "title": "Free archive footage and public-domain films",
+    "description": "Free archive footage: public-domain newsreels, Prelinger educational and industrial films and home movies, with year, licence and editorial flags on every clip.",
+    "intro": "Archive footage gives a video a period, a mood and authenticity that new footage can't fake: a 1950s kitchen, a wartime newsreel, a factory floor in 1938. These collections draw on the Internet Archive's public-domain and Creative Commons films, the Prelinger Archives above all, plus historic footage on Wikimedia Commons. Old footage brings two catches, which every card shows: licences set by uploaders rather than archives, and people and brands who never signed a release.",
+    "categories": ["archive"],
+    "styles": ["black-white"],
+    "aliases": ["archival footage", "old footage", "vintage film", "public domain films", "newsreel footage"],
+    "sections": [
+      {
+        "heading": "Public domain is not the whole story",
+        "body": "A film can be out of copyright while the people in it still have publicity rights, and the brands in it are still trademarks. Archive clips are flagged editorial for that reason: fine for documentary, education and commentary, but think twice before putting a stranger from a 1950s newsreel into an ad."
+      },
+      {
+        "heading": "Uploader-asserted licences",
+        "body": "Most Internet Archive items carry the licence their uploader chose, which the Archive does not check, and some modern films are uploaded with a public-domain mark they don't deserve. Those items are capped at 'check the terms'. The Prelinger Archives are different: the collection's own curators state that the films are public domain."
+      },
+      {
+        "heading": "Working with old film",
+        "body": "Archive transfers are often 480p or SD, 4:3, with title cards at the start. Pillarbox them rather than stretching, or crop to 16:9 if the framing allows. In a sequence, the builder starts long films part-way in to skip the titles."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Are all old films public domain?",
+        "a": "No. In the US, works published in 1930 or earlier are now public domain, and many later films entered it because their copyright was never registered or renewed, but others are still protected. Rely on the source's statement, and treat uploader claims as unverified."
+      },
+      {
+        "q": "Why is archive footage marked editorial?",
+        "a": "Historic footage shows people and brands without releases. Copyright may have lapsed, but using a recognisable person to sell something can still infringe their or their estate's rights, so the flag reminds you to keep such clips to editorial uses."
+      }
+    ],
+    "guides": ["prelinger-public-domain-films", "editorial-vs-commercial-footage", "free-stock-footage-commercial-use"]
+  },
+  {
+    "id": "backgrounds",
+    "name": "Backgrounds and slow motion",
+    "title": "Free motion backgrounds and abstract loops",
+    "description": "Free motion backgrounds, abstract and data-driven animations, seamless loops and slow-motion footage for titles, slides, stages and transitions.",
+    "intro": "A good background moves enough to feel alive and little enough to stay behind the words. These collections gather free abstract animations, data visualisations, seamless loops and slow-motion footage: the clips that sit under titles, lower thirds, presentation slides, stage screens and website hero sections. Many have no people or logos at all, which makes them some of the easiest footage to clear for commercial use.",
+    "categories": ["background", "overlay"],
+    "styles": ["loop", "animation", "slow-motion"],
+    "aliases": ["motion backgrounds", "background loops", "abstract video", "slow motion footage"],
+    "sections": [
+      {
+        "heading": "What makes a usable background",
+        "body": "Low contrast where the text goes, slow movement, and no single element that pulls the eye. A seamless loop can play for as long as a slide stays up; otherwise pick a clip longer than the time it is on screen, or ping-pong it. Darken or blur it a little in the edit so titles stay readable."
+      },
+      {
+        "heading": "Slow motion",
+        "body": "Slow motion is shot at a high frame rate and played back slower. A 60 fps clip can be slowed to half speed in a 30 fps edit without repeated frames; a 120 fps clip to a quarter. Check a clip's frame rate before slowing it further in the edit, or it will stutter."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use a motion background on a website?",
+        "a": "Yes if its licence allows commercial use, and keep the file small: a 720p or 1080p rendition, muted, a few seconds long and looping. Hosting the clip on your own site is redistribution, which CC0, public-domain and CC BY footage allows."
+      },
+      {
+        "q": "Where are particle, smoke and light-leak overlays?",
+        "a": "Open archives have few of them. The overlay and VFX specialists (ActionVFX, ProductionCrate, and the overlay sections of Pexels and Pixabay) are linked from every search instead."
+      }
+    ],
+    "guides": ["nasa-footage-rules", "video-resolution-codecs-containers", "free-stock-footage-commercial-use"]
+  },
+  {
+    "id": "vertical",
+    "name": "Vertical video",
+    "title": "Free vertical video for Reels, TikTok and Shorts",
+    "description": "Free vertical 9:16 stock video for Reels, TikTok, Shorts and Stories: portrait clips from open archives, with tips for cropping landscape footage.",
+    "intro": "Reels, TikTok, YouTube Shorts and Stories are watched full-screen on a phone, in 9:16. Footage shot vertically fills that frame without losing anything; landscape footage has to be cropped to its middle third. These collections show only clips that are portrait already, from the sources searched directly, with resolution and length on every card.",
+    "orientations": ["portrait"],
+    "aliases": ["9:16 video", "portrait video", "reels footage", "tiktok b-roll", "shorts b-roll"],
+    "sections": [
+      {
+        "heading": "Vertical or cropped?",
+        "body": "A vertical original keeps its full frame and resolution. Cropping 16:9 to 9:16 keeps only the middle 32% of the picture, so a 1080p landscape clip becomes about 608×1080, which phones then upscale. Crop from 4K sources where you can (about 1215×2160 remains), and pick shots with one central subject."
+      },
+      {
+        "heading": "Safe zones",
+        "body": "Platforms overlay the caption, buttons and the account name on the bottom and right of a vertical video. Keep the subject and any text in the central area of the frame, and choose clips whose action doesn't happen at the very bottom."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What resolution should vertical video be?",
+        "a": "1080×1920 is the standard for Reels, TikTok, Shorts and Stories. Higher sources are downscaled; lower ones look soft on modern phones."
+      },
+      {
+        "q": "Can I make a vertical sequence from landscape clips?",
+        "a": "Yes: set the sequence builder to 9:16. Its ffmpeg script scales each clip to cover the frame and crops the centre, and each shot notes when a pick was cropped so you can reframe it in your editor."
+      }
+    ],
+    "guides": ["vertical-video-reels-tiktok-shorts", "b-roll-sequence-from-shot-list", "video-resolution-codecs-containers"]
+  }
+]

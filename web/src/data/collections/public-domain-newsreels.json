@@ -1,0 +1,341 @@
+{
+  "slug": "public-domain-newsreels",
+  "search": {
+    "q": "newsreel",
+    "categories": [
+      "archive.newsreel"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:02:09.705Z",
+  "clips": [
+    {
+      "id": "internetarchive:tmp_05001",
+      "provider": "internetarchive",
+      "title": "Universal-International Newsreel",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/tmp_05001",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/tmp_05001",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1964
+    },
+    {
+      "id": "internetarchive:KnifeThr1950",
+      "provider": "internetarchive",
+      "title": "[Knife-Thrower and Children]",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/KnifeThr1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/KnifeThr1950",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 63,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:NewsMaga00_7",
+      "provider": "internetarchive",
+      "title": "News Magazine of the Screen, The (Vol. 7, Issue 3)",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/NewsMaga00_7",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/NewsMaga00_7",
+      "author": "Warner Pathé News",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1301,
+      "year": 1956
+    },
+    {
+      "id": "internetarchive:BongoBoa1950",
+      "provider": "internetarchive",
+      "title": "[Bongo Boards]",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/BongoBoa1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/BongoBoa1950",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 32
+    },
+    {
+      "id": "internetarchive:NewsMaga1957",
+      "provider": "internetarchive",
+      "title": "News Magazine of the Screen, The (1957)",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/NewsMaga1957",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/NewsMaga1957",
+      "author": "Warner Pathé News",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1277,
+      "year": 1957
+    },
+    {
+      "id": "internetarchive:FirstPri1957",
+      "provider": "internetarchive",
+      "title": "[First Private Atom Power Plant Opens]",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/FirstPri1957",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/FirstPri1957",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 54,
+      "year": 1957
+    },
+    {
+      "id": "internetarchive:LargestR1950",
+      "provider": "internetarchive",
+      "title": "[Largest Radio Transmitter Is Dedicated]",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/LargestR1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/LargestR1950",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 53,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:PatheNew1950",
+      "provider": "internetarchive",
+      "title": "Pathe News Christmas with Their Cameramen and Crews 'Round the World",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/PatheNew1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/PatheNew1950",
+      "author": "Warner Pathe News",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 277,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:Babieson1950",
+      "provider": "internetarchive",
+      "title": "[Babies on Parade]",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/Babieson1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Babieson1950",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 66,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:SoldierW1950",
+      "provider": "internetarchive",
+      "title": "[Soldier With Big Feet]",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/SoldierW1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/SoldierW1950",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 66,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:Chevrole1937_2",
+      "provider": "internetarchive",
+      "title": "Chevrolet Leader News (Vol. 3, No. 2)",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/Chevrole1937_2",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Chevrole1937_2",
+      "author": "Handy (Jam) Organization",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1937
+    },
+    {
+      "id": "internetarchive:san_francisco_worlds_fair",
+      "provider": "internetarchive",
+      "title": "San Francisco World's Fair",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/san_francisco_worlds_fair",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/san_francisco_worlds_fair",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:NewsMaga1950_3",
+      "provider": "internetarchive",
+      "title": "[News Magazine of the Screen, December 1950] (Part I)",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/NewsMaga1950_3",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/NewsMaga1950_3",
+      "author": "Warner Pathe News",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 871,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:DreamHos1950",
+      "provider": "internetarchive",
+      "title": "[Dream Hospital]",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/DreamHos1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/DreamHos1950",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 85,
+      "year": 1950
+    }
+  ]
+}

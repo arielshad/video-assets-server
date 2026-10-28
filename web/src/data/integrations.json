@@ -1,0 +1,166 @@
+{
+  "integrations": [
+    {
+      "id": "actionvfx",
+      "name": "ActionVFX",
+      "homepage": "https://www.actionvfx.com",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "adobestock",
+      "name": "Adobe Stock",
+      "homepage": "https://stock.adobe.com/video",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "artgrid",
+      "name": "Artgrid",
+      "homepage": "https://artgrid.io",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "coverr",
+      "name": "Coverr",
+      "homepage": "https://coverr.co",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "envato",
+      "name": "Envato Elements",
+      "homepage": "https://elements.envato.com/stock-video",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "europeana",
+      "name": "Europeana",
+      "homepage": "https://www.europeana.eu",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "freepik",
+      "name": "Freepik videos (Videvo)",
+      "homepage": "https://www.freepik.com/videos",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "gettyimages",
+      "name": "Getty Images",
+      "homepage": "https://www.gettyimages.com/footage",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "internetarchive",
+      "name": "Internet Archive",
+      "homepage": "https://archive.org",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "istock",
+      "name": "iStock",
+      "homepage": "https://www.istockphoto.com/stock-videos",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "loc",
+      "name": "Library of Congress",
+      "homepage": "https://www.loc.gov/film-and-videos/",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "mixkit",
+      "name": "Mixkit",
+      "homepage": "https://mixkit.co/free-stock-video/",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "nasa",
+      "name": "NASA Image and Video Library",
+      "homepage": "https://images.nasa.gov",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "nasasvs",
+      "name": "NASA Scientific Visualization Studio",
+      "homepage": "https://svs.gsfc.nasa.gov",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "pexels",
+      "name": "Pexels",
+      "homepage": "https://www.pexels.com/videos/",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "pixabay",
+      "name": "Pixabay",
+      "homepage": "https://pixabay.com/videos/",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "pond5",
+      "name": "Pond5",
+      "homepage": "https://www.pond5.com",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "productioncrate",
+      "name": "ProductionCrate (FootageCrate)",
+      "homepage": "https://footagecrate.com",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "shutterstock",
+      "name": "Shutterstock",
+      "homepage": "https://www.shutterstock.com/video",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "storyblocks",
+      "name": "Storyblocks",
+      "homepage": "https://www.storyblocks.com/video",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "vecteezy",
+      "name": "Vecteezy",
+      "homepage": "https://www.vecteezy.com/free-videos",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "videezy",
+      "name": "Videezy",
+      "homepage": "https://www.videezy.com",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "wikimediacommons",
+      "name": "Wikimedia Commons",
+      "homepage": "https://commons.wikimedia.org",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    }
+  ],
+  "rejected": 8
+}

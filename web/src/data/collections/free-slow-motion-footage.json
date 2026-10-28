@@ -1,0 +1,463 @@
+{
+  "slug": "free-slow-motion-footage",
+  "search": {
+    "q": "slow motion",
+    "styles": [
+      "slow-motion"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:44.638Z",
+  "clips": [
+    {
+      "id": "nasa:KSC-20260401-MH-FMX01-Artemis_II_Liftoff_Slowmotion_WON_M19827_1",
+      "provider": "nasa",
+      "title": "Artemis II Liftoff Slow Motion",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20260401-MH-FMX01-Artemis_II_Liftoff_Slowmotion_WON_M19827_1",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20260401-MH-FMX01-Artemis_II_Liftoff_Slowmotion_WON_M19827_1/KSC-20260401-MH-FMX01-Artemis_II_Liftoff_Slowmotion_WON_M19827_1~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20260401-MH-FMX01-Artemis_II_Liftoff_Slowmotion_WON_M19827_1/KSC-20260401-MH-FMX01-Artemis_II_Liftoff_Slowmotion_WON_M19827_1~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:SlowMotionFlame",
+      "provider": "internetarchive",
+      "title": "Slow Motion Flame",
+      "category": "overlay.particles",
+      "url": "https://archive.org/details/SlowMotionFlame",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/SlowMotionFlame",
+      "author": "Sharuban",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "provider": "nasa",
+      "title": "Artemis I Slow Motion Liftoff",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595/KSC-20221116--MH-FMX-01-0001-Artemis_1_slowmo_liftoff-3314595~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michuax",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "nasa:Causeway Main Launch dust removal",
+      "provider": "nasa",
+      "title": "Artemis II launch Causeway Slow Motion wide",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/Causeway%20Main%20Launch%20dust%20removal",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/Causeway Main Launch dust removal/Causeway Main Launch dust removal~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Causeway%20Main%20Launch%20dust%20removal/Causeway%20Main%20Launch%20dust%20removal~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/ Sam Lott",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:FreeStockFootageofRaindrops",
+      "provider": "internetarchive",
+      "title": "Raindrops in Super Slow Motion (Free to Use HD Stock Video Footage)",
+      "category": "nature.water",
+      "url": "https://archive.org/details/FreeStockFootageofRaindrops",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/FreeStockFootageofRaindrops",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:KSC ART II Cause Way Launch low angle",
+      "provider": "nasa",
+      "title": "Artemis II launch Causeway Slow-motion",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC%20ART%20II%20Cause%20Way%20Launch%20low%20angle",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC ART II Cause Way Launch low angle/KSC ART II Cause Way Launch low angle~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC%20ART%20II%20Cause%20Way%20Launch%20low%20angle/KSC%20ART%20II%20Cause%20Way%20Launch%20low%20angle~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/ Sam Lott",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:FreeStockFootageOfASkippingStone",
+      "provider": "internetarchive",
+      "title": "Skipping Stone Slow Motion (Free to Use HD Stock Video Footage)",
+      "category": "other",
+      "url": "https://archive.org/details/FreeStockFootageOfASkippingStone",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/FreeStockFootageOfASkippingStone",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:CEP436",
+      "provider": "internetarchive",
+      "title": "Bird Flies Off Bush - Slow Motion (Wide Screen 16:9)",
+      "category": "nature.animals",
+      "url": "https://archive.org/details/CEP436",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/CEP436",
+      "author": "C. E. Price",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2007
+    },
+    {
+      "id": "nasa:KSC ART II Cause Way Launch high angle",
+      "provider": "nasa",
+      "title": "Artemis II launch Causeway Slow-motion alt wide",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC%20ART%20II%20Cause%20Way%20Launch%20high%20angle",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC ART II Cause Way Launch high angle/KSC ART II Cause Way Launch high angle~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC%20ART%20II%20Cause%20Way%20Launch%20high%20angle/KSC%20ART%20II%20Cause%20Way%20Launch%20high%20angle~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/ Sam Lott",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:IMB_SF_R28_C7",
+      "provider": "internetarchive",
+      "title": "Stock Footage - Slow Motion Lightning Strike",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/IMB_SF_R28_C7",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/IMB_SF_R28_C7",
+      "author": "Ivan Bridgewater",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2007
+    },
+    {
+      "id": "internetarchive:ThinSmoke",
+      "provider": "internetarchive",
+      "title": "Thin smoke in slow motion (Free to Use HD Stock Video Footage)",
+      "category": "overlay.particles",
+      "url": "https://archive.org/details/ThinSmoke",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/ThinSmoke",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:ThickSmokeinslowmotion",
+      "provider": "internetarchive",
+      "title": "Thick smoke in slow motion (Free to Use HD Stock Video Footage)",
+      "category": "overlay.particles",
+      "url": "https://archive.org/details/ThickSmokeinslowmotion",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/ThickSmokeinslowmotion",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:HdFireworks",
+      "provider": "internetarchive",
+      "title": "Fireworks Slow Motion",
+      "category": "overlay.particles",
+      "url": "https://archive.org/details/HdFireworks",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/HdFireworks",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:SlowMotionMatchStrikeHorizontal",
+      "provider": "internetarchive",
+      "title": "Slow Motion Match Strike - Horizontal (Free to Use HD Stock Video Footage)",
+      "category": "other",
+      "url": "https://archive.org/details/SlowMotionMatchStrikeHorizontal",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/SlowMotionMatchStrikeHorizontal",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:MatchStrikeSlowMotionVertical",
+      "provider": "internetarchive",
+      "title": "Match Strike Slow Motion - Vertical (Free to Use HD Stock Video Footage)",
+      "category": "other",
+      "url": "https://archive.org/details/MatchStrikeSlowMotionVertical",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/MatchStrikeSlowMotionVertical",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:CEP512",
+      "provider": "internetarchive",
+      "title": "Big Bird Flies Away (Slow Motion) (Wide Screen 16:9)",
+      "category": "nature.animals",
+      "url": "https://archive.org/details/CEP512",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/CEP512",
+      "author": "C. E. Price",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2007
+    },
+    {
+      "id": "internetarchive:FireCUPhotoJPEG",
+      "provider": "internetarchive",
+      "title": "Fireplace Close Up - Slow Motion",
+      "category": "other",
+      "url": "https://archive.org/details/FireCUPhotoJPEG",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/FireCUPhotoJPEG",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:FreeSwanStockFootage",
+      "provider": "internetarchive",
+      "title": "White Swan in Slow Motion (Free to Use HD Stock Video Footage)",
+      "category": "other",
+      "url": "https://archive.org/details/FreeSwanStockFootage",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/FreeSwanStockFootage",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:Typewriter-SlowMotionReverseShot",
+      "provider": "internetarchive",
+      "title": "Typewriter - Slow Motion Reverse Shot (Free to Use HD Stock Video Footage)",
+      "category": "people.work",
+      "url": "https://archive.org/details/Typewriter-SlowMotionReverseShot",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/Typewriter-SlowMotionReverseShot",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "slug": "prelinger-archive-films",
+  "search": {
+    "q": "film",
+    "categories": [
+      "archive.film"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:02:06.836Z",
+  "clips": [
+    {
+      "id": "nasa:GRC-2022-CM-0138",
+      "provider": "nasa",
+      "title": "Skylab Zero-G Flammability Studies - 16mm Film Transfer",
+      "category": "archive.film",
+      "url": "https://images.nasa.gov/details/GRC-2022-CM-0138",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GRC-2022-CM-0138/GRC-2022-CM-0138~medium.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GRC-2022-CM-0138/GRC-2022-CM-0138~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/GRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 1985
+    },
+    {
+      "id": "internetarchive:SanFrancisco1955CinemascopeFilm",
+      "provider": "internetarchive",
+      "title": "San Francisco (1955 Cinemascope film)",
+      "category": "archive.film",
+      "url": "https://archive.org/details/SanFrancisco1955CinemascopeFilm",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/SanFrancisco1955CinemascopeFilm",
+      "author": "Tullio Pellegrini",
+      "license": {
+        "id": "CC-BY-SA-3.0",
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1288
+    },
+    {
+      "id": "internetarchive:Sleepfor1950",
+      "provider": "internetarchive",
+      "title": "Sleep for Health",
+      "category": "archive.film",
+      "url": "https://archive.org/details/Sleepfor1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Sleepfor1950",
+      "author": "Encyclopaedia Britannica Films",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 644,
+      "year": 1950
+    },
+    {
+      "id": "internetarchive:sex_madness",
+      "provider": "internetarchive",
+      "title": "Sex Madness",
+      "category": "archive.film",
+      "url": "https://archive.org/details/sex_madness",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/sex_madness",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1938
+    },
+    {
+      "id": "internetarchive:DuckandC1951",
+      "provider": "internetarchive",
+      "title": "Duck and Cover",
+      "category": "archive.film",
+      "url": "https://archive.org/details/DuckandC1951",
+      "downloadable": true,
+      "styles": [
+        "black-white",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/DuckandC1951",
+      "author": "Archer Productions, Inc.",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 555,
+      "year": 1951
+    },
+    {
+      "id": "internetarchive:charlie_chaplin_film_fest",
+      "provider": "internetarchive",
+      "title": "Charlie Chaplin Festival",
+      "category": "archive.film",
+      "url": "https://archive.org/details/charlie_chaplin_film_fest",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/charlie_chaplin_film_fest",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4646,
+      "year": 1938
+    },
+    {
+      "id": "internetarchive:his_girl_friday",
+      "provider": "internetarchive",
+      "title": "His Girl Friday",
+      "category": "archive.film",
+      "url": "https://archive.org/details/his_girl_friday",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/his_girl_friday",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 5504,
+      "year": 1940
+    },
+    {
+      "id": "internetarchive:reefer_madness1938",
+      "provider": "internetarchive",
+      "title": "Reefer Madness",
+      "category": "archive.film",
+      "url": "https://archive.org/details/reefer_madness1938",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/reefer_madness1938",
+      "author": "George A. Hirliman",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4097,
+      "year": 1938
+    },
+    {
+      "id": "internetarchive:BloodyPitOfHorror",
+      "provider": "internetarchive",
+      "title": "Bloody Pit of Horror",
+      "category": "archive.film",
+      "url": "https://archive.org/details/BloodyPitOfHorror",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/BloodyPitOfHorror",
+      "author": "Francesco Merli, Ralph Zucker",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4944,
+      "year": 1965
+    },
+    {
+      "id": "internetarchive:The_Pied_Piper_of_Hamelin",
+      "provider": "internetarchive",
+      "title": "The Pied Piper of Hamelin",
+      "category": "archive.film",
+      "url": "https://archive.org/details/The_Pied_Piper_of_Hamelin",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/The_Pied_Piper_of_Hamelin",
+      "author": "Hal Stanley",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 5340,
+      "year": 1957
+    },
+    {
+      "id": "internetarchive:abraham_lincoln",
+      "provider": "internetarchive",
+      "title": "Abraham Lincoln",
+      "category": "archive.film",
+      "url": "https://archive.org/details/abraham_lincoln",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/abraham_lincoln",
+      "author": "D.W. Griffith",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 5079,
+      "year": 1930
+    },
+    {
+      "id": "internetarchive:DontBeaS1947",
+      "provider": "internetarchive",
+      "title": "Don't Be a Sucker",
+      "category": "archive.film",
+      "url": "https://archive.org/details/DontBeaS1947",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/DontBeaS1947",
+      "author": "U.S. War Department",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1041,
+      "year": 1947
+    },
+    {
+      "id": "internetarchive:dressed_to_kill",
+      "provider": "internetarchive",
+      "title": "Dressed To Kill",
+      "category": "archive.film",
+      "url": "https://archive.org/details/dressed_to_kill",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/dressed_to_kill",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4290,
+      "year": 1946
+    },
+    {
+      "id": "internetarchive:boys_beware",
+      "provider": "internetarchive",
+      "title": "Boys Beware",
+      "category": "archive.film",
+      "url": "https://archive.org/details/boys_beware",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/boys_beware",
+      "author": "Sid Davis",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 612,
+      "year": 1961
+    },
+    {
+      "id": "internetarchive:DiaryofaNudist",
+      "provider": "internetarchive",
+      "title": "Diary of a Nudist",
+      "category": "archive.film",
+      "url": "https://archive.org/details/DiaryofaNudist",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/DiaryofaNudist",
+      "author": "Doris Wishman",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4320,
+      "year": 1961
+    }
+  ]
+}

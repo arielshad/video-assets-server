@@ -1,0 +1,893 @@
+{
+  "slug": "nasa-data-visualizations",
+  "search": {
+    "q": "science",
+    "categories": [
+      "science"
+    ],
+    "styles": [
+      "visualization"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:02:03.198Z",
+  "clips": [
+    {
+      "id": "nasa:NASA NIAC Turning Science Fiction into Science Fact",
+      "provider": "nasa",
+      "title": "NASA NIAC: Turning Science Fiction into Science Fact",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/NASA%20NIAC%20Turning%20Science%20Fiction%20into%20Science%20Fact",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA NIAC Turning Science Fiction into Science Fact/NASA NIAC Turning Science Fiction into Science Fact~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20NIAC%20Turning%20Science%20Fiction%20into%20Science%20Fact/NASA%20NIAC%20Turning%20Science%20Fiction%20into%20Science%20Fact~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2023
+    },
+    {
+      "id": "wikimediacommons:Science_in_Wales_-_a_video_by_the_Welsh_Government.webm",
+      "provider": "wikimediacommons",
+      "title": "Science in Wales - a video by the Welsh Government",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Science_in_Wales_-_a_video_by_the_Welsh_Government.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Science_in_Wales_-_a_video_by_the_Welsh_Government.webm/960px--Science_in_Wales_-_a_video_by_the_Welsh_Government.webm.jpg",
+      "author": "Welsh Government / Llywodraeth Cymru Institution:Senedd Cymru – Welsh Parliament",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1077,
+      "height": 606,
+      "durationSec": 148.37,
+      "year": 2015
+    },
+    {
+      "id": "nasa:Crew-10 Return Science",
+      "provider": "nasa",
+      "title": "NASA’s SpaceX Crew-10: Exploring Science",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/Crew-10%20Return%20Science",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Crew-10 Return Science/Crew-10 Return Science~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Crew-10%20Return%20Science/Crew-10%20Return%20Science~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "wikimediacommons:MammalWeb_citizen_science_project.webm",
+      "provider": "wikimediacommons",
+      "title": "MammalWeb citizen science project",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:MammalWeb_citizen_science_project.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/MammalWeb_citizen_science_project.webm/960px--MammalWeb_citizen_science_project.webm.jpg",
+      "author": "Laura Degnan",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 568.78,
+      "year": 2017
+    },
+    {
+      "id": "internetarchive:STSKTVSeries",
+      "provider": "internetarchive",
+      "title": "Sid The Science Kid - TV Series (2008)",
+      "category": "science",
+      "url": "https://archive.org/details/STSKTVSeries",
+      "downloadable": true,
+      "styles": [
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/STSKTVSeries",
+      "author": "PBS Kids",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2008
+    },
+    {
+      "id": "nasa:NHQ_2020_0423_NASA Science Live - Earth Day",
+      "provider": "nasa",
+      "title": "NASA Science Live: Earth Day at Home [Episode 14]",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/NHQ_2020_0423_NASA%20Science%20Live%20-%20Earth%20Day",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2020_0423_NASA Science Live - Earth Day/NHQ_2020_0423_NASA Science Live - Earth Day~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2020_0423_NASA%20Science%20Live%20-%20Earth%20Day/NHQ_2020_0423_NASA%20Science%20Live%20-%20Earth%20Day~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Emily Furfaro",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Focus_on_Science_-_your_guide_to_the_Wiki_Science_photography_competition_for_Australia_and_New_Zealand.webm",
+      "provider": "wikimediacommons",
+      "title": "Focus on Science - your guide to the Wiki Science photography competition for Australia and New Zealand",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Focus_on_Science_-_your_guide_to_the_Wiki_Science_photography_competition_for_Australia_and_New_Zealand.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Focus_on_Science_-_your_guide_to_the_Wiki_Science_photography_competition_for_Australia_and_New_Zealand.webm/960px--Focus_on_Science_-_your_guide_to_the_Wiki_Science_photography_competition_for_Australia_and_New_Zealand.webm.jpg",
+      "author": "AlphaLemur",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1834,
+      "height": 1080,
+      "durationSec": 2891.22,
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:213.GodzillaVsTheSeaMonster",
+      "provider": "internetarchive",
+      "title": "Mystery Science Theater 3000 - Godzilla vs The Sea Monster",
+      "category": "science",
+      "url": "https://archive.org/details/213.GodzillaVsTheSeaMonster",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/213.GodzillaVsTheSeaMonster",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:Crew-12 Science Mission_v2_20260924",
+      "provider": "nasa",
+      "title": "NASA’s SpaceX Crew-12: Science for Humanity",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/Crew-12%20Science%20Mission_v2_20260924",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Crew-12 Science Mission_v2_20260924/Crew-12 Science Mission_v2_20260924~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Crew-12%20Science%20Mission_v2_20260924/Crew-12%20Science%20Mission_v2_20260924~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:National_Science_Foundation_Science_&_Technology_PSA_(1988).webm",
+      "provider": "wikimediacommons",
+      "title": "National Science Foundation Science & Technology PSA (1988)",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:National_Science_Foundation_Science_%26_Technology_PSA_(1988).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/National_Science_Foundation_Science_%26_Technology_PSA_%281988%29.webm/500px--National_Science_Foundation_Science_%26_Technology_PSA_%281988%29.webm.jpg",
+      "author": "National Science Foundation",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 640,
+      "height": 480,
+      "durationSec": 60.33,
+      "year": 1988
+    },
+    {
+      "id": "internetarchive:bacteria_friend_and_foe",
+      "provider": "internetarchive",
+      "title": "Bacteria: Friend and Foe",
+      "category": "science",
+      "url": "https://archive.org/details/bacteria_friend_and_foe",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/bacteria_friend_and_foe",
+      "author": "Encyclopedia Britannica Films, Inc.",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:How Can I Get Involved with NASA Science",
+      "provider": "nasa",
+      "title": "How Can I Get Involved with NASA Science",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/How%20Can%20I%20Get%20Involved%20with%20NASA%20Science",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/How Can I Get Involved with NASA Science/How Can I Get Involved with NASA Science~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/How%20Can%20I%20Get%20Involved%20with%20NASA%20Science/How%20Can%20I%20Get%20Involved%20with%20NASA%20Science~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA LaRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "wikimediacommons:MammalWeb_citizen_science_project_(short).webm",
+      "provider": "wikimediacommons",
+      "title": "MammalWeb citizen science project (short)",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:MammalWeb_citizen_science_project_(short).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/MammalWeb_citizen_science_project_%28short%29.webm/960px--MammalWeb_citizen_science_project_%28short%29.webm.jpg",
+      "author": "Laura Degnan",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 104.54,
+      "year": 2017
+    },
+    {
+      "id": "nasa:GRC-2014-CM-0137.7",
+      "provider": "nasa",
+      "title": "Open-Source Science Opportunities",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/GRC-2014-CM-0137.7",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GRC-2014-CM-0137.7/GRC-2014-CM-0137.7~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GRC-2014-CM-0137.7/GRC-2014-CM-0137.7~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/ITC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2023
+    },
+    {
+      "id": "wikimediacommons:Science_On_a_Sphere-_4_Years_of_Biosphere_(SVS5474_-_biosphere_4096x204830p_sos).webm",
+      "provider": "wikimediacommons",
+      "title": "Science On a Sphere- 4 Years of Biosphere (SVS5474 - biosphere 4096x204830p sos)",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Science_On_a_Sphere-_4_Years_of_Biosphere_(SVS5474_-_biosphere_4096x204830p_sos).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Science_On_a_Sphere-_4_Years_of_Biosphere_%28SVS5474_-_biosphere_4096x204830p_sos%29.webm/960px--Science_On_a_Sphere-_4_Years_of_Biosphere_%28SVS5474_-_biosphere_4096x204830p_sos%29.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio - Global Science and Technology, Inc./Alex Kekesi, NASA/GSFC/Horace Mitchell, NAS",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 4096,
+      "height": 2048,
+      "durationSec": 48.7,
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:Despotis1946",
+      "provider": "internetarchive",
+      "title": "Despotism",
+      "category": "science",
+      "url": "https://archive.org/details/Despotis1946",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Despotis1946",
+      "author": "Encyclopaedia Britannica Films",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 660,
+      "year": 1946
+    },
+    {
+      "id": "nasa:HQ_20201216_NSL_Ep26",
+      "provider": "nasa",
+      "title": "NASA Science Live: You Too Can Do NASA Science [Episode 26]",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/HQ_20201216_NSL_Ep26",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/HQ_20201216_NSL_Ep26/HQ_20201216_NSL_Ep26~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/HQ_20201216_NSL_Ep26/HQ_20201216_NSL_Ep26~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Emily Furfaro",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Transverse_Wave_Motion_inside_Science_City.webm",
+      "provider": "wikimediacommons",
+      "title": "Transverse Wave Motion inside Science City",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Transverse_Wave_Motion_inside_Science_City.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Transverse_Wave_Motion_inside_Science_City.webm/500px--Transverse_Wave_Motion_inside_Science_City.webm.jpg",
+      "author": "Drshaunakdas",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 640,
+      "height": 1138,
+      "durationSec": 5.6,
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:Killers_from_space",
+      "provider": "internetarchive",
+      "title": "Killers From Space",
+      "category": "science",
+      "url": "https://archive.org/details/Killers_from_space",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Killers_from_space",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4260,
+      "year": 1954
+    },
+    {
+      "id": "nasa:GSFC_20200709_M13657_OREx_SOC",
+      "provider": "nasa",
+      "title": "OSIRIS-REx: Science Operations Center",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/GSFC_20200709_M13657_OREx_SOC",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20200709_M13657_OREx_SOC/GSFC_20200709_M13657_OREx_SOC~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20200709_M13657_OREx_SOC/GSFC_20200709_M13657_OREx_SOC~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA GSFC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Science_Summary_for_October_2020.webm",
+      "provider": "wikimediacommons",
+      "title": "Science Summary for October 2020",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Science_Summary_for_October_2020.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Science_Summary_for_October_2020.webm/960px--Science_Summary_for_October_2020.webm.jpg",
+      "author": "Prototyperspective",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 716.96,
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:BigGMovies",
+      "provider": "internetarchive",
+      "title": "BigGMovies",
+      "category": "science",
+      "url": "https://archive.org/details/BigGMovies",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/BigGMovies",
+      "author": "Toho",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:ARC-20131028-AAV3506-HS-Students-Learn-Airborne-Science",
+      "provider": "nasa",
+      "title": "High School Students Learn About NASA Airborne Science",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/ARC-20131028-AAV3506-HS-Students-Learn-Airborne-Science",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/ARC-20131028-AAV3506-HS-Students-Learn-Airborne-Science/ARC-20131028-AAV3506-HS-Students-Learn-Airborne-Science~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/ARC-20131028-AAV3506-HS-Students-Learn-Airborne-Science/ARC-20131028-AAV3506-HS-Students-Learn-Airborne-Science~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Rafael Méndez Peña",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2013
+    },
+    {
+      "id": "wikimediacommons:MSC_Science_Garden.mpg",
+      "provider": "wikimediacommons",
+      "title": "MSC Science Garden",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:MSC_Science_Garden.mpg",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/MSC_Science_Garden.mpg/960px--MSC_Science_Garden.mpg.jpg",
+      "author": "Crosji",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mpg"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 3.57,
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:Cancer_2",
+      "provider": "internetarchive",
+      "title": "Cancer",
+      "category": "science",
+      "url": "https://archive.org/details/Cancer_2",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Cancer_2",
+      "author": "Encyclopedia Britannica Films, Inc.",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:GSFC_20200625_NSL_Ep18",
+      "provider": "nasa",
+      "title": "NASA Science Live: Science in the Time of Coronavirus [Episode 18]",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/GSFC_20200625_NSL_Ep18",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20200625_NSL_Ep18/GSFC_20200625_NSL_Ep18~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20200625_NSL_Ep18/GSFC_20200625_NSL_Ep18~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Emily Furfaro",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Science_(Communication)_and_Wikipedia._Potentials_and_Pitfalls.webm",
+      "provider": "wikimediacommons",
+      "title": "Science (Communication) and Wikipedia. Potentials and Pitfalls",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Science_(Communication)_and_Wikipedia._Potentials_and_Pitfalls.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Science_%28Communication%29_and_Wikipedia._Potentials_and_Pitfalls.webm/960px--Science_%28Communication%29_and_Wikipedia._Potentials_and_Pitfalls.webm.jpg",
+      "author": "Dlanold",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 3101.56,
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:transatlantic_tunnel",
+      "provider": "internetarchive",
+      "title": "Transatlantic Tunnel",
+      "category": "science",
+      "url": "https://archive.org/details/transatlantic_tunnel",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/transatlantic_tunnel",
+      "author": "Michael Balcon",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4927,
+      "year": 1935
+    },
+    {
+      "id": "wikimediacommons:Science_Summary_for_May_2021.webm",
+      "provider": "wikimediacommons",
+      "title": "Science Summary for May 2021",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Science_Summary_for_May_2021.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Science_Summary_for_May_2021.webm/960px--Science_Summary_for_May_2021.webm.jpg",
+      "author": "Prototyperspective",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 691.48,
+      "year": 2021
+    },
+    {
+      "id": "nasa:GSFC_2010912_M13313_NSL",
+      "provider": "nasa",
+      "title": "NASA Science Live: A World of Fires [Episode 8]",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/GSFC_2010912_M13313_NSL",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_2010912_M13313_NSL/GSFC_2010912_M13313_NSL~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_2010912_M13313_NSL/GSFC_2010912_M13313_NSL~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Rich Melnick",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "wikimediacommons:Science_Summary_for_February_2021.webm",
+      "provider": "wikimediacommons",
+      "title": "Science Summary for February 2021",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Science_Summary_for_February_2021.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Science_Summary_for_February_2021.webm/960px--Science_Summary_for_February_2021.webm.jpg",
+      "author": "Prototyperspective",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 787,
+      "year": 2021
+    },
+    {
+      "id": "nasa:NASA Science Live Lucy in the Sky Studying Asteroid",
+      "provider": "nasa",
+      "title": "NASA Science Live: Lucy in the Sky with Asteroids [Episode 25]",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/NASA%20Science%20Live%20Lucy%20in%20the%20Sky%20Studying%20Asteroid",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA Science Live Lucy in the Sky Studying Asteroid/NASA Science Live Lucy in the Sky Studying Asteroid~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20Science%20Live%20Lucy%20in%20the%20Sky%20Studying%20Asteroid/NASA%20Science%20Live%20Lucy%20in%20the%20Sky%20Studying%20Asteroid~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Emily Furfaro",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:The_Wasp_Women",
+      "provider": "internetarchive",
+      "title": "The Wasp Woman",
+      "category": "science",
+      "url": "https://archive.org/details/The_Wasp_Women",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/The_Wasp_Women",
+      "author": "Roger Corman",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4380,
+      "year": 1960
+    },
+    {
+      "id": "nasa:jsc2024m000154_Astronaut Moments Don Pettit_MP4",
+      "provider": "nasa",
+      "title": "Astronaut Moments: Don Pettit, Science of Opportunity",
+      "category": "science",
+      "url": "https://images.nasa.gov/details/jsc2024m000154_Astronaut%20Moments%20Don%20Pettit_MP4",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/jsc2024m000154_Astronaut Moments Don Pettit_MP4/jsc2024m000154_Astronaut Moments Don Pettit_MP4~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/jsc2024m000154_Astronaut%20Moments%20Don%20Pettit_MP4/jsc2024m000154_Astronaut%20Moments%20Don%20Pettit_MP4~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:Science_Summary_for_April_2021.webm",
+      "provider": "wikimediacommons",
+      "title": "Science Summary for April 2021",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:Science_Summary_for_April_2021.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Science_Summary_for_April_2021.webm/960px--Science_Summary_for_April_2021.webm.jpg",
+      "author": "Prototyperspective",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 898.28,
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:EvilBrainFromOuterSpace",
+      "provider": "internetarchive",
+      "title": "Evil Brain From Outer Space",
+      "category": "science",
+      "url": "https://archive.org/details/EvilBrainFromOuterSpace",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/EvilBrainFromOuterSpace",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1964
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "categories": [
+    {
+      "id": "nature",
+      "label": "Nature"
+    },
+    {
+      "id": "nature.ocean",
+      "label": "Ocean & beach"
+    },
+    {
+      "id": "nature.water",
+      "label": "Rivers & rain"
+    },
+    {
+      "id": "nature.sky",
+      "label": "Sky & clouds"
+    },
+    {
+      "id": "nature.forest",
+      "label": "Forest & plants"
+    },
+    {
+      "id": "nature.mountain",
+      "label": "Mountains & snow"
+    },
+    {
+      "id": "nature.animals",
+      "label": "Animals & wildlife"
+    },
+    {
+      "id": "city",
+      "label": "City & urban"
+    },
+    {
+      "id": "city.street",
+      "label": "Streets & traffic"
+    },
+    {
+      "id": "city.skyline",
+      "label": "Skylines"
+    },
+    {
+      "id": "people",
+      "label": "People"
+    },
+    {
+      "id": "people.work",
+      "label": "Work & business"
+    },
+    {
+      "id": "people.lifestyle",
+      "label": "Lifestyle"
+    },
+    {
+      "id": "people.sport",
+      "label": "Sport"
+    },
+    {
+      "id": "aerial",
+      "label": "Aerial & drone"
+    },
+    {
+      "id": "space",
+      "label": "Space"
+    },
+    {
+      "id": "space.earth",
+      "label": "Earth from space"
+    },
+    {
+      "id": "space.launch",
+      "label": "Launches & missions"
+    },
+    {
+      "id": "space.planets",
+      "label": "Sun, moon & planets"
+    },
+    {
+      "id": "science",
+      "label": "Science & data"
+    },
+    {
+      "id": "tech",
+      "label": "Technology"
+    },
+    {
+      "id": "transport",
+      "label": "Transport"
+    },
+    {
+      "id": "food",
+      "label": "Food & drink"
+    },
+    {
+      "id": "background",
+      "label": "Backgrounds"
+    },
+    {
+      "id": "background.abstract",
+      "label": "Abstract"
+    },
+    {
+      "id": "overlay",
+      "label": "Overlays & VFX"
+    },
+    {
+      "id": "overlay.light",
+      "label": "Light leaks & bokeh"
+    },
+    {
+      "id": "overlay.particles",
+      "label": "Particles, smoke & fire"
+    },
+    {
+      "id": "overlay.film",
+      "label": "Film grain & glitch"
+    },
+    {
+      "id": "greenscreen",
+      "label": "Green screen"
+    },
+    {
+      "id": "archive",
+      "label": "Archive & vintage"
+    },
+    {
+      "id": "archive.newsreel",
+      "label": "Newsreels & documentary"
+    },
+    {
+      "id": "archive.film",
+      "label": "Films & animation"
+    },
+    {
+      "id": "other",
+      "label": "Other"
+    }
+  ],
+  "topCategories": [
+    "nature",
+    "city",
+    "people",
+    "aerial",
+    "space",
+    "science",
+    "tech",
+    "transport",
+    "food",
+    "background",
+    "overlay",
+    "greenscreen",
+    "archive",
+    "other"
+  ],
+  "styles": [
+    {
+      "id": "timelapse",
+      "label": "Timelapse"
+    },
+    {
+      "id": "slow-motion",
+      "label": "Slow motion"
+    },
+    {
+      "id": "loop",
+      "label": "Seamless loop"
+    },
+    {
+      "id": "animation",
+      "label": "Animation / CG"
+    },
+    {
+      "id": "visualization",
+      "label": "Data visualisation"
+    },
+    {
+      "id": "black-white",
+      "label": "Black & white"
+    }
+  ],
+  "orientations": [
+    "landscape",
+    "portrait",
+    "square"
+  ],
+  "resolutions": [
+    {
+      "id": "sd",
+      "label": "SD",
+      "minShortSide": 0
+    },
+    {
+      "id": "hd",
+      "label": "HD 720p",
+      "minShortSide": 720
+    },
+    {
+      "id": "fhd",
+      "label": "Full HD 1080p",
+      "minShortSide": 1080
+    },
+    {
+      "id": "qhd",
+      "label": "2K 1440p",
+      "minShortSide": 1440
+    },
+    {
+      "id": "uhd",
+      "label": "4K",
+      "minShortSide": 2160
+    }
+  ],
+  "verdicts": [
+    "yes",
+    "yes-with-credit",
+    "restricted",
+    "clearance-required",
+    "check-terms",
+    "no"
+  ],
+  "verdictLabels": {
+    "yes": "Commercial use OK",
+    "yes-with-credit": "Commercial use OK with credit",
+    "restricted": "Restricted: read the conditions",
+    "clearance-required": "Needs a paid licence or releases",
+    "check-terms": "Unclear: check the terms",
+    "no": "Non-commercial only"
+  }
+}

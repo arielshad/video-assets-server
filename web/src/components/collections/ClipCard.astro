@@ -1,0 +1,68 @@
+---
+// One saved search result on a collection or source page: the poster (from
+// the source), badges for resolution, orientation and length, and the licence
+// verdict. Hovering or focusing the card plays the source's muted preview
+// (src/scripts/preview-video.ts); the card opens the clip in the search app
+// (player, renditions, credit line), the footer links to its source page.
+import { providerName, type SnapshotClip } from "@/lib/collections";
+import { VERDICT_LABELS, categoryLabel, durationText, orientationLabel, resolutionBadge, verdictTone, type Verdict } from "@/lib/vocab";
+
+interface Props {
+  clip: SnapshotClip;
+  /** Load eagerly (the first row is above the fold). */
+  eager?: boolean;
+}
+const { clip: a, eager = false } = Astro.props;
+const source = providerName(a.provider);
+const verdict = (a.license?.verdict ?? "check-terms") as Verdict;
+const tone = verdictTone(verdict);
+const toneClass = { green: "border-success/40 text-success", amber: "border-warning/40 text-warning", red: "border-destructive/40 text-destructive" }[tone];
+const tall = a.orientation === "portrait" || a.orientation === "square";
+const res = resolutionBadge(a.width, a.height);
+const dur = durationText(a.durationSec);
+const meta = [source, a.year ? String(a.year) : "", categoryLabel(a.category)].filter(Boolean).join(" · ");
+---
+<li class="group flex flex-col overflow-hidden rounded-xl border bg-card/50 transition hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5" data-preview-card data-preview={a.previewUrl} data-preview-type={a.previewType} data-fit={tall ? "contain" : "cover"}>
+  <a href={`/search?clip=${encodeURIComponent(a.id)}`} class="flex flex-1 flex-col focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring" aria-label={`${a.title}, ${meta}. Watch it and get the files`}>
+    <div class="relative aspect-video w-full overflow-hidden bg-muted" data-preview-box>
+      {a.posterUrl ? (
+        <>
+          {tall && <img src={a.posterUrl} alt="" aria-hidden="true" width="480" height="270" loading={eager ? "eager" : "lazy"} decoding="async" referrerpolicy="no-referrer" class="absolute inset-0 size-full scale-110 object-cover opacity-40 blur-xl" />}
+          <img
+            src={a.posterUrl}
+            alt={`Still from “${a.title}” on ${source}`}
+            width="480"
+            height="270"
+            loading={eager ? "eager" : "lazy"}
+            decoding="async"
+            referrerpolicy="no-referrer"
+            class:list={["absolute inset-0 size-full transition duration-500 group-hover:scale-[1.03]", tall ? "object-contain" : "object-cover"]}
+          />
+        </>
+      ) : (
+        <span class="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-[radial-gradient(120%_120%_at_0%_0%,color-mix(in_oklch,var(--color-primary)_22%,transparent),transparent_60%),radial-gradient(120%_120%_at_100%_100%,color-mix(in_oklch,var(--color-brand-2)_18%,transparent),transparent_60%)] text-muted-foreground">
+          <svg class="size-7 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2.18" /><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5" /></svg>
+          <span class="text-[11px]">{a.previewUrl ? "Hover to preview" : "Open to watch"}</span>
+        </span>
+      )}
+      {(res || a.orientation) && (
+        <span class="pointer-events-none absolute left-2 top-2 z-10 rounded-md bg-black/65 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-white backdrop-blur-sm">
+          {[res, a.orientation && a.orientation !== "landscape" ? orientationLabel(a.orientation) : ""].filter(Boolean).join(" · ")}
+        </span>
+      )}
+      {dur && <span class="pointer-events-none absolute bottom-2 right-2 z-10 rounded-md bg-black/65 px-1.5 py-0.5 font-mono text-[10px] tabular-nums text-white backdrop-blur-sm">{dur}</span>}
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-3">
+      <h3 class="line-clamp-2 text-sm font-medium leading-snug group-hover:text-primary">{a.title}</h3>
+      <p class="truncate text-xs text-muted-foreground">{meta}{a.author && <> · {a.author}</>}</p>
+      <div class="mt-auto flex flex-wrap gap-1 pt-1">
+        <span class:list={["inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium", toneClass]} title={a.license ? `${a.license.name}: ${VERDICT_LABELS[verdict]}` : "No licence stated"}>{VERDICT_LABELS[verdict]}</span>
+        {a.license?.editorial && <span class="inline-flex items-center rounded-full border border-warning/40 px-2 py-0.5 text-[10px] font-medium text-warning" title="People, insignia or brands without releases: not for ads">Editorial</span>}
+        {a.license && <span class="inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium">{a.license.name}</span>}
+      </div>
+    </div>
+  </a>
+  <a href={a.url} rel="noopener" class="border-t px-3 py-2 text-xs text-muted-foreground transition hover:text-foreground">
+    View on {source} <span aria-hidden="true">↗</span>
+  </a>
+</li>

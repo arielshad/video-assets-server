@@ -1,0 +1,86 @@
+{
+  "nasa": {
+    "about": "The NASA Image and Video Library (images.nasa.gov) is NASA's public archive of photos, audio and about nine thousand videos from its centres: rocket launches, missions and spacewalks, astronauts at work, Earth from the International Space Station, the Sun, aircraft research and mission animations. Every video comes as the same set of MP4 (H.264) files, from the original master down to 1080p, 720p, 360p and small previews.",
+    "bestFor": "Launches, astronauts, spacecraft and mission footage; Earth from orbit; science explainers. Clips are typically 1080p or 4K masters with sound, from short cutaways to full mission briefings.",
+    "licence": "NASA media is generally not copyrighted in the US, and NASA allows commercial use with credit. It asks you not to use the NASA insignia or logotype, not to imply endorsement, and to get permission before using identifiable astronauts or staff in advertising. Some videos are copyrighted by partners such as launch providers or universities, named in the credit line: those are marked 'check the terms'. All NASA clips carry the editorial flag here because of the endorsement and insignia rules.",
+    "searching": "Through NASA's official, keyless API at images-api.nasa.gov. A search returns titles, descriptions, keywords, dates and a poster; opening a clip reads its file list and its technical metadata (frame size, length, frame rate, audio). Hover previews play NASA's small preview MP4 straight from images-assets.nasa.gov.",
+    "examples": [
+      { "label": "Rocket launches", "q": "rocket launch", "category": "space.launch" },
+      { "label": "Earth from the ISS", "q": "earth from space station" },
+      { "label": "Spacewalks", "q": "spacewalk" },
+      { "label": "Solar flares", "q": "solar flare" },
+      { "label": "Aircraft research", "q": "aircraft flight test" }
+    ],
+    "guides": ["nasa-footage-rules", "editorial-vs-commercial-footage"]
+  },
+  "nasasvs": {
+    "about": "NASA's Scientific Visualization Studio (svs.gsfc.nasa.gov), at Goddard Space Flight Center, publishes about ten thousand pages of visualisations and animations made from scientific data: weather and climate, ocean currents and sea level, the Sun, the Moon's terrain, planets and galaxies. Most pages carry 1080p and 4K MP4s, often at 60 frames per second, and some include vertical versions.",
+    "bestFor": "Striking, explanation-free motion backgrounds and science b-roll: rotating Earths, hurricanes, solar activity, lunar flyovers, star fields. No people or logos, which makes them easy to use.",
+    "licence": "Produced by NASA and in the public domain in the US. Credit 'NASA's Scientific Visualization Studio'. Because data visualisations show no people or insignia, they are not flagged editorial; a few pages credit partner organisations, so check the page's credits for those.",
+    "searching": "Through the studio's JSON API. Its search returns titles and descriptions but no media, so the first results of each search are opened to read their poster, frame size and files (cached for a day); later results get their media when you open them, which is why some cards have no poster.",
+    "examples": [
+      { "label": "Rotating Earth", "q": "rotating earth" },
+      { "label": "Hurricanes", "q": "hurricane" },
+      { "label": "The Moon", "q": "moon" },
+      { "label": "Sea surface temperature", "q": "sea surface temperature" },
+      { "label": "Vertical versions", "q": "vertical" }
+    ],
+    "guides": ["nasa-footage-rules", "vertical-video-reels-tiktok-shorts"]
+  },
+  "wikimediacommons": {
+    "about": "Wikimedia Commons is the media library behind Wikipedia, with about four hundred thousand video files uploaded by individuals, institutions and archives: nature, science, timelapses, history and documentary footage. Every file records its licence and author, and the site transcodes uploads into WebM renditions from 240p up to 4K.",
+    "bestFor": "Nature and timelapse footage, scientific and educational clips, historic footage that institutions have digitised, and anything encyclopedic. Originals are WebM or Ogg Theora, never MP4.",
+    "licence": "Set per file and recorded by Commons: CC0, public domain, CC BY and CC BY-SA are the most common. CC BY clips need a credit line, which each result carries. CC BY-SA is marked restricted, because a video that includes it would have to be released under the same licence. Commons' community reviews uploads and deletes files whose licence can't be confirmed, so licences there are more reliable than an anonymous upload elsewhere, but not infallible.",
+    "searching": "Through the public MediaWiki API, one request per search with each file's original, size, length, poster, licence and transcodes. A minimum resolution goes into the search itself. Wikimedia limits anonymous API clients, so this server sends a descriptive User-Agent, retries once on a short rate limit and caches results.",
+    "examples": [
+      { "label": "Ocean waves", "q": "ocean waves", "category": "nature.ocean" },
+      { "label": "Timelapses", "q": "timelapse" },
+      { "label": "Cities at night", "q": "city night" },
+      { "label": "Wildlife", "q": "bird", "category": "nature.animals" },
+      { "label": "CC0 and public domain only", "q": "clouds", "commercial": true }
+    ],
+    "guides": ["credit-cc-by-video", "free-stock-footage-commercial-use", "video-resolution-codecs-containers"]
+  },
+  "internetarchive": {
+    "about": "The Internet Archive's moving-image collection holds millions of items: films, TV captures, home movies and community uploads. This server searches only the movies whose licence is CC0, public domain or CC BY(-SA), which still covers about half a million items, including the Prelinger Archives' ten thousand or so industrial, educational and advertising films from 1903 to the 1980s, newsreels and stock-footage uploads.",
+    "bestFor": "Period footage: newsreels, mid-century educational and industrial films, travelogues, home movies, old advertising. Expect SD transfers in 4:3, often black and white, with sound.",
+    "licence": "Licences on Internet Archive items are set by their uploaders, and some modern films carry a public-domain mark they shouldn't, so they are capped at 'check the terms'. The Prelinger collection is the exception: its curators state the films are public domain. Historic footage shows people and brands without releases, so it is flagged editorial.",
+    "searching": "Through advancedsearch.php, restricted to CC0, public-domain and CC BY(-SA) licences, with TV captures, trailers and fan uploads excluded. Search results carry a poster but no playable file, so cards have no hover preview: opening a clip reads its file list (MP4 and Ogg derivatives) and starts the player.",
+    "examples": [
+      { "label": "Newsreels", "q": "newsreel", "category": "archive.newsreel" },
+      { "label": "Prelinger films", "q": "prelinger" },
+      { "label": "1950s kitchens", "q": "1950s kitchen" },
+      { "label": "Factories", "q": "factory" },
+      { "label": "Home movies", "q": "home movie" }
+    ],
+    "guides": ["prelinger-public-domain-films", "editorial-vs-commercial-footage"]
+  },
+  "pexels": {
+    "about": "Pexels is a free stock site with hundreds of thousands of videos up to 4K, many of them vertical, contributed by photographers and filmmakers.",
+    "bestFor": "Modern lifestyle, people, cities, food and nature clips, especially vertical footage for social media.",
+    "licence": "The Pexels License allows free commercial use without credit, with restrictions such as not selling unaltered copies and not showing identifiable people in an offensive way.",
+    "searching": "Link only: its API needs a key (new key issuance was paused when last checked) and its terms forbid building a similar or competing service, so every search links to the same query on Pexels instead of fetching results.",
+    "examples": []
+  },
+  "pixabay": {
+    "about": "Pixabay is a free stock site with hundreds of thousands of videos and motion backgrounds up to 4K.",
+    "bestFor": "Nature, backgrounds, abstract loops and everyday b-roll.",
+    "licence": "The Pixabay Content License allows free commercial use without credit, with restrictions such as not selling or redistributing the clips as they are.",
+    "searching": "Link only: its API needs a key, is meant for real human requests and has to be cached, and its terms limit automated use, so every search links to the same query on Pixabay.",
+    "examples": []
+  },
+  "europeana": {
+    "about": "Europeana aggregates the digitised collections of European museums, archives and broadcasters, including films and newsreels; about thirteen thousand of its videos are openly reusable.",
+    "bestFor": "European newsreels, early film and cultural-heritage footage.",
+    "licence": "Rights statements are set per item by the contributing institution, from public domain and CC0 to in-copyright.",
+    "searching": "Link only for now: its search API needs a key, and many items point at a provider's page or a hosted player rather than a file. Every search links to the same query on Europeana.",
+    "examples": []
+  },
+  "loc": {
+    "about": "The Library of Congress holds early films, newsreels and US government footage, much of it in the public domain.",
+    "bestFor": "Early American film, government and historical footage.",
+    "licence": "Set per item; many films are public domain or have no known restrictions, but check each item's rights statement.",
+    "searching": "Link only: its search API is tightly rate-limited and challenges requests from cloud servers, so every search links to the same query on loc.gov.",
+    "examples": []
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "integrated": [
+    {
+      "id": "nasa",
+      "name": "NASA Image and Video Library",
+      "homepage": "https://images.nasa.gov",
+      "access": "api",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "nasasvs",
+      "name": "NASA Scientific Visualization Studio",
+      "homepage": "https://svs.gsfc.nasa.gov",
+      "access": "api",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "wikimediacommons",
+      "name": "Wikimedia Commons",
+      "homepage": "https://commons.wikimedia.org",
+      "access": "api",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "internetarchive",
+      "name": "Internet Archive",
+      "homepage": "https://archive.org",
+      "access": "api",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "pexels",
+      "name": "Pexels",
+      "homepage": "https://www.pexels.com/videos/",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "pixabay",
+      "name": "Pixabay",
+      "homepage": "https://pixabay.com/videos/",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "coverr",
+      "name": "Coverr",
+      "homepage": "https://coverr.co",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "mixkit",
+      "name": "Mixkit",
+      "homepage": "https://mixkit.co/free-stock-video/",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "freepik",
+      "name": "Freepik videos (Videvo)",
+      "homepage": "https://www.freepik.com/videos",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "vecteezy",
+      "name": "Vecteezy",
+      "homepage": "https://www.vecteezy.com/free-videos",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "videezy",
+      "name": "Videezy",
+      "homepage": "https://www.videezy.com",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "europeana",
+      "name": "Europeana",
+      "homepage": "https://www.europeana.eu",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "loc",
+      "name": "Library of Congress",
+      "homepage": "https://www.loc.gov/film-and-videos/",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "actionvfx",
+      "name": "ActionVFX",
+      "homepage": "https://www.actionvfx.com",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "productioncrate",
+      "name": "ProductionCrate (FootageCrate)",
+      "homepage": "https://footagecrate.com",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "shutterstock",
+      "name": "Shutterstock",
+      "homepage": "https://www.shutterstock.com/video",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "adobestock",
+      "name": "Adobe Stock",
+      "homepage": "https://stock.adobe.com/video",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "gettyimages",
+      "name": "Getty Images",
+      "homepage": "https://www.gettyimages.com/footage",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "istock",
+      "name": "iStock",
+      "homepage": "https://www.istockphoto.com/stock-videos",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "storyblocks",
+      "name": "Storyblocks",
+      "homepage": "https://www.storyblocks.com/video",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "pond5",
+      "name": "Pond5",
+      "homepage": "https://www.pond5.com",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "envato",
+      "name": "Envato Elements",
+      "homepage": "https://elements.envato.com/stock-video",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    },
+    {
+      "id": "artgrid",
+      "name": "Artgrid",
+      "homepage": "https://artgrid.io",
+      "access": "link",
+      "addedAt": "2026-10-28",
+      "addedBy": "launch"
+    }
+  ],
+  "rejected": [
+    {
+      "name": "Openverse",
+      "homepage": "https://openverse.org",
+      "reason": "No video: the API serves images and audio only.",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "name": "Videvo",
+      "homepage": "https://www.videvo.net",
+      "reason": "Redirects to freepik.com/videos (listed as link-only Freepik).",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "name": "Mazwai",
+      "homepage": "https://mazwai.com",
+      "reason": "Redirects to freepik.com/videos (listed as link-only Freepik).",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "name": "Life of Vids",
+      "homepage": "https://www.lifeofvids.com",
+      "reason": "Site resets the connection or answers 503: appears dead.",
+      "checkedAt": "2026-10-28",
+      "recheckAfter": "2026-11-27"
+    },
+    {
+      "name": "Dareful",
+      "homepage": "https://www.dareful.com",
+      "reason": "About 240 clips, downloads are Mux HLS streams rather than files; too small to integrate.",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "name": "NOAA",
+      "homepage": "https://www.noaa.gov",
+      "reason": "No video API; footage lives on YouTube and Vimeo.",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "name": "ESA",
+      "homepage": "https://www.esa.int/ESA_Multimedia/Videos",
+      "reason": "No API, and ESA's general terms forbid commercial use without written permission; its CC BY-SA items reach users through Wikimedia Commons.",
+      "checkedAt": "2026-10-28"
+    },
+    {
+      "name": "LottieFiles",
+      "homepage": "https://lottiefiles.com",
+      "reason": "Vector animations (JSON), not video: a separate asset type, later.",
+      "checkedAt": "2026-10-28"
+    }
+  ]
+}
