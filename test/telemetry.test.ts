@@ -38,7 +38,7 @@ describe("telemetry opt-in", () => {
   });
 
   it("uses a browser-shaped User-Agent (Umami drops bot-like ones) that names the OS", () => {
-    expect(telemetryUserAgent("1.2.3", "linux", "x64")).toBe("Mozilla/5.0 (X11; Linux x86_64) sounds/1.2.3");
+    expect(telemetryUserAgent("1.2.3", "linux", "x64")).toBe("Mozilla/5.0 (X11; Linux x86_64) video-assets-server/1.2.3");
     expect(telemetryUserAgent("1.2.3", "darwin", "arm64")).toContain("Macintosh");
     expect(telemetryUserAgent("1.2.3", "win32", "x64")).toContain("Windows NT 10.0");
   });
@@ -46,9 +46,9 @@ describe("telemetry opt-in", () => {
 
 describe("UmamiTelemetry", () => {
   const response: SearchResponse = {
-    query: "secret project dark kick",
-    filters: { categories: ["drums.kick"] },
-    results: [{ id: "freesound:secret_kick" } as never],
+    query: "secret project dark ocean",
+    filters: { categories: ["nature.ocean"] },
+    results: [{ id: "wikimediacommons:secret_ocean" } as never],
     providers: [],
   };
 
@@ -56,10 +56,10 @@ describe("UmamiTelemetry", () => {
     const { sent, fetch } = recorder();
     const t = new UmamiTelemetry({ version: "9.9.9", mode: "stdio", websiteId: WEBSITE_ID, host: "https://umami.example", fetch });
     t.started();
-    t.search({ surface: "mcp", client: "claude-code", query: response.query, categories: ["drums.kick", "drums.snare"], response, tookMs: 120 });
-    t.clipView({ surface: "mcp", client: "claude-code", provider: "freesound", found: true });
-    t.download({ surface: "mcp", client: "claude-code", provider: "freesound", kind: "local" });
-    t.toolCall({ tool: "search_samples", client: "claude-code", outcome: "ok", tookMs: 120 });
+    t.search({ surface: "mcp", client: "claude-code", query: response.query, categories: ["nature.ocean", "nature.sky"], response, tookMs: 120 });
+    t.clipView({ surface: "mcp", client: "claude-code", provider: "wikimediacommons", found: true });
+    t.download({ surface: "mcp", client: "claude-code", provider: "wikimediacommons", kind: "local" });
+    t.toolCall({ tool: "search_videos", client: "claude-code", outcome: "ok", tookMs: 120 });
     t.httpRequest();
     t.pageView();
     await flush();
@@ -72,12 +72,12 @@ describe("UmamiTelemetry", () => {
       url: "/mcp",
       name: "search",
       // Categories collapse to their top level (bounded labels).
-      data: { surface: "mcp", client: "claude-code", category: "drums", free_only: "false", has_results: "true", version: "9.9.9" },
+      data: { surface: "mcp", client: "claude-code", category: "nature", free_only: "false", has_results: "true", version: "9.9.9" },
     });
     expect(payload(sent[0]!).data).toEqual({ mode: "stdio", version: "9.9.9" });
     const all = sent.map((s) => String(s.init.body)).join("\n");
-    expect(all).not.toMatch(/secret|dark kick/);
-    expect((sent[0]!.init.headers as Record<string, string>)["user-agent"]).toMatch(/^Mozilla\/5\.0 \(.+\) sounds\/9\.9\.9$/);
+    expect(all).not.toMatch(/secret|dark ocean/);
+    expect((sent[0]!.init.headers as Record<string, string>)["user-agent"]).toMatch(/^Mozilla\/5\.0 \(.+\) video-assets-server\/9\.9\.9$/);
   });
 
   it("stops trying after three failures in a row, and a success resets the count", async () => {
@@ -111,10 +111,10 @@ describe("browser telemetry on self-hosted installs", () => {
     expect(head).not.toContain("data-domains");
     const code = /<script>([\s\S]*?)<\/script>/.exec(head)![1]!;
     const win: { umamiBeforeSend?: (type: string, p: Record<string, string>) => Record<string, string> | null } = {};
-    new Function("window", "document", "location", code)(win, { addEventListener() {} }, { href: "http://sounds.corp.internal:8787/" });
+    new Function("window", "document", "location", code)(win, { addEventListener() {} }, { href: "http://video.corp.internal:8787/" });
     const out = win.umamiBeforeSend!("event", {
-      hostname: "sounds.corp.internal",
-      url: "http://sounds.corp.internal:8787/search?q=secret&utm_source=wiki",
+      hostname: "video.corp.internal",
+      url: "http://video.corp.internal:8787/search?q=secret&utm_source=wiki",
       referrer: "https://wiki.corp.internal/audio-tools",
       title: "“secret”: clips",
     });

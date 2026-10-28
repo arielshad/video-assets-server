@@ -1,0 +1,513 @@
+{
+  "AVAIL:Album": [
+    "TROPICS"
+  ],
+  "AVAIL:Center": "KSC",
+  "AVAIL:DateCreated": "2023:05:07",
+  "AVAIL:Description": "TROPICS Rocket Launch",
+  "AVAIL:Description508": "",
+  "AVAIL:Keywords": [
+    "TROPICS",
+    "Rocket Launch",
+    "Rocket",
+    "New Zealand",
+    "Rocket Lab",
+    "NASA"
+  ],
+  "AVAIL:Location": "Rocket Lab (New Zealand)",
+  "AVAIL:MediaType": "video",
+  "AVAIL:NASAID": "KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+  "AVAIL:Owner": "ilwatson",
+  "AVAIL:Photographer": "Rocket Lab",
+  "AVAIL:SecondaryCreator": "",
+  "AVAIL:Title": "TROPICS Rocket Launch",
+  "Composite:AvgBitrate": "28.1 Mbps",
+  "Composite:ImageSize": "1920x1080",
+  "Composite:Megapixels": 2.1,
+  "Composite:Rotation": 0,
+  "ExifTool:ExifToolVersion": 12.16,
+  "File:Directory": "/tmp",
+  "File:FileAccessDate": "2023:05:09 19:28:17+00:00",
+  "File:FileInodeChangeDate": "2023:05:09 19:28:19+00:00",
+  "File:FileModifyDate": "2023:05:09 19:28:19+00:00",
+  "File:FileName": "tmp3pd7zkf3",
+  "File:FilePermissions": "rw-------",
+  "File:FileSize": "101 MiB",
+  "File:FileType": "MP4",
+  "File:FileTypeExtension": "mp4",
+  "File:MIMEType": "video/mp4",
+  "QuickTime:AudioBitsPerSample": 16,
+  "QuickTime:AudioChannels": 2,
+  "QuickTime:AudioFormat": "mp4a",
+  "QuickTime:AudioSampleRate": 48000,
+  "QuickTime:Balance": 0,
+  "QuickTime:BitDepth": 24,
+  "QuickTime:CompatibleBrands": [
+    "mp42",
+    "mp41"
+  ],
+  "QuickTime:CompressorID": "avc1",
+  "QuickTime:CompressorName": "AVC Coding",
+  "QuickTime:Copyright": "For copyright and restrictions, refer to http://www.nasa.gov/multimedia/guidelines/index.html",
+  "QuickTime:CreateDate": "2023:05:09 19:15:56",
+  "QuickTime:CurrentTime": "0 s",
+  "QuickTime:Duration": "0:00:30",
+  "QuickTime:GraphicsMode": "srcCopy",
+  "QuickTime:HandlerDescription": "Alias Data Handler",
+  "QuickTime:HandlerType": "Alias Data",
+  "QuickTime:ImageHeight": 1080,
+  "QuickTime:ImageWidth": 1920,
+  "QuickTime:MajorBrand": "MP4 v2 [ISO 14496-14]",
+  "QuickTime:MatrixStructure": "1 0 0 0 1 0 0 0 1",
+  "QuickTime:MediaCreateDate": "2023:05:09 19:15:56",
+  "QuickTime:MediaDataOffset": 38034,
+  "QuickTime:MediaDataSize": 105756046,
+  "QuickTime:MediaDuration": "0:00:30",
+  "QuickTime:MediaHeaderVersion": 0,
+  "QuickTime:MediaLanguageCode": "eng",
+  "QuickTime:MediaModifyDate": "2023:05:09 19:15:56",
+  "QuickTime:MediaTimeScale": 48000,
+  "QuickTime:MinorVersion": "0.0.0",
+  "QuickTime:ModifyDate": "2023:05:09 19:15:59",
+  "QuickTime:MovieHeaderVersion": 0,
+  "QuickTime:NextTrackID": 3,
+  "QuickTime:OpColor": "0 0 0",
+  "QuickTime:PosterTime": "0 s",
+  "QuickTime:PreferredRate": 1,
+  "QuickTime:PreferredVolume": "100.00%",
+  "QuickTime:PreviewDuration": "0 s",
+  "QuickTime:PreviewTime": "0 s",
+  "QuickTime:SelectionDuration": "0 s",
+  "QuickTime:SelectionTime": "0 s",
+  "QuickTime:SourceImageHeight": 1080,
+  "QuickTime:SourceImageWidth": 1920,
+  "QuickTime:StartTimeSampleSize": 1,
+  "QuickTime:StartTimeScale": 50,
+  "QuickTime:StartTimecode": "00:00:00:00",
+  "QuickTime:TimeScale": 90000,
+  "QuickTime:Title": "TROPICS Rocket Launch",
+  "QuickTime:TrackCreateDate": "2023:05:09 19:15:56",
+  "QuickTime:TrackDuration": "0:00:30",
+  "QuickTime:TrackHeaderVersion": 0,
+  "QuickTime:TrackID": 1,
+  "QuickTime:TrackLayer": 0,
+  "QuickTime:TrackModifyDate": "2023:05:09 19:15:56",
+  "QuickTime:TrackVolume": "0.00%",
+  "QuickTime:VideoFrameRate": 50,
+  "QuickTime:XResolution": 72,
+  "QuickTime:YResolution": 72,
+  "SourceFile": "/tmp/tmp3pd7zkf3",
+  "XMP:AltTimecode": {
+    "TimeFormat": "50 fps",
+    "TimeValue": "00:00:00:00"
+  },
+  "XMP:AudioChannelType": "Stereo",
+  "XMP:AudioSampleRate": 48000,
+  "XMP:AudioSampleType": "16-bit integer",
+  "XMP:City": "KSC",
+  "XMP:CreateDate": "2023:05:09 15:15:56-04:00",
+  "XMP:Creator": [
+    "Rocket Lab"
+  ],
+  "XMP:Credit": "Rocket Lab",
+  "XMP:DateCreated": "2023:05:07",
+  "XMP:DerivedFrom": {
+    "DocumentID": "xmp.did:47e2d0ef-c2c6-5d46-bf04-db7d324baa65",
+    "InstanceID": "xmp.iid:47e2d0ef-c2c6-5d46-bf04-db7d324baa65",
+    "OriginalDocumentID": "xmp.did:86fffefe-2200-ac41-b9ea-72a8355007ba"
+  },
+  "XMP:Description": "TROPICS Rocket Launch",
+  "XMP:DocumentID": "0f1fc9f8-fd57-860b-5e6e-a17b000000bb",
+  "XMP:Duration": {
+    "Scale": 1.11111111111111e-05,
+    "Value": 2707200
+  },
+  "XMP:Format": "H.264",
+  "XMP:Headline": "AFS-8/101",
+  "XMP:History": [
+    {
+      "Action": "saved",
+      "Changed": "/",
+      "InstanceID": "9f52e951-5186-c4ce-ae1a-e4b2000000e8",
+      "SoftwareAgent": "Adobe Photoshop 23.2 (20220118.orig.521 930aa48)  (Windows)",
+      "When": "2023:05:09 15:15:59-04:00"
+    },
+    {
+      "Action": "saved",
+      "Changed": "/metadata",
+      "InstanceID": "xmp.iid:86fffefe-2200-ac41-b9ea-72a8355007ba",
+      "SoftwareAgent": "Adobe Photoshop 23.2 (20220118.orig.521 930aa48)  (Windows)",
+      "When": "2023:05:09 15:15:45-04:00"
+    },
+    {
+      "Action": "saved",
+      "Changed": "/",
+      "InstanceID": "xmp.iid:47e2d0ef-c2c6-5d46-bf04-db7d324baa65",
+      "SoftwareAgent": "Adobe Photoshop 23.2 (20220118.orig.521 930aa48)  (Windows)",
+      "When": "2023:05:09 15:15:45-04:00"
+    },
+    {
+      "Action": "saved",
+      "Changed": "/",
+      "InstanceID": "xmp.iid:303b10e1-66e9-c246-941f-8307e8c31933",
+      "SoftwareAgent": "Adobe Photoshop 23.2 (20220118.orig.521 930aa48)  (Windows)",
+      "When": "2023:05:09 15:15:59-04:00"
+    },
+    {
+      "Action": "saved",
+      "Changed": "/metadata",
+      "InstanceID": "xmp.iid:dc325d4d-d66e-fd43-ab3b-5fd9597e6eaf",
+      "SoftwareAgent": "Adobe Photoshop 23.2 (20220118.orig.521 930aa48)  (Windows)",
+      "When": "2023:05:09 15:15:59-04:00"
+    }
+  ],
+  "XMP:Ingredients": [
+    {
+      "DocumentID": "f5b4a96f-84ac-df66-a0f2-91fb000000b7",
+      "FilePath": "KSC-20230507-RV-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130.mp4",
+      "FromPart": "time:0d4831384320000f254016000000",
+      "InstanceID": "c10624c3-e4bc-800e-c569-7e31000000e4",
+      "MaskMarkers": "None",
+      "ToPart": "time:2794176000000f254016000000d4831384320000f254016000000"
+    },
+    {
+      "DocumentID": "f5b4a96f-84ac-df66-a0f2-91fb000000b7",
+      "FilePath": "KSC-20230507-RV-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130.mp4",
+      "FromPart": "time:0d4831384320000f254016000000",
+      "InstanceID": "c10624c3-e4bc-800e-c569-7e31000000e4",
+      "MaskMarkers": "None",
+      "ToPart": "time:2794176000000f254016000000d4831384320000f254016000000"
+    },
+    {
+      "DocumentID": "adobe:docid:photoshop:6ef0678e-d387-b44f-aa46-001db53e1ff2",
+      "FilePath": "KSC-20230507-RV-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130.psd",
+      "FromPart": "time:0",
+      "InstanceID": "xmp.iid:556e6385-55e6-9947-b52c-fe73118baab0",
+      "MaskMarkers": "None",
+      "ToPart": "time:0d2540160000000f254016000000"
+    }
+  ],
+  "XMP:InstanceID": "xmp.iid:dc325d4d-d66e-fd43-ab3b-5fd9597e6eaf",
+  "XMP:Instructions": "05/07/2030",
+  "XMP:Location": "Rocket Lab (New Zealand)",
+  "XMP:MacAtom": {
+    "ApplicationCode": 1347449455,
+    "InvocationAppleEvent": 1129468018
+  },
+  "XMP:MetadataDate": "2023:05:09 15:15:59-04:00",
+  "XMP:ModifyDate": "2023:05:09 15:15:59-04:00",
+  "XMP:Orientation": "Horizontal (normal)",
+  "XMP:OriginalDocumentID": "xmp.did:a11f2346-6c37-c84b-869f-81175667d2c2",
+  "XMP:Pantry": [
+    {
+      "DocumentID": "0bfcbd4b-9e9b-a8b7-e686-e69b00000043",
+      "History": [
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "6ad552d7-80fe-9c79-e666-fff300000070",
+          "SoftwareAgent": "Adobe Premiere Pro 2023.0 (Windows)",
+          "When": "2023:05:08 17:18:19+12:00"
+        }
+      ],
+      "InstanceID": "6ad552d7-80fe-9c79-e666-fff300000070",
+      "OriginalDocumentID": "xmp.did:473871e0-a679-2143-b362-89e9a2aa54b9",
+      "XMP-tiff:Orientation": "Horizontal (normal)",
+      "XMP-xmp:CreateDate": "2023:05:08 12:59:32Z",
+      "XMP-xmp:MetadataDate": "2023:05:08 17:18:19+12:00",
+      "XMP-xmp:ModifyDate": "2023:05:08 17:18:19+12:00",
+      "XMP-xmpDM:Duration": {
+        "Scale": 0.001,
+        "Value": 52100
+      }
+    },
+    {
+      "DerivedFrom": {
+        "DocumentID": "xmp.did:fa3cea29-e5fb-1744-ae88-23ee1ece0983",
+        "InstanceID": "xmp.iid:fa3cea29-e5fb-1744-ae88-23ee1ece0983",
+        "OriginalDocumentID": "xmp.did:fa3cea29-e5fb-1744-ae88-23ee1ece0983"
+      },
+      "DocumentID": "f5b4a96f-84ac-df66-a0f2-91fb000000b7",
+      "History": [
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "62c47849-eb41-ac2c-d5fd-b38300000084",
+          "SoftwareAgent": "Adobe Premiere Pro 2023.0 (Windows)",
+          "When": "2023:05:08 18:05:47+12:00"
+        },
+        {
+          "Action": "created",
+          "InstanceID": "xmp.iid:fa3cea29-e5fb-1744-ae88-23ee1ece0983",
+          "SoftwareAgent": "Adobe Premiere Pro 2023.0 (Windows)",
+          "When": "2023:05:08 18:05:28+12:00"
+        },
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "xmp.iid:4ba76d32-400f-b94a-b0be-d6a1446a4b47",
+          "SoftwareAgent": "Adobe Premiere Pro 2023.0 (Windows)",
+          "When": "2023:05:08 18:05:47+12:00"
+        },
+        {
+          "Action": "saved",
+          "Changed": "/metadata",
+          "InstanceID": "xmp.iid:62ed0e12-b14e-3c4d-9dc7-5299ef52bbf4",
+          "SoftwareAgent": "Adobe Premiere Pro 2023.0 (Windows)",
+          "When": "2023:05:08 18:05:47+12:00"
+        },
+        {
+          "Action": "modified",
+          "Parameters": "unknown modifications"
+        },
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "c10624c3-e4bc-800e-c569-7e31000000e4",
+          "SoftwareAgent": "Adobe Photoshop 23.2 (20220118.orig.521 930aa48)  (Windows)",
+          "When": "2023:05:09 14:41:32-04:00"
+        }
+      ],
+      "Ingredients": [
+        {
+          "DocumentID": "0bfcbd4b-9e9b-a8b7-e686-e69b00000043",
+          "FilePath": "DJI_0271.MOV",
+          "FromPart": "time:4851705600000f254016000000d4882187520000f254016000000",
+          "InstanceID": "6ad552d7-80fe-9c79-e666-fff300000070",
+          "MaskMarkers": "None",
+          "ToPart": "time:0d4882187520000f254016000000"
+        },
+        {
+          "DocumentID": "4abde63b-ec55-c304-1452-205f00000043",
+          "FilePath": "F36_Cam2.mp4",
+          "FromPart": "time:11542268586240000f254016000000d1331043840000f254016000000",
+          "InstanceID": "xmp.iid:6a7e6216-bc92-8742-9d70-27346943d527",
+          "MaskMarkers": "None",
+          "ToPart": "time:0d1331043840000f254016000000"
+        },
+        {
+          "DocumentID": "4abde63b-ec55-c304-1452-205f00000043",
+          "FilePath": "F36_Cam2.mp4",
+          "FromPart": "time:11543665674240000f254016000000d4694215680000f254016000000",
+          "InstanceID": "xmp.iid:6a7e6216-bc92-8742-9d70-27346943d527",
+          "MaskMarkers": "None",
+          "ToPart": "time:1331043840000f254016000000d4694215680000f254016000000"
+        }
+      ],
+      "InstanceID": "c10624c3-e4bc-800e-c569-7e31000000e4",
+      "OriginalDocumentID": "xmp.did:0ceded4b-04dc-e94d-acd9-09f79d1f2332",
+      "XMP-creatorAtom:MacAtom": {
+        "ApplicationCode": 1347449455,
+        "InvocationAppleEvent": 1129468018
+      },
+      "XMP-creatorAtom:WindowsAtom": {
+        "Extension": ".prproj",
+        "InvocationFlags": "/L",
+        "UncProjectPath": "\\\\?\\C:\\Users\\j.rattray\\Downloads\\F36 L-0\\Video\\Drone Lift Off\\F36 Drone Lift Off.prproj"
+      },
+      "XMP-dc:Format": "H.264",
+      "XMP-tiff:Orientation": "Horizontal (normal)",
+      "XMP-xmp:CreateDate": "2023:05:08 06:05:47Z",
+      "XMP-xmp:CreatorTool": "Adobe Premiere Pro 2023.0 (Windows)",
+      "XMP-xmp:MetadataDate": "2023:05:09 14:41:32-04:00",
+      "XMP-xmp:ModifyDate": "2023:05:09 14:41:32-04:00",
+      "XMP-xmpDM:AltTimecode": {
+        "TimeFormat": "50 fps",
+        "TimeValue": "00:00:00:00"
+      },
+      "XMP-xmpDM:AudioChannelType": "Stereo",
+      "XMP-xmpDM:AudioSampleRate": 48000,
+      "XMP-xmpDM:AudioSampleType": "16-bit integer",
+      "XMP-xmpDM:Duration": {
+        "Scale": 1.11111111111111e-05,
+        "Value": 2183040
+      },
+      "XMP-xmpDM:ProjectRef": {
+        "Type": "Movie"
+      },
+      "XMP-xmpDM:StartTimeSampleSize": 1,
+      "XMP-xmpDM:StartTimeScale": 50,
+      "XMP-xmpDM:StartTimecode": {
+        "TimeFormat": "50 fps",
+        "TimeValue": "00:00:00:00"
+      },
+      "XMP-xmpDM:VideoFieldOrder": "Progressive",
+      "XMP-xmpDM:VideoFrameRate": 50.0,
+      "XMP-xmpDM:VideoFrameSize": {
+        "H": 1080,
+        "Unit": "pixel",
+        "W": 1920
+      },
+      "XMP-xmpDM:VideoPixelAspectRatio": 1
+    },
+    {
+      "DerivedFrom": {
+        "DocumentID": "uuid:291E42CCF9BC11DDBA94DD36BB4160E8",
+        "InstanceID": "uuid:B7C3720EF9BC11DDBA94DD36BB4160E8"
+      },
+      "DocumentID": "adobe:docid:photoshop:6ef0678e-d387-b44f-aa46-001db53e1ff2",
+      "History": [
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "xmp.iid:F77F11740720681192B0BCF3B0E870A1",
+          "SoftwareAgent": "Adobe Photoshop CS4 Macintosh",
+          "When": "2010:04:08 10:19:30-04:00"
+        },
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "xmp.iid:556e6385-55e6-9947-b52c-fe73118baab0",
+          "SoftwareAgent": "Adobe Photoshop 23.5 (Windows)",
+          "When": "2023:05:09 15:14:31-04:00"
+        }
+      ],
+      "InstanceID": "xmp.iid:556e6385-55e6-9947-b52c-fe73118baab0",
+      "OriginalDocumentID": "uuid:B7C37215F9BC11DDBA94DD36BB4160E8",
+      "XMP-dc:Format": "application/vnd.adobe.photoshop",
+      "XMP-exif:ColorSpace": "Uncalibrated",
+      "XMP-exif:PixelXDimension": 3840,
+      "XMP-exif:PixelYDimension": 2160,
+      "XMP-photoshop:ColorMode": "RGB",
+      "XMP-photoshop:DocumentAncestors": [
+        "4BEFEF4E75DA5F750AB8A9C98E8DBCB4"
+      ],
+      "XMP-photoshop:TextLayers": [
+        {
+          "LayerName": "TRT - 00:19 Date - 05/07/2023 KSC Contact - Leejay Lockhart (32",
+          "LayerText": "TRT - 00:19 Date - 05/07/2023 KSC Contact - Leejay Lockhart (321) 867-2468 More Info (website): www.nasa.gov/kennedy    "
+        },
+        {
+          "LayerName": "Orbital ATK dedicated its next Cygnus spacecraft to Sen. John G",
+          "LayerText": "Orbital ATK dedicated its next Cygnus spacecraft to Sen. John Glenn, one of NASA’s  original seven astronauts and an ardent supporter of spaceflight.  NASA, Orbital ATK and United Launch Alliance officials spoke about the importance  of the flight during a break in processing work inside the Payload Hazardous Servicing  Facility at NASA’s Kennedy Space Center in Florida. The spacecraft is targeted to launch  March 19 at 10:56 p.m. EDT aboard a United Launch Alliance Atlas V rocket.  It will carry more than 7,600 pounds of supplies to the International Space Station  including experiments across a wide range of sciences, equipment for the station and  supplies for the crew. The mission will be station’s second cargo delivery of 2017 and  Orbital ATK’s seventh contracted resupply mission for NASA. "
+        },
+        {
+          "LayerName": "Orbital ATK Dedicates Cygnus Spacecraft to John Glenn",
+          "LayerText": "Orbital ATK Dedicates Cygnus Spacecraft to John Glenn"
+        },
+        {
+          "LayerName": "TRT - 4:21 Date - 03/09/2017 Super(s) - NASA Center Contact - T",
+          "LayerText": "TRT - 4:21 Date - 03/09/2017 Super(s) - NASA Center Contact - Tracy Young (321) 867-2468    "
+        },
+        {
+          "LayerName": "TROPICS Launch Drone Shot (May 8, 2023, Mahia, New Zealand)",
+          "LayerText": "TROPICS Launch Drone Shot (May 8, 2023, Mahia, New Zealand)"
+        }
+      ],
+      "XMP-tiff:Orientation": "Horizontal (normal)",
+      "XMP-tiff:ResolutionUnit": "inches",
+      "XMP-tiff:XResolution": 72,
+      "XMP-tiff:YResolution": 72,
+      "XMP-xmp:CreateDate": "2009:02:11 10:56:05-05:00",
+      "XMP-xmp:CreatorTool": "Adobe Photoshop 23.5 (Windows)",
+      "XMP-xmp:MetadataDate": "2023:05:09 15:14:31-04:00",
+      "XMP-xmp:ModifyDate": "2023:05:09 15:14:31-04:00"
+    },
+    {
+      "DerivedFrom": {
+        "DocumentID": "94ba4636-640a-ec46-4a35-7cb10000004b",
+        "InstanceID": "da8de458-8689-f8c0-926f-3e9800000078",
+        "OriginalDocumentID": "xmp.did:a91d493e-29ee-9348-a4f1-e2167155651b"
+      },
+      "DocumentID": "4abde63b-ec55-c304-1452-205f00000043",
+      "History": [
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "9e6cdb7e-4d38-f830-f5f8-6de300000070",
+          "SoftwareAgent": "Adobe Adobe Media Encoder 2022.0 (Windows)",
+          "When": "2023:05:08 13:50:28+12:00"
+        },
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "da8de458-8689-f8c0-926f-3e9800000078",
+          "SoftwareAgent": "Adobe Adobe Media Encoder 2022.0 (Windows)",
+          "When": "2023:05:08 13:45:52+12:00"
+        },
+        {
+          "Action": "saved",
+          "Changed": "/",
+          "InstanceID": "xmp.iid:84e80fda-7fdf-8848-b7ec-1735784a4a23",
+          "SoftwareAgent": "Adobe Adobe Media Encoder 2022.0 (Windows)",
+          "When": "2023:05:08 13:50:28+12:00"
+        },
+        {
+          "Action": "saved",
+          "Changed": "/metadata",
+          "InstanceID": "xmp.iid:6a7e6216-bc92-8742-9d70-27346943d527",
+          "SoftwareAgent": "Adobe Adobe Media Encoder 2022.0 (Windows)",
+          "When": "2023:05:08 13:50:28+12:00"
+        }
+      ],
+      "InstanceID": "xmp.iid:6a7e6216-bc92-8742-9d70-27346943d527",
+      "OriginalDocumentID": "xmp.did:b026f4b8-286b-2c41-85d9-90a0e374ff54",
+      "XMP-dc:Format": "H.264",
+      "XMP-tiff:Orientation": "Horizontal (normal)",
+      "XMP-xmp:CreateDate": "2023:05:08 01:50:26Z",
+      "XMP-xmp:MetadataDate": "2023:05:08 13:50:28+12:00",
+      "XMP-xmp:ModifyDate": "2023:05:08 01:50:28Z",
+      "XMP-xmpDM:AltTapeName": "001\n",
+      "XMP-xmpDM:AltTimecode": {
+        "TimeFormat": "25 fps",
+        "TimeValue": "12:36:50:09"
+      },
+      "XMP-xmpDM:AudioChannelType": "Stereo",
+      "XMP-xmpDM:AudioSampleRate": 48000,
+      "XMP-xmpDM:AudioSampleType": "16-bit integer",
+      "XMP-xmpDM:Duration": {
+        "Scale": 1.11111111111111e-05,
+        "Value": 10936320
+      },
+      "XMP-xmpDM:StartTimeSampleSize": 1,
+      "XMP-xmpDM:StartTimeScale": 25,
+      "XMP-xmpDM:StartTimecode": {
+        "TimeFormat": "25 fps",
+        "TimeValue": "12:36:50:09"
+      },
+      "XMP-xmpDM:VideoFieldOrder": "Progressive",
+      "XMP-xmpDM:VideoFrameRate": 25.0,
+      "XMP-xmpDM:VideoFrameSize": {
+        "H": 1080,
+        "Unit": "pixel",
+        "W": 1920
+      },
+      "XMP-xmpDM:VideoPixelAspectRatio": 1
+    }
+  ],
+  "XMP:ProjectRef": {
+    "Type": "Movie"
+  },
+  "XMP:Rights": "For copyright and restrictions, refer to http://www.nasa.gov/multimedia/guidelines/index.html",
+  "XMP:Source": "Digital Moving Image",
+  "XMP:StartTimeSampleSize": 1,
+  "XMP:StartTimeScale": 50,
+  "XMP:StartTimecode": {
+    "TimeFormat": "50 fps",
+    "TimeValue": "00:00:00:00"
+  },
+  "XMP:Subject": [
+    "TROPICS",
+    "Rocket Launch",
+    "Rocket",
+    "New Zealand",
+    "Rocket Lab",
+    "NASA"
+  ],
+  "XMP:Title": "TROPICS Rocket Launch",
+  "XMP:UsageTerms": "PAO Approved for Release",
+  "XMP:VideoFieldOrder": "Progressive",
+  "XMP:VideoFrameRate": 50.0,
+  "XMP:VideoFrameSize": {
+    "H": 1080,
+    "Unit": "pixel",
+    "W": 1920
+  },
+  "XMP:VideoPixelAspectRatio": 1,
+  "XMP:WindowsAtom": {
+    "Extension": ".prproj",
+    "InvocationFlags": "/L",
+    "UncProjectPath": "C:\\Users\\ilwatson\\AppData\\Local\\Temp\\1\\KSC-20230507-RV-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130_1.prproj"
+  },
+  "XMP:XMPToolkit": "Adobe XMP Core 7.1-c000 79.b0f8be9, 2021/12/08-19:11:22        "
+}

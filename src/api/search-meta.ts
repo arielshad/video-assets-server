@@ -159,7 +159,10 @@ export function clipFacts(a: Pick<ClipDetails, "category" | "width" | "height" |
 function clipTitle(t: string): string {
   if (t.length <= MAX_TITLE) return t;
   const m = t.match(/^“(.*)”(.*)$/);
-  if (m) return `“${clip(m[1]!, Math.max(12, MAX_TITLE - m[2]!.length - 2))}”${m[2]}`;
+  if (m) {
+    const short = `“${clip(m[1]!, Math.max(12, MAX_TITLE - m[2]!.length - 2))}”${m[2]}`;
+    if (short.length <= MAX_TITLE) return short;
+  }
   return clip(t, MAX_TITLE);
 }
 

@@ -1,0 +1,297 @@
+{
+    "id": 15089,
+    "url": "http://svs.gsfc.nasa.gov/15089/",
+    "page_type": "Produced Video",
+    "title": "Roman Launches and a New Era Begins (Official NASA Recap)",
+    "description": "NASA’s Nancy Grace Roman Space Telescope successfully lifted off from Launch Complex 39A at NASA’s Kennedy Space Center in Florida, at 7:26 a.m. EDT (1126 UTC) on August 30, 2026.The telescope is destined for Sun-Earth Lagrange Point 2 (L2), about 1 million miles away where it will transform our understanding of the universe.This video includes highlights from the exciting day of launch.Learn more at: https://science.nasa.gov/mission/roman-space-telescope/Credit: Video Producer: Paul MorrisNASA's Goddard Space Flight CenterNASA’s Kennedy Space Flight CenterMusic Credit:\"Concrete Echo\" by Murray David Stockdale [PRS] via Ninja Tune Production Music [PRS] and Universal Production Music || ",
+    "release_date": "2026-08-31T15:00:00-04:00",
+    "update_date": "2026-09-03T10:28:41-04:00",
+    "main_image": {
+        "id": 1205439,
+        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_PRINT.jpg",
+        "filename": "ROMAN_WRAP_WIDE_PRINT.jpg",
+        "media_type": "Image",
+        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+        "width": 1920,
+        "height": 1080,
+        "pixels": 2073600
+    },
+    "main_video": null,
+    "main_credits": {
+        "Produced by": [
+            {
+                "name": "Paul Morris",
+                "employer": "eMITS"
+            }
+        ]
+    },
+    "progress": "Complete",
+    "media_groups": [
+        {
+            "id": 380833,
+            "url": "http://svs.gsfc.nasa.gov/15089/#media_group_380833",
+            "widget": "Basic text with HTML",
+            "title": "",
+            "caption": "",
+            "description": "NASA’s Nancy Grace Roman Space Telescope successfully lifted off from Launch Complex 39A at NASA’s Kennedy Space Center in Florida, at 7:26 a.m. EDT (1126 UTC) on August 30, 2026.<br><br>The telescope is destined for Sun-Earth Lagrange Point 2 (L2), about 1 million miles away where it will transform our understanding of the universe.<br><br>This video includes highlights from the exciting day of launch.<br><br>Learn more at: https://science.nasa.gov/mission/roman-space-telescope/<br><br>Credit: <br>Video Producer: Paul Morris<br>NASA's Goddard Space Flight Center<br>NASA’s Kennedy Space Flight Center<br><br>Music Credit:<br>\"Concrete Echo\" by Murray David Stockdale [PRS] via Ninja Tune Production Music [PRS] and Universal Production Music<br>",
+            "items": [],
+            "extra_data": {}
+        },
+        {
+            "id": 380835,
+            "url": "http://svs.gsfc.nasa.gov/15089/#media_group_380835",
+            "widget": "Video player",
+            "title": "",
+            "caption": "",
+            "description": "<b>Master Version</b><p>Horizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+            "items": [
+                {
+                    "id": 524535,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205439,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_PRINT.jpg",
+                        "filename": "ROMAN_WRAP_WIDE_PRINT.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 524537,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205443,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_THUMB.jpg",
+                        "filename": "ROMAN_WRAP_WIDE_THUMB.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 524536,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205441,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_SEARCH.jpg",
+                        "filename": "ROMAN_WRAP_WIDE_SEARCH.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+                        "width": 320,
+                        "height": 180,
+                        "pixels": 57600
+                    }
+                },
+                {
+                    "id": 524531,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205435,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_1080.mp4",
+                        "filename": "ROMAN_WRAP_WIDE_1080.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 524533,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205437,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_CAPTIONS.en_US.srt",
+                        "filename": "ROMAN_WRAP_WIDE_CAPTIONS.en_US.srt",
+                        "media_type": "Captions",
+                        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+                        "label": "English",
+                        "language_code": "en-US"
+                    }
+                },
+                {
+                    "id": 524534,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205438,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_CAPTIONS.en_US.vtt",
+                        "filename": "ROMAN_WRAP_WIDE_CAPTIONS.en_US.vtt",
+                        "media_type": "Captions",
+                        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+                        "label": "English",
+                        "language_code": "en-US"
+                    }
+                },
+                {
+                    "id": 524532,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205436,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_WIDE_4K.mp4",
+                        "filename": "ROMAN_WRAP_WIDE_4K.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "Master VersionHorizontal version. This is for use on any YouTube or non-YouTube platform where you want to display the video horizontally.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380836,
+            "url": "http://svs.gsfc.nasa.gov/15089/#media_group_380836",
+            "widget": "Video player",
+            "title": "",
+            "caption": "",
+            "description": "<b>Vertical Version</b><p>This vertical version of the episode is for IGTV or Snapchat. The IGTV episode can be pulled into Instagram Stories and the regular Instagram feed.<p>",
+            "items": [
+                {
+                    "id": 524540,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205447,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_VERT_THUMB.jpg",
+                        "filename": "ROMAN_WRAP_VERT_THUMB.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Vertical VersionThis vertical version of the episode is for IGTV or Snapchat. The IGTV episode can be pulled into Instagram Stories and the regular Instagram feed.",
+                        "width": 1080,
+                        "height": 1920,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 524541,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205448,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_VERT_VIDEO.mp4",
+                        "filename": "ROMAN_WRAP_VERT_VIDEO.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "Vertical VersionThis vertical version of the episode is for IGTV or Snapchat. The IGTV episode can be pulled into Instagram Stories and the regular Instagram feed.",
+                        "width": 1080,
+                        "height": 1920,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 524538,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205445,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_VERT_CAPTIONS.en_US.srt",
+                        "filename": "ROMAN_WRAP_VERT_CAPTIONS.en_US.srt",
+                        "media_type": "Captions",
+                        "alt_text": "Vertical VersionThis vertical version of the episode is for IGTV or Snapchat. The IGTV episode can be pulled into Instagram Stories and the regular Instagram feed.",
+                        "label": "English",
+                        "language_code": "en-US"
+                    }
+                },
+                {
+                    "id": 524539,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205446,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015089/ROMAN_WRAP_VERT_CAPTIONS.en_US.vtt",
+                        "filename": "ROMAN_WRAP_VERT_CAPTIONS.en_US.vtt",
+                        "media_type": "Captions",
+                        "alt_text": "Vertical VersionThis vertical version of the episode is for IGTV or Snapchat. The IGTV episode can be pulled into Instagram Stories and the regular Instagram feed.",
+                        "label": "English",
+                        "language_code": "en-US"
+                    }
+                }
+            ],
+            "extra_data": {}
+        }
+    ],
+    "studio": "gms",
+    "funding_sources": [
+        "PAO"
+    ],
+    "credits": [
+        {
+            "role": "Producer",
+            "people": [
+                {
+                    "name": "Paul Morris",
+                    "employer": "eMITS"
+                }
+            ]
+        }
+    ],
+    "missions": [],
+    "series": [],
+    "tapes": [],
+    "papers": [],
+    "datasets": [],
+    "nasa_science_categories": [
+        "Universe"
+    ],
+    "keywords": [],
+    "recommended_pages": [],
+    "related": [],
+    "sources": [],
+    "products": [
+        {
+            "id": 15090,
+            "url": "http://svs.gsfc.nasa.gov/15090/",
+            "page_type": "Produced Video",
+            "title": "Flash Talk: Roman Spacecraft Overview",
+            "description": "This presentation was orginally given by Josh Schlieder at special day-of-launch event. It was designed specifically to be followed by the Science Overview presentation.His script notes for a five-minute presentation are available with each individual graphic and also collected here . || ",
+            "release_date": "2026-09-04T12:00:00-04:00",
+            "update_date": "2026-09-14T09:39:19-04:00",
+            "main_image": {
+                "id": 1205524,
+                "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015090/Launch_Flash_Talk_Spacecraft_Overview_Slide_18_print.jpg",
+                "filename": "Launch_Flash_Talk_Spacecraft_Overview_Slide_18_print.jpg",
+                "media_type": "Image",
+                "alt_text": "Slide 18) – This morning, Roman stands atop a SpaceX Falcon Heavy as a monument to a simple truth: its unparalleled capabilities are only possible due to the unwavering commitment of thousands of people, working together across nearly two decades.Reflected in the primary mirror, imaged in the detector pixels, and stored in every bit of scientific data are the scientists, engineers, technicians, managers, communicators, administrative staff, and agency leaders that have poured years of their careers into this vision. Alongside them stand the family, friends, and colleagues that made sacrifices at home and at work.They all chose to believe that the mission mattered and take responsibility for its success. They chose to show up with their very best every day, and collaborate across institutions, disciplines, and generations.Roman will not merely observe the universe. It will be an embodiment of human potential. With every mission milestone reached, new technology demonstrated, and cosmic secret revealed we will be reminded that this is what we can do when we commit to something greater than ourselves.",
+                "width": 1920,
+                "height": 1080,
+                "pixels": 2073600
+            }
+        }
+    ],
+    "newer_versions": [],
+    "older_versions": [],
+    "alternate_versions": []
+}

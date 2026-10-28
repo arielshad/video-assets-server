@@ -11,8 +11,8 @@
 //   - look like a plain topic: 2-60 characters of letters, digits, spaces,
 //     hyphens and apostrophes, at most 6 words, no URLs or e-mail addresses;
 //   - are not already covered by a collection (its query or an alias, once
-//     filler words like "free", "clips" or "sound effects" are set aside), by
-//     a hub ("free drum clips" is the drums hub), or by a collection waiting
+//     filler words like "free", "stock" or "footage" are set aside), by
+//     a hub ("free nature footage" is the nature hub), or by a collection waiting
 //     in an open pull request (--pending: a JSON list of slugs or of
 //     { slug, q } objects).
 //
@@ -30,11 +30,11 @@ import { existsSync, readFileSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import { HUBS_FILE, readHubs, readTopics } from "./lib/topics.mjs";
 
-/** Words that say nothing about the topic: every page is free clips. */
+/** Words that say nothing about the topic: every page is free footage. */
 const FILLER = new Set([
-  "free", "cc0", "royalty", "copyright", "commercial", "use", "no",
-  "clip", "clips", "sound", "sounds", "sfx", "fx", "effect", "effects", "audio", "music", "production", "producer", "producers",
-  "wav", "mp3", "aiff", "flac", "download", "downloads", "pack", "packs", "kit", "kits", "library", "collection",
+  "free", "cc0", "royalty", "copyright", "commercial", "use", "no", "public", "domain",
+  "clip", "clips", "video", "videos", "footage", "stock", "broll", "b-roll", "film", "movie",
+  "mp4", "webm", "mov", "hd", "download", "downloads", "library", "collection",
   "for", "a", "an", "the", "of", "and", "with", "in", "to",
 ]);
 
@@ -49,14 +49,13 @@ export function sanitizeQuery(raw) {
   return q;
 }
 
-/** The words that carry the topic, sorted: "free lo-fi drum loops" -> "drum lofi loop". */
+/** The words that carry the topic, sorted: "free time lapse city videos" -> "city timelapse". */
 export function coreTerms(q) {
   const words = q
     .toLowerCase()
-    .replace(/\blo[ -]?fi\b/g, "lofi")
-    .replace(/\bhi[ -]?hats?\b/g, "hihat")
-    .replace(/\bone[ -]?shots?\b/g, "oneshot")
-    .replace(/\ba ?cc?app?ell?as?\b/g, "acapella")
+    .replace(/\bb[ -]?roll\b/g, "broll")
+    .replace(/\btime[ -]?lapses?\b/g, "timelapse")
+    .replace(/\bslow[ -]?mo(tion)?\b/g, "slowmotion")
     .split(/[\s-]+/)
     .filter(Boolean)
     .map((w) => (w.length > 3 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w));
@@ -66,7 +65,7 @@ export function coreTerms(q) {
 /** True when a collection (or a pending one) already answers this query. */
 export function isCovered(q, topics) {
   const core = coreTerms(q);
-  if (!core) return true; // only filler ("free sound effects"): the hubs answer it
+  if (!core) return true; // only filler ("free stock footage"): the hubs answer it
   return topics.some((t) => [t.q, ...(t.aliases ?? [])].some((x) => coreTerms(x) === core));
 }
 
@@ -107,7 +106,7 @@ async function main() {
   const minSearches = Number(process.env.MIN_SEARCHES ?? 3);
   const existing = readTopics().map((t) => ({ slug: t.slug, title: t.data.title, hub: t.data.hub, q: t.data.search?.q ?? "", aliases: t.data.aliases ?? [] }));
   const pending = pendingRaw.map((p) => (typeof p === "string" ? { slug: p, q: p.replace(/-/g, " ") } : p));
-  // Hub pages answer their own broad queries ("free drum clips", "vocal clips").
+  // Hub pages answer their own broad queries ("free nature footage", "space videos").
   const hubs = existsSync(HUBS_FILE) ? readHubs().map((h) => ({ slug: h.id, q: h.name, aliases: [h.id.replace(/-/g, " "), ...(h.aliases ?? [])] })) : [];
 
   let queries = [];

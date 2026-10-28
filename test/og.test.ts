@@ -3,11 +3,11 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { createApp } from "../src/api/app.js";
 import { OgImages } from "../src/api/og.js";
-import { categoryNoun, sampleFacts, sampleMeta, searchMeta, searchShare, shareableSampleId } from "../src/api/search-meta.js";
+import { categoryNoun, clipFacts, clipMeta, searchMeta, searchShare, shareableClipId } from "../src/api/search-meta.js";
 import { rewriteHead } from "../src/api/site.js";
 import { ClipService } from "../src/core/service.js";
-import { OG_HEIGHT, OG_WIDTH, clip, fetchImage, pageCard, renderPng, sampleCard } from "../src/og/render.js";
-import { KICK, VOCAL, brokenProvider, bytesHttp, fakeProvider } from "./fakes.js";
+import { OG_HEIGHT, OG_WIDTH, clip, clipCard, fetchImage, pageCard, renderPng } from "../src/og/render.js";
+import { CITY, OCEAN, brokenProvider, bytesHttp, fakeProvider } from "./fakes.js";
 
 const SITE = fileURLToPath(new URL("./fixtures/site", import.meta.url));
 const service = () => new ClipService({ providers: [fakeProvider, brokenProvider], http: bytesHttp(), defaultTimeoutMs: 200 });
@@ -21,17 +21,15 @@ describe("OG renderer", () => {
     expect(await sharp(png).metadata()).toMatchObject({ width: OG_WIDTH, height: OG_HEIGHT, format: "png" });
   });
 
-  it("renders clip cards with a waveform, or with pack artwork", async () => {
-    const card = { title: "Deep Kick 01", source: "Freesound", type: "Kick", license: "CC0 1.0", verdict: "Commercial use OK", free: true, facts: ["one-shot", "0.4 s"], author: "drumkid", site: "video.shep.bot" };
-    const wave = await renderPng(sampleCard(card));
-    expect(await sharp(wave).metadata()).toMatchObject({ width: OG_WIDTH, height: OG_HEIGHT, format: "png" });
-    const art = await sharp({ create: { width: 64, height: 64, channels: 3, background: "#3c6" } }).png().toBuffer();
-    const withArt = await renderPng(sampleCard({ ...card, image: `data:image/png;base64,${art.toString("base64")}` }));
-    expect(isPng(withArt)).toBe(true);
-    expect(Buffer.compare(wave, withArt)).not.toBe(0);
-    // The waveform is drawn from the title: stable for one clip, different for another.
-    expect(Buffer.compare(wave, await renderPng(sampleCard(card)))).toBe(0);
-    expect(Buffer.compare(wave, await renderPng(sampleCard({ ...card, title: "Dusty Snare 02" })))).not.toBe(0);
+  it("renders clip cards with the poster frame, or a placeholder frame", async () => {
+    const card = { title: "Ocean Waves at Sunset", source: "Wikimedia Commons", type: "Ocean & beach", license: "CC0 1.0", verdict: "Commercial use OK", free: true, facts: ["4K", "0:14"], author: "surfer", site: "video.shep.bot" };
+    const plain = await renderPng(clipCard(card));
+    expect(await sharp(plain).metadata()).toMatchObject({ width: OG_WIDTH, height: OG_HEIGHT, format: "png" });
+    const poster = await sharp({ create: { width: 160, height: 90, channels: 3, background: "#3c6" } }).png().toBuffer();
+    const withPoster = await renderPng(clipCard({ ...card, image: `data:image/png;base64,${poster.toString("base64")}` }));
+    expect(isPng(withPoster)).toBe(true);
+    expect(Buffer.compare(plain, withPoster)).not.toBe(0);
+    expect(Buffer.compare(plain, await renderPng(clipCard(card)))).toBe(0);
   });
 
   it("clips long text on a word boundary", () => {
@@ -45,7 +43,7 @@ describe("OG renderer", () => {
     const uri = await fetchImage("https://cdn.example/t.webp", { fetch: fetchWebp });
     expect(uri?.startsWith("data:image/jpeg;base64,")).toBe(true);
     const jpeg = Buffer.from(uri!.split(",")[1]!, "base64");
-    expect(await sharp(jpeg).metadata()).toMatchObject({ width: 420, height: 420, format: "jpeg" });
+    expect(await sharp(jpeg).metadata()).toMatchObject({ width: 960, height: 540, format: "jpeg" });
 
     let called = false;
     const spy = (async () => ((called = true), new Response("x"))) as typeof fetch;
@@ -64,38 +62,38 @@ describe("OG renderer", () => {
 
 describe("share metadata", () => {
   it("normalises search share links", () => {
-    const s = searchShare(new URLSearchParams("q=  punchy   kick &category=drums.kick,spaceship&free=true&commercial=true&bpm=140&offset=40&providers=freesound,nope"))!;
-    expect(s.key).toBe("q=punchy+kick&category=drums.kick&bpm=140&free=true&commercial=true&providers=freesound");
-    expect(s).toMatchObject({ kicker: "Search · kick clips", title: "“punchy kick”" });
-    expect(s.chips).toEqual(["140 BPM", "Commercial use OK", "Free only", "Freesound"]);
+    const s = searchShare(new URLSearchParams("q=  crashing   waves &category=nature.ocean,spaceship&free=true&commercial=true&orientation=portrait&min_resolution=2160&offset=40&providers=nasa,nope"))!;
+    expect(s.key).toBe("q=crashing+waves&category=nature.ocean&orientation=portrait&min_resolution=2160&free=true&commercial=true&providers=nasa");
+    expect(s).toMatchObject({ kicker: "Search · ocean & beach clips", title: "“crashing waves”" });
+    expect(s.chips).toEqual(["4K", "Vertical", "Commercial use OK", "Free only", "NASA Image and Video Library"]);
     expect(searchShare(new URLSearchParams("offset=10"))).toBeUndefined();
-    expect(searchShare(new URLSearchParams("bpm=fast&q=riser"))?.key).toBe("q=riser"); // malformed BPM is dropped
-    expect(searchMeta(new URLSearchParams("q=kick"))).toMatchObject({ image: "/og/query.png?q=kick", robots: "noindex, follow" });
+    expect(searchShare(new URLSearchParams("min_resolution=huge&q=clouds"))?.key).toBe("q=clouds"); // malformed values are dropped
+    expect(searchMeta(new URLSearchParams("q=clouds"))).toMatchObject({ image: "/og/query.png?q=clouds", robots: "noindex, follow" });
   });
 
   it("names categories with their own nouns", () => {
-    expect(categoryNoun("drums.kick")).toBe("kick clips");
-    expect(categoryNoun("fx")).toBe("sound effects");
-    expect(categoryNoun("vocals.chop", false)).toBe("vocal chop clip");
+    expect(categoryNoun("nature.ocean")).toBe("ocean & beach clips");
+    expect(categoryNoun("aerial")).toBe("drone shots");
+    expect(categoryNoun("archive.newsreel", false)).toBe("newsreel");
     expect(categoryNoun(undefined)).toBe("clips");
   });
 
   it("validates clip ids against the running providers", () => {
-    expect(shareableSampleId("fake:kick", ["fake"])).toBe("fake:kick");
-    expect(shareableSampleId("nope:kick", ["fake"])).toBeUndefined();
-    expect(shareableSampleId("fake:", ["fake"])).toBeUndefined();
-    expect(shareableSampleId("kick", ["fake"])).toBeUndefined();
-    expect(shareableSampleId(`fake:${"x".repeat(400)}`, ["fake"])).toBeUndefined();
-    expect(shareableSampleId(undefined, ["fake"])).toBeUndefined();
+    expect(shareableClipId("fake:ocean", ["fake"])).toBe("fake:ocean");
+    expect(shareableClipId("nope:ocean", ["fake"])).toBeUndefined();
+    expect(shareableClipId("fake:", ["fake"])).toBeUndefined();
+    expect(shareableClipId("ocean", ["fake"])).toBeUndefined();
+    expect(shareableClipId(`fake:${"x".repeat(400)}`, ["fake"])).toBeUndefined();
+    expect(shareableClipId(undefined, ["fake"])).toBeUndefined();
   });
 
-  it("describes a clip for its share link, with its musical facts and licence verdict", () => {
-    const m = sampleMeta(KICK);
-    expect(m.title).toBe("Deep Kick 01: kick clip on fake · Video Assets Server");
-    expect(m.description).toContain("Kick clip “Deep Kick 01” on fake (one-shot, 0.4 s, CC0 1.0: commercial use OK, free)");
-    expect(m.image).toBe("/og/clip.png?id=fake%3Akick");
-    expect(sampleFacts(VOCAL)).toEqual(["Vocal chop", "loop", "6.9 s", "F minor", "140 BPM"]);
-    expect(sampleMeta(VOCAL).description).toContain("CC BY-NC 4.0: non-commercial only");
+  it("describes a clip for its share link, with its video facts and licence verdict", () => {
+    const m = clipMeta(OCEAN);
+    expect(m.title).toBe("Ocean Waves at Sunset: ocean & beach clip · Video Assets Server"); // the source is dropped past 70 characters
+    expect(m.description).toContain("Ocean & beach clip “Ocean Waves at Sunset” on fake (4K, 15s, 30 fps, CC0 1.0: commercial use OK, free)");
+    expect(m.image).toBe("/og/clip.png?id=fake%3Aocean");
+    expect(clipFacts(CITY)).toEqual(["Streets & traffic", "Full HD 1080p", "vertical", "42s", "60 fps"]);
+    expect(clipMeta(CITY).description).toContain("CC BY-NC 4.0: non-commercial only");
   });
 
   it("rewrites image, alt and url tags with escaping", () => {
@@ -112,18 +110,18 @@ describe("OG endpoints and share links", () => {
   const app = createApp(service(), { siteRoot: SITE, publicBaseUrl: "https://video.shep.bot" });
 
   it("serves search cards, cacheable for a day", async () => {
-    const res = await app.request("/og/query.png?q=kick&category=drums.kick");
+    const res = await app.request("/og/query.png?q=waves&category=nature.ocean");
     expect(res.status).toBe(200);
     expect(res.headers.get("content-type")).toBe("image/png");
     expect(res.headers.get("cache-control")).toBe("public, max-age=86400");
     expect(isPng(new Uint8Array(await res.arrayBuffer()))).toBe(true);
     expect((await app.request("/og/query.png")).status).toBe(404);
-    const head = await app.request("/og/query.png?q=kick", { method: "HEAD" });
+    const head = await app.request("/og/query.png?q=waves", { method: "HEAD" });
     expect(head.status).toBe(200);
   });
 
   it("serves clip cards and 404s unknown or malformed ids", async () => {
-    const res = await app.request(`/og/clip.png?id=${encodeURIComponent("fake:kick")}`);
+    const res = await app.request(`/og/clip.png?id=${encodeURIComponent("fake:ocean")}`);
     expect(res.status).toBe(200);
     expect(isPng(new Uint8Array(await res.arrayBuffer()))).toBe(true);
     expect((await app.request("/og/clip.png?id=fake:missing")).status).toBe(404);
@@ -133,11 +131,11 @@ describe("OG endpoints and share links", () => {
   });
 
   it("gives /search?clip= links the clip's title, card and url", async () => {
-    const html = await (await app.request("/search?clip=fake%3Akick", { headers: { accept: "text/html" } })).text();
-    expect(html).toContain("<title>Deep Kick 01: kick clip on fake · Video Assets Server</title>");
-    expect(meta(html, "og:image")).toBe("https://video.shep.bot/og/clip.png?id=fake%3Akick");
-    expect(meta(html, "twitter:image")).toBe("https://video.shep.bot/og/clip.png?id=fake%3Akick");
-    expect(meta(html, "og:url")).toBe("https://video.shep.bot/search?clip=fake%3Akick");
+    const html = await (await app.request("/search?clip=fake%3Aocean", { headers: { accept: "text/html" } })).text();
+    expect(html).toContain("<title>Ocean Waves at Sunset: ocean &amp; beach clip · Video Assets Server</title>");
+    expect(meta(html, "og:image")).toBe("https://video.shep.bot/og/clip.png?id=fake%3Aocean");
+    expect(meta(html, "twitter:image")).toBe("https://video.shep.bot/og/clip.png?id=fake%3Aocean");
+    expect(meta(html, "og:url")).toBe("https://video.shep.bot/search?clip=fake%3Aocean");
     expect(meta(html, "robots")).toBe("noindex, follow");
     // Unknown clip: the plain search page.
     const plain = await (await app.request("/search?clip=fake%3Amissing", { headers: { accept: "text/html" } })).text();
@@ -145,10 +143,10 @@ describe("OG endpoints and share links", () => {
   });
 
   it("gives search links a query card and their own og:url", async () => {
-    const html = await (await app.request("/search?q=kick&offset=20", { headers: { accept: "text/html" } })).text();
-    expect(meta(html, "og:image")).toBe("https://video.shep.bot/og/query.png?q=kick");
-    expect(meta(html, "og:url")).toBe("https://video.shep.bot/search?q=kick");
-    expect(meta(html, "og:image:alt")).toContain("“kick”");
+    const html = await (await app.request("/search?q=waves&offset=20", { headers: { accept: "text/html" } })).text();
+    expect(meta(html, "og:image")).toBe("https://video.shep.bot/og/query.png?q=waves");
+    expect(meta(html, "og:url")).toBe("https://video.shep.bot/search?q=waves");
+    expect(meta(html, "og:image:alt")).toContain("“waves”");
   });
 
   it("caches cards and renders at most two at once", async () => {
@@ -163,7 +161,7 @@ describe("OG endpoints and share links", () => {
         peak = Math.max(peak, active);
         await new Promise((r) => setTimeout(r, 30));
         active--;
-        return { ...KICK, nativeId: id, id: `fake:${id}`, title: `Kick ${id}`, thumbnailUrl: undefined };
+        return { ...OCEAN, nativeId: id, id: `fake:${id}`, title: `Waves ${id}`, posterUrl: undefined };
       },
     };
     const og = new OgImages(new ClipService({ providers: [slow], http: bytesHttp() }), { site: "video.shep.bot" });
@@ -177,15 +175,15 @@ describe("OG endpoints and share links", () => {
 
   it("does not keep misses, so a clip that appears later gets its card", async () => {
     let exists = false;
-    const flaky = { ...fakeProvider, getClip: async () => (exists ? KICK : null) };
+    const flaky = { ...fakeProvider, getClip: async () => (exists ? OCEAN : null) };
     const og = new OgImages(new ClipService({ providers: [flaky], http: bytesHttp() }), { site: "video.shep.bot" });
-    expect(await og.clip("fake:kick")).toBeNull();
+    expect(await og.clip("fake:ocean")).toBeNull();
     exists = true;
-    expect(await og.clip("fake:kick")).not.toBeNull();
+    expect(await og.clip("fake:ocean")).not.toBeNull();
   });
 
   it("returns a shareUrl with clip details (REST)", async () => {
-    const body = (await (await app.request(`/v1/clips/${encodeURIComponent("fake:kick")}`)).json()) as { shareUrl: string };
-    expect(body.shareUrl).toBe("https://video.shep.bot/search?clip=fake%3Akick");
+    const body = (await (await app.request(`/v1/clips/${encodeURIComponent("fake:ocean")}`)).json()) as { shareUrl: string };
+    expect(body.shareUrl).toBe("https://video.shep.bot/search?clip=fake%3Aocean");
   });
 });

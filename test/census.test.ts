@@ -75,13 +75,13 @@ describe("census helpers", () => {
         downloadable: true,
         createdAt,
       });
-    const c = tallyClips([a("drums.kick", true, "2026-10-01"), a("drums.snare", false), a("fx.riser", true)], "m", { now: Date.parse("2026-10-05") });
+    const c = tallyClips([a("nature.ocean", true, "2026-10-01"), a("nature.sky", false), a("space.launch", true)], "m", { now: Date.parse("2026-10-05") });
     expect(c).toMatchObject({
       total: 3,
       free: 3,
-      byCategory: { drums: 2, fx: 1 },
+      byCategory: { nature: 2, space: 1 },
       byLicense: { "CC0-1.0": 2, "CC-BY-4.0": 1 },
-      categories: { "drums.kick": 1, "drums.snare": 1, "fx.riser": 1 },
+      categories: { "nature.ocean": 1, "nature.sky": 1, "space.launch": 1 },
       addedLast30Days: 1,
       method: "m",
     });
@@ -107,8 +107,8 @@ describe("provider census", () => {
   });
 
   it("counts a catalogue-based source through its own browse", async () => {
-    const c = await catalogueCensus(fakeProvider, { fetch: bytesHttp() }, "clips");
-    expect(c).toMatchObject({ total: 3, free: 3, byCategory: { drums: 2, vocals: 1 }, unit: "clips" });
+    const c = await catalogueCensus(fakeProvider, { fetch: bytesHttp() });
+    expect(c).toMatchObject({ total: 3, free: 3, byCategory: { nature: 1, city: 1, space: 1 } });
   });
 });
 
@@ -128,11 +128,11 @@ describe("runCensus", () => {
 
   it("aggregates totals, categories, licences and keeps stale counts", async () => {
     const previous = {
-      sources: [{ id: "down", name: "DOWN", homepage: "", pricing: "paid", supportsDownload: false, total: 50, byCategory: { drums: 50 }, method: "m", countedAt: "2026-10-01T00:00:00.000Z" }],
+      sources: [{ id: "down", name: "DOWN", homepage: "", pricing: "paid", supportsDownload: false, total: 50, byCategory: { nature: 50 }, method: "m", countedAt: "2026-10-01T00:00:00.000Z" }],
     } as unknown as Catalog;
     const providers = [
-      source("free", { total: 100, byCategory: { drums: 60, fx: 40 }, addedLast30Days: 3, method: "m" }),
-      source("mixed", { total: 1000, free: 200, atLeast: true, byCategory: { drums: 400, vocals: 600 }, byLicense: { "CC0-1.0": 10, "CC-BY-NC-4.0": 990 }, method: "m" }, { pricing: "freemium", license: undefined, supportsDownload: false }),
+      source("free", { total: 100, byCategory: { nature: 60, space: 40 }, addedLast30Days: 3, method: "m" }),
+      source("mixed", { total: 1000, free: 200, atLeast: true, byCategory: { nature: 400, city: 600 }, byLicense: { "CC0-1.0": 10, "CC-BY-NC-4.0": 990 }, method: "m" }, { pricing: "freemium", license: undefined, supportsDownload: false }),
       source("down", new Error("boom"), { pricing: "paid", license: undefined }),
       { ...fakeProvider, id: "link", census: undefined },
     ];
@@ -143,8 +143,8 @@ describe("runCensus", () => {
     expect(c.totals.cc0).toEqual({ count: 110, atLeast: true });
     expect(c.totals.directDownload.count).toBe(100);
     expect(c.totals.addedLast30Days).toBe(3);
-    expect(c.byCategory.drums).toEqual({ count: 510, atLeast: true }); // 60 + 400 + the stale 50
-    expect(c.byCategory.fx).toEqual({ count: 40 });
+    expect(c.byCategory.nature).toEqual({ count: 510, atLeast: true }); // 60 + 400 + the stale 50
+    expect(c.byCategory.space).toEqual({ count: 40 });
     expect(c.byLicense).toMatchObject({ "CC0-1.0": 110, "CC-BY-NC-4.0": 990 });
     expect(c.sources.find((s) => s.id === "down")?.stale).toEqual({ since: "2026-10-01T00:00:00.000Z", error: "boom" });
     expect(c.linked.map((l) => l.id)).toEqual(["link"]);
@@ -152,7 +152,7 @@ describe("runCensus", () => {
     const h1 = appendHistory([], c);
     const h2 = appendHistory(h1, { ...c, totals: { ...c.totals, listings: { count: 9 } } });
     expect(h2).toHaveLength(1); // one point per day
-    expect(h2[0]).toMatchObject({ date: "2026-10-05", listings: 9, byCategory: { drums: 510, vocals: 600 }, sources: { mixed: 1000 } });
+    expect(h2[0]).toMatchObject({ date: "2026-10-05", listings: 9, byCategory: { nature: 510, city: 600 }, sources: { mixed: 1000 } });
   });
 });
 

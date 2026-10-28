@@ -1,21 +1,19 @@
 import { describe, expect, it } from "vitest";
 import { creditEntry, creditsJson, creditsMarkdown, mergeCredits } from "../src/core/credits.js";
-import { creditsMarkdown as fromKit } from "../src/core/kit.js";
-import { creativeCommons, license, royaltyFree } from "../src/core/licence.js";
+import { asEditorial, creativeCommons, license, royaltyFree } from "../src/core/licence.js";
 import type { Clip } from "../src/core/types.js";
 
 function clip(id: string, title: string, extra: Partial<Clip> = {}): Clip {
   return {
-    id: `freesound:${id}`,
-    provider: "freesound",
+    id: `wikimediacommons:${id}`,
+    provider: "wikimediacommons",
     nativeId: id,
     title,
-    url: `https://freesound.org/s/${id}/`,
+    url: `https://commons.wikimedia.org/wiki/File:${id}`,
     author: "jdoe",
-    authorUrl: "https://freesound.org/people/jdoe/",
+    authorUrl: "https://commons.wikimedia.org/wiki/User:jdoe",
     tags: [],
-    category: "drums.kick",
-    unit: "clip",
+    category: "nature.ocean",
     downloadable: true,
     license: license("CC0-1.0"),
     ...extra,
@@ -23,12 +21,13 @@ function clip(id: string, title: string, extra: Partial<Clip> = {}): Clip {
 }
 
 const NOW = new Date("2026-10-23T10:00:00.000Z");
-const names = { freesound: "Freesound", mixkit: "Mixkit" };
-const cc0 = clip("1", "Deep Kick");
-const by = clip("2", "Snare *tight*", { license: creativeCommons({}) });
-const nc = clip("3", "NC Hat", { license: creativeCommons({ nc: true }), author: undefined, authorUrl: undefined });
-const rf = clip("4", "Mixkit Riser", { provider: "mixkit", id: "mixkit:4", url: "https://mixkit.co/4", license: royaltyFree("Mixkit Sound Effects Free License", { url: "https://mixkit.co/license/" }) });
-const none = clip("5", "Mystery Loop", { license: undefined });
+const names = { wikimediacommons: "Wikimedia Commons", pexels: "Pexels", nasa: "NASA" };
+const cc0 = clip("1", "Ocean Waves");
+const by = clip("2", "Surf *close-up*", { license: creativeCommons({}) });
+const nc = clip("3", "NC Harbour", { license: creativeCommons({ nc: true }), author: undefined, authorUrl: undefined });
+const rf = clip("4", "Pexels Beach", { provider: "pexels", id: "pexels:4", url: "https://www.pexels.com/video/4/", license: royaltyFree("Pexels License", { url: "https://www.pexels.com/license/" }) });
+const none = clip("5", "Mystery Film", { license: undefined });
+const astronaut = clip("6", "Spacewalk", { provider: "nasa", id: "nasa:6", url: "https://images.nasa.gov/details/6", license: asEditorial(license("LicenseRef-NASA-Media"), "") });
 
 describe("creditsJson", () => {
   it("one machine-readable entry per clip with licence, verdict and credit line", () => {
@@ -39,13 +38,13 @@ describe("creditsJson", () => {
     expect(j.commercialSafe).toBe(true);
     expect(j.creditsNeeded).toBe(true);
     expect(j.clips[0]).toEqual({
-      id: "freesound:1",
-      provider: "freesound",
-      source: "Freesound",
-      title: "Deep Kick",
+      id: "wikimediacommons:1",
+      provider: "wikimediacommons",
+      source: "Wikimedia Commons",
+      title: "Ocean Waves",
       author: "jdoe",
-      authorUrl: "https://freesound.org/people/jdoe/",
-      url: "https://freesound.org/s/1/",
+      authorUrl: "https://commons.wikimedia.org/wiki/User:jdoe",
+      url: "https://commons.wikimedia.org/wiki/File:1",
       license: {
         id: "CC0-1.0",
         name: "CC0 1.0",
@@ -58,17 +57,18 @@ describe("creditsJson", () => {
       downloadedAt: "2026-10-23T10:00:00.000Z",
     });
     expect(j.clips[1]!.attribution).toBe(
-      "“Snare *tight*” by jdoe (Freesound), https://freesound.org/s/2/, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+      "“Surf *close-up*” by jdoe (Wikimedia Commons), https://commons.wikimedia.org/wiki/File:2, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
     );
     expect(j.clips[1]!.license).toMatchObject({ id: "CC-BY-4.0", verdict: "yes-with-credit", attributionRequired: true });
+    expect(j.editorialOnly).toBe(false);
   });
 
   it("uses the clip's own attribution line, per-id timestamps and files", () => {
-    const own = { ...by, attribution: "Snare by jdoe — CC BY" };
-    const e = creditEntry(own, { downloadedAt: { [own.id]: "2026-01-01T00:00:00Z" }, files: { [own.id]: [{ path: "drums/snare.wav", sha256: "ab" }] } });
-    expect(e.attribution).toBe("Snare by jdoe — CC BY");
+    const own = { ...by, attribution: "Surf by jdoe — CC BY" };
+    const e = creditEntry(own, { downloadedAt: { [own.id]: "2026-01-01T00:00:00Z" }, files: { [own.id]: [{ path: "nature/ocean/surf.webm", sha256: "ab" }] } });
+    expect(e.attribution).toBe("Surf by jdoe — CC BY");
     expect(e.downloadedAt).toBe("2026-01-01T00:00:00Z");
-    expect(e.files).toEqual([{ path: "drums/snare.wav", sha256: "ab" }]);
+    expect(e.files).toEqual([{ path: "nature/ocean/surf.webm", sha256: "ab" }]);
     expect(creditEntry(cc0, { downloadedAt: {} }).downloadedAt).toBeUndefined();
   });
 
@@ -80,11 +80,11 @@ describe("creditsJson", () => {
   });
 
   it("mergeCredits is idempotent by id and combines files", () => {
-    const a = creditsJson([cc0], { now: NOW, files: { [cc0.id]: [{ path: "kick.wav" }] } });
-    const b = creditsJson([cc0, by], { now: new Date("2026-10-24T00:00:00Z"), files: { [cc0.id]: [{ path: "kick.wav" }, { path: "kit/kick.wav" }] } });
+    const a = creditsJson([cc0], { now: NOW, files: { [cc0.id]: [{ path: "waves.webm" }] } });
+    const b = creditsJson([cc0, by], { now: new Date("2026-10-24T00:00:00Z"), files: { [cc0.id]: [{ path: "waves.webm" }, { path: "seq/waves.webm" }] } });
     const m = mergeCredits(a, b);
-    expect(m.clips.map((x) => x.id)).toEqual(["freesound:1", "freesound:2"]);
-    expect(m.clips[0]!.files).toEqual([{ path: "kick.wav" }, { path: "kit/kick.wav" }]);
+    expect(m.clips.map((x) => x.id)).toEqual(["wikimediacommons:1", "wikimediacommons:2"]);
+    expect(m.clips[0]!.files).toEqual([{ path: "waves.webm" }, { path: "seq/waves.webm" }]);
     expect(m.generatedAt).toBe("2026-10-24T00:00:00.000Z");
     expect(mergeCredits(m, b)).toEqual(m);
     expect(mergeCredits(undefined, a).clips).toHaveLength(1);
@@ -97,35 +97,43 @@ describe("creditsMarkdown", () => {
     expect(md.startsWith("# Attribution\n")).toBe(true);
     expect(md).not.toContain("Warning");
     expect(md).toContain("## Credits to publish");
-    expect(md).toContain("- “Snare *tight*” by jdoe (Freesound), https://freesound.org/s/2/, licensed under CC BY 4.0");
+    expect(md).toContain("- “Surf *close-up*” by jdoe (Wikimedia Commons), https://commons.wikimedia.org/wiki/File:2, licensed under CC BY 4.0");
     // most permissive first: CC0 / royalty-free (yes) before CC BY (yes-with-credit)
     const cc0At = md.indexOf("## [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)");
     const byAt = md.indexOf("## [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)");
     expect(cc0At).toBeGreaterThan(0);
     expect(byAt).toBeGreaterThan(cc0At);
     expect(md).toContain("Commercial use OK with credit. Attribution required.");
-    expect(md).toContain("- **Deep Kick** by [jdoe](https://freesound.org/people/jdoe/), Freesound: https://freesound.org/s/1/");
-    expect(md).toContain("- **Snare \\*tight\\*** by");
-    expect(md).toContain("Mixkit: https://mixkit.co/4");
-    expect(md).toContain("id: `freesound:1`, downloaded 2026-10-23");
+    expect(md).toContain("- **Ocean Waves** by [jdoe](https://commons.wikimedia.org/wiki/User:jdoe), Wikimedia Commons: https://commons.wikimedia.org/wiki/File:1");
+    expect(md).toContain("- **Surf \\*close-up\\*** by");
+    expect(md).toContain("Pexels: https://www.pexels.com/video/4/");
+    expect(md).toContain("id: `wikimediacommons:1`, downloaded 2026-10-23");
     expect(md).toContain("not legal advice");
   });
 
   it("puts a warning header first when anything is not commercial-safe", () => {
     const md = creditsMarkdown([cc0, nc, none], names);
-    const warn = md.indexOf("> **Warning:** 2 of 3 clips are not cleared for a commercial release:");
+    const warn = md.indexOf("> **Warning:** 2 of 3 clips are not cleared for commercial use:");
     expect(warn).toBeGreaterThan(0);
     expect(warn).toBeLessThan(md.indexOf("## "));
-    expect(md).toContain("> - NC Hat (freesound:3): Non-commercial only");
-    expect(md).toContain("> - Mystery Loop (freesound:5): Unclear: check the terms");
+    expect(md).toContain("> - NC Harbour (wikimediacommons:3): Non-commercial only");
+    expect(md).toContain("> - Mystery Film (wikimediacommons:5): Unclear: check the terms");
     expect(md).toContain("by unknown author");
     expect(md).toContain("## No licence stated");
   });
 
-  it("renders from a credits.json and handles an empty list; kit.ts re-exports it", () => {
+  it("flags editorial clips (people, insignia) as not for ads", () => {
+    const j = creditsJson([cc0, astronaut], { now: NOW });
+    expect(j.commercialSafe).toBe(true);
+    expect(j.editorialOnly).toBe(true);
+    const md = creditsMarkdown([cc0, astronaut], names);
+    expect(md).toContain("> **Editorial use:** 1 clip shows people, insignia or brands without releases");
+    expect(md).toContain("> - Spacewalk (nasa:6)");
+  });
+
+  it("renders from a credits.json and handles an empty list", () => {
     const j = creditsJson([cc0], { sourceNames: names, now: NOW });
     expect(creditsMarkdown(j)).toBe(creditsMarkdown([cc0], names, { now: NOW }));
     expect(creditsMarkdown([])).toContain("No clips yet.");
-    expect(fromKit).toBe(creditsMarkdown);
   });
 });

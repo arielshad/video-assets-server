@@ -1,0 +1,365 @@
+{
+    "id": 5674,
+    "url": "http://svs.gsfc.nasa.gov/5674/",
+    "page_type": "Visualization",
+    "title": "Solar System: EIC Display",
+    "description": "A view of our Solar System",
+    "release_date": "2026-10-20T13:00:00-04:00",
+    "update_date": "2026-10-20T16:21:48.698188-04:00",
+    "main_image": {
+        "id": 1205290,
+        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still004_preview.jpg",
+        "filename": "solar_system.Still004_preview.jpg",
+        "media_type": "Image",
+        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+        "width": 3840,
+        "height": 1080,
+        "pixels": 4147200
+    },
+    "main_video": {
+        "id": 1205287,
+        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system_EIC_3840x1080.mp4",
+        "filename": "solar_system_EIC_3840x1080.mp4",
+        "media_type": "Movie",
+        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+        "width": 3840,
+        "height": 1080,
+        "pixels": 4147200
+    },
+    "main_credits": {
+        "Visualizations by": [
+            {
+                "name": "Kel Elkins",
+                "employer": "Science and Technology Corporation"
+            }
+        ]
+    },
+    "progress": "Complete",
+    "media_groups": [
+        {
+            "id": 380771,
+            "url": "http://svs.gsfc.nasa.gov/5674/#media_group_380771",
+            "widget": "Video player",
+            "title": "",
+            "caption": "",
+            "description": "A tour of the planets in our Solar System, beginning near Earth and ending with the most distant planets. This visualization was developed for the widescreen displays at NASA's Earth Information Center (EIC).",
+            "items": [
+                {
+                    "id": 524136,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205287,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system_EIC_3840x1080.mp4",
+                        "filename": "solar_system_EIC_3840x1080.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+                        "width": 3840,
+                        "height": 1080,
+                        "pixels": 4147200
+                    }
+                },
+                {
+                    "id": 524137,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205288,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system_EIC_7680x2160.mp4",
+                        "filename": "solar_system_EIC_7680x2160.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+                        "width": 7680,
+                        "height": 2160,
+                        "pixels": 16588800
+                    }
+                },
+                {
+                    "id": 524138,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205289,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system_EIC_7680x2160_prores.mov",
+                        "filename": "solar_system_EIC_7680x2160_prores.mov",
+                        "media_type": "Movie",
+                        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+                        "width": 7680,
+                        "height": 2160,
+                        "pixels": 16588800
+                    }
+                },
+                {
+                    "id": 524139,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205290,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still004_preview.jpg",
+                        "filename": "solar_system.Still004_preview.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+                        "width": 3840,
+                        "height": 1080,
+                        "pixels": 4147200
+                    }
+                },
+                {
+                    "id": 524140,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205291,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still004.jpg",
+                        "filename": "solar_system.Still004.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+                        "width": 7680,
+                        "height": 2160,
+                        "pixels": 16588800
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380772,
+            "url": "http://svs.gsfc.nasa.gov/5674/#media_group_380772",
+            "widget": "Single image",
+            "title": "",
+            "caption": "Still Image - A close view of Earth against a star-filled background.",
+            "description": "",
+            "items": [
+                {
+                    "id": 524141,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205292,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still001_preview.jpg",
+                        "filename": "solar_system.Still001_preview.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Close view of Earth against a star-filled background, with North and South America visible on the sunlit side of the planet.",
+                        "width": 3840,
+                        "height": 1080,
+                        "pixels": 4147200
+                    }
+                },
+                {
+                    "id": 524142,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205293,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still001.jpg",
+                        "filename": "solar_system.Still001.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Close view of Earth against a star-filled background, with North and South America visible on the sunlit side of the planet.",
+                        "width": 7680,
+                        "height": 2160,
+                        "pixels": 16588800
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380773,
+            "url": "http://svs.gsfc.nasa.gov/5674/#media_group_380773",
+            "widget": "Single image",
+            "title": "",
+            "caption": "A view of the inner Solar System, showing the orbits of Mercury, Venus, Earth, and Mars around the Sun.",
+            "description": "",
+            "items": [
+                {
+                    "id": 524143,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205294,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still002_preview.jpg",
+                        "filename": "solar_system.Still002_preview.jpg",
+                        "media_type": "Image",
+                        "alt_text": "View of the inner Solar System with a glowing Sun near the center and the labeled orbits of Mercury, Venus, Earth, and Mars drawn in cyan against a star-filled background.",
+                        "width": 3840,
+                        "height": 1080,
+                        "pixels": 4147200
+                    }
+                },
+                {
+                    "id": 524144,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205295,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still002.jpg",
+                        "filename": "solar_system.Still002.jpg",
+                        "media_type": "Image",
+                        "alt_text": "View of the inner Solar System with a glowing Sun near the center and the labeled orbits of Mercury, Venus, Earth, and Mars drawn in cyan against a star-filled background.",
+                        "width": 7680,
+                        "height": 2160,
+                        "pixels": 16588800
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380774,
+            "url": "http://svs.gsfc.nasa.gov/5674/#media_group_380774",
+            "widget": "Single image",
+            "title": "",
+            "caption": "A wider view of the Solar System, showing the orbits of the inner planets, Jupiter, and Saturn around the Sun.",
+            "description": "",
+            "items": [
+                {
+                    "id": 524145,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205296,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still003_preview.jpg",
+                        "filename": "solar_system.Still003_preview.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Wider view of the Solar System with a glowing Sun near the center, the inner planets clustered nearby, and the cyan orbits of Jupiter and Saturn extending outward against a star-filled background.",
+                        "width": 3840,
+                        "height": 1080,
+                        "pixels": 4147200
+                    }
+                },
+                {
+                    "id": 524146,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205297,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still003.jpg",
+                        "filename": "solar_system.Still003.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Wider view of the Solar System with a glowing Sun near the center, the inner planets clustered nearby, and the cyan orbits of Jupiter and Saturn extending outward against a star-filled background.",
+                        "width": 7680,
+                        "height": 2160,
+                        "pixels": 16588800
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380775,
+            "url": "http://svs.gsfc.nasa.gov/5674/#media_group_380775",
+            "widget": "Single image",
+            "title": "",
+            "caption": "A full view of the Solar System, showing the planets and their orbits around the Sun.",
+            "description": "",
+            "items": [
+                {
+                    "id": 524147,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205290,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still004_preview.jpg",
+                        "filename": "solar_system.Still004_preview.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+                        "width": 3840,
+                        "height": 1080,
+                        "pixels": 4147200
+                    }
+                },
+                {
+                    "id": 524148,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": "",
+                    "instance": {
+                        "id": 1205291,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a000000/a005600/a005674/solar_system.Still004.jpg",
+                        "filename": "solar_system.Still004.jpg",
+                        "media_type": "Image",
+                        "alt_text": "Solar System view showing the planets and their cyan orbital paths against a star-filled background, with a glowing Sun near the center.",
+                        "width": 7680,
+                        "height": 2160,
+                        "pixels": 16588800
+                    }
+                }
+            ],
+            "extra_data": {}
+        }
+    ],
+    "studio": "svs",
+    "funding_sources": [],
+    "credits": [
+        {
+            "role": "Data visualizer",
+            "people": [
+                {
+                    "name": "Kel Elkins",
+                    "employer": "Science and Technology Corporation"
+                }
+            ]
+        }
+    ],
+    "missions": [],
+    "series": [],
+    "tapes": [],
+    "papers": [],
+    "datasets": [
+        {
+            "name": "SPICE Ephemerides",
+            "common_name": "SPICE Ephemerides",
+            "platform": null,
+            "sensor": null,
+            "type": "Ephemeris",
+            "organizations": [
+                "NASA/JPL"
+            ],
+            "description": "Satellite and planetary ephemerides",
+            "credit": "",
+            "url": "",
+            "date_range": ""
+        }
+    ],
+    "nasa_science_categories": [
+        "Planets & Moons"
+    ],
+    "keywords": [
+        "Orbits",
+        "Planetary Orbits",
+        "Planets",
+        "Solar System"
+    ],
+    "recommended_pages": [],
+    "related": [],
+    "sources": [],
+    "products": [],
+    "newer_versions": [],
+    "older_versions": [],
+    "alternate_versions": []
+}

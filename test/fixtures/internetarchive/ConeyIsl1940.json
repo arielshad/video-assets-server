@@ -1,0 +1,213 @@
+{
+ "server": "dn600303.us.archive.org",
+ "dir": "/0/items/ConeyIsl1940",
+ "metadata": {
+  "mediatype": "movies",
+  "identifier": "ConeyIsl1940",
+  "publicdate": "2002-07-16 00:00:00",
+  "creator": "Unknown",
+  "description": "The great amusement zone in its heyday.",
+  "date": "ca. 1940s",
+  "licenseurl": "http://creativecommons.org/licenses/publicdomain/",
+  "color": "B&W",
+  "sound": "Sd",
+  "collection": "prelinger",
+  "title": "Coney Island",
+  "addeddate": "2002-07-16 00:00:00",
+  "sponsor": "N/A",
+  "pick": "0",
+  "runtime": "9:19",
+  "shotlist": "Brooklyn, N.Y.\n\n* 11:01:52:27- 11:02:13:25\nNice montage of Coney Island boardwalk. Starts with image of soldier taking\nhis friends' photo. All around them are people, and behind them we see\n\"Ocean Baths.\"  Cut to a close up of two young women and men (they look\nstylish) in a close circle talking_behind them we see \"Hyman's Bar &\nGrill.\" Cut to an overview of a crowded section of the boardwalk.\n. 11:02:14:03- 11:02:59:08\nCrowd of smiling people standing around and looking up. Cut to MCU LA\ncarnival or sideshow barker speaking into microphone and pointing while\nholding tickets. TU to pointer at freak show sign \"Smallest Grown Ups On\nEarth\". People buying freak show tickets. Cut to lurid circus freak show\nposters: \"Madam Zenda: World's Greatest Mind Reader\", \"Prof. Frank Graf:\nHuman Art\" (tattooing; poster only), \"Marian: Headless Girl From London\"\n(extremely lurid and practically indescribable), \"Winsome Winnie: Fat\nPretty And Jolly\" (the circus fat lady), many others including \"Zip & Pip:\n2 Georgia Peaches\". Cut to very rare footage of midget PINHEADS (Zip & Pip,\napparently) on display in the freak show. Cut to people milling about on\nConey Island street.\n\n\n\n\nBrooklyn, New York Hot dogs Frankfurters Eating Amusement parks Roller coasters Rides Beaches Leisure Recreation\n<BR>",
+  "updatedate": "2005-01-13 09:36:44",
+  "country": "United States",
+  "subject": "Amusement parks;Coney Island;New York City: History",
+  "numeric_id": "304",
+  "type": "MovingImage",
+  "proddate": "ca. 1940s",
+  "collectionid": "10298",
+  "backup_location": "ia903600_3",
+  "closed_captioning": "no",
+  "whisper_asr_module_version": "20230731.02",
+  "ccnum": "asr"
+ },
+ "files": [
+  {
+   "name": "ConeyIsl1940.asr.js",
+   "source": "original",
+   "format": "Unknown",
+   "size": "47414"
+  },
+  {
+   "name": "ConeyIsl1940.asr.srt",
+   "source": "original",
+   "format": "SubRip",
+   "size": "6390"
+  },
+  {
+   "name": "ConeyIsl1940.asr.vtt",
+   "source": "derivative",
+   "format": "Web Video Text Tracks",
+   "original": "ConeyIsl1940_intermediate_asr.json",
+   "size": "8387"
+  },
+  {
+   "name": "ConeyIsl1940.avi",
+   "source": "original",
+   "format": "Cinepack",
+   "size": "34152624",
+   "length": "559.49",
+   "height": "240",
+   "width": "320"
+  },
+  {
+   "name": "ConeyIsl1940.gif",
+   "source": "derivative",
+   "format": "Animated GIF",
+   "original": "ConeyIsl1940.mpeg",
+   "size": "247166"
+  },
+  {
+   "name": "ConeyIsl1940.mp3",
+   "source": "derivative",
+   "bitrate": "64",
+   "length": "09:18",
+   "format": "MP3",
+   "original": "ConeyIsl1940.mpeg",
+   "size": "4470272",
+   "height": "0",
+   "width": "0"
+  },
+  {
+   "name": "ConeyIsl1940.mp4",
+   "source": "derivative",
+   "format": "h.264",
+   "original": "ConeyIsl1940.mpeg",
+   "size": "58115076",
+   "length": "559.19",
+   "height": "480",
+   "width": "640"
+  },
+  {
+   "name": "ConeyIsl1940.mpeg",
+   "source": "original",
+   "format": "MPEG2",
+   "size": "222435762",
+   "length": "559.15",
+   "height": "480",
+   "width": "640"
+  },
+  {
+   "name": "ConeyIsl1940.ogv",
+   "source": "derivative",
+   "format": "Ogg Video",
+   "original": "ConeyIsl1940.mpeg",
+   "size": "39757158",
+   "length": "559.19",
+   "height": "304",
+   "width": "400"
+  },
+  {
+   "name": "ConeyIsl1940.png",
+   "source": "derivative",
+   "format": "PNG",
+   "original": "ConeyIsl1940.mp3",
+   "size": "10272"
+  },
+  {
+   "name": "ConeyIsl1940.thumbs/ConeyIsl1940_000030.jpg",
+   "source": "derivative",
+   "format": "Thumbnail",
+   "original": "ConeyIsl1940.mpeg",
+   "size": "8850"
+  },
+  {
+   "name": "ConeyIsl1940_256kb.rm",
+   "source": "original",
+   "format": "256Kb Real Media",
+   "size": "97737833",
+   "length": "560.99",
+   "height": "240",
+   "width": "320"
+  },
+  {
+   "name": "ConeyIsl1940_512kb.mp4",
+   "source": "derivative",
+   "format": "512Kb MPEG4",
+   "original": "ConeyIsl1940.mpeg",
+   "size": "39584229",
+   "length": "559.19",
+   "height": "240",
+   "width": "320"
+  },
+  {
+   "name": "ConeyIsl1940_64kb.rm",
+   "source": "original",
+   "format": "64Kb Real Media",
+   "size": "41093857",
+   "length": "560.99",
+   "height": "120",
+   "width": "160"
+  },
+  {
+   "name": "ConeyIsl1940_archive.torrent",
+   "source": "metadata",
+   "size": "32383",
+   "format": "Archive BitTorrent"
+  },
+  {
+   "name": "ConeyIsl1940_edit.mp4",
+   "source": "original",
+   "format": "HiRes MPEG4",
+   "size": "199220908",
+   "length": "559.12",
+   "height": "240",
+   "width": "320"
+  },
+  {
+   "name": "ConeyIsl1940_files.xml",
+   "source": "metadata",
+   "format": "Metadata",
+   "summation": "md5"
+  },
+  {
+   "name": "ConeyIsl1940_intermediate_asr.json",
+   "source": "derivative",
+   "format": "Intermediate ASR JSON",
+   "original": "ConeyIsl1940_whisper_asr.json",
+   "size": "11115"
+  },
+  {
+   "name": "ConeyIsl1940_meta.xml",
+   "source": "metadata",
+   "format": "Metadata",
+   "size": "2462"
+  },
+  {
+   "name": "ConeyIsl1940_reviews.xml",
+   "source": "metadata",
+   "format": "Metadata",
+   "size": "12009"
+  },
+  {
+   "name": "ConeyIsl1940_whisper_asr.json",
+   "source": "derivative",
+   "whisper_asr_module_version": "20230731.02",
+   "whisper_version": "20230314",
+   "whisper_model_name": "small.en",
+   "whisper_model_hash": "sha256:f953ad0fd29cacd07d5a9eda5624af0f6bcf2258be67c92b79389873d91e0872",
+   "asr_detected_lang": "en",
+   "asr_detected_lang_conf": "0.99385815858841",
+   "asr_transcribed_lang": "en",
+   "format": "Whisper ASR JSON",
+   "original": "ConeyIsl1940.mp4",
+   "size": "127557"
+  },
+  {
+   "name": "__ia_thumb.jpg",
+   "source": "original",
+   "size": "10341",
+   "format": "Item Tile",
+   "rotation": "0"
+  }
+ ]
+}

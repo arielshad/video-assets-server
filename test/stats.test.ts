@@ -12,7 +12,7 @@ const linked = linkProvider({
   name: "Linked",
   homepage: "https://linked.example",
   description: "Link-only test source",
-  categories: ["drums"],
+  categories: ["nature"],
   pricing: "paid",
   buildSearchUrl: (q) => `https://linked.example/search?q=${encodeURIComponent(q.query)}`,
 });
@@ -44,7 +44,7 @@ describe("LocalStats", () => {
   it("tallies searches, surfaces, clients, categories, tools and per-source health", async () => {
     const s = new LocalStats(() => new Date("2026-10-05T00:00:00Z"));
     const response = {
-      query: "kick",
+      query: "ocean",
       filters: {},
       results: [{} as never],
       providers: [
@@ -53,11 +53,11 @@ describe("LocalStats", () => {
         { provider: "c", name: "C", status: "link" as const, count: 0, tookMs: 0 },
       ],
     };
-    s.search({ surface: "web", client: "browser", query: "kick", response, tookMs: 120 });
-    s.search({ surface: "mcp", client: "claude-code", query: "riser", categories: ["fx"], response: { ...response, results: [] }, tookMs: 90 });
-    s.toolCall({ tool: "search_samples", client: "claude-code", outcome: "ok", tookMs: 90 });
+    s.search({ surface: "web", client: "browser", query: "ocean", response, tookMs: 120 });
+    s.search({ surface: "mcp", client: "claude-code", query: "launch", categories: ["space"], response: { ...response, results: [] }, tookMs: 90 });
+    s.toolCall({ tool: "search_videos", client: "claude-code", outcome: "ok", tookMs: 90 });
     s.clipView({ surface: "api", client: "curl", provider: "a", found: true });
-    s.download({ surface: "api", client: "curl", provider: "a", kind: "zip" });
+    s.download({ surface: "api", client: "curl", provider: "a", kind: "credits" });
     s.pageView({ page: "/" });
 
     const snap = await s.snapshot();
@@ -69,10 +69,10 @@ describe("LocalStats", () => {
       { name: "browser", count: 1 },
       { name: "claude-code", count: 1 },
     ]);
-    expect(snap.tools).toEqual([{ name: "search_samples", count: 1 }]);
+    expect(snap.tools).toEqual([{ name: "search_videos", count: 1 }]);
     expect(snap.assetTypes).toEqual([
       { name: "any", count: 1 },
-      { name: "fx", count: 1 },
+      { name: "space", count: 1 },
     ]);
     // Link-only sources never reach the network, so they have no health row.
     expect(snap.providers.map((p) => p.provider)).toEqual(["a", "b"]);
@@ -96,7 +96,7 @@ describe("PrometheusStats", () => {
       [/has_results="true".*\[7d\]/, [{ v: "90" }]],
       [/downloads_total\[24h\]/, [{ v: "2" }]],
       [/sum by \(client\)/, [{ metric: { client: "claude-code" }, v: "40" }, { metric: { client: "browser" }, v: "60" }, { metric: { client: "curl" }, v: "0" }]],
-      [/sum by \(tool\)/, [{ metric: { tool: "search_samples" }, v: "25" }]],
+      [/sum by \(tool\)/, [{ metric: { tool: "search_videos" }, v: "25" }]],
       [/provider_requests_total/, [
         { metric: { provider: "freesound", status: "ok" }, v: "19" },
         { metric: { provider: "freesound", status: "timeout" }, v: "1" },
@@ -117,7 +117,7 @@ describe("PrometheusStats", () => {
       { name: "browser", count: 60 },
       { name: "claude-code", count: 40 },
     ]);
-    expect(snap.tools).toEqual([{ name: "search_samples", count: 25 }]);
+    expect(snap.tools).toEqual([{ name: "search_videos", count: 25 }]);
     expect(snap.providers).toEqual([
       { provider: "freesound", requests: 20, ok: 19, errors: 0, timeouts: 1, okRate: 0.95, p50Ms: 300, p95Ms: null },
     ]);

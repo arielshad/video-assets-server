@@ -10,112 +10,119 @@ import { allProviders } from "../src/providers/index.js";
 // @ts-expect-error plain .mjs module without type declarations
 import { CATEGORIES, readHubs, readSnapshot, readTopics, searchKey, topicErrors } from "../scripts/lib/topics.mjs";
 // @ts-expect-error plain .mjs module without type declarations
-import { checkPreview, isAudioType, previewChecker } from "../scripts/snapshot-collections.mjs";
+import { checkPreview, isMediaType, previewChecker } from "../scripts/snapshot-collections.mjs";
 
 const pricing = new Map<string, Pricing>([
-  ["freesound", "free"],
-  ["cymatics", "freemium"],
-  ["primeloops", "freemium"],
+  ["commons", "free"],
+  ["stock", "freemium"],
+  ["paid", "freemium"],
 ]);
 
 const clip = (provider: string, n: number, over: Partial<Clip> = {}): Clip =>
   makeClip({
     provider,
     nativeId: `${provider}-${n}`,
-    title: `Punchy kick ${provider} ${n}`,
-    category: "drums.kick",
-    form: "one-shot",
+    title: `Ocean waves ${provider} ${n}`,
+    category: "nature.ocean",
     tags: [],
     url: `https://${provider}.example/${n}`,
-    previewUrl: `https://cdn.${provider}.example/${n}.mp3`,
+    posterUrl: `https://cdn.${provider}.example/${n}.jpg`,
+    previewUrl: `https://cdn.${provider}.example/${n}.mp4`,
     license: license("CC0-1.0"),
     downloadable: true,
     ...over,
   });
 
-const search: CollectionSearch = { q: "kick", categories: ["drums.kick"], free: true };
+const search: CollectionSearch = { q: "waves", categories: ["nature.ocean"], free: true };
 
 describe("toSnapshotClip", () => {
-  it("keeps what a page shows, with the licence verdict and musical facts", () => {
-    const s = toSnapshotClip(clip("freesound", 1, { bpm: 140, key: { tonic: "F", mode: "minor" }, durationSec: 0.4, thumbnailUrl: "https://cdn.freesound.example/1.png", description: "the source's copy" }))!;
+  it("keeps what a page shows, with the licence verdict and video facts", () => {
+    const s = toSnapshotClip(clip("commons", 1, { width: 3840, height: 2160, fps: 30, durationSec: 12, year: 2020, styles: ["timelapse"], description: "the source's copy", license: { ...license("CC0-1.0"), editorial: true } }))!;
     expect(s).toMatchObject({
-      id: "freesound:freesound-1",
-      category: "drums.kick",
-      form: "one-shot",
-      previewUrl: "https://cdn.freesound.example/1.mp3",
-      thumbnailUrl: "https://cdn.freesound.example/1.png",
-      license: { id: "CC0-1.0", verdict: "yes" },
-      bpm: 140,
-      key: "F minor",
-      durationSec: 0.4,
+      id: "commons:commons-1",
+      category: "nature.ocean",
+      styles: ["timelapse"],
+      posterUrl: "https://cdn.commons.example/1.jpg",
+      previewUrl: "https://cdn.commons.example/1.mp4",
+      previewType: "video/mp4",
+      license: { id: "CC0-1.0", verdict: "yes", editorial: true },
+      orientation: "landscape",
+      width: 3840,
+      height: 2160,
+      fps: 30,
+      durationSec: 12,
+      year: 2020,
     });
     expect(s).not.toHaveProperty("description");
   });
 
-  it("drops clips a static page can't play", () => {
-    expect(toSnapshotClip(clip("freesound", 1, { previewUrl: undefined }))).toBeUndefined();
-    expect(toSnapshotClip(clip("freesound", 1, { previewUrl: "http://insecure.example/1.mp3" }))).toBeUndefined();
-    expect(toSnapshotClip(clip("freesound", 1, { previewNeedsReferer: true }))).toBeUndefined();
+  it("drops clips a static page can't show, keeps poster-only or preview-only ones", () => {
+    expect(toSnapshotClip(clip("commons", 1, { previewUrl: undefined, posterUrl: undefined }))).toBeUndefined();
+    expect(toSnapshotClip(clip("commons", 1, { previewUrl: "http://insecure.example/1.mp4", posterUrl: "http://insecure.example/1.jpg" }))).toBeUndefined();
+    expect(toSnapshotClip(clip("commons", 1, { previewUrl: undefined }))?.posterUrl).toBe("https://cdn.commons.example/1.jpg");
+    const previewOnly = toSnapshotClip(clip("commons", 1, { posterUrl: "http://insecure.example/1.jpg" }))!;
+    expect(previewOnly.posterUrl).toBeUndefined();
+    expect(previewOnly.previewUrl).toBe("https://cdn.commons.example/1.mp4");
   });
 });
 
 describe("selectClips", () => {
-  it("keeps relevant, free clips with a preview, once per id and title", () => {
+  it("keeps relevant, free clips with media, once per id and title", () => {
     const picked = selectClips(
       [
-        clip("freesound", 1),
-        clip("freesound", 1), // same id again
-        clip("freesound", 2, { title: "Punchy kick freesound 1" }), // same title on the same source
-        clip("freesound", 3, { title: "Rain on a tin roof", category: "ambience" }), // not about kicks
-        clip("freesound", 4, { previewUrl: undefined }),
-        clip("freesound", 5, { previewUrl: "http://insecure.example/5.mp3" }),
-        clip("cymatics", 1, { price: { free: false } }),
-        clip("cymatics", 2), // freemium source, price unknown: not provably free
-        clip("cymatics", 3, { price: { free: true } }),
+        clip("commons", 1),
+        clip("commons", 1), // same id again
+        clip("commons", 2, { title: "Ocean waves commons 1" }), // same title on the same source
+        clip("commons", 3, { title: "Busy street at night", category: "city.street" }), // not about waves
+        clip("commons", 4, { previewUrl: undefined, posterUrl: undefined }),
+        clip("commons", 5, { previewUrl: "http://insecure.example/5.mp4", posterUrl: undefined }),
+        clip("stock", 1, { price: { free: false } }),
+        clip("stock", 2), // freemium source, price unknown: not provably free
+        clip("stock", 3, { price: { free: true } }),
       ],
       { search, pricing },
     );
-    expect(picked.map((a) => a.id)).toEqual(["freesound:freesound-1", "cymatics:cymatics-3"]);
+    expect(picked.map((a) => a.id)).toEqual(["commons:commons-1", "stock:stock-3"]);
   });
 
   it("counts the category as a word, and ignores near misses that only start like the query", () => {
-    const subs = selectClips([clip("freesound", 1, { title: "Long Sub F", category: "bass.808" }), clip("freesound", 2, { title: "Clean 808s" }), clip("freesound", 3, { title: "Deep Sub", category: "bass.sub" })], {
-      search: { q: "808" },
+    const sky = selectClips([clip("commons", 1, { title: "Golden hour", category: "nature.sky" }), clip("commons", 2, { title: "Sky over the bay" }), clip("commons", 3, { title: "Harbour", category: "city" })], {
+      search: { q: "sky" },
       pricing,
     });
-    expect(subs.map((a) => a.title)).toEqual(["Long Sub F", "Clean 808s"]);
-    const hats = selectClips([clip("freesound", 1, { title: "Hatch Door Slam", category: "foley" }), clip("freesound", 2, { title: "Closed Hat 03", category: "drums.hat.closed" })], { search: { q: "hat" }, pricing });
-    expect(hats.map((a) => a.title)).toEqual(["Closed Hat 03"]);
+    expect(sky.map((a) => a.title)).toEqual(["Golden hour", "Sky over the bay"]);
+    const sea = selectClips([clip("commons", 1, { title: "Seattle Downtown", category: "city" }), clip("commons", 2, { title: "Sea Stacks" })], { search: { q: "sea" }, pricing });
+    expect(sea.map((a) => a.title)).toEqual(["Sea Stacks"]);
   });
 
   it("keeps only commercial-safe licences when the search asks for them", () => {
     const picked = selectClips(
-      [clip("freesound", 1), clip("freesound", 2, { license: creativeCommons({ nc: true }) }), clip("freesound", 3, { license: creativeCommons({}) }), clip("freesound", 4, { license: undefined })],
+      [clip("commons", 1), clip("commons", 2, { license: creativeCommons({ nc: true }) }), clip("commons", 3, { license: creativeCommons({}) }), clip("commons", 4, { license: undefined })],
       { search: { ...search, commercial: true }, pricing },
     );
     expect(picked.map((a) => a.license?.verdict)).toEqual(["yes", "yes-with-credit"]);
   });
 
   it("drops excluded title phrases and ids", () => {
-    const picked = selectClips([clip("freesound", 1, { title: "Kick Drum Pedal Squeak" }), clip("freesound", 2), clip("freesound", 3)], {
-      search: { ...search, exclude: ["pedal squeak", "freesound:freesound-3"] },
+    const picked = selectClips([clip("commons", 1, { title: "Ocean Waves Lecture Slides" }), clip("commons", 2), clip("commons", 3)], {
+      search: { ...search, exclude: ["lecture slides", "commons:commons-3"] },
       pricing,
     });
-    expect(picked.map((a) => a.id)).toEqual(["freesound:freesound-2"]);
+    expect(picked.map((a) => a.id)).toEqual(["commons:commons-2"]);
   });
 
   it("caps one source at 40% of the page", () => {
-    const fresh = [...Array.from({ length: 30 }, (_, i) => clip("freesound", i)), ...Array.from({ length: 5 }, (_, i) => clip("cymatics", i, { price: { free: true } }))];
+    const fresh = [...Array.from({ length: 30 }, (_, i) => clip("commons", i)), ...Array.from({ length: 5 }, (_, i) => clip("stock", i, { price: { free: true } }))];
     const picked = selectClips(fresh, { search, pricing, max: 20 });
-    expect(picked.filter((a) => a.provider === "freesound")).toHaveLength(8);
-    expect(picked.filter((a) => a.provider === "cymatics")).toHaveLength(5);
+    expect(picked.filter((a) => a.provider === "commons")).toHaveLength(8);
+    expect(picked.filter((a) => a.provider === "stock")).toHaveLength(5);
   });
 
   it("keeps previous clips in place, fills gaps with new ones and keeps a failed source's clips", () => {
-    const prev = selectClips([clip("freesound", 1), clip("cymatics", 1, { price: { free: true } }), clip("freesound", 2)], { search, pricing });
-    // This run: cymatics failed, freesound 2 is gone, freesound 9 is new and ranks first.
-    const next = selectClips([clip("freesound", 9), clip("freesound", 1)], { search, pricing, previous: prev, failed: new Set(["cymatics"]) });
-    expect(next.map((a) => a.id)).toEqual(["freesound:freesound-1", "cymatics:cymatics-1", "freesound:freesound-9"]);
+    const prev = selectClips([clip("commons", 1), clip("stock", 1, { price: { free: true } }), clip("commons", 2)], { search, pricing });
+    // This run: stock failed, commons 2 is gone, commons 9 is new and ranks first.
+    const next = selectClips([clip("commons", 9), clip("commons", 1)], { search, pricing, previous: prev, failed: new Set(["stock"]) });
+    expect(next.map((a) => a.id)).toEqual(["commons:commons-1", "stock:stock-1", "commons:commons-9"]);
   });
 });
 
@@ -130,54 +137,71 @@ describe("isIndexable", () => {
 
 describe("snapshotCollection", () => {
   const response = (results: Clip[], failed: string[] = []): SearchResponse => ({
-    query: "kick",
+    query: "waves",
     filters: {},
     results,
     providers: failed.map((provider) => ({ provider, name: provider, status: "error" as const, count: 0, tookMs: 1 })),
   });
-  const fresh = Array.from({ length: 3 }, (_, i) => clip("freesound", i));
+  const fresh = Array.from({ length: 3 }, (_, i) => clip("commons", i));
 
   it("asks the service for the topic's filters", async () => {
     let asked: unknown;
-    await snapshotCollection(async (req) => ((asked = req), response([])), "s", { q: "kick", categories: ["drums.kick"], forms: ["one-shot"], free: true, commercial: true, downloadable: true, providers: ["freesound"] }, { pricing });
-    expect(asked).toMatchObject({ query: "kick", categories: ["drums.kick"], forms: ["one-shot"], freeOnly: true, commercialOnly: true, downloadableOnly: true, providers: ["freesound"], limit: 100 });
+    await snapshotCollection(
+      async (req) => ((asked = req), response([])),
+      "s",
+      { q: "waves", categories: ["nature.ocean"], styles: ["timelapse"], orientations: ["portrait"], minResolution: 1080, free: true, commercial: true, downloadable: true, providers: ["commons"] },
+      { pricing },
+    );
+    expect(asked).toMatchObject({
+      query: "waves",
+      categories: ["nature.ocean"],
+      styles: ["timelapse"],
+      orientations: ["portrait"],
+      minResolution: 1080,
+      freeOnly: true,
+      commercialOnly: true,
+      downloadableOnly: true,
+      providers: ["commons"],
+      limit: 100,
+    });
   });
 
   it("moves updatedAt only when the list changes", async () => {
-    const first = await snapshotCollection(async () => response(fresh), "free-kick-clips", search, { pricing, now: new Date("2026-10-01T00:00:00Z") });
+    const first = await snapshotCollection(async () => response(fresh), "free-ocean-footage", search, { pricing, now: new Date("2026-10-01T00:00:00Z") });
     expect(first.changed).toBe(true);
-    const again = await snapshotCollection(async () => response(fresh), "free-kick-clips", search, { pricing, previous: first.snapshot, now: new Date("2026-10-02T00:00:00Z") });
+    const again = await snapshotCollection(async () => response(fresh), "free-ocean-footage", search, { pricing, previous: first.snapshot, now: new Date("2026-10-02T00:00:00Z") });
     expect(again.changed).toBe(false);
     expect(again.snapshot.updatedAt).toBe("2026-10-01T00:00:00.000Z");
-    const more = await snapshotCollection(async () => response([...fresh, clip("freesound", 7)]), "free-kick-clips", search, { pricing, previous: again.snapshot, now: new Date("2026-10-03T00:00:00Z") });
+    const more = await snapshotCollection(async () => response([...fresh, clip("commons", 7)]), "free-ocean-footage", search, { pricing, previous: again.snapshot, now: new Date("2026-10-03T00:00:00Z") });
     expect(more).toMatchObject({ changed: true, added: 1, kept: 3, dropped: 0 });
     expect(more.snapshot.updatedAt).toBe("2026-10-03T00:00:00.000Z");
   });
 
-  it("skips clips whose preview is gone and lets the next one take the slot", async () => {
-    const results = Array.from({ length: 4 }, (_, i) => clip(i % 2 ? "freesound" : "cymatics", i, { price: { free: true } }));
+  it("skips clips whose poster is gone and lets the next one take the slot", async () => {
+    const results = Array.from({ length: 4 }, (_, i) => clip(i % 2 ? "commons" : "stock", i, { price: { free: true } }));
     const checked: string[] = [];
     const r = await snapshotCollection(async () => response(results), "s", search, {
       pricing,
       checkMedia: async (url) => {
         checked.push(url);
-        return !url.includes("/1.mp3");
+        return !url.includes("/1.jpg");
       },
     });
-    expect(r.snapshot.clips.map((a) => a.id)).toEqual(["cymatics:cymatics-0", "cymatics:cymatics-2", "freesound:freesound-3"]);
+    expect(r.snapshot.clips.map((a) => a.id)).toEqual(["stock:stock-0", "stock:stock-2", "commons:commons-3"]);
     expect(r.brokenMedia).toBe(1);
-    expect(new Set(checked).size).toBe(checked.length); // each preview checked once
+    expect(checked.every((u) => u.endsWith(".jpg"))).toBe(true); // the poster is what a page loads first
+    expect(new Set(checked).size).toBe(checked.length); // each URL checked once
     expect(r.snapshot.search).toEqual(search); // broken ids are not saved into the search
   });
 
   it("starts over when the search itself changes", async () => {
-    const previous: CollectionSnapshot = { slug: "s", search: { q: "snare" }, updatedAt: "2026-01-01T00:00:00.000Z", clips: [{ id: "freesound:old" } as SnapshotClip] };
-    const r = await snapshotCollection(async () => response(fresh, ["freesound"]), "s", search, { pricing, previous });
-    expect(r.snapshot.clips.map((a) => a.id)).not.toContain("freesound:old");
+    const previous: CollectionSnapshot = { slug: "s", search: { q: "clouds" }, updatedAt: "2026-01-01T00:00:00.000Z", clips: [{ id: "commons:old" } as SnapshotClip] };
+    const r = await snapshotCollection(async () => response(fresh, ["commons"]), "s", search, { pricing, previous });
+    expect(r.snapshot.clips.map((a) => a.id)).not.toContain("commons:old");
   });
 });
 
-describe("preview check (scripts/snapshot-collections.mjs)", () => {
+describe("media check (scripts/snapshot-collections.mjs)", () => {
   setHostResolver(async (host) => (host === "evil.example" ? ["10.0.0.5"] : ["93.184.216.34"]));
   type Reply = { status?: number; type?: string; location?: string };
   const fakeFetch = (routes: Record<string, Reply | ((method: string) => Reply)>) => {
@@ -196,14 +220,14 @@ describe("preview check (scripts/snapshot-collections.mjs)", () => {
   };
   const check = (url: string, f: ReturnType<typeof fakeFetch>) => checkPreview(url, { assertHost: assertPublicHost, fetch: f.fetchImpl, timeoutMs: 1000 }) as Promise<boolean>;
 
-  it("accepts audio and the generic binary types, refuses pages", () => {
-    for (const t of ["audio/mpeg", "audio/ogg; codecs=vorbis", "application/ogg", "application/octet-stream"]) expect(isAudioType(t), t).toBe(true);
-    for (const t of ["text/html; charset=utf-8", "image/png", "application/json"]) expect(isAudioType(t), t).toBe(false);
+  it("accepts images, video and the generic binary types, refuses pages", () => {
+    for (const t of ["image/jpeg", "video/mp4", "video/webm; codecs=vp9", "application/ogg", "application/octet-stream"]) expect(isMediaType(t), t).toBe(true);
+    for (const t of ["text/html; charset=utf-8", "audio/mpeg", "application/json"]) expect(isMediaType(t), t).toBe(false);
   });
 
   it("treats only definite answers as broken", async () => {
     const f = fakeFetch({
-      "https://cdn.example/ok.mp3": { type: "audio/mpeg" },
+      "https://cdn.example/ok.mp3": { type: "video/mp4" },
       "https://cdn.example/gone.mp3": { status: 404 },
       "https://cdn.example/soft404.mp3": { type: "text/html" },
       "https://cdn.example/busy.mp3": { status: 503, type: "text/html" },
@@ -216,7 +240,7 @@ describe("preview check (scripts/snapshot-collections.mjs)", () => {
   });
 
   it("falls back to a ranged GET when HEAD is refused", async () => {
-    const f = fakeFetch({ "https://cdn.example/a.ogg": (m) => (m === "HEAD" ? { status: 405 } : { status: 206, type: "audio/ogg" }) });
+    const f = fakeFetch({ "https://cdn.example/a.ogg": (m) => (m === "HEAD" ? { status: 405 } : { status: 206, type: "video/webm" }) });
     expect(await check("https://cdn.example/a.ogg", f)).toBe(true);
     expect(f.calls).toEqual(["HEAD https://cdn.example/a.ogg", "GET https://cdn.example/a.ogg"]);
   });
@@ -224,9 +248,9 @@ describe("preview check (scripts/snapshot-collections.mjs)", () => {
   it("follows redirects by hand and refuses internal hosts on any hop", async () => {
     const f = fakeFetch({
       "https://cdn.example/r.mp3": { status: 302, location: "https://media.example/r.mp3" },
-      "https://media.example/r.mp3": { type: "audio/mpeg" },
+      "https://media.example/r.mp3": { type: "image/jpeg" },
       "https://cdn.example/bad.mp3": { status: 302, location: "http://169.254.169.254/latest" },
-      "https://evil.example/x.mp3": { type: "audio/mpeg" },
+      "https://evil.example/x.mp3": { type: "video/mp4" },
     });
     expect(await check("https://cdn.example/r.mp3", f)).toBe(true);
     expect(await check("https://cdn.example/bad.mp3", f)).toBe(false);
@@ -236,7 +260,7 @@ describe("preview check (scripts/snapshot-collections.mjs)", () => {
   });
 
   it("checks each URL once", async () => {
-    const f = fakeFetch({ "https://cdn.example/ok.mp3": { type: "audio/mpeg" } });
+    const f = fakeFetch({ "https://cdn.example/ok.mp3": { type: "video/mp4" } });
     const checker = previewChecker({ assertHost: assertPublicHost, fetch: f.fetchImpl, timeoutMs: 1000 }, 2) as (u: string) => Promise<boolean>;
     await Promise.all([checker("https://cdn.example/ok.mp3"), checker("https://cdn.example/ok.mp3")]);
     expect(f.calls).toHaveLength(1);
@@ -245,10 +269,10 @@ describe("preview check (scripts/snapshot-collections.mjs)", () => {
 
 describe("collection topics", () => {
   const topics = readTopics() as { slug: string; data: { search: CollectionSearch; hub: string } }[];
-  const hubs = readHubs() as { id: string; title: string; description: string; intro: string; categories?: string[]; forms?: string[] }[];
+  const hubs = readHubs() as { id: string; title: string; description: string; intro: string; categories?: string[]; orientations?: string[] }[];
   const ctx = { hubs: hubs.map((h) => h.id), slugs: topics.map((t) => t.slug), providers: allProviders.map((p) => p.id) };
 
-  it("has hubs with copy and a valid category or form scope", () => {
+  it("has hubs with copy and a valid category scope", () => {
     expect(hubs.length).toBeGreaterThanOrEqual(5);
     for (const h of hubs) {
       expect(h.id, h.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
@@ -256,7 +280,7 @@ describe("collection topics", () => {
       expect(h.description.length, h.id).toBeGreaterThanOrEqual(110);
       expect(h.description.length, h.id).toBeLessThanOrEqual(160);
       expect(h.intro.length, h.id).toBeGreaterThan(200);
-      expect(h.categories?.length || h.forms?.length, h.id).toBeTruthy();
+      expect(h.categories?.length || h.orientations?.length, h.id).toBeTruthy();
       for (const c of h.categories ?? []) expect(CATEGORIES, h.id).toContain(c);
     }
   });
@@ -270,7 +294,7 @@ describe("collection topics", () => {
   it("gives every topic its own search, with the same identity the server uses", () => {
     const keys = topics.map((t) => searchKey(t.data.search));
     expect(new Set(keys).size).toBe(keys.length);
-    const s: CollectionSearch = { q: " Punchy  Kick ", categories: ["drums.kick", "drums"], forms: ["one-shot"], free: true, commercial: true, downloadable: true, providers: ["b", "a"] };
+    const s: CollectionSearch = { q: " Crashing  Waves ", categories: ["nature.ocean", "nature"], styles: ["slow-motion"], orientations: ["portrait"], minResolution: 1080, free: true, commercial: true, downloadable: true, providers: ["b", "a"] };
     expect(searchKey(s)).toBe(coreSearchKey(s));
   });
 
@@ -282,7 +306,7 @@ describe("collection topics", () => {
     expect(snap, `run: node scripts/snapshot-collections.mjs ${slug}`).toBeDefined();
     expect(snap!.slug).toBe(slug);
     for (const a of snap!.clips) {
-      expect(a.previewUrl).toMatch(/^https:\/\//);
+      expect(a.posterUrl ?? a.previewUrl).toMatch(/^https:\/\//);
       expect(a.license?.verdict ?? "check-terms").toBeTruthy();
     }
   });

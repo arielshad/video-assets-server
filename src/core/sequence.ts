@@ -118,23 +118,28 @@ export async function planSequence(service: ClipService, o: SequenceOptions): Pr
   const commercialOnly = o.commercialOnly ?? true;
 
   // Searches run in parallel; picks are made in order so a clip is used once.
+  // A shot that finds nothing in the target orientation and size searches
+  // again without them: a clip that has to be cropped or upscaled beats none
+  // (the shot's note says so).
+  const searchShot = async (s: ShotRequest, i: number, strictFrame: boolean) =>
+    service
+      .search({
+        query: s.description,
+        parse: true,
+        ...(strictFrame ? { orientations: [frame.orientation], minResolution: Math.min(minRes, 1080) } : {}),
+        duration: { min: durations[i] },
+        commercialOnly,
+        downloadableOnly: true,
+        providers: o.providers,
+        limit: 12,
+        credentials: o.credentials,
+      })
+      .catch(() => undefined);
   const searches = await Promise.all(
-    shots.map((s, i) =>
-      service
-        .search({
-          query: s.description,
-          parse: true,
-          orientations: [frame.orientation],
-          minResolution: Math.min(minRes, 1080),
-          duration: { min: durations[i] },
-          commercialOnly,
-          downloadableOnly: true,
-          providers: o.providers,
-          limit: 12,
-          credentials: o.credentials,
-        })
-        .catch(() => undefined),
-    ),
+    shots.map(async (s, i) => {
+      const first = await searchShot(s, i, true);
+      return first?.results.length ? first : ((await searchShot(s, i, false)) ?? first);
+    }),
   );
 
   const out: SequenceShot[] = [];

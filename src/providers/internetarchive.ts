@@ -35,8 +35,8 @@ const FIELDS = ["identifier", "title", "creator", "licenseurl", "subject", "date
 export const LICENCE_CLAUSE =
   "mediatype:movies AND licenseurl:*creativecommons.org* AND NOT licenseurl:*nc* AND NOT licenseurl:*nd* AND NOT licenseurl:*sampling*";
 
-/** Collections whose items are TV captures, trailers or fan uploads, not footage you can reuse. */
-const EXCLUDE_COLLECTIONS = ["tvnews", "tvarchive", "movie_trailers", "fanvids", "vlogs", "gamevideos", "speedrunsdotcom", "machinima"];
+/** Collections whose items are TV captures, trailers, fan uploads or YouTube mirrors (IA flags those "deemphasize"), not footage you can reuse. */
+const EXCLUDE_COLLECTIONS = ["tvnews", "tvarchive", "movie_trailers", "fanvids", "vlogs", "gamevideos", "speedrunsdotcom", "machinima", "deemphasize", "mirrortube"];
 const EXCLUDE_CLAUSE = `NOT collection:(${EXCLUDE_COLLECTIONS.join(" OR ")})`;
 
 /** Curated by the institution that holds the films: their PD statement is the source's, not an anonymous uploader's. */
@@ -130,7 +130,8 @@ function hasAudioOf(d: Pick<IaDoc, "sound">): boolean | undefined {
 }
 
 function yearOf(d: Pick<IaDoc, "year" | "date">): number | undefined {
-  const y = Number(String(d.year ?? "").slice(0, 4)) || Number(/\b(1[89]\d\d|20\d\d)\b/.exec(d.date ?? "")?.[1]);
+  // "1940", "1940-05-01", "ca. 1940s"
+  const y = Number(String(d.year ?? "").slice(0, 4)) || Number(/(?<!\d)(1[89]\d\d|20\d\d)(?!\d)/.exec(d.date ?? "")?.[1]);
   return y && y > 1850 && y < 2100 ? y : undefined;
 }
 

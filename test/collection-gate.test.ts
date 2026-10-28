@@ -11,14 +11,14 @@ const topic = (slug: string, over: Record<string, unknown> = {}): Topic => ({
   slug,
   body,
   data: {
-    title: "Free lo-fi drum loops",
-    description: "Free lo-fi drum loops for chill hip hop and study beats: dusty, swung grooves at 70 to 90 BPM from many clip sites, each with its licence verdict.",
-    hub: "drums",
-    search: { q: slug.replace(/-/g, " "), categories: ["drums"], forms: ["loop"], free: true },
+    title: "Free cloud timelapses",
+    description: "Free cloud timelapse footage for intros, transitions and nature edits: rolling cumulus and storm fronts in HD and 4K, each with its licence verdict.",
+    hub: "nature",
+    search: { q: slug.replace(/-/g, " "), categories: ["nature.sky"], styles: ["timelapse"], free: true },
     related: ["existing-a", "existing-b"],
     faq: [
-      { q: "Can I use these loops in a released track?", a: "Check the verdict on each card: CC0 loops need nothing, CC BY loops need a credit, and NC loops are for non-commercial use only." },
-      { q: "What tempo are lo-fi drum loops?", a: "Most sit between 70 and 90 BPM. Each card shows the tempo when the source or our analysis knows it." },
+      { q: "Can I use these clips in a monetised video?", a: "Check the verdict on each card: CC0 clips need nothing, CC BY clips need a credit, and NC clips are for non-commercial use only." },
+      { q: "What frame rate are cloud timelapses?", a: "Most are delivered at 24, 25 or 30 fps. Each card shows the frame rate when the source states it." },
     ],
     addedAt: "2026-10-07",
     addedBy: "agent",
@@ -26,20 +26,20 @@ const topic = (slug: string, over: Record<string, unknown> = {}): Topic => ({
   },
 });
 const existing = [topic("existing-a", { addedBy: "human" }), topic("existing-b", { addedBy: "human" })];
-const base = { existing, hubs: ["drums", "vocals"], providers: ["freesound"] };
+const base = { existing, hubs: ["nature", "space"], providers: ["wikimediacommons"] };
 const file = (slug: string, status = "A") => ({ status, path: `web/src/content/collections/${slug}.md` });
 const check = checkChanges as (i: { files: { status: string; path: string }[]; existing: Topic[]; added: Topic[]; hubs: string[]; providers: string[] }) => { errors: string[]; added: string[] };
 
 describe("collection gate", () => {
   it("accepts new agent topics that meet the rules", () => {
-    expect(check({ ...base, files: [file("lofi-drum-loops")], added: [topic("lofi-drum-loops")] })).toEqual({ errors: [], added: ["lofi-drum-loops"] });
+    expect(check({ ...base, files: [file("cloud-timelapses")], added: [topic("cloud-timelapses")] })).toEqual({ errors: [], added: ["cloud-timelapses"] });
   });
 
   it("refuses other files, edits to existing topics and deletions", () => {
     const { errors } = check({
       ...base,
-      files: [file("lofi-drum-loops"), file("existing-a", "M"), file("existing-b", "D"), { status: "A", path: "src/core/service.ts" }],
-      added: [topic("lofi-drum-loops")],
+      files: [file("cloud-timelapses"), file("existing-a", "M"), file("existing-b", "D"), { status: "A", path: "src/core/service.ts" }],
+      added: [topic("cloud-timelapses")],
     });
     expect(errors).toHaveLength(3);
   });
@@ -52,14 +52,14 @@ describe("collection gate", () => {
   it("refuses duplicates, human authorship and links to new pages", () => {
     const { errors } = check({
       ...base,
-      files: [file("lofi-drum-loops"), file("lofi-drum-loops-2")],
-      added: [topic("lofi-drum-loops", { addedBy: "human" }), topic("lofi-drum-loops-2", { search: { q: "Lofi Drum  Loops", categories: ["drums"], forms: ["loop"], free: true }, related: ["existing-a", "lofi-drum-loops"] })],
+      files: [file("cloud-timelapses"), file("cloud-timelapses-2")],
+      added: [topic("cloud-timelapses", { addedBy: "human" }), topic("cloud-timelapses-2", { search: { q: "Cloud  Timelapses", categories: ["nature.sky"], styles: ["timelapse"], free: true }, related: ["existing-a", "cloud-timelapses"] })],
     });
     expect(errors).toEqual(
       expect.arrayContaining([
-        'lofi-drum-loops: addedBy must be "agent"',
-        'lofi-drum-loops-2: related "lofi-drum-loops" must be an existing collection',
-        'lofi-drum-loops-2: same search as "lofi-drum-loops"',
+        'cloud-timelapses: addedBy must be "agent"',
+        'cloud-timelapses-2: related "cloud-timelapses" must be an existing collection',
+        'cloud-timelapses-2: same search as "cloud-timelapses"',
       ]),
     );
   });
@@ -69,20 +69,22 @@ describe("collection gate", () => {
     expect(errors.join()).toMatch(/body: 2 words/);
   });
 
-  it("only accepts the server's categories and forms", () => {
+  it("only accepts the server's categories, styles, orientations and resolutions", () => {
     const { errors } = check({
       ...base,
       files: [file("bad-vocab")],
-      added: [topic("bad-vocab", { search: { q: "bad vocab", categories: ["drums.kick", "textures"], forms: ["loop", "stem"], types: ["model"] } })],
+      added: [topic("bad-vocab", { search: { q: "bad vocab", categories: ["nature.ocean", "textures"], styles: ["timelapse", "vlog"], orientations: ["diagonal"], minResolution: 900, forms: ["loop"] } })],
     });
     expect(errors).toEqual(
       expect.arrayContaining([
         expect.stringMatching(/^bad-vocab: search\.categories: a list of categories/),
-        expect.stringMatching(/^bad-vocab: search\.forms: a list of one-shot, loop/),
-        "bad-vocab: search: unknown field(s) types",
+        expect.stringMatching(/^bad-vocab: search\.styles: a list of timelapse, slow-motion/),
+        expect.stringMatching(/^bad-vocab: search\.orientations: a list of landscape, portrait, square/),
+        "bad-vocab: search.minResolution: one of 720, 1080, 1440, 2160",
+        "bad-vocab: search: unknown field(s) forms",
       ]),
     );
-    expect(check({ ...base, files: [file("hats")], added: [topic("hats", { search: { q: "closed hat", categories: ["drums.hat.closed"], commercial: true } })] }).errors).toEqual([]);
+    expect(check({ ...base, files: [file("vertical-sky")], added: [topic("vertical-sky", { search: { q: "sky", categories: ["nature.sky"], orientations: ["portrait"], minResolution: 1080, commercial: true } })] }).errors).toEqual([]);
   });
 
   it("withdraws topics whose search finds too little", () => {
@@ -100,33 +102,32 @@ describe("collection gate", () => {
 
 describe("collection ideas", () => {
   it("keeps only plain topic-like queries", () => {
-    expect(sanitizeQuery("  Dusty   Snare ")).toBe("dusty snare");
-    expect(sanitizeQuery("90's boom-bap")).toBe("90's boom-bap");
+    expect(sanitizeQuery("  Crashing   Waves ")).toBe("crashing waves");
+    expect(sanitizeQuery("1950's new-york")).toBe("1950's new-york");
     for (const bad of ["a", "john@example.com", "https://x.io/a", "www example com", "12345", "one two three four five six seven", "<script>"]) expect(sanitizeQuery(bad), bad).toBeUndefined();
   });
 
   it("matches queries to collections without the filler words", () => {
-    expect(coreTerms("Free Riser Sound Effects")).toBe("riser");
-    expect(coreTerms("lo-fi drum loops")).toBe("drum lofi loop");
-    expect(coreTerms("free hi hat one shots")).toBe("hihat oneshot");
-    expect(coreTerms("royalty-free 808s for commercial use")).toBe("808");
-    expect(coreTerms("A Cappella vocals")).toBe("acapella vocal");
-    const topics = [{ q: "riser", aliases: ["uplifter sfx"] }];
-    expect(isCovered("free riser clips", topics)).toBe(true);
-    expect(isCovered("uplifter", topics)).toBe(true);
-    expect(isCovered("free sound effects", topics)).toBe(true); // only filler: the hubs answer it
-    expect(isCovered("vinyl crackle", topics)).toBe(false);
+    expect(coreTerms("Free Waterfall Stock Footage")).toBe("waterfall");
+    expect(coreTerms("city time lapse videos")).toBe("city timelapse");
+    expect(coreTerms("slow mo b-roll of rain")).toBe("rain slowmotion");
+    expect(coreTerms("royalty-free drones for commercial use")).toBe("drone");
+    const topics = [{ q: "waterfall", aliases: ["cascade b-roll"] }];
+    expect(isCovered("free waterfall clips", topics)).toBe(true);
+    expect(isCovered("cascade", topics)).toBe(true);
+    expect(isCovered("free stock footage", topics)).toBe(true); // only filler: the hubs answer it
+    expect(isCovered("northern lights", topics)).toBe(false);
   });
 
   it("ranks frequent, uncovered queries and drops rare ones", () => {
     const rows = [
-      { query: "vinyl crackle", count: 9 },
-      { query: "Vinyl Crackle ", count: 2 },
-      { query: "riser sfx", count: 50 },
+      { query: "northern lights", count: 9 },
+      { query: "Northern Lights ", count: 2 },
+      { query: "waterfall footage", count: 50 },
       { query: "rare thing", count: 2 },
       { query: "me@mail.com", count: 40 },
     ];
-    const ideas = ideasFrom(rows, [{ query: "vinyl crackle", count: 4 }], [{ q: "riser" }], 3);
-    expect(ideas).toEqual([{ query: "vinyl crackle", searches: 11, zeroResults: 4 }]);
+    const ideas = ideasFrom(rows, [{ query: "northern lights", count: 4 }], [{ q: "waterfall" }], 3);
+    expect(ideas).toEqual([{ query: "northern lights", searches: 11, zeroResults: 4 }]);
   });
 });

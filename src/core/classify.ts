@@ -34,6 +34,8 @@ const NOT_IN_CONTEXT: Record<string, string[]> = {
   "people.lifestyle": ["robot"],
 };
 
+const PRIORITY: Record<string, number> = { aerial: 1.4, greenscreen: 1.6 };
+
 const FIELD_WEIGHTS = { source: 1.3, title: 1.0, tags: 0.7, description: 0.25 } as const;
 type Field = keyof typeof FIELD_WEIGHTS;
 
@@ -117,6 +119,10 @@ function scoreCategories(fields: Partial<Record<Field, string[]>>): Map<string, 
       scores.set(h, (scores.get(h) ?? 0) + FIELD_WEIGHTS[field] + (FIELD_WEIGHTS[field] >= 1 ? bonus : 0));
     }
   }
+  // How a clip was shot or made says more to an editor than what is in it: a
+  // "drone shot over a city skyline" is aerial footage, a "green screen
+  // explosion" is a keyable element.
+  for (const [id, k] of Object.entries(PRIORITY)) if (scores.has(id)) scores.set(id, scores.get(id)! * k);
   // A child that scored lends its weight to its parent, so "beach" also means "nature".
   for (const [id, s] of [...scores]) {
     const parts = id.split(".");

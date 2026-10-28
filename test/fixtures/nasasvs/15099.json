@@ -1,0 +1,904 @@
+{
+    "id": 15099,
+    "url": "http://svs.gsfc.nasa.gov/15099/",
+    "page_type": "Produced Video",
+    "title": "NASA-JAXA XRISM Mission Sees Pulsar Accreting Companion's 'Wind'",
+    "description": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. || Still2.jpg (3840x2160) [1.6 MB] || XRISM2.mp4 (1920x1080) [73.7 MB] || XRISM.en_US.srt [49 bytes] || XRISM.en_US.vtt [59 bytes] || XRISM_1.mp4 (3840x2160) [184.3 MB] || XRISM.mp4 (3840x2160) [725.6 MB] || XRISMNO_TexT.mov (3840x2160) [3.7 GB] || XRISMFinalText.mov (3840x2160) [3.9 GB] || ",
+    "release_date": "2026-09-18T14:00:00-04:00",
+    "update_date": "2026-09-18T15:38:49-04:00",
+    "main_image": {
+        "id": 1205627,
+        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_large_ac_print.jpg",
+        "filename": "BP_Crucis_concept_wide_large_ac_print.jpg",
+        "media_type": "Image",
+        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+        "width": 1024,
+        "height": 683,
+        "pixels": 699392
+    },
+    "main_video": null,
+    "main_credits": {},
+    "progress": "Complete",
+    "media_groups": [
+        {
+            "id": 380908,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380908",
+            "widget": "Video player",
+            "title": "",
+            "caption": "",
+            "description": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. <p><p>Credit: NASA’s Goddard Space Flight Center Conceptual Image Laboratory<p><p>Alt text: Animation of the BP Crucis system<p><p>0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it. <br> 0:08 The camera zooms into the pulsar as it encounters the stream. <br> 0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk. <br> 0:17 The disk breaks up. The gas now flows directly onto the pulsar. <br> 0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms. <br> 0:51 The disk breaks up and the pulsar exits the stream. <br> 0:52 Return to a wide view of the system. </p>",
+            "items": [
+                {
+                    "id": 524935,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205662,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/Still2.jpg",
+                        "filename": "Still2.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 524937,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205664,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/XRISM2.mp4",
+                        "filename": "XRISM2.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 524965,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205669,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/XRISM.en_US.srt",
+                        "filename": "XRISM.en_US.srt",
+                        "media_type": "Captions",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "label": "English",
+                        "language_code": "en-US"
+                    }
+                },
+                {
+                    "id": 524966,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205670,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/XRISM.en_US.vtt",
+                        "filename": "XRISM.en_US.vtt",
+                        "media_type": "Captions",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "label": "English",
+                        "language_code": "en-US"
+                    }
+                },
+                {
+                    "id": 524941,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205667,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/XRISM_1.mp4",
+                        "filename": "XRISM_1.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 524936,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205663,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/XRISM.mp4",
+                        "filename": "XRISM.mp4",
+                        "media_type": "Movie",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 524939,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205666,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/XRISMNO_TexT.mov",
+                        "filename": "XRISMNO_TexT.mov",
+                        "media_type": "Movie",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 524938,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205665,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/XRISMFinalText.mov",
+                        "filename": "XRISMFinalText.mov",
+                        "media_type": "Movie",
+                        "alt_text": "This artist’s concept of the BP Crucis system follows the pulsar on a passage through the dense stream of plasma flowing from its companion, a blue hypergiant 40 times the Sun’s mass. During each four-day passage, the pulsar’s X-ray brightness flares as it pulls in some of the gas. At first, the gas forms a messy, turbulent accretion disk around the pulsar, and plasma spirals down to it. But as the pulsar moves deeper into the stream, there’s not enough angular momentum to support the disk, and it breaks up. At this point, plasma falls straight onto the pulsar. Later, as the pulsar nears the end of its passage, a messy accretion disk rebuilds, this time spinning in the opposite direction of the earlier disk. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Animation of the BP Crucis system0:00 A wide view, showing the giant star, its gas stream, and the pulsar nearing it.  0:08 The camera zooms into the pulsar as it encounters the stream.  0:10 Gas flowing past the pulsar forms a clockwise-spinning accretion disk.  0:17 The disk breaks up. The gas now flows directly onto the pulsar.  0:35 As the pulsar nears the end of its passage through the stream, a new disk, spinning counterclockwise, forms.  0:51 The disk breaks up and the pulsar exits the stream.  0:52 Return to a wide view of the system. ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380913,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380913",
+            "widget": "Basic text with HTML",
+            "title": "",
+            "caption": "",
+            "description": "Using data from the Japan-led XRISM (X-ray Imaging and Spectroscopy Mission) observatory, astronomers have directly observed a giant star’s outflow, called a stellar wind, being captured by its compact companion and providing the power source for strong X-ray flares. <br><br>Such clear indications of wind plasma falling onto a compact object have never been seen before. <br><br>The target system is BP Crucis, a high-mass X-ray binary located about 13,000 light-years away in the southern constellation Crux. The primary star, known as Wray 977, is a blue hypergiant about 40 times the Sun’s mass and 60 times its size. It’s so big, hot, and luminous that ionized gas constantly streams away from it, a phenomenon astronomers call a stellar wind. <br><br>The supergiant’s companion is a tiny-but-mighty neutron star called GX 301-2. The crushed core of a star that long ago exploded as a supernova, it packs more than the Sun’s mass into a ball roughly 12 miles (20 kilometers) across. Rotating every 11 minutes, it sweeps an X-ray beam toward Earth, which classifies it as a pulsar.   <br><br>Twice during the pulsar’s 41.5-day orbit, near its closest and farthest points from the primary star, strong X-ray flares occur for several days. Astronomers think the pulsar’s gravitational influence on the star creates an especially dense stream of plasma. Flares occur when the pulsar traverses this stream and captures some of its matter, with the strongest ones happening in the dense stream closer to the star.  <br><br>The XRISM mission targeted the system on Feb. 1, 2025, and observed it for about 16 hours near the end of one of these stronger flares. <br><br>The observatory’s Resolve instrument, jointly developed by NASA and JAXA (Japan Aerospace Exploration Agency), captured highly detailed X-ray spectra. Absorption lines from highly ionized iron revealed the speed and direction of plasma relatively close to the pulsar.  <br><br>The iron absorption lines are displaced to lower energies, or redshifted, from where they would be if measured in a laboratory. The analysis reveals that this gas is racing toward the pulsar at speeds of around 335,000 mph (540,000 kph).",
+            "items": [],
+            "extra_data": {}
+        },
+        {
+            "id": 380909,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380909",
+            "widget": "Single image",
+            "title": "",
+            "caption": "",
+            "description": "The Resolve instrument aboard the NASA-JAXA XRISM (X-ray Imaging and Spectroscopy Mission) observatory captured this high-resolution X-ray spectrum of BP Crucis. Prominent iron absorption lines (dashed) have shifted to lower energies (red lines), which indicates both the direction and velocity of the gas. The observations indicate the gas is moving toward the pulsar at about 335,000 mph (540,000 kph). Data and error bars are shown in gray, with a model spectrum in light blue. Roman numerals indicate the ionization state of iron atoms (the number of electrons they’ve lost to produce each spectral line).<p><p>Credit: NASA’s Goddard Space Flight Center, JAXA/NASA, Rahin et al. 2026<p><p>Alt text: XRISM Resolve absorption spectrum of BP Crucis <p><p>Image description: A light-blue line with many downward dips extends across a dark blue background with a darker tone at the bottom than the top. Behind it is a forest of gray lines marking data points and their error bars, following the ups and downs of the line. Dashed blue lines with blue labels above them extend down to the line. These labels are Roman numerals, from “XXI” to “XXVI.” The last label, at far right, covers two dashed lines, which are labeled “K-alpha 2” and “K-alpha 1.” Blue text above these labels reads “Laboratory line positions.” To the left of the blue dashed lines are solid red ones that connect to the most prominent dips in the light-blue line; a label above them reads “Observed line positions.” A yellow box illustrates how a blue dashed reference line has moved leftward to form the red line; it includes a large left-pointing arrow, labeled “Redshift,” shaded from blue on the right to red on the left. Yellow text to the right of the box reads “Redshifted absorption lines indicate gas falls toward the pulsar at about 335,000 mph (540,000 kph). Text at the top of the image reads “XRISM Resolve spectrum of GX 301-2.” Labels along the bottom axis read “Energy (keV)” and numbers from 6.5 to 7.0; the left axis reads “X-ray flux.”<p>",
+            "items": [
+                {
+                    "id": 525002,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205614,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_spectrum_sml.jpg",
+                        "filename": "GX_301-2_spectrum_sml.jpg",
+                        "media_type": "Image",
+                        "alt_text": "The Resolve instrument aboard the NASA-JAXA XRISM (X-ray Imaging and Spectroscopy Mission) observatory captured this high-resolution X-ray spectrum of BP Crucis. Prominent iron absorption lines (dashed) have shifted to lower energies (red lines), which indicates both the direction and velocity of the gas. The observations indicate the gas is moving toward the pulsar at about 335,000 mph (540,000 kph). Data and error bars are shown in gray, with a model spectrum in light blue. Roman numerals indicate the ionization state of iron atoms (the number of electrons they’ve lost to produce each spectral line).Credit: NASA’s Goddard Space Flight Center, JAXA/NASA, Rahin et al. 2026Alt text: XRISM Resolve absorption spectrum of BP Crucis Image description: A light-blue line with many downward dips extends across a dark blue background with a darker tone at the bottom than the top. Behind it is a forest of gray lines marking data points and their error bars, following the ups and downs of the line. Dashed blue lines with blue labels above them extend down to the line. These labels are Roman numerals, from “XXI” to “XXVI.” The last label, at far right, covers two dashed lines, which are labeled “K-alpha 2” and “K-alpha 1.” Blue text above these labels reads “Laboratory line positions.” To the left of the blue dashed lines are solid red ones that connect to the most prominent dips in the light-blue line; a label above them reads “Observed line positions.” A yellow box illustrates how a blue dashed reference line has moved leftward to form the red line; it includes a large left-pointing arrow, labeled “Redshift,” shaded from blue on the right to red on the left. Yellow text to the right of the box reads “Redshifted absorption lines indicate gas falls toward the pulsar at about 335,000 mph (540,000 kph). Text at the top of the image reads “XRISM Resolve spectrum of GX 301-2.” Labels along the bottom axis read “Energy (keV)” and numbers from 6.5 to 7.0; the left axis reads “X-ray flux.”",
+                        "width": 1915,
+                        "height": 1024,
+                        "pixels": 1960960
+                    }
+                },
+                {
+                    "id": 525001,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205613,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_spectrum_med.jpg",
+                        "filename": "GX_301-2_spectrum_med.jpg",
+                        "media_type": "Image",
+                        "alt_text": "The Resolve instrument aboard the NASA-JAXA XRISM (X-ray Imaging and Spectroscopy Mission) observatory captured this high-resolution X-ray spectrum of BP Crucis. Prominent iron absorption lines (dashed) have shifted to lower energies (red lines), which indicates both the direction and velocity of the gas. The observations indicate the gas is moving toward the pulsar at about 335,000 mph (540,000 kph). Data and error bars are shown in gray, with a model spectrum in light blue. Roman numerals indicate the ionization state of iron atoms (the number of electrons they’ve lost to produce each spectral line).Credit: NASA’s Goddard Space Flight Center, JAXA/NASA, Rahin et al. 2026Alt text: XRISM Resolve absorption spectrum of BP Crucis Image description: A light-blue line with many downward dips extends across a dark blue background with a darker tone at the bottom than the top. Behind it is a forest of gray lines marking data points and their error bars, following the ups and downs of the line. Dashed blue lines with blue labels above them extend down to the line. These labels are Roman numerals, from “XXI” to “XXVI.” The last label, at far right, covers two dashed lines, which are labeled “K-alpha 2” and “K-alpha 1.” Blue text above these labels reads “Laboratory line positions.” To the left of the blue dashed lines are solid red ones that connect to the most prominent dips in the light-blue line; a label above them reads “Observed line positions.” A yellow box illustrates how a blue dashed reference line has moved leftward to form the red line; it includes a large left-pointing arrow, labeled “Redshift,” shaded from blue on the right to red on the left. Yellow text to the right of the box reads “Redshifted absorption lines indicate gas falls toward the pulsar at about 335,000 mph (540,000 kph). Text at the top of the image reads “XRISM Resolve spectrum of GX 301-2.” Labels along the bottom axis read “Energy (keV)” and numbers from 6.5 to 7.0; the left axis reads “X-ray flux.”",
+                        "width": 2020,
+                        "height": 1080,
+                        "pixels": 2181600
+                    }
+                },
+                {
+                    "id": 525000,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205612,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_spectrum_large.jpg",
+                        "filename": "GX_301-2_spectrum_large.jpg",
+                        "media_type": "Image",
+                        "alt_text": "The Resolve instrument aboard the NASA-JAXA XRISM (X-ray Imaging and Spectroscopy Mission) observatory captured this high-resolution X-ray spectrum of BP Crucis. Prominent iron absorption lines (dashed) have shifted to lower energies (red lines), which indicates both the direction and velocity of the gas. The observations indicate the gas is moving toward the pulsar at about 335,000 mph (540,000 kph). Data and error bars are shown in gray, with a model spectrum in light blue. Roman numerals indicate the ionization state of iron atoms (the number of electrons they’ve lost to produce each spectral line).Credit: NASA’s Goddard Space Flight Center, JAXA/NASA, Rahin et al. 2026Alt text: XRISM Resolve absorption spectrum of BP Crucis Image description: A light-blue line with many downward dips extends across a dark blue background with a darker tone at the bottom than the top. Behind it is a forest of gray lines marking data points and their error bars, following the ups and downs of the line. Dashed blue lines with blue labels above them extend down to the line. These labels are Roman numerals, from “XXI” to “XXVI.” The last label, at far right, covers two dashed lines, which are labeled “K-alpha 2” and “K-alpha 1.” Blue text above these labels reads “Laboratory line positions.” To the left of the blue dashed lines are solid red ones that connect to the most prominent dips in the light-blue line; a label above them reads “Observed line positions.” A yellow box illustrates how a blue dashed reference line has moved leftward to form the red line; it includes a large left-pointing arrow, labeled “Redshift,” shaded from blue on the right to red on the left. Yellow text to the right of the box reads “Redshifted absorption lines indicate gas falls toward the pulsar at about 335,000 mph (540,000 kph). Text at the top of the image reads “XRISM Resolve spectrum of GX 301-2.” Labels along the bottom axis read “Energy (keV)” and numbers from 6.5 to 7.0; the left axis reads “X-ray flux.”",
+                        "width": 4040,
+                        "height": 2160,
+                        "pixels": 8726400
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380910,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380910",
+            "widget": "Single image",
+            "title": "",
+            "caption": "",
+            "description": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. <p><p>Credit: NASA’s Goddard Space Flight Center Conceptual Image Laboratory<p><p>Alt text: Artist’s concept of BP Crucis<p>Image description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+            "items": [
+                {
+                    "id": 525008,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205627,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_large_ac_print.jpg",
+                        "filename": "BP_Crucis_concept_wide_large_ac_print.jpg",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 1024,
+                        "height": 683,
+                        "pixels": 699392
+                    }
+                },
+                {
+                    "id": 525006,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205610,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_med.jpg",
+                        "filename": "BP_Crucis_concept_wide_med.jpg",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525007,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205611,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_sml.jpg",
+                        "filename": "BP_Crucis_concept_wide_sml.jpg",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 1024,
+                        "height": 576,
+                        "pixels": 589824
+                    }
+                },
+                {
+                    "id": 525003,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205607,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_large.jpg",
+                        "filename": "BP_Crucis_concept_wide_large.jpg",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 525004,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205608,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_large.png",
+                        "filename": "BP_Crucis_concept_wide_large.png",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 525005,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205609,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_large_ac.jpg",
+                        "filename": "BP_Crucis_concept_wide_large_ac.jpg",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 3238,
+                        "height": 2160,
+                        "pixels": 6994080
+                    }
+                },
+                {
+                    "id": 525009,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205628,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_large_ac_searchweb.png",
+                        "filename": "BP_Crucis_concept_wide_large_ac_searchweb.png",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 320,
+                        "height": 180,
+                        "pixels": 57600
+                    }
+                },
+                {
+                    "id": 525010,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205629,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/BP_Crucis_concept_wide_large_ac_thm.png",
+                        "filename": "BP_Crucis_concept_wide_large_ac_thm.png",
+                        "media_type": "Image",
+                        "alt_text": "In this artist’s concept of the BP Crucis system, the city-sized pulsar GX301-2 approaches a thick stream of gas flowing away from its massive partner, the blue hypergiant Wray 977. The pulsar flares up in X-rays twice each orbit when it encounters the stream. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Artist’s concept of BP CrucisImage description: Against a hazy, star-filled sky, a brilliant bluish-white star shines near the center of this artist’s concept. From the star, at about 4 o’clock, an expanding stream of bluish gas arcs toward lower left and then sweeps toward bottom center as it moves into the foreground. Another bright star-like point, much smaller, shines near the stream, just right of the image’s center. It emits two long, thin, wedge-shaped beams of radiation. One emerges at about 2 o’clock and heads to the upper right, the other, emerging at 7 o’clock, heads toward lower left. Text reads “Artist’s concept.”  ",
+                        "width": 80,
+                        "height": 40,
+                        "pixels": 3200
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380911,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380911",
+            "widget": "Single image",
+            "title": "",
+            "caption": "",
+            "description": "This artist’s concept illustrates how accretion by pulsar GX 301-2 changes as it traverses a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. Left: As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Center: Moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Right: The messy disk returns, now spinning in the opposite direction, as the pulsar nears the end of its journey through the stream.<p><p>Credit: NASA’s Goddard Space Flight Center Conceptual Image Laboratory<p><p>Alt text: Three-panel view of pulsar’s stream passage <p><p>Image description: Three vertical images, outlined in white, sit side-by-side on a dark blue background. Each image shows a bluish-white gas near a pulsar, shown as a white star-like object of varying brightness in the images. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides. The beams change orientation in this sequence because the pulsar is rotating. At left, the pulsar sits in the middle of a stream that curls clockwise around it. At center, the pulsar has brightened, and the swirling gas now flows directly onto the object. At right, the pulsar appears fainter, and the gas is now swirling counterclockwise.  ",
+            "items": [
+                {
+                    "id": 525015,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205680,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/gx_301-2_trio_ac_sml_print.jpg",
+                        "filename": "gx_301-2_trio_ac_sml_print.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates how accretion by pulsar GX 301-2 changes as it traverses a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. Left: As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Center: Moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Right: The messy disk returns, now spinning in the opposite direction, as the pulsar nears the end of its journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Three-panel view of pulsar’s stream passage Image description: Three vertical images, outlined in white, sit side-by-side on a dark blue background. Each image shows a bluish-white gas near a pulsar, shown as a white star-like object of varying brightness in the images. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides. The beams change orientation in this sequence because the pulsar is rotating. At left, the pulsar sits in the middle of a stream that curls clockwise around it. At center, the pulsar has brightened, and the swirling gas now flows directly onto the object. At right, the pulsar appears fainter, and the gas is now swirling counterclockwise.  ",
+                        "width": 1024,
+                        "height": 557,
+                        "pixels": 570368
+                    }
+                },
+                {
+                    "id": 525012,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205673,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/gx_301-2_trio_med.jpg",
+                        "filename": "gx_301-2_trio_med.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates how accretion by pulsar GX 301-2 changes as it traverses a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. Left: As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Center: Moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Right: The messy disk returns, now spinning in the opposite direction, as the pulsar nears the end of its journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Three-panel view of pulsar’s stream passage Image description: Three vertical images, outlined in white, sit side-by-side on a dark blue background. Each image shows a bluish-white gas near a pulsar, shown as a white star-like object of varying brightness in the images. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides. The beams change orientation in this sequence because the pulsar is rotating. At left, the pulsar sits in the middle of a stream that curls clockwise around it. At center, the pulsar has brightened, and the swirling gas now flows directly onto the object. At right, the pulsar appears fainter, and the gas is now swirling counterclockwise.  ",
+                        "width": 1920,
+                        "height": 1038,
+                        "pixels": 1992960
+                    }
+                },
+                {
+                    "id": 525013,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205674,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/gx_301-2_trio_sml.jpg",
+                        "filename": "gx_301-2_trio_sml.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates how accretion by pulsar GX 301-2 changes as it traverses a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. Left: As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Center: Moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Right: The messy disk returns, now spinning in the opposite direction, as the pulsar nears the end of its journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Three-panel view of pulsar’s stream passage Image description: Three vertical images, outlined in white, sit side-by-side on a dark blue background. Each image shows a bluish-white gas near a pulsar, shown as a white star-like object of varying brightness in the images. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides. The beams change orientation in this sequence because the pulsar is rotating. At left, the pulsar sits in the middle of a stream that curls clockwise around it. At center, the pulsar has brightened, and the swirling gas now flows directly onto the object. At right, the pulsar appears fainter, and the gas is now swirling counterclockwise.  ",
+                        "width": 1024,
+                        "height": 554,
+                        "pixels": 567296
+                    }
+                },
+                {
+                    "id": 525014,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205679,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/gx_301-2_trio_ac_sml.jpg",
+                        "filename": "gx_301-2_trio_ac_sml.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates how accretion by pulsar GX 301-2 changes as it traverses a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. Left: As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Center: Moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Right: The messy disk returns, now spinning in the opposite direction, as the pulsar nears the end of its journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Three-panel view of pulsar’s stream passage Image description: Three vertical images, outlined in white, sit side-by-side on a dark blue background. Each image shows a bluish-white gas near a pulsar, shown as a white star-like object of varying brightness in the images. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides. The beams change orientation in this sequence because the pulsar is rotating. At left, the pulsar sits in the middle of a stream that curls clockwise around it. At center, the pulsar has brightened, and the swirling gas now flows directly onto the object. At right, the pulsar appears fainter, and the gas is now swirling counterclockwise.  ",
+                        "width": 1024,
+                        "height": 557,
+                        "pixels": 570368
+                    }
+                },
+                {
+                    "id": 525011,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205672,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/gx_301-2_trio_large.jpg",
+                        "filename": "gx_301-2_trio_large.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates how accretion by pulsar GX 301-2 changes as it traverses a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. Left: As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Center: Moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Right: The messy disk returns, now spinning in the opposite direction, as the pulsar nears the end of its journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Three-panel view of pulsar’s stream passage Image description: Three vertical images, outlined in white, sit side-by-side on a dark blue background. Each image shows a bluish-white gas near a pulsar, shown as a white star-like object of varying brightness in the images. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides. The beams change orientation in this sequence because the pulsar is rotating. At left, the pulsar sits in the middle of a stream that curls clockwise around it. At center, the pulsar has brightened, and the swirling gas now flows directly onto the object. At right, the pulsar appears fainter, and the gas is now swirling counterclockwise.  ",
+                        "width": 3840,
+                        "height": 2075,
+                        "pixels": 7968000
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380929,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380929",
+            "widget": "Single image",
+            "title": "",
+            "caption": "",
+            "description": "This artist’s concept illustrates the accretion style of pulsar GX 301-2 as it begins its passage through a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. <p><p>Credit: NASAs Goddard Space Flight Center Conceptual Image Laboratory<p><p>Alt text: Visualization of pulsar's early stream passage.<p>Image description: On a dark background, bluish-white gas swirls clockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.<p><p>",
+            "items": [
+                {
+                    "id": 525018,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205625,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_start_med.jpg",
+                        "filename": "GX_301-2_stream_passage_start_med.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the accretion style of pulsar GX 301-2 as it begins its passage through a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Credit: NASAs Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar's early stream passage.Image description: On a dark background, bluish-white gas swirls clockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525019,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205626,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_start_sml.jpg",
+                        "filename": "GX_301-2_stream_passage_start_sml.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the accretion style of pulsar GX 301-2 as it begins its passage through a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Credit: NASAs Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar's early stream passage.Image description: On a dark background, bluish-white gas swirls clockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 1024,
+                        "height": 576,
+                        "pixels": 589824
+                    }
+                },
+                {
+                    "id": 525016,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205623,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_start_large.jpg",
+                        "filename": "GX_301-2_stream_passage_start_large.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the accretion style of pulsar GX 301-2 as it begins its passage through a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Credit: NASAs Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar's early stream passage.Image description: On a dark background, bluish-white gas swirls clockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 525017,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205624,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_start_large.png",
+                        "filename": "GX_301-2_stream_passage_start_large.png",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the accretion style of pulsar GX 301-2 as it begins its passage through a dense plasma stream produced by its companion, which it encounters twice every orbit. As the pulsar gathers up this material, it erupts in powerful X-ray flares. As the pulsar enters the stream, a turbulent accretion disk forms around it. Plasma spirals in a clockwise direction as it falls inward to reach the pulsar. Credit: NASAs Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar's early stream passage.Image description: On a dark background, bluish-white gas swirls clockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380930,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380930",
+            "widget": "Single image",
+            "title": "",
+            "caption": "",
+            "description": "This artist’s concept illustrates the direct accretion of pulsar GX 301-2 in the middle of its passage through a dense plasma stream produced by its companion. By moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. <p><p>Credit: NASA’s Goddard Space Flight Center Conceptual Image Laboratory<p><p>Alt text: Visualization of pulsar’s direct accretion phase <p><p>Image description: On a dark background, bluish-white gas swirls near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image. It is immersed in a cloud of bluish-white gas that is falling directly onto it, with no accretion disk present. <p>",
+            "items": [
+                {
+                    "id": 525022,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205621,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_mid_med.jpg",
+                        "filename": "GX_301-2_stream_passage_mid_med.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the direct accretion of pulsar GX 301-2 in the middle of its passage through a dense plasma stream produced by its companion. By moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s direct accretion phase Image description: On a dark background, bluish-white gas swirls near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image. It is immersed in a cloud of bluish-white gas that is falling directly onto it, with no accretion disk present. ",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525023,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205622,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_mid_sml.jpg",
+                        "filename": "GX_301-2_stream_passage_mid_sml.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the direct accretion of pulsar GX 301-2 in the middle of its passage through a dense plasma stream produced by its companion. By moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s direct accretion phase Image description: On a dark background, bluish-white gas swirls near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image. It is immersed in a cloud of bluish-white gas that is falling directly onto it, with no accretion disk present. ",
+                        "width": 1024,
+                        "height": 576,
+                        "pixels": 589824
+                    }
+                },
+                {
+                    "id": 525020,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205619,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_mid_large.jpg",
+                        "filename": "GX_301-2_stream_passage_mid_large.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the direct accretion of pulsar GX 301-2 in the middle of its passage through a dense plasma stream produced by its companion. By moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s direct accretion phase Image description: On a dark background, bluish-white gas swirls near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image. It is immersed in a cloud of bluish-white gas that is falling directly onto it, with no accretion disk present. ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 525021,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205620,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_mid_large.png",
+                        "filename": "GX_301-2_stream_passage_mid_large.png",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the direct accretion of pulsar GX 301-2 in the middle of its passage through a dense plasma stream produced by its companion. By moving deeper into the stream, the pulsar encounters a part of the flow that lacks the angular momentum needed to form a disk. The disk breaks up and plasma flows directly onto the pulsar. Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s direct accretion phase Image description: On a dark background, bluish-white gas swirls near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image. It is immersed in a cloud of bluish-white gas that is falling directly onto it, with no accretion disk present. ",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                }
+            ],
+            "extra_data": {}
+        },
+        {
+            "id": 380931,
+            "url": "http://svs.gsfc.nasa.gov/15099/#media_group_380931",
+            "widget": "Single image",
+            "title": "",
+            "caption": "",
+            "description": "This artist’s concept illustrates the final accretion phase of pulsar GX 301-2 near the end of its passage through a dense plasma stream produced by its companion. The messy accretion disk returns, now spinning in the opposite direction of the first disk, as the pulsar nears the end of its four-day journey through the stream.<p><p>Credit: NASA’s Goddard Space Flight Center Conceptual Image Laboratory<p><p>Alt text: Visualization of pulsar’s final accretion phase <p><p>Image description: On a dark background, bluish-white gas swirls counterclockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.<p>",
+            "items": [
+                {
+                    "id": 525026,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205617,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_end_med.jpg",
+                        "filename": "GX_301-2_stream_passage_end_med.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the final accretion phase of pulsar GX 301-2 near the end of its passage through a dense plasma stream produced by its companion. The messy accretion disk returns, now spinning in the opposite direction of the first disk, as the pulsar nears the end of its four-day journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s final accretion phase Image description: On a dark background, bluish-white gas swirls counterclockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 1920,
+                        "height": 1080,
+                        "pixels": 2073600
+                    }
+                },
+                {
+                    "id": 525027,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205618,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_end_sml.jpg",
+                        "filename": "GX_301-2_stream_passage_end_sml.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the final accretion phase of pulsar GX 301-2 near the end of its passage through a dense plasma stream produced by its companion. The messy accretion disk returns, now spinning in the opposite direction of the first disk, as the pulsar nears the end of its four-day journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s final accretion phase Image description: On a dark background, bluish-white gas swirls counterclockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 1024,
+                        "height": 576,
+                        "pixels": 589824
+                    }
+                },
+                {
+                    "id": 525024,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205615,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_end_large.jpg",
+                        "filename": "GX_301-2_stream_passage_end_large.jpg",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the final accretion phase of pulsar GX 301-2 near the end of its passage through a dense plasma stream produced by its companion. The messy accretion disk returns, now spinning in the opposite direction of the first disk, as the pulsar nears the end of its four-day journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s final accretion phase Image description: On a dark background, bluish-white gas swirls counterclockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                },
+                {
+                    "id": 525025,
+                    "type": "media",
+                    "extra_data": null,
+                    "title": null,
+                    "caption": null,
+                    "instance": {
+                        "id": 1205616,
+                        "url": "http://svs.gsfc.nasa.gov/vis/a010000/a015000/a015099/GX_301-2_stream_passage_end_large.png",
+                        "filename": "GX_301-2_stream_passage_end_large.png",
+                        "media_type": "Image",
+                        "alt_text": "This artist’s concept illustrates the final accretion phase of pulsar GX 301-2 near the end of its passage through a dense plasma stream produced by its companion. The messy accretion disk returns, now spinning in the opposite direction of the first disk, as the pulsar nears the end of its four-day journey through the stream.Credit: NASA’s Goddard Space Flight Center Conceptual Image LaboratoryAlt text: Visualization of pulsar’s final accretion phase Image description: On a dark background, bluish-white gas swirls counterclockwise near a pulsar (center), shown as a white star-like object of varying brightness. The pulsar has glowing, soft, wedge-shaped beams emanating from opposite sides, pointing toward the top and bottom of the image.",
+                        "width": 3840,
+                        "height": 2160,
+                        "pixels": 8294400
+                    }
+                }
+            ],
+            "extra_data": {}
+        }
+    ],
+    "studio": "gms",
+    "funding_sources": [
+        "PAO"
+    ],
+    "credits": [
+        {
+            "role": "Science writer",
+            "people": [
+                {
+                    "name": "Francis Reddy",
+                    "employer": "University of Maryland College Park"
+                }
+            ]
+        },
+        {
+            "role": "Producer",
+            "people": [
+                {
+                    "name": "Swarupa Nune",
+                    "employer": "eMITS"
+                }
+            ]
+        },
+        {
+            "role": "Animator",
+            "people": [
+                {
+                    "name": "Adriana Manrique Gutierrez",
+                    "employer": "eMITS"
+                }
+            ]
+        },
+        {
+            "role": "Scientist",
+            "people": [
+                {
+                    "name": "Roi Rahin",
+                    "employer": "UMBC"
+                }
+            ]
+        }
+    ],
+    "missions": [],
+    "series": [],
+    "tapes": [],
+    "papers": [],
+    "datasets": [],
+    "nasa_science_categories": [
+        "Universe"
+    ],
+    "keywords": [
+        "Ast",
+        "Astrophysics",
+        "Neutron Star",
+        "Pulsar",
+        "Space",
+        "Star",
+        "Universe",
+        "X-ray",
+        "XRISM"
+    ],
+    "recommended_pages": [],
+    "related": [
+        {
+            "id": 20417,
+            "url": "http://svs.gsfc.nasa.gov/20417/",
+            "page_type": "Animation",
+            "title": "Wind-Accreting Pulsar Visualization",
+            "description": "Visualization of the BP Crucis system showing the pulsar near closest approach to its companion, a blue hypergiant 40 times the Sun’s mass. Twice each orbit, the pulsar passes throuh a dense stream of plasma flowing from the companion, flaring up in X-rays as it does. In this sequence, the pulsar approaches, enters, and exits the stream. || XRISM_IM_SHOT_01_alt_30fps_4k_h264.00012_print.jpg (1024x576) [84.0 KB] || XRISM_IM_SHOT_01_alt_30fps_4k_h264.00012_searchweb.png (320x180) [62.1 KB] || XRISM_IM_SHOT_01_alt_30fps_4k_h264.00012_thm.png (80x40) [5.0 KB] || XRISM_IM_SHOT_01_alt_30fps_1080p_proRes.mov (1920x1080) [352.2 MB] || XRISM_IM_SHOT_01_alt_30fps_4k_h264.mp4 (3840x2160) [26.2 MB] || XRISM_IM_SHOT_01_alt_30fps_4k_proRes.webm (3840x2160) [5.9 MB] || XRISM_IM_SHOT_01_alt_30fps_4k_proRes.mov (3840x2160) [1.3 GB] || ",
+            "release_date": "2026-09-18T14:00:00-04:00",
+            "update_date": "2026-10-05T11:21:01-04:00",
+            "main_image": {
+                "id": 1205653,
+                "url": "http://svs.gsfc.nasa.gov/vis/a020000/a020400/a020417/XRISM_IM_SHOT_01_alt_30fps_4k_h264.00012_print.jpg",
+                "filename": "XRISM_IM_SHOT_01_alt_30fps_4k_h264.00012_print.jpg",
+                "media_type": "Image",
+                "alt_text": "Visualization of the BP Crucis system showing the pulsar near closest approach to its companion, a blue hypergiant 40 times the Sun’s mass. Twice each orbit, the pulsar passes throuh a dense stream of plasma flowing from the companion, flaring up in X-rays as it does. In this sequence, the pulsar approaches, enters, and exits the stream.",
+                "width": 1024,
+                "height": 576,
+                "pixels": 589824
+            }
+        },
+        {
+            "id": 14968,
+            "url": "http://svs.gsfc.nasa.gov/14968/",
+            "page_type": "Produced Video",
+            "title": "XRISM Clocks Hot Wind of Galaxy M82",
+            "description": "The Resolve instrument aboard the XRISM (X-ray Imaging and Spectroscopy Mission) spacecraft captured data revealing the velocity of the hot wind at the center of starburst galaxy M82. The energy range of iron emission lines show that the gas moves around 2 million miles (about 3 million kilometers) per hour. Inset: XRISM Xtend instrument’s image of M82.Credit: NASA’s Goddard Space Flight Center, JAXA/NASA, XRISM Collaboration et al. 2026Alt text: Spectrum and image of galaxy M82Image description: This image is labeled, “XRISM Resolve Measures the Hot Wind of Starburst Galaxy M82.” It shows a graph where the bottom is labeled, “X-ray energy (keV),” with a range from 2 to 9. The left side is labeled “X-ray brightness.” A squiggly white line starts near the bottom of the left side. Several peaks are labeled, including silicon, sulfur, argon, and calcium. Four peaks are identified as iron. In the upper right corner, a small inset shows an image that looks like a purple pansy with a yellow center. || v3_XRISM_Resolve_M82.jpg (4412x2993) [2.6 MB] || v3_XRISM_Resolve_M82_searchweb.png (320x180) [46.6 KB] || v3_XRISM_Resolve_M82_thm.png (80x40) [4.6 KB] || ",
+            "release_date": "2026-03-25T12:00:00-04:00",
+            "update_date": "2026-03-25T12:01:25-04:00",
+            "main_image": {
+                "id": 1202714,
+                "url": "http://svs.gsfc.nasa.gov/vis/a010000/a014900/a014968/v3_XRISM_Resolve_M82_searchweb.png",
+                "filename": "v3_XRISM_Resolve_M82_searchweb.png",
+                "media_type": "Image",
+                "alt_text": "The Resolve instrument aboard the XRISM (X-ray Imaging and Spectroscopy Mission) spacecraft captured data revealing the velocity of the hot wind at the center of starburst galaxy M82. The energy range of iron emission lines show that the gas moves around 2 million miles (about 3 million kilometers) per hour. Inset: XRISM Xtend instrument’s image of M82.\r\rCredit: NASA’s Goddard Space Flight Center, JAXA/NASA, XRISM Collaboration et al. 2026\r\rAlt text: Spectrum and image of galaxy M82\r\rImage description: This image is labeled, “XRISM Resolve Measures the Hot Wind of Starburst Galaxy M82.” It shows a graph where the bottom is labeled, “X-ray energy (keV),” with a range from 2 to 9. The left side is labeled “X-ray brightness.” A squiggly white line starts near the bottom of the left side. Several peaks are labeled, including silicon, sulfur, argon, and calcium. Four peaks are identified as iron. In the upper right corner, a small inset shows an image that looks like a purple pansy with a yellow center.",
+                "width": 320,
+                "height": 180,
+                "pixels": 57600
+            }
+        },
+        {
+            "id": 14405,
+            "url": "http://svs.gsfc.nasa.gov/14405/",
+            "page_type": "Produced Video",
+            "title": "XRISM: Exploring the Hidden X-ray Cosmos",
+            "description": "Watch this video to learn more about XRISM (X-ray Imaging and Spectroscopy Mission), a collaboration between JAXA (Japan Aerospace Exploration Agency) and NASA.Credit: NASA's Goddard Space Flight CenterMusic Credits: Universal Production MusicLights On by Hugh Robert Edwin Wilkinson Dreams by Jez Fox and Rohan JonesChanging Tide by Rob ManningWandering Imagination by Joel GoodmanIn Unison by Samuel Sim || YTframe_XRISM_Exploring_XrayCosmos.jpg (1280x720) [668.5 KB] || YTframe_XRISM_Exploring_XrayCosmos_searchweb.png (320x180) [100.3 KB] || YTframe_XRISM_Exploring_XrayCosmos_thm.png (80x40) [7.6 KB] || XRISM_Exploring_the_Hidden_Xray_Cosmos.en_US_FR.en_US.srt [7.8 KB] || XRISM_Exploring_the_Hidden_Xray_Cosmos.en_US_FR.en_US.vtt [7.4 KB] || XRISM_Exploring_the_Hidden_Xray_Cosmos.webm (3840x2160) [107.8 MB] || XRISM_Exploring_the_Hidden_Xray_Cosmos.mp4 (3840x2160) [3.4 GB] || XRISM_Exploring_the_Hidden_Xray_Cosmos.mov (3840x2160) [21.6 GB] || ",
+            "release_date": "2023-08-25T10:00:00-04:00",
+            "update_date": "2023-08-25T11:16:34-04:00",
+            "main_image": {
+                "id": 858110,
+                "url": "http://svs.gsfc.nasa.gov/vis/a010000/a014400/a014405/YTframe_XRISM_Exploring_XrayCosmos.jpg",
+                "filename": "YTframe_XRISM_Exploring_XrayCosmos.jpg",
+                "media_type": "Image",
+                "alt_text": "Watch this video to learn more about XRISM (X-ray Imaging and Spectroscopy Mission), a collaboration between JAXA (Japan Aerospace Exploration Agency) and NASA.Credit: NASA's Goddard Space Flight CenterMusic Credits: Universal Production MusicLights On by Hugh Robert Edwin Wilkinson Dreams by Jez Fox and Rohan JonesChanging Tide by Rob ManningWandering Imagination by Joel GoodmanIn Unison by Samuel Sim",
+                "width": 1280,
+                "height": 720,
+                "pixels": 921600
+            }
+        },
+        {
+            "id": 12956,
+            "url": "http://svs.gsfc.nasa.gov/12956/",
+            "page_type": "Produced Video",
+            "title": "Spectroscopy, Explained",
+            "description": "Video producer Sophia Roberts explains the basic principles behind spectroscopy, the science of reading light to determine the size, distance, spin and chemical composition of distant objects in space. Complete transcript available.Music Credits:Universal Production MusicOxygenate the Idea – by Amon Turner, Banksman, Eben StoneJungle Bounce – by Siddharth NadkarniSilent Patient – by Paul Reeves Background Story - by Peter LarsenData Dynamism – by Florian Moenks and Aron Wright Watch this video on the NASA Goddard YouTube channel. || Spectroscopy,_Explained_Thumbnail.jpg (3840x2160) [2.2 MB] || Spectroscopy,_Explained_Thumbnail_searchweb.png (320x180) [75.1 KB] || Spectroscopy,_Explained_Thumbnail_thm.png (80x40) [6.3 KB] || Spectroscopy,_Explained_Final_1080.mp4 (1920x1080) [412.9 MB] || SpectroscopyExplainedAdjustedCaptions.en_US.srt [11.1 KB] || SpectroscopyExplainedAdjustedCaptions.en_US.vtt [10.5 KB] || Spectroscopy_Explained.webm (3840x2160) [125.6 MB] || Spectroscopy_Explained.mp4 (3840x2160) [1.1 GB] || Spectroscopy,_Explained_Final_Best_4k.mp4 (3840x2160) [2.5 GB] || Spectroscopy,_Explained_Final_ProRes.mov (3840x2160) [43.3 GB] || ",
+            "release_date": "2023-08-15T10:00:00-04:00",
+            "update_date": "2023-08-16T11:38:20-04:00",
+            "main_image": {
+                "id": 857731,
+                "url": "http://svs.gsfc.nasa.gov/vis/a010000/a012900/a012956/Spectroscopy,_Explained_Thumbnail_searchweb.png",
+                "filename": "Spectroscopy,_Explained_Thumbnail_searchweb.png",
+                "media_type": "Image",
+                "alt_text": "Video producer Sophia Roberts explains the basic principles behind spectroscopy, the science of reading light to determine the size, distance, spin and chemical composition of distant objects in space. Complete transcript available.Music Credits:Universal Production MusicOxygenate the Idea – by Amon Turner, Banksman, Eben Stone\rJungle Bounce – by Siddharth NadkarniSilent Patient – by Paul Reeves \rBackground Story - by Peter Larsen\rData Dynamism – by Florian Moenks and Aron Wright\r Watch this video on the NASA Goddard YouTube channel.",
+                "width": 320,
+                "height": 180,
+                "pixels": 57600
+            }
+        },
+        {
+            "id": 14374,
+            "url": "http://svs.gsfc.nasa.gov/14374/",
+            "page_type": "Infographic",
+            "title": "A Guide to Cosmic Temperatures",
+            "description": "Explore the temperatures of the cosmos, from absolute zero to the hottest temperatures yet achieved, with this infographic. Targets for the XRISM mission include supernova remnants, binary systems with stellar-mass black holes, galaxies powered by supermassive black holes, and vast clusters of galaxies.Credit: NASA's Goddard Space Flight Center/Scott WiessingerMachine-readable PDF copy || Cosmic_Temperatures_Infographic_Final_small.jpg (1383x2048) [1.3 MB] || Cosmic_Temperatures_Infographic_Final_Full.png (5530x8192) [60.5 MB] || Cosmic_Temperatures_Infographic_Final_Full.jpg (5530x8192) [10.3 MB] || Cosmic_Temperatures_Infographic_Final_8bit.png (5530x8192) [24.5 MB] || Cosmic_Temperatures_Infographic_Final_Half.png (2765x4096) [7.0 MB] || Cosmic_Temperatures_Infographic_Final_Half.jpg (2765x4096) [4.7 MB] || ",
+            "release_date": "2023-08-03T11:00:00-04:00",
+            "update_date": "2024-09-06T11:20:05-04:00",
+            "main_image": {
+                "id": 856133,
+                "url": "http://svs.gsfc.nasa.gov/vis/a010000/a014300/a014374/Temperature_Infographic_Crop.jpg",
+                "filename": "Temperature_Infographic_Crop.jpg",
+                "media_type": "Image",
+                "alt_text": "Cropped image for thumbnail",
+                "width": 1920,
+                "height": 1080,
+                "pixels": 2073600
+            }
+        },
+        {
+            "id": 14244,
+            "url": "http://svs.gsfc.nasa.gov/14244/",
+            "page_type": "Produced Video",
+            "title": "XRISM Resolve Animation",
+            "description": "This animation illustrates how the microcalorimeter array at the heart of XRISM's revolutionary Resolve soft X-ray spectrometer works. X-ray light collected by a telescope strikes the detector. Each photon heats the material by an amount directly proportional to its energy. The instrument, which is cooled to 50 millikelvins, just above absolute zero, detects this minute temperature change.Credit: NASA's Goddard Space Flight Center || XRISM_Calorimeter-STILL_print.jpg (1024x576) [64.0 KB] || XRISM_Calorimeter-STILL.jpg (3840x2160) [716.3 KB] || XRISM_Calorimeter-STILL_searchweb.png (320x180) [55.3 KB] || XRISM_Calorimeter-STILL_thm.png (80x40) [5.5 KB] || XRISM_Calorimeter-STILL_web.png (320x180) [55.3 KB] || XRISM_Calorimeter-STILL.tiff (3840x2160) [63.3 MB] || 3840x2160_16x9_60p (3840x2160) [0 Item(s)] || XRISM_Calorimeter_Simple-H264_Good_3840x2160_2997.mov (3840x2160) [27.1 MB] || XRISM_Calorimeter_Simple_ProRes_3840x2160_60.webm (3840x2160) [4.9 MB] || XRISM_Calorimeter_Simple-H264_Best_3840x2160_5994.mov (3840x2160) [448.6 MB] || XRISM_Calorimeter_Simple_ProRes_3840x2160_60.mov (3840x2160) [1.8 GB] || ",
+            "release_date": "2022-11-25T00:00:00-05:00",
+            "update_date": "2023-08-15T13:37:20-04:00",
+            "main_image": {
+                "id": 368140,
+                "url": "http://svs.gsfc.nasa.gov/vis/a010000/a014200/a014244/XRISM_Calorimeter-STILL_print.jpg",
+                "filename": "XRISM_Calorimeter-STILL_print.jpg",
+                "media_type": "Image",
+                "alt_text": "This animation illustrates how the microcalorimeter array at the heart of XRISM's revolutionary Resolve soft X-ray spectrometer works. X-ray light collected by a telescope strikes the detector. Each photon heats the material by an amount directly proportional to its energy. The instrument, which is cooled to 50 millikelvins, just above absolute zero, detects this minute temperature change.Credit: NASA's Goddard Space Flight Center",
+                "width": 1024,
+                "height": 576,
+                "pixels": 589824
+            }
+        }
+    ],
+    "sources": [],
+    "products": [],
+    "newer_versions": [],
+    "older_versions": [],
+    "alternate_versions": []
+}

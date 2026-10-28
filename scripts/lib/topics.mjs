@@ -7,7 +7,7 @@
 // (web/src/content.config.ts); `topicErrors` adds the editorial rules every
 // topic must meet, whoever wrote it.
 //
-// The vocabulary (categories, forms) comes from the server's own module
+// The vocabulary (categories, styles, orientations) comes from the server's own module
 // (src/core/vocab.ts, compiled to dist/core/vocab.js), so a topic can only use
 // a category the search API accepts. Run `npm run build:server` first; under
 // vitest the TypeScript source is read directly.
@@ -26,7 +26,7 @@ export async function serverModule(name) {
   }
 }
 
-export const { CATEGORIES, TOP_CATEGORIES, SAMPLE_FORMS } = await serverModule("core/vocab");
+export const { CATEGORIES, TOP_CATEGORIES, VIDEO_STYLES, ORIENTATIONS } = await serverModule("core/vocab");
 /** Thresholds for an indexable page, from src/core/collections.ts (the website reads the same). */
 export const { MIN_INDEXABLE, MIN_SOURCES } = await serverModule("core/collections");
 
@@ -35,7 +35,8 @@ export const SNAPSHOT_DIR = "web/src/data/collections";
 export const HUBS_FILE = "web/src/data/collection-hubs.json";
 
 export const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-const SEARCH_FIELDS = ["q", "categories", "forms", "free", "commercial", "downloadable", "providers", "exclude"];
+const SEARCH_FIELDS = ["q", "categories", "styles", "orientations", "minResolution", "free", "commercial", "downloadable", "providers", "exclude"];
+const RESOLUTIONS = [720, 1080, 1440, 2160];
 const TOPIC_FIELDS = ["title", "description", "hub", "search", "aliases", "related", "faq", "addedAt", "addedBy"];
 
 /** Parse one topic file: YAML frontmatter + Markdown body. */
@@ -82,7 +83,9 @@ export function searchKey(s) {
   return [
     String(s.q ?? "").trim().toLowerCase().replace(/\s+/g, " "),
     list(s.categories),
-    list(s.forms),
+    list(s.styles),
+    list(s.orientations),
+    s.minResolution ? String(s.minResolution) : "",
     s.free ? "free" : "",
     s.commercial ? "commercial" : "",
     s.downloadable ? "dl" : "",
@@ -115,8 +118,10 @@ export function topicErrors(topic, ctx) {
   if (!s || typeof s !== "object") e.push("search: required");
   else {
     len("search.q", s.q, 2, 60);
-    oneOf("search.categories", s.categories, CATEGORIES, `categories from src/core/vocab.ts (${TOP_CATEGORIES.join(", ")}, or a child like drums.kick)`);
-    oneOf("search.forms", s.forms, SAMPLE_FORMS, SAMPLE_FORMS.join(", "));
+    oneOf("search.categories", s.categories, CATEGORIES, `categories from src/core/vocab.ts (${TOP_CATEGORIES.join(", ")}, or a child like nature.ocean)`);
+    oneOf("search.styles", s.styles, VIDEO_STYLES, VIDEO_STYLES.join(", "));
+    oneOf("search.orientations", s.orientations, ORIENTATIONS, ORIENTATIONS.join(", "));
+    if (s.minResolution !== undefined && !RESOLUTIONS.includes(s.minResolution)) e.push(`search.minResolution: one of ${RESOLUTIONS.join(", ")}`);
     if (s.providers !== undefined && (!Array.isArray(s.providers) || s.providers.some((p) => !ctx.providers.includes(p)))) e.push("search.providers: unknown source id");
     for (const k of ["free", "commercial", "downloadable"]) if (s[k] !== undefined && typeof s[k] !== "boolean") e.push(`search.${k}: true or false`);
     if (s.exclude !== undefined && (!Array.isArray(s.exclude) || s.exclude.length > 30 || s.exclude.some((x) => !str(x) || x.length > 60))) e.push("search.exclude: up to 30 title phrases or clip ids");

@@ -6,31 +6,31 @@
 // runs its search against the live sources and merges the results into
 // web/src/data/collections/<slug>.json (src/core/collections.ts keeps the
 // list stable and only moves `updatedAt` when it really changes). Every
-// chosen clip's preview is checked so a static page never shows a dead
-// player. Snapshots of deleted topics are removed. Run daily by
+// chosen clip's poster (or preview, without a poster) is checked so a static
+// page never shows a broken tile. Snapshots of deleted topics are removed. Run daily by
 // .github/workflows/catalog-census.yml; exits 1 only when every search failed.
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { SNAPSHOT_DIR, readSnapshot, readTopics, serverModule } from "./lib/topics.mjs";
 
-/** Content types a preview may answer with: audio, or the generic binary types some CDNs use. */
-export function isAudioType(contentType) {
+/** Content types a poster or preview may answer with: images, video, or the generic binary types some CDNs use. */
+export function isMediaType(contentType) {
   const t = String(contentType ?? "").split(";")[0].trim().toLowerCase();
-  return t.startsWith("audio/") || ["application/ogg", "video/ogg", "video/webm", "application/octet-stream", "binary/octet-stream"].includes(t);
+  return t.startsWith("image/") || t.startsWith("video/") || ["application/ogg", "application/octet-stream", "binary/octet-stream"].includes(t);
 }
 
 const MAX_REDIRECTS = 5;
 
 /**
- * Does this preview still play? HEAD first, then a one-kilobyte ranged GET
+ * Does this poster or preview still load? HEAD first, then a one-kilobyte ranged GET
  * when the host refuses HEAD or names no type. Every hop (redirects are
  * followed by hand) must pass `assertHost` (src/core/download.ts
  * assertPublicHost), so a topic can never make the job fetch an internal
  * address.
  *
  * Only a definite answer counts as broken: 404/410, a refused host, or a
- * successful response that is not audio (an HTML "not found" page). Timeouts,
+ * successful response that is not an image or video (an HTML "not found" page). Timeouts,
  * network errors and 5xx keep the clip, so a flaky CDN can't empty a page.
  */
 export async function checkPreview(url, { assertHost, fetch: doFetch = fetch, userAgent, timeoutMs = 10_000 }) {
@@ -66,7 +66,7 @@ export async function checkPreview(url, { assertHost, fetch: doFetch = fetch, us
   }
   if (res.status === 404 || res.status === 410) return false;
   const type = res.headers.get("content-type");
-  return !(res.ok && type && !isAudioType(type));
+  return !(res.ok && type && !isMediaType(type));
 }
 
 /** checkPreview once per URL per run, at most `concurrency` at a time. */
@@ -124,7 +124,7 @@ async function main() {
       const n = r.snapshot.clips.length;
       console.log(
         `${t.slug}: ${n} clips from ${new Set(r.snapshot.clips.map((a) => a.provider)).size} sources` +
-          ` (+${r.added} -${r.dropped})${r.brokenMedia ? `, ${r.brokenMedia} dead preview(s) skipped` : ""}${r.failed.length ? `, failed: ${r.failed.join(", ")}` : ""}${isIndexable(r.snapshot.clips) ? "" : " [below the indexable minimum]"}`,
+          ` (+${r.added} -${r.dropped})${r.brokenMedia ? `, ${r.brokenMedia} dead poster(s) skipped` : ""}${r.failed.length ? `, failed: ${r.failed.join(", ")}` : ""}${isIndexable(r.snapshot.clips) ? "" : " [below the indexable minimum]"}`,
       );
     } catch (e) {
       console.error(`${t.slug}: ${e instanceof Error ? e.message : e}`);

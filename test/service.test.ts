@@ -2,8 +2,7 @@ import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { unzipSync, zipSync } from "fflate";
-import { writeFile } from "node:fs/promises";
+import { unzipSync } from "fflate";
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
@@ -12,7 +11,7 @@ import { PrometheusAnalytics, noopAnalytics, type ConnectEvent, type ToolCallEve
 import { NetworkClassifier } from "../src/core/network.js";
 import { prefersMarkdown } from "../src/api/negotiate.js";
 import { openApiSpec } from "../src/api/openapi.js";
-import { MAX_DESCRIPTION, MAX_TITLE, sampleMeta, searchMeta } from "../src/api/search-meta.js";
+import { MAX_DESCRIPTION, MAX_TITLE, clipMeta, searchMeta } from "../src/api/search-meta.js";
 import { buildCsp, rewriteHead, umamiHead } from "../src/api/site.js";
 import { createHash } from "node:crypto";
 import { brotliDecompressSync } from "node:zlib";
@@ -20,64 +19,68 @@ import {
   assertPublicHost,
   assertPublicUrl,
   downloadClip,
-  extractZip,
+  pickPlayback,
   safeRelative,
   selectFiles,
   setHostResolver,
 } from "../src/core/download.js";
-import { ClipService, dedupe, passes } from "../src/core/service.js";
+import { ClipService, dedupe, passes, rankResults } from "../src/core/service.js";
 import { makeClip } from "../src/core/util.js";
 import { license } from "../src/core/licence.js";
 import { createMcpServer } from "../src/mcp/server.js";
 import { allProviders } from "../src/providers/index.js";
 import { linkProvider } from "../src/providers/link.js";
-import { KICK, VOCAL, brokenProvider, bytesHttp, fakeProvider, slowProvider } from "./fakes.js";
+import { CITY, OCEAN, brokenProvider, bytesHttp, fakeProvider, slowProvider } from "./fakes.js";
 
-const splice = linkProvider({
-  id: "splice",
-  name: "Splice",
-  homepage: "https://splice.com",
-  description: "Subscription clip library.",
-  categories: ["drums", "vocals", "fx"],
+const stock = linkProvider({
+  id: "stock",
+  name: "Stock",
+  homepage: "https://stock.example",
+  description: "Paid footage library.",
+  categories: ["nature", "city"],
   pricing: "paid",
-  buildSearchUrl: (q) => `https://splice.com/sounds/search/clips?q=${encodeURIComponent(q.query)}`,
+  buildSearchUrl: (q) => `https://stock.example/video/search?q=${encodeURIComponent(q.query)}`,
 });
 
 // Test hosts don't resolve; pretend every name is public.
 beforeAll(() => setHostResolver(async () => ["93.184.216.34"]));
 
 function service(http = bytesHttp()) {
-  return new ClipService({ providers: [fakeProvider, brokenProvider, slowProvider, splice], http, defaultTimeoutMs: 200 });
+  return new ClipService({ providers: [fakeProvider, brokenProvider, slowProvider, stock], http, defaultTimeoutMs: 200 });
 }
 
 describe("ClipService.search", () => {
   it("merges results and reports every provider", async () => {
-    const res = await service().search({ query: "deep kick" });
-    expect(res.results.map((a) => a.id)).toEqual(["fake:kick"]);
+    const res = await service().search({ query: "ocean waves" });
+    expect(res.results.map((a) => a.id)).toEqual(["fake:ocean"]);
     const status = Object.fromEntries(res.providers.map((p) => [p.provider, p.status]));
-    expect(status).toEqual({ fake: "ok", broken: "error", slow: "timeout", splice: "link" });
-    expect(res.providers.find((p) => p.provider === "splice")?.searchUrl).toContain("splice.com/sounds/search/clips?q=deep%20kick");
+    expect(status).toEqual({ fake: "ok", broken: "error", slow: "timeout", stock: "link" });
+    expect(res.providers.find((p) => p.provider === "stock")?.searchUrl).toContain("stock.example/video/search?q=ocean%20waves");
   });
 
-  it("parses BPM and key out of the query into filters", async () => {
-    const res = await service().search({ query: "vocal chop 140 bpm in F minor", providers: ["fake"] });
-    expect(res.query).toBe("vocal chop");
-    expect(res.filters).toMatchObject({ bpm: { min: 140, max: 140 }, key: { tonic: "F", mode: "minor" } });
-    expect(res.results.map((a) => a.id)).toEqual(["fake:vocal"]);
-    // Known mismatches go; the kick (no BPM, no key) stays only outside strict mode.
-    const strict = await service().search({ query: "120 bpm", providers: ["fake"], strict: true });
-    expect(strict.results).toEqual([]);
+  it("parses resolution, orientation, length and fps out of the query into filters", async () => {
+    const res = await service().search({ query: "city traffic vertical 1080p 30s 60fps", providers: ["fake"] });
+    expect(res.query).toBe("city traffic");
+    expect(res.filters).toMatchObject({ orientations: ["portrait"], minResolution: 1080, duration: { min: 30 }, minFps: 60 });
+    expect(res.results.map((a) => a.id)).toEqual(["fake:city"]);
+    const fourK = await service().search({ query: "4k", providers: ["fake"] });
+    expect(fourK.results.map((a) => a.id)).toContain("fake:ocean");
+    expect(fourK.results.map((a) => a.id)).not.toContain("fake:city");
+    // Unknown size stays outside strict mode only.
+    expect(fourK.results.map((a) => a.id)).toContain("fake:rocket");
+    const strict = await service().search({ query: "4k", providers: ["fake"], strict: true });
+    expect(strict.results.map((a) => a.id)).toEqual(["fake:ocean"]);
   });
 
   it("filters by category and licence verdict", async () => {
-    const res = await service().search({ query: "", providers: ["fake"], categories: ["drums"] });
-    expect(res.results.map((a) => a.id)).toEqual(["fake:kick", "fake:pack"]);
+    const res = await service().search({ query: "", providers: ["fake"], categories: ["nature"] });
+    expect(res.results.map((a) => a.id)).toEqual(["fake:ocean"]);
     const safe = await service().search({ query: "", providers: ["fake"], commercialOnly: true });
-    expect(safe.results.map((a) => a.id)).not.toContain("fake:vocal");
+    expect(safe.results.map((a) => a.id)).not.toContain("fake:city");
   });
 
   it("skips providers that cannot match the filters", async () => {
-    const res = await service().search({ query: "rain", categories: ["ambience"] });
+    const res = await service().search({ query: "fire", categories: ["overlay"] });
     expect(res.results).toEqual([]);
     expect(res.providers.find((p) => p.provider === "fake")?.status).toBe("skipped");
   });
@@ -85,7 +88,7 @@ describe("ClipService.search", () => {
   it("supports provider allow-lists and downloadable-only", async () => {
     const res = await service().search({ query: "", providers: ["fake"], downloadableOnly: true });
     expect(res.providers.map((p) => p.provider)).toEqual(["fake"]);
-    expect(res.results.map((a) => a.id).sort()).toEqual(["fake:kick", "fake:vocal"]);
+    expect(res.results.map((a) => a.id).sort()).toEqual(["fake:city", "fake:ocean"]);
   });
 
   it("rejects unknown providers and bad ids", async () => {
@@ -94,71 +97,97 @@ describe("ClipService.search", () => {
     await expect(service().getClip("broken:x")).rejects.toThrow(/does not support/);
   });
 
-  it("drops mirrored copies of the same sound, keeping the original source", () => {
-    const original = makeClip({ provider: "freesound", nativeId: "1", title: "Kick", tags: [], url: "https://freesound.org/s/1", downloadable: true });
-    const mirror = makeClip({ provider: "openverse", nativeId: "u", title: "Kick", tags: [], url: "https://openverse.org/audio/u", sameAs: ["freesound:1"], downloadable: true });
+  it("drops a re-upload of the same clip, keeping the original source", () => {
+    const original = makeClip({ provider: "nasa", nativeId: "1", title: "Launch", url: "https://images.nasa.gov/details/1", downloadable: true });
+    const copy = makeClip({ provider: "wikimediacommons", nativeId: "Launch.webm", title: "Launch", url: "https://commons.wikimedia.org/wiki/File:Launch.webm", sameAs: ["nasa:1"], downloadable: true });
     const kept = dedupe(
       [
-        { clip: mirror, provider: { id: "openverse" } },
-        { clip: original, provider: { id: "freesound" } },
+        { clip: copy, provider: { id: "wikimediacommons" } },
+        { clip: original, provider: { id: "nasa" } },
       ],
-      ["freesound", "openverse"],
+      ["nasa", "wikimediacommons"],
     );
-    expect(kept.map((k) => k.clip.id)).toEqual(["freesound:1"]);
+    expect(kept.map((k) => k.clip.id)).toEqual(["nasa:1"]);
   });
 
   it("applies filters with known-vs-unknown values", () => {
-    expect(passes(KICK, { forms: ["loop"] })).toBe(false);
-    expect(passes(KICK, { bpm: { min: 140, max: 140 } })).toBe(true);
-    expect(passes(KICK, { bpm: { min: 140, max: 140 } }, { strict: true })).toBe(false);
-    expect(passes(VOCAL, { bpm: { min: 70, max: 70 } })).toBe(true); // half time
-    expect(passes(VOCAL, { key: { tonic: "G#", mode: "major" } })).toBe(true); // relative major
-    expect(passes(VOCAL, { maxDurationSec: 2 })).toBe(false);
-    expect(passes(VOCAL, { commercialOnly: true })).toBe(false);
+    expect(passes(OCEAN, { orientations: ["portrait"] })).toBe(false);
+    expect(passes(CITY, { orientations: ["portrait"] })).toBe(true);
+    expect(passes(OCEAN, { minResolution: 2160 })).toBe(true);
+    expect(passes(CITY, { minResolution: 1080 })).toBe(true); // vertical 1080×1920 is 1080p
+    expect(passes(CITY, { minResolution: 2160 })).toBe(false);
+    expect(passes(OCEAN, { duration: { min: 10, max: 20 } })).toBe(true);
+    expect(passes(CITY, { duration: { max: 20 } })).toBe(false);
+    expect(passes(OCEAN, { minFps: 60 })).toBe(false);
+    expect(passes({ ...OCEAN, fps: 59.94 }, { minFps: 60 })).toBe(true);
+    expect(passes(OCEAN, { hasAudio: true })).toBe(false);
+    expect(passes(CITY, { hasAudio: true })).toBe(true); // unknown audio stays
+    expect(passes(CITY, { hasAudio: true }, { strict: true })).toBe(false);
+    expect(passes(CITY, { styles: ["timelapse"] }, { strict: true })).toBe(true);
+    expect(passes(OCEAN, { styles: ["timelapse"] })).toBe(true); // styles only filter in strict mode
+    expect(passes(OCEAN, { styles: ["timelapse"] }, { strict: true })).toBe(false);
+    expect(passes(CITY, { commercialOnly: true })).toBe(false);
+  });
+
+  it("ranks clips whose length fits the asked shot first", async () => {
+    const short = makeClip({ provider: "fake", nativeId: "a", title: "Waves", url: "https://x/a", durationSec: 12, downloadable: true });
+    const long = makeClip({ provider: "fake", nativeId: "b", title: "Waves", url: "https://x/b", durationSec: 1800, downloadable: true });
+    const ranked = rankResults(
+      [
+        { clip: long, rank: 0, provider: { id: "fake", access: "api" } },
+        { clip: short, rank: 1, provider: { id: "fake", access: "api" } },
+      ],
+      { query: "waves", duration: { min: 10 } },
+    );
+    expect(ranked[0]!.id).toBe("fake:a");
   });
 });
 
-describe("selectFiles", () => {
-  it("prefers the lossless original over previews", () => {
-    expect(selectFiles(KICK).map((f) => f.filename)).toEqual(["kick.wav"]);
+describe("selectFiles and pickPlayback", () => {
+  it("prefers the master, then the biggest rendition", () => {
+    expect(selectFiles(OCEAN).map((f) => f.filename)).toEqual(["ocean.mov"]);
+    const noMaster = { ...OCEAN, files: OCEAN.files.filter((f) => f.role !== "original") };
+    expect(selectFiles(noMaster).map((f) => f.filename)).toEqual(["ocean-1080.mp4"]);
   });
-  it("honours format and role", () => {
-    expect(selectFiles(KICK, { format: "flac" }).map((f) => f.filename)).toEqual(["kick.flac"]);
-    expect(selectFiles(KICK, { role: "preview" }).map((f) => f.filename)).toEqual(["kick.mp3"]);
-    expect(selectFiles(KICK, { format: "aiff" })).toEqual([]);
+  it("picks the smallest file at or above a wanted height, else the biggest below", () => {
+    expect(selectFiles(OCEAN, { height: 1080 }).map((f) => f.filename)).toEqual(["ocean-1080.mp4"]);
+    expect(selectFiles(OCEAN, { height: 720 }).map((f) => f.filename)).toEqual(["ocean-720.webm"]);
+    expect(selectFiles(OCEAN, { height: 4320 }).map((f) => f.filename)).toEqual(["ocean.mov"]);
+    // A vertical 1080×1920 file counts as 1080.
+    expect(selectFiles(CITY, { height: 1080 }).map((f) => f.filename)).toEqual(["city.mp4"]);
   });
-  it("never picks files that need a login, falling back to the preview", () => {
-    const s = { ...KICK, files: KICK.files.map((f) => (f.role === "original" ? { ...f, requiresAuth: true } : f)) };
-    expect(selectFiles(s).map((f) => f.filename)).toEqual(["kick.mp3"]);
+  it("honours format and role, and never picks posters, captions or files behind a login", () => {
+    expect(selectFiles(OCEAN, { format: "webm" }).map((f) => f.filename)).toEqual(["ocean-720.webm"]);
+    expect(selectFiles(OCEAN, { role: "preview" }).map((f) => f.filename)).toEqual(["ocean-360.mp4"]);
+    expect(selectFiles(OCEAN, { format: "avi" })).toEqual([]);
+    const locked = { ...OCEAN, files: OCEAN.files.map((f) => (f.role === "original" ? { ...f, requiresAuth: true } : f)) };
+    expect(selectFiles(locked).map((f) => f.filename)).toEqual(["ocean-1080.mp4"]);
+    expect(selectFiles({ files: [OCEAN.files[4]!] })).toEqual([]);
   });
-  it("keeps construction-kit stems and MIDI together", () => {
-    const s = {
-      ...KICK,
-      files: [
-        { url: "https://x.example/a.wav", filename: "drums.wav", format: "wav", role: "stem" as const },
-        { url: "https://x.example/b.wav", filename: "bass.wav", format: "wav", role: "stem" as const },
-        { url: "https://x.example/c.mid", filename: "bass.mid", format: "mid", role: "midi" as const },
-      ],
-    };
-    expect(selectFiles(s)).toHaveLength(3);
+  it("plays a browser-friendly file near 720p, straight from the source", () => {
+    expect(pickPlayback(OCEAN)).toMatchObject({ url: "https://cdn.fake.example/ocean-720.webm", type: "video/webm", height: 720 });
+    // Without renditions, the preview.
+    expect(pickPlayback({ files: [], previewUrl: "https://cdn.fake.example/p.mp4", previewType: "video/mp4" })).toEqual({ url: "https://cdn.fake.example/p.mp4", type: "video/mp4" });
+    // A .mov master alone is not browser-playable.
+    expect(pickPlayback({ files: [OCEAN.files[1]!] })).toBeUndefined();
   });
 });
 
 describe("download safety", () => {
   it("rejects path traversal and internal URLs", async () => {
     expect(() => safeRelative("../etc/passwd")).toThrow();
-    expect(safeRelative("./drums//a.wav")).toBe("drums/a.wav");
+    expect(safeRelative("./nature//a.mp4")).toBe("nature/a.mp4");
     expect(() => assertPublicUrl("http://127.0.0.1/x")).toThrow();
     expect(() => assertPublicUrl("http://localhost:8080/x")).toThrow();
     expect(() => assertPublicUrl("http://[::ffff:10.0.0.1]/x")).toThrow();
     expect(() => assertPublicUrl("file:///etc/passwd")).toThrow();
-    expect(assertPublicUrl("https://cdn.freesound.org/a.mp3").hostname).toBe("cdn.freesound.org");
+    expect(assertPublicUrl("https://upload.wikimedia.org/a.webm").hostname).toBe("upload.wikimedia.org");
   });
 
   it("refuses names that resolve to private addresses", async () => {
     setHostResolver(async () => ["10.1.2.3"]);
     try {
-      await expect(assertPublicHost("https://evil.example/x.wav")).rejects.toThrow(/private address/);
+      await expect(assertPublicHost("https://evil.example/x.mp4")).rejects.toThrow(/private address/);
     } finally {
       setHostResolver(async () => ["93.184.216.34"]);
     }
@@ -174,7 +203,7 @@ describe("download safety", () => {
     };
     const dir = await mkdtemp(join(tmpdir(), "dl-"));
     try {
-      const s = { ...KICK, files: [{ url: "https://cdn.fake.example/start.wav", filename: "x.wav", format: "wav", role: "original" as const }] };
+      const s = { ...OCEAN, files: [{ url: "https://cdn.fake.example/start.mp4", filename: "x.mp4", format: "mp4", role: "original" as const }] };
       await expect(downloadClip(http, s, s.files, dir)).rejects.toThrow(/private address|Refusing/);
     } finally {
       await rm(dir, { recursive: true, force: true });
@@ -188,35 +217,19 @@ describe("downloadClip", () => {
     if (dir) await rm(dir, { recursive: true, force: true });
   });
 
-  it("files single sounds by category", async () => {
+  it("files clips by category with their resolution, and never leaves a partial file", async () => {
     dir = await mkdtemp(join(tmpdir(), "clips-"));
-    const res = await downloadClip(bytesHttp(), KICK, selectFiles(KICK), dir);
+    const res = await downloadClip(bytesHttp(), OCEAN, selectFiles(OCEAN, { height: 1080 }), dir);
     const rel = res.files.map((f) => f.path.slice(dir!.length + 1).replaceAll("\\", "/"));
-    expect(rel).toEqual(["drums/kick/fake-kick Deep Kick 01.wav"]);
-    expect(await readFile(res.files[0]!.path, "utf8")).toBe("data:kick.wav");
+    expect(rel).toEqual(["nature/ocean/fake-ocean Ocean Waves at Sunset (1080p).mp4"]);
+    expect(await readFile(res.files[0]!.path, "utf8")).toBe("data:ocean-1080.mp4");
+    const failing = { ...bytesHttp(), raw: async () => new Response("x", { status: 500 }) };
+    await expect(downloadClip(failing, OCEAN, selectFiles(OCEAN, { height: 720 }), dir)).rejects.toThrow(/HTTP 500/);
   });
 
   it("enforces the size limit before downloading", async () => {
     dir = await mkdtemp(join(tmpdir(), "clips-"));
-    await expect(downloadClip(bytesHttp(), KICK, selectFiles(KICK), dir, { maxBytes: 3 })).rejects.toThrow(/limit/);
-  });
-
-  it("extracts zips by streaming, skipping zip-slip and macOS entries, within caps", async () => {
-    dir = await mkdtemp(join(tmpdir(), "zip-"));
-    const zip = join(dir, "pack.zip");
-    await writeFile(
-      zip,
-      zipSync({
-        "Kicks/kick1.wav": new Uint8Array(1000).fill(1),
-        "Snares/snare1.wav": new Uint8Array(500).fill(2),
-        "../evil.wav": new Uint8Array(1),
-        "__MACOSX/._kick1.wav": new Uint8Array(1),
-      }),
-    );
-    const out = await extractZip(zip, join(dir, "pack"));
-    expect(out.map((o) => o.path.slice(dir!.length + 1).replaceAll("\\", "/")).sort()).toEqual(["pack/Kicks/kick1.wav", "pack/Snares/snare1.wav"]);
-    await expect(extractZip(zip, join(dir, "small"), { maxBytes: 1200 })).rejects.toThrow(/expands beyond/);
-    await expect(extractZip(zip, join(dir, "few"), { maxEntries: 1 })).rejects.toThrow(/more than 1 files/);
+    await expect(downloadClip(bytesHttp(), OCEAN, selectFiles(OCEAN), dir, { maxBytes: 3 })).rejects.toThrow(/limit/);
   });
 });
 
@@ -226,19 +239,21 @@ describe("HTTP API", () => {
   const app = createApp(service(), { siteRoot: SITE });
 
   it("searches with clip filters", async () => {
-    const res = await app.request("/v1/search?q=kick&category=drums&form=one-shot&providers=fake");
+    const res = await app.request("/v1/search?q=ocean&category=nature&min_resolution=4k&providers=fake");
     expect(res.status).toBe(200);
-    const body = (await res.json()) as { results: { id: string }[] };
-    expect(body.results[0]?.id).toBe("fake:kick");
-    const vocal = (await (await app.request("/v1/search?q=vocal&bpm=140&key=Fm&providers=fake")).json()) as { filters: object; results: { id: string }[] };
-    expect(vocal.filters).toMatchObject({ bpm: { min: 140, max: 140 }, key: { tonic: "F", mode: "minor" } });
-    expect(vocal.results[0]?.id).toBe("fake:vocal");
+    const body = (await res.json()) as { filters: object; results: { id: string }[] };
+    expect(body.filters).toMatchObject({ categories: ["nature"], minResolution: 2160 });
+    expect(body.results[0]?.id).toBe("fake:ocean");
+    const city = (await (await app.request("/v1/search?q=city&orientation=portrait&min_duration=30&max_duration=60&providers=fake")).json()) as { filters: object; results: { id: string }[] };
+    expect(city.filters).toMatchObject({ orientations: ["portrait"], duration: { min: 30, max: 60 } });
+    expect(city.results.map((r) => r.id)).toEqual(["fake:city"]);
   });
 
   it("validates parameters", async () => {
     expect((await app.request("/v1/search?q=x&category=spaceship")).status).toBe(400);
-    expect((await app.request("/v1/search?q=x&bpm=fast")).status).toBe(400);
-    expect((await app.request("/v1/search?q=x&key=H")).status).toBe(400);
+    expect((await app.request("/v1/search?q=x&min_resolution=8k")).status).toBe(400);
+    expect((await app.request("/v1/search?q=x&orientation=diagonal")).status).toBe(400);
+    expect((await app.request("/v1/search?q=x&style=dance")).status).toBe(400);
     expect((await app.request("/v1/search?q=x&providers=nope")).status).toBe(400);
     expect((await app.request("/v1/clips/fake:missing")).status).toBe(404);
   });
@@ -247,44 +262,65 @@ describe("HTTP API", () => {
     const withHeaders = {
       ...fakeProvider,
       async getClip() {
-        return { ...KICK, files: KICK.files.map((f) => ({ ...f, headers: { authorization: "Bearer secret", referer: "https://x" } })) };
+        return { ...OCEAN, files: OCEAN.files.map((f) => ({ ...f, headers: { authorization: "Bearer secret", referer: "https://x" } })) };
       },
     };
     const a = createApp(new ClipService({ providers: [withHeaders], http: bytesHttp() }), { siteRoot: SITE });
-    const body = await (await a.request("/v1/clips/fake:kick")).text();
+    const body = await (await a.request("/v1/clips/fake:ocean")).text();
     expect(body).not.toContain("secret");
     expect(body).not.toContain("headers");
-    const files = await (await a.request("/v1/clips/fake:kick/files?all=true")).text();
+    const files = await (await a.request("/v1/clips/fake:ocean/files?all=true")).text();
     expect(files).not.toContain("secret");
+    // Files that need request headers can't be handed out as a redirect.
+    expect((await a.request("/v1/clips/fake:ocean/download")).status).toBe(409);
   });
 
-  it("streams a zip bundle with credits", async () => {
-    const res = await app.request(`/v1/clips/${encodeURIComponent("fake:kick")}/download?bundle=true`);
-    expect(res.status).toBe(200);
-    expect(res.headers.get("content-type")).toBe("application/zip");
-    expect(res.headers.get("x-license")).toBe("CC0-1.0; verdict=yes");
-    const entries = unzipSync(new Uint8Array(await res.arrayBuffer()));
-    expect(Object.keys(entries).sort()).toEqual([
-      "fake-kick/ATTRIBUTION.md",
-      "fake-kick/credits.json",
-      "fake-kick/drums/kick/fake-kick Deep Kick 01.wav",
-    ]);
+  it("returns clip details with a watch URL on the source and a share link", async () => {
+    const res = await app.request(`/v1/clips/${encodeURIComponent("fake:ocean")}`);
+    const body = (await res.json()) as { watch: { url: string }; files: unknown[]; shareUrl: string };
+    expect(body.watch.url).toBe("https://cdn.fake.example/ocean-720.webm");
+    expect(body.files).toHaveLength(5);
+    expect(body.shareUrl).toMatch(/\/search\?clip=fake%3Aocean$/);
   });
 
-  it("redirects for a single plain file", async () => {
-    const res = await app.request("/v1/clips/fake:kick/download?format=flac");
+  it("downloads by redirecting to the source, never streaming video", async () => {
+    const res = await app.request("/v1/clips/fake:ocean/download?height=1080");
     expect(res.status).toBe(302);
-    expect(res.headers.get("location")).toBe("https://cdn.fake.example/kick.flac");
+    expect(res.headers.get("location")).toBe("https://cdn.fake.example/ocean-1080.mp4");
+    expect(res.headers.get("x-license")).toBe("CC0-1.0; verdict=yes");
+    const master = await app.request("/v1/clips/fake:ocean/download");
+    expect(master.headers.get("location")).toBe("https://cdn.fake.example/ocean.mov");
+    expect((await app.request("/v1/clips/fake:ocean/download?format=avi")).status).toBe(404);
   });
 
-  it("serves previews: redirect for plain ones, proxied with CORS on request", async () => {
-    const r = await app.request("/v1/clips/fake:kick/preview");
-    expect(r.status).toBe(302);
-    expect(r.headers.get("location")).toBe("https://cdn.fake.example/kick.mp3");
-    const proxied = await app.request("/v1/clips/fake:kick/preview?proxy=1");
-    expect(proxied.status).toBe(200);
-    expect(proxied.headers.get("access-control-allow-origin")).toBe("*");
-    expect(await proxied.text()).toBe("data:kick.mp3");
+  it("serves credits as Markdown, JSON or a zip without video", async () => {
+    const md = await app.request("/v1/clips/fake:city/credits");
+    expect(md.headers.get("content-type")).toContain("text/markdown");
+    expect(await md.text()).toContain("not cleared for commercial use");
+    const json = (await (await app.request("/v1/clips/fake:city/credits?format=json")).json()) as { clips: { id: string }[]; commercialSafe: boolean };
+    expect(json.clips[0]!.id).toBe("fake:city");
+    expect(json.commercialSafe).toBe(false);
+    const zip = await app.request("/v1/clips/fake:ocean/credits?format=zip");
+    expect(zip.headers.get("content-type")).toBe("application/zip");
+    const entries = unzipSync(new Uint8Array(await zip.arrayBuffer()));
+    expect(Object.keys(entries).sort()).toEqual(["fake-ocean/ATTRIBUTION.md", "fake-ocean/credits.json"]);
+  });
+
+  it("plans a b-roll sequence with exports", async () => {
+    const res = await app.request("/v1/sequences", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ shots: ["ocean waves (5s)", "city traffic"], totalDuration: 15, commercialOnly: false, providers: ["fake"], name: "demo" }),
+    });
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as { plan: { shots: { clip?: { id: string }; durationSec: number }[] }; exports: Record<string, string> };
+    expect(body.plan.shots.map((s) => [s.clip?.id, s.durationSec])).toEqual([
+      ["fake:ocean", 5],
+      ["fake:city", 10],
+    ]);
+    expect(Object.keys(body.exports).sort()).toEqual(["ATTRIBUTION.md", "concat.sh", "credits.json", "remotion.json", "timeline.otio"]);
+    expect(body.exports["concat.sh"]).toContain("https://cdn.fake.example/ocean-1080.mp4");
+    expect((await app.request("/v1/sequences", { method: "POST", headers: { "content-type": "application/json" }, body: "{}" })).status).toBe(400);
   });
 
   it("serves the website to browsers and JSON to API clients", async () => {
@@ -385,17 +421,19 @@ describe("HTTP API", () => {
     const lines: string[] = [];
     const analytics = new PrometheusAnalytics((l) => lines.push(l));
     const tracked = createApp(service(), { siteRoot: SITE, analytics });
-    await tracked.request("/v1/search?q=Kick&providers=fake", { headers: { "x-video-client": "web", "user-agent": "Mozilla/5.0" } });
-    await tracked.request("/v1/clips/fake:kick/download?format=flac", { headers: { "user-agent": "curl/8.5" } });
+    await tracked.request("/v1/search?q=Ocean+vertical&providers=fake", { headers: { "x-video-client": "web", "user-agent": "Mozilla/5.0" } });
+    await tracked.request("/v1/clips/fake:ocean/download?height=1080", { headers: { "user-agent": "curl/8.5" } });
     await tracked.request("/docs/mcp");
     const metrics = await analytics.registry.metrics();
-    expect(metrics).toContain('video_server_searches_total{surface="web",client="browser",category="any",free_only="false",has_results="true"} 1');
+    expect(metrics).toContain(
+      'video_server_searches_total{surface="web",client="browser",category="any",orientation="portrait",min_resolution="any",free_only="false",has_results="false"} 1',
+    );
     expect(metrics).toContain('video_server_provider_requests_total{provider="fake",status="ok"} 1');
-    expect(metrics).toContain('video_server_downloads_total{surface="api",client="curl",provider="fake",kind="redirect"} 1');
+    expect(metrics).toContain('video_server_downloads_total{surface="api",client="curl",provider="fake",kind="redirect",quality="fhd"} 1');
     expect(metrics).toContain('video_server_page_views_total{page="/docs/mcp"} 1');
     expect(metrics).toContain('video_server_http_requests_total{route="/v1/search",method="GET",status="2xx"} 1');
     const search = JSON.parse(lines.find((l) => l.includes('"event":"search"'))!);
-    expect(search).toMatchObject({ event: "search", surface: "web", query: "kick", results: 1 });
+    expect(search).toMatchObject({ event: "search", surface: "web", query: "ocean vertical", orientations: ["portrait"], results: 0 });
   });
 
   it("counts MCP tool calls by client", async () => {
@@ -495,8 +533,8 @@ describe("HTTP API", () => {
       body: JSON.stringify({ jsonrpc: "2.0", id: 2, method: "tools/list" }),
     });
     const body = (await list.json()) as { result: { tools: { name: string }[] } };
-    // download_sample writes to disk, so it is off for the HTTP transport by default.
-    expect(body.result.tools.map((t) => t.name).sort()).toEqual(["build_kit", "extract_midi", "find_similar", "get_sample", "list_sources", "search_samples"]);
+    // download_video writes to disk, so it is off for the HTTP transport by default.
+    expect(body.result.tools.map((t) => t.name).sort()).toEqual(["build_sequence", "get_video", "list_sources", "search_videos"]);
   });
 
   it("can turn off HTTP MCP and keep the website and search API", async () => {
@@ -509,7 +547,7 @@ describe("HTTP API", () => {
     expect(mcp.status).toBe(404);
     // No redirect to the setup guide either: there is nothing to set up.
     expect((await webOnly.request("/mcp", { headers: { accept: "text/html" } })).status).toBe(404);
-    expect((await webOnly.request("/v1/search?q=kick&category=drums&providers=fake")).status).toBe(200);
+    expect((await webOnly.request("/v1/search?q=ocean&category=nature&providers=fake")).status).toBe(200);
     expect((await webOnly.request("/", { headers: { accept: "text/html" } })).status).toBe(200);
     const index = (await (await webOnly.request("/", { headers: { accept: "application/json" } })).json()) as { agents: object; endpoints: object };
     expect(index.agents).not.toHaveProperty("mcp");
@@ -546,27 +584,29 @@ describe("MCP tools", () => {
     expect(calls).toMatchObject([{ tool: "list_sources", client: "claude-code", outcome: "ok" }]);
   });
 
-  it("search_samples returns compact results with licence verdicts, commercial-safe by default", async () => {
+  it("search_videos returns compact results with licence verdicts, commercial-safe by default", async () => {
     const client = await connect();
-    const r = text(await client.callTool({ name: "search_samples", arguments: { query: "" , providers: ["fake", "splice"] } }));
-    expect(r.results.map((x: { id: string }) => x.id)).not.toContain("fake:vocal");
-    expect(r.results[0]).toMatchObject({ id: "fake:kick", category: "drums.kick", license: { verdict: "yes" }, downloadable: true });
-    expect(r.also_search_on[0].provider).toBe("Splice");
-    const all = text(await client.callTool({ name: "search_samples", arguments: { query: "vocal", commercial_only: false, providers: ["fake"] } }));
-    expect(all.results[0]).toMatchObject({ id: "fake:vocal", license: { verdict: "no" } });
-    const broken = text(await client.callTool({ name: "search_samples", arguments: { query: "kick" } }));
+    const r = text(await client.callTool({ name: "search_videos", arguments: { query: "", providers: ["fake", "stock"] } }));
+    expect(r.results.map((x: { id: string }) => x.id)).not.toContain("fake:city");
+    expect(r.results[0]).toMatchObject({ id: "fake:ocean", category: "nature.ocean", orientation: "landscape", resolution: "3840×2160 (4K)", license: { verdict: "yes" }, downloadable: true });
+    expect(r.results[0].poster).toBe("https://cdn.fake.example/ocean.jpg");
+    expect(r.also_search_on[0].provider).toBe("Stock");
+    const all = text(await client.callTool({ name: "search_videos", arguments: { query: "city", orientation: "portrait", commercial_only: false, providers: ["fake"] } }));
+    expect(all.results[0]).toMatchObject({ id: "fake:city", license: { verdict: "no" } });
+    const broken = text(await client.callTool({ name: "search_videos", arguments: { query: "ocean" } }));
     expect(broken.unavailable.map((u: { provider: string }) => u.provider).sort()).toEqual(["broken", "slow"]);
   });
 
-  it("get_sample shows files and the selection", async () => {
+  it("get_video shows renditions, the watch URL and the selection", async () => {
     const client = await connect();
-    const r = text(await client.callTool({ name: "get_sample", arguments: { id: "fake:kick" } }));
-    expect(r.files.map((f: { filename: string }) => f.filename)).toEqual(["kick.mp3", "kick.wav", "kick.flac"]);
-    expect(r.selection.files).toEqual(["kick.wav"]);
+    const r = text(await client.callTool({ name: "get_video", arguments: { id: "fake:ocean", height: 1080 } }));
+    expect(r.files.map((f: { filename: string }) => f.filename)).toEqual(["ocean-360.mp4", "ocean.mov", "ocean-1080.mp4", "ocean-720.webm"]);
+    expect(r.watch).toBe("https://cdn.fake.example/ocean-720.webm");
+    expect(r.selection).toMatchObject({ file: "ocean-1080.mp4", resolution: "1920×1080", downloadUrl: "https://cdn.fake.example/ocean-1080.mp4" });
     expect(r.shareUrl).toBeUndefined();
-    const linked = text(await (await connect(undefined, "https://video.shep.bot/")).callTool({ name: "get_sample", arguments: { id: "fake:kick" } }));
-    expect(linked.shareUrl).toBe("https://video.shep.bot/search?clip=fake%3Akick");
-    expect(linked.selection.downloadUrl).toBe("https://video.shep.bot/v1/clips/fake%3Akick/download");
+    const linked = text(await (await connect(undefined, "https://video.shep.bot/")).callTool({ name: "get_video", arguments: { id: "fake:ocean", height: 1080 } }));
+    expect(linked.shareUrl).toBe("https://video.shep.bot/search?clip=fake%3Aocean");
+    expect(linked.selection.downloadUrl).toBe("https://video.shep.bot/v1/clips/fake%3Aocean/download?height=1080");
   });
 
   it("without local downloads, tells agents to fetch downloadUrl themselves", async () => {
@@ -575,30 +615,46 @@ describe("MCP tools", () => {
     const client = new Client({ name: "test", version: "1" });
     await Promise.all([server.connect(a), client.connect(b)]);
     expect(client.getInstructions()).toContain("selection.downloadUrl");
-    expect(client.getInstructions()).not.toContain("download_sample");
+    expect(client.getInstructions()).not.toContain("download_video");
     const { tools } = await client.listTools();
-    expect(tools.find((t) => t.name === "get_sample")?.description).not.toContain("download_sample");
+    expect(tools.map((t) => t.name)).not.toContain("download_video");
+    expect(tools.find((t) => t.name === "get_video")?.description).not.toContain("download_video");
   });
 
-  it("download_sample files the sound by category and writes the credits", async () => {
+  it("download_video files the clip by category and writes the credits", async () => {
     dir = await mkdtemp(join(tmpdir(), "mcp-"));
     const client = await connect(dir);
-    const r = text(await client.callTool({ name: "download_sample", arguments: { id: "fake:kick" } }));
+    const r = text(await client.callTool({ name: "download_video", arguments: { id: "fake:ocean", height: 720 } }));
     expect(r.directory).toBe(dir);
-    expect(r.files).toEqual([join(dir, "drums/kick/fake-kick Deep Kick 01.wav")]);
+    expect(r.files).toEqual([join(dir, "nature/ocean/fake-ocean Ocean Waves at Sunset (720p).webm")]);
     const credits = JSON.parse(await readFile(join(dir, "credits.json"), "utf8"));
-    expect(JSON.stringify(credits)).toContain("fake:kick");
-    expect(await readFile(join(dir, "ATTRIBUTION.md"), "utf8")).toContain("Deep Kick 01");
+    expect(JSON.stringify(credits)).toContain("fake:ocean");
+    expect(await readFile(join(dir, "ATTRIBUTION.md"), "utf8")).toContain("Ocean Waves at Sunset");
     // A second download merges into the same credits.
-    await client.callTool({ name: "download_sample", arguments: { id: "fake:vocal" } });
+    await client.callTool({ name: "download_video", arguments: { id: "fake:city" } });
     const both = JSON.stringify(JSON.parse(await readFile(join(dir, "credits.json"), "utf8")));
-    expect(both).toContain("fake:kick");
-    expect(both).toContain("fake:vocal");
+    expect(both).toContain("fake:ocean");
+    expect(both).toContain("fake:city");
+  });
+
+  it("build_sequence plans shots and, locally, downloads them with the exports", async () => {
+    dir = await mkdtemp(join(tmpdir(), "seq-"));
+    const client = await connect(dir);
+    const planned = text(await client.callTool({ name: "build_sequence", arguments: { shots: "ocean waves (4s)\ncity traffic", commercial_only: false, providers: ["fake"] } }));
+    expect(planned.shots.map((s: { pick?: { id: string } }) => s.pick?.id)).toEqual(["fake:ocean", "fake:city"]);
+    expect(planned.exports["concat.sh"]).toContain("ffmpeg");
+    expect(planned.exports.timeline.OTIO_SCHEMA).toBe("Timeline.1");
+    const out = join(dir, "seq");
+    const saved = text(await client.callTool({ name: "build_sequence", arguments: { shots: ["ocean waves"], providers: ["fake"], download: true, dest_dir: out } }));
+    expect(saved.directory).toBe(out);
+    const otio = JSON.parse(await readFile(join(out, "timeline.otio"), "utf8"));
+    expect(otio.tracks.children[0].children[0].media_reference.target_url).toBe("footage/nature/ocean/fake-ocean Ocean Waves at Sunset (1080p).mp4");
+    expect(await readFile(join(out, "footage/nature/ocean/fake-ocean Ocean Waves at Sunset (1080p).mp4"), "utf8")).toBe("data:ocean-1080.mp4");
   });
 
   it("reports errors as tool errors", async () => {
     const client = await connect();
-    const r = await client.callTool({ name: "get_sample", arguments: { id: "fake:missing" } });
+    const r = await client.callTool({ name: "get_video", arguments: { id: "fake:missing" } });
     expect(r.isError).toBe(true);
   });
 });
@@ -738,7 +794,7 @@ describe("site security, compression and SEO variants", () => {
     new Function("window", "document", "location", code)(win, doc, { href: "https://video.shep.bot/" });
     const send = win.umamiBeforeSend!;
 
-    const view = send("event", { url: "https://video.shep.bot/search?q=oak+tree&utm_source=news#x", title: "“oak tree”: clips", referrer: "https://video.shep.bot/search?q=kick" });
+    const view = send("event", { url: "https://video.shep.bot/search?q=oak+tree&utm_source=news#x", title: "“oak tree”: clips", referrer: "https://video.shep.bot/search?q=waves" });
     expect(view).toEqual({ url: "https://video.shep.bot/search?utm_source=news", title: "", referrer: "https://video.shep.bot/search" });
     // Search rewrites the query as you type: same path, no second view.
     expect(send("event", { url: "https://video.shep.bot/search?q=rock", title: "“rock”" })).toBeNull();
@@ -780,18 +836,18 @@ describe("site security, compression and SEO variants", () => {
   });
 
   it("gives /search query variants unique, noindex metadata and a style nonce", async () => {
-    const res = await app.request("/search?q=dusty%20snare&category=drums.snare", html);
+    const res = await app.request("/search?q=crashing%20waves&category=nature.ocean", html);
     const body = await res.text();
-    expect(body).toContain("<title>“dusty snare”: snare clips · Video Assets Server</title>");
+    expect(body).toContain("<title>“crashing waves”: ocean &amp; beach clips · Video Assets Server</title>");
     expect(body).toContain('<meta name="robots" content="noindex, follow">');
-    expect(body).toContain('<meta property="og:title" content="“dusty snare”: snare clips · Video Assets Server">');
+    expect(body).toContain('<meta property="og:title" content="“crashing waves”: ocean &amp; beach clips · Video Assets Server">');
     const nonce = body.match(/<meta property="csp-nonce" content="([^"]+)">/)![1]!;
     expect(res.headers.get("content-security-policy")).toContain(`'nonce-${nonce}'`);
     expect(res.headers.get("etag")).toBeNull();
-    const other = await (await app.request("/search?category=fx.riser&free=true", html)).text();
-    expect(other).toContain(`<title>Free riser clips: search ${allProviders.length} sites · Video Assets Server</title>`);
+    const other = await (await app.request("/search?category=aerial&free=true", html)).text();
+    expect(other).toContain(`<title>Free drone shots: search ${allProviders.length} sites · Video Assets Server</title>`);
     const plain = await (await app.request("/search", html)).text();
-    expect(plain).toContain("<title>Search free clips: drums, loops, vocals &amp; FX · Video Assets Server</title>");
+    expect(plain).toContain("<title>Search free stock video: b-roll, space &amp; archive footage · Video Assets Server</title>");
     expect(plain).toContain('content="index, follow"');
     const again = await (await app.request("/search", html)).text();
     expect(again.match(/csp-nonce" content="([^"]+)"/)![1]).not.toBe(plain.match(/csp-nonce" content="([^"]+)"/)![1]);
@@ -804,13 +860,14 @@ describe("site security, compression and SEO variants", () => {
 
   it("builds search metadata and escapes it into the head", () => {
     expect(searchMeta(new URLSearchParams(""))).toBeUndefined();
-    expect(searchMeta(new URLSearchParams("category=vocals&free=true"))!.title).toBe(`Free vocal clips: search ${allProviders.length} sites · Video Assets Server`);
-    const long = searchMeta(new URLSearchParams(`q=${"very long query words ".repeat(6)}&category=drums.kick,bass.808&free=true`))!;
+    expect(searchMeta(new URLSearchParams("category=archive&free=true"))!.title).toBe(`Free archive films: search ${allProviders.length} sites · Video Assets Server`);
+    const long = searchMeta(new URLSearchParams(`q=${"very long query words ".repeat(6)}&category=nature.ocean,aerial&free=true`))!;
     expect(long.title.length).toBeLessThanOrEqual(MAX_TITLE);
     expect(long.description.length).toBeLessThanOrEqual(MAX_DESCRIPTION);
-    const clip = sampleMeta({ id: "fake:1", provider: "fake", title: "Cinematic Tension Build-Up And Final Impact Sound Effect Long Name", category: "fx.impact", author: "someone with a long name", url: "https://example.com", license: { id: "CC-BY-4.0", name: "CC BY 4.0", verdict: "yes-with-credit" } } as never);
+    const clip = clipMeta({ id: "fake:1", provider: "fake", title: "Aerial Drone Flight Over A Very Long Mountain Range At Golden Hour In Autumn", category: "aerial", author: "someone with a long name", url: "https://example.com", width: 3840, height: 2160, license: { id: "CC-BY-4.0", name: "CC BY 4.0", verdict: "yes-with-credit" } } as never);
     expect(clip.title.length).toBeLessThanOrEqual(MAX_TITLE);
-    expect(clip.title).toMatch(/: impact clip( on .+)? · Video Assets Server$/);
+    expect(clip.title).toMatch(/: drone shot( on .+)? · Video Assets Server$/);
+    expect(clip.description).toContain("4K");
     expect(clip.description.length).toBeLessThanOrEqual(MAX_DESCRIPTION);
     const out = rewriteHead('<title>x</title><meta name="description" content="y">', { title: '<b>"t"</b>', description: "d & e" });
     expect(out).toBe('<title>&lt;b&gt;&quot;t&quot;&lt;/b&gt;</title><meta name="description" content="d &amp; e">');

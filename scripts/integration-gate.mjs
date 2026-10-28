@@ -39,6 +39,7 @@ const ALLOWED = [
   /^web\/src\/data\/(providers|integrations|openapi)\.json$/,
 ];
 const MAX_FIXTURE_BYTES = 200 * 1024;
+const MEDIA = /\.(mp4|m4v|webm|mov|ogv|mkv|avi|mpe?g|ts|m3u8|mp3|wav|ogg|flac|aac|jpe?g|png|gif|webp|avif|svg)$/i;
 const MAX_NEW_SOURCES = 1;
 
 /**
@@ -56,6 +57,8 @@ export function checkChanges({ files, before, after }) {
     if (f.path.startsWith("test/") && f.status !== "A") errors.push(`${f.path}: existing tests and fixtures must not change`);
     if (f.path.startsWith("src/providers/data/") && f.status !== "A") errors.push(`${f.path}: existing provider data must not change`);
     if (f.path.startsWith("test/fixtures/") && (f.size ?? 0) > MAX_FIXTURE_BYTES) errors.push(`${f.path}: fixture over ${MAX_FIXTURE_BYTES / 1024} KB`);
+    // Fixtures are API and page responses. Footage, posters and audio are someone else's work: never committed.
+    if (f.path.startsWith("test/fixtures/") && MEDIA.test(f.path)) errors.push(`${f.path}: media files may not be committed as fixtures`);
   }
 
   const key = (e) => JSON.stringify(e);

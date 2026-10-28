@@ -1,87 +1,101 @@
 import { describe, expect, it } from "vitest";
-import { classify, soundTokens } from "../src/core/classify.js";
-import { attributionLine, creativeCommons, license, parseLicense, royaltyFree } from "../src/core/licence.js";
-import { bpmFromText, keyFromText, keyMatches, normalizePitch, parseQuery } from "../src/core/query.js";
+import { classify, wordTokens } from "../src/core/classify.js";
+import { asEditorial, attributionLine, creativeCommons, license, parseLicense, royaltyFree } from "../src/core/licence.js";
+import { durationMatches, formatDuration, frameSizeFromText, parseQuery } from "../src/core/query.js";
 import { makeClip, matchScore, parseClipId } from "../src/core/util.js";
+import { orientationOf, resolutionLabel, resolutionTier } from "../src/core/vocab.js";
 
 describe("classify", () => {
   it.each([
-    ["Deep Kick 01", "drums.kick"],
-    ["808 Snare", "drums.snare"],
-    ["808 Kick", "drums.kick"],
-    ["Dark 808 Bass", "bass.808"],
-    ["bass drum hit", "drums.kick"],
-    ["Closed HiHat 3", "drums.hat.closed"],
-    ["OpenHat_02.wav", "drums.hat.open"],
-    ["Vocal Chop Fmin", "vocals.chop"],
-    ["Laser Zap", "fx.zap"],
-    ["White Noise Riser", "fx.riser"],
-    ["rain on window", "ambience"],
-    ["Kickstarter promo", "other"],
-    ["soccer kick 02.wav", "other"],
-    ["Car crash", "other"],
-    ["Glass break", "foley"],
+    ["Ocean waves crashing on the beach", "nature.ocean"],
+    ["Waterfall in the forest", "nature.water"],
+    ["Clouds timelapse at sunset", "nature.sky"],
+    ["Earth from space: ISS view", "space.earth"],
+    ["Falcon 9 rocket launch", "space.launch"],
+    ["Total solar eclipse", "space.planets"],
+    ["Drone shot over a city skyline", "aerial"],
+    ["New York skyline at night", "city.skyline"],
+    ["Busy street traffic", "city.street"],
+    ["Light leaks overlay", "overlay.light"],
+    ["Smoke and fire particles", "overlay.particles"],
+    ["Green screen explosion", "greenscreen"],
+    ["1950s newsreel: war footage", "archive.newsreel"],
+    ["Abstract liquid gradient background", "background.abstract"],
+    ["Untitled 0042", "other"],
   ])("%s -> %s", (title, category) => expect(classify({ title }).category).toBe(category));
 
-  it("uses the source's categories and tags", () => {
-    expect(classify({ title: "Clip 12", sourceCategories: ["Drums > Snares"] }).category).toBe("drums.snare");
-    expect(classify({ title: "Untitled", tags: ["clap", "trap"] }).category).toBe("drums.clap");
+  it("uses the source's keywords and tags, and lets context cancel an alias", () => {
+    expect(classify({ title: "Clip 12", sourceCategories: ["Planets & Moons", "Mars"] }).category).toBe("space.planets");
+    expect(classify({ title: "Untitled", tags: ["coral", "reef"] }).category).toBe("nature.ocean");
+    expect(classify({ title: "Film grain overlay" }).category).toBe("overlay.film");
   });
 
-  it("decides one-shot vs loop from words, duration and tempo", () => {
-    expect(classify({ title: "Kick", durationSec: 0.4 }).form).toBe("one-shot");
-    expect(classify({ title: "Drum Loop" }).form).toBe("loop");
-    expect(classify({ title: "Groove", durationSec: 8, bpm: 120 }).form).toBe("loop");
-    expect(classify({ title: "Pad texture", durationSec: 20 }).form).toBeUndefined();
+  it("finds styles in titles, tags and keywords", () => {
+    expect(classify({ title: "City lights time-lapse" }).styles).toEqual(["timelapse"]);
+    expect(classify({ title: "Water drop slow motion 240fps" }).styles).toEqual(["slow-motion"]);
+    expect(classify({ title: "Coney Island", tags: ["B&W"] }).styles).toEqual(["black-white"]);
+    expect(classify({ title: "GPM Launch and Deploy Animation: Launch" }).styles).toEqual(["animation"]);
   });
 
-  it("splits camelCase and digits", () => {
-    expect(soundTokens("DeepKick01_TR808")).toEqual(["deep", "kick", "01", "tr", "808"]);
+  it("splits camelCase and digits, keeping b&w", () => {
+    expect(wordTokens("EarthFromSpace4K B&W")).toEqual(["earth", "from", "space", "4", "k", "b&w"]);
   });
 });
 
 describe("query parsing", () => {
-  it("pulls BPM, key and form words out of the query", () => {
-    expect(parseQuery("140 bpm dark trap 808 in F minor")).toMatchObject({
-      query: "dark trap 808",
-      bpm: { min: 140, max: 140 },
-      key: { tonic: "F", mode: "minor" },
-      hints: ["bass.808"],
+  it("pulls resolution, orientation, length and fps out of the query", () => {
+    expect(parseQuery("4k vertical drone ocean 10s")).toMatchObject({
+      query: "drone ocean",
+      minResolution: 2160,
+      orientations: ["portrait"],
+      duration: { min: 10 },
+      hints: ["nature.ocean", "aerial"],
     });
-    expect(parseQuery("lofi drum loop 80-90 bpm")).toMatchObject({ query: "lofi drum loop", bpm: { min: 80, max: 90 }, forms: ["loop"] });
-    expect(parseQuery("vocal chops Abm").key).toEqual({ tonic: "G#", mode: "minor" });
-    expect(parseQuery("I am a snare").key).toBeUndefined();
+    expect(parseQuery("city traffic 9:16 1080p 60fps")).toMatchObject({ query: "city traffic", orientations: ["portrait"], minResolution: 1080, minFps: 60 });
+    expect(parseQuery("clouds timelapse under 30 seconds")).toMatchObject({ query: "clouds timelapse", duration: { max: 30 }, styles: ["timelapse"] });
+    expect(parseQuery("newsreel 1-2 min")).toMatchObject({ query: "newsreel", duration: { min: 60, max: 120 } });
+    expect(parseQuery("free stock footage of waves in full hd")).toMatchObject({ query: "waves", minResolution: 1080 });
+    expect(parseQuery("square loop background")).toMatchObject({ orientations: ["square"], styles: ["loop"] });
+    expect(parseQuery("ocean")).toEqual({ query: "ocean", hints: ["nature.ocean"] });
   });
 
-  it("reads BPM and key from file names", () => {
-    expect(bpmFromText("Trap_Loop_140BPM_Fmin.wav")).toBe(140);
-    expect(keyFromText("Trap_Loop_140BPM_Fmin.wav")).toEqual({ tonic: "F", mode: "minor" });
-    expect(keyFromText("Bass C#m 01")).toEqual({ tonic: "C#", mode: "minor" });
-    expect(keyFromText("pad E flat major")).toEqual({ tonic: "D#", mode: "major" });
-    expect(bpmFromText("Room 101")).toBeUndefined();
+  it("leaves numbers that are not video facts alone", () => {
+    expect(parseQuery("apollo 11").query).toBe("apollo 11");
+    expect(parseQuery("1960s cars").minResolution).toBeUndefined();
   });
 
-  it("spells pitches with sharps and matches relative keys", () => {
-    expect(normalizePitch("e", "b")).toBe("D#");
-    expect(normalizePitch("B", "#")).toBe("C");
-    expect(keyMatches({ tonic: "G#", mode: "major" }, { tonic: "F", mode: "minor" }, true)).toBe(true);
-    expect(keyMatches({ tonic: "G#", mode: "major" }, { tonic: "F", mode: "minor" })).toBe(false);
+  it("formats and matches lengths, reads frame sizes from titles", () => {
+    expect(durationMatches(12, { min: 10 })).toBe(true);
+    expect(durationMatches(12, { min: 10, max: 11 })).toBe(false);
+    expect(formatDuration(65)).toBe("1:05");
+    expect(formatDuration(7384)).toBe("2:03:04");
+    expect(formatDuration(9.6)).toBe("10s");
+    expect(frameSizeFromText("Launch 1920x1080 ProRes")).toEqual({ width: 1920, height: 1080 });
+    expect(frameSizeFromText("Room 101")).toBeUndefined();
+  });
+
+  it("knows orientation and resolution tiers by the short side", () => {
+    expect(orientationOf(1080, 1920)).toBe("portrait");
+    expect(orientationOf(1080, 1060)).toBe("square");
+    expect(resolutionTier(1080, 1920)).toBe("fhd");
+    expect(resolutionTier(1920, 1050)).toBe("fhd");
+    expect(resolutionTier(3840, 2160)).toBe("uhd");
+    expect(resolutionLabel(640, 360)).toBe("SD");
   });
 });
 
 describe("licences", () => {
   it.each([
     ["http://creativecommons.org/publicdomain/zero/1.0/", "CC0-1.0", "yes"],
-    ["Creative Commons 0", "CC0-1.0", "yes"],
+    ["CC0", "CC0-1.0", "yes"],
     ["https://creativecommons.org/licenses/by/4.0/", "CC-BY-4.0", "yes-with-credit"],
     ["Attribution NonCommercial", "CC-BY-NC-4.0", "no"],
     ["CC BY-SA 3.0", "CC-BY-SA-3.0", "restricted"],
     ["https://creativecommons.org/licenses/by-nd/4.0/", "CC-BY-ND-4.0", "no"],
-    ["http://creativecommons.org/licenses/sampling+/1.0/", "LicenseRef-Sampling-Plus-1.0", "restricted"],
     ["Public domain", "CC-PDM-1.0", "yes"],
-    ["Sampling Plus 1.0", "LicenseRef-Sampling-Plus-1.0", "restricted"],
-    ["OGA-BY 3.0", "LicenseRef-OGA-BY-3.0", "yes-with-credit"],
+    ["http://creativecommons.org/licenses/publicdomain/", "CC-PDM-1.0", "yes"],
     ["Personal Use Only", "LicenseRef-Personal-Use-Only", "no"],
+    ["All rights reserved", "LicenseRef-All-Rights-Reserved", "no"],
   ])("%s -> %s (%s)", (input, id, verdict) => {
     const l = parseLicense(input)!;
     expect(l.id).toBe(id);
@@ -93,42 +107,62 @@ describe("licences", () => {
     expect(creativeCommons({}, "4.0", "uploader").verdict).toBe("check-terms");
   });
 
-  it("royalty-free site licences allow music use but not redistribution", () => {
-    const l = royaltyFree("Mixkit licence");
+  it("knows NASA's terms: credit, no endorsement, editorial for people and insignia", () => {
+    const nasa = license("LicenseRef-NASA-Media");
+    expect(nasa).toMatchObject({ verdict: "yes-with-credit", attributionRequired: true, editorial: true });
+    expect(asEditorial(license("CC0-1.0"), "Shows people.")).toMatchObject({ verdict: "yes", editorial: true, note: "Shows people." });
+  });
+
+  it("free stock licences allow use in videos but not re-uploading", () => {
+    const l = royaltyFree("Pexels License");
     expect(l).toMatchObject({ verdict: "yes", redistribution: false, assertedBy: "site" });
     expect(royaltyFree("X", { attributionRequired: true }).verdict).toBe("yes-with-credit");
   });
 
   it("writes a credit line only when attribution is required", () => {
-    const s = { title: "Kick", author: "Jane", url: "https://x/1", provider: "freesound", license: creativeCommons({}) };
-    expect(attributionLine(s, "Freesound")).toBe("“Kick” by Jane (Freesound), https://x/1, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)");
-    expect(attributionLine({ ...s, license: license("CC0-1.0") })).toBeUndefined();
+    const c = { title: "Waves", author: "Jane", url: "https://x/1", provider: "wikimediacommons", license: creativeCommons({}) };
+    expect(attributionLine(c, "Wikimedia Commons")).toBe(
+      "“Waves” by Jane (Wikimedia Commons), https://x/1, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+    );
+    expect(attributionLine({ ...c, license: license("CC0-1.0") })).toBeUndefined();
   });
 });
 
 describe("makeClip", () => {
-  it("fills category, form, BPM, key and credits from the words", () => {
-    const s = makeClip({ provider: "x", nativeId: "1", title: "Vocal Chop Loop 140 BPM Fmin", tags: ["Vocals"], url: "https://x", downloadable: true, durationSec: 6.86 });
-    expect(s).toMatchObject({ id: "x:1", category: "vocals.chop", form: "loop", unit: "clip", bpm: 140, key: { tonic: "F", mode: "minor" }, tags: ["vocals"] });
-    expect(s.categoryEvidence?.by).toBe("rules");
+  it("fills category, styles, orientation and credits", () => {
+    const c = makeClip({
+      provider: "x",
+      nativeId: "1",
+      title: "Clouds Timelapse 1080x1920",
+      tags: ["Sky"],
+      url: "https://x",
+      previewUrl: "https://cdn.x/p.webm",
+      license: creativeCommons({}),
+      sourceName: "X",
+      downloadable: true,
+      durationSec: 12.3456,
+    });
+    expect(c).toMatchObject({ id: "x:1", category: "nature.sky", styles: ["timelapse"], width: 1080, height: 1920, orientation: "portrait", tags: ["sky"], durationSec: 12.35, previewType: "video/webm" });
+    expect(c.categoryEvidence?.by).toBe("rules");
+    expect(c.attribution).toContain("“Clouds Timelapse 1080x1920” (X)");
   });
   it("keeps the source's own category", () => {
-    const s = makeClip({ provider: "x", nativeId: "1", title: "Thing", category: "fx.zap", tags: [], url: "https://x", downloadable: true });
-    expect(s.categoryEvidence).toEqual({ by: "source", confidence: 1 });
+    const c = makeClip({ provider: "x", nativeId: "1", title: "Thing", category: "space.launch", url: "https://x", downloadable: true });
+    expect(c.categoryEvidence).toEqual({ by: "source", confidence: 1 });
   });
 });
 
 describe("matchScore", () => {
   it("prefers title over tags and handles plurals", () => {
-    expect(matchScore({ title: "Snare Rolls" }, "snare roll")).toBe(1);
-    expect(matchScore({ title: "Hit", tags: ["snare"] }, "snare")).toBeCloseTo(0.7);
-    expect(matchScore({ title: "Kick" }, "snare")).toBe(0);
+    expect(matchScore({ title: "Ocean Waves" }, "ocean wave")).toBe(1);
+    expect(matchScore({ title: "Clip", tags: ["ocean"] }, "ocean")).toBeCloseTo(0.7);
+    expect(matchScore({ title: "City" }, "ocean")).toBe(0);
   });
 });
 
 describe("parseClipId", () => {
   it("splits on the first colon only", () => {
-    expect(parseClipId("strudel:tr808:bd:3")).toEqual({ provider: "strudel", nativeId: "tr808:bd:3" });
+    expect(parseClipId("nasa:KSC-2024:launch 1")).toEqual({ provider: "nasa", nativeId: "KSC-2024:launch 1" });
     expect(parseClipId("bad")).toBeNull();
   });
 });
