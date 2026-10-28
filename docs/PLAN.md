@@ -1,6 +1,8 @@
 # video-assets-server: plan to production
 
-> **Status (2026-10-26):** plan only. Nothing is built yet.
+> **Status (2026-10-28):** v1 built (M0–M5, M7 jobs) and ready to deploy; see §10 for what was
+> decided, what changed from this plan and what is left. The plan below is kept as written on
+> 2026-10-26.
 
 **Goal:** search many stock-video sites at once and download the clip you pick. The clips are
 b-roll, backgrounds, drone shots, overlays, green screen and archive footage, used by video
@@ -371,3 +373,39 @@ count) goes to Loki for the top-queries and zero-result tables. Two new bounded 
 3. **API keys:** do you already have a Pexels key (new keys are paused)? Will you create a Pixabay key? Both go in Infisical `/video-assets-server`.
 4. **Terms check:** should I draft the emails to Pexels and Pixabay describing the service before launch?
 5. **Code sharing:** copy sound-server now and extract a shared core after launch (my recommendation), or extract the core first, now that there are three copies?
+
+---
+
+## 10. Decisions taken and built state (2026-10-28)
+
+**Answers to the questions above:**
+1. Domain: `video.shep.bot`.
+2. Bandwidth: the hosted server never streams video, but the web UI must still let you watch a
+   clip. The detail sheet plays the `watch` file (mp4/webm near 720p) straight from the source's
+   CDN; hover previews and posters load from the source too. `/download` is a 302.
+3. API keys: none. v1 searches only the keyless sources: **NASA Image and Video Library, NASA SVS,
+   Wikimedia Commons and Internet Archive**. Pexels and Pixabay are link-only until a key exists.
+4. Terms emails: not now (Pexels and Pixabay stay link-only, so they are not needed yet).
+5. Code sharing: copied sound-server; the shared core stays "later".
+
+**Changes from the plan:**
+- No size-capped proxy: every searched source allows direct cross-origin loads, so a clip that needs
+  request headers answers 409 with its source page instead.
+- The ffprobe range-probe (M2) is not built; the keyless sources report frame size, length and fps
+  in their metadata (NASA `metadata.json`, Commons `videoinfo`, IA file lists, SVS file names).
+- `build_sequence` exports OTIO, ffmpeg `concat.sh`, Remotion props and credits; FCPXML is left for
+  later (OTIO converts to it).
+- Link-only list at launch (19): Pexels, Pixabay, Coverr, Mixkit, Freepik videos (Videvo), Vecteezy,
+  Videezy, Europeana, Library of Congress, ActionVFX, ProductionCrate, Shutterstock, Adobe Stock,
+  Getty Images, iStock, Storyblocks, Pond5, Envato Elements, Artgrid. Rejected sources and why are in
+  `integrations/registry.json`.
+- No secrets and no ExternalSecret: the pod runs without any; an optional Secret can add an API key,
+  session secret or MaxMind keys. No PVC either (in-memory cache only), so rollouts are rolling.
+
+**Deploy (M6), in order:**
+1. Merge this repo's branch to `main`. CI builds `ghcr.io/arielshad/video-assets-server` and pins the
+   tag in `deploy/kustomization.yaml`.
+2. Merge the shep-infra branch: ArgoCD app `bootstrap/apps/89-video-assets-server.yaml`, the Umami
+   website job, and the Grafana dashboard `dashboard-video-assets-server.yaml`.
+3. If the GHCR package is private, make it public or add the `ghcr-pull` secret in the namespace.
+
