@@ -1,22 +1,23 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { setNonce } from "get-nonce";
-import { ArrowUpRight, Filter, Keyboard, Loader2, Search, Sparkles } from "lucide-react";
+import { ArrowUpRight, Filter, Loader2, Search, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Switch } from "@/components/ui/switch";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { EXAMPLE_QUERIES } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { categoryPath, formLabel } from "@/lib/vocab";
-import { api, getKey, safeUrl, setKey, UnauthorizedError, type Provider, type ProviderReport, type Clip, type SearchResponse } from "./api";
-import { BpmInput, CategoryChips, FormToggle, KeyPicker, SourcePicker } from "./Filters";
-import { pauseAll, play, toggle } from "./player";
-import { SampleDetail } from "./SampleDetail";
-import { SampleRow, rowKey } from "./SampleRow";
+import { MIN_RESOLUTIONS, categoryPath, durationText, orientationLabel, styleLabel } from "@/lib/vocab";
+import { api, getKey, safeUrl, setKey, UnauthorizedError, type Clip, type ParsedFilters, type Provider, type ProviderReport, type SearchResponse } from "./api";
+import { ClipDetail } from "./ClipDetail";
+import { CategoryChips, DurationPicker, Segmented, SourcePicker, StylePicker } from "./Filters";
+import { stopAllPreviews } from "./preview";
+import { VideoCard } from "./VideoCard";
 
-const PAGE = 30;
-const EXAMPLES = ["punchy kick", "808 in F minor", "vocal chop 140 bpm", "riser", "vinyl crackle", "rain ambience"];
+const PAGE = 24;
+const EXAMPLES = EXAMPLE_QUERIES;
 
 // The server sends a per-request CSP nonce; the detail sheet's scroll lock
 // injects a <style> tag and must carry it.
@@ -28,25 +29,39 @@ if (typeof document !== "undefined") {
 interface Filters {
   q: string;
   categories: string[];
-  form: string;
-  bpm: string;
-  key: string;
+  styles: string[];
+  orientation: string;
+  minResolution: string;
+  minDuration: string;
+  maxDuration: string;
   commercial: boolean;
   free: boolean;
   downloadable: boolean;
   sources: string[] | null;
 }
-const EMPTY: Filters = { q: "", categories: [], form: "", bpm: "", key: "", commercial: false, free: false, downloadable: false, sources: null };
+const EMPTY: Filters = { q: "", categories: [], styles: [], orientation: "", minResolution: "", minDuration: "", maxDuration: "", commercial: false, free: false, downloadable: false, sources: null };
+
+const RES_OPTIONS = [{ value: "", label: "Any size" }, ...MIN_RESOLUTIONS.map((r) => ({ value: String(r.value), label: r.short, title: `At least ${r.label}` }))];
+const ORIENTATION_OPTIONS = [
+  { value: "", label: "Any shape" },
+  { value: "landscape", label: "Landscape", title: "16:9 and wider" },
+  { value: "portrait", label: "Vertical", title: "9:16: Reels, TikTok, Shorts" },
+  { value: "square", label: "Square", title: "1:1" },
+];
 
 function readUrl(): Filters {
   const p = new URLSearchParams(window.location.search);
   const list = (k: string) => (p.get(k) ?? "").split(",").map((x) => x.trim()).filter(Boolean);
+  const num = (k: string) => (/^\d{1,5}$/.test(p.get(k) ?? "") ? p.get(k)! : "");
+  const res = (p.get("min_resolution") ?? "").toLowerCase();
   return {
     q: p.get("q") ?? "",
     categories: list("category"),
-    form: p.get("form") ?? "",
-    bpm: p.get("bpm") ?? "",
-    key: p.get("key") ?? "",
+    styles: list("style"),
+    orientation: ["landscape", "portrait", "square"].includes(p.get("orientation") ?? "") ? p.get("orientation")! : "",
+    minResolution: res === "4k" ? "2160" : res === "hd" ? "720" : /^\d{3,4}$/.test(res) ? res : "",
+    minDuration: num("min_duration"),
+    maxDuration: num("max_duration"),
     commercial: p.get("commercial") === "true",
     free: p.get("free") === "true",
     downloadable: p.get("downloadable") === "true",
@@ -58,9 +73,11 @@ function toParams(f: Filters): URLSearchParams {
   const p = new URLSearchParams();
   if (f.q) p.set("q", f.q);
   if (f.categories.length) p.set("category", f.categories.join(","));
-  if (f.form) p.set("form", f.form);
-  if (f.bpm) p.set("bpm", f.bpm);
-  if (f.key) p.set("key", f.key);
+  if (f.styles.length) p.set("style", f.styles.join(","));
+  if (f.orientation) p.set("orientation", f.orientation);
+  if (f.minResolution) p.set("min_resolution", f.minResolution);
+  if (f.minDuration) p.set("min_duration", f.minDuration);
+  if (f.maxDuration) p.set("max_duration", f.maxDuration);
   if (f.commercial) p.set("commercial", "true");
   if (f.free) p.set("free", "true");
   if (f.downloadable) p.set("downloadable", "true");
@@ -68,11 +85,27 @@ function toParams(f: Filters): URLSearchParams {
   return p;
 }
 
-const searchable = (f: Filters) => Boolean(f.q || f.categories.length);
+const searchable = (f: Filters) => Boolean(f.q || f.categories.length || f.styles.length);
 
 function describe(f: Filters): string {
-  const bits = [f.q && `“${f.q}”`, ...f.categories.map(categoryPath), f.form && formLabel(f.form), f.bpm && `${f.bpm} BPM`, f.key].filter(Boolean);
+  const bits = [f.q && `“${f.q}”`, ...f.categories.map(categoryPath), ...f.styles.map(styleLabel), f.orientation && orientationLabel(f.orientation), f.minResolution && `${f.minResolution === "2160" ? "4K" : `${f.minResolution}p`}+`].filter(Boolean);
   return bits.join(" · ");
+}
+
+/** Chips for what the server understood ("4K", "Vertical", "≥ 10 s", "60 fps+"), including words it parsed out of the query. */
+function parsedChips(p: ParsedFilters | undefined): string[] {
+  if (!p) return [];
+  const out: string[] = [];
+  for (const c of p.categories ?? []) out.push(categoryPath(c));
+  for (const s of p.styles ?? []) out.push(styleLabel(s));
+  for (const o of p.orientations ?? []) out.push(orientationLabel(o));
+  if (p.minResolution) out.push(p.minResolution >= 2160 ? "4K" : `${p.minResolution}p+`);
+  if (p.duration?.min !== undefined && p.duration?.max !== undefined) out.push(`${durationText(p.duration.min)}–${durationText(p.duration.max)}`);
+  else if (p.duration?.min !== undefined) out.push(`≥ ${durationText(p.duration.min)}`);
+  else if (p.duration?.max !== undefined) out.push(`≤ ${durationText(p.duration.max)}`);
+  if (p.minFps) out.push(`${p.minFps} fps+`);
+  if (p.hasAudio !== undefined) out.push(p.hasAudio ? "With sound" : "No sound");
+  return out;
 }
 
 const isTyping = (t: EventTarget | null) => t instanceof HTMLElement && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
@@ -83,17 +116,18 @@ export default function SearchApp() {
   const [providers, setProviders] = useState<Provider[]>([]);
   const [results, setResults] = useState<Clip[]>([]);
   const [reports, setReports] = useState<ProviderReport[]>([]);
+  const [parsed, setParsed] = useState<ParsedFilters>();
+  /** The free text left after the server parsed out resolution, orientation, length and fps words. */
+  const [understood, setUnderstood] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>();
   const [needKey, setNeedKey] = useState(false);
   const [canMore, setCanMore] = useState(false);
   const [searched, setSearched] = useState(false);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
   const [open, setOpen] = useState<Clip | null>(null);
   const offset = useRef(0);
   const seen = useRef(new Set<string>());
   const inputRef = useRef<HTMLInputElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
   const request = useRef(0);
   // The server already sends a unique <title> for the URL the page loaded with;
   // only searches the user runs afterwards update it.
@@ -119,8 +153,8 @@ export default function SearchApp() {
         seen.current = new Set();
         setResults([]);
         setReports([]);
-        setSelectedId(null);
-        pauseAll();
+        setParsed(undefined);
+        stopAllPreviews();
       }
       writeUrl(f);
       if (!searchable(f)) {
@@ -131,7 +165,7 @@ export default function SearchApp() {
       setLoading(true);
       setError(undefined);
       setSearched(true);
-      if (!firstRun.current) document.title = `${describe(f) || "Search"}: clips · Video Assets Server`;
+      if (!firstRun.current) document.title = `${describe(f) || "Search"}: free stock video · Video Assets Server`;
       firstRun.current = false;
       try {
         const params = toParams(f);
@@ -142,7 +176,11 @@ export default function SearchApp() {
         const fresh = res.results.filter((a) => !seen.current.has(a.id) && seen.current.add(a.id));
         setResults((prev) => (append ? [...prev, ...fresh] : fresh));
         setReports(res.providers);
-        setCanMore(fresh.length > 0 && res.providers.some((r) => r.status === "ok" && r.count >= PAGE));
+        if (!append) {
+          setParsed(res.filters);
+          setUnderstood(res.query);
+        }
+        setCanMore(fresh.length > 0 && res.providers.some((r) => r.status === "ok" && r.count > 0 && (r.total === undefined || r.total > offset.current + r.count)));
         offset.current += PAGE;
       } catch (e) {
         if (mine !== request.current) return;
@@ -156,14 +194,15 @@ export default function SearchApp() {
   );
 
   /** Open (or close) the detail sheet and keep `?clip=` in the URL, so the address bar is a share link. */
-  const openSample = useCallback(
-    (s: Clip | null) => {
-      setOpen(s);
-      if (s) setSelectedId(s.id);
-      writeUrl(filtersRef.current, s ? s.id : null);
+  const openClip = useCallback(
+    (c: Clip | null) => {
+      stopAllPreviews();
+      setOpen(c);
+      writeUrl(filtersRef.current, c ? c.id : null);
     },
     [writeUrl],
   );
+
   useEffect(() => {
     const f = readUrl();
     setFilters(f);
@@ -176,10 +215,10 @@ export default function SearchApp() {
     else if (!shared) inputRef.current?.focus();
     if (shared) {
       api<Clip>(`/v1/clips/${encodeURIComponent(shared)}`)
-        .then((s) => openSample(s))
+        .then((c) => openClip(c))
         .catch(() => undefined);
     }
-  }, [run, openSample]);
+  }, [run, openClip]);
 
   const update = (patch: Partial<Filters>, rerun = true) => {
     const next = { ...filters, ...patch };
@@ -187,65 +226,23 @@ export default function SearchApp() {
     if (rerun) void run(next, false);
   };
 
-  // Keyboard: ↑/↓ select and audition, space plays/pauses, Enter opens the detail sheet.
-  const selectIndex = useCallback(
-    (i: number, audition = true) => {
-      const s = results[i];
-      if (!s) return;
-      setSelectedId(s.id);
-      const el = listRef.current?.querySelector(`[data-clip="${CSS.escape(s.id)}"]`);
-      el?.scrollIntoView({ block: "nearest" });
-      if (audition) void play(rowKey(s.id));
-    },
-    [results],
-  );
+  // "/" focuses the search box; Escape stops a playing preview.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (open || e.metaKey || e.ctrlKey || e.altKey) return;
-      const idx = selectedId ? results.findIndex((r) => r.id === selectedId) : -1;
       if (e.key === "/" && !isTyping(e.target)) {
         e.preventDefault();
         inputRef.current?.focus();
-        return;
-      }
-      if (isTyping(e.target)) {
-        // From the search box, ↓ moves into the results.
-        if (e.key === "ArrowDown" && e.target === inputRef.current && results.length) {
-          e.preventDefault();
-          inputRef.current?.blur();
-          selectIndex(Math.max(0, idx));
-        }
-        return;
-      }
-      const onControl = e.target instanceof HTMLElement && /^(BUTTON|A)$/.test(e.target.tagName);
-      if (e.key === "ArrowDown" || e.key === "j") {
-        e.preventDefault();
-        selectIndex(Math.min(results.length - 1, idx + 1));
-      } else if (e.key === "ArrowUp" || e.key === "k") {
-        e.preventDefault();
-        if (idx <= 0) {
-          setSelectedId(null);
-          pauseAll();
-          inputRef.current?.focus();
-        } else selectIndex(idx - 1);
-      } else if (e.key === " " && !onControl && selectedId) {
-        e.preventDefault();
-        void toggle(rowKey(selectedId));
-      } else if (e.key === "Enter" && !onControl && idx >= 0) {
-        e.preventDefault();
-        openSample(results[idx]!);
-      } else if (e.key === "Escape") {
-        pauseAll();
-      }
+      } else if (e.key === "Escape") stopAllPreviews();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, results, selectedId, selectIndex, openSample]);
+  }, [open]);
 
   const okReports = useMemo(() => reports.filter((r) => r.status !== "skipped"), [reports]);
   const linkReports = okReports.filter((r) => r.status === "link");
   const searchedReports = okReports.filter((r) => r.status !== "link");
-  const selectSample = useCallback((id: string) => setSelectedId(id), []);
+  const chips = parsedChips(parsed);
 
   return (
     <TooltipProvider>
@@ -259,15 +256,15 @@ export default function SearchApp() {
             }}
             className="flex items-center gap-2"
           >
-            <div className="relative flex-1">
+            <div className="relative min-w-0 flex-1">
               <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 ref={inputRef}
                 type="search"
                 value={draft}
                 onChange={(e) => setDraft(e.target.value)}
-                placeholder="punchy kick, 808 in F minor, vocal chop 140 bpm…"
-                aria-label="Search clips"
+                placeholder="ocean waves at sunset, 4k vertical drone city…"
+                aria-label="Search stock video"
                 className="h-11 rounded-xl pl-10 text-base"
               />
             </div>
@@ -286,14 +283,15 @@ export default function SearchApp() {
           <div className="mt-3">
             <CategoryChips value={filters.categories} onChange={(categories) => update({ categories })} />
           </div>
-          <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-2">
-            <FormToggle value={filters.form} onChange={(form) => update({ form })} />
-            <BpmInput value={filters.bpm} onChange={(bpm) => update({ bpm })} />
-            <KeyPicker value={filters.key} onChange={(key) => update({ key })} />
-            <Switch label="Commercial-safe" labelClassName="text-xs font-medium text-muted-foreground" checked={filters.commercial} onCheckedChange={(v) => update({ commercial: v })} title="Only clips cleared for a commercial release (green verdicts)" />
+          <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <StylePicker value={filters.styles} onChange={(styles) => update({ styles })} />
+            <Segmented label="Orientation" options={ORIENTATION_OPTIONS} value={filters.orientation} onChange={(orientation) => update({ orientation })} />
+            <Segmented label="Minimum resolution" options={RES_OPTIONS} value={filters.minResolution} onChange={(minResolution) => update({ minResolution })} />
+            <DurationPicker min={filters.minDuration} max={filters.maxDuration} onChange={(minDuration, maxDuration) => update({ minDuration, maxDuration })} />
+            <Switch label="Commercial-safe" labelClassName="text-xs font-medium text-muted-foreground" checked={filters.commercial} onCheckedChange={(v) => update({ commercial: v })} title="Only clips whose licence allows commercial use (green verdicts)" />
             <Switch label="Free only" labelClassName="text-xs font-medium text-muted-foreground" checked={filters.free} onCheckedChange={(v) => update({ free: v })} />
             <Switch label="Direct download" labelClassName="text-xs font-medium text-muted-foreground" checked={filters.downloadable} onCheckedChange={(v) => update({ downloadable: v })} />
-            <span className="ml-auto">
+            <span className="sm:ml-auto">
               <SourcePicker providers={providers} value={filters.sources} onApply={(sources) => update({ sources })} />
             </span>
           </div>
@@ -316,8 +314,19 @@ export default function SearchApp() {
           )}
         </div>
 
+        {chips.length > 0 && (
+          <p className="mt-4 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground" aria-label="Filters in force">
+            <span>Searching for</span>
+            {understood && <b className="font-medium text-foreground">“{understood}”</b>}
+            {understood && <span>with</span>}
+            {chips.map((c) => (
+              <span key={c} className="inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 font-medium text-primary">{c}</span>
+            ))}
+          </p>
+        )}
+
         {searchedReports.length > 0 && (
-          <div className="-mx-4 mt-4 flex items-center gap-1.5 overflow-x-auto px-4 pb-1 text-xs [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0" aria-label="Sources searched">
+          <div className="-mx-4 mt-3 flex items-center gap-1.5 overflow-x-auto px-4 pb-1 text-xs [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0" aria-label="Sources searched">
             {searchedReports.map((r) => {
               const failed = r.status === "error" || r.status === "timeout";
               const url = safeUrl(r.searchUrl);
@@ -325,10 +334,10 @@ export default function SearchApp() {
               const body = (
                 <>
                   {r.name}
-                  {failed ? ` ${r.status}` : <b className="font-semibold text-foreground">{r.count}{r.total !== undefined && r.total > r.count ? <span className="font-normal text-muted-foreground">/{r.total.toLocaleString("en")}</span> : null}</b>}
+                  {failed ? ` ${r.status === "timeout" ? "timed out" : "unavailable"}` : <b className="font-semibold text-foreground">{r.count}{r.total !== undefined && r.total > r.count ? <span className="font-normal text-muted-foreground">/{r.total.toLocaleString("en")}</span> : null}</b>}
                 </>
               );
-              const title = r.error ?? `${r.count} results in ${r.tookMs} ms${r.filteredLocally ? " (filtered here)" : ""}${url ? `. Open this search on ${r.name}` : ""}`;
+              const title = r.error ?? `${r.count} results in ${r.tookMs} ms${r.filteredLocally?.length ? ` (filtered here: ${r.filteredLocally.join(", ")})` : ""}${url ? `. Open this search on ${r.name}` : ""}`;
               return url ? (
                 <a key={r.provider} href={url} target="_blank" rel="noopener noreferrer" className={cn(cls, "hover:border-primary/40")} title={title}>{body}</a>
               ) : (
@@ -339,7 +348,7 @@ export default function SearchApp() {
         )}
         {linkReports.length > 0 && (
           <p className="-mx-4 mt-2 flex items-center gap-1.5 overflow-x-auto px-4 pb-1 text-xs text-muted-foreground [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
-            <span className="shrink-0">Also look on:</span>
+            <span className="shrink-0">Also search on:</span>
             {linkReports.map((r) => {
               const url = safeUrl(r.searchUrl);
               return url ? (
@@ -354,43 +363,41 @@ export default function SearchApp() {
         {error && <p className="mt-6 rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">{error}</p>}
 
         {(results.length > 0 || loading) && (
-          <div className="mt-4 overflow-hidden rounded-xl border bg-card/30">
-            <ul ref={listRef} aria-label="Results" className="[&>li:last-child]:border-b-0">
-              {results.map((s) => (
-                <SampleRow key={s.id} clip={s} providerName={providerName(s.provider)} selected={s.id === selectedId} onSelect={selectSample} onOpen={openSample} />
+          <ul aria-label="Results" aria-busy={loading} className="mt-5 grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {results.map((c, i) => (
+              <VideoCard key={c.id} clip={c} providerName={providerName(c.provider)} onOpen={openClip} eager={i < 4} />
+            ))}
+            {loading &&
+              Array.from({ length: results.length ? 4 : 8 }).map((_, i) => (
+                <li key={`s${i}`} className="overflow-hidden rounded-xl border bg-card/30" aria-hidden="true">
+                  <Skeleton className="aspect-video w-full rounded-none" />
+                  <div className="space-y-2 p-3">
+                    <Skeleton className="h-4 w-3/4" />
+                    <Skeleton className="h-3 w-1/2" />
+                    <Skeleton className="h-5 w-24 rounded-full" />
+                  </div>
+                </li>
               ))}
-              {loading &&
-                Array.from({ length: results.length ? 4 : 10 }).map((_, i) => (
-                  <li key={`s${i}`} className="grid grid-cols-[2.25rem_1fr] items-center gap-3 border-b border-border/60 px-3 py-2.5 md:grid-cols-[2.25rem_14rem_1fr]">
-                    <Skeleton className="size-9 rounded-full" />
-                    <Skeleton className="hidden h-8 md:block" />
-                    <div className="space-y-1.5">
-                      <Skeleton className="h-4 w-1/2" />
-                      <Skeleton className="h-3 w-1/3" />
-                    </div>
-                  </li>
-                ))}
-            </ul>
-          </div>
+          </ul>
         )}
         {results.length > 0 && (
-          <p className="mt-2 hidden items-center gap-1.5 text-xs text-muted-foreground md:flex">
-            <Keyboard className="size-3.5" aria-hidden="true" /> <kbd className="rounded border px-1">↑</kbd>
-            <kbd className="rounded border px-1">↓</kbd> audition · <kbd className="rounded border px-1">Space</kbd> play/pause · <kbd className="rounded border px-1">Enter</kbd> details ·{" "}
-            <kbd className="rounded border px-1">/</kbd> search
+          <p className="mt-3 hidden text-xs text-muted-foreground md:block">
+            Hover or focus a clip to play its muted preview, straight from the source · <kbd className="rounded border px-1">Enter</kbd> opens the player, files and credit line · <kbd className="rounded border px-1">/</kbd> search
           </p>
         )}
 
         {!loading && !error && searched && results.length === 0 && (
           <div className="mt-16 text-center text-muted-foreground">
             <Filter className="mx-auto size-8 opacity-50" />
-            <p className="mt-3">No results. Try fewer words, drop the BPM or key filter{filters.commercial ? ", turn off Commercial-safe" : ""}, or open the source links above.</p>
+            <p className="mt-3">
+              No results. Try fewer or more general words, drop the size or length filters{filters.commercial ? ", turn off Commercial-safe" : ""}, or open the stock sites linked above.
+            </p>
           </div>
         )}
         {!searched && (
           <div className="mt-16 text-center text-muted-foreground">
             <Sparkles className="mx-auto size-8 text-primary/70" />
-            <p className="mt-3">Search {providers.length ? `${providers.length} clip sites` : "every clip site"} at once. Try:</p>
+            <p className="mt-3">Search {providers.length ? `${providers.length} video sites` : "every video site"} at once. Try:</p>
             <p className="mt-3 flex flex-wrap justify-center gap-2 text-sm">
               {EXAMPLES.map((x) => (
                 <button
@@ -414,18 +421,18 @@ export default function SearchApp() {
           </div>
         )}
 
-        <Sheet open={Boolean(open)} onOpenChange={(o) => !o && openSample(null)}>
-          <SheetContent className="w-full overflow-y-auto sm:max-w-xl">
+        <Sheet open={Boolean(open)} onOpenChange={(o) => !o && openClip(null)}>
+          <SheetContent className="w-full overflow-y-auto sm:max-w-2xl">
             {open && (
               <>
                 <SheetHeader className="px-4 pt-6 sm:px-6">
                   <SheetDescription>
                     {providerName(open.provider)} · {categoryPath(open.category)}
-                    {open.form ? ` · ${formLabel(open.form)}` : ""}
+                    {open.year ? ` · ${open.year}` : ""}
                   </SheetDescription>
                   <SheetTitle className="pr-8 text-xl">{open.title}</SheetTitle>
                 </SheetHeader>
-                <SampleDetail clip={open} providerName={providerName(open.provider)} />
+                <ClipDetail clip={open} providerName={providerName(open.provider)} />
               </>
             )}
           </SheetContent>

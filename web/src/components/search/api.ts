@@ -1,4 +1,4 @@
-/** Minimal typed client for the server's REST API (same origin). */
+/** Minimal typed client for the server's REST API (same origin). Shapes follow src/core/types.ts. */
 
 export interface License {
   id: string;
@@ -8,37 +8,37 @@ export interface License {
   attributionRequired?: boolean;
   shareAlike?: boolean;
   redistribution?: boolean;
+  /** People, insignia or brands without releases: news/documentary, not ads. */
+  editorial?: boolean;
   assertedBy?: "source" | "site" | "uploader";
   verdict: string;
   note?: string;
 }
 export interface Price { free: boolean; amount?: number; currency?: string }
-export interface MusicalKey { tonic: string; mode: "major" | "minor" }
 export interface Clip {
   id: string;
   provider: string;
+  nativeId?: string;
   title: string;
   description?: string;
   url: string;
   author?: string;
   authorUrl?: string;
   tags: string[];
-  genres?: string[];
   category: string;
-  form?: string;
-  unit?: "clip" | "pack" | "instrument";
-  packSize?: number;
-  bpm?: number;
-  key?: MusicalKey;
-  rootNote?: number;
+  styles?: string[];
+  orientation?: "landscape" | "portrait" | "square";
+  width?: number;
+  height?: number;
+  fps?: number;
   durationSec?: number;
-  sampleRate?: number;
-  bitDepth?: number;
-  channels?: number;
-  loudnessLufs?: number;
+  hasAudio?: boolean;
+  year?: number;
+  /** Still frame, loaded by the browser straight from the source. */
+  posterUrl?: string;
+  /** Small playable version (≤ 720p), played straight from the source. */
   previewUrl?: string;
-  previewNeedsReferer?: boolean;
-  thumbnailUrl?: string;
+  previewType?: string;
   formats?: string[];
   license?: License;
   attribution?: string;
@@ -51,15 +51,20 @@ export interface ClipFile {
   url: string;
   filename: string;
   format: string;
-  role: "original" | "preview" | "pack" | "stem" | "midi";
-  sampleRate?: number;
-  bitDepth?: number;
-  channels?: number;
+  mime?: string;
+  role: "original" | "rendition" | "preview" | "poster" | "captions";
+  width?: number;
+  height?: number;
+  fps?: number;
+  codec?: string;
   sizeBytes?: number;
+  bitrate?: number;
   requiresAuth?: boolean;
 }
 export interface ClipDetails extends Clip {
   files: ClipFile[];
+  /** The file a browser should play, straight from the source. */
+  watch?: { url: string; type?: string; width?: number; height?: number };
   shareUrl?: string;
 }
 export interface ProviderReport {
@@ -70,12 +75,23 @@ export interface ProviderReport {
   total?: number;
   searchUrl?: string;
   error?: string;
-  filteredLocally?: boolean;
+  filteredLocally?: string[];
   tookMs: number;
 }
-export interface SearchResponse { query: string; filters?: Record<string, unknown>; results: Clip[]; providers: ProviderReport[] }
+/** The filters in force after the server parsed the query ("4k vertical 10s"). */
+export interface ParsedFilters {
+  categories?: string[];
+  styles?: string[];
+  orientations?: string[];
+  minResolution?: number;
+  duration?: { min?: number; max?: number };
+  minFps?: number;
+  hasAudio?: boolean;
+  commercialOnly?: boolean;
+  freeOnly?: boolean;
+}
+export interface SearchResponse { query: string; filters?: ParsedFilters; results: Clip[]; providers: ProviderReport[] }
 export interface Provider { id: string; name: string; description: string; supportsDownload: boolean; access?: string; categories?: string[] }
-export interface FileSelection { id: string; totalBytes?: number; attribution?: string; files: ClipFile[] }
 
 const KEY_STORE = "video-assets-server-key";
 export class UnauthorizedError extends Error {}
@@ -117,20 +133,21 @@ export async function api<T>(path: string, init: { method?: string; body?: unkno
   return body;
 }
 
-export const sampleBase = (id: string) => `/v1/clips/${encodeURIComponent(id)}`;
+/** `/v1/clips/<id>`: ids hold ":", spaces and slashes, so they are always encoded. */
+export const clipBase = (id: string) => `/v1/clips/${encodeURIComponent(id)}`;
 
 export function formatBytes(n?: number): string {
   if (n == null) return "";
-  const u = ["B", "KB", "MB", "GB"];
+  const u = ["B", "KB", "MB", "GB", "TB"];
   let i = 0;
   while (n >= 1024 && i < u.length - 1) {
     n /= 1024;
     i++;
   }
-  return `${n.toFixed(i ? 1 : 0)} ${u[i]}`;
+  return `${n.toFixed(i > 1 ? 1 : 0)} ${u[i]}`;
 }
 
-/** Only ever put http(s) URLs into href/src: results come from third-party sites. */
+/** Only ever put https/http URLs into href/src: results come from third-party sites. */
 export function safeUrl(u?: string): string | undefined {
   if (!u) return undefined;
   try {
@@ -141,34 +158,16 @@ export function safeUrl(u?: string): string | undefined {
   }
 }
 
-/**
- * Start a download. Without an API key a plain link does it (the server
- * redirects or streams a zip). When the server needs a key, the file is
- * fetched with the key in a header and saved from a blob URL.
- */
-export async function download(path: string, filename: string): Promise<void> {
+/** A filesystem-friendly name: "Ocean Waves 01" -> "ocean-waves-01". */
+export const slugName = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || "clip";
+
+/** Save text as a file from the browser (sequence exports). */
+export function saveText(filename: string, text: string, type = "text/plain"): void {
   const a = document.createElement("a");
-  if (!getKey()) {
-    // Single files redirect to the source's CDN, which may play them instead of
-    // saving them: open in a new tab so the search stays put.
-    a.href = path;
-    a.target = "_blank";
-    a.rel = "noopener";
-  } else {
-    const res = await fetch(path, { headers: apiHeaders() });
-    if (res.status === 401) throw new UnauthorizedError("This server needs an API key.");
-    if (!res.ok) throw new Error(((await res.json().catch(() => ({}))) as { error?: string }).error ?? `HTTP ${res.status}`);
-    const disposition = res.headers.get("content-disposition") ?? "";
-    const named = /filename="([^"]+)"/.exec(disposition)?.[1];
-    a.href = URL.createObjectURL(await res.blob());
-    a.download = named ?? filename;
-    setTimeout(() => URL.revokeObjectURL(a.href), 60_000);
-  }
-  if (!a.download && !a.target) a.download = filename;
+  a.href = URL.createObjectURL(new Blob([text], { type: `${type};charset=utf-8` }));
+  a.download = filename;
   document.body.append(a);
   a.click();
   a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 60_000);
 }
-
-/** A filesystem-friendly name: "Deep Kick 01" -> "deep-kick-01". */
-export const slugName = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || "clip";

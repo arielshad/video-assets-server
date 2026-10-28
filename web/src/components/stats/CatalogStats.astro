@@ -7,10 +7,12 @@ import { CATALOG, CATALOG_SENTENCE, CATEGORIES_BY_SIZE, COUNTED_ON, FREE_LIBRARI
 
 const t = CATALOG.totals;
 const tiles = [
-  { label: "Clip listings", value: fmtShort(t.listings.count, t.listings.atLeast), exact: fmt(t.listings.count, t.listings.atLeast), hint: `on ${t.sourcesCounted} sources` },
-  { label: "Free", value: fmtShort(t.free.count, t.free.atLeast), exact: fmt(t.free.count, t.free.atLeast), hint: "free to download" },
-  { label: "CC0 / public domain", value: fmtShort(t.cc0.count, t.cc0.atLeast), exact: fmt(t.cc0.count, t.cc0.atLeast), hint: "no credit needed, release them freely" },
-  { label: "Direct downloads", value: fmtShort(t.directDownload.count, t.directDownload.atLeast), exact: fmt(t.directDownload.count, t.directDownload.atLeast), hint: "free files this server fetches for you" },
+  { label: "Video listings", value: fmtShort(t.listings.count, t.listings.atLeast), exact: fmt(t.listings.count, t.listings.atLeast), hint: `on ${t.sourcesCounted} sources` },
+  { label: "Free", value: fmtShort(t.free.count, t.free.atLeast), exact: fmt(t.free.count, t.free.atLeast), hint: "free to watch and download" },
+  // The CC0 count only covers sources that report licences in their totals: leave it out until one does.
+  ...(t.cc0.count > 0 ? [{ label: "CC0 / public domain", value: fmtShort(t.cc0.count, t.cc0.atLeast), exact: fmt(t.cc0.count, t.cc0.atLeast), hint: "no credit needed" }] : []),
+  { label: "Direct downloads", value: fmtShort(t.directDownload.count, t.directDownload.atLeast), exact: fmt(t.directDownload.count, t.directDownload.atLeast), hint: "free files linked straight from the source" },
+  ...(t.cc0.count > 0 ? [] : [{ label: "Sources", value: String(t.sourcesCounted + t.sourcesLinked), exact: `${t.sourcesCounted} counted, ${t.sourcesLinked} linked`, hint: "searched or linked" }]),
 ];
 
 // Counts span 1 to millions, so bar lengths use a log scale (values are printed).
@@ -63,7 +65,7 @@ const path = points.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.valu
     <blockquote class="max-w-3xl text-pretty text-base">{CATALOG_SENTENCE}</blockquote>
     <CopyButton client:visible text={`${CATALOG_SENTENCE} Source: https://video.shep.bot/stats`} />
     <figcaption class="w-full text-xs text-muted-foreground">
-      Quote it freely. A "listing" is one sound, or one pack on sources that sell or share whole packs. Numbers with + are lower bounds (some sources cap the counts they report).
+      Quote it freely. A "listing" is one video item on its source (an archive item can hold a whole film). Numbers with + are lower bounds (some sources cap the counts they report).
     </figcaption>
   </figure>
 
@@ -94,7 +96,7 @@ const path = points.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.valu
           <li class="flex items-center justify-between gap-3 px-4 py-2.5 text-sm">
             <a href={`/sources/${s.id}`} class="font-medium hover:underline">{s.name}</a>
             <span class="text-right text-muted-foreground">
-              <span class="tabular-nums text-foreground">{fmt(s.total, s.atLeast)}</span> {s.unit === "packs" ? "packs" : "sounds"}
+              <span class="tabular-nums text-foreground">{fmt(s.total, s.atLeast)}</span> videos
               {licenceName(s) && <span class="ml-1 text-xs">· {licenceName(s)}</span>}
             </span>
           </li>
@@ -125,13 +127,13 @@ const path = points.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.valu
               {s.stale && <div class="text-xs font-normal text-muted-foreground">last counted {s.stale.since.slice(0, 10)}</div>}
             </th>
             <td class="min-w-48 px-4 py-3" title={s.method}>
-              <div class="tabular-nums">{fmt(s.total, s.atLeast)} <span class="text-xs text-muted-foreground">{s.unit === "packs" ? "packs" : ""}</span></div>
+              <div class="tabular-nums">{fmt(s.total, s.atLeast)}</div>
               <div class="mt-1.5 h-1.5 rounded-r-[4px] bg-muted" aria-hidden="true">
                 <div class="h-full rounded-r-[4px] bg-primary/80" style={`width:${logPct(s.total, sourceMax).toFixed(1)}%`}></div>
               </div>
             </td>
             <td class="px-4 py-3 text-right tabular-nums">{s.free !== undefined ? fmt(s.free, s.atLeast && s.free >= 10_000) : s.pricing === "free" ? fmt(s.total) : "–"}</td>
-            <td class="px-4 py-3 text-muted-foreground">{mainCategories(s.byCategory)}</td>
+            <td class="px-4 py-3 text-muted-foreground">{mainCategories(s.byCategory) || "–"}</td>
             <td class="px-4 py-3 text-right tabular-nums">{s.addedLast30Days ?? "–"}</td>
           </tr>
         ))}
@@ -146,18 +148,18 @@ const path = points.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.valu
 
   {highlights.length > 0 && (
     <>
-      <h3 class="mt-12 font-medium">Most downloaded</h3>
+      <h3 class="mt-12 font-medium">Notable</h3>
       <ul class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {highlights.map((h) => (
           <li class="rounded-xl border bg-card/40 p-5">
             <p class="text-xs text-muted-foreground">{h.label} on {h.source}</p>
             <a href={h.url} rel="noopener" class="mt-1 block font-medium hover:underline">{h.title}</a>
-            {h.value !== undefined && <p class="mt-2 text-2xl font-semibold tabular-nums tracking-tight">{fmt(h.value)} <span class="text-sm font-normal text-muted-foreground">downloads</span></p>}
+            {h.value !== undefined && <p class="mt-2 text-2xl font-semibold tabular-nums tracking-tight">{fmt(h.value)} <span class="text-sm font-normal text-muted-foreground">views or downloads</span></p>}
           </li>
         ))}
         {downloads.map((s) => (
           <li class="rounded-xl border bg-card/40 p-5">
-            <p class="text-xs text-muted-foreground">All {s.name} sounds</p>
+            <p class="text-xs text-muted-foreground">All {s.name} videos</p>
             <p class="mt-1 font-medium">Downloaded in total</p>
             <p class="mt-2 text-2xl font-semibold tabular-nums tracking-tight">{fmtShort(s.downloads!)} <span class="text-sm font-normal text-muted-foreground">({fmt(s.downloads!)})</span></p>
           </li>
@@ -186,7 +188,7 @@ const path = points.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.valu
   )}
 
   <p class="mt-6 text-xs text-muted-foreground">
-    How it's counted: each source reports its own size once a day (its API's total, its catalogue or manifest, its WordPress counters or its sitemap; hover a row for the method). {dated.length} of {CATALOG.sources.length} sources publish release dates, so "New" covers those. Data: <a class="text-primary underline underline-offset-2 hover:decoration-2" href="/catalog.json">/catalog.json</a> ·{" "}
+    How it's counted: each source reports its own size once a day, from its API's search totals, never a crawl (hover a row for the method). {dated.length} of {CATALOG.sources.length} sources publish release dates, so "New" covers those. Data: <a class="text-primary underline underline-offset-2 hover:decoration-2" href="/catalog.json">/catalog.json</a> ·{" "}
     <a class="text-primary underline underline-offset-2 hover:decoration-2" href="/catalog-history.json">history</a> · <a class="text-primary underline underline-offset-2 hover:decoration-2" href="/docs/api/reference#op-getCatalog">API</a>
   </p>
 </section>

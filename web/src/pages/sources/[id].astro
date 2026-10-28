@@ -1,11 +1,11 @@
 ---
-// /sources/<id>: one clip site as Video Assets Server sees it: what it holds
+// /sources/<id>: one video site as Video Assets Server sees it: what it holds
 // (from the daily census), how it is searched, its licence, and its clips in
 // the curated collections.
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import SampleCard from "@/components/collections/SampleCard.astro";
+import ClipCard from "@/components/collections/ClipCard.astro";
 import Breadcrumbs from "@/components/collections/Breadcrumbs.astro";
-import { countLabel, sourcePages, sourcePath, sourceSearchHref, type SourcePage } from "@/lib/collections";
+import { COLLECTIONS_PATH, countLabel, sourcePages, sourcePath, sourceSearchHref, type SourcePage } from "@/lib/collections";
 import { allGuides, guidePath } from "@/lib/guides";
 import { COUNTED_ON, categoryName, fmt } from "@/lib/catalog";
 import { breadcrumbs, collectionPage, sourceEntity } from "@/lib/schema";
@@ -26,8 +26,8 @@ const path = sourcePath(p.id);
 const access = { api: "Official or public API", static: "A published catalogue of the collection, fetched once and cached", scrape: "The site's public pages, read politely and cached", link: "Not searched directly: the site does not allow automated search, so results link to the same search on the site" } as const;
 const pricing = { free: "Free", freemium: "Free and paid", paid: "Paid" } as const;
 const clip = (x: string, n: number) => (x.length > n ? `${x.slice(0, n - 1).trimEnd()}…` : x);
-const title = `${p.name}: clips, licence and downloads`;
-const description = clip(`${p.name} (${p.description.replace(/\.$/, "")}): ${p.license ?? "licence per clip"}, ${p.supportsDownload ? "direct downloads" : "links to each clip page"}. Searched with ${SOURCE_COUNT - 1} other clip sites.`, 160);
+const title = `${p.name}: free video, licence and downloads`;
+const description = clip(`${p.name}: ${p.license ?? "licence set per clip"}, ${p.supportsDownload ? "watch and download clips straight from the source" : "linked searches"}. Searched alongside ${SOURCE_COUNT - 1} other video sites. ${p.description}`, 160);
 const trail = [{ name: "Home", path: "/" }, { name: "Sources", path: "/docs/sources" }, { name: p.name, path }];
 const byCategory = t ? Object.entries(t.byCategory).sort((a, b) => b[1] - a[1]) : [];
 const categories = t?.categories ? Object.keys(t.categories).slice(0, 10) : [];
@@ -62,11 +62,11 @@ const guides = n?.guides?.length ? (await allGuides()).filter((g) => n.guides!.i
     <dl class="mt-10 grid gap-px overflow-hidden rounded-xl border bg-border text-sm sm:grid-cols-2 lg:grid-cols-3">
       <div class="bg-background p-4"><dt class="text-muted-foreground">Licence</dt><dd class="mt-1 font-medium">{p.license ?? "Set per clip"}{p.licenseVerdict && <span class="block text-xs font-normal text-muted-foreground">{VERDICT_LABELS[p.licenseVerdict as Verdict] ?? p.licenseVerdict}</span>}</dd></div>
       <div class="bg-background p-4"><dt class="text-muted-foreground">Pricing</dt><dd class="mt-1 font-medium">{pricing[p.pricing as keyof typeof pricing]}</dd></div>
-      <div class="bg-background p-4"><dt class="text-muted-foreground">Direct download here</dt><dd class="mt-1 font-medium">{p.supportsDownload ? "Yes" : "No, results link to the clip page"}</dd></div>
-      <div class="bg-background p-4"><dt class="text-muted-foreground">Sounds</dt><dd class="mt-1 font-medium">{p.categories.map(categoryLabel).join(", ") || "Various"}</dd></div>
+      <div class="bg-background p-4"><dt class="text-muted-foreground">Direct download</dt><dd class="mt-1 font-medium">{p.supportsDownload ? "Yes, straight from the source" : "No, results link to the source site"}</dd></div>
+      <div class="bg-background p-4"><dt class="text-muted-foreground">Footage</dt><dd class="mt-1 font-medium">{p.categories.map(categoryLabel).join(", ") || "Various"}</dd></div>
       <div class="bg-background p-4 sm:col-span-2"><dt class="text-muted-foreground">How it is searched</dt><dd class="mt-1 font-medium">{access[p.access as keyof typeof access]}</dd></div>
       {t && (
-        <div class="bg-background p-4"><dt class="text-muted-foreground">Listings (counted {COUNTED_ON})</dt><dd class="mt-1 font-medium">{fmt(t.total, t.atLeast)}{t.unit === "packs" ? " packs" : ""}{t.free !== undefined && t.pricing !== "free" ? `, ${fmt(t.free)} free` : ""}</dd></div>
+        <div class="bg-background p-4"><dt class="text-muted-foreground">Videos (counted {COUNTED_ON})</dt><dd class="mt-1 font-medium">{fmt(t.total, t.atLeast)}{t.free !== undefined && t.pricing !== "free" ? `, ${fmt(t.free)} free` : ""}</dd></div>
       )}
       {t && byCategory.length > 0 && (
         <div class="bg-background p-4"><dt class="text-muted-foreground">By category</dt><dd class="mt-1 font-medium">{byCategory.slice(0, 4).map(([k, n]) => `${categoryName(k)} ${fmt(n)}`).join(", ")}</dd></div>
@@ -91,7 +91,7 @@ const guides = n?.guides?.length ? (await allGuides()).filter((g) => n.guides!.i
             <p class="mt-3 text-pretty leading-relaxed text-muted-foreground">{n.bestFor}</p>
           </section>
           <section aria-labelledby="licence">
-            <h2 id="licence" class="text-xl font-semibold tracking-tight">Licence and what it means for a release</h2>
+            <h2 id="licence" class="text-xl font-semibold tracking-tight">Licence and what it means for your video</h2>
             <p class="mt-3 text-pretty leading-relaxed text-muted-foreground">{n.licence}</p>
           </section>
           <section aria-labelledby="how">
@@ -124,16 +124,16 @@ const guides = n?.guides?.length ? (await allGuides()).filter((g) => n.guides!.i
     {s.clips.length > 0 && (
       <section class="mt-14" aria-labelledby="examples">
         <h2 id="examples" class="text-2xl font-semibold tracking-tight">{p.name} in the collections</h2>
-        <p class="mt-2 text-sm text-muted-foreground">Some of the {p.name} sounds picked for the curated collections below. Press play to hear them.</p>
-        <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {s.clips.map((a) => <SampleCard clip={a} />)}
+        <p class="mt-2 text-sm text-muted-foreground">Some of the {p.name} clips picked for the curated collections below. Hover one to watch its preview, straight from {p.name}.</p>
+        <ul class="mt-6 grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {s.clips.map((a) => <ClipCard clip={a} />)}
         </ul>
       </section>
     )}
 
     {s.collections.length > 0 && (
       <section class="mt-14 max-w-3xl" aria-labelledby="collections">
-        <h2 id="collections" class="text-xl font-semibold tracking-tight">Collections with {p.name} sounds</h2>
+        <h2 id="collections" class="text-xl font-semibold tracking-tight">Collections with {p.name} footage</h2>
         <ul class="mt-4 divide-y rounded-xl border text-sm">
           {s.collections.map(({ collection: c, count }) => (
             <li class="flex items-center justify-between gap-3 px-4 py-3">
@@ -147,18 +147,18 @@ const guides = n?.guides?.length ? (await allGuides()).filter((g) => n.guides!.i
 
     {t?.highlights?.length ? (
       <section class="mt-14 max-w-3xl" aria-labelledby="popular">
-        <h2 id="popular" class="text-xl font-semibold tracking-tight">Most downloaded on {p.name}</h2>
+        <h2 id="popular" class="text-xl font-semibold tracking-tight">Notable on {p.name}</h2>
         <ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-          {t.highlights.map((h) => <li>{h.label}: <a href={h.url} rel="noopener" class="text-primary underline underline-offset-2 hover:decoration-2">{h.title}</a>{h.value !== undefined && ` (${fmt(h.value)} downloads)`}</li>)}
+          {t.highlights.map((h) => <li>{h.label}: <a href={h.url} rel="noopener" class="text-primary underline underline-offset-2 hover:decoration-2">{h.title}</a>{h.value !== undefined && ` (${fmt(h.value)})`}</li>)}
         </ul>
       </section>
     ) : null}
 
     <p class="mt-16 text-sm text-muted-foreground">
-      See <a href={`/docs/sources#${p.id}`} class="text-primary underline underline-offset-2 hover:decoration-2">all {SOURCE_COUNT} sources and their licences</a>, the <a href="/stats" class="text-primary underline underline-offset-2 hover:decoration-2">daily catalog census</a>, or <a href="/clips" class="text-primary underline underline-offset-2 hover:decoration-2">browse the collections</a>.
+      See <a href={`/docs/sources#${p.id}`} class="text-primary underline underline-offset-2 hover:decoration-2">all {SOURCE_COUNT} sources and their licences</a>, the <a href="/stats" class="text-primary underline underline-offset-2 hover:decoration-2">daily catalog census</a>, or <a href={COLLECTIONS_PATH} class="text-primary underline underline-offset-2 hover:decoration-2">browse the collections</a>.
     </p>
   </div>
 </BaseLayout>
 <script>
-  import "@/scripts/preview-player";
+  import "@/scripts/preview-video";
 </script>

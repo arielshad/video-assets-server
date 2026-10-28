@@ -79,8 +79,8 @@ export const AGENT_CLIENTS: AgentClient[] = [
 ];
 
 export const EXAMPLE_PROMPTS = [
-  "Build me a dark trap kit at 140 BPM in F minor: kick, snare, hats, clap and an 808, commercial-safe",
-  "Find three punchy kicks I can use in a released track and put them in ./clips/drums",
-  "Get a vocal chop around 128 BPM and tell me the exact credit line I need",
-  "I need a riser and an impact for a drop; only CC0 or royalty-free",
+  "Find three 4K clips of ocean waves at sunset I can use in a client ad, and tell me the credit lines",
+  "Build a 30-second vertical b-roll sequence for a Reel: city skyline at night, coffee pour, people walking in the rain",
+  "Get a rocket launch in slow motion from NASA and download the 1080p rendition into ./footage",
+  "I need a 1950s newsreel shot of a factory for a documentary; check whether it's editorial-only",
 ];

@@ -7,11 +7,11 @@ const integrations = (optional["../data/integrations.json"] as { integrations: I
 
 export const SITE = {
   name: "Video Assets Server",
-  shortName: "Sounds",
+  shortName: "Video Assets",
   url: (import.meta.env.SITE as string | undefined)?.replace(/\/$/, "") ?? "https://video.shep.bot",
-  tagline: "One search for free music clips, with the licence on every sound",
-  homeTitle: "Video Assets Server: Search Free Music Clips, Drums, Vocals & FX",
-  description: `Search ${providers.length} clip sites at once for free kicks, snares, 808s, loops, vocals and FX, and see if each sound is cleared for a commercial release. Web, API and MCP.`,
+  tagline: "One search for free stock video, with the licence on every clip",
+  homeTitle: "Video Assets Server: Free Stock Video, B-Roll & Archive Footage",
+  description: `Search ${providers.length} stock video sites at once for free b-roll, backgrounds, space and archive films. Watch each clip and see if it's cleared for commercial use.`,
   repo: "https://github.com/arielshad/video-assets-server",
   image: "/og.png",
   locale: "en_US",
@@ -35,7 +35,6 @@ export interface Provider {
   description: string;
   /** Top-level categories the source carries. */
   categories: string[];
-  forms?: string[];
   access: "api" | "static" | "scrape" | "link";
   pricing: "free" | "freemium" | "paid";
   /** Licence name when the whole source uses one. */
@@ -68,14 +67,17 @@ export function ogImagePath(route: string): string {
   return `/og/${slug}.png`;
 }
 
+/** Example searches shown on the home and search pages. */
+export const EXAMPLE_QUERIES = ["ocean waves at sunset", "4k vertical drone city", "rocket launch slow motion", "clouds timelapse", "1950s newsreel", "earth from space"];
+
 export const MCP_URL = `${SITE.url}/mcp`;
 /** Name agents register the MCP server under. */
-export const MCP_NAME = "sounds";
+export const MCP_NAME = "video";
 
 export const NAV = [
   { href: "/search", label: "Search" },
-  { href: "/kit", label: "Kit builder" },
-  { href: "/clips", label: "Collections" },
+  { href: "/sequence", label: "Sequence builder" },
+  { href: "/footage", label: "Collections" },
   { href: "/guides", label: "Guides" },
   { href: "/docs", label: "Docs" },
   { href: "/docs/mcp", label: "AI agents" },
@@ -98,7 +100,7 @@ export const DOCS_NAV = [
   {
     title: "Reference",
     items: [
-      { href: "/docs/licences", label: "Clip licences explained" },
+      { href: "/docs/licences", label: "Video licences explained" },
       { href: "/docs/sources", label: "Sources & licences" },
       { href: "/docs/faq", label: "FAQ" },
       { href: "/guides", label: "Guides" },

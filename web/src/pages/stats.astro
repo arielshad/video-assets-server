@@ -7,10 +7,10 @@ import { aboutPage, breadcrumbs, catalogDataset } from "@/lib/schema";
 import { INTEGRATIONS, PROVIDERS, SOURCE_COUNT } from "@/lib/site";
 
 const t = CATALOG.totals;
-const title = "Clip statistics";
+const title = "Stock video statistics";
 const description = HAS_CATALOG
-  ? `${fmtWords(t.listings.count, t.listings.atLeast)} clip listings from ${t.sourcesCounted} sources, ${fmtWords(t.free.count, t.free.atLeast)} free and ${fmt(t.cc0.count)} CC0, counted daily by category and source, plus live usage.`
-  : `How many clips the ${SOURCE_COUNT} searched sites hold, counted daily by category and source, and how people and AI agents use Video Assets Server.`;
+  ? `${fmtWords(t.listings.count, t.listings.atLeast)} video listings from ${t.sourcesCounted} sources, ${fmtWords(t.free.count, t.free.atLeast)} of them free, counted daily by category and source, plus live usage.`
+  : `How many videos the ${SOURCE_COUNT} searched sites hold, counted daily by category and source, and how people and AI agents use Video Assets Server.`;
 const names = Object.fromEntries(PROVIDERS.map((p) => [p.id, p.name]));
 const recent = INTEGRATIONS.slice(0, 6);
 const dateFmt = new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
@@ -25,9 +25,9 @@ const dateFmt = new Intl.DateTimeFormat("en", { year: "numeric", month: "short",
   <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
     <header class="max-w-3xl">
       <p class="text-sm font-medium text-primary">Video Assets Server</p>
-      <h1 class="mt-2 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Clips in numbers</h1>
+      <h1 class="mt-2 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Stock video in numbers</h1>
       <p class="mt-4 text-pretty text-muted-foreground">
-        How many drum hits, loops, vocals, FX, field recordings and instrument clips the {SOURCE_COUNT} searched sites hold, counted every day, and how people and AI agents use Video Assets Server. Usage counts are anonymous totals: no search terms, IP addresses or accounts.
+        How many videos the sources Video Assets Server searches hold, counted every day by category and source, and how people and AI agents use it. Usage counts are anonymous totals: no search terms, IP addresses or accounts.
       </p>
     </header>
 
@@ -47,7 +47,7 @@ const dateFmt = new Intl.DateTimeFormat("en", { year: "numeric", month: "short",
         <a href="/docs/sources" class="text-sm text-primary underline underline-offset-2 hover:decoration-2">All sources &amp; licences →</a>
       </div>
       <p class="mt-1 text-sm text-muted-foreground">
-        New clip sites are checked for every day. A site is added only when its terms allow automated search and its integration passes the test suite against the live site.
+        New video sources are checked regularly. A site is searched directly only when its terms allow automated search and its integration passes the test suite against the live site; the rest get deep links.
       </p>
       <ul class="mt-4 divide-y rounded-xl border">
         {recent.map((i) => (
@@ -65,7 +65,7 @@ const dateFmt = new Intl.DateTimeFormat("en", { year: "numeric", month: "short",
     <section class="mt-16 max-w-3xl" aria-labelledby="method">
       <h2 id="method" class="text-xl font-semibold tracking-tight">How usage is counted</h2>
       <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-        <li>Every search, clip view, download and MCP tool call increments a counter on the server. The counters are labelled only by surface (website, REST API, MCP), client family (for example "Claude Code" or "curl"), category and source.</li>
+        <li>Every search, clip detail view, download redirect and MCP tool call increments a counter on the server. The counters are labelled only by surface (website, REST API, MCP), client family (for example "Claude Code" or "curl"), category and source.</li>
         <li>Totals for the last 24 hours and 7 days come from the server's Prometheus metrics, so they are approximate to within a few events.</li>
         <li>Source health counts how often each site answered a search, failed or timed out, and how long it took.</li>
         <li>The same data is available as JSON at <a class="text-primary underline underline-offset-2 hover:decoration-2" href="/v1/stats">/v1/stats</a> (<a class="text-primary underline underline-offset-2 hover:decoration-2" href="/docs/api/reference#op-getStats">reference</a>). See the <a class="text-primary underline underline-offset-2 hover:decoration-2" href="/privacy">privacy policy</a> for what is logged.</li>

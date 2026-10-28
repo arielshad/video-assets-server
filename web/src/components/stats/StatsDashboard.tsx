@@ -34,7 +34,7 @@ interface Stats {
   breakdownLabel: string;
   clients: Ranked[];
   tools: Ranked[];
-  /** Searches by category filter (older servers call it assetTypes). */
+  /** Searches by top-level category filter ("any", "multi" or a category id; the server calls it assetTypes). */
   categories?: Ranked[];
   assetTypes?: Ranked[];
   providers: ProviderHealth[];
@@ -276,7 +276,7 @@ export default function StatsDashboard({ names }: { names: Record<string, string
 
       <dl className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
         <Kpi label="Searches" value={fmt.format(w.searches)} hint={`${pct(w.searchesWithResults, w.searches)} found results`} />
-        <Kpi label="Downloads" value={fmt.format(w.downloads)} hint={`${fmt.format(w.clipViews)} clip detail views`} />
+        <Kpi label="Downloads" value={fmt.format(w.downloads)} hint={`${fmt.format(w.clipViews)} clips opened`} />
         <Kpi label="MCP tool calls" value={fmt.format(w.toolCalls)} hint="from AI agents" />
         <Kpi label="Page views" value={fmt.format(w.pageViews)} hint="website pages served" />
       </dl>
@@ -285,7 +285,7 @@ export default function StatsDashboard({ names }: { names: Record<string, string
         <SurfaceSplit w={w} />
       </div>
 
-      <h2 id="breakdown" className="mt-12 text-xl font-semibold tracking-tight">What people search for</h2>
+      <h2 id="breakdown" className="mt-12 text-xl font-semibold tracking-tight">Who searches, and for what</h2>
       <p className="mt-1 text-sm text-muted-foreground">{stats.breakdownLabel}.</p>
       <div className="mt-4 grid gap-4 lg:grid-cols-3">
         <Bars title="Clients" items={stats.clients} labels={CLIENTS} empty="No searches yet." />

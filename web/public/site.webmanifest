@@ -1,7 +1,7 @@
 {
   "name": "Video Assets Server",
-  "short_name": "Sounds",
-  "description": "One search for free music samples: drums, 808s, loops, vocals and FX, with the licence on every sound.",
+  "short_name": "Video Assets",
+  "description": "One search for free stock video: b-roll, backgrounds, nature, cities, space and archive films, with the licence on every clip.",
   "start_url": "/search",
   "display": "standalone",
   "background_color": "#16141f",

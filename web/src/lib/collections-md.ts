@@ -1,12 +1,27 @@
 /**
- * Markdown twins of the collection, hub and source pages (/clips/<slug>.md,
- * /clips.md, /sources/<id>.md), for agents and LLM crawlers. Same facts as
+ * Markdown twins of the collection, hub and source pages (/footage/<slug>.md,
+ * /footage.md, /sources/<id>.md), for agents and LLM crawlers. Same facts as
  * the HTML, plus the clip ids an agent can pass to GET /v1/clips/{id}.
  */
-import { apiHref, collectionPath, countLabel, hubPath, latest, providerName, searchHref, sourcePath, sourceSearchHref, type Collection, type Hub, type SourcePage } from "./collections";
+import { COLLECTIONS_PATH, apiHref, collectionPath, countLabel, hubPath, latest, providerName, searchHref, sourcePath, sourceSearchHref, type Collection, type Hub, type SnapshotClip, type SourcePage } from "./collections";
 import { categoryName, fmt } from "./catalog";
 import { SITE } from "./site";
-import { VERDICT_LABELS, categoryLabel, durationText, formLabel, type Verdict } from "./vocab";
+import { VERDICT_LABELS, categoryLabel, durationText, fpsText, orientationLabel, resolutionBadge, styleLabel, type Verdict } from "./vocab";
+
+/** "Ocean & beach, 4K, vertical, 0:12, 60 fps, 1958" */
+export function clipFacts(a: SnapshotClip): string {
+  return [
+    categoryLabel(a.category),
+    ...(a.styles ?? []).map(styleLabel),
+    resolutionBadge(a.width, a.height),
+    a.orientation && a.orientation !== "landscape" ? orientationLabel(a.orientation).toLowerCase() : "",
+    durationText(a.durationSec),
+    fpsText(a.fps),
+    a.year ? String(a.year) : "",
+  ]
+    .filter(Boolean)
+    .join(", ");
+}
 
 const abs = (path: string) => `${SITE.url}${path}`;
 const cell = (s: string) => s.replace(/\|/g, "\\|").replace(/\s+/g, " ").trim();
@@ -18,8 +33,8 @@ const footer = (path: string) => `\n---\nSource: ${abs(path)}\n`;
 export function collectionMarkdown(c: Collection, related: Collection[]): string {
   const d = c.topic.data;
   const rows = c.clips.map((a) => {
-    const facts = [categoryLabel(a.category), formLabel(a.form), a.bpm ? `${Math.round(a.bpm)} BPM` : "", a.key ?? "", durationText(a.durationSec)].filter(Boolean).join(", ");
-    const verdict = a.license ? VERDICT_LABELS[a.license.verdict as Verdict] ?? a.license.verdict : "check the source";
+    const facts = clipFacts(a);
+    const verdict = a.license ? `${VERDICT_LABELS[a.license.verdict as Verdict] ?? a.license.verdict}${a.license.editorial ? " (editorial)" : ""}` : "check the source";
     return `| [${cell(a.title)}](${a.url}) | \`${a.id}\` | ${cell(facts)} | ${providerName(a.provider)} | ${a.license?.name ?? "see source"} | ${verdict} | ${a.downloadable ? "yes" : "no"} |`;
   });
   return [
@@ -27,21 +42,21 @@ export function collectionMarkdown(c: Collection, related: Collection[]): string
     "",
     `> ${d.description}`,
     "",
-    `${countLabel(c.clips)} from ${c.sources.length} sources (${c.sources.map((s) => `${s.name} ${s.count}`).join(", ")})${c.updatedAt ? `, updated ${day(c.updatedAt)}` : ""}. Picked from a live search and refreshed daily.`,
+    c.clips.length
+      ? `${countLabel(c.clips)} from ${c.sources.length} sources (${c.sources.map((s) => `${s.name} ${s.count}`).join(", ")})${c.updatedAt ? `, updated ${day(c.updatedAt)}` : ""}. Picked from a live search and refreshed daily.`
+      : "This collection is being refreshed: run the search below for live results.",
     "",
     `- Same search in the browser: ${abs(searchHref(d.search))}`,
     `- Same search over the API: \`curl "${apiHref(d.search)}"\``,
     "- Details, files and the credit line: `GET " + SITE.url + "/v1/clips/{id}` with an id from the table below.",
-    "- Licence verdicts: \"Commercial use OK\" (with or without credit) is cleared for a release; anything else must be checked or is non-commercial. See " + abs("/docs/licences.md"),
+    "- Licence verdicts: \"Commercial use OK\" (with or without credit) is cleared for commercial videos; anything else must be checked or is non-commercial. \"(editorial)\" means people, insignia or brands appear without releases: not for ads. See " + abs("/docs/licences.md"),
+    "- Video is never re-hosted: posters, previews and downloads come straight from the source sites.",
     "",
     absolutize(c.topic.body?.trim() ?? ""),
     "",
-    "## Clips",
-    "",
-    "| Clip | id | What | Source | Licence | Commercial use | Direct download |",
-    "| --- | --- | --- | --- | --- | --- | --- |",
-    ...rows,
-    "",
+    ...(rows.length
+      ? ["## Clips", "", "| Clip | id | What | Source | Licence | Commercial use | Direct download |", "| --- | --- | --- | --- | --- | --- | --- |", ...rows, ""]
+      : []),
     "## Questions",
     "",
     ...d.faq.flatMap((f) => [`**${f.q}**`, "", f.a, ""]),
@@ -79,15 +94,15 @@ export function hubMarkdown(hub: Hub, cs: Collection[], hubs: Hub[], guides: { t
 export function indexMarkdown(all: Collection[], hubs: Hub[]): string {
   const updated = latest(all);
   return [
-    "# Free clip collections",
+    "# Free stock footage collections",
     "",
-    `> Curated collections of free music clips (drums, 808s, vocals, FX, ambience and instruments) from many clip sites, with a licence verdict on every sound, refreshed daily${updated ? ` (last change ${day(updated)})` : ""}. Each collection is a saved search; agents can run the same search with \`GET ${SITE.url}/v1/search\`.`,
+    `> Curated collections of free stock video (nature, cities, space, science, archive films, backgrounds and vertical clips) from many video sites, with a licence verdict on every clip, refreshed daily${updated ? ` (last change ${day(updated)})` : ""}. Each collection is a saved search; agents can run the same search with \`GET ${SITE.url}/v1/search\`.`,
     "",
     ...hubs.flatMap((hub) => {
       const cs = all.filter((c) => c.hub.id === hub.id);
       return cs.length ? [`## ${hub.title}`, "", `[All ${hub.name.toLowerCase()}](${abs(hubPath(hub))}.md)`, "", ...cs.map((c) => `- [${c.topic.data.title}](${abs(collectionPath(c.slug))}.md): ${c.topic.data.description}`), ""] : [];
     }),
-    footer("/clips"),
+    footer(COLLECTIONS_PATH),
   ].join("\n");
 }
 
@@ -105,7 +120,7 @@ export function sourceMarkdown(s: SourcePage): string {
     ...(p.access !== "link" ? [`- Restrict a search to it: \`${SITE.url}/v1/search?q=...&providers=${p.id}\``] : []),
     ...(t
       ? [
-          `- Listings counted ${t.countedAt.slice(0, 10)}: ${fmt(t.total, t.atLeast)}${t.unit === "packs" ? " packs" : ""}${t.free !== undefined ? `, ${fmt(t.free)} free` : ""}`,
+          `- Video listings counted ${t.countedAt.slice(0, 10)}: ${fmt(t.total, t.atLeast)}${t.free !== undefined ? `, ${fmt(t.free)} free` : ""}`,
           ...(Object.keys(t.byCategory).length
             ? [`- By category: ${Object.entries(t.byCategory).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${categoryName(k)} ${fmt(n)}`).join(", ")}`]
             : []),

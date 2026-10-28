@@ -24,7 +24,6 @@ export interface CatalogSource {
   byCategory: Record<string, number>;
   byLicense?: Record<string, number>;
   categories?: Record<string, number>;
-  unit?: "clips" | "packs";
   addedLast30Days?: number;
   downloads?: number;
   highlights?: { label: string; title: string; url: string; value?: number }[];
@@ -68,13 +67,16 @@ const EMPTY: Catalog = {
   linked: [],
 };
 
-export const HAS_CATALOG = Boolean(files["../data/catalog.json"]);
 export const CATALOG = (files["../data/catalog.json"] as Catalog | undefined) ?? EMPTY;
+CATALOG.sources ??= [];
+CATALOG.linked ??= [];
+/** A census with at least one counted source (a stub or an empty file counts as none). */
+export const HAS_CATALOG = CATALOG.sources.length > 0 && CATALOG.totals.listings.count > 0;
 for (const s of CATALOG.sources) s.byCategory ??= {};
 CATALOG.byCategory ??= {};
 export const HISTORY = (files["../data/catalog-history.json"] as HistoryPoint[] | undefined) ?? [];
 
-/** Plural label of a top-level category for counts ("Drums", "Vocals", "FX"). */
+/** Label of a top-level category for counts ("Nature", "Space", "Archive & vintage"). */
 export const categoryName = (id: string) => categoryLabel(id);
 
 const full = new Intl.NumberFormat("en");
@@ -112,6 +114,6 @@ export const FREE_LIBRARIES = CATALOG.sources.filter((s) => s.pricing === "free"
 
 /** One sentence anyone can quote. */
 export const CATALOG_SENTENCE =
-  `As of ${COUNTED_ON}, Video Assets Server searches ${fmtWords(CATALOG.totals.listings.count, CATALOG.totals.listings.atLeast)} clip listings ` +
+  `As of ${COUNTED_ON}, Video Assets Server searches ${fmtWords(CATALOG.totals.listings.count, CATALOG.totals.listings.atLeast)} video listings ` +
   `from the ${CATALOG.totals.sourcesCounted} sources that publish counts, including ${fmtWords(CATALOG.totals.free.count, CATALOG.totals.free.atLeast)} free ones and ` +
-  `${fmt(CATALOG.totals.cc0.count, CATALOG.totals.cc0.atLeast)} CC0 (public-domain) sounds.`;
+  `${fmt(CATALOG.totals.cc0.count, CATALOG.totals.cc0.atLeast)} CC0 or public-domain clips.`;

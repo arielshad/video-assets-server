@@ -1,9 +1,10 @@
 /**
- * Collections (/clips/<slug>): curated topic pages built from a topic file
+ * Collections (/footage/<slug>): curated topic pages built from a topic file
  * (src/content/collections/<slug>.md) and its saved search results
  * (src/data/collections/<slug>.json, refreshed by scripts/snapshot-collections.mjs).
- * Hubs (/clips/<hub>) group them by kind of sound; source pages
- * (/sources/<id>) show what each site contributes.
+ * Hubs (/footage/<hub>) group them by kind of footage; source pages
+ * (/sources/<id>) show what each site contributes. A topic whose snapshot
+ * is missing still builds: an empty, noindex page that links to the live search.
  */
 import { getCollection, type CollectionEntry } from "astro:content";
 import hubsJson from "@/data/collection-hubs.json";
@@ -22,18 +23,23 @@ export interface SnapshotClip {
   provider: string;
   title: string;
   category: string;
-  form?: string;
+  styles?: string[];
   url: string;
-  /** Playable preview (https). */
-  previewUrl: string;
-  thumbnailUrl?: string;
+  /** Still frame (https), loaded from the source. */
+  posterUrl?: string;
+  /** Small playable version (https), played from the source on hover. */
+  previewUrl?: string;
+  previewType?: string;
   author?: string;
-  license?: { id: string; name: string; url?: string; verdict: string; attributionRequired?: boolean };
+  license?: { id: string; name: string; url?: string; verdict: string; attributionRequired?: boolean; editorial?: boolean };
   free?: boolean;
   formats?: string[];
-  bpm?: number;
-  key?: string;
+  orientation?: string;
+  width?: number;
+  height?: number;
+  fps?: number;
   durationSec?: number;
+  year?: number;
   downloadable: boolean;
 }
 
@@ -51,7 +57,8 @@ export interface Hub {
   intro: string;
   /** What the hub covers (from collection-hubs.json). */
   categories?: string[];
-  forms?: string[];
+  styles?: string[];
+  orientations?: string[];
   aliases?: string[];
   /** Editorial sections shown under the collections (plain text). */
   sections?: { heading: string; body: string }[];
@@ -72,7 +79,7 @@ export interface Collection {
   updatedAt?: Date;
   indexable: boolean;
   sources: { id: string; name: string; count: number }[];
-  facts: { cleared: number; free: number; direct: number; licences: { name: string; count: number }[] };
+  facts: { cleared: number; free: number; direct: number; editorial: number; hd: number; licences: { name: string; count: number }[] };
 }
 
 export const HUBS = hubsJson as Hub[];
@@ -80,8 +87,9 @@ export const HUBS = hubsJson as Hub[];
 const snapshots = import.meta.glob<Snapshot>("../data/collections/*.json", { eager: true, import: "default" });
 const snapshotOf = (slug: string) => snapshots[`../data/collections/${slug}.json`];
 
-export const collectionPath = (slug: string) => `/clips/${slug}`;
-export const hubPath = (hub: Hub) => `/clips/${hub.id}`;
+export const COLLECTIONS_PATH = "/footage";
+export const collectionPath = (slug: string) => `${COLLECTIONS_PATH}/${slug}`;
+export const hubPath = (hub: Hub) => `${COLLECTIONS_PATH}/${hub.id}`;
 export const sourcePath = (id: string) => `/sources/${id}`;
 
 export function providerName(id: string): string {
@@ -95,7 +103,7 @@ export function hubById(id: string): Hub {
   if (hub) return hub;
   console.warn(`collections: unknown hub "${id}" (add it to src/data/collection-hubs.json)`);
   const name = categoryLabel(id) || id.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
-  const made: Hub = { id, name, title: `Free ${name.toLowerCase()} clips`, description: `Free ${name.toLowerCase()} clips from many clip sites, with the licence verdict on every sound.`, intro: "" };
+  const made: Hub = { id, name, title: `Free ${name.toLowerCase()} footage`, description: `Free ${name.toLowerCase()} stock footage from many video sites, with the licence verdict on every clip.`, intro: "" };
   synthesized.set(id, made);
   return made;
 }
@@ -121,6 +129,8 @@ function build(topic: Topic): Collection {
       cleared: clips.filter((a) => verdictTone(a.license?.verdict) === "green").length,
       free: clips.filter((a) => a.free !== false).length,
       direct: clips.filter((a) => a.downloadable).length,
+      editorial: clips.filter((a) => a.license?.editorial).length,
+      hd: clips.filter((a) => a.width && a.height && Math.min(a.width, a.height) >= 1080 * 0.97).length,
       licences: [...licenceCounts].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count),
     },
   };
@@ -171,7 +181,9 @@ type Search = Topic["data"]["search"];
 function searchParams(s: Search): URLSearchParams {
   const p = new URLSearchParams({ q: s.q });
   if (s.categories?.length) p.set("category", s.categories.join(","));
-  if (s.forms?.length) p.set("form", s.forms.join(","));
+  if (s.styles?.length) p.set("style", s.styles.join(","));
+  if (s.orientations?.length) p.set("orientation", s.orientations.join(","));
+  if (s.minResolution) p.set("min_resolution", String(s.minResolution));
   if (s.commercial) p.set("commercial", "true");
   if (s.free) p.set("free", "true");
   if (s.downloadable) p.set("downloadable", "true");
@@ -179,7 +191,7 @@ function searchParams(s: Search): URLSearchParams {
   return p;
 }
 
-/** Same search in the web app: /search?q=808&category=bass.808&commercial=true */
+/** Same search in the web app: /search?q=ocean+waves&category=nature.ocean&commercial=true */
 export const searchHref = (s: Search) => `/search?${searchParams(s)}`;
 
 /** Same search on the REST API, as an absolute URL for curl. */

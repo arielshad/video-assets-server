@@ -5,6 +5,7 @@
  */
 import { CATALOG } from "./catalog";
 import { MCP_URL, ORG, PROVIDERS, SITE } from "./site";
+import { isoDuration } from "./vocab";
 
 const abs = (path: string) => new URL(path, SITE.url).toString();
 const ORG_ID = `${SITE.url}/#organization`;
@@ -71,17 +72,17 @@ export const softwareApplication = (): JsonLd => ({
   url: SITE.url,
   description: SITE.description,
   applicationCategory: "DeveloperApplication",
-  applicationSubCategory: "Music clip search",
+  applicationSubCategory: "Stock video search",
   operatingSystem: "Any (web browser, HTTP API, MCP)",
   browserRequirements: "Requires JavaScript for live search",
   isAccessibleForFree: true,
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   featureList: [
-    `Searches ${PROVIDERS.length} clip sites at once`,
-    "Drums, 808s, loops, vocals, FX, foley, ambience and instrument one-shots with BPM, key and duration",
-    "Playable previews with waveforms",
-    "A commercial-use verdict and ready-to-paste credit line for every clip",
-    "Drum kit builder with a Strudel clip map",
+    `Searches ${PROVIDERS.length} stock video sites at once (NASA, Wikimedia Commons, Internet Archive and deep links into Pexels, Pixabay and more)`,
+    "B-roll, backgrounds, nature, cities, space, science and archive films, with resolution, orientation, frame rate and length filters",
+    "Watch every clip in the browser, streamed straight from the source",
+    "A commercial-use verdict, editorial flag and ready-to-paste credit line for every clip",
+    "Sequence builder: a shot list in, a b-roll edit out (OpenTimelineIO, ffmpeg, Remotion)",
     "REST API with OpenAPI 3.1 description",
     "Model Context Protocol (MCP) server for AI coding agents",
   ],
@@ -96,7 +97,7 @@ export const webApi = (): JsonLd => ({
   "@type": "WebAPI",
   "@id": `${SITE.url}/#api`,
   name: `${SITE.name} API`,
-  description: "REST and MCP API to search, audition and download music clips (drums, 808s, loops, vocals, FX, foley) from many sources, with a licence verdict for commercial use.",
+  description: "REST and MCP API to search, watch and download free stock video (b-roll, backgrounds, space and archive footage) from many sources, with a licence verdict for commercial use.",
   url: abs("/docs/api"),
   documentation: abs("/docs/api/reference"),
   termsOfService: SITE.repo,
@@ -135,7 +136,7 @@ export const techArticle = (a: { title: string; description: string; path: strin
 
 export const sourcesList = (): JsonLd => ({
   "@type": "ItemList",
-  name: "Clip sources searched by Video Assets Server",
+  name: "Video sources searched by Video Assets Server",
   numberOfItems: PROVIDERS.length,
   itemListElement: PROVIDERS.map((p, i) => ({
     "@type": "ListItem",
@@ -150,15 +151,15 @@ export const catalogDataset = (): JsonLd => ({
   "@id": `${SITE.url}/stats#catalog`,
   name: "Video Assets Server catalog census",
   description:
-    "Daily counts of the music clips and clip packs held by the sites Video Assets Server searches: listings per source, by category (drums, bass, vocals, FX, foley, ambience, instruments) and licence, free and CC0 counts, and releases in the last 30 days.",
+    "Daily counts of the stock video clips held by the sites Video Assets Server searches: listings per source, by category (nature, cities, people, aerial, space, science, backgrounds, archive) and licence, free and CC0 counts, and releases in the last 30 days.",
   url: abs("/stats"),
   isAccessibleForFree: true,
   creator: { "@id": ORG_ID },
   publisher: { "@id": ORG_ID },
   dateModified: CATALOG.countedAt,
   temporalCoverage: `${CATALOG.countedAt.slice(0, 10)}/..`,
-  keywords: ["music clips", "clip packs", "drum clips", "sound effects", "CC0", "royalty free", "clip libraries"],
-  variableMeasured: ["clip listings", "free listings", "CC0 listings", "listings by category", "listings per source", "listings released in the last 30 days"],
+  keywords: ["stock video", "stock footage", "b-roll", "public domain video", "CC0", "NASA video", "archive films"],
+  variableMeasured: ["video listings", "free listings", "CC0 listings", "listings by category", "listings per source", "listings released in the last 30 days"],
   distribution: [
     { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: abs("/catalog.json"), name: "Latest census" },
     { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: abs("/catalog-history.json"), name: "Daily history" },
@@ -212,7 +213,7 @@ export const howTo = (h: { title: string; description: string; path: string; ste
   step: h.steps.map((s, i) => ({ "@type": "HowToStep", position: i + 1, name: s.name, text: s.text, url: `${abs(h.path)}#step-${i + 1}` })),
 });
 
-/** The glossary: a DefinedTermSet whose terms have stable fragment ids (/glossary#bpm). */
+/** The glossary: a DefinedTermSet whose terms have stable fragment ids (/glossary#b-roll). */
 export const definedTermSet = (g: { title: string; description: string; path: string; terms: { id: string; term: string; definition: string; aliases?: string[]; url?: string }[] }): JsonLd => ({
   "@type": "DefinedTermSet",
   "@id": `${abs(g.path)}#terms`,
@@ -234,7 +235,7 @@ export const definedTermSet = (g: { title: string; description: string; path: st
   })),
 });
 
-/** A clip source on its own page: the site as a WebSite run by its organisation. */
+/** A video source on its own page: the site as a WebSite run by its organisation. */
 export const sourceEntity = (p: { id: string; name: string; homepage: string; description: string; license?: string | null; free: boolean }): JsonLd => ({
   "@type": "WebSite",
   "@id": `${abs(`/sources/${p.id}`)}#source`,
@@ -284,32 +285,41 @@ export const graph = (nodes: JsonLd[], page?: PageMeta): string => {
   return JSON.stringify({ "@context": "https://schema.org", "@graph": [website(), organization(), ...out] }).replace(/</g, "\\u003c");
 };
 
-interface ListedSample {
+interface ListedClip {
   id: string;
   provider: string;
   title: string;
   url: string;
+  posterUrl?: string;
   previewUrl?: string;
-  thumbnailUrl?: string;
+  previewType?: string;
   author?: string;
   license?: { name: string; url?: string };
   free?: boolean;
+  width?: number;
+  height?: number;
   durationSec?: number;
+  year?: number;
 }
 
-/** ISO 8601 duration ("PT1.5S") for AudioObject. */
-const isoDuration = (sec?: number) => (sec && Number.isFinite(sec) ? `PT${Math.round(sec * 100) / 100}S` : undefined);
-
-/** One clip in a collection's ItemList: an AudioObject with its preview, credited to its source. */
-const listedSample = (a: ListedSample, providers: { id: string; name: string; homepage: string }[]): JsonLd => {
+/**
+ * One clip in a collection's ItemList: a VideoObject credited to its source.
+ * `contentUrl` is the small preview file the page itself plays (a real MP4 or
+ * WebM on the source's CDN); no `embedUrl`, since the sources' pages are not
+ * embeddable players. Clips without a poster get no thumbnailUrl rather than
+ * a made-up one.
+ */
+const listedClip = (a: ListedClip, providers: { id: string; name: string; homepage: string }[]): JsonLd => {
   const source = providers.find((p) => p.id === a.provider);
   return {
-    "@type": "AudioObject",
+    "@type": "VideoObject",
     name: a.title,
     url: a.url,
-    ...(a.previewUrl ? { contentUrl: a.previewUrl } : {}),
+    ...(a.posterUrl ? { thumbnailUrl: a.posterUrl } : {}),
+    ...(a.previewUrl ? { contentUrl: a.previewUrl, ...(a.previewType ? { encodingFormat: a.previewType } : {}) } : {}),
     ...(isoDuration(a.durationSec) ? { duration: isoDuration(a.durationSec) } : {}),
-    ...(a.thumbnailUrl ? { thumbnailUrl: a.thumbnailUrl } : {}),
+    ...(a.width && a.height ? { width: a.width, height: a.height } : {}),
+    ...(a.year ? { dateCreated: String(a.year) } : {}),
     ...(a.author ? { author: { "@type": "Person", name: a.author } } : {}),
     ...(a.license ? { license: a.license.url ?? a.license.name } : {}),
     ...(a.free !== undefined ? { isAccessibleForFree: a.free } : {}),
@@ -327,12 +337,12 @@ export const collectionPage = (c: {
   path: string;
   dateModified?: Date;
   about?: string[];
-  clips?: ListedSample[];
+  clips?: ListedClip[];
   links?: { name: string; path: string }[];
 }): JsonLd => {
   const url = abs(c.path);
   const items = c.clips
-    ? c.clips.map((a, i) => ({ "@type": "ListItem", position: i + 1, item: listedSample(a, PROVIDERS) }))
+    ? c.clips.map((a, i) => ({ "@type": "ListItem", position: i + 1, item: listedClip(a, PROVIDERS) }))
     : (c.links ?? []).map((l, i) => ({ "@type": "ListItem", position: i + 1, name: l.name, url: abs(l.path) }));
   return {
     "@type": "CollectionPage",

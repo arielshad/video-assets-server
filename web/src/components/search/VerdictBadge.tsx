@@ -21,8 +21,11 @@ const SHORT: Record<string, string> = {
   no: "Non-commercial",
 };
 
-/** Green / amber / red licence verdict, with the licence name and note in a tooltip. */
-export function VerdictBadge({ license, size = "sm", className }: { license?: License; size?: "sm" | "lg"; className?: string }) {
+/**
+ * Green / amber / red licence verdict, with the licence name and note in a
+ * tooltip. `plain` drops the tooltip (inside a card that is itself a button).
+ */
+export function VerdictBadge({ license, size = "sm", className, plain = false }: { license?: License; size?: "sm" | "lg"; className?: string; plain?: boolean }) {
   const verdict = (license?.verdict ?? "check-terms") as Verdict;
   const tone = verdictTone(verdict);
   const Icon = ICON[tone];
@@ -35,14 +38,15 @@ export function VerdictBadge({ license, size = "sm", className }: { license?: Li
         TONE_CLASS[tone],
         className,
       )}
-      tabIndex={size === "sm" ? 0 : undefined}
-      aria-label={`Licence: ${license?.name ?? "not stated"}. ${label}`}
+      tabIndex={size === "sm" && !plain ? 0 : undefined}
+      aria-label={plain ? undefined : `Licence: ${license?.name ?? "not stated"}. ${label}`}
+      title={plain ? `${license?.name ?? "No licence stated"}: ${label}` : undefined}
     >
       <Icon className={size === "sm" ? "size-3" : "size-4"} aria-hidden="true" />
       {size === "sm" ? SHORT[verdict] ?? label : label}
     </span>
   );
-  if (size === "lg") return badge;
+  if (size === "lg" || plain) return badge;
   return (
     <Tooltip>
       <TooltipTrigger asChild>{badge}</TooltipTrigger>

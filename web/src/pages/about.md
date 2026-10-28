@@ -1,21 +1,21 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: About Video Assets Server
-description: What Video Assets Server is, who runs it, how it finds music samples across many sites, and how it treats licences and the sites it searches.
+description: What Video Assets Server is, who runs it, how it finds free stock video across many sites, and how it treats licences and the sites it searches.
 schemaType: AboutPage
 ---
 
 # About Video Assets Server
 
-**Video Assets Server** (https://video.shep.bot) is a free search engine and API for music samples. One query searches many sample sites at once, including Freesound, Wikimedia Commons, Openverse, ccMixter and the Internet Archive, sound effect libraries and producer packs, and returns kicks, snares, hats, claps, 808s, loops, vocals, FX, foley, ambience and instrument one-shots. Every result has a preview you can play, its tempo, key and length where known, and a plain verdict on whether you can use it in a track you release.
+**Video Assets Server** (https://video.shep.bot) is a free search engine and API for stock video. One query searches NASA's Image and Video Library and Scientific Visualization Studio, Wikimedia Commons and the Internet Archive directly, and links into Pexels, Pixabay, Coverr, Mixkit, the paid stock libraries and other sites that can't be searched automatically. It returns b-roll, backgrounds, nature, cities, space, science and archive films as a grid you can watch: a poster, a hover preview, the resolution, shape and length, and a plain verdict on whether you can use the clip in a commercial video.
 
-It exists because finding a usable sample usually means opening a dozen tabs, auditioning sounds one site at a time, and then reading licences that were written for something else. Video Assets Server does that comparison once and puts the answer next to the sound.
+It exists because finding usable footage usually means opening a dozen tabs, scrubbing through clips one site at a time, and then reading licences that were written for something else. Video Assets Server does that comparison once and puts the answer next to the clip.
 
 ## Who it is for
 
-- **Producers and beatmakers** who want the right kick, 808 or riser now, with a licence they can release under.
-- **AI agents** (Claude Code, Cursor, GitHub Copilot, Windsurf, Codex and others) that make music, games or apps and need to find, vet and fetch sounds on their own. The service is an [MCP server](/docs/mcp) and has an [agent guide](/AGENTS.md).
-- **Developers and live coders** who call the [REST API](/docs/api) from scripts, DAW extensions or [Strudel](https://strudel.cc).
+- **Editors and video makers** who need a shot of waves, a skyline, a rocket launch or a 1950s newsreel now, in the right shape and size, with a licence they can publish under.
+- **AI agents** (Claude Code, Cursor, GitHub Copilot, Windsurf, Codex and others) that build videos, sites or apps and need to find, vet and fetch footage on their own. The service is an [MCP server](/docs/mcp) and has an [agent guide](/AGENTS.md).
+- **Developers** who call the [REST API](/docs/api) or the [CLI](/docs/cli) from scripts, render pipelines, ffmpeg or [Remotion](https://www.remotion.dev).
 
 ## Who runs it
 
@@ -23,9 +23,8 @@ Video Assets Server is open source under the Apache-2.0 licence and developed in
 
 ## How it treats sources and licences
 
-- **Sounds belong to their creators.** The service never re-hosts, mirrors or resells samples. Previews play from the source sites, single-file downloads redirect to the source, and zips are streamed from the source's files with the credits added.
-- **Licences come first.** Every result shows its licence, who stated it and a verdict on commercial use, decided by one set of rules for every source ([how verdicts work](/docs/licences)). When a licence is unclear or only asserted by an uploader, the result says so instead of guessing.
-- **Accounts stay with the sources.** When a site only gives full-quality originals to logged-in users, as Freesound does, Video Assets Server plays the preview and sends you to the site to download the original with your own account.
-- **Polite access.** The server identifies itself with a descriptive User-Agent, caches responses, deduplicates identical requests and gives every source its own timeout. Sites that don't allow automated search (Splice, Looperman and others) are never scraped; they only get a deep link to their own search.
+- **No video passes through this server.** Clips belong to their creators and stay where they are. Posters, previews and the player load straight from the source's servers, downloads are redirects to the source's files, and the server only adds what it writes itself: search results, licence verdicts and credit files.
+- **Licences come first.** Every result shows its licence, who stated it, a verdict on commercial use and an editorial flag when people, insignia or brands appear without releases, decided by one set of rules for every source ([how verdicts work](/docs/licences)). When a licence is unclear or only asserted by an uploader, the result says so instead of guessing.
+- **Polite access.** The server identifies itself with a descriptive User-Agent, caches responses, deduplicates identical requests and gives every source its own timeout. Sites whose terms don't allow automated search or aggregation (Pexels, Pixabay, Mixkit and others) are never scraped; they only get a deep link to their own search.
 
 See [Sources & licences](/docs/sources) for the full list, [Privacy](/privacy) for what the service records, and [Contact](/contact) to reach the maintainers.

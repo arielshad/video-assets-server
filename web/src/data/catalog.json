@@ -1,698 +1,185 @@
 {
-  "countedAt": "2026-10-28T10:50:25.924Z",
+  "countedAt": "2026-10-28T16:20:22.459Z",
   "totals": {
     "listings": {
-      "count": 312742,
+      "count": 520959,
       "atLeast": true
     },
     "free": {
-      "count": 310677,
+      "count": 520959,
       "atLeast": true
     },
     "cc0": {
-      "count": 5511
+      "count": 0
     },
     "directDownload": {
-      "count": 307037,
+      "count": 520959,
       "atLeast": true
     },
-    "addedLast30Days": 1,
-    "sourcesCounted": 18,
-    "sourcesLinked": 22
+    "addedLast30Days": 0,
+    "sourcesCounted": 3,
+    "sourcesLinked": 19
   },
   "byCategory": {
-    "ambience": {
-      "count": 25384
+    "archive": {
+      "count": 10461
     },
-    "foley": {
-      "count": 3906
-    },
-    "fx": {
-      "count": 13745
-    },
-    "vocals": {
-      "count": 6125
-    },
-    "other": {
-      "count": 12826
-    },
-    "drums": {
-      "count": 5269
-    },
-    "synth": {
-      "count": 1360
-    },
-    "bass": {
-      "count": 428
-    },
-    "keys": {
-      "count": 332
-    },
-    "mallets": {
-      "count": 266
-    },
-    "brass": {
-      "count": 114
-    },
-    "woodwind": {
-      "count": 268
-    },
-    "strings": {
-      "count": 414
-    },
-    "guitar": {
-      "count": 139
+    "space": {
+      "count": 10601
     }
   },
   "byLicense": {
-    "LicenseRef-BBC-RemArc": 33066,
-    "CC0-1.0": 5511,
-    "Other (a cappellas)": 4471,
-    "LicenseRef-Unknown": 4341,
-    "LicenseRef-Free-Wave-Samples-licence": 2353,
-    "CC BY / BY-SA / CC0 (a cappellas)": 1515,
-    "LicenseRef-Black-Octopus-Sound-licence": 1464,
-    "LicenseRef-Ghosthack-licence": 605,
-    "LicenseRef-GPL-3-0-repository-licence": 481,
-    "CC-BY-SA-4.0": 445,
-    "LicenseRef-MusicRadar-SampleRadar-licence": 287,
-    "LicenseRef-99Sounds-licence": 51,
-    "LicenseRef-The-Unlicense": 40,
-    "CC-BY-3.0": 30,
-    "CC-BY-4.0": 21,
-    "LicenseRef-Adobe-Audition-sound-effects-Adobe-EULA": 7,
-    "LicenseRef-University-of-Iowa-MIS-terms": 7,
-    "LicenseRef-Philharmonia-sound-samples-licence": 4,
-    "LicenseRef-Reverb-Machine-licence": 4,
-    "LicenseRef-AVL-Drumkits-licence-CC-BY-SA-3-0-music-exempt": 3
+    "Public domain / CC0": 335850,
+    "CC BY / BY-SA": 166776
   },
   "sources": [
-    {
-      "id": "openverse",
-      "name": "Openverse",
-      "homepage": "https://openverse.org",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 4578726,
-      "free": 4578726,
-      "byCategory": {},
-      "categories": {
-        "Jamendo": 644709,
-        "Wikimedia Commons": 3986828,
-        "Freesound": 591898
-      },
-      "mirror": true,
-      "unit": "samples",
-      "method": "Openverse /v1/audio/stats/: media counts of the sources we search (Freesound + Wikimedia Commons audio; Jamendo songs listed but not searched)",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "wikimediacommons",
-      "name": "Wikimedia Commons",
-      "homepage": "https://commons.wikimedia.org",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 218681,
-      "free": 218681,
-      "byCategory": {},
-      "unit": "samples",
-      "method": "MediaWiki search API: total hits in the File namespace for audio files, excluding MIDI, pronunciations and Lingua Libre recordings (still includes music and speech)",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "bbc",
-      "name": "BBC Sound Effects",
-      "homepage": "https://sound-effects.bbcrewind.co.uk",
-      "license": "LicenseRef-BBC-RemArc",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 33066,
-      "free": 33066,
-      "byCategory": {
-        "ambience": 25329,
-        "foley": 3889,
-        "fx": 5286
-      },
-      "byLicense": {
-        "LicenseRef-BBC-RemArc": 33066
-      },
-      "categories": {
-        "Nature": 17630,
-        "Bells": 261,
-        "Destruction": 263,
-        "Daily Life": 2094,
-        "Electronics": 590,
-        "Crowds": 482,
-        "Birds": 227,
-        "Industry": 274,
-        "Footsteps": 617,
-        "Toys": 36,
-        "Sport": 681,
-        "Animals": 984,
-        "Events": 110,
-        "Applause": 131,
-        "Atmosphere": 279,
-        "Fire": 52,
-        "Medical": 113,
-        "Comedy": 373,
-        "Transport": 3930,
-        "Machines": 2963,
-        "Aircraft": 601,
-        "Military": 1097,
-        "Clocks": 716
-      },
-      "unit": "samples",
-      "method": "BBC RemArc search API: total of an empty search; categories from /api/sfx/cached/categoryaggregations (mapped to ours)",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "ccmixter",
-      "name": "ccMixter",
-      "homepage": "https://ccmixter.org",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 21951,
-      "free": 21951,
-      "byCategory": {
-        "vocals": 5986
-      },
-      "byLicense": {
-        "CC BY / BY-SA / CC0 (a cappellas)": 1515,
-        "Other (a cappellas)": 4471
-      },
-      "categories": {
-        "acappella": 5986,
-        "sample": 15965
-      },
-      "unit": "samples",
-      "method": "ccMixter Query API f=count for tags=acappella and tags=sample (may overlap), and acappella with lic=open",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "opengameart",
-      "name": "OpenGameArt",
-      "homepage": "https://opengameart.org",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 11915,
-      "free": 11915,
-      "byCategory": {
-        "fx": 1737,
-        "other": 10178
-      },
-      "categories": {
-        "Sound Effect": 1737,
-        "Music": 10178
-      },
-      "method": "Result counts of the Sound Effect and Music listings (\"Displaying 1 - 24 of N\"), 10 s apart",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "orangefreesounds",
-      "name": "Orange Free Sounds",
-      "homepage": "https://orangefreesounds.com",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 8225,
-      "free": 8225,
-      "byCategory": {
-        "drums": 268,
-        "synth": 292,
-        "fx": 6389,
-        "other": 1213
-      },
-      "categories": {
-        "3d Sounds": 32,
-        "Categories": 3,
-        "Loops": 561,
-        "Music": 1213,
-        "News": 1,
-        "Sound Effects": 6389
-      },
-      "unit": "samples",
-      "method": "X-WP-Total of the posts (minus paid packs and collections); categories from the WordPress category counts",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "strudel",
-      "name": "Strudel sample banks",
-      "homepage": "https://strudel.cc/learn/samples/",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 7244,
-      "free": 7244,
-      "byCategory": {
-        "drums": 4250,
-        "bass": 254,
-        "keys": 325,
-        "fx": 140,
-        "mallets": 263,
-        "foley": 7,
-        "other": 1176,
-        "synth": 179,
-        "ambience": 42,
-        "brass": 111,
-        "vocals": 79,
-        "woodwind": 265,
-        "strings": 134,
-        "guitar": 19
-      },
-      "byLicense": {
-        "LicenseRef-Unknown": 4341,
-        "CC0-1.0": 1908,
-        "CC-BY-3.0": 29,
-        "CC-BY-SA-4.0": 445,
-        "LicenseRef-The-Unlicense": 40,
-        "LicenseRef-GPL-3-0-repository-licence": 481
-      },
-      "categories": {
-        "drums.perc": 1478,
-        "other": 1176,
-        "drums.snare": 741,
-        "drums.kick": 627,
-        "drums.tom": 538,
-        "keys": 325,
-        "woodwind": 265,
-        "mallets": 263,
-        "bass": 234,
-        "drums.hat.closed": 162,
-        "strings": 134,
-        "drums.cymbal.crash": 128
-      },
-      "unit": "samples",
-      "method": "Every file in 8 allow-listed Strudel manifests",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "bigsoundbank",
-      "name": "BigSoundBank",
-      "homepage": "https://bigsoundbank.com",
-      "license": "CC0-1.0",
-      "pricing": "free",
-      "supportsDownload": false,
-      "total": 3584,
-      "free": 3584,
-      "byCategory": {},
-      "unit": "samples",
-      "method": "Result count of the site's search with an empty query (every sound)",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
     {
       "id": "internetarchive",
       "name": "Internet Archive",
       "homepage": "https://archive.org",
       "pricing": "free",
       "supportsDownload": true,
-      "total": 2524,
-      "free": 2524,
-      "byCategory": {},
-      "unit": "packs",
-      "method": "advancedsearch.php numFound for audio items tagged as samples/SFX/loops with a CC0, PD, CC BY or CC BY-SA licenseurl, commercial publishers excluded",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "freewavesamples",
-      "name": "Free Wave Samples",
-      "homepage": "https://freewavesamples.com",
-      "license": "LicenseRef-Free-Wave-Samples-licence",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 2353,
-      "free": 2353,
+      "total": 502626,
+      "free": 502626,
       "byCategory": {
-        "drums": 684,
-        "bass": 162,
-        "guitar": 110,
-        "synth": 858,
-        "strings": 271,
-        "other": 79,
-        "fx": 139,
-        "vocals": 50
+        "archive": 10461
+      },
+      "byLicense": {
+        "Public domain / CC0": 335850,
+        "CC BY / BY-SA": 166776
       },
       "categories": {
-        "Drums": 457,
-        "Cymbals": 158,
-        "Bass": 162,
-        "Guitar": 110,
-        "Synthesizer": 858,
-        "Orchestral": 271,
-        "Ethnic Instruments": 79,
-        "Loops": 69,
-        "Sound Effects": 139,
-        "Vocal": 50
+        "Prelinger Archives": 10461
       },
-      "unit": "samples",
-      "method": "Sum of \"N samples of this type\" on the ten top-level /sample-type/ pages",
-      "countedAt": "2026-10-28T10:50:25.924Z"
+      "method": "advancedsearch.php numFound for movies with a CC0, public-domain or CC BY(-SA) licenseurl, TV captures and trailers excluded",
+      "countedAt": "2026-10-28T16:20:22.459Z"
     },
     {
-      "id": "blackoctopus",
-      "name": "Black Octopus Sound",
-      "homepage": "https://blackoctopus-sound.com",
-      "license": "LicenseRef-Black-Octopus-Sound-licence",
-      "pricing": "freemium",
-      "supportsDownload": false,
-      "total": 1464,
-      "free": 4,
-      "byCategory": {},
-      "unit": "packs",
-      "method": "X-WP-Total of the WooCommerce Store API products, minus the Software and Hardware categories; free = the Free category",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "soundbible",
-      "name": "SoundBible",
-      "homepage": "https://soundbible.com",
+      "id": "nasasvs",
+      "name": "NASA Scientific Visualization Studio",
+      "homepage": "https://svs.gsfc.nasa.gov",
       "pricing": "free",
       "supportsDownload": true,
-      "total": 718,
+      "total": 10601,
+      "free": 10601,
+      "byCategory": {
+        "space": 10601
+      },
+      "method": "SVS search API count for all pages (some pages hold only images)",
+      "countedAt": "2026-10-28T16:20:22.459Z"
+    },
+    {
+      "id": "nasa",
+      "name": "NASA Image and Video Library",
+      "homepage": "https://images.nasa.gov",
+      "pricing": "free",
+      "supportsDownload": true,
+      "total": 7732,
       "atLeast": true,
-      "free": 718,
+      "free": 7732,
       "byCategory": {},
-      "unit": "samples",
-      "method": "Sound pages in soundbible.com/sitemap.xml (not kept current, so a lower bound)",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "ghosthack",
-      "name": "Ghosthack",
-      "homepage": "https://www.ghosthack.de",
-      "license": "LicenseRef-Ghosthack-licence",
-      "pricing": "paid",
-      "supportsDownload": false,
-      "total": 605,
-      "byCategory": {},
-      "unit": "packs",
-      "method": "Top-level product pages in ghosthack.de's sitemap (includes a few plugins and bundles)",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "sampleradar",
-      "name": "MusicRadar SampleRadar",
-      "homepage": "https://www.musicradar.com/news/tech/free-music-samples-royalty-free-loops-hits-and-multis-to-download-sampleradar",
-      "license": "LicenseRef-MusicRadar-SampleRadar-licence",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 287,
-      "free": 287,
-      "byCategory": {
-        "other": 169,
-        "synth": 24,
-        "drums": 39,
-        "bass": 12,
-        "ambience": 10,
-        "guitar": 7,
-        "fx": 17,
-        "keys": 4,
-        "vocals": 3,
-        "foley": 2
-      },
       "categories": {
-        "other": 169,
-        "drums": 30,
-        "synth": 20,
-        "ambience": 10,
-        "bass": 8,
-        "fx": 7,
-        "guitar": 7,
-        "drums.break": 4,
-        "keys": 4,
-        "fx.noise": 3,
-        "bass.808": 2,
-        "bass.sub": 2
+        "launches": 3435
       },
-      "unit": "packs",
-      "method": "Every listing in the source's catalogue",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "freepacks",
-      "name": "Free pack news",
-      "homepage": "https://99sounds.org/sounds/",
-      "pricing": "free",
-      "supportsDownload": false,
-      "total": 52,
-      "free": 52,
-      "byCategory": {
-        "fx": 27,
-        "other": 10,
-        "foley": 3,
-        "ambience": 2,
-        "drums": 4,
-        "synth": 5,
-        "strings": 1
-      },
-      "byLicense": {
-        "LicenseRef-99Sounds-licence": 48,
-        "LicenseRef-Free-pack-see-the-article": 1,
-        "LicenseRef-Reverb-Machine-licence": 3
-      },
-      "categories": {
-        "fx": 18,
-        "other": 10,
-        "fx.glitch": 4,
-        "foley": 3,
-        "fx.noise": 3,
-        "synth": 3,
-        "ambience": 2,
-        "drums": 2,
-        "drums.clap": 1,
-        "drums.kick": 1,
-        "fx.impact": 1,
-        "fx.transition": 1
-      },
-      "unit": "packs",
-      "addedLast30Days": 1,
-      "method": "Items in the free-pack feeds (99Sounds free sounds, BPB's latest free soundware posts, Reverb Machine's free products)",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "curated",
-      "name": "Curated free libraries",
-      "homepage": "https://github.com/arielshad/video-assets-server/blob/main/src/providers/data/curated-packs.json",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 47,
-      "free": 47,
-      "byCategory": {
-        "strings": 7,
-        "brass": 3,
-        "woodwind": 2,
-        "drums": 13,
-        "guitar": 2,
-        "mallets": 3,
-        "keys": 3,
-        "foley": 3,
-        "fx": 5,
-        "vocals": 3,
-        "ambience": 1,
-        "synth": 2
-      },
-      "byLicense": {
-        "LicenseRef-Philharmonia-sound-samples-licence": 4,
-        "LicenseRef-University-of-Iowa-MIS-terms": 7,
-        "CC0-1.0": 9,
-        "LicenseRef-Sampling-Plus-1.0": 1,
-        "CC-BY-3.0": 1,
-        "CC-BY-4.0": 7,
-        "LicenseRef-AVL-Drumkits-licence-CC-BY-SA-3-0-music-exempt": 3,
-        "LicenseRef-Adobe-Audition-sound-effects-Adobe-EULA": 7,
-        "LicenseRef-Reverb-Machine-licence": 1,
-        "LicenseRef-Goldbaby-licence": 1,
-        "LicenseRef-Sonniss-GDC-bundle-licence": 1,
-        "LicenseRef-99Sounds-licence": 3,
-        "LicenseRef-Legowelt-sample-terms": 1,
-        "LicenseRef-Bedroom-Producers-Blog-sample-terms": 1
-      },
-      "categories": {
-        "drums": 8,
-        "strings": 7,
-        "fx": 4,
-        "brass": 3,
-        "drums.perc": 3,
-        "foley": 3,
-        "keys": 3,
-        "mallets": 3,
-        "guitar": 2,
-        "synth": 2,
-        "vocals": 2,
-        "woodwind": 2
-      },
-      "unit": "packs",
-      "method": "Every listing in the source's catalogue",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "zenodo",
-      "name": "Zenodo datasets",
-      "homepage": "https://zenodo.org",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 16,
-      "free": 16,
-      "byCategory": {
-        "strings": 1,
-        "vocals": 2,
-        "guitar": 1,
-        "drums": 11,
-        "woodwind": 1
-      },
-      "byLicense": {
-        "CC-BY-4.0": 14,
-        "LicenseRef-Mixed-Freesound-licences-CC0-CC-BY-CC-BY-NC": 1,
-        "CC-BY-NC-4.0": 1
-      },
-      "categories": {
-        "drums": 9,
-        "drums.perc": 2,
-        "guitar": 1,
-        "strings": 1,
-        "vocals": 1,
-        "vocals.choir": 1,
-        "woodwind": 1
-      },
-      "unit": "packs",
-      "addedLast30Days": 0,
-      "method": "Every listing in the source's catalogue",
-      "countedAt": "2026-10-28T10:50:25.924Z"
-    },
-    {
-      "id": "kenney",
-      "name": "Kenney",
-      "homepage": "https://kenney.nl/assets/category:Audio",
-      "license": "CC0-1.0",
-      "pricing": "free",
-      "supportsDownload": true,
-      "total": 10,
-      "free": 10,
-      "byCategory": {
-        "foley": 2,
-        "fx": 5,
-        "vocals": 2,
-        "other": 1
-      },
-      "categories": {
-        "fx": 4,
-        "foley": 2,
-        "vocals.spoken": 2,
-        "fx.impact": 1,
-        "other": 1
-      },
-      "unit": "packs",
-      "method": "Every listing in the source's catalogue",
-      "countedAt": "2026-10-28T10:50:25.924Z"
+      "method": "images-api.nasa.gov search total_hits for media_type=video (q=nasa matches almost every item, so it is a lower bound)",
+      "countedAt": "2026-10-28T16:20:22.459Z"
     }
   ],
   "linked": [
     {
-      "id": "primeloops",
-      "name": "Prime Loops",
-      "homepage": "https://primeloops.com"
+      "id": "pexels",
+      "name": "Pexels",
+      "homepage": "https://www.pexels.com/videos/"
     },
     {
-      "id": "cymatics",
-      "name": "Cymatics",
-      "homepage": "https://cymatics.fm"
+      "id": "pixabay",
+      "name": "Pixabay",
+      "homepage": "https://pixabay.com/videos/"
     },
     {
-      "id": "functionloops",
-      "name": "Function Loops",
-      "homepage": "https://www.functionloops.com"
+      "id": "coverr",
+      "name": "Coverr",
+      "homepage": "https://coverr.co"
     },
     {
       "id": "mixkit",
       "name": "Mixkit",
-      "homepage": "https://mixkit.co"
+      "homepage": "https://mixkit.co/free-stock-video/"
     },
     {
-      "id": "splice",
-      "name": "Splice",
-      "homepage": "https://splice.com/sounds"
+      "id": "freepik",
+      "name": "Freepik videos (Videvo)",
+      "homepage": "https://www.freepik.com/videos"
     },
     {
-      "id": "loopmasters",
-      "name": "Loopmasters",
-      "homepage": "https://www.loopmasters.com"
+      "id": "vecteezy",
+      "name": "Vecteezy",
+      "homepage": "https://www.vecteezy.com/free-videos"
     },
     {
-      "id": "loopcloud",
-      "name": "Loopcloud",
-      "homepage": "https://www.loopcloud.com"
+      "id": "videezy",
+      "name": "Videezy",
+      "homepage": "https://www.videezy.com"
     },
     {
-      "id": "producerloops",
-      "name": "Producer Loops",
-      "homepage": "https://www.producerloops.com"
+      "id": "europeana",
+      "name": "Europeana",
+      "homepage": "https://www.europeana.eu"
     },
     {
-      "id": "adsr",
-      "name": "ADSR Sounds",
-      "homepage": "https://www.adsrsounds.com"
+      "id": "loc",
+      "name": "Library of Congress",
+      "homepage": "https://www.loc.gov/film-and-videos/"
     },
     {
-      "id": "pluginboutique",
-      "name": "Plugin Boutique",
-      "homepage": "https://www.pluginboutique.com"
+      "id": "actionvfx",
+      "name": "ActionVFX",
+      "homepage": "https://www.actionvfx.com"
     },
     {
-      "id": "landr",
-      "name": "LANDR Samples",
-      "homepage": "https://samples.landr.com"
+      "id": "productioncrate",
+      "name": "ProductionCrate (FootageCrate)",
+      "homepage": "https://footagecrate.com"
     },
     {
-      "id": "tracklib",
-      "name": "Tracklib",
-      "homepage": "https://www.tracklib.com"
+      "id": "shutterstock",
+      "name": "Shutterstock",
+      "homepage": "https://www.shutterstock.com/video"
     },
     {
-      "id": "looperman",
-      "name": "Looperman",
-      "homepage": "https://www.looperman.com"
+      "id": "adobestock",
+      "name": "Adobe Stock",
+      "homepage": "https://stock.adobe.com/video"
     },
     {
-      "id": "samplefocus",
-      "name": "SampleFocus",
-      "homepage": "https://samplefocus.com"
+      "id": "gettyimages",
+      "name": "Getty Images",
+      "homepage": "https://www.gettyimages.com/footage"
     },
     {
-      "id": "zapsplat",
-      "name": "Zapsplat",
-      "homepage": "https://www.zapsplat.com"
+      "id": "istock",
+      "name": "iStock",
+      "homepage": "https://www.istockphoto.com/stock-videos"
     },
     {
-      "id": "pixabay",
-      "name": "Pixabay Sound Effects",
-      "homepage": "https://pixabay.com/sound-effects/"
+      "id": "storyblocks",
+      "name": "Storyblocks",
+      "homepage": "https://www.storyblocks.com/video"
     },
     {
-      "id": "sonniss",
-      "name": "Sonniss",
-      "homepage": "https://sonniss.com"
+      "id": "pond5",
+      "name": "Pond5",
+      "homepage": "https://www.pond5.com"
     },
     {
-      "id": "uppbeat",
-      "name": "Uppbeat SFX",
-      "homepage": "https://uppbeat.io/sfx"
+      "id": "envato",
+      "name": "Envato Elements",
+      "homepage": "https://elements.envato.com/stock-video"
     },
     {
-      "id": "bandcamp",
-      "name": "Bandcamp",
-      "homepage": "https://bandcamp.com"
-    },
-    {
-      "id": "soundsnap",
-      "name": "Soundsnap",
-      "homepage": "https://www.soundsnap.com"
-    },
-    {
-      "id": "epidemicsound",
-      "name": "Epidemic Sound",
-      "homepage": "https://www.epidemicsound.com/sound-effects/"
-    },
-    {
-      "id": "artlist",
-      "name": "Artlist SFX",
-      "homepage": "https://artlist.io/sfx"
+      "id": "artgrid",
+      "name": "Artgrid",
+      "homepage": "https://artgrid.io"
     }
   ]
 }

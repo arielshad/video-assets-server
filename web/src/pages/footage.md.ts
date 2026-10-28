@@ -1,4 +1,4 @@
-// Markdown twin of /clips.
+// Markdown twin of /footage.
 import type { APIRoute } from "astro";
 import { allCollections, allHubs } from "@/lib/collections";
 import { indexMarkdown } from "@/lib/collections-md";

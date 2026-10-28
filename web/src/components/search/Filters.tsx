@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, Download, Music2, SlidersHorizontal, X } from "lucide-react";
+import { ChevronDown, Clock, Download, Sparkles, SlidersHorizontal, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { PITCH_CLASSES, TOP_CATEGORIES, categoryLabel, depth, formLabel, subCategories } from "@/lib/vocab";
+import { STYLES, TOP_CATEGORIES, categoryLabel, depth, styleLabel, subCategories } from "@/lib/vocab";
 import type { Provider } from "./api";
 
 const chip = (on: boolean) =>
@@ -17,7 +17,7 @@ const inTop = (top: string, c: string) => c === top || c.startsWith(`${top}.`);
 
 /**
  * Top-level category chips; chips with sub-categories open a popover to pick
- * them (Drums ▸ Kick, Snare…). `value` is the list of selected category ids.
+ * them (Nature ▸ Ocean & beach, Sky & clouds…). `value` is the list of selected category ids.
  */
 export function CategoryChips({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
   const tops = TOP_CATEGORIES.filter((t) => t !== "other");
@@ -78,127 +78,114 @@ export function CategoryChips({ value, onChange }: { value: string[]; onChange: 
   );
 }
 
-/** Any / One-shot / Loop. */
-export function FormToggle({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  const options = ["", "one-shot", "loop"];
+/** A compact segmented control ("Any · Landscape · Vertical · Square"). */
+export function Segmented<T extends string>({ label, options, value, onChange }: { label: string; options: { value: T; label: string; title?: string }[]; value: T; onChange: (v: T) => void }) {
   return (
-    <div role="group" aria-label="Form" className="inline-flex h-7 items-center rounded-full border p-0.5 text-xs">
+    <div role="group" aria-label={label} className="inline-flex h-7 max-w-full items-center overflow-x-auto rounded-full border p-0.5 text-xs [scrollbar-width:none]">
       {options.map((o) => (
         <button
-          key={o || "any"}
+          key={o.value || "any"}
           type="button"
-          aria-pressed={value === o}
-          onClick={() => onChange(o)}
-          className={cn("h-full rounded-full px-2.5 font-medium transition", value === o ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}
+          aria-pressed={value === o.value}
+          title={o.title}
+          onClick={() => onChange(o.value)}
+          className={cn("h-full shrink-0 whitespace-nowrap rounded-full px-2.5 font-medium transition", value === o.value ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}
         >
-          {o ? formLabel(o) : "Any"}
+          {o.label}
         </button>
       ))}
     </div>
   );
 }
 
-const BPM_RE = /^\s*(\d{2,3})\s*(?:[-–]\s*(\d{2,3}))?\s*$/;
-
-/** "140" or "120-128"; applied on Enter or blur. */
-export function BpmInput({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  const [draft, setDraft] = useState(value);
-  useEffect(() => setDraft(value), [value]);
-  const valid = draft.trim() === "" || BPM_RE.test(draft);
-  const apply = () => {
-    if (!valid) return;
-    const m = BPM_RE.exec(draft);
-    const next = m ? (m[2] ? `${Math.min(+m[1]!, +m[2])}-${Math.max(+m[1]!, +m[2])}` : m[1]!) : "";
-    if (next !== value) onChange(next);
-    setDraft(next);
-  };
+/** Timelapse, slow motion, seamless loop…: several may be picked. */
+export function StylePicker({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
+  const label = value.length === 0 ? "Style" : value.length === 1 ? styleLabel(value[0]) : `${value.length} styles`;
   return (
-    <label className={cn("inline-flex h-7 items-center gap-1.5 rounded-full border pl-2.5 pr-1 text-xs", value ? "border-primary/60" : "", !valid && "border-destructive")}>
-      <span className="font-medium text-muted-foreground">BPM</span>
-      <input
-        value={draft}
-        onChange={(e) => setDraft(e.target.value)}
-        onBlur={apply}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            e.preventDefault();
-            apply();
-          }
-        }}
-        inputMode="numeric"
-        placeholder="any"
-        aria-label="Tempo in BPM, e.g. 140 or 120-128"
-        aria-invalid={!valid || undefined}
-        className="h-full w-[4.75rem] bg-transparent outline-none placeholder:text-muted-foreground/60"
-      />
-    </label>
+    <Popover>
+      <PopoverTrigger asChild>
+        <button type="button" className={cn(chip(value.length > 0), "gap-1 px-3")} aria-label={value.length ? `Style: ${value.map(styleLabel).join(", ")}` : "Style: any"}>
+          <Sparkles className="size-3.5" /> {label}
+          <ChevronDown className="size-3.5" />
+        </button>
+      </PopoverTrigger>
+      <PopoverContent align="start" className="w-60 p-2">
+        <p className="px-1.5 pb-1.5 text-xs font-medium text-muted-foreground">How it was shot or made</p>
+        {STYLES.map((s) => (
+          <label key={s.id} className="flex cursor-pointer items-center gap-2 rounded-md px-1.5 py-1 text-sm hover:bg-accent">
+            <Checkbox checked={value.includes(s.id)} onCheckedChange={(v) => onChange(v ? [...value, s.id] : value.filter((x) => x !== s.id))} />
+            {s.label}
+          </label>
+        ))}
+        <p className="mt-1.5 px-1.5 text-[11px] leading-snug text-muted-foreground">Sources rarely tag styles, so matching clips are ranked first rather than the rest dropped.</p>
+        {value.length > 0 && (
+          <Button variant="ghost" size="sm" className="mt-1 w-full" onClick={() => onChange([])}>
+            Any style
+          </Button>
+        )}
+      </PopoverContent>
+    </Popover>
   );
 }
 
-/** 12 tonics × major/minor. `value` like "F minor" or "". */
-export function KeyPicker({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+const SEC_RE = /^\s*(\d{1,4})?\s*$/;
+
+/** Minimum and maximum length in seconds; applied with the button. */
+export function DurationPicker({ min, max, onChange }: { min: string; max: string; onChange: (min: string, max: string) => void }) {
   const [open, setOpen] = useState(false);
-  const [tonic, mode] = value ? (value.split(" ") as [string, string?]) : ["", "minor"];
-  const [pickMode, setPickMode] = useState<string>(mode ?? "minor");
+  const [lo, setLo] = useState(min);
+  const [hi, setHi] = useState(max);
+  useEffect(() => {
+    setLo(min);
+    setHi(max);
+  }, [min, max, open]);
+  const valid = SEC_RE.test(lo) && SEC_RE.test(hi) && !(lo.trim() && hi.trim() && Number(lo) > Number(hi));
+  const on = Boolean(min || max);
+  const label = on ? (min && max ? `${min}–${max} s` : min ? `≥ ${min} s` : `≤ ${max} s`) : "Length";
+  const apply = () => {
+    if (!valid) return;
+    onChange(lo.trim(), hi.trim());
+    setOpen(false);
+  };
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <button type="button" className={cn(chip(Boolean(value)), "gap-1 px-3")} aria-label={value ? `Key: ${value}` : "Key: any"}>
-          <Music2 className="size-3.5" /> {value || "Key"}
+        <button type="button" className={cn(chip(on), "gap-1 px-3")} aria-label={on ? `Length: ${label}` : "Length: any"}>
+          <Clock className="size-3.5" /> {label}
           <ChevronDown className="size-3.5" />
         </button>
       </PopoverTrigger>
       <PopoverContent align="start" className="w-64 p-3">
-        <div role="group" aria-label="Mode" className="mb-2 grid grid-cols-2 rounded-md border p-0.5 text-xs">
-          {["major", "minor"].map((m) => (
-            <button
-              key={m}
-              type="button"
-              aria-pressed={pickMode === m}
-              onClick={() => {
-                setPickMode(m);
-                if (tonic) onChange(`${tonic} ${m}`);
-              }}
-              className={cn("rounded px-2 py-1 font-medium capitalize", pickMode === m ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}
-            >
-              {m}
-            </button>
-          ))}
-        </div>
-        <div className="grid grid-cols-4 gap-1" role="group" aria-label="Tonic">
-          {PITCH_CLASSES.map((t) => {
-            const on = tonic === t && (mode ?? "minor") === pickMode;
-            return (
-              <button
-                key={t}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            apply();
+          }}
+        >
+          <p className="text-xs font-medium text-muted-foreground">Length in seconds</p>
+          <div className="mt-2 flex items-center gap-2">
+            <input value={lo} onChange={(e) => setLo(e.target.value)} inputMode="numeric" placeholder="min" aria-label="Minimum length in seconds" aria-invalid={!valid || undefined} className="h-8 w-full rounded-md border bg-transparent px-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+            <span className="text-muted-foreground">–</span>
+            <input value={hi} onChange={(e) => setHi(e.target.value)} inputMode="numeric" placeholder="max" aria-label="Maximum length in seconds" aria-invalid={!valid || undefined} className="h-8 w-full rounded-md border bg-transparent px-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+          </div>
+          <p className="mt-2 text-[11px] leading-snug text-muted-foreground">Tip: “10s” in the search box means at least 10 seconds, long enough to cover a 10-second shot.</p>
+          <div className="mt-3 flex gap-2">
+            <Button type="submit" size="sm" className="flex-1" disabled={!valid}>Apply</Button>
+            {on && (
+              <Button
                 type="button"
-                aria-pressed={on}
+                variant="ghost"
+                size="sm"
                 onClick={() => {
-                  onChange(on ? "" : `${t} ${pickMode}`);
+                  onChange("", "");
                   setOpen(false);
                 }}
-                className={cn("rounded-md border py-1.5 text-sm font-medium", on ? "border-primary bg-primary text-primary-foreground" : "hover:border-primary/40 hover:bg-accent")}
               >
-                {t}
-                {pickMode === "minor" ? <span className="text-xs opacity-70">m</span> : null}
-              </button>
-            );
-          })}
-        </div>
-        <p className="mt-2 text-[11px] leading-snug text-muted-foreground">Relative keys also match (F minor finds A♭ major). Clips without a known key are kept unless you search strictly.</p>
-        {value && (
-          <Button
-            variant="ghost"
-            size="sm"
-            className="mt-1 w-full"
-            onClick={() => {
-              onChange("");
-              setOpen(false);
-            }}
-          >
-            Any key
-          </Button>
-        )}
+                Any length
+              </Button>
+            )}
+          </div>
+        </form>
       </PopoverContent>
     </Popover>
   );
