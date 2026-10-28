@@ -4,7 +4,7 @@
 // BaseLayout.astro) and carries the text; this reads the title, description
 // and route from the built HTML and draws the card with the server's renderer
 // (dist/og/render.js, built by `tsc` before the website): `pageCard` for
-// every page here; share links of single clips use `sampleCard` at request time. /og.png, the old
+// every page here; share links of single clips use `clipCard` at request time. /og.png, the old
 // site-wide card, is kept as a copy of the home card for links already shared.
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
@@ -26,9 +26,9 @@ const KICKERS = [
   ["/docs/faq", "FAQ"],
   ["/docs", "Docs"],
   ["/stats", "Live stats"],
-  ["/kit", "Kit builder"],
+  ["/sequence", "Sequence builder"],
   ["/glossary", "Glossary"],
-  ["/clips", "Clip collections"],
+  ["/footage", "Footage collections"],
   ["/sources", "Source"],
   ["/search", "Search"],
   ["/about", "About"],
@@ -38,19 +38,19 @@ const KICKERS = [
 ];
 
 const CHIPS = {
-  "/glossary": ["One-shot", "BPM", "CC0", "CC BY", "SFZ"],
+  "/glossary": ["B-roll", "4K", "Codec", "CC BY", "Editorial"],
   "/docs/faq": ["Licences", "Downloads", "API", "Agents"],
-  "/guides": ["Licences", "Credits", "808s", "BPM & key"],
+  "/guides": ["Licences", "Credits", "NASA", "Vertical video"],
   "/docs/mcp": ["MCP", "Claude Code", "Cursor", "Copilot"],
   "/docs/api": ["REST", "OpenAPI 3.1", "JSON"],
   "/docs/api/reference": ["OpenAPI 3.1", "Schemas", "curl"],
   "/docs/api/playground": ["Try it live", "OpenAPI 3.1"],
   "/docs/api/versioning": ["/v1", "RateLimit headers", "Deprecation"],
-  "/docs/cli": ["CLI", "stdio MCP", "Docker"],
-  "/docs/self-hosting": ["Docker", "ffmpeg", "Prometheus"],
-  "/docs/licences": ["CC0", "CC BY", "Royalty free", "Verdicts"],
-  "/kit": ["Kick", "Snare", "Hats", "808", "Strudel"],
-  "/stats": ["Clips by category", "Every source", "Live usage"],
+  "/docs/cli": ["CLI", "npx", "stdio MCP", "Docker"],
+  "/docs/self-hosting": ["Docker", "Port 8787", "Prometheus"],
+  "/docs/licences": ["CC0", "CC BY", "NASA", "Editorial"],
+  "/sequence": ["Shot list", "OTIO", "ffmpeg", "Remotion"],
+  "/stats": ["Videos by category", "Every source", "Live usage"],
 };
 
 const attr = (html, re) => {
@@ -84,7 +84,7 @@ export default function ogImages() {
               .filter((f) => f.endsWith(".md"))
               .map((f) => [`/guides/${f.slice(0, -3)}`, `Guide · ${readFileSync(join(guidesDir, f), "utf8").match(/^section:\s*"?([^"\n]+)"?\s*$/m)?.[1] ?? "Guide"}`])
           : [];
-        const kickers = [...guideKickers, ["/guides", "Guides"], ...hubs.map((h) => [`/clips/${h.id}`, h.name]), ...KICKERS];
+        const kickers = [...guideKickers, ["/guides", "Guides"], ...hubs.map((h) => [`/footage/${h.id}`, h.name]), ...KICKERS];
         const big = (c) => (c.count >= 1e6 ? `${Math.floor(c.count / 1e5) / 10}M` : c.count >= 1e4 ? `${Math.floor(c.count / 1e3)}K` : c.count.toLocaleString("en")) + (c.atLeast || c.count >= 1e4 ? "+" : "");
         const out = fileURLToPath(dir);
         const started = Date.now();
@@ -104,8 +104,8 @@ export default function ogImages() {
             route === "/"
               ? pageCard({
                   title: "One search for every",
-                  highlight: "free music clip",
-                  subtitle: `${totals?.free?.count ? `${big(totals.free)} free sounds` : "Drums, 808s, loops, vocals and FX"} from ${providers.length} sites · a licence verdict on every clip · API & MCP for AI agents`,
+                  highlight: "free stock video clip",
+                  subtitle: `${totals?.free?.count ? `${big(totals.free)} free videos` : "B-roll, backgrounds, space and archive films"} from ${providers.length} sites · watch from the source · a licence verdict on every clip · API & MCP`,
                   chips: searched.slice(0, 4).map((p) => p.name),
                   site: host,
                 })
@@ -117,13 +117,13 @@ export default function ogImages() {
                     CHIPS[route] ??
                     (route === "/docs/sources" || route === "/search"
                       ? searched.slice(0, 4).map((p) => p.name)
-                      : route.startsWith("/clips")
-                        ? ["Free", "Play every sound", "Licence verdicts", "Updated daily"]
+                      : route.startsWith("/footage")
+                        ? ["Free", "Hover to preview", "Licence verdicts", "Updated daily"]
                         : route.startsWith("/sources/")
                           ? ["Search", "Licences", "Previews"]
                           : route.startsWith("/guides/")
                             ? ["Short answer", "Licences", "Live searches"]
-                            : ["Drums", "808s", "Vocals", "FX"]),
+                            : ["B-roll", "4K", "Vertical", "Archive"]),
                   site: host,
                 });
           const png = await renderPng(card);

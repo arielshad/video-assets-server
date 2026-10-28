@@ -2,7 +2,7 @@
 layout: ../../../layouts/DocsLayout.astro
 title: Versioning, deprecation & rate limits
 crumb: Versioning & rate limits
-description: How the Video Assets Server API is versioned, how deprecations are announced with Deprecation and Sunset headers, and how rate limits and RateLimit headers work.
+description: How the Video Assets Server API is versioned, how deprecations are announced with Deprecation and Sunset headers, and how rate limits work.
 ---
 
 # Versioning, deprecation & rate limits

@@ -2,7 +2,7 @@
   {
     "id": "nature",
     "name": "Nature footage",
-    "title": "Free nature stock footage: oceans, skies and aerials",
+    "title": "Free nature footage: oceans, skies and aerials",
     "description": "Free nature stock video: ocean waves, clouds and sunsets, forests, mountains and drone shots, from public-domain and Creative Commons archives.",
     "intro": "Nature is the most used b-roll there is: waves under an intro, clouds racing behind a title, a slow aerial over hills while someone talks. These collections group free nature footage by what it shows, from NASA, Wikimedia Commons and the Internet Archive, with deep links into Pexels, Pixabay and the paid libraries for anything they don't have. Every card shows its resolution, shape and length, plays a preview when you hover it, and says whether you can use it in a commercial video.",
     "categories": ["nature", "aerial"],
@@ -36,7 +36,7 @@
   {
     "id": "cities",
     "name": "City footage",
-    "title": "Free city footage: streets, skylines and timelapses",
+    "title": "Free city footage: streets, skylines, timelapses",
     "description": "Free city stock video: skylines, busy streets, traffic and night lights, plus timelapses of cities and skies, with resolution, length and licence on every clip.",
     "intro": "Cities say 'modern', 'busy' or 'business' in a second, which is why skylines and street scenes open so many explainers and promos. These collections bring together free city footage and timelapses from the sources searched directly, with links to the stock sites that can't be. Street footage is also where licences meet people and brands, so each clip shows whether it is cleared for commercial use and flags editorial-only footage.",
     "categories": ["city", "transport", "people"],
@@ -67,7 +67,7 @@
   {
     "id": "space",
     "name": "Space and science footage",
-    "title": "Free space footage: NASA launches, Earth and visualisations",
+    "title": "Free space footage: launches, Earth and NASA",
     "description": "Free space and science video from NASA: rocket launches, Earth from orbit, the Sun and planets, and data visualisations in 1080p and 4K, with usage rules.",
     "intro": "NASA is the single richest source of free space footage: about nine thousand videos in its Image and Video Library and about ten thousand visualisation pages from its Scientific Visualization Studio, much of it in 1080p or 4K. These collections group that footage by subject, alongside space clips from Wikimedia Commons. NASA media is generally not copyrighted in the US, but it comes with rules about credit, endorsement and the NASA insignia, which every card reflects.",
     "categories": ["space", "science"],
@@ -102,7 +102,7 @@
   {
     "id": "archive",
     "name": "Archive films",
-    "title": "Free archive footage: newsreels and public-domain films",
+    "title": "Free archive footage and public-domain films",
     "description": "Free archive footage: public-domain newsreels, Prelinger educational and industrial films and home movies, with year, licence and editorial flags on every clip.",
     "intro": "Archive footage gives a video a period, a mood and authenticity that new footage can't fake: a 1950s kitchen, a wartime newsreel, a factory floor in 1938. These collections draw on the Internet Archive's public-domain and Creative Commons films, the Prelinger Archives above all, plus historic footage on Wikimedia Commons. Old footage brings two catches, which every card shows: licences set by uploaders rather than archives, and people and brands who never signed a release.",
     "categories": ["archive"],
@@ -137,7 +137,7 @@
   {
     "id": "backgrounds",
     "name": "Backgrounds and slow motion",
-    "title": "Free motion backgrounds, abstract loops and slow motion",
+    "title": "Free motion backgrounds and abstract loops",
     "description": "Free motion backgrounds, abstract and data-driven animations, seamless loops and slow-motion footage for titles, slides, stages and transitions.",
     "intro": "A good background moves enough to feel alive and little enough to stay behind the words. These collections gather free abstract animations, data visualisations, seamless loops and slow-motion footage: the clips that sit under titles, lower thirds, presentation slides, stage screens and website hero sections. Many have no people or logos at all, which makes them some of the easiest footage to clear for commercial use.",
     "categories": ["background", "overlay"],

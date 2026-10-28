@@ -98,7 +98,7 @@ export function buildCsp(html: string, opts: { styleNonce?: string; inlineStyles
     `style-src ${styleSrc.join(" ")}`,
     "img-src 'self' https: data:",
     "font-src 'self' data:",
-    // Audio previews play from the sources' CDNs, and the waveform player fetches them to draw peaks.
+    // Video posters, hover previews and the player load straight from the sources' CDNs.
     "media-src 'self' https: blob:",
     `connect-src 'self' https:${opts.analyticsOrigin ? ` ${opts.analyticsOrigin}` : ""}`,
     "worker-src 'self' blob:",
@@ -306,7 +306,7 @@ export class Site {
       "",
       "Where to go instead:",
       "",
-      `- [Agent guide (AGENTS.md)](${base}/AGENTS.md): how to search and download music clips with this service`,
+      `- [Agent guide (AGENTS.md)](${base}/AGENTS.md): how to search, watch and download stock video clips with this service`,
       `- [llms.txt](${base}/llms.txt): index of every page as Markdown`,
       `- [Docs](${base}/docs): quick start, MCP setup, REST API guide`,
       `- [Sitemap](${base}/sitemap-index.xml)`,

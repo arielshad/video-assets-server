@@ -227,7 +227,7 @@ export const internetarchive: Provider = {
   homepage: SITE,
   description:
     "Public-domain and Creative Commons films: the Prelinger Archives (industrial, educational and advertising films), newsreels, home movies and community stock footage. Only items marked CC0, public domain or CC BY(-SA); uploader-asserted licences are flagged.",
-  categories: ["archive", "city", "people", "transport", "nature", "science", "tech", "food", "space"],
+  categories: ["archive", "city", "people", "transport", "nature", "science", "tech", "food", "space", "background", "overlay"],
   access: "api",
   pricing: "free",
   supportsDownload: true,

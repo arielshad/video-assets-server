@@ -94,7 +94,9 @@
       "science",
       "tech",
       "food",
-      "space"
+      "space",
+      "background",
+      "overlay"
     ],
     "access": "api",
     "pricing": "free",

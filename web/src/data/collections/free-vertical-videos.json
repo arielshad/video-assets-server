@@ -1,0 +1,677 @@
+{
+  "slug": "free-vertical-videos",
+  "search": {
+    "q": "vertical",
+    "orientations": [
+      "portrait"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:03:43.194Z",
+  "clips": [
+    {
+      "id": "nasa:NASA TV Is Now- NASA+",
+      "provider": "nasa",
+      "title": "NASA TV Is Now NASA+",
+      "category": "nature.water",
+      "url": "https://images.nasa.gov/details/NASA%20TV%20Is%20Now-%20NASA%2B",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA TV Is Now- NASA+/NASA TV Is Now- NASA+~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20TV%20Is%20Now-%20NASA%2B/NASA%20TV%20Is%20Now-%20NASA%2B~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:AboutBan1935",
+      "provider": "internetarchive",
+      "title": "About Bananas",
+      "category": "archive.film",
+      "url": "https://archive.org/details/AboutBan1935",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/AboutBan1935",
+      "author": "Castle Films",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 663,
+      "year": 1935
+    },
+    {
+      "id": "internetarchive:Doctorin1946",
+      "provider": "internetarchive",
+      "title": "Doctor in Industry (Part I)",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/Doctorin1946",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Doctorin1946",
+      "author": "Handy (Jam) Organization",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1127,
+      "year": 1946
+    },
+    {
+      "id": "nasa:NASA TV Now NASA Plus",
+      "provider": "nasa",
+      "title": "NASA TV Is Now NASA Plus",
+      "category": "nature.water",
+      "url": "https://images.nasa.gov/details/NASA%20TV%20Now%20NASA%20Plus",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA TV Now NASA Plus/NASA TV Now NASA Plus~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20TV%20Now%20NASA%20Plus/NASA%20TV%20Now%20NASA%20Plus~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:HealthYo1953",
+      "provider": "internetarchive",
+      "title": "Health: Your Posture",
+      "category": "archive.film",
+      "url": "https://archive.org/details/HealthYo1953",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/HealthYo1953",
+      "author": "Centron Corporation",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 620,
+      "year": 1953
+    },
+    {
+      "id": "nasa:NASA FD_In Memory_largeform",
+      "provider": "nasa",
+      "title": "NASA FD_In Memory_largeform",
+      "category": "overlay.particles",
+      "url": "https://images.nasa.gov/details/NASA%20FD_In%20Memory_largeform",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA FD_In Memory_largeform/NASA FD_In Memory_largeform~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20FD_In%20Memory_largeform/NASA%20FD_In%20Memory_largeform~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Anthony Quiterio",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:FromtheG1954",
+      "provider": "internetarchive",
+      "title": "From the Ground Up",
+      "category": "food",
+      "url": "https://archive.org/details/FromtheG1954",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/FromtheG1954",
+      "author": "Unknown",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1111,
+      "year": 1954
+    },
+    {
+      "id": "nasa:NHQ_2019_0508_We Are NASA",
+      "provider": "nasa",
+      "title": "We Are NASA",
+      "category": "space.planets",
+      "url": "https://images.nasa.gov/details/NHQ_2019_0508_We%20Are%20NASA",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0508_We Are NASA/NHQ_2019_0508_We Are NASA~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0508_We%20Are%20NASA/NHQ_2019_0508_We%20Are%20NASA~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "internetarchive:Sleepfor1950",
+      "provider": "internetarchive",
+      "title": "Sleep for Health",
+      "category": "archive.film",
+      "url": "https://archive.org/details/Sleepfor1950",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Sleepfor1950",
+      "author": "Encyclopaedia Britannica Films",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 644,
+      "year": 1950
+    },
+    {
+      "id": "nasa:The Value of NASA (2024 State of NASA Highlights)",
+      "provider": "nasa",
+      "title": "The Value of NASA (2024 State of NASA Highlights)",
+      "category": "other",
+      "url": "https://images.nasa.gov/details/The%20Value%20of%20NASA%20(2024%20State%20of%20NASA%20Highlights)",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/The Value of NASA (2024 State of NASA Highlights)/The Value of NASA (2024 State of NASA Highlights)~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/The%20Value%20of%20NASA%20(2024%20State%20of%20NASA%20Highlights)/The%20Value%20of%20NASA%20(2024%20State%20of%20NASA%20Highlights)~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:ace_200911_04",
+      "provider": "internetarchive",
+      "title": "Publicvideos November 2009 batch, part 4",
+      "category": "other",
+      "url": "https://archive.org/details/ace_200911_04",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/ace_200911_04",
+      "author": "Ace of Spades",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2009
+    },
+    {
+      "id": "nasa:NASA’s Artemis III Announcement (Official NASA Trailer)",
+      "provider": "nasa",
+      "title": "NASA’s Artemis III Announcement (Official NASA Trailer)",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/NASA%E2%80%99s%20Artemis%20III%20Announcement%20(Official%20NASA%20Trailer)",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA’s Artemis III Announcement (Official NASA Trailer)/NASA’s Artemis III Announcement (Official NASA Trailer)~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%E2%80%99s%20Artemis%20III%20Announcement%20(Official%20NASA%20Trailer)/NASA%E2%80%99s%20Artemis%20III%20Announcement%20(Official%20NASA%20Trailer)~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:JoanAvoi1947",
+      "provider": "internetarchive",
+      "title": "Joan Avoids a Cold",
+      "category": "archive.film",
+      "url": "https://archive.org/details/JoanAvoi1947",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/JoanAvoi1947",
+      "author": "Coronet Instructional Films",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 624,
+      "year": 1947
+    },
+    {
+      "id": "nasa:What is a NASA Spinoff",
+      "provider": "nasa",
+      "title": "What is a NASA Spinoff",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/What%20is%20a%20NASA%20Spinoff",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/What is a NASA Spinoff/What is a NASA Spinoff~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/What%20is%20a%20NASA%20Spinoff/What%20is%20a%20NASA%20Spinoff~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:EatforHe1954",
+      "provider": "internetarchive",
+      "title": "Eat for Health",
+      "category": "food",
+      "url": "https://archive.org/details/EatforHe1954",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/EatforHe1954",
+      "author": "Encyclopaedia Britannica Films",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 623,
+      "year": 1954
+    },
+    {
+      "id": "nasa:MSFC_Brazilian_Science_Space_Leaders Visit NASA",
+      "provider": "nasa",
+      "title": "Brazilian Science, Space Leaders Visit NASA",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/MSFC_Brazilian_Science_Space_Leaders%20Visit%20NASA",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MSFC_Brazilian_Science_Space_Leaders Visit NASA/MSFC_Brazilian_Science_Space_Leaders Visit NASA~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MSFC_Brazilian_Science_Space_Leaders%20Visit%20NASA/MSFC_Brazilian_Science_Space_Leaders%20Visit%20NASA~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Tyson Eason",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "internetarchive:download-8_20231018",
+      "provider": "internetarchive",
+      "title": "beat sync capcut template",
+      "category": "other",
+      "url": "https://archive.org/details/download-8_20231018",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/download-8_20231018",
+      "author": "capcut",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2023
+    },
+    {
+      "id": "nasa:What is a NASA Spinoff? - Horizontal",
+      "provider": "nasa",
+      "title": "What is a NASA Spinoff?",
+      "category": "tech",
+      "url": "https://images.nasa.gov/details/What%20is%20a%20NASA%20Spinoff%3F%20-%20Horizontal",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/What is a NASA Spinoff? - Horizontal/What is a NASA Spinoff? - Horizontal~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/What%20is%20a%20NASA%20Spinoff%3F%20-%20Horizontal/What%20is%20a%20NASA%20Spinoff%3F%20-%20Horizontal~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA LaRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:babies_and_breadwinners_2",
+      "provider": "internetarchive",
+      "title": "Babies and Breadwinners (Part II)",
+      "category": "archive.film",
+      "url": "https://archive.org/details/babies_and_breadwinners_2",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/babies_and_breadwinners_2",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 596
+    },
+    {
+      "id": "nasa:NASA 2025 Year in Review",
+      "provider": "nasa",
+      "title": "NASA 2025: Year in Review",
+      "category": "space.planets",
+      "url": "https://images.nasa.gov/details/NASA%202025%20Year%20in%20Review",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA 2025 Year in Review/NASA 2025 Year in Review~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%202025%20Year%20in%20Review/NASA%202025%20Year%20in%20Review~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:ace_200907_06",
+      "provider": "internetarchive",
+      "title": "Publicvideos July 2009 batch, disc 06",
+      "category": "other",
+      "url": "https://archive.org/details/ace_200907_06",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/ace_200907_06",
+      "author": "Ace of Spades",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2009
+    },
+    {
+      "id": "nasa:NASA Minute Oct. 2, 2026",
+      "provider": "nasa",
+      "title": "NASA Minute: Oct. 2, 2026",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/NASA%20Minute%20Oct.%202%2C%202026",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA Minute Oct. 2, 2026/NASA Minute Oct. 2, 2026~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20Minute%20Oct.%202%2C%202026/NASA%20Minute%20Oct.%202%2C%202026~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:right_to_health_1",
+      "provider": "internetarchive",
+      "title": "Right to Health, A (Part I)",
+      "category": "archive.film",
+      "url": "https://archive.org/details/right_to_health_1",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/right_to_health_1",
+      "author": "Professional Arts, Inc.",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 935
+    },
+    {
+      "id": "nasa:NASA Minute Oct. 10, 2026",
+      "provider": "nasa",
+      "title": "NASA Minute: Oct. 10, 2026",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/NASA%20Minute%20Oct.%2010%2C%202026",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA Minute Oct. 10, 2026/NASA Minute Oct. 10, 2026~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20Minute%20Oct.%2010%2C%202026/NASA%20Minute%20Oct.%2010%2C%202026~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:Automoti1940",
+      "provider": "internetarchive",
+      "title": "Automotive Service",
+      "category": "transport",
+      "url": "https://archive.org/details/Automoti1940",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Automoti1940",
+      "author": "Holmes (Burton) Films, Inc.",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 602,
+      "year": 1940
+    },
+    {
+      "id": "nasa:NASA Minute Sep. 25, 2026",
+      "provider": "nasa",
+      "title": "NASA Minute: Sep. 25, 2026",
+      "category": "city.street",
+      "url": "https://images.nasa.gov/details/NASA%20Minute%20Sep.%2025%2C%202026",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA Minute Sep. 25, 2026/NASA Minute Sep. 25, 2026~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20Minute%20Sep.%2025%2C%202026/NASA%20Minute%20Sep.%2025%2C%202026~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:Careofth1949",
+      "provider": "internetarchive",
+      "title": "Care of the Skin",
+      "category": "archive.film",
+      "url": "https://archive.org/details/Careofth1949",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Careofth1949",
+      "author": "Encyclopaedia Britannica Films",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 619,
+      "year": 1949
+    },
+    {
+      "id": "nasa:NASA Minute September 4, 2026",
+      "provider": "nasa",
+      "title": "NASA Minute: September 4, 2026",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/NASA%20Minute%20September%204%2C%202026",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA Minute September 4, 2026/NASA Minute September 4, 2026~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20Minute%20September%204%2C%202026/NASA%20Minute%20September%204%2C%202026~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    }
+  ]
+}

@@ -1,0 +1,728 @@
+{
+  "slug": "free-timelapse-videos",
+  "search": {
+    "q": "timelapse",
+    "styles": [
+      "timelapse"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:55.502Z",
+  "clips": [
+    {
+      "id": "nasa:Artemis I Stacking Timelapse Compiled",
+      "provider": "nasa",
+      "title": "Artemis I Stacking Timelapse Compiled",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/Artemis%20I%20Stacking%20Timelapse%20Compiled",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/Artemis I Stacking Timelapse Compiled/Artemis I Stacking Timelapse Compiled~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Artemis%20I%20Stacking%20Timelapse%20Compiled/Artemis%20I%20Stacking%20Timelapse%20Compiled~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA MSFC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:TimeLapse",
+      "provider": "internetarchive",
+      "title": "Calgary, Vancouver Timelapse",
+      "category": "city.street",
+      "url": "https://archive.org/details/TimeLapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/TimeLapse",
+      "author": "NA",
+      "license": {
+        "id": "CC-BY-SA-2.0",
+        "name": "CC BY-SA 2.0",
+        "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 120,
+      "year": 2000
+    },
+    {
+      "id": "nasa:KSC-20220808-MH-FMX02-Artemis1_Rollout_VAB_360-TIMELAPSE-WON_3311944",
+      "provider": "nasa",
+      "title": "Artemis 1 Rollout - 360 Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20220808-MH-FMX02-Artemis1_Rollout_VAB_360-TIMELAPSE-WON_3311944",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20220808-MH-FMX02-Artemis1_Rollout_VAB_360-TIMELAPSE-WON_3311944/KSC-20220808-MH-FMX02-Artemis1_Rollout_VAB_360-TIMELAPSE-WON_3311944~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20220808-MH-FMX02-Artemis1_Rollout_VAB_360-TIMELAPSE-WON_3311944/KSC-20220808-MH-FMX02-Artemis1_Rollout_VAB_360-TIMELAPSE-WON_3311944~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "nasa:KSC-20200915-MH-KLS01_0001-Booster_Stacking_Practice_on_Mobile_Launcher_Timelapse-3245880",
+      "provider": "nasa",
+      "title": "Booster Stacking Practice on Mobile Launcher Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20200915-MH-KLS01_0001-Booster_Stacking_Practice_on_Mobile_Launcher_Timelapse-3245880",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20200915-MH-KLS01_0001-Booster_Stacking_Practice_on_Mobile_Launcher_Timelapse-3245880/KSC-20200915-MH-KLS01_0001-Booster_Stacking_Practice_on_Mobile_Launcher_Timelapse-3245880~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20200915-MH-KLS01_0001-Booster_Stacking_Practice_on_Mobile_Launcher_Timelapse-3245880/KSC-20200915-MH-KLS01_0001-Booster_Stacking_Practice_on_Mobile_Launcher_Timelapse-3245880~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Kim Shiflett",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:Stock-Timelapse-London-Tube-200607",
+      "provider": "internetarchive",
+      "title": "Stock-Timelapse-London-Tube-200607",
+      "category": "transport",
+      "url": "https://archive.org/details/Stock-Timelapse-London-Tube-200607",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/Stock-Timelapse-London-Tube-200607",
+      "author": "Gordon McDowell",
+      "license": {
+        "id": "CC-BY-SA-2.5",
+        "name": "CC BY-SA 2.5",
+        "url": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2006
+    },
+    {
+      "id": "internetarchive:IMB_SF_C1",
+      "provider": "internetarchive",
+      "title": "Stock Footage - Timelapse Lunar Eclipse",
+      "category": "space.planets",
+      "url": "https://archive.org/details/IMB_SF_C1",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/IMB_SF_C1",
+      "author": "Ivan Bridgewater",
+      "license": {
+        "id": "CC-BY-2.5",
+        "name": "CC BY 2.5",
+        "url": "https://creativecommons.org/licenses/by/2.5/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2006
+    },
+    {
+      "id": "nasa:KSC-20250127-MH-FMX01-0001-Artemis_II_SRB_Rollover_and_Lift_Timelapse-M10348",
+      "provider": "nasa",
+      "title": "Artemis II SRB Rollover and Lift Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20250127-MH-FMX01-0001-Artemis_II_SRB_Rollover_and_Lift_Timelapse-M10348",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20250127-MH-FMX01-0001-Artemis_II_SRB_Rollover_and_Lift_Timelapse-M10348/KSC-20250127-MH-FMX01-0001-Artemis_II_SRB_Rollover_and_Lift_Timelapse-M10348~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20250127-MH-FMX01-0001-Artemis_II_SRB_Rollover_and_Lift_Timelapse-M10348/KSC-20250127-MH-FMX01-0001-Artemis_II_SRB_Rollover_and_Lift_Timelapse-M10348~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "nasa:KSC-20241121-MH-FMX01-0001-Artemis-II-Stacking_2nd_Booster_Rollover_to_VAB-M10348_",
+      "provider": "nasa",
+      "title": "Artemis II Stacking - Booster Segment Transport from RPSF to VAB - Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20241121-MH-FMX01-0001-Artemis-II-Stacking_2nd_Booster_Rollover_to_VAB-M10348_",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20241121-MH-FMX01-0001-Artemis-II-Stacking_2nd_Booster_Rollover_to_VAB-M10348_/KSC-20241121-MH-FMX01-0001-Artemis-II-Stacking_2nd_Booster_Rollover_to_VAB-M10348_~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20241121-MH-FMX01-0001-Artemis-II-Stacking_2nd_Booster_Rollover_to_VAB-M10348_/KSC-20241121-MH-FMX01-0001-Artemis-II-Stacking_2nd_Booster_Rollover_to_VAB-M10348_~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:Stock-Walmart-Timelapse",
+      "provider": "internetarchive",
+      "title": "Stock - Walmart - Timelapse",
+      "category": "archive.newsreel",
+      "url": "https://archive.org/details/Stock-Walmart-Timelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/Stock-Walmart-Timelapse",
+      "author": "NA",
+      "license": {
+        "id": "CC-BY-SA-2.5",
+        "name": "CC BY-SA 2.5",
+        "url": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 720,
+      "year": 2005
+    },
+    {
+      "id": "nasa:KSC-20250502-MH-FMX01-Artemis_II_Orion_DD250_Pre-Set_for_Roll_to_MPPF_Timelapse-WON_M13985",
+      "provider": "nasa",
+      "title": "Artemis II Orion DD250 Pre-Set for Roll to MPPF Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20250502-MH-FMX01-Artemis_II_Orion_DD250_Pre-Set_for_Roll_to_MPPF_Timelapse-WON_M13985",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20250502-MH-FMX01-Artemis_II_Orion_DD250_Pre-Set_for_Roll_to_MPPF_Timelapse-WON_M13985/KSC-20250502-MH-FMX01-Artemis_II_Orion_DD250_Pre-Set_for_Roll_to_MPPF_Timelapse-WON_M13985~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20250502-MH-FMX01-Artemis_II_Orion_DD250_Pre-Set_for_Roll_to_MPPF_Timelapse-WON_M13985/KSC-20250502-MH-FMX01-Artemis_II_Orion_DD250_Pre-Set_for_Roll_to_MPPF_Timelapse-WON_M13985~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:20071013-Stock-House-Demolition-Timelapse",
+      "provider": "internetarchive",
+      "title": "2007-10-13 Stock - House Demolition - Timelapse",
+      "category": "other",
+      "url": "https://archive.org/details/20071013-Stock-House-Demolition-Timelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/20071013-Stock-House-Demolition-Timelapse",
+      "author": "Gordon McDowell",
+      "license": {
+        "id": "CC-BY-SA-3.0",
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2007
+    },
+    {
+      "id": "nasa:KSC-20240907-MH-CMS01_0001-LVSA_Arrival_Timelapse-M8898",
+      "provider": "nasa",
+      "title": "LVSA Arrival Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20240907-MH-CMS01_0001-LVSA_Arrival_Timelapse-M8898",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20240907-MH-CMS01_0001-LVSA_Arrival_Timelapse-M8898/KSC-20240907-MH-CMS01_0001-LVSA_Arrival_Timelapse-M8898~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20240907-MH-CMS01_0001-LVSA_Arrival_Timelapse-M8898/KSC-20240907-MH-CMS01_0001-LVSA_Arrival_Timelapse-M8898~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Christopher Swanson",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:CambrianHouse-DonTapscott-Audience-Stock-Timelapse",
+      "provider": "internetarchive",
+      "title": "Stock - Cambrian House - Don Tapscott Audience - Timelapse",
+      "category": "people.work",
+      "url": "https://archive.org/details/CambrianHouse-DonTapscott-Audience-Stock-Timelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/CambrianHouse-DonTapscott-Audience-Stock-Timelapse",
+      "author": "Cambrian House",
+      "license": {
+        "id": "CC-BY-SA-3.0",
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2007
+    },
+    {
+      "id": "nasa:KSC-20210116-MH-CSH03_0001-Orion_Transport_to_MPPF-3266953",
+      "provider": "nasa",
+      "title": "Orion Transport to MPPF - TIMELAPSE",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20210116-MH-CSH03_0001-Orion_Transport_to_MPPF-3266953",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20210116-MH-CSH03_0001-Orion_Transport_to_MPPF-3266953/KSC-20210116-MH-CSH03_0001-Orion_Transport_to_MPPF-3266953~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20210116-MH-CSH03_0001-Orion_Transport_to_MPPF-3266953/KSC-20210116-MH-CSH03_0001-Orion_Transport_to_MPPF-3266953~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Cory S Huston",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:MilkyWayTimelapseHd",
+      "provider": "internetarchive",
+      "title": "Milky Way Timelapse HD",
+      "category": "space",
+      "url": "https://archive.org/details/MilkyWayTimelapseHd",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/MilkyWayTimelapseHd",
+      "author": "Johann Mynhardt",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4
+    },
+    {
+      "id": "nasa:KSC-20220816-MH-FMX01-0001-Artemis_1_Rollout_for_Launch_TIMELAPSE-3311906",
+      "provider": "nasa",
+      "title": "Artemis I Rollout for Launch - TIMELAPSE",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20220816-MH-FMX01-0001-Artemis_1_Rollout_for_Launch_TIMELAPSE-3311906",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20220816-MH-FMX01-0001-Artemis_1_Rollout_for_Launch_TIMELAPSE-3311906/KSC-20220816-MH-FMX01-0001-Artemis_1_Rollout_for_Launch_TIMELAPSE-3311906~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20220816-MH-FMX01-0001-Artemis_1_Rollout_for_Launch_TIMELAPSE-3311906/KSC-20220816-MH-FMX01-0001-Artemis_1_Rollout_for_Launch_TIMELAPSE-3311906~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux and Kim Shiflett",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "internetarchive:CloseFallsTimelapseroyaltyFreeStockVideo",
+      "provider": "internetarchive",
+      "title": "Close Falls Timelapse (Royalty Free Stock Video)",
+      "category": "nature.water",
+      "url": "https://archive.org/details/CloseFallsTimelapseroyaltyFreeStockVideo",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/CloseFallsTimelapseroyaltyFreeStockVideo",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 30
+    },
+    {
+      "id": "nasa:KSC-20210827-MH-KLS01-0001-KSC_HQs_Deconstruction-3274580",
+      "provider": "nasa",
+      "title": "Old KSC Headquarter's Destruction Timelapse",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/KSC-20210827-MH-KLS01-0001-KSC_HQs_Deconstruction-3274580",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20210827-MH-KLS01-0001-KSC_HQs_Deconstruction-3274580/KSC-20210827-MH-KLS01-0001-KSC_HQs_Deconstruction-3274580~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20210827-MH-KLS01-0001-KSC_HQs_Deconstruction-3274580/KSC-20210827-MH-KLS01-0001-KSC_HQs_Deconstruction-3274580~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Kim Shiflett",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:Timelapse_ocean",
+      "provider": "internetarchive",
+      "title": "Timelapse_ocean",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/Timelapse_ocean",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/Timelapse_ocean",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 15
+    },
+    {
+      "id": "internetarchive:TahkenitchLakeTimelapse",
+      "provider": "internetarchive",
+      "title": "Tahkenitch Lake Timelapse",
+      "category": "nature.water",
+      "url": "https://archive.org/details/TahkenitchLakeTimelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/TahkenitchLakeTimelapse",
+      "author": "Don Whitaker",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 35
+    },
+    {
+      "id": "nasa:KSC-20250404-RV-FMX01-Artemis_II_Mission_Patch_Timelapse-WON_M13165",
+      "provider": "nasa",
+      "title": "Artemis II Mission Patch On VAB Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20250404-RV-FMX01-Artemis_II_Mission_Patch_Timelapse-WON_M13165",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20250404-RV-FMX01-Artemis_II_Mission_Patch_Timelapse-WON_M13165/KSC-20250404-RV-FMX01-Artemis_II_Mission_Patch_Timelapse-WON_M13165~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20250404-RV-FMX01-Artemis_II_Mission_Patch_Timelapse-WON_M13165/KSC-20250404-RV-FMX01-Artemis_II_Mission_Patch_Timelapse-WON_M13165~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:emfcamp_2018_timelapse",
+      "provider": "internetarchive",
+      "title": "Electromagnetic Field 2018 Timelapse",
+      "category": "other",
+      "url": "https://archive.org/details/emfcamp_2018_timelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/emfcamp_2018_timelapse",
+      "author": "Electromagnetic Field",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2018
+    },
+    {
+      "id": "nasa:KSC-20241120-MH-FMX01-0001-Artemis-II-Stacking-Booster_Lift_in_VAB-M10348",
+      "provider": "nasa",
+      "title": "Artemis II Stacking - Booster Segment Lift - Timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20241120-MH-FMX01-0001-Artemis-II-Stacking-Booster_Lift_in_VAB-M10348",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20241120-MH-FMX01-0001-Artemis-II-Stacking-Booster_Lift_in_VAB-M10348/KSC-20241120-MH-FMX01-0001-Artemis-II-Stacking-Booster_Lift_in_VAB-M10348~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20241120-MH-FMX01-0001-Artemis-II-Stacking-Booster_Lift_in_VAB-M10348/KSC-20241120-MH-FMX01-0001-Artemis-II-Stacking-Booster_Lift_in_VAB-M10348~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Frank Michaux",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:CEP238",
+      "provider": "internetarchive",
+      "title": "Cloud To Cloud Lightning CGI & Timelapse (Wide Screen)",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/CEP238",
+      "downloadable": true,
+      "styles": [
+        "timelapse",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/CEP238",
+      "author": "C. E. Price",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2007
+    },
+    {
+      "id": "nasa:B roll crew training and booster stacking - updated",
+      "provider": "nasa",
+      "title": "Artemis III crew training and SLS booster timelapse",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/B%20roll%20crew%20training%20and%20booster%20stacking%20-%20updated",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/B roll crew training and booster stacking - updated/B roll crew training and booster stacking - updated~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/B%20roll%20crew%20training%20and%20booster%20stacking%20-%20updated/B%20roll%20crew%20training%20and%20booster%20stacking%20-%20updated~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:20000206-Stock-House-Demolition-Timelapse",
+      "provider": "internetarchive",
+      "title": "2000-02-06 Stock - House Demolition - Timelapse",
+      "category": "other",
+      "url": "https://archive.org/details/20000206-Stock-House-Demolition-Timelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/20000206-Stock-House-Demolition-Timelapse",
+      "author": "Gordon McDowell",
+      "license": {
+        "id": "CC-BY-SA-3.0",
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2000
+    },
+    {
+      "id": "nasa:KSC-20210710-MH-CSH01-0001-Orion_Move_to_LASF_TIMELAPSE-3279376",
+      "provider": "nasa",
+      "title": "Artemis I - Orion Moves to the Launch Abort System Facility (LASF) - TIMELAPSE",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20210710-MH-CSH01-0001-Orion_Move_to_LASF_TIMELAPSE-3279376",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20210710-MH-CSH01-0001-Orion_Move_to_LASF_TIMELAPSE-3279376/KSC-20210710-MH-CSH01-0001-Orion_Move_to_LASF_TIMELAPSE-3279376~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20210710-MH-CSH01-0001-Orion_Move_to_LASF_TIMELAPSE-3279376/KSC-20210710-MH-CSH01-0001-Orion_Move_to_LASF_TIMELAPSE-3279376~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Cory S Huston",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:SeaAnemoneTimelapse",
+      "provider": "internetarchive",
+      "title": "Sea Anemone Timelapse",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/SeaAnemoneTimelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/SeaAnemoneTimelapse",
+      "author": "Don Whitaker",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 50
+    }
+  ]
+}

@@ -9,7 +9,7 @@ const collections = (await allCollections()).filter((c) => c.indexable);
 ---
 
 <BaseLayout
-  title="Search free stock video: b-roll, space & archive footage"
+  title="Search free stock video and archive footage"
   description={`Search ${SOURCE_COUNT} stock video sites at once for b-roll, backgrounds, nature, space and archive films. Watch every clip and see if it's cleared for commercial use.`}
   schema={[breadcrumbs([{ name: "Home", path: "/" }, { name: "Search", path: "/search" }])]}
   markdown="/search.md"

@@ -1,0 +1,665 @@
+{
+  "slug": "free-vertical-nature-videos",
+  "search": {
+    "q": "nature",
+    "categories": [
+      "nature"
+    ],
+    "orientations": [
+      "portrait"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:55.791Z",
+  "clips": [
+    {
+      "id": "nasa:iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
+      "provider": "nasa",
+      "title": "Expedition 70 Astronaut Mogensen Talks with WILD Nature Foundation - Jan. 17, 2024",
+      "category": "nature",
+      "url": "https://images.nasa.gov/details/iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117/iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117/iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:nature-cat-s-01-e-07-where-have-all-the-butterflies-gone-for-the-birdies",
+      "provider": "internetarchive",
+      "title": "Nature Cat - Full Series",
+      "category": "nature.animals",
+      "url": "https://archive.org/details/nature-cat-s-01-e-07-where-have-all-the-butterflies-gone-for-the-birdies",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/nature-cat-s-01-e-07-where-have-all-the-butterflies-gone-for-the-birdies",
+      "author": "Spiffy Pictures/WTTW Chicago/9 Story Media Group",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:NCTVSeries20152024",
+      "provider": "internetarchive",
+      "title": "Nature Cat - TV Series (2015 - 2024)",
+      "category": "nature.animals",
+      "url": "https://archive.org/details/NCTVSeries20152024",
+      "downloadable": true,
+      "styles": [
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/NCTVSeries20152024",
+      "author": "PBS Kids",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "nasa:AFRC-2026-14575-01_NASA Armstrong's Laminar Flow Scaled Wing Design Research on an F-15 Jet",
+      "provider": "nasa",
+      "title": "AFRC-2026-14575-01_NASA Armstrong's Laminar Flow Scaled Wing Design Research on an F-15 Jet",
+      "category": "nature",
+      "url": "https://images.nasa.gov/details/AFRC-2026-14575-01_NASA%20Armstrong's%20Laminar%20Flow%20Scaled%20Wing%20Design%20Research%20on%20an%20F-15%20Jet",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/AFRC-2026-14575-01_NASA Armstrong's Laminar Flow Scaled Wing Design Research on an F-15 Jet/AFRC-2026-14575-01_NASA Armstrong's Laminar Flow Scaled Wing Design Research on an F-15 Jet~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/AFRC-2026-14575-01_NASA%20Armstrong's%20Laminar%20Flow%20Scaled%20Wing%20Design%20Research%20on%20an%20F-15%20Jet/AFRC-2026-14575-01_NASA%20Armstrong's%20Laminar%20Flow%20Scaled%20Wing%20Design%20Research%20on%20an%20F-15%20Jet~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Joseph Collantes",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:LadybirdOpeningWingsCCBYNatureClip",
+      "provider": "internetarchive",
+      "title": "Ladybird Opening Wings CC BY Nature Clip",
+      "category": "nature",
+      "url": "https://archive.org/details/LadybirdOpeningWingsCCBYNatureClip",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/LadybirdOpeningWingsCCBYNatureClip",
+      "author": "NatureClip",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2014
+    },
+    {
+      "id": "nasa:GSFC_20120515_GPM_m10989_Fresh_Connection",
+      "provider": "nasa",
+      "title": "GPM: The Fresh(water) Connection",
+      "category": "nature.water",
+      "url": "https://images.nasa.gov/details/GSFC_20120515_GPM_m10989_Fresh_Connection",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20120515_GPM_m10989_Fresh_Connection/GSFC_20120515_GPM_m10989_Fresh_Connection~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20120515_GPM_m10989_Fresh_Connection/GSFC_20120515_GPM_m10989_Fresh_Connection~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Robert Andreoli",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2012
+    },
+    {
+      "id": "internetarchive:NatureStockVideo",
+      "provider": "internetarchive",
+      "title": "Free Original Nature Stock Video Footage",
+      "category": "nature",
+      "url": "https://archive.org/details/NatureStockVideo",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/NatureStockVideo",
+      "author": "Emil Capilongo Anthony",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2019
+    },
+    {
+      "id": "nasa:iss067m262431709_Expedition_67_Education_Inflight_Denver_Museum_of_Nature_and_Science_220831",
+      "provider": "nasa",
+      "title": "Astronauts Kjell Lindgren and Jessica Watkins Answers Colorado Student Questions - Aug. 31, 2022",
+      "category": "nature",
+      "url": "https://images.nasa.gov/details/iss067m262431709_Expedition_67_Education_Inflight_Denver_Museum_of_Nature_and_Science_220831",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/iss067m262431709_Expedition_67_Education_Inflight_Denver_Museum_of_Nature_and_Science_220831/iss067m262431709_Expedition_67_Education_Inflight_Denver_Museum_of_Nature_and_Science_220831~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/iss067m262431709_Expedition_67_Education_Inflight_Denver_Museum_of_Nature_and_Science_220831/iss067m262431709_Expedition_67_Education_Inflight_Denver_Museum_of_Nature_and_Science_220831~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "internetarchive:ParkCons1938",
+      "provider": "internetarchive",
+      "title": "Park Conscious",
+      "category": "nature",
+      "url": "https://archive.org/details/ParkCons1938",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/ParkCons1938",
+      "author": "U.S. Dept. of Agriculture",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 461,
+      "year": 1938
+    },
+    {
+      "id": "nasa:GSFC_20150416_Landslide_m11854_Catalog",
+      "provider": "nasa",
+      "title": "Global Landslide Catalog Aids View From Space",
+      "category": "nature",
+      "url": "https://images.nasa.gov/details/GSFC_20150416_Landslide_m11854_Catalog",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20150416_Landslide_m11854_Catalog/GSFC_20150416_Landslide_m11854_Catalog~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20150416_Landslide_m11854_Catalog/GSFC_20150416_Landslide_m11854_Catalog~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Joy Ng, Dalia B. Kirschbaum, Kayvon Sharghi, Ellen T. Gray",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:FernCreekFalls",
+      "provider": "internetarchive",
+      "title": "Fern Creek Falls",
+      "category": "nature.water",
+      "url": "https://archive.org/details/FernCreekFalls",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/FernCreekFalls",
+      "author": "Don Whitaker",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 50
+    },
+    {
+      "id": "nasa:GSFC_20150924_Landsat_m12013_Temp_Wetlands_1",
+      "provider": "nasa",
+      "title": "Landsat Helps Feed the Birds: Point Blue Conservation Science",
+      "category": "nature.animals",
+      "url": "https://images.nasa.gov/details/GSFC_20150924_Landsat_m12013_Temp_Wetlands_1",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20150924_Landsat_m12013_Temp_Wetlands_1/GSFC_20150924_Landsat_m12013_Temp_Wetlands_1~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20150924_Landsat_m12013_Temp_Wetlands_1/GSFC_20150924_Landsat_m12013_Temp_Wetlands_1~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Owen Bissell, Scott Stender, Laurence Bartone",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:Adventur1948",
+      "provider": "internetarchive",
+      "title": "Adventures of Junior Raindrop, The",
+      "category": "nature.water",
+      "url": "https://archive.org/details/Adventur1948",
+      "downloadable": true,
+      "styles": [
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/Adventur1948",
+      "author": "U.S. Dept. of Agriculture, Forest Service",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 448,
+      "year": 1948
+    },
+    {
+      "id": "nasa:GSFC_20160104_GPM_m12113_GPMYear2015",
+      "provider": "nasa",
+      "title": "GPM 2015: One Year of Storms",
+      "category": "nature.sky",
+      "url": "https://images.nasa.gov/details/GSFC_20160104_GPM_m12113_GPMYear2015",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20160104_GPM_m12113_GPMYear2015/GSFC_20160104_GPM_m12113_GPMYear2015~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20160104_GPM_m12113_GPMYear2015/GSFC_20160104_GPM_m12113_GPMYear2015~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA GSFC (Ryan Fitzgibbons et al.)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "internetarchive:CatAndSquirrel",
+      "provider": "internetarchive",
+      "title": "Cat and Squirrel",
+      "category": "nature.animals",
+      "url": "https://archive.org/details/CatAndSquirrel",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/CatAndSquirrel",
+      "author": "Shalimarlady Amy",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 50,
+      "year": 2013
+    },
+    {
+      "id": "nasa:GSFC_20150924_BirdReturns_m12013_Probability",
+      "provider": "nasa",
+      "title": "Landsat Helps Feed the Birds: Bird Returns Probability",
+      "category": "nature.animals",
+      "url": "https://images.nasa.gov/details/GSFC_20150924_BirdReturns_m12013_Probability",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20150924_BirdReturns_m12013_Probability/GSFC_20150924_BirdReturns_m12013_Probability~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20150924_BirdReturns_m12013_Probability/GSFC_20150924_BirdReturns_m12013_Probability~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Owen Bissell, Scott Stender, Laurence Bartone",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2015
+    },
+    {
+      "id": "nasa:GSFC_20110513_Landsat_m10753_SmithIsland",
+      "provider": "nasa",
+      "title": "Zoom in to Smith Island, MD",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20110513_Landsat_m10753_SmithIsland",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20110513_Landsat_m10753_SmithIsland/GSFC_20110513_Landsat_m10753_SmithIsland~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20110513_Landsat_m10753_SmithIsland/GSFC_20110513_Landsat_m10753_SmithIsland~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Matthew R. Radcliff",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2011
+    },
+    {
+      "id": "internetarchive:AmazingAnimalsRainforestAnimals",
+      "provider": "internetarchive",
+      "title": "Amazing Animals",
+      "category": "nature.animals",
+      "url": "https://archive.org/details/AmazingAnimalsRainforestAnimals",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/AmazingAnimalsRainforestAnimals",
+      "author": "Dorling Kindersly",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1996
+    },
+    {
+      "id": "nasa:GSFC_20160623_GPM_m12254_Monsoon",
+      "provider": "nasa",
+      "title": "Life of the Monsoon",
+      "category": "nature.water",
+      "url": "https://images.nasa.gov/details/GSFC_20160623_GPM_m12254_Monsoon",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20160623_GPM_m12254_Monsoon/GSFC_20160623_GPM_m12254_Monsoon~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20160623_GPM_m12254_Monsoon/GSFC_20160623_GPM_m12254_Monsoon~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Robert Andreoli",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "internetarchive:ColorShiftingSunset",
+      "provider": "internetarchive",
+      "title": "Color Shifting Sunset",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/ColorShiftingSunset",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/ColorShiftingSunset",
+      "author": "Don Whitaker",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 63
+    },
+    {
+      "id": "nasa:GSFC_20141113_Volcanoes_m10183_Change_Clouds",
+      "provider": "nasa",
+      "title": "How Do Active Volcanoes Change Clouds?",
+      "category": "nature.sky",
+      "url": "https://images.nasa.gov/details/GSFC_20141113_Volcanoes_m10183_Change_Clouds",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20141113_Volcanoes_m10183_Change_Clouds/GSFC_20141113_Volcanoes_m10183_Change_Clouds~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20141113_Volcanoes_m10183_Change_Clouds/GSFC_20141113_Volcanoes_m10183_Change_Clouds~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Joy Ng, Andrew Sayer, Brian Monroe, Kayvon Sharghi, Aaron Lepsch",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2014
+    },
+    {
+      "id": "internetarchive:Slashed_Dreams",
+      "provider": "internetarchive",
+      "title": "Slashed Dreams",
+      "category": "nature",
+      "url": "https://archive.org/details/Slashed_Dreams",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/Slashed_Dreams",
+      "author": "Ronald Peck",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1975
+    },
+    {
+      "id": "nasa:GSFC_20161007_GPM_m12389_Matthew_3D",
+      "provider": "nasa",
+      "title": "NASA Satellite Captures 3-D View Of Hurricane Matthew",
+      "category": "nature.sky",
+      "url": "https://images.nasa.gov/details/GSFC_20161007_GPM_m12389_Matthew_3D",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20161007_GPM_m12389_Matthew_3D/GSFC_20161007_GPM_m12389_Matthew_3D~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20161007_GPM_m12389_Matthew_3D/GSFC_20161007_GPM_m12389_Matthew_3D~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA GSFC (Joy Ng et al.)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "internetarchive:MountainFog",
+      "provider": "internetarchive",
+      "title": "Mountain Fog (Free to Use HD Stock Video Footage)",
+      "category": "nature.mountain",
+      "url": "https://archive.org/details/MountainFog",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/MountainFog",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:GSFC_20180710_Puerto_Rico_m12991_Lidar",
+      "provider": "nasa",
+      "title": "NASA Surveys Hurricane Damage to Puerto Rico's Forests",
+      "category": "nature.forest",
+      "url": "https://images.nasa.gov/details/GSFC_20180710_Puerto_Rico_m12991_Lidar",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20180710_Puerto_Rico_m12991_Lidar/GSFC_20180710_Puerto_Rico_m12991_Lidar~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20180710_Puerto_Rico_m12991_Lidar/GSFC_20180710_Puerto_Rico_m12991_Lidar~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Matthew R. Radcliff",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2018
+    },
+    {
+      "id": "internetarchive:M00GNU",
+      "provider": "internetarchive",
+      "title": "MooGNU",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/M00GNU",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/M00GNU",
+      "author": "/g/",
+      "license": {
+        "id": "CC-BY-SA-3.0",
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 16
+    },
+    {
+      "id": "nasa:GSFC_20141113_Volcanoes_m10183_Particles_Aerosols",
+      "provider": "nasa",
+      "title": "How Do Active Volcanoes Change Clouds: Cloud Particles with Aerosols",
+      "category": "nature.sky",
+      "url": "https://images.nasa.gov/details/GSFC_20141113_Volcanoes_m10183_Particles_Aerosols",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20141113_Volcanoes_m10183_Particles_Aerosols/GSFC_20141113_Volcanoes_m10183_Particles_Aerosols~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20141113_Volcanoes_m10183_Particles_Aerosols/GSFC_20141113_Volcanoes_m10183_Particles_Aerosols~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Joy Ng, Andrew Sayer, Brian Monroe, Kayvon Sharghi, Aaron Lepsch",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2014
+    },
+    {
+      "id": "internetarchive:LeafroyaltyFreeStockVideo",
+      "provider": "internetarchive",
+      "title": "Leaf (Royalty Free Stock Video)",
+      "category": "nature.forest",
+      "url": "https://archive.org/details/LeafroyaltyFreeStockVideo",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/LeafroyaltyFreeStockVideo",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 30
+    }
+  ]
+}

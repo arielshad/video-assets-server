@@ -24,11 +24,11 @@ export default defineConfig({
     agentFiles(),
     ogImages(),
     sitemap({
-      filter: (page) => !page.includes("/404") && !page.includes("/docs/api/playground") && pathOf(page) !== "/map" && !pages.noindex.has(pathOf(page)),
+      filter: (page) => !page.includes("/404") && !page.includes("/docs/api/playground") && !pages.noindex.has(pathOf(page)),
       serialize(item) {
         const path = pathOf(item.url);
         const lastmod = pages.lastmod.get(path);
-        return { ...item, lastmod, changefreq: path.startsWith("/samples") || path === "/stats" ? ChangeFreqEnum.DAILY : ChangeFreqEnum.WEEKLY };
+        return { ...item, lastmod, changefreq: path.startsWith("/footage") || path === "/stats" ? ChangeFreqEnum.DAILY : ChangeFreqEnum.WEEKLY };
       },
     }),
   ],

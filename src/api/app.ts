@@ -189,17 +189,13 @@ function headerValue(s: string): string {
 }
 
 /**
- * Per-request page rewrites:
- * - /search gets a CSP nonce (its sheet's scroll lock injects a <style> tag and
- *   reads the nonce from <meta property="csp-nonce">) and unique metadata for
- *   query variants;
- * - the Scalar API playground injects styles at runtime, so it alone gets
- *   inline styles (it is noindex and disallowed for crawlers).
- */
-/**
  * Per-request page changes. /search gets a CSP nonce, and for share links
  * (query variants or `?clip=`) a unique title, description, share card and
- * og:url; `pre` carries metadata looked up ahead of time (the clip).
+ * og:url; `pre` carries metadata looked up ahead of time (the clip). The
+ * nonce is for the detail sheet's scroll lock, which injects a <style> tag
+ * and reads the nonce from <meta property="csp-nonce">. The Scalar API
+ * playground injects styles at runtime, so it alone gets inline styles (it is
+ * noindex and disallowed for crawlers).
  */
 function pageRewrite(route: string, params: URLSearchParams, origin: string, pre?: HeadMeta): ServeOptions["rewrite"] {
   if (route === "/search") {
@@ -581,7 +577,7 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
   });
 
   /** Title, description and card for `/search?clip=<id>` share links (undefined if the clip can't be found quickly). */
-  const sampleShareMeta = async (c: Context): Promise<HeadMeta | undefined> => {
+  const clipShareMeta = async (c: Context): Promise<HeadMeta | undefined> => {
     const id = shareableClipId(c.req.query("clip"), providerIds);
     if (!id) return undefined;
     const found = service.getClip(id).catch(() => null);
@@ -595,7 +591,7 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
     if (c.req.path.startsWith("/v1/")) return c.json({ error: "not found" }, 404);
     const alias = ALIASES[c.req.path.replace(/\/+$/, "").toLowerCase()];
     if (alias) return c.redirect(alias, 301);
-    const pre = c.req.path.replace(/\/+$/, "") === "/search" ? await sampleShareMeta(c) : undefined;
+    const pre = c.req.path.replace(/\/+$/, "") === "/search" ? await clipShareMeta(c) : undefined;
     return serveSite(c, c.req.path, pre) ?? c.json({ error: "not found" }, 404);
   });
   // Paths the router can't match (e.g. with encoded control characters) get the same 404 treatment.

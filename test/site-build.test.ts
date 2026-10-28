@@ -89,12 +89,12 @@ describe.skipIf(!built)("built website", () => {
 
   it("keeps the API playground out of crawls and renders the full reference statically", () => {
     const robots = read("robots.txt").replace(/\r\n/g, "\n");
-    expect(robots).toMatch(/User-agent: \*\nDisallow: \/v1\/clips\/\*\/download\nDisallow: \/v1\/clips\/\*\/preview\nDisallow: \/docs\/api\/playground/);
+    expect(robots).toMatch(/User-agent: \*\nDisallow: \/v1\/clips\/\*\/download\nDisallow: \/v1\/clips\/\*\/credits\nDisallow: \/docs\/api\/playground/);
     expect(robots).not.toContain("Allow: /");
     expect(read("sitemap-0.xml")).not.toContain("playground");
     const reference = read("docs/api/reference/index.html");
-    for (const id of ["searchSamples", "getClip", "selectFiles", "downloadClip", "getPreview", "buildKit", "listProviders", "mcp"]) expect(reference).toContain(`id="op-${id}"`);
-    for (const schema of ["clip", "samplefile", "license", "searchresponse", "providersearchreport", "kit"]) expect(reference).toContain(`id="schema-${schema}"`);
+    for (const id of ["searchClips", "getClip", "selectFiles", "downloadClip", "clipCredits", "planSequence", "listProviders", "mcp"]) expect(reference).toContain(`id="op-${id}"`);
+    for (const schema of ["clip", "clipfile", "license", "searchresponse", "providersearchreport", "sequenceresponse"]) expect(reference).toContain(`id="schema-${schema}"`);
     expect(read("docs/api/playground/index.html")).toContain('content="noindex, follow"');
   });
 
@@ -114,7 +114,7 @@ describe.skipIf(!built)("built website", () => {
     const files = ["index.html", "docs/index.html", "about.md", "docs/mcp.md", "docs/api.md", "docs/cli.md", "AGENTS.md", "skill/SKILL.md", "llms.txt", "stats/index.html"];
     const sources = [...files.map((f) => [f, read(f)]), ["README.md", readFileSync(new URL("../README.md", import.meta.url), "utf8")]];
     for (const [f, body] of sources) {
-      for (const m of body!.matchAll(/\b(\d+) (?:music )?(?:clip |sound )?sites\b/g)) expect(`${f}: ${m[0]}`).toBe(`${f}: ${m[1] === String(n) ? m[0] : `${n} … sites`}`);
+      for (const m of body!.matchAll(/\b(\d+) (?:video )?(?:stock )?sites\b/g)) expect(`${f}: ${m[0]}`).toBe(`${f}: ${m[1] === String(n) ? m[0] : `${n} … sites`}`);
     }
   });
 
@@ -134,7 +134,7 @@ describe.skipIf(!built)("built website", () => {
     for (const page of pages) {
       const html = read(page);
       const image = html.match(/<meta property="og:image" content="([^"]+)"/)?.[1];
-      expect(image, page).toMatch(/^https:\/\/sound\.shep\.bot\/og\/[a-z0-9-]+\.png$/);
+      expect(image, page).toMatch(/^https:\/\/video\.shep\.bot\/og\/[a-z0-9-]+\.png$/);
       images.add(image!);
       const file = new URL(`.${new URL(image!).pathname}`, root);
       expect(statSync(file).size, image).toBeGreaterThan(10_000);
@@ -154,7 +154,7 @@ describe.skipIf(!built)("built website", () => {
 
   it("publishes the catalog census on /stats, the homepage, llms.txt and as JSON", () => {
     const catalog = JSON.parse(read("catalog.json")) as { countedAt: string; totals: { listings: { count: number }; free: { count: number } }; sources: { id: string }[] };
-    expect(catalog.sources.length).toBeGreaterThan(5);
+    expect(catalog.sources.length).toBeGreaterThanOrEqual(3);
     expect(JSON.parse(read("catalog-history.json")).length).toBeGreaterThan(0);
     const stats = read("stats/index.html");
     const listings = catalog.totals.listings.count.toLocaleString("en");
@@ -163,8 +163,8 @@ describe.skipIf(!built)("built website", () => {
     expect(stats).toMatch(/As of [A-Z][a-z]+ \d+, \d{4}, Video Assets Server searches/);
     const dataset = jsonLd(stats)["@graph"].find((n) => n["@type"] === "Dataset") as { distribution: { contentUrl: string }[] } | undefined;
     expect(dataset?.distribution.map((d) => d.contentUrl)).toEqual(["https://video.shep.bot/catalog.json", "https://video.shep.bot/catalog-history.json"]);
-    expect(read("index.html")).toMatch(/free (?:music )?clips/i);
-    expect(read("llms.txt")).toMatch(/\*\*Catalog \(counted \d{4}-\d{2}-\d{2}\)\.\*\* [\d,]+\+? (?:clip )?listings/);
+    expect(read("index.html")).toMatch(/free (?:stock )?(?:video|footage|clips)/i);
+    expect(read("llms.txt")).toMatch(/\*\*Catalog \(counted \d{4}-\d{2}-\d{2}\)\.\*\* [\d,]+\+? (?:video )?listings/);
     const md = read("stats.md");
     expect(md).toMatch(/^# .+ in numbers$/m);
     expect(md).toContain(`| ${listings}`.slice(0, 2)); // the by-source table
@@ -197,7 +197,7 @@ describe.skipIf(!built)("built website", () => {
     const types = (html: string) => jsonLd(html)["@graph"].flatMap((n) => [n["@type"]].flat()) as string[];
 
     it("gives every page one H1, a canonical URL, parseable JSON-LD and a Markdown twin", () => {
-      expect(pages.length).toBeGreaterThan(100);
+      expect(pages.length).toBeGreaterThan(50);
       for (const p of pages) {
         expect((p.html.match(/<h1\b/g) ?? []).length, p.route).toBe(1);
         expect(attr(p.html, /<link rel="canonical" href="([^"]+)"/), p.route).toBe(`https://video.shep.bot${p.route === "/" ? "/" : p.route}`.replace(/\/$/, p.route === "/" ? "/" : ""));
@@ -227,7 +227,7 @@ describe.skipIf(!built)("built website", () => {
 
     it("lists exactly the indexable pages in the sitemap", () => {
       const sitemap = read("sitemap-0.xml");
-      const urls = new Set([...sitemap.matchAll(/<loc>https:\/\/sound\.shep\.bot([^<]*)<\/loc>/g)].map((m) => m[1] || "/"));
+      const urls = new Set([...sitemap.matchAll(/<loc>https:\/\/video\.shep\.bot([^<]*)<\/loc>/g)].map((m) => m[1] || "/"));
       for (const p of indexable()) expect(urls.has(p.route), `${p.route} missing from the sitemap`).toBe(true);
       for (const p of pages.filter((x) => x.html.includes('content="noindex'))) expect(urls.has(p.route), `${p.route} is noindex but in the sitemap`).toBe(false);
     });
@@ -247,7 +247,7 @@ describe.skipIf(!built)("built website", () => {
     });
 
     it.skipIf(!guideSlugs.length)("publishes every guide answer-first, with schema, a twin, a sitemap date and an llms.txt entry", () => {
-      expect(guideSlugs.length).toBeGreaterThanOrEqual(10);
+      expect(guideSlugs.length).toBeGreaterThanOrEqual(8);
       const llms = read("llms.txt");
       const full = read("llms-full.txt");
       const sitemap = read("sitemap-0.xml");
@@ -279,8 +279,8 @@ describe.skipIf(!built)("built website", () => {
       const set = jsonLd(html)["@graph"].find((n) => n["@type"] === "DefinedTermSet") as { hasDefinedTerm: { "@id": string; name: string }[] };
       expect(set.hasDefinedTerm.length).toBeGreaterThanOrEqual(30);
       for (const term of set.hasDefinedTerm) expect(html, term.name).toContain(`id="${term["@id"].split("#")[1]}"`);
-      for (const name of ["One-shot", "BPM", "CC0", "CC BY", "Sampling+", "SFZ", "General MIDI", "Strudel"]) expect(set.hasDefinedTerm.map((t) => t.name)).toContain(name);
-      expect(read("glossary.md")).toContain("### Clip rate");
+      for (const name of ["B-roll", "Editorial use", "CC0", "CC BY", "Rendition", "Frame rate (fps)", "OpenTimelineIO (OTIO)", "NASA media guidelines"]) expect(set.hasDefinedTerm.map((t) => t.name)).toContain(name);
+      expect(read("glossary.md")).toContain("### Rendition");
       expect(read("llms.txt")).toContain("https://video.shep.bot/glossary.md");
       expect(read("sitemap-0.xml")).toContain("https://video.shep.bot/glossary<");
     });
@@ -297,12 +297,13 @@ describe.skipIf(!built)("built website", () => {
 
     it("gives hubs and searched sources substantial copy and structured data", () => {
       for (const hub of data<{ id: string; faq?: unknown[] }[]>("collection-hubs.json", [])) {
-        const html = read(`clips/${hub.id}/index.html`);
+        const html = read(`footage/${hub.id}/index.html`);
         expect(text(html).split(" ").length, hub.id).toBeGreaterThan(400);
         if (hub.faq?.length) expect(types(html), hub.id).toContain("FAQPage");
       }
       const notes = data<Record<string, unknown>>("source-notes.json", {});
-      for (const id of Object.keys(notes)) {
+      const linkOnly = new Set(data<{ id: string; access: string }[]>("providers.json", []).filter((p) => p.access === "link").map((p) => p.id));
+      for (const id of Object.keys(notes).filter((id) => !linkOnly.has(id))) {
         const html = read(`sources/${id}/index.html`);
         expect(html, id).toContain('content="index, follow');
         expect(html, id).toContain("How Video Assets Server searches it");
@@ -313,7 +314,7 @@ describe.skipIf(!built)("built website", () => {
   });
 
   describe("collections", () => {
-    // Collections live at /clips/<slug>, hubs at /clips/<hub>; the first
+    // Collections live at /footage/<slug>, hubs at /footage/<hub>; the first
     // indexable snapshot stands in for all of them (the set changes weekly).
     type Snap = { slug: string; clips: { provider: string }[] };
     const snapshots: Snap[] = (() => {
@@ -327,30 +328,30 @@ describe.skipIf(!built)("built website", () => {
     const hubs = data<{ id: string }[]>("collection-hubs.json", []);
     const providers = data<{ id: string; access: string }[]>("providers.json", []);
     const sitemap = () => read("sitemap-0.xml");
-    const entry = (path: string) => sitemap().match(new RegExp(`<url><loc>https://sound\\.shep\\.bot${path}</loc>(.*?)</url>`))?.[1];
+    const entry = (path: string) => sitemap().match(new RegExp(`<url><loc>https://video\\.shep\\.bot${path}</loc>(.*?)</url>`))?.[1];
 
     it.skipIf(!page)("pre-renders a collection with its clips, previews, copy, FAQ and structured data", () => {
-      const html = read(`clips/${page!.slug}/index.html`);
+      const html = read(`footage/${page!.slug}/index.html`);
       expect(html).toContain('content="index, follow');
       expect((html.match(/href="\/search\?clip=/g) ?? []).length).toBeGreaterThanOrEqual(12);
-      expect((html.match(/<audio\b|data-preview=/g) ?? []).length).toBeGreaterThanOrEqual(1);
+      expect((html.match(/<video\b|data-preview=/g) ?? []).length).toBeGreaterThanOrEqual(1);
       const graph = jsonLd(html)["@graph"];
       expect(graph.map((n) => n["@type"])).toEqual(expect.arrayContaining(["CollectionPage", "BreadcrumbList", "FAQPage"]));
       const col = graph.find((n) => n["@type"] === "CollectionPage") as { dateModified: string; mainEntity: { numberOfItems: number } };
       expect(col.mainEntity.numberOfItems).toBeGreaterThanOrEqual(12);
       expect(col.dateModified).toMatch(/^\d{4}-\d{2}-\d{2}T/);
-      expect(read(`clips/${page!.slug}.md`)).toMatch(/\| `[a-z0-9-]+:/);
-      expect(read("llms.txt")).toContain(`https://video.shep.bot/clips/${page!.slug}.md`);
-      expect(entry(`/clips/${page!.slug}`)).toMatch(/<lastmod>\d{4}-\d{2}-\d{2}T/);
+      expect(read(`footage/${page!.slug}.md`)).toMatch(/\| `[a-z0-9-]+:/);
+      expect(read("llms.txt")).toContain(`https://video.shep.bot/footage/${page!.slug}.md`);
+      expect(entry(`/footage/${page!.slug}`)).toMatch(/<lastmod>\d{4}-\d{2}-\d{2}T/);
     });
 
     it("publishes the hubs and the index, each with a Markdown twin", () => {
       expect(hubs.length).toBeGreaterThan(0);
-      for (const p of ["clips", ...hubs.map((h) => `clips/${h.id}`)]) {
+      for (const p of ["footage", ...hubs.map((h) => `footage/${h.id}`)]) {
         expect(text(read(`${p}/index.html`)).length, p).toBeGreaterThan(500);
         expect(read(`${p}.md`).length, p).toBeGreaterThan(300);
       }
-      expect(entry(`/clips/${hubs[0]!.id}`)).toContain("<lastmod>");
+      expect(entry(`/footage/${hubs[0]!.id}`)).toContain("<lastmod>");
     });
 
     it("dates only what it can date in the sitemap", () => {

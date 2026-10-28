@@ -1,6 +1,6 @@
 /**
  * Credentials from the environment, or from files in VIDEO_SERVER_SECRETS_DIR
- * (one file per name, e.g. /var/run/secrets/video-assets-server/FREESOUND_API_KEY).
+ * (one file per name, e.g. /var/run/secrets/video-assets-server/VIDEO_SERVER_API_KEY).
  *
  * In Kubernetes the Secret is mounted there as a volume, and the kubelet
  * updates mounted files when the Secret changes, so a key added to the vault

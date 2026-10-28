@@ -1,0 +1,330 @@
+{
+  "slug": "free-cloud-timelapses",
+  "search": {
+    "q": "clouds timelapse",
+    "categories": [
+      "nature.sky"
+    ],
+    "styles": [
+      "timelapse"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:28.562Z",
+  "clips": [
+    {
+      "id": "internetarchive:CEP238",
+      "provider": "internetarchive",
+      "title": "Cloud To Cloud Lightning CGI & Timelapse (Wide Screen)",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/CEP238",
+      "downloadable": true,
+      "styles": [
+        "timelapse",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/CEP238",
+      "author": "C. E. Price",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2007
+    },
+    {
+      "id": "internetarchive:DarkBlueCloudsTimeLapseClipFreeFootageHD",
+      "provider": "internetarchive",
+      "title": "Dark Blue Clouds Time Lapse Clip Free Footage HD",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/DarkBlueCloudsTimeLapseClipFreeFootageHD",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/DarkBlueCloudsTimeLapseClipFreeFootageHD",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:Clouds_Timelapse_01_2k",
+      "provider": "internetarchive",
+      "title": "Clouds Timelapse 01 - Free HD and 4K stock footage",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/Clouds_Timelapse_01_2k",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/Clouds_Timelapse_01_2k",
+      "author": "Vincent Wolf",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:Clouds_Timelapse_02_2k",
+      "provider": "internetarchive",
+      "title": "Clouds Timelapse 02 - Free HD and 4K Stock footage",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/Clouds_Timelapse_02_2k",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/Clouds_Timelapse_02_2k",
+      "author": "Vincent Wolf",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:SilverLining-CloudTimeLapse",
+      "provider": "internetarchive",
+      "title": "Silver Lining - Cloud Time Lapse (Free to Use HD Stock Video Footage)",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/SilverLining-CloudTimeLapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/SilverLining-CloudTimeLapse",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:JuusonTurhaVideoDiary-Clouds26hTimelapse",
+      "provider": "internetarchive",
+      "title": "Juuson Turha Video Diary - Clouds 26h timelapse",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/JuusonTurhaVideoDiary-Clouds26hTimelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/JuusonTurhaVideoDiary-Clouds26hTimelapse",
+      "author": "Super RandomForum",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2014
+    },
+    {
+      "id": "internetarchive:TimelapseOfClouds",
+      "provider": "internetarchive",
+      "title": "Timelapse of clouds",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/TimelapseOfClouds",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/TimelapseOfClouds",
+      "author": "Thomas Bresson",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 35
+    },
+    {
+      "id": "internetarchive:CloudsTimelapse3",
+      "provider": "internetarchive",
+      "title": "Clouds Timelapse 2",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/CloudsTimelapse3",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/CloudsTimelapse3",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:CloudsTimelapse3New",
+      "provider": "internetarchive",
+      "title": "Clouds Timelapse 3 new",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/CloudsTimelapse3New",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/CloudsTimelapse3New",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 27
+    },
+    {
+      "id": "internetarchive:FindingFootageCloudsTimeLapse",
+      "provider": "internetarchive",
+      "title": "Finding Footage Clouds Time Lapse",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/FindingFootageCloudsTimeLapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/FindingFootageCloudsTimeLapse",
+      "author": "Finding Footage",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:CloudsPassingTimelapse",
+      "provider": "internetarchive",
+      "title": "Clouds Passing Timelapse Free Stock Video",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/CloudsPassingTimelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/CloudsPassingTimelapse",
+      "author": "Eric Paul Goldie",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2019
+    },
+    {
+      "id": "internetarchive:Stock-CloudsVancouverMisc",
+      "provider": "internetarchive",
+      "title": "Stock - Clouds Vancouver Misc",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/Stock-CloudsVancouverMisc",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/Stock-CloudsVancouverMisc",
+      "author": "NA",
+      "license": {
+        "id": "CC-BY-SA-2.5",
+        "name": "CC BY-SA 2.5",
+        "url": "https://creativecommons.org/licenses/by-sa/2.5/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 240,
+      "year": 1995
+    },
+    {
+      "id": "internetarchive:PerpetuaFogTimelapse",
+      "provider": "internetarchive",
+      "title": "Perpetua Fog Timelapse",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/PerpetuaFogTimelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/PerpetuaFogTimelapse",
+      "author": "Don Whitaker",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 23
+    },
+    {
+      "id": "internetarchive:FogWhiteoutTimelapse",
+      "provider": "internetarchive",
+      "title": "Fog Whiteout Timelapse",
+      "category": "nature.sky",
+      "url": "https://archive.org/details/FogWhiteoutTimelapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/FogWhiteoutTimelapse",
+      "author": "Don Whitaker",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 30
+    }
+  ]
+}

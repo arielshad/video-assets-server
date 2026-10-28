@@ -1,0 +1,498 @@
+{
+  "slug": "free-ocean-footage",
+  "search": {
+    "q": "ocean",
+    "categories": [
+      "nature.ocean"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:38.822Z",
+  "clips": [
+    {
+      "id": "nasasvs:5687",
+      "provider": "nasasvs",
+      "title": "El Niño 2026: Ocean Apparent Visible Wavelength (2025 vs. 2026) – Updated Daily",
+      "category": "nature.ocean",
+      "url": "https://svs.gsfc.nasa.gov/5687/",
+      "downloadable": true,
+      "styles": [
+        "visualization"
+      ],
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005687/elnino_avw_2025_2026_daily_1900x800.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005687/elnino_avw_2025_2026_daily_1900x800.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio (Kel Elkins)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 1800,
+      "height": 900,
+      "year": 2026
+    },
+    {
+      "id": "nasa:GSFC_20111012_BF_m10849_Bottom_Ocean",
+      "provider": "nasa",
+      "title": "Meanwhile, At the Bottom of the Ocean",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20111012_BF_m10849_Bottom_Ocean",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20111012_BF_m10849_Bottom_Ocean/GSFC_20111012_BF_m10849_Bottom_Ocean~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20111012_BF_m10849_Bottom_Ocean/GSFC_20111012_BF_m10849_Bottom_Ocean~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Ryan Fitzgibbons, Gene Feldman, Theresa Schwerin, Chris Meaney",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2011
+    },
+    {
+      "id": "internetarchive:pillow_lava_480",
+      "provider": "internetarchive",
+      "title": "Ocean Lava underwater",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/pillow_lava_480",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/pillow_lava_480",
+      "author": "Richard Pyle",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 48,
+      "year": 2004
+    },
+    {
+      "id": "nasa:GSFC_20170609_Carbon_m12629_AMOCcarbon",
+      "provider": "nasa",
+      "title": "Ocean Circulation Plays an Important Role in Absorbing Carbon from the Atmosphere",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20170609_Carbon_m12629_AMOCcarbon",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20170609_Carbon_m12629_AMOCcarbon/GSFC_20170609_Carbon_m12629_AMOCcarbon~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20170609_Carbon_m12629_AMOCcarbon/GSFC_20170609_Carbon_m12629_AMOCcarbon~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Kathryn Mersmann, Ellen T. Gray, Anastasia Romanou",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2017
+    },
+    {
+      "id": "nasa:GSFC_20161212_Tidal_m12450_Magnetic",
+      "provider": "nasa",
+      "title": "Ocean Tides and Magnetic Fields",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20161212_Tidal_m12450_Magnetic",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20161212_Tidal_m12450_Magnetic/GSFC_20161212_Tidal_m12450_Magnetic~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20161212_Tidal_m12450_Magnetic/GSFC_20161212_Tidal_m12450_Magnetic~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA GSFC (Matthew R. Radcliff et al.)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "internetarchive:PanoramaOfOceanBeachAndCliffHouse1903",
+      "provider": "internetarchive",
+      "title": "Panorama of Ocean Beach and Cliff House(1903)",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/PanoramaOfOceanBeachAndCliffHouse1903",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/PanoramaOfOceanBeachAndCliffHouse1903",
+      "author": "H.J Miles; American Mutoscope & Biograph Company",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 98
+    },
+    {
+      "id": "nasa:GSFC_20161212_Ocean_m12456_Heat",
+      "provider": "nasa",
+      "title": "Tracking Ocean Heat With Magnetic Fields",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20161212_Ocean_m12456_Heat",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20161212_Ocean_m12456_Heat/GSFC_20161212_Ocean_m12456_Heat~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20161212_Ocean_m12456_Heat/GSFC_20161212_Ocean_m12456_Heat~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA GSFC (Matthew R. Radcliff et al.)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "nasa:Anthony Mackie_SharkBeach_NatGeoSocial_NASA_007",
+      "provider": "nasa",
+      "title": "Anthony Mackie Asks NASA About Ocean Science",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/Anthony%20Mackie_SharkBeach_NatGeoSocial_NASA_007",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Anthony Mackie_SharkBeach_NatGeoSocial_NASA_007/Anthony Mackie_SharkBeach_NatGeoSocial_NASA_007~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Anthony%20Mackie_SharkBeach_NatGeoSocial_NASA_007/Anthony%20Mackie_SharkBeach_NatGeoSocial_NASA_007~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA LaRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:Operatio1946",
+      "provider": "internetarchive",
+      "title": "Operation Crossroads (Part I)",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/Operatio1946",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Operatio1946",
+      "author": "Handy (Jam) Organization",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 726,
+      "year": 1946
+    },
+    {
+      "id": "nasasvs:5688",
+      "provider": "nasasvs",
+      "title": "El Niño 2026: Sea Surface Temperature Anomaly (2025 vs. 2026) – Updated Daily",
+      "category": "nature.ocean",
+      "url": "https://svs.gsfc.nasa.gov/5688/",
+      "downloadable": true,
+      "styles": [
+        "visualization"
+      ],
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005688/elnino_eic_ssta_globes_wLegend_1670x835_latest.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005688/elnino_eic_ssta_globes_wLegend_3340x1670_latest.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio (Kel Elkins)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 3340,
+      "height": 1670,
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:TheIncrediblePetrifiedWorld",
+      "provider": "internetarchive",
+      "title": "The Incredible Petrified World",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/TheIncrediblePetrifiedWorld",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/TheIncrediblePetrifiedWorld",
+      "author": "Jerry Warren",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 3796,
+      "year": 1957
+    },
+    {
+      "id": "nasa:GSFC_20170215_Helheim_m12509_Aquifer",
+      "provider": "nasa",
+      "title": "Water in Helheim Glacier Makes Its Way to the Ocean",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20170215_Helheim_m12509_Aquifer",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20170215_Helheim_m12509_Aquifer/GSFC_20170215_Helheim_m12509_Aquifer~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20170215_Helheim_m12509_Aquifer/GSFC_20170215_Helheim_m12509_Aquifer~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Kathryn Mersmann, Maria-Jose Vinas Garcia, Kristin Poinar",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2017
+    },
+    {
+      "id": "internetarchive:Operatio1946_2",
+      "provider": "internetarchive",
+      "title": "Operation Crossroads (Part II)",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/Operatio1946_2",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Operatio1946_2",
+      "author": "Handy (Jam) Organization",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 870,
+      "year": 1946
+    },
+    {
+      "id": "nasa:JPL-20240916-CLIPPRf-0001-Europa Clipper Mission Overview",
+      "provider": "nasa",
+      "title": "Europa Clipper: Exploring Jupiter’s Ocean Moon (Mission Overview)",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/JPL-20240916-CLIPPRf-0001-Europa%20Clipper%20Mission%20Overview",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/JPL-20240916-CLIPPRf-0001-Europa Clipper Mission Overview/JPL-20240916-CLIPPRf-0001-Europa Clipper Mission Overview~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/JPL-20240916-CLIPPRf-0001-Europa%20Clipper%20Mission%20Overview/JPL-20240916-CLIPPRf-0001-Europa%20Clipper%20Mission%20Overview~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JPL",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "nasa:JPL-20240515-CLIPPRf-0001-Europa Clipper Science Overview Video",
+      "provider": "nasa",
+      "title": "Why Does NASA Want to Explore Jupiter’s Ocean Moon? (Europa Clipper Science Overview)",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/JPL-20240515-CLIPPRf-0001-Europa%20Clipper%20Science%20Overview%20Video",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/JPL-20240515-CLIPPRf-0001-Europa Clipper Science Overview Video/JPL-20240515-CLIPPRf-0001-Europa Clipper Science Overview Video~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/JPL-20240515-CLIPPRf-0001-Europa%20Clipper%20Science%20Overview%20Video/JPL-20240515-CLIPPRf-0001-Europa%20Clipper%20Science%20Overview%20Video~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JPL",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:gov.archives.arc.65841",
+      "provider": "internetarchive",
+      "title": "THE BATTLE FOR THE BEACHES",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/gov.archives.arc.65841",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/gov.archives.arc.65841",
+      "author": "National Archives and Records Administration",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:HeavyweightBoxing",
+      "provider": "internetarchive",
+      "title": "Heavyweight Boxing",
+      "category": "nature.ocean",
+      "url": "https://archive.org/details/HeavyweightBoxing",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/HeavyweightBoxing",
+      "author": "Thomas Alva Edison",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:GSFC_20170526_ElNino_m12601_3D",
+      "provider": "nasa",
+      "title": "A 3D Look at the 2015 El Niño",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20170526_ElNino_m12601_3D",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20170526_ElNino_m12601_3D/GSFC_20170526_ElNino_m12601_3D~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20170526_ElNino_m12601_3D/GSFC_20170526_ElNino_m12601_3D~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA GSFC (Matthew R. Radcliff et al.)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2017
+    },
+    {
+      "id": "nasa:GSFC_20180808_m13032_EXPORTS",
+      "provider": "nasa",
+      "title": "Two Research Vessels Leave for the Twilight Zone",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20180808_m13032_EXPORTS",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20180808_m13032_EXPORTS/GSFC_20180808_m13032_EXPORTS~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20180808_m13032_EXPORTS/GSFC_20180808_m13032_EXPORTS~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Michael Starobin",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2018
+    },
+    {
+      "id": "nasa:GSFC_20161028_IceAge_m12403_Yearly",
+      "provider": "nasa",
+      "title": "Arctic Sea Ice Age 2016 with VO from Walt Meier",
+      "category": "nature.ocean",
+      "url": "https://images.nasa.gov/details/GSFC_20161028_IceAge_m12403_Yearly",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20161028_IceAge_m12403_Yearly/GSFC_20161028_IceAge_m12403_Yearly~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20161028_IceAge_m12403_Yearly/GSFC_20161028_IceAge_m12403_Yearly~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jefferson Beck, Cindy Starr, Walt Meier",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2016
+    }
+  ]
+}

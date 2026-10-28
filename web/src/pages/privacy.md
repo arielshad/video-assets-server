@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: Privacy
-description: What Video Assets Server records (search text in server logs, anonymous counters, which AI tools call MCP), what stays in your browser, and who else you contact.
+description: What Video Assets Server records (search text in server logs, anonymous counters, which AI tools call MCP), what stays in your browser and who else you reach.
 schemaType: WebPage
 ---
 

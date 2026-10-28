@@ -22,7 +22,7 @@ const inTop = (top: string, c: string) => c === top || c.startsWith(`${top}.`);
 export function CategoryChips({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
   const tops = TOP_CATEGORIES.filter((t) => t !== "other");
   return (
-    <div className="flex flex-wrap gap-1.5" role="group" aria-label="Categories">
+    <div className="-mx-4 flex gap-1.5 overflow-x-auto px-4 pb-0.5 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&>*]:shrink-0" role="group" aria-label="Categories">
       {tops.map((top) => {
         const subs = subCategories(top);
         const picked = value.filter((c) => inTop(top, c));

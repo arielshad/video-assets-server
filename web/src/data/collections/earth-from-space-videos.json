@@ -1,0 +1,888 @@
+{
+  "slug": "earth-from-space-videos",
+  "search": {
+    "q": "earth",
+    "categories": [
+      "space.earth"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:10.712Z",
+  "clips": [
+    {
+      "id": "nasa:GSFC_20140421_EarthOrbit_m11525",
+      "provider": "nasa",
+      "title": "Earth from Orbit 2013",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/GSFC_20140421_EarthOrbit_m11525",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20140421_EarthOrbit_m11525/GSFC_20140421_EarthOrbit_m11525~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20140421_EarthOrbit_m11525/GSFC_20140421_EarthOrbit_m11525~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jefferson Beck, Katrina Jackson",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2014
+    },
+    {
+      "id": "wikimediacommons:The_Earth_4K_Extended_Edition.webm",
+      "provider": "wikimediacommons",
+      "title": "The Earth 4K Extended Edition",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Earth_4K_Extended_Edition.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/The_Earth_4K_Extended_Edition.webm/960px--The_Earth_4K_Extended_Edition.webm.jpg",
+      "author": "NASA/Jeff Williams",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 3593.39,
+      "year": 2017
+    },
+    {
+      "id": "internetarchive:TheLastManOnEarth_72",
+      "provider": "internetarchive",
+      "title": "The Last Man on Earth (1964)",
+      "category": "space.earth",
+      "url": "https://archive.org/details/TheLastManOnEarth_72",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/TheLastManOnEarth_72",
+      "author": "Robert L. Lippert",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 86.3
+    },
+    {
+      "id": "wikimediacommons:View_of_Planet_Earth_(4K).webm",
+      "provider": "wikimediacommons",
+      "title": "View of Planet Earth (4K)",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:View_of_Planet_Earth_(4K).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/View_of_Planet_Earth_%284K%29.webm/960px--View_of_Planet_Earth_%284K%29.webm.jpg",
+      "author": "NASA Johnson",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 97.26,
+      "year": 2016
+    },
+    {
+      "id": "nasa:Seeing Earth as Only NASA Can",
+      "provider": "nasa",
+      "title": "Seeing Earth as Only NASA Can",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/Seeing%20Earth%20as%20Only%20NASA%20Can",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Seeing Earth as Only NASA Can/Seeing Earth as Only NASA Can~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Seeing%20Earth%20as%20Only%20NASA%20Can/Seeing%20Earth%20as%20Only%20NASA%20Can~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:lastmanonearth-1964",
+      "provider": "internetarchive",
+      "title": "Last Man on Earth-hd",
+      "category": "space.earth",
+      "url": "https://archive.org/details/lastmanonearth-1964",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/lastmanonearth-1964",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "wikimediacommons:DSCOVR_EPIC_Earth_Rotation.webm",
+      "provider": "wikimediacommons",
+      "title": "DSCOVR EPIC Earth Rotation",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:DSCOVR_EPIC_Earth_Rotation.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/DSCOVR_EPIC_Earth_Rotation.webm/960px--DSCOVR_EPIC_Earth_Rotation.webm.jpg",
+      "author": "NASA/GSFC",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "square",
+      "width": 1080,
+      "height": 1080,
+      "durationSec": 4.53,
+      "year": 2022
+    },
+    {
+      "id": "nasa:AFRC_2019_0107_Meet NASAs 2020 Earth Expeditions",
+      "provider": "nasa",
+      "title": "Meet NASA's 2020 Earth Expeditions",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/AFRC_2019_0107_Meet%20NASAs%202020%20Earth%20Expeditions",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/AFRC_2019_0107_Meet NASAs 2020 Earth Expeditions/AFRC_2019_0107_Meet NASAs 2020 Earth Expeditions~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/AFRC_2019_0107_Meet%20NASAs%202020%20Earth%20Expeditions/AFRC_2019_0107_Meet%20NASAs%202020%20Earth%20Expeditions~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA AFRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:EarthImpact",
+      "provider": "internetarchive",
+      "title": "Earth asteroid impact animation.",
+      "category": "space.earth",
+      "url": "https://archive.org/details/EarthImpact",
+      "downloadable": true,
+      "styles": [
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/EarthImpact",
+      "author": "(M. Kornmesser & L. L. Christensen)",
+      "license": {
+        "id": "CC-BY-2.5",
+        "name": "CC BY 2.5",
+        "url": "https://creativecommons.org/licenses/by/2.5/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "wikimediacommons:ISS_4K_Crew_Earth_Observations.webm",
+      "provider": "wikimediacommons",
+      "title": "ISS 4K Crew Earth Observations",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:ISS_4K_Crew_Earth_Observations.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/ISS_4K_Crew_Earth_Observations.webm/960px--ISS_4K_Crew_Earth_Observations.webm.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 66.87,
+      "year": 2017
+    },
+    {
+      "id": "nasa:GSFC_20150420_Orbit_m11858_2014",
+      "provider": "nasa",
+      "title": "Earth from Orbit 2014",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/GSFC_20150420_Orbit_m11858_2014",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20150420_Orbit_m11858_2014/GSFC_20150420_Orbit_m11858_2014~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20150420_Orbit_m11858_2014/GSFC_20150420_Orbit_m11858_2014~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jefferson Beck, Eric Sokolowsky",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2015
+    },
+    {
+      "id": "wikimediacommons:View_of_the_Earth_from_the_ISS_(8K).webm",
+      "provider": "wikimediacommons",
+      "title": "View of the Earth from the ISS (8K)",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:View_of_the_Earth_from_the_ISS_(8K).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/View_of_the_Earth_from_the_ISS_%288K%29.webm/960px--View_of_the_Earth_from_the_ISS_%288K%29.webm.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 8192,
+      "height": 4096,
+      "durationSec": 368.63,
+      "year": 2020
+    },
+    {
+      "id": "nasa:GSFC_20190419_Earth_m13188_Orbit",
+      "provider": "nasa",
+      "title": "Earth from Orbit 2019: How NASA Satellites #PictureEarth",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/GSFC_20190419_Earth_m13188_Orbit",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20190419_Earth_m13188_Orbit/GSFC_20190419_Earth_m13188_Orbit~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20190419_Earth_m13188_Orbit/GSFC_20190419_Earth_m13188_Orbit~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Katie Jepson, Kathryn Mersmann",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasa:How Do We Know the Earth Isn't Flat",
+      "provider": "nasa",
+      "title": "How Do We Know the Earth Isn't Flat",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/How%20Do%20We%20Know%20the%20Earth%20Isn't%20Flat",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/How Do We Know the Earth Isn't Flat/How Do We Know the Earth Isn't Flat~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/How%20Do%20We%20Know%20the%20Earth%20Isn't%20Flat/How%20Do%20We%20Know%20the%20Earth%20Isn't%20Flat~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "wikimediacommons:Artemis_I_Orion_First_Imagery_of_Earth_(KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595).webm",
+      "provider": "wikimediacommons",
+      "title": "Artemis I Orion First Imagery of Earth (KSC-20221116-MH-NAS01-0001-Artemis I Orion First Imagery of Earth-3314595)",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Artemis_I_Orion_First_Imagery_of_Earth_(KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Artemis_I_Orion_First_Imagery_of_Earth_%28KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595%29.webm/960px--Artemis_I_Orion_First_Imagery_of_Earth_%28KSC-20221116-MH-NAS01-0001-Artemis_I_Orion_First_Imagery_of_Earth-3314595%29.webm.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 204.78,
+      "year": 2022
+    },
+    {
+      "id": "internetarchive:One-Year-Crew_Resource-Reel",
+      "provider": "internetarchive",
+      "title": "One Year Crew Resource Reel",
+      "category": "space.earth",
+      "url": "https://archive.org/details/One-Year-Crew_Resource-Reel",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/One-Year-Crew_Resource-Reel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:Earth Views from the International Space Station",
+      "provider": "nasa",
+      "title": "Earth Views from the International Space Station",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/Earth%20Views%20from%20the%20International%20Space%20Station",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Earth Views from the International Space Station/Earth Views from the International Space Station~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Earth%20Views%20from%20the%20International%20Space%20Station/Earth%20Views%20from%20the%20International%20Space%20Station~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "wikimediacommons:Planet_Earth_by_Muqeem_Khan.webm",
+      "provider": "wikimediacommons",
+      "title": "Planet Earth by Muqeem Khan",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Planet_Earth_by_Muqeem_Khan.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Planet_Earth_by_Muqeem_Khan.webm/250px--Planet_Earth_by_Muqeem_Khan.webm.jpg",
+      "author": "Muqeemkhan",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 320,
+      "height": 240,
+      "durationSec": 167.77,
+      "year": 2004
+    },
+    {
+      "id": "internetarchive:hopeconf2020",
+      "provider": "internetarchive",
+      "title": "HOPE 2020",
+      "category": "space.earth",
+      "url": "https://archive.org/details/hopeconf2020",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/hopeconf2020",
+      "author": "HOPE",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2020
+    },
+    {
+      "id": "nasa:GSFC_20170419_EarthFleet_m12586_2017",
+      "provider": "nasa",
+      "title": "NASA's Vantage Point to View Earth",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/GSFC_20170419_EarthFleet_m12586_2017",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20170419_EarthFleet_m12586_2017/GSFC_20170419_EarthFleet_m12586_2017~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20170419_EarthFleet_m12586_2017/GSFC_20170419_EarthFleet_m12586_2017~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Matthew R. Radcliff, Greg Shirah, Ernie Wright",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:Space_to_Ground-_Who_Doesn't_Enjoy_a_Good_View_of_Planet_Earth--_02-10-2017.webm",
+      "provider": "wikimediacommons",
+      "title": "Space to Ground- Who Doesn't Enjoy a Good View of Planet Earth-- 02-10-2017",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Space_to_Ground-_Who_Doesn%27t_Enjoy_a_Good_View_of_Planet_Earth--_02-10-2017.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Space_to_Ground-_Who_Doesn%27t_Enjoy_a_Good_View_of_Planet_Earth--_02-10-2017.webm/960px--Space_to_Ground-_Who_Doesn%27t_Enjoy_a_Good_View_of_Planet_Earth--_02-10-2017.webm.jpg",
+      "author": "NASA Johnson",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 159,
+      "year": 2017
+    },
+    {
+      "id": "nasa:GSFC_20120723_Landsat_m11052_Earth_Art",
+      "provider": "nasa",
+      "title": "Best of \"Earth As Art\" - Top Five",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/GSFC_20120723_Landsat_m11052_Earth_Art",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20120723_Landsat_m11052_Earth_Art/GSFC_20120723_Landsat_m11052_Earth_Art~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20120723_Landsat_m11052_Earth_Art/GSFC_20120723_Landsat_m11052_Earth_Art~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Matthew R. Radcliff, Victoria Weeks, Ryan Fitzgibbons, Aries Keck",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2012
+    },
+    {
+      "id": "wikimediacommons:Video_-_ESA_Rosetta_Approaching_Earth_during_its_3rd_Swing-by_(51690809693).webm",
+      "provider": "wikimediacommons",
+      "title": "Video - ESA Rosetta Approaching Earth during its 3rd Swing-by (51690809693)",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Video_-_ESA_Rosetta_Approaching_Earth_during_its_3rd_Swing-by_(51690809693).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Video_-_ESA_Rosetta_Approaching_Earth_during_its_3rd_Swing-by_%2851690809693%29.webm/960px--Video_-_ESA_Rosetta_Approaching_Earth_during_its_3rd_Swing-by_%2851690809693%29.webm.jpg",
+      "author": "Andrea Luck",
+      "license": {
+        "id": "CC-BY-2.0",
+        "name": "CC BY 2.0",
+        "url": "https://creativecommons.org/licenses/by/2.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "square",
+      "width": 1080,
+      "height": 1080,
+      "durationSec": 13.77,
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:UnknownWorld_201503",
+      "provider": "internetarchive",
+      "title": "Unknown World 1951",
+      "category": "space.earth",
+      "url": "https://archive.org/details/UnknownWorld_201503",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/UnknownWorld_201503",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "nasa:Introducing NASA’s NEW Earth System Observatory",
+      "provider": "nasa",
+      "title": "Introducing NASA’s NEW Earth System Observatory",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/Introducing%20NASA%E2%80%99s%20NEW%20Earth%20System%20Observatory",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Introducing NASA’s NEW Earth System Observatory/Introducing NASA’s NEW Earth System Observatory~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Introducing%20NASA%E2%80%99s%20NEW%20Earth%20System%20Observatory/Introducing%20NASA%E2%80%99s%20NEW%20Earth%20System%20Observatory~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "wikimediacommons:Earth_rotation_during_Galileo_flyby_(ap070514).webm",
+      "provider": "wikimediacommons",
+      "title": "Earth rotation during Galileo flyby (ap070514)",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Earth_rotation_during_Galileo_flyby_(ap070514).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Earth_rotation_during_Galileo_flyby_%28ap070514%29.webm/500px--Earth_rotation_during_Galileo_flyby_%28ap070514%29.webm.jpg",
+      "author": "NASA/JPL/Doug Ellison",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "square",
+      "width": 620,
+      "height": 625,
+      "durationSec": 8.5,
+      "year": 1990
+    },
+    {
+      "id": "internetarchive:BattleOfRussiaII",
+      "provider": "internetarchive",
+      "title": "Why We Fight: The Battle of Russia Part II",
+      "category": "space.earth",
+      "url": "https://archive.org/details/BattleOfRussiaII",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/BattleOfRussiaII",
+      "author": "Frank Capra",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:NHQ_2019_0626_Earth Views from the ISS",
+      "provider": "nasa",
+      "title": "Earth Views from the ISS",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/NHQ_2019_0626_Earth%20Views%20from%20the%20ISS",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0626_Earth Views from the ISS/NHQ_2019_0626_Earth Views from the ISS~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0626_Earth%20Views%20from%20the%20ISS/NHQ_2019_0626_Earth%20Views%20from%20the%20ISS~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "wikimediacommons:Spinning_Earth_with_clouds,_atmosphere,_and_night_lights_(SVS5570).webm",
+      "provider": "wikimediacommons",
+      "title": "Spinning Earth with clouds, atmosphere, and night lights (SVS5570)",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Spinning_Earth_with_clouds,_atmosphere,_and_night_lights_(SVS5570).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Spinning_Earth_with_clouds%2C_atmosphere%2C_and_night_lights_%28SVS5570%29.webm/960px--Spinning_Earth_with_clouds%2C_atmosphere%2C_and_night_lights_%28SVS5570%29.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio - USRA/Kel Elkins, NASA/GSFC/William Putman",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 100.02,
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:TheHypnoticEyeEpisode10",
+      "provider": "internetarchive",
+      "title": "The Hypnotic Eye episode 10",
+      "category": "space.earth",
+      "url": "https://archive.org/details/TheHypnoticEyeEpisode10",
+      "downloadable": true,
+      "styles": [
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/TheHypnoticEyeEpisode10",
+      "author": "Joe Riley",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 3493,
+      "year": 1997
+    },
+    {
+      "id": "nasa:Envisioning the Next Generation of Human Presence in Low Earth Orbit",
+      "provider": "nasa",
+      "title": "Envisioning the Next Generation of Human Presence in Low Earth Orbit",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/Envisioning%20the%20Next%20Generation%20of%20Human%20Presence%20in%20Low%20Earth%20Orbit",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Envisioning the Next Generation of Human Presence in Low Earth Orbit/Envisioning the Next Generation of Human Presence in Low Earth Orbit~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Envisioning%20the%20Next%20Generation%20of%20Human%20Presence%20in%20Low%20Earth%20Orbit/Envisioning%20the%20Next%20Generation%20of%20Human%20Presence%20in%20Low%20Earth%20Orbit~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:Earth_rotation_during_Galileo_flyby_(PIA00114).webm",
+      "provider": "wikimediacommons",
+      "title": "Earth rotation during Galileo flyby (PIA00114)",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Earth_rotation_during_Galileo_flyby_(PIA00114).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Earth_rotation_during_Galileo_flyby_%28PIA00114%29.webm/330px--Earth_rotation_during_Galileo_flyby_%28PIA00114%29.webm.jpg",
+      "author": "NASA/JPL",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 480,
+      "height": 360,
+      "durationSec": 22.96,
+      "year": 1990
+    },
+    {
+      "id": "nasa:GSFC_20170412_Lights_m12573_EarthAtNight",
+      "provider": "nasa",
+      "title": "Lights of Human Activity Shine in NASA's Image of Earth at Night",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/GSFC_20170412_Lights_m12573_EarthAtNight",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Kathryn Mersmann, Joshua Stevens, Mike Carlowicz, Kate Ramsayer, Miguel Roman",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2017
+    },
+    {
+      "id": "internetarchive:TheBrainEaters",
+      "provider": "internetarchive",
+      "title": "The Brain Eaters",
+      "category": "space.earth",
+      "url": "https://archive.org/details/TheBrainEaters",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/TheBrainEaters",
+      "author": "Ed Nelson (as Edwin Nelson) & Roger Corman (uncredited)",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 3641
+    },
+    {
+      "id": "wikimediacommons:Earth_Animation.ogv",
+      "provider": "wikimediacommons",
+      "title": "Earth Animation",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Earth_Animation.ogv",
+      "downloadable": true,
+      "styles": [
+        "animation"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Earth_Animation.ogv/960px--Earth_Animation.ogv.jpg",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 8,
+      "year": 2011
+    },
+    {
+      "id": "nasa:jsc2019m001191_Down to Earth - What Else is Out There",
+      "provider": "nasa",
+      "title": "Down to Earth - What Else is Out There?",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/jsc2019m001191_Down%20to%20Earth%20-%20What%20Else%20is%20Out%20There",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/jsc2019m001191_Down to Earth - What Else is Out There/jsc2019m001191_Down to Earth - What Else is Out There~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/jsc2019m001191_Down%20to%20Earth%20-%20What%20Else%20is%20Out%20There/jsc2019m001191_Down%20to%20Earth%20-%20What%20Else%20is%20Out%20There~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    }
+  ]
+}

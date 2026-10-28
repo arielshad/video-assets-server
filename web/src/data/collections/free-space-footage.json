@@ -1,0 +1,785 @@
+{
+  "slug": "free-space-footage",
+  "search": {
+    "q": "space",
+    "categories": [
+      "space"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:01:49.115Z",
+  "clips": [
+    {
+      "id": "nasa:MSFC_10112024_Trades in Space",
+      "provider": "nasa",
+      "title": "Trades in Space",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/MSFC_10112024_Trades%20in%20Space",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MSFC_10112024_Trades in Space/MSFC_10112024_Trades in Space~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MSFC_10112024_Trades%20in%20Space/MSFC_10112024_Trades%20in%20Space~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Brandon Hancock",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "nasa:Space-247365",
+      "provider": "nasa",
+      "title": "Space 24/7/365: Space Station Benefits",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/Space-247365",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Space-247365/Space-247365~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Space-247365/Space-247365~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "internetarchive:TeenagersFromOuterSpace1959",
+      "provider": "internetarchive",
+      "title": "Teenagers From Outer Space (1959)",
+      "category": "space",
+      "url": "https://archive.org/details/TeenagersFromOuterSpace1959",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/TeenagersFromOuterSpace1959",
+      "author": "Writer: Tom Graeff Stars: David Love, Dawn Bender and Bryan Grant",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 5338
+    },
+    {
+      "id": "nasa:Meeting of the National Space Council at Kennedy Space Center",
+      "provider": "nasa",
+      "title": "Meeting of the National Space Council at Kennedy Space Center",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/Meeting%20of%20the%20National%20Space%20Council%20at%20Kennedy%20Space%20Center",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Meeting of the National Space Council at Kennedy Space Center/Meeting of the National Space Council at Kennedy Space Center~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Meeting%20of%20the%20National%20Space%20Council%20at%20Kennedy%20Space%20Center/Meeting%20of%20the%20National%20Space%20Council%20at%20Kennedy%20Space%20Center~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA KSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:TheAdventuresOfFlashGordon",
+      "provider": "internetarchive",
+      "title": "The Space Adventures of Flash Gordon",
+      "category": "space",
+      "url": "https://archive.org/details/TheAdventuresOfFlashGordon",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/TheAdventuresOfFlashGordon",
+      "author": "Wenzel Lüdecke",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1560,
+      "year": 1955
+    },
+    {
+      "id": "nasa:How Big is Space",
+      "provider": "nasa",
+      "title": "How Big is Space | We Asked a NASA Expert",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/How%20Big%20is%20Space",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/How Big is Space/How Big is Space~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/How%20Big%20is%20Space/How%20Big%20is%20Space~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA LaRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:AssignmentOuterSpace",
+      "provider": "internetarchive",
+      "title": "Assignment Outer Space",
+      "category": "space",
+      "url": "https://archive.org/details/AssignmentOuterSpace",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/AssignmentOuterSpace",
+      "author": "Titanus",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1960
+    },
+    {
+      "id": "nasa:NHQ_2019_0322_NASA ASTRONAUTS WALK IN SPACE OUTSIDE THE SPACE STATION",
+      "provider": "nasa",
+      "title": "NASA ASTRONAUTS WALK IN SPACE OUTSIDE THE SPACE STATION",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/NHQ_2019_0322_NASA%20ASTRONAUTS%20WALK%20IN%20SPACE%20OUTSIDE%20THE%20SPACE%20STATION",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0322_NASA ASTRONAUTS WALK IN SPACE OUTSIDE THE SPACE STATION/NHQ_2019_0322_NASA ASTRONAUTS WALK IN SPACE OUTSIDE THE SPACE STATION~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0322_NASA%20ASTRONAUTS%20WALK%20IN%20SPACE%20OUTSIDE%20THE%20SPACE%20STATION/NHQ_2019_0322_NASA%20ASTRONAUTS%20WALK%20IN%20SPACE%20OUTSIDE%20THE%20SPACE%20STATION~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasa:Olympics on the International Space Station",
+      "provider": "nasa",
+      "title": "Olympics on the International Space Station",
+      "category": "space.earth",
+      "url": "https://images.nasa.gov/details/Olympics%20on%20the%20International%20Space%20Station",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/Olympics on the International Space Station/Olympics on the International Space Station~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/Olympics%20on%20the%20International%20Space%20Station/Olympics%20on%20the%20International%20Space%20Station~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "internetarchive:VoyagetothePlanetofPrehistoricWomen",
+      "provider": "internetarchive",
+      "title": "Voyage to the Planet of Prehistoric Women",
+      "category": "space",
+      "url": "https://archive.org/details/VoyagetothePlanetofPrehistoricWomen",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/VoyagetothePlanetofPrehistoricWomen",
+      "author": "Norman D. Wells",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4774,
+      "year": 1967
+    },
+    {
+      "id": "nasa:What Do Astronauts Eat In Space",
+      "provider": "nasa",
+      "title": "What Do Astronauts Eat In Space?",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/What%20Do%20Astronauts%20Eat%20In%20Space",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/What Do Astronauts Eat In Space/What Do Astronauts Eat In Space~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/What%20Do%20Astronauts%20Eat%20In%20Space/What%20Do%20Astronauts%20Eat%20In%20Space~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "internetarchive:FirstSpaceshipOnVenusMPEG",
+      "provider": "internetarchive",
+      "title": "First Spaceship on Venus",
+      "category": "space.planets",
+      "url": "https://archive.org/details/FirstSpaceshipOnVenusMPEG",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/FirstSpaceshipOnVenusMPEG",
+      "author": "Hans Mahlich",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 4711,
+      "year": 1960
+    },
+    {
+      "id": "nasa:NHQ_2019_0409_Administrator Bridenstine’s Speech at the Space Symposium",
+      "provider": "nasa",
+      "title": "Administrator Bridenstine’s Speech at the Space Symposium",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/NHQ_2019_0409_Administrator%20Bridenstine%E2%80%99s%20Speech%20at%20the%20Space%20Symposium",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0409_Administrator Bridenstine’s Speech at the Space Symposium/NHQ_2019_0409_Administrator Bridenstine’s Speech at the Space Symposium~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0409_Administrator%20Bridenstine%E2%80%99s%20Speech%20at%20the%20Space%20Symposium/NHQ_2019_0409_Administrator%20Bridenstine%E2%80%99s%20Speech%20at%20the%20Space%20Symposium~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "internetarchive:STARGAZER_201512",
+      "provider": "internetarchive",
+      "title": "STARGAZER",
+      "category": "space.earth",
+      "url": "https://archive.org/details/STARGAZER_201512",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/STARGAZER_201512",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:The Space Launch System SLS roll out at KSC_MSFC footage",
+      "provider": "nasa",
+      "title": "The Space Launch System SLS roll out at KSC_MSFC footage",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/The%20Space%20Launch%20System%20SLS%20roll%20out%20at%20KSC_MSFC%20footage",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/The Space Launch System SLS roll out at KSC_MSFC footage/The Space Launch System SLS roll out at KSC_MSFC footage~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/The%20Space%20Launch%20System%20SLS%20roll%20out%20at%20KSC_MSFC%20footage/The%20Space%20Launch%20System%20SLS%20roll%20out%20at%20KSC_MSFC%20footage~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Brandon Hancock",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "nasasvs:15112",
+      "provider": "nasasvs",
+      "title": "Why The Universe Doesn’t Add Up (And How We’re Going To Try To Figure It Out)",
+      "category": "space",
+      "url": "https://svs.gsfc.nasa.gov/15112/",
+      "downloadable": true,
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015112/15112_TENSION_WIDE_PRINT.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015112/15112_TENSION_1080_MP4.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio (Paul Morris)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:Cheerios1960",
+      "provider": "internetarchive",
+      "title": "Cheerios/V-8",
+      "category": "space",
+      "url": "https://archive.org/details/Cheerios1960",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://archive.org/services/img/Cheerios1960",
+      "author": "Filmways (?)",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 60,
+      "year": 1960
+    },
+    {
+      "id": "nasa:MSFC_360_360Video_Stennis Space Center_B-2 Test Stand shortened 2",
+      "provider": "nasa",
+      "title": "0157_MSFC_360_360Video_Stennis Space Center_B-2 Test Stand shortened 2",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/MSFC_360_360Video_Stennis%20Space%20Center_B-2%20Test%20Stand%20shortened%202",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MSFC_360_360Video_Stennis Space Center_B-2 Test Stand shortened 2/MSFC_360_360Video_Stennis Space Center_B-2 Test Stand shortened 2~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MSFC_360_360Video_Stennis%20Space%20Center_B-2%20Test%20Stand%20shortened%202/MSFC_360_360Video_Stennis%20Space%20Center_B-2%20Test%20Stand%20shortened%202~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Karl Wilcox, Stennis Space Center",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2021
+    },
+    {
+      "id": "internetarchive:StarOdysseyitalianStarWars1979",
+      "provider": "internetarchive",
+      "title": "Star Odyssey (Italian Star Wars) 1979",
+      "category": "space.planets",
+      "url": "https://archive.org/details/StarOdysseyitalianStarWars1979",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/StarOdysseyitalianStarWars1979",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 5282
+    },
+    {
+      "id": "nasa:What Are the Dangers of Going to Space",
+      "provider": "nasa",
+      "title": "What Are the Dangers of Going to Space | We Asked a NASA Expert",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/What%20Are%20the%20Dangers%20of%20Going%20to%20Space",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/What Are the Dangers of Going to Space/What Are the Dangers of Going to Space~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/What%20Are%20the%20Dangers%20of%20Going%20to%20Space/What%20Are%20the%20Dangers%20of%20Going%20to%20Space~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA LaRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2025
+    },
+    {
+      "id": "nasasvs:5686",
+      "provider": "nasasvs",
+      "title": "Lucy Mission Trajectory with Jupiter Trojans and Main Belt Asteroids",
+      "category": "space.planets",
+      "url": "https://svs.gsfc.nasa.gov/5686/",
+      "downloadable": true,
+      "styles": [
+        "visualization"
+      ],
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled.02510_preview.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled_1080p60.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio (Kel Elkins)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "fps": 60,
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:Starry_Sky_Time_Lapse",
+      "provider": "internetarchive",
+      "title": "Starry Sky Time Lapse (Free to Use HD Stock Video Footage)",
+      "category": "space",
+      "url": "https://archive.org/details/Starry_Sky_Time_Lapse",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://archive.org/services/img/Starry_Sky_Time_Lapse",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:NHQ_2019_0430_RNASA Space Awards Gala 2019.",
+      "provider": "nasa",
+      "title": "RNASA Space Awards Gala 2019",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/NHQ_2019_0430_RNASA%20Space%20Awards%20Gala%202019.",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0430_RNASA Space Awards Gala 2019./NHQ_2019_0430_RNASA Space Awards Gala 2019.~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2019_0430_RNASA%20Space%20Awards%20Gala%202019./NHQ_2019_0430_RNASA%20Space%20Awards%20Gala%202019.~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasasvs:15106",
+      "provider": "nasasvs",
+      "title": "NASA FARMFLUX EARTH VENTURE SUBORBITAL-4",
+      "category": "space.earth",
+      "url": "https://svs.gsfc.nasa.gov/15106/",
+      "downloadable": true,
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015106/20260920_SVS15106_EVS4_FARMFLUX_BRIDGEWATER_VIRGINIA_B200_AIRCRAFT_INTEGRATION_SELECTED_BROLL_INSTRUMENTS_4096x2160_29.97fps.00001_print.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015106/20260920_SVS15106_EVS4_FARMFLUX_GSFC_GLENN_WOLFE_STUDIO_INTERVIEW_4096x2160_29.97fps.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio (Grace Weikert, Milan Loiacono)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm",
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 4096,
+      "height": 2160,
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:NASA-Ultra-High-Definition",
+      "provider": "internetarchive",
+      "title": "NASA Ultra High Definition",
+      "category": "space.earth",
+      "url": "https://archive.org/details/NASA-Ultra-High-Definition",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/NASA-Ultra-High-Definition",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:VF_Russian Space Pioneer Alexey Leonov",
+      "provider": "nasa",
+      "title": "Video File - Russian Space Pioneer Alexei Leonov",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/VF_Russian%20Space%20Pioneer%20Alexey%20Leonov",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/VF_Russian Space Pioneer Alexey Leonov/VF_Russian Space Pioneer Alexey Leonov~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/VF_Russian%20Space%20Pioneer%20Alexey%20Leonov/VF_Russian%20Space%20Pioneer%20Alexey%20Leonov~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA JSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasasvs:15103",
+      "provider": "nasasvs",
+      "title": "Artemis II Saw Impact Flashes on the Far Side of the Moon",
+      "category": "space.planets",
+      "url": "https://svs.gsfc.nasa.gov/15103/",
+      "downloadable": true,
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015103/ImpactFlashes_Horizontal.01009_print.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015103/ImpactFlashesVertical_1.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio (James Tralie)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "year": 2026
+    },
+    {
+      "id": "nasa:SSC_2018 Stennis Space Center Overview V5",
+      "provider": "nasa",
+      "title": "Stennis Space Center 2018 Overview V5",
+      "category": "space",
+      "url": "https://images.nasa.gov/details/SSC_2018%20Stennis%20Space%20Center%20Overview%20V5",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/SSC_2018 Stennis Space Center Overview V5/SSC_2018 Stennis Space Center Overview V5~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/SSC_2018%20Stennis%20Space%20Center%20Overview%20V5/SSC_2018%20Stennis%20Space%20Center%20Overview%20V5~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA SSC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:gov.archives.arc.1257628",
+      "provider": "internetarchive",
+      "title": "Moonwalk One, ca. 1970",
+      "category": "space.launch",
+      "url": "https://archive.org/details/gov.archives.arc.1257628",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/gov.archives.arc.1257628",
+      "author": "National Archives and Records Administration",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasasvs:15102",
+      "provider": "nasasvs",
+      "title": "Dying Star Creates Brand New Planet",
+      "category": "space",
+      "url": "https://svs.gsfc.nasa.gov/15102/",
+      "downloadable": true,
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015102/15102_SECONDGEN_WIDE_PRINT.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015102/15102_SECONDGEN_WIDE_MP4.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio (Paul Morris)",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "year": 2026
+    },
+    {
+      "id": "internetarchive:BattleBeyondTheSun",
+      "provider": "internetarchive",
+      "title": "Battle Beyond The Sun",
+      "category": "space",
+      "url": "https://archive.org/details/BattleBeyondTheSun",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/BattleBeyondTheSun",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "internetarchive:cosmos_202209",
+      "provider": "internetarchive",
+      "title": "Cosmos: A Personal Voyage [1980]",
+      "category": "space",
+      "url": "https://archive.org/details/cosmos_202209",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/cosmos_202209",
+      "author": "Carl Sagan, Ann Druyan, Steven Soter",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 1980
+    },
+    {
+      "id": "internetarchive:ChallengerDisaster",
+      "provider": "internetarchive",
+      "title": "Challenger Disaster (Standard 4:3)",
+      "category": "space.launch",
+      "url": "https://archive.org/details/ChallengerDisaster",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/ChallengerDisaster",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 162,
+      "year": 1986
+    }
+  ]
+}

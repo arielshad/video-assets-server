@@ -5,6 +5,7 @@
 //   /llms.txt               llmstxt.org index (docs, guides, glossary, collections)
 //   /llms-full.txt          the agent guide, docs, guides, glossary, FAQ and
 //                           collection pages (without clip tables) in one file
+//   /stats.md               the catalog census as Markdown
 //   /scalar/standalone.js   self-hosted Scalar API reference bundle
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
@@ -48,7 +49,7 @@ function sourcesMarkdown(providers) {
   return [
     "# Sources & licences",
     "",
-    `Video Assets Server searches ${providers.length} sites. Use the \`id\` with \`providers=\` to restrict a search. "deep link" sources are not searched automatically: the response carries a \`searchUrl\` that runs the same search on the site.`,
+    `Video Assets Server searches or links ${providers.length} video sites. Use the \`id\` with \`providers=\` to restrict a search. "deep link" sources are not searched automatically (they need a key, sell their footage, or their terms forbid aggregation): the response carries a \`searchUrl\` that runs the same search on the site. No video passes through the server: posters, previews and downloads come from the sources.`,
     "",
     "| Source | id | Best for | Categories | Search | Pricing | Licence | Direct download |",
     "| --- | --- | --- | --- | --- | --- | --- | --- |",
@@ -65,13 +66,13 @@ const num = (n, atLeast) => `${n.toLocaleString("en")}${atLeast ? "+" : ""}`;
 function catalogLine(c) {
   const t = c.totals;
   const cats = Object.entries(c.byCategory ?? {}).sort((a, b) => b[1].count - a[1].count).map(([k, v]) => `${num(v.count, v.atLeast)} ${label(k).toLowerCase()}`);
-  return `**Catalog (counted ${c.countedAt.slice(0, 10)}).** ${num(t.listings.count, t.listings.atLeast)} clip listings from ${t.sourcesCounted} counted sources, ${num(t.free.count, t.free.atLeast)} free and ${num(t.cc0.count, t.cc0.atLeast)} CC0${cats.length ? `: ${cats.join(", ")}` : ""}.`;
+  return `**Catalog (counted ${c.countedAt.slice(0, 10)}).** ${num(t.listings.count, t.listings.atLeast)} video listings from ${t.sourcesCounted} counted sources, ${num(t.free.count, t.free.atLeast)} free${t.cc0.count ? ` and ${num(t.cc0.count, t.cc0.atLeast)} CC0` : ""}${cats.length ? `; by category: ${cats.join(", ")}` : ""}.`;
 }
 
 function statsMarkdown(integrations, catalog, site) {
   const recent = integrations.slice(0, 6).map((i) => `- [${i.name}](${i.homepage}) (\`${i.id}\`), added ${i.addedAt}`);
   const head = [
-    "# Clips in numbers",
+    "# Stock video in numbers",
     "",
     catalog
       ? `Counted ${catalog.countedAt.slice(0, 10)} (daily). Machine-readable: \`GET ${site}/v1/catalog\` (same as ${site}/catalog.json; daily history at ${site}/catalog-history.json). "+" marks lower bounds.`
@@ -83,16 +84,16 @@ function statsMarkdown(integrations, catalog, site) {
     const t = catalog.totals;
     const rows = catalog.sources.map(
       (s) =>
-        `| [${s.name}](${s.homepage}) | ${num(s.total, s.atLeast)}${s.unit === "packs" ? " packs" : ""} | ${s.free !== undefined ? num(s.free) : s.pricing === "free" ? num(s.total) : "–"} | ${Object.entries(s.byCategory ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, n]) => `${label(k)} ${num(n)}`).join(", ")} | ${s.addedLast30Days ?? "–"} |`,
+        `| [${s.name}](${s.homepage}) | ${num(s.total, s.atLeast)} | ${s.free !== undefined ? num(s.free) : s.pricing === "free" ? num(s.total) : "–"} | ${Object.entries(s.byCategory ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, n]) => `${label(k)} ${num(n)}`).join(", ") || "–"} | ${s.addedLast30Days ?? "–"} |`,
     );
-    const highlights = catalog.sources.flatMap((s) => (s.highlights ?? []).map((h) => `- ${h.label} on ${s.name}: [${h.title}](${h.url})${h.value !== undefined ? ` (${num(h.value)} downloads)` : ""}`));
+    const highlights = catalog.sources.flatMap((s) => (s.highlights ?? []).map((h) => `- ${h.label} on ${s.name}: [${h.title}](${h.url})${h.value !== undefined ? ` (${num(h.value)})` : ""}`));
     census.push(
       "## Totals",
       "",
-      `- Clip listings: ${num(t.listings.count, t.listings.atLeast)} from ${t.sourcesCounted} counted sources (a listing is one sound, or one pack on sources that list packs)`,
+      `- Video listings: ${num(t.listings.count, t.listings.atLeast)} from ${t.sourcesCounted} counted sources (a listing is one video item on its source)`,
       `- Free: ${num(t.free.count, t.free.atLeast)}`,
-      `- CC0 / public domain: ${num(t.cc0.count, t.cc0.atLeast)}`,
-      `- Free with direct download through this server: ${num(t.directDownload.count, t.directDownload.atLeast)}`,
+      ...(t.cc0.count ? [`- CC0 / public domain: ${num(t.cc0.count, t.cc0.atLeast)}`] : []),
+      `- Free with direct download links from the source: ${num(t.directDownload.count, t.directDownload.atLeast)}`,
       `- Released in the last 30 days (sources that date their listings): ${num(t.addedLast30Days)}`,
       "",
       "## By category",
@@ -105,7 +106,7 @@ function statsMarkdown(integrations, catalog, site) {
       "| --- | --- | --- | --- | --- |",
       ...rows,
       "",
-      ...(highlights.length ? ["## Most downloaded", "", ...highlights, ""] : []),
+      ...(highlights.length ? ["## Notable", "", ...highlights, ""] : []),
     );
   }
   return [
@@ -113,7 +114,7 @@ function statsMarkdown(integrations, catalog, site) {
     ...census,
     "## Live usage",
     "",
-    `Searches, downloads, MCP tool calls and per-source health change every minute: read them from \`GET ${site}/v1/stats\` (schema \`Stats\` in ${site}/openapi.json). Counts are anonymous totals: no search terms, IP addresses or user agents.`,
+    `Searches, clip views, downloads, MCP tool calls and per-source health change every minute: read them from \`GET ${site}/v1/stats\` (schema \`Stats\` in ${site}/openapi.json). Counts are anonymous totals: no search terms, IP addresses or user agents.`,
     "",
     ...(recent.length ? ["## Recently added sources", "", ...recent, ""] : []),
     `All sources: ${site}/docs/sources.md`,
@@ -167,7 +168,7 @@ export default function agentFiles() {
         const integrations = readJson("src/data/integrations.json")?.integrations ?? [];
         const stats = statsMarkdown(integrations, catalog, site);
         write("stats.md", `${stats}\n---\nSource: ${site}/stats\n`);
-        docs.push({ route: "/stats", title: "Clips in numbers", description: "How many drum hits, loops, vocals, FX and instrument clips every source holds (counted daily), plus live usage.", md: stats });
+        docs.push({ route: "/stats", title: "Stock video in numbers", description: "How many videos every source holds (counted daily, by category), plus live usage.", md: stats });
 
         // Twins generated by endpoints (src/pages/**/*.md.ts) are already in the output.
         const readOut = (rel) => (existsSync(join(out, rel)) ? readFileSync(join(out, rel), "utf8") : undefined);
@@ -184,7 +185,7 @@ export default function agentFiles() {
           .sort((a, b) => a.order - b.order);
         const glossary = readOut("glossary.md");
 
-        // Curated collections (/clips/<slug>.md, built by src/pages/clips/[slug].md.ts).
+        // Curated collections (/footage/<slug>.md, built by src/pages/footage/[slug].md.ts).
         const hubs = JSON.parse(read("src/data/collection-hubs.json"));
         const collectionsDir = join(root, "src/content/collections");
         const collections = (existsSync(collectionsDir) ? readdirSync(collectionsDir) : [])
@@ -207,45 +208,45 @@ export default function agentFiles() {
           [
             "# Video Assets Server",
             "",
-            `> Free search engine, REST API and MCP server for music clips. One query searches ${providers.length} clip sites (Freesound, Wikimedia Commons, Openverse, ccMixter, the Internet Archive, sound effect libraries and producer packs, plus deep links into Splice, Looperman and others) for drums, 808s, loops, vocals, FX, foley, ambience and instrument one-shots, with previews, BPM/key/length and a licence verdict on commercial use for every sound. No account or API key needed; a free, non-commercial service that never re-hosts sounds.`,
+            `> Free search engine, REST API, CLI and MCP server for stock video. One query searches ${providers.length} video sites (NASA's Image and Video Library and Scientific Visualization Studio, Wikimedia Commons and the Internet Archive directly, plus deep links into Pexels, Pixabay, Coverr, Mixkit, Europeana, the Library of Congress and paid libraries such as Shutterstock, Adobe Stock and Getty Images) for b-roll, backgrounds, nature, cities, aerials, space, science, timelapses and archive films, with a poster, a playable preview, resolution, orientation, frame rate, length and a licence verdict on commercial use for every clip. No account or API key needed; a free, non-commercial service that never streams or re-hosts video (posters, previews and downloads come straight from the sources).`,
             "",
-            "**When to use Video Assets Server.** Use it when a user or task needs existing sounds:",
+            "**When to use Video Assets Server.** Use it when a user or task needs existing footage:",
             "",
-            "- finding a clip for a track (\"punchy kick\", \"dark 808 in F minor\", \"vocal chop 140 bpm\", \"riser\");",
-            "- building a drum kit for a style, tempo and key, with a Strudel snippet and a General MIDI / SFZ map;",
-            "- getting sound effects for a game, app or video (zaps, impacts, UI clicks, footsteps, rain);",
-            "- downloading WAV/AIFF/FLAC/OGG/MP3 files with ATTRIBUTION.md into a project;",
-            "- checking whether a clip may be used in a commercially released track and which credit line it needs.",
+            "- finding b-roll for a video (\"ocean waves at sunset\", \"drone city skyline night\", \"rocket launch slow motion\", \"1950s newsreel\");",
+            "- matching a format: vertical 9:16 for Reels/TikTok/Shorts, 4K, a minimum length, 60 fps;",
+            "- turning a shot list into a b-roll sequence with an OpenTimelineIO timeline, an ffmpeg script, a Remotion clip list and the credits;",
+            "- downloading the right rendition (MP4/WebM, 720p to 4K) with ATTRIBUTION.md into a project;",
+            "- checking whether a clip may be used in a commercial video, whether it is editorial-only, and which credit line it needs.",
             "",
             ...(catalog ? [catalogLine(catalog), ""] : []),
-            "Do not use it to generate new audio, to download full commercial songs, or to buy packs (paid results link to their store). Licence rules for agents: search commercial-safe by default, report every clip's `license.verdict`, never present `no` or `check-terms` results as cleared, and pass on the `attribution` line when there is one.",
+            "Do not use it to generate new video, to download films or TV shows, or to buy stock (paid results link to their store). Licence rules for agents: search commercial-safe by default, report every clip's `license.verdict` and `license.editorial`, never present `no`, `check-terms` or editorial clips as cleared for advertising, and pass on the `attribution` line when there is one.",
             "",
-            `**How to call it.** MCP (preferred): add \`${site}/mcp\` (Streamable HTTP, no auth) under the name \`sounds\`, e.g. \`claude mcp add --transport http sounds ${site}/mcp\`, then call \`search_samples\` → \`get_sample\` → download its \`selection.downloadUrl\`, or \`build_kit\` for a drum kit. REST: \`GET ${site}/v1/search?q=...&category=drums.kick&commercial=true\` → \`GET /v1/clips/{id}\` → \`GET /v1/clips/{id}/download?bundle=true\`; \`POST /v1/kits\`. Limits: 120 requests/minute per client (RateLimit headers, 429 + Retry-After). Full agent guide: ${site}/AGENTS.md`,
+            `**How to call it.** MCP (preferred): add \`${site}/mcp\` (Streamable HTTP, no auth) under the name \`video\`, e.g. \`claude mcp add --transport http video ${site}/mcp\`, then call \`search_videos\` → \`get_video\` → download its \`selection.downloadUrl\`, or \`build_sequence\` for a whole edit (\`download_video\` on local installs: \`npx -y video-assets-server mcp\`). REST: \`GET ${site}/v1/search?q=...&orientation=portrait&min_resolution=1080&commercial=true\` → \`GET /v1/clips/{id}\` → \`GET /v1/clips/{id}/download?height=1080\` (302 to the source); \`POST /v1/sequences\`. Limits: 120 requests/minute per client (RateLimit headers, 429 + Retry-After). Full agent guide: ${site}/AGENTS.md`,
             "",
             "## Docs",
             "",
-            `- [Agent guide](${site}/AGENTS.md): when to use the service, licence rules, and how an AI agent should search, choose and download clips`,
+            `- [Agent guide](${site}/AGENTS.md): when to use the service, licence rules, and how an AI agent should search, choose and download footage`,
             ...docPages.map(listItem),
             "",
             "## Guides",
             "",
-            `- [All guides](${site}/guides.md): answer-first guides on clip licences, credits, clearance and production`,
+            `- [All guides](${site}/guides.md): answer-first guides on stock video licences, credits, NASA and archive footage, vertical video and b-roll sequences`,
             ...guides.map((g) => `- [${g.title}](${site}/guides/${g.slug}.md): ${g.description}`),
-            `- [Glossary](${site}/glossary.md): one-shot, loop, 808, BPM, key, clip rate, CC0, CC BY, NC, SA, ND, Sampling+, royalty-free, clearance, SFZ, General MIDI, Strudel, MCP and more`,
+            `- [Glossary](${site}/glossary.md): B-roll, stock footage, 4K, frame rate, codec, container, rendition, LUT, CC0, CC BY, BY-SA, NC, ND, editorial use, model release, OTIO, ffmpeg, Remotion, MCP and more`,
             "",
             "## API",
             "",
             `- [OpenAPI 3.1](${site}/openapi.json): machine-readable REST API description (rate-limit headers, 429 responses, schemas)`,
             `- [API reference](${site}/docs/api/reference.md): every endpoint, parameter, response and schema`,
             `- [API playground](${site}/docs/api/playground): send live requests from the browser (interactive Scalar client)`,
-            `- [MCP endpoint](${site}/mcp): Streamable HTTP; tools search_samples, get_sample, build_kit, find_similar, list_sources`,
-            `- [Search endpoint](${site}/v1/search?q=punchy+kick&category=drums.kick&commercial=true): example search`,
+            `- [MCP endpoint](${site}/mcp): Streamable HTTP; tools search_videos, get_video, build_sequence, list_sources (download_video on local installs)`,
+            `- [Search endpoint](${site}/v1/search?q=ocean+waves&orientation=portrait&commercial=true): example search`,
             "",
             "## Collections",
             "",
-            `- [All clip collections](${site}/clips.md): curated, daily-refreshed lists of free clips by topic, with licence verdicts and clip ids`,
-            ...hubs.map((h) => `- [${h.title}](${site}/clips/${h.id}.md): ${h.description}`),
-            ...collections.map((c) => `- [${c.title}](${site}/clips/${c.slug}.md): ${c.description}`),
+            `- [All footage collections](${site}/footage.md): curated, daily-refreshed lists of free stock video by topic, with licence verdicts and clip ids`,
+            ...hubs.map((h) => `- [${h.title}](${site}/footage/${h.id}.md): ${h.description}`),
+            ...collections.map((c) => `- [${c.title}](${site}/footage/${c.slug}.md): ${c.description}`),
             "",
             "## About",
             "",
@@ -253,10 +254,10 @@ export default function agentFiles() {
             "",
             "## Optional",
             "",
-            `- [Claude Code skill](${site}/skill/SKILL.md): drop into ~/.claude/skills/sounds/SKILL.md`,
+            `- [Claude Code skill](${site}/skill/SKILL.md): drop into ~/.claude/skills/video/SKILL.md`,
             `- [Everything in one file](${site}/llms-full.txt)`,
             `- [Web search](${site}/search.md): search parameters and categories as URLs`,
-            `- [Kit builder](${site}/kit.md): build a drum kit with one API call`,
+            `- [Sequence builder](${site}/sequence.md): a shot list to a b-roll edit with one API call`,
             `- [Sitemap](${site}/sitemap-index.xml)`,
             "",
           ].join("\n"),
@@ -264,7 +265,7 @@ export default function agentFiles() {
         // llms-full.txt: everything an agent might quote, in one file. Collection
         // twins lose their clip tables (ids change daily; fetch the .md for them).
         const condensed = (md) => md.replace(/\n## Clips\n[\s\S]*?(?=\n## )/, "\n");
-        const collectionTwins = [readOut("clips.md"), ...hubs.map((h) => readOut(`clips/${h.id}.md`)), ...collections.map((c) => readOut(`clips/${c.slug}.md`))]
+        const collectionTwins = [readOut("footage.md"), ...hubs.map((h) => readOut(`footage/${h.id}.md`)), ...collections.map((c) => readOut(`footage/${c.slug}.md`))]
           .filter(Boolean)
           .map(condensed);
         const guideTwins = [readOut("guides.md"), ...guides.map((g) => readOut(`guides/${g.slug}.md`)), glossary].filter(Boolean);

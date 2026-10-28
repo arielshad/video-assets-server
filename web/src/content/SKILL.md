@@ -1,60 +1,65 @@
 ---
-name: sounds
-description: Find, audition and download music samples (kicks, snares, hats, claps, 808s, loops, vocal chops, a cappellas, risers, impacts, zaps, foley, ambience, instrument one-shots) from many sample sites via https://video.shep.bot, with a licence verdict on commercial use and credit lines. Use when the user needs sounds or sound effects for a track, beat, game, app or video, or wants a drum kit for a style, tempo and key.
+name: video
+description: Find, watch and download free stock video (b-roll, backgrounds, nature, cities, aerials, space, science, timelapses, archive films and newsreels) from NASA, Wikimedia Commons, the Internet Archive and links into Pexels, Pixabay and paid libraries via https://video.shep.bot, with a licence verdict, editorial flag and credit line on every clip. Use when the user needs footage or b-roll for a video, site or app, vertical clips for Reels/TikTok/Shorts, or wants a shot list turned into a b-roll sequence (OTIO, ffmpeg, Remotion).
 ---
 
-# Music samples via video.shep.bot
+# Stock video via video.shep.bot
 
-Search many sample sites in one call, check each sound's licence verdict, and download files into the project. No API key needed.
+Search many video sites in one call, check each clip's licence verdict, and download the right rendition into the project. No API key needed. Video is never streamed through the service: every URL points at the source.
 
 ## Workflow
 
-1. Search (commercial-safe by default; add a category and form to cut noise):
+1. Search (commercial-safe by default; add the format to cut noise):
 
    ```bash
-   curl -s "https://video.shep.bot/v1/search?q=QUERY&category=drums.kick&form=one-shot&commercial=true&downloadable=true&limit=8"
+   curl -s "https://video.shep.bot/v1/search?q=QUERY&orientation=portrait&min_resolution=1080&commercial=true&downloadable=true&limit=8"
    ```
 
-   Query words like "808 in F minor" or "vocal chop 140 bpm" become key/BPM filters. Categories are dot paths (`drums.kick`, `drums.snare`, `drums.clap`, `drums.hat.closed`, `drums.hat.open`, `bass.808`, `vocals.chop`, `vocals.acapella`, `fx.riser`, `fx.impact`, `fx.zap`, `foley`, `ambience`, `keys`, `synth.pad`…); a parent like `drums` matches its children. Forms: `one-shot`, `loop`, `phrase`, `pack`.
-   Each result has `id`, `title`, `provider`, `url`, `category`, `form`, `bpm`, `key`, `durationSec`, `previewUrl`, `license.verdict`, `attribution`, `requiresAccount`, `downloadable`.
+   Query words like "4k", "vertical", "10s", "60fps" or "timelapse" become filters. Categories are dot paths (`nature.ocean`, `nature.sky`, `aerial`, `city.skyline`, `city.street`, `space.launch`, `space.earth`, `science`, `background.abstract`, `overlay.light`, `greenscreen`, `archive.newsreel`, `archive.film`…); a parent like `nature` matches its children. Styles: `timelapse`, `slow-motion`, `loop`, `animation`, `visualization`, `black-white`.
+   Each result has `id`, `title`, `provider`, `url`, `category`, `orientation`, `width`, `height`, `fps`, `durationSec`, `year`, `posterUrl`, `previewUrl`, `license.verdict`, `license.editorial`, `attribution`, `downloadable`.
 
-2. Check the files (and the credit line):
+2. Check the clip (renditions, watch URL, credit line):
 
    ```bash
-   curl -s "https://video.shep.bot/v1/samples/ID/files?format=wav"
+   curl -s "https://video.shep.bot/v1/clips/ID"
    ```
 
-3. Download into the project, with the credits in the zip:
+3. Download the rendition the edit needs (a 302 to the file on the source):
 
    ```bash
-   mkdir -p samples
-   curl -L -o samples/NAME.zip "https://video.shep.bot/v1/samples/ID/download?bundle=true"
-   unzip -o samples/NAME.zip -d samples/
+   mkdir -p footage
+   curl -L -o footage/NAME.mp4 "https://video.shep.bot/v1/clips/ID/download?height=1080"
+   curl -s "https://video.shep.bot/v1/clips/ID/credits" >> footage/ATTRIBUTION.md
    ```
 
-4. A whole drum kit in one call:
+4. A whole b-roll sequence from a shot list:
 
    ```bash
-   curl -s -X POST "https://video.shep.bot/v1/kits" -H "content-type: application/json" \
-     -d '{"style":"dark trap","bpm":140,"key":"F minor"}'
+   curl -s -X POST "https://video.shep.bot/v1/sequences" -H "content-type: application/json" \
+     -d '{"shots":["city skyline at night (4s)","coffee pour close-up (3s)","clouds timelapse"],"orientation":"portrait","totalDuration":15}'
    ```
+
+   Save `exports["concat.sh"]` and run `sh concat.sh` to render with ffmpeg, or `exports["timeline.otio"]` for DaVinci Resolve / Kdenlive, and keep `exports["ATTRIBUTION.md"]`.
 
 ## Licence rules
 
-- Keep `commercial=true` unless the user says the project is non-commercial. Free to download is not free to release.
-- Always report each sample's verdict: `yes` (commercial OK), `yes-with-credit` (OK with the `attribution` line), `restricted` / `clearance-required` / `check-terms` (read the terms first), `no` (non-commercial only).
-- Never present a `no` or `check-terms` sample as cleared. `license.assertedBy: "uploader"` means the licence is unverified.
-- When `attribution` is present, give it to the user verbatim and add it to the project's credits (`CREDITS.md` or the release notes).
-- Don't commit samples to public repos or repackage them unless they are CC0/public domain.
+- Keep `commercial=true` unless the user says the project is non-commercial. Free to download is not free to use in an ad.
+- Always report each clip's verdict: `yes` (commercial OK), `yes-with-credit` (OK with the `attribution` line), `restricted` / `clearance-required` / `check-terms` (read the terms first), `no` (non-commercial only).
+- `license.editorial: true` (all NASA footage, archive footage) = people, insignia or brands without releases: news, documentary and education only, never ads or endorsements.
+- Never present a `no`, `check-terms` or editorial clip as cleared for advertising. `license.assertedBy: "uploader"` means the licence is unverified.
+- When `attribution` is present, give it to the user verbatim and add it to the project's credits (`CREDITS.md`, the description or end credits).
+- NASA: credit NASA, no NASA logo, no implied endorsement.
 
 ## Notes
 
-- URL-encode the id (`freesound:2086` → `freesound%3A2086`).
-- `409` from download = no direct files; give the user the sample `url`. `requiresAccount: true` = the original needs the user's own account on the source.
-- Link `https://video.shep.bot/search?sample=ID` so the user can hear it.
+- URL-encode the id (`nasa:ABC_123` → `nasa%3AABC_123`); ids can contain spaces and slashes.
+- `409` from download = no direct files; give the user the clip `url`.
+- Wikimedia Commons files are WebM/Ogg, not MP4.
+- Link `https://video.shep.bot/search?clip=ID` so the user can watch it.
+- MCP alternative: `claude mcp add --transport http video https://video.shep.bot/mcp` (tools `search_videos`, `get_video`, `build_sequence`, `list_sources`).
 
 ## When the user asks about licences
 
-Quote the short answer at the top of the matching guide: Freesound in releases (https://video.shep.bot/guides/freesound-samples-commercial-use.md), crediting CC BY (https://video.shep.bot/guides/credit-cc-by-samples.md), commercial use (https://video.shep.bot/guides/what-counts-as-commercial-use.md), clearance and Content ID (https://video.shep.bot/guides/sample-clearance-and-content-id.md). All guides: https://video.shep.bot/guides.md · Glossary: https://video.shep.bot/glossary.md
+Quote the short answer at the top of the matching guide: commercial use (https://video.shep.bot/guides/free-stock-footage-commercial-use.md), crediting CC BY (https://video.shep.bot/guides/credit-cc-by-video.md), NASA rules (https://video.shep.bot/guides/nasa-footage-rules.md), editorial vs commercial (https://video.shep.bot/guides/editorial-vs-commercial-footage.md), archive films (https://video.shep.bot/guides/prelinger-public-domain-films.md). All guides: https://video.shep.bot/guides.md · Glossary: https://video.shep.bot/glossary.md
 
 Full guide: https://video.shep.bot/AGENTS.md · Licences: https://video.shep.bot/docs/licences.md · OpenAPI: https://video.shep.bot/openapi.json

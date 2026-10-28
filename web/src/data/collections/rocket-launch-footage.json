@@ -1,0 +1,463 @@
+{
+  "slug": "rocket-launch-footage",
+  "search": {
+    "q": "rocket launch",
+    "categories": [
+      "space.launch"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:02:14.297Z",
+  "clips": [
+    {
+      "id": "nasa:KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+      "provider": "nasa",
+      "title": "TROPICS Rocket Launch",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130/KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Rocket Lab",
+      "license": {
+        "id": "LicenseRef-NASA-media-third-party-credit",
+        "name": "NASA media (third-party credit)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "check-terms",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2023
+    },
+    {
+      "id": "internetarchive:Sts-135SolidRocketBoosterCameraVideoOfAtlantisLaunch",
+      "provider": "internetarchive",
+      "title": "STS-135: Solid Rocket Booster Camera Video of Atlantis Launch",
+      "category": "space.launch",
+      "url": "https://archive.org/details/Sts-135SolidRocketBoosterCameraVideoOfAtlantisLaunch",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/Sts-135SolidRocketBoosterCameraVideoOfAtlantisLaunch",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 1963
+    },
+    {
+      "id": "nasa:NHQ_2020_0902_NASA CONDUCTS SPACE LAUNCH SYSTEM ROCKET FULL-SCALE BOOSTER TEST_FIX",
+      "provider": "nasa",
+      "title": "NASA Conducts Space Launch System Rocket Full-Scale Booster Test",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/NHQ_2020_0902_NASA%20CONDUCTS%20SPACE%20LAUNCH%20SYSTEM%20ROCKET%20FULL-SCALE%20BOOSTER%20TEST_FIX",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2020_0902_NASA CONDUCTS SPACE LAUNCH SYSTEM ROCKET FULL-SCALE BOOSTER TEST_FIX/NHQ_2020_0902_NASA CONDUCTS SPACE LAUNCH SYSTEM ROCKET FULL-SCALE BOOSTER TEST_FIX~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2020_0902_NASA%20CONDUCTS%20SPACE%20LAUNCH%20SYSTEM%20ROCKET%20FULL-SCALE%20BOOSTER%20TEST_FIX/NHQ_2020_0902_NASA%20CONDUCTS%20SPACE%20LAUNCH%20SYSTEM%20ROCKET%20FULL-SCALE%20BOOSTER%20TEST_FIX~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:mlrs_overview",
+      "provider": "internetarchive",
+      "title": "Multiple Launch Rocket System",
+      "category": "space.launch",
+      "url": "https://archive.org/details/mlrs_overview",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/mlrs_overview",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 720
+    },
+    {
+      "id": "nasa:GSFC_20160909_M12368_OSIRIS_launch",
+      "provider": "nasa",
+      "title": "Rocket-Lovers Watch OSIRIS-REx Launch",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/GSFC_20160909_M12368_OSIRIS_launch",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20160909_M12368_OSIRIS_launch/GSFC_20160909_M12368_OSIRIS_launch~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20160909_M12368_OSIRIS_launch/GSFC_20160909_M12368_OSIRIS_launch~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA GSFC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2016
+    },
+    {
+      "id": "internetarchive:DutchCollinsNOAA-NPrimeAtopDeltaIIRocketReadyForLaunchFeb.4",
+      "provider": "internetarchive",
+      "title": "NOAA-N Prime Atop Delta II Rocket Ready For Launch Feb. 4",
+      "category": "space.launch",
+      "url": "https://archive.org/details/DutchCollinsNOAA-NPrimeAtopDeltaIIRocketReadyForLaunchFeb.4",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/DutchCollinsNOAA-NPrimeAtopDeltaIIRocketReadyForLaunchFeb.4",
+      "author": "Dutch Collins",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true
+    },
+    {
+      "id": "nasa:KSC-20220628-VP-MMS01-0001-RocketLab_Capstone_Live_Launch_Coverage_ROCKET_VIEWS_ONLY-3306978",
+      "provider": "nasa",
+      "title": "Rocket Lab Capstone Live Launch Coverage - ROCKET VIEWS",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20220628-VP-MMS01-0001-RocketLab_Capstone_Live_Launch_Coverage_ROCKET_VIEWS_ONLY-3306978",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20220628-VP-MMS01-0001-RocketLab_Capstone_Live_Launch_Coverage_ROCKET_VIEWS_ONLY-3306978/KSC-20220628-VP-MMS01-0001-RocketLab_Capstone_Live_Launch_Coverage_ROCKET_VIEWS_ONLY-3306978~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20220628-VP-MMS01-0001-RocketLab_Capstone_Live_Launch_Coverage_ROCKET_VIEWS_ONLY-3306978/KSC-20220628-VP-MMS01-0001-RocketLab_Capstone_Live_Launch_Coverage_ROCKET_VIEWS_ONLY-3306978~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Michelle Stone",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2022
+    },
+    {
+      "id": "internetarchive:DC110618042905",
+      "provider": "internetarchive",
+      "title": "Fangruida- The father of modern non-traditional chemical-fuel dual-engine high-speed heavy-load rockets (nuclear-powered high-polymer composite rocket technology integration) (Alvis)",
+      "category": "space.launch",
+      "url": "https://archive.org/details/DC110618042905",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://archive.org/services/img/DC110618042905",
+      "author": "Alvis",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2013
+    },
+    {
+      "id": "nasa:MAF_20200108_CS1 rollout-1min Cut-FINAL-UHD",
+      "provider": "nasa",
+      "title": "NASA Rolls Out Space Launch System Rocket’s Core Stage from Michoud Factory",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/MAF_20200108_CS1%20rollout-1min%20Cut-FINAL-UHD",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MAF_20200108_CS1 rollout-1min Cut-FINAL-UHD/MAF_20200108_CS1 rollout-1min Cut-FINAL-UHD~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MAF_20200108_CS1%20rollout-1min%20Cut-FINAL-UHD/MAF_20200108_CS1%20rollout-1min%20Cut-FINAL-UHD~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA MAF",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "internetarchive:DV100202064542",
+      "provider": "internetarchive",
+      "title": "Fangruida/Overloaded rockets and rocket ---- overweight major technology aerospace technology",
+      "category": "space.launch",
+      "url": "https://archive.org/details/DV100202064542",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/DV100202064542",
+      "author": "Fangruida",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2014
+    },
+    {
+      "id": "nasa:KSC-20240525-MH-RKL01-0001-Rocket_Lab_PREFIRE_1_Launch_1080p-M6988",
+      "provider": "nasa",
+      "title": "Rocket Lab PREFIRE-1 Launch",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20240525-MH-RKL01-0001-Rocket_Lab_PREFIRE_1_Launch_1080p-M6988",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20240525-MH-RKL01-0001-Rocket_Lab_PREFIRE_1_Launch_1080p-M6988/KSC-20240525-MH-RKL01-0001-Rocket_Lab_PREFIRE_1_Launch_1080p-M6988~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20240525-MH-RKL01-0001-Rocket_Lab_PREFIRE_1_Launch_1080p-M6988/KSC-20240525-MH-RKL01-0001-Rocket_Lab_PREFIRE_1_Launch_1080p-M6988~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Rocket Lab",
+      "license": {
+        "id": "LicenseRef-NASA-media-third-party-credit",
+        "name": "NASA media (third-party credit)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "check-terms",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "nasa:MAF_20190917_Artemis 1 ES Join_BROLL",
+      "provider": "nasa",
+      "title": "NASA joins last of five sections for Space Launch System Rocket stage",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/MAF_20190917_Artemis%201%20ES%20Join_BROLL",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MAF_20190917_Artemis 1 ES Join_BROLL/MAF_20190917_Artemis 1 ES Join_BROLL~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MAF_20190917_Artemis%201%20ES%20Join_BROLL/MAF_20190917_Artemis%201%20ES%20Join_BROLL~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jude Guidry, Jared Lyons, Eric Bordelon",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    },
+    {
+      "id": "nasa:KSC-20240605-MH-RKL01-0001-Rocket_Lab_PREFIRE_and_Ice_Launch_1080p-M6988",
+      "provider": "nasa",
+      "title": "Rocket Lab PREFIRE and Ice Launch",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC-20240605-MH-RKL01-0001-Rocket_Lab_PREFIRE_and_Ice_Launch_1080p-M6988",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC-20240605-MH-RKL01-0001-Rocket_Lab_PREFIRE_and_Ice_Launch_1080p-M6988/KSC-20240605-MH-RKL01-0001-Rocket_Lab_PREFIRE_and_Ice_Launch_1080p-M6988~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC-20240605-MH-RKL01-0001-Rocket_Lab_PREFIRE_and_Ice_Launch_1080p-M6988/KSC-20240605-MH-RKL01-0001-Rocket_Lab_PREFIRE_and_Ice_Launch_1080p-M6988~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Rocket Lab",
+      "license": {
+        "id": "LicenseRef-NASA-media-third-party-credit",
+        "name": "NASA media (third-party credit)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "check-terms",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2024
+    },
+    {
+      "id": "nasa:NHQ_2020_1002_Launch of the Northrop Grumman CRS-14 Antares Rocket",
+      "provider": "nasa",
+      "title": "Launch of the Northrop Grumman CRS-14 Antares Rocket",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/NHQ_2020_1002_Launch%20of%20the%20Northrop%20Grumman%20CRS-14%20Antares%20Rocket",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2020_1002_Launch of the Northrop Grumman CRS-14 Antares Rocket/NHQ_2020_1002_Launch of the Northrop Grumman CRS-14 Antares Rocket~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2020_1002_Launch%20of%20the%20Northrop%20Grumman%20CRS-14%20Antares%20Rocket/NHQ_2020_1002_Launch%20of%20the%20Northrop%20Grumman%20CRS-14%20Antares%20Rocket~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "nasa:KSC_SLS_ART II Timelapse Rollout 2 to Pad 16-9",
+      "provider": "nasa",
+      "title": "Timelapse_NASA's SLS Rocket and Orion Spacecraft Second Rollout to Launch Pad 39B",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC_SLS_ART%20II%20Timelapse%20Rollout%202%20to%20Pad%2016-9",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC_SLS_ART II Timelapse Rollout 2 to Pad 16-9/KSC_SLS_ART II Timelapse Rollout 2 to Pad 16-9~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC_SLS_ART%20II%20Timelapse%20Rollout%202%20to%20Pad%2016-9/KSC_SLS_ART%20II%20Timelapse%20Rollout%202%20to%20Pad%2016-9~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/ Sam Lott",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "nasa:KSC_20260117_A2_to_39B",
+      "provider": "nasa",
+      "title": "NASA's SLS Rocket and Orion Spacecraft Rollout to Launch Pad 39B",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/KSC_20260117_A2_to_39B",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/KSC_20260117_A2_to_39B/KSC_20260117_A2_to_39B~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/KSC_20260117_A2_to_39B/KSC_20260117_A2_to_39B~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Evan Deroche",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2026
+    },
+    {
+      "id": "nasa:JB_UtahFSB_Shorter",
+      "provider": "nasa",
+      "title": "NASA Administrator Highlights Space Launch System Rocket Booster Test",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/JB_UtahFSB_Shorter",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/JB_UtahFSB_Shorter/JB_UtahFSB_Shorter~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/JB_UtahFSB_Shorter/JB_UtahFSB_Shorter~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Sonnet Apple",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "nasa:MSFC_SLS_07172020_Jennifer_Takeshita_TBE_LVSA_Rollout",
+      "provider": "nasa",
+      "title": "Jennifer Takeshita, Teledyne Brown Engineering, Discusses Building the Adapter for the Space Launch System Rocket",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/MSFC_SLS_07172020_Jennifer_Takeshita_TBE_LVSA_Rollout",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MSFC_SLS_07172020_Jennifer_Takeshita_TBE_LVSA_Rollout/MSFC_SLS_07172020_Jennifer_Takeshita_TBE_LVSA_Rollout~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MSFC_SLS_07172020_Jennifer_Takeshita_TBE_LVSA_Rollout/MSFC_SLS_07172020_Jennifer_Takeshita_TBE_LVSA_Rollout~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Sam Lott",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "nasa:MAF_20191204_SLSAssembly-B-roll-UHD",
+      "provider": "nasa",
+      "title": "B-Roll: NASA’s Michoud Assembly Facility assemble main structures of NASA’s Space Launch System Rocket’s Core stage",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/MAF_20191204_SLSAssembly-B-roll-UHD",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MAF_20191204_SLSAssembly-B-roll-UHD/MAF_20191204_SLSAssembly-B-roll-UHD~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MAF_20191204_SLSAssembly-B-roll-UHD/MAF_20191204_SLSAssembly-B-roll-UHD~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Eric Bordelon",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
+    }
+  ]
+}

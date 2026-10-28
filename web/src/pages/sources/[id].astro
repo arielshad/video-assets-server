@@ -3,6 +3,7 @@
 // (from the daily census), how it is searched, its licence, and its clips in
 // the curated collections.
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/lib/site";
 import ClipCard from "@/components/collections/ClipCard.astro";
 import Breadcrumbs from "@/components/collections/Breadcrumbs.astro";
 import { COLLECTIONS_PATH, countLabel, sourcePages, sourcePath, sourceSearchHref, type SourcePage } from "@/lib/collections";
@@ -26,7 +27,9 @@ const path = sourcePath(p.id);
 const access = { api: "Official or public API", static: "A published catalogue of the collection, fetched once and cached", scrape: "The site's public pages, read politely and cached", link: "Not searched directly: the site does not allow automated search, so results link to the same search on the site" } as const;
 const pricing = { free: "Free", freemium: "Free and paid", paid: "Paid" } as const;
 const clip = (x: string, n: number) => (x.length > n ? `${x.slice(0, n - 1).trimEnd()}…` : x);
-const title = `${p.name}: free video, licence and downloads`;
+// Titles stay within 70 characters with the site name; long source names get a shorter tail.
+const fits = (t: string) => t.length + 3 + SITE.name.length <= 70;
+const title = [`${p.name}: free video, licence and downloads`, `${p.name}: free video and licences`, `${p.name}: free video`].find(fits) ?? p.name;
 const description = clip(`${p.name}: ${p.license ?? "licence set per clip"}, ${p.supportsDownload ? "watch and download clips straight from the source" : "linked searches"}. Searched alongside ${SOURCE_COUNT - 1} other video sites. ${p.description}`, 160);
 const trail = [{ name: "Home", path: "/" }, { name: "Sources", path: "/docs/sources" }, { name: p.name, path }];
 const byCategory = t ? Object.entries(t.byCategory).sort((a, b) => b[1] - a[1]) : [];

@@ -1,5 +1,5 @@
 /**
- * Collections: curated landing pages (/clips/<slug>) that show a saved
+ * Collections: curated landing pages (/footage/<slug>) that show a saved
  * search. A topic file (web/src/content/collections/<slug>.md) holds the
  * editorial copy and the search; scripts/snapshot-collections.mjs runs that
  * search and saves the results here as a snapshot
@@ -15,6 +15,7 @@
 import type { SearchRequest, SearchResponse } from "./service.js";
 import type { Category, Clip, CommercialVerdict, Orientation, Pricing, VideoStyle } from "./types.js";
 import { COMMERCIAL_SAFE } from "./licence.js";
+import { parseQuery } from "./query.js";
 import { matchScore } from "./util.js";
 import { categoryLabel } from "./vocab.js";
 
@@ -159,10 +160,13 @@ export function selectClips(
   const excluded = (a: { id: string; title: string }) => exclude.some((e) => a.id.toLowerCase() === e || a.title.toLowerCase().includes(e));
   const seenTitles = new Set<string>();
   const candidates = new Map<string, SnapshotClip>();
+  // Relevance is checked against the words left after filter words are parsed
+  // out, as the search does: "vertical" alone is the portrait filter, not a title word.
+  const words = parseQuery(opts.search.q).query;
   for (const a of fresh) {
     if (candidates.has(a.id) || excluded(a)) continue;
-    // The category counts as a tag ("808" finds a bass.808 clip titled "Long Sub F"), as in the search ranking.
-    if (matchScore({ ...a, tags: [...a.tags, a.category.replace(/\./g, " "), categoryLabel(a.category)] }, opts.search.q) < MIN_RELEVANCE) continue;
+    // The category counts as a tag ("ocean" finds a nature.ocean clip titled "Waves at Big Sur"), as in the search ranking.
+    if (words && matchScore({ ...a, tags: [...a.tags, a.category.replace(/\./g, " "), categoryLabel(a.category)] }, words) < MIN_RELEVANCE) continue;
     if (opts.search.free && !isFree(a, opts.pricing)) continue;
     if (opts.search.commercial && !(a.license && COMMERCIAL_SAFE.has(a.license.verdict))) continue;
     if (opts.search.downloadable && !a.downloadable) continue;

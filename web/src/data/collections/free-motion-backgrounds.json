@@ -1,0 +1,346 @@
+{
+  "slug": "free-motion-backgrounds",
+  "search": {
+    "q": "abstract background",
+    "categories": [
+      "background"
+    ]
+  },
+  "updatedAt": "2026-10-28T17:04:30.825Z",
+  "clips": [
+    {
+      "id": "internetarchive:redgreeturquoiseswirls",
+      "provider": "internetarchive",
+      "title": "Abstract Swirls Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/redgreeturquoiseswirls",
+      "downloadable": true,
+      "styles": [
+        "loop"
+      ],
+      "posterUrl": "https://archive.org/services/img/redgreeturquoiseswirls",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2014
+    },
+    {
+      "id": "internetarchive:abstractbackground",
+      "provider": "internetarchive",
+      "title": "Abstract Organic Motion Background",
+      "category": "background",
+      "url": "https://archive.org/details/abstractbackground",
+      "downloadable": true,
+      "styles": [
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/abstractbackground",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:abstractblackwhite",
+      "provider": "internetarchive",
+      "title": "Abstract Black, White & Gray Background",
+      "category": "background",
+      "url": "https://archive.org/details/abstractblackwhite",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/abstractblackwhite",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:abstract_20150213",
+      "provider": "internetarchive",
+      "title": "Free Abstract Stock Video Background",
+      "category": "background",
+      "url": "https://archive.org/details/abstract_20150213",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/abstract_20150213",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:abstractgreen",
+      "provider": "internetarchive",
+      "title": "Abstract Green Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/abstractgreen",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/abstractgreen",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:burning_201503",
+      "provider": "internetarchive",
+      "title": "Abstract Burning/Decaying Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/burning_201503",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/burning_201503",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:redblackabstract",
+      "provider": "internetarchive",
+      "title": "Red & Black Abstract Motion Background",
+      "category": "background",
+      "url": "https://archive.org/details/redblackabstract",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/redblackabstract",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:turquoiselights",
+      "provider": "internetarchive",
+      "title": "Abstract Turquoise Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/turquoiselights",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/turquoiselights",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:ThermalroyaltyFreeLoopingBackground",
+      "provider": "internetarchive",
+      "title": "Thermal (Royalty Free Looping Background)",
+      "category": "background",
+      "url": "https://archive.org/details/ThermalroyaltyFreeLoopingBackground",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/ThermalroyaltyFreeLoopingBackground",
+      "author": "Jeffrey Beach (Beachfront Productions)",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "durationSec": 30
+    },
+    {
+      "id": "internetarchive:turquoise_201503",
+      "provider": "internetarchive",
+      "title": "Turquoise Abstract Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/turquoise_201503",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/turquoise_201503",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:abstractpink",
+      "provider": "internetarchive",
+      "title": "Hot Pink/Fuchsia Abstract Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/abstractpink",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/abstractpink",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:purpleyellow",
+      "provider": "internetarchive",
+      "title": "Purple & Yellow Abstract Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/purpleyellow",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/purpleyellow",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:cobaltabstract",
+      "provider": "internetarchive",
+      "title": "Cobalt Blue Abstract Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/cobaltabstract",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/cobaltabstract",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    },
+    {
+      "id": "internetarchive:bluepink_201506",
+      "provider": "internetarchive",
+      "title": "Blue, Pink & Black Abstract Background Loop",
+      "category": "background",
+      "url": "https://archive.org/details/bluepink_201506",
+      "downloadable": true,
+      "styles": [
+        "loop",
+        "animation"
+      ],
+      "posterUrl": "https://archive.org/services/img/bluepink_201506",
+      "author": "zfootage.com",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "check-terms",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2015
+    }
+  ]
+}
