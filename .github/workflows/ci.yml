@@ -11,7 +11,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,35 +21,6 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             web/package-lock.json
-      # Audio analysis tests decode audio with ffmpeg/ffprobe.
-      # Static ffmpeg 8.1 from GitHub releases (fast from Actions, cached between
-      # runs). The Ubuntu package mirror has been slow enough to stall CI for
-      # half an hour; apt stays as the fallback.
-      - name: Cache ffmpeg
-        uses: actions/cache@v4
-        with:
-          path: ~/ffmpeg
-          key: ffmpeg-n8.1-linux64-gpl-v1
-      - name: ffmpeg
-        timeout-minutes: 20
-        run: |
-          dir="$HOME/ffmpeg"
-          if [ ! -x "$dir/ffprobe" ]; then
-            mkdir -p "$dir"
-            url=https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n8.1-latest-linux64-gpl-8.1.tar.xz
-            if ! curl -fsSL --retry 3 --max-time 300 "$url" | tar -xJ -C "$dir" --strip-components=2 --wildcards '*/bin/ffmpeg' '*/bin/ffprobe'; then
-              echo "static ffmpeg unavailable; installing from apt"
-              rm -rf "$dir"
-              sudo apt-get -o Acquire::Retries=3 update
-              sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends ffmpeg
-            fi
-          fi
-          if [ -x "$dir/ffprobe" ]; then
-            echo "$dir" >> "$GITHUB_PATH"
-            "$dir/ffprobe" -version | sed -n 1p
-          else
-            ffprobe -version | sed -n 1p
-          fi
       - run: npm ci
       - run: npm --prefix web ci
       - run: npm run build
@@ -90,41 +61,6 @@ jobs:
             org.opencontainers.image.revision=${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-  # Optional variant with the CLAP embedding runtime (onnxruntime needs glibc,
-  # so it is the Debian-based `ml` stage): ghcr.io/arielshad/video-assets-server:{latest-ml,sha-<commit>-ml}.
-  # Not pinned or deployed automatically; switch deploy/kustomization.yaml to
-  # it when turning VIDEO_SERVER_EMBEDDINGS on (see deploy/deployment.yaml).
-  image-ml:
-    needs: test
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    env:
-      IMAGE: ghcr.io/${{ github.repository }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-      - uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: ml
-          push: true
-          tags: |
-            ${{ env.IMAGE }}:latest-ml
-            ${{ env.IMAGE }}:sha-${{ github.sha }}-ml
-          labels: |
-            org.opencontainers.image.source=https://github.com/${{ github.repository }}
-            org.opencontainers.image.revision=${{ github.sha }}
-          cache-from: type=gha,scope=ml
-          cache-to: type=gha,mode=max,scope=ml
 
   deploy:
     needs: image

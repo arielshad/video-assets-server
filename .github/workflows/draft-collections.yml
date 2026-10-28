@@ -1,7 +1,7 @@
 name: Draft collection pages
 
 # Once a week, a Claude Code agent drafts up to 3 new collection pages
-# (/samples/<slug>, e.g. "Free 808 samples") from what people search for on the
+# (/footage/<slug>, e.g. "Free drone footage") from what people search for on the
 # site, and they go through a reviewed pull request (prompts/draft-collections.md):
 #
 #   draft    Reads last week's frequent searches from Loki through Grafana
@@ -26,9 +26,6 @@ name: Draft collection pages
 #   GRAFANA_TOKEN (optional)   a Grafana service-account token with the Viewer
 #                              role. Without it the agent picks topics from its
 #                              own research.
-#   FREESOUND_API_KEY (optional)   lets the verify job's searches include Freesound
-#                              (as in the daily census). Never given to the agents,
-#                              so their own trial searches may find a little less.
 # Repository variables (optional, Settings > Secrets and variables > Variables):
 #   GRAFANA_URL      default https://grafana.shep.bot
 #   LOKI_UID         the Loki datasource uid in that Grafana
@@ -40,8 +37,8 @@ name: Draft collection pages
 
 on:
   schedule:
-    # Mondays at 06:23 UTC, after the census (04:41) and source discovery (05:17).
-    - cron: "23 6 * * 1"
+    # Mondays at 06:37 UTC, after the census (04:53) and source discovery (05:29).
+    - cron: "37 6 * * 1"
   workflow_dispatch: {}
 
 concurrency:
@@ -185,7 +182,6 @@ jobs:
       - name: Run each new search
         env:
           ADDED: ${{ steps.gate.outputs.added }}
-          FREESOUND_API_KEY: ${{ secrets.FREESOUND_API_KEY }}
         run: node scripts/snapshot-collections.mjs ${ADDED//,/ }
 
       - name: Withdraw topics with too few results
@@ -249,15 +245,15 @@ jobs:
             const kept = process.env.KEPT.split(",");
             const rows = readTopics().filter((t) => kept.includes(t.slug)).map((t) => {
               const s = readSnapshot(t.slug);
-              const sources = new Set(s.samples.map((a) => a.provider)).size;
-              const cleared = s.samples.filter((a) => ["yes", "yes-with-credit"].includes(a.license?.verdict)).length;
-              const filters = [...(t.data.search.categories ?? []), ...(t.data.search.forms ?? []), t.data.search.commercial ? "commercial" : ""].filter(Boolean).join(", ");
-              return `| [${t.data.title}](https://video.shep.bot/samples/${t.slug}) | \`${t.data.search.q}\`${filters ? ` (${filters})` : ""} | ${t.data.hub} | ${s.samples.length} from ${sources} sources, ${cleared} cleared for commercial use |`;
+              const sources = new Set(s.clips.map((a) => a.provider)).size;
+              const cleared = s.clips.filter((a) => ["yes", "yes-with-credit"].includes(a.license?.verdict)).length;
+              const filters = [...(t.data.search.categories ?? []), ...(t.data.search.styles ?? []), ...(t.data.search.orientations ?? []), t.data.search.minResolution ? `${t.data.search.minResolution}p+` : "", t.data.search.commercial ? "commercial" : ""].filter(Boolean).join(", ");
+              return `| [${t.data.title}](https://video.shep.bot/footage/${t.slug}) | \`${t.data.search.q}\`${filters ? ` (${filters})` : ""} | ${t.data.hub} | ${s.clips.length} from ${sources} sources, ${cleared} cleared for commercial use |`;
             });
             console.log([
               "New collection pages drafted by the weekly workflow (`.github/workflows/draft-collections.yml`).",
               "",
-              "| Page (live after merge) | Search | Hub | Samples |",
+              "| Page (live after merge) | Search | Hub | Clips |",
               "| --- | --- | --- | --- |",
               ...rows,
               "",

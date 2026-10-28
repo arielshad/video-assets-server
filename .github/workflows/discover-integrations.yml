@@ -1,7 +1,7 @@
 name: Discover new sources
 
-# Once a day, a Claude Code agent looks for a new music-sample or sound-effects
-# website, integrates it as a provider with offline and live tests
+# Once a day, a Claude Code agent looks for a new free or openly licensed video
+# footage website, integrates it as a provider with offline and live tests
 # (prompts/discover-integrations.md; a site whose terms or robots.txt forbid
 # automated access may only become a link-only source), and records every site
 # it evaluated in integrations/registry.json. Then:
@@ -29,8 +29,8 @@ name: Discover new sources
 
 on:
   schedule:
-    # Daily at 05:17 UTC (off the hour to avoid the scheduler rush).
-    - cron: "17 5 * * *"
+    # Daily at 05:29 UTC (off the hour, and off the siblings' 05:17).
+    - cron: "29 5 * * *"
   workflow_dispatch: {}
 
 concurrency:
