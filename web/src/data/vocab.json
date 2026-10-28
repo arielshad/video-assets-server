@@ -1,184 +1,136 @@
 {
   "categories": [
     {
-      "id": "drums",
-      "label": "Drums"
+      "id": "nature",
+      "label": "Nature"
     },
     {
-      "id": "drums.kick",
-      "label": "Kick"
+      "id": "nature.ocean",
+      "label": "Ocean & beach"
     },
     {
-      "id": "drums.snare",
-      "label": "Snare"
+      "id": "nature.water",
+      "label": "Rivers & rain"
     },
     {
-      "id": "drums.clap",
-      "label": "Clap"
+      "id": "nature.sky",
+      "label": "Sky & clouds"
     },
     {
-      "id": "drums.hat",
-      "label": "Hi-hat"
+      "id": "nature.forest",
+      "label": "Forest & plants"
     },
     {
-      "id": "drums.hat.closed",
-      "label": "Closed hat"
+      "id": "nature.mountain",
+      "label": "Mountains & snow"
     },
     {
-      "id": "drums.hat.open",
-      "label": "Open hat"
+      "id": "nature.animals",
+      "label": "Animals & wildlife"
     },
     {
-      "id": "drums.cymbal",
-      "label": "Cymbal"
+      "id": "city",
+      "label": "City & urban"
     },
     {
-      "id": "drums.cymbal.crash",
-      "label": "Crash"
+      "id": "city.street",
+      "label": "Streets & traffic"
     },
     {
-      "id": "drums.cymbal.ride",
-      "label": "Ride"
+      "id": "city.skyline",
+      "label": "Skylines"
     },
     {
-      "id": "drums.tom",
-      "label": "Tom"
+      "id": "people",
+      "label": "People"
     },
     {
-      "id": "drums.perc",
-      "label": "Percussion"
+      "id": "people.work",
+      "label": "Work & business"
     },
     {
-      "id": "drums.fill",
-      "label": "Drum fill"
+      "id": "people.lifestyle",
+      "label": "Lifestyle"
     },
     {
-      "id": "drums.break",
-      "label": "Breakbeat"
+      "id": "people.sport",
+      "label": "Sport"
     },
     {
-      "id": "bass",
-      "label": "Bass"
+      "id": "aerial",
+      "label": "Aerial & drone"
     },
     {
-      "id": "bass.808",
-      "label": "808"
+      "id": "space",
+      "label": "Space"
     },
     {
-      "id": "bass.sub",
-      "label": "Sub bass"
+      "id": "space.earth",
+      "label": "Earth from space"
     },
     {
-      "id": "vocals",
-      "label": "Vocals"
+      "id": "space.launch",
+      "label": "Launches & missions"
     },
     {
-      "id": "vocals.acapella",
-      "label": "A cappella"
+      "id": "space.planets",
+      "label": "Sun, moon & planets"
     },
     {
-      "id": "vocals.chop",
-      "label": "Vocal chop"
+      "id": "science",
+      "label": "Science & data"
     },
     {
-      "id": "vocals.shout",
-      "label": "Vocal shot"
+      "id": "tech",
+      "label": "Technology"
     },
     {
-      "id": "vocals.spoken",
-      "label": "Spoken word"
+      "id": "transport",
+      "label": "Transport"
     },
     {
-      "id": "vocals.choir",
-      "label": "Choir"
+      "id": "food",
+      "label": "Food & drink"
     },
     {
-      "id": "fx",
-      "label": "FX"
+      "id": "background",
+      "label": "Backgrounds"
     },
     {
-      "id": "fx.riser",
-      "label": "Riser"
+      "id": "background.abstract",
+      "label": "Abstract"
     },
     {
-      "id": "fx.downlifter",
-      "label": "Downlifter"
+      "id": "overlay",
+      "label": "Overlays & VFX"
     },
     {
-      "id": "fx.impact",
-      "label": "Impact"
+      "id": "overlay.light",
+      "label": "Light leaks & bokeh"
     },
     {
-      "id": "fx.sweep",
-      "label": "Sweep"
+      "id": "overlay.particles",
+      "label": "Particles, smoke & fire"
     },
     {
-      "id": "fx.zap",
-      "label": "Zap"
+      "id": "overlay.film",
+      "label": "Film grain & glitch"
     },
     {
-      "id": "fx.noise",
-      "label": "Noise"
+      "id": "greenscreen",
+      "label": "Green screen"
     },
     {
-      "id": "fx.glitch",
-      "label": "Glitch"
+      "id": "archive",
+      "label": "Archive & vintage"
     },
     {
-      "id": "fx.transition",
-      "label": "Transition"
+      "id": "archive.newsreel",
+      "label": "Newsreels & documentary"
     },
     {
-      "id": "foley",
-      "label": "Foley"
-    },
-    {
-      "id": "ambience",
-      "label": "Ambience"
-    },
-    {
-      "id": "keys",
-      "label": "Keys"
-    },
-    {
-      "id": "guitar",
-      "label": "Guitar"
-    },
-    {
-      "id": "synth",
-      "label": "Synth"
-    },
-    {
-      "id": "synth.pad",
-      "label": "Pad"
-    },
-    {
-      "id": "synth.lead",
-      "label": "Lead"
-    },
-    {
-      "id": "synth.pluck",
-      "label": "Pluck"
-    },
-    {
-      "id": "synth.stab",
-      "label": "Stab"
-    },
-    {
-      "id": "strings",
-      "label": "Strings"
-    },
-    {
-      "id": "brass",
-      "label": "Brass"
-    },
-    {
-      "id": "woodwind",
-      "label": "Woodwind"
-    },
-    {
-      "id": "mallets",
-      "label": "Mallets"
+      "id": "archive.film",
+      "label": "Films & animation"
     },
     {
       "id": "other",
@@ -186,43 +138,78 @@
     }
   ],
   "topCategories": [
-    "drums",
-    "bass",
-    "vocals",
-    "fx",
-    "foley",
-    "ambience",
-    "keys",
-    "guitar",
-    "synth",
-    "strings",
-    "brass",
-    "woodwind",
-    "mallets",
+    "nature",
+    "city",
+    "people",
+    "aerial",
+    "space",
+    "science",
+    "tech",
+    "transport",
+    "food",
+    "background",
+    "overlay",
+    "greenscreen",
+    "archive",
     "other"
   ],
-  "forms": [
-    "one-shot",
-    "loop",
-    "phrase",
-    "multisample",
-    "pack",
-    "midi",
-    "preset"
+  "styles": [
+    {
+      "id": "timelapse",
+      "label": "Timelapse"
+    },
+    {
+      "id": "slow-motion",
+      "label": "Slow motion"
+    },
+    {
+      "id": "loop",
+      "label": "Seamless loop"
+    },
+    {
+      "id": "animation",
+      "label": "Animation / CG"
+    },
+    {
+      "id": "visualization",
+      "label": "Data visualisation"
+    },
+    {
+      "id": "black-white",
+      "label": "Black & white"
+    }
   ],
-  "pitchClasses": [
-    "C",
-    "C#",
-    "D",
-    "D#",
-    "E",
-    "F",
-    "F#",
-    "G",
-    "G#",
-    "A",
-    "A#",
-    "B"
+  "orientations": [
+    "landscape",
+    "portrait",
+    "square"
+  ],
+  "resolutions": [
+    {
+      "id": "sd",
+      "label": "SD",
+      "minShortSide": 0
+    },
+    {
+      "id": "hd",
+      "label": "HD 720p",
+      "minShortSide": 720
+    },
+    {
+      "id": "fhd",
+      "label": "Full HD 1080p",
+      "minShortSide": 1080
+    },
+    {
+      "id": "qhd",
+      "label": "2K 1440p",
+      "minShortSide": 1440
+    },
+    {
+      "id": "uhd",
+      "label": "4K",
+      "minShortSide": 2160
+    }
   ],
   "verdicts": [
     "yes",
@@ -236,7 +223,7 @@
     "yes": "Commercial use OK",
     "yes-with-credit": "Commercial use OK with credit",
     "restricted": "Restricted: read the conditions",
-    "clearance-required": "Needs paid clearance per release",
+    "clearance-required": "Needs a paid licence or releases",
     "check-terms": "Unclear: check the terms",
     "no": "Non-commercial only"
   }

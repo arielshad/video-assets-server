@@ -4,7 +4,7 @@
 // web/src/data/vocab.json through web/scripts/export-vocab.mjs.)
 //
 // Writes, into web/src/data/:
-//   providers.json     every source (id, name, homepage, description, categories, forms, access, pricing,
+//   providers.json     every source (id, name, homepage, description, categories, access, pricing,
 //                      license name + licenseId/licenseUrl/licenseVerdict, supportsDownload, apiKeyEnv, nativeFilters)
 //   integrations.json  when each live source was added (from integrations/registry.json), for /stats
 //   openapi.json       the OpenAPI document served at /openapi.json, for the API reference page
@@ -23,7 +23,6 @@ const providers = allProviders.map((p) => ({
   homepage: p.homepage,
   description: p.description,
   categories: p.categories,
-  forms: p.forms ?? null,
   access: p.access,
   pricing: p.pricing,
   // The source's single licence, when uniform (null = set per clip).
