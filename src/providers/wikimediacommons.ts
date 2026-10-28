@@ -118,9 +118,9 @@ function authorOf(html: string): string | undefined {
   const text = plain(html);
   if (/^no machine-readable author/i.test(text)) {
     const link = /<a [^>]*>([^<]+)<\/a>/.exec(html)?.[1];
-    return link ? plain(link).replace(/~commonswiki$/, "") : undefined;
+    return link ? plain(link).replace(/~commonswiki$/, "").replace(/^User:\s*/i, "") : undefined;
   }
-  return text.slice(0, 120) || undefined;
+  return text.replace(/^User:\s*/i, "").slice(0, 120) || undefined;
 }
 
 function authorUrlOf(html: string): string | undefined {

@@ -1,30 +1,31 @@
 /**
  * Head metadata for share links to /search:
- * - query variants (/search?q=punchy+kick, /search?category=fx.riser&commercial=true)
+ * - query variants (/search?q=ocean+waves, /search?category=aerial&orientation=portrait)
  *   get a unique title, description and share card (/og/query.png?…);
- * - clip links (/search?clip=freesound:2086) get the clip's title, a
- *   generated description and a card (/og/clip.png?id=…).
+ * - clip links (/search?clip=nasa:…) get the clip's title, a generated
+ *   description and a card with its poster (/og/clip.png?id=…).
  * Both are `noindex, follow`: they are share targets, not landing pages.
  */
 import { VERDICT_LABELS } from "../core/licence.js";
-import { formatKey } from "../core/query.js";
+import { formatDuration } from "../core/query.js";
 import type { ClipDetails } from "../core/types.js";
-import { CATEGORIES, categoryLabel, type Category } from "../core/vocab.js";
+import { CATEGORIES, ORIENTATIONS, categoryLabel, resolutionLabel, type Category, type Orientation } from "../core/vocab.js";
 import { allProviders } from "../providers/index.js";
 
 const SITES = `${allProviders.length} sites`;
 
 /** Top-level categories read better with their own nouns. */
 const TOP_NOUNS: Record<string, [string, string]> = {
-  drums: ["drum clip", "drum clips"],
-  vocals: ["vocal clip", "vocal clips"],
-  fx: ["sound effect", "sound effects"],
-  foley: ["foley sound", "foley sounds"],
-  ambience: ["ambience recording", "ambience recordings"],
+  aerial: ["drone shot", "drone shots"],
+  background: ["motion background", "motion backgrounds"],
+  overlay: ["overlay", "overlays"],
+  greenscreen: ["green screen clip", "green screen clips"],
+  archive: ["archive film", "archive films"],
+  "archive.newsreel": ["newsreel", "newsreels"],
   other: ["clip", "clips"],
 };
 
-/** Mid-sentence noun: "kick clips", "vocal clips", "sound effects". */
+/** Mid-sentence noun: "ocean & beach clips", "drone shots", "motion backgrounds". */
 export function categoryNoun(id: string | undefined, plural = true): string {
   if (!id) return plural ? "clips" : "clip";
   const top = TOP_NOUNS[id];
@@ -37,7 +38,7 @@ export function categoryNoun(id: string | undefined, plural = true): string {
 const lowerFirst = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
 const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1).trimEnd()}…` : s);
 const providerName = (id: string) => allProviders.find((p) => p.id === id)?.name ?? id;
-const FEATURED = ["Freesound", "Wikimedia Commons", "Openverse"];
+const FEATURED = ["NASA", "Wikimedia Commons", "Internet Archive"];
 /** Search engines show about this much of a title and a description. */
 export const MAX_TITLE = 70;
 export const MAX_DESCRIPTION = 160;
@@ -75,8 +76,8 @@ export function searchShare(params: URLSearchParams): SearchShare | undefined {
   const free = params.get("free") === "true";
   const commercial = params.get("commercial") === "true";
   const downloadable = params.get("downloadable") === "true";
-  const bpm = /^\d{2,3}(-\d{2,3})?$/.test(params.get("bpm") ?? "") ? params.get("bpm")! : undefined;
-  const key = clip((params.get("key") ?? "").trim(), 12) || undefined;
+  const orientation = ORIENTATIONS.find((o) => o === params.get("orientation")) as Orientation | undefined;
+  const res = /^(720|1080|1440|2160|4k|hd|fhd)$/i.test(params.get("min_resolution") ?? "") ? params.get("min_resolution")!.toLowerCase() : undefined;
   const sources = (params.get("providers") ?? "")
     .split(",")
     .map((s) => s.trim())
@@ -87,8 +88,8 @@ export function searchShare(params: URLSearchParams): SearchShare | undefined {
   const k = new URLSearchParams();
   if (q) k.set("q", q);
   if (cats.length) k.set("category", cats.join(","));
-  if (bpm) k.set("bpm", bpm);
-  if (key) k.set("key", key);
+  if (orientation) k.set("orientation", orientation);
+  if (res) k.set("min_resolution", res);
   if (free) k.set("free", "true");
   if (commercial) k.set("commercial", "true");
   if (downloadable) k.set("downloadable", "true");
@@ -103,8 +104,8 @@ export function searchShare(params: URLSearchParams): SearchShare | undefined {
     title: q ? `“${q}”` : Kind,
     subtitle: `${Kind} from ${sources.length ? sources.map(providerName).join(", ") : SITES}, with licences and previews.`,
     chips: [
-      ...(bpm ? [`${bpm} BPM`] : []),
-      ...(key ? [key] : []),
+      ...(res ? [res === "2160" || res === "4k" ? "4K" : `${res.replace(/^(\d+)$/, "$1p")}`] : []),
+      ...(orientation ? [orientation === "portrait" ? "Vertical" : orientation === "square" ? "Square" : "Landscape"] : []),
       ...(commercial ? ["Commercial use OK"] : []),
       ...(free ? ["Free only"] : []),
       ...(downloadable ? ["Direct download"] : []),
@@ -123,8 +124,8 @@ export function searchMeta(params: URLSearchParams): HeadMeta | undefined {
   const kind = `${free ? "free " : ""}${what}`;
   const title = q ? `“${clip(q, 40)}”: ${kind} · Video Assets Server` : `${kind[0]!.toUpperCase()}${kind.slice(1)}: search ${SITES} · Video Assets Server`;
   const description = q
-    ? `Search results for “${clip(q, 60)}” across ${SITES}: ${kind} with previews, licences and direct downloads from Freesound, Wikimedia Commons and more.`
-    : `Browse ${kind} from ${SITES} at once, with previews, BPM and key, licence verdicts and one-click downloads.`;
+    ? `Search results for “${clip(q, 60)}” across ${SITES}: ${kind} you can watch, with licences and direct downloads from NASA, Wikimedia Commons and more.`
+    : `Browse ${kind} from ${SITES} at once: watch them, check the licence, download the size you need.`;
   return {
     title: clipTitle(title),
     description: clip(description, MAX_DESCRIPTION),
@@ -135,21 +136,22 @@ export function searchMeta(params: URLSearchParams): HeadMeta | undefined {
 }
 
 /** Clip ids look like `provider:nativeId` with a provider this server runs; reject anything else before touching a source. */
-export function shareableSampleId(raw: string | null | undefined, providerIds: readonly string[]): string | undefined {
+export function shareableClipId(raw: string | null | undefined, providerIds: readonly string[]): string | undefined {
   if (!raw || raw.length > 300) return undefined;
   const i = raw.indexOf(":");
   if (i <= 0 || i === raw.length - 1) return undefined;
   return providerIds.includes(raw.slice(0, i)) ? raw : undefined;
 }
 
-/** "Kick · one-shot · 0.4 s · F minor · 140 BPM" */
-export function sampleFacts(a: Pick<ClipDetails, "category" | "form" | "durationSec" | "key" | "bpm">): string[] {
+/** "Ocean & beach · 4K · vertical · 0:12 · 60 fps · 1958" */
+export function clipFacts(a: Pick<ClipDetails, "category" | "width" | "height" | "orientation" | "durationSec" | "fps" | "year">): string[] {
   return [
     categoryLabel(a.category),
-    a.form,
-    a.durationSec !== undefined ? `${a.durationSec < 10 ? a.durationSec.toFixed(1) : Math.round(a.durationSec)} s` : undefined,
-    a.key ? formatKey(a.key) : undefined,
-    a.bpm ? `${Math.round(a.bpm)} BPM` : undefined,
+    resolutionLabel(a.width, a.height),
+    a.orientation && a.orientation !== "landscape" ? (a.orientation === "portrait" ? "vertical" : "square") : undefined,
+    formatDuration(a.durationSec),
+    a.fps ? `${Math.round(a.fps)} fps` : undefined,
+    a.year ? String(a.year) : undefined,
   ].filter((x): x is string => !!x);
 }
 
@@ -161,15 +163,15 @@ function clipTitle(t: string): string {
   return clip(t, MAX_TITLE);
 }
 
-export function sampleMeta(a: ClipDetails): HeadMeta {
+export function clipMeta(a: ClipDetails): HeadMeta {
   const source = providerName(a.provider);
   const noun = categoryNoun(a.category, false);
-  // "<title>: kick clip on Freesound · Video Assets Server", dropping the source and then
+  // "<title>: drone shot on NASA · Video Assets Server", dropping the source and then
   // shortening the clip title when it would run past MAX_TITLE.
   const tail = [`: ${noun} on ${source} · Video Assets Server`, `: ${noun} · Video Assets Server`].find((x) => a.title.length + x.length <= MAX_TITLE) ?? `: ${noun} · Video Assets Server`;
   const name = clip(a.title, Math.max(20, MAX_TITLE - tail.length));
   const facts = [
-    ...sampleFacts(a).slice(1),
+    ...clipFacts(a).slice(1),
     a.license ? `${a.license.name}: ${lowerFirst(VERDICT_LABELS[a.license.verdict])}` : undefined,
     a.price ? (a.price.free ? "free" : "paid") : undefined,
   ].filter(Boolean);
@@ -177,7 +179,7 @@ export function sampleMeta(a: ClipDetails): HeadMeta {
   const core = `${lead}${facts.length ? ` (${facts.join(", ")})` : ""}.`;
   return {
     title: `${name}${tail}`,
-    description: [`${core} Preview, licence and downloads via Video Assets Server.`].find((d) => d.length <= MAX_DESCRIPTION) ?? clip(core, MAX_DESCRIPTION),
+    description: [`${core} Watch it, check the licence and download via Video Assets Server.`].find((d) => d.length <= MAX_DESCRIPTION) ?? clip(core, MAX_DESCRIPTION),
     robots: "noindex, follow",
     image: `/og/clip.png?id=${encodeURIComponent(a.id)}`,
     imageAlt: `${a.title}: ${noun} on ${source}`,

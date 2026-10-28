@@ -1,14 +1,14 @@
-import { VERDICT_LABELS } from "../core/licence.js";
 import { COMMERCIAL_VERDICTS } from "../core/types.js";
-import { CATEGORIES, PITCH_CLASSES, SAMPLE_FORMS, TOP_CATEGORIES } from "../core/vocab.js";
+import { VERDICT_LABELS } from "../core/licence.js";
+import { CATEGORIES, ORIENTATIONS, TOP_CATEGORIES, VIDEO_STYLES } from "../core/vocab.js";
 import { allProviders } from "../providers/index.js";
 
 const DEFAULT_PUBLIC_URL = "https://video.shep.bot";
 
-const NATIVE_FILTERS = ["categories", "forms", "bpm", "key", "duration", "commercialOnly", "freeOnly"] as const;
-const FILE_ROLES = ["original", "preview", "pack", "stem", "midi"] as const;
+const NATIVE_FILTERS = ["categories", "styles", "orientation", "resolution", "duration", "fps", "audio", "commercialOnly", "freeOnly"] as const;
+const FILE_ROLES = ["original", "rendition", "preview", "poster", "captions"] as const;
 
-/** Hand-written OpenAPI 3.1 description of the REST API (rendered at /docs/api/reference). */
+/** OpenAPI 3.1 description of the HTTP API (served at /openapi.json, rendered at /docs/api/reference). */
 export function openApiSpec(baseUrl?: string) {
   const server = (baseUrl ?? DEFAULT_PUBLIC_URL).replace(/\/$/, "");
   const ref = (name: string) => ({ $ref: `#/components/schemas/${name}` });
@@ -22,38 +22,18 @@ export function openApiSpec(baseUrl?: string) {
     name: "id",
     in: "path",
     required: true,
-    description: "Clip id `<provider>:<nativeId>`, URL-encoded (`:` may stay as is). Take it from a search result.",
+    description: "Clip id `<provider>:<nativeId>` (URL-encode it: ids can contain spaces and slashes).",
     schema: { type: "string" },
-    example: "freesound:2086",
-  };
-  const freesoundToken = {
-    name: "x-freesound-token",
-    in: "header",
-    required: false,
-    description:
-      "Optional: your own Freesound OAuth2 access token. Freesound serves its original WAV/AIFF/FLAC files only to a logged-in " +
-      "user, so without it Freesound clips download as their high-quality MP3/OGG preview. The token is passed to Freesound " +
-      "for this request only and is never logged or stored.",
-    schema: { type: "string" },
+    example: "wikimediacommons:Ocean_in_Sommaroy.webm",
   };
   const fileQuery = [
-    {
-      name: "format",
-      in: "query",
-      description: "Preferred file format. The closest match wins; omitted = the best quality available (WAV, then AIFF, FLAC, OGG, MP3).",
-      schema: { type: "string", examples: ["wav", "aiff", "flac", "ogg", "mp3", "mid", "zip"] },
-    },
-    {
-      name: "role",
-      in: "query",
-      description: "Which kind of file: the `original` upload, the `preview`, a `pack` archive, a `stem` or `midi` part of a construction kit.",
-      schema: { type: "string", enum: [...FILE_ROLES] },
-    },
-    { name: "all", in: "query", description: "Every file instead of the best single one.", schema: { type: "boolean" } },
+    { name: "height", in: "query", description: "Wanted resolution as the short side in pixels (720, 1080, 2160): the smallest file at or above it, else the biggest below.", schema: { type: "integer", minimum: 144, maximum: 4320 } },
+    { name: "format", in: "query", description: "Preferred container: mp4, webm, mov, ogv.", schema: { type: "string" } },
+    { name: "role", in: "query", description: `Only files with this role: ${FILE_ROLES.join(", ")}.`, schema: { type: "string", enum: FILE_ROLES } },
   ];
   const bool = (name: string, description: string) => ({ name, in: "query", description, schema: { type: "boolean" } });
 
-  const cc0 = {
+  const exampleLicense = {
     id: "CC0-1.0",
     name: "CC0 1.0",
     url: "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -63,137 +43,56 @@ export function openApiSpec(baseUrl?: string) {
     assertedBy: "source",
     verdict: "yes",
   };
-  const exampleKick = {
-    id: "freesound:2086",
-    provider: "freesound",
-    nativeId: "2086",
-    title: "Punchy Kick 01",
-    url: "https://freesound.org/people/drumkid/sounds/2086/",
-    author: "drumkid",
-    authorUrl: "https://freesound.org/people/drumkid/",
-    tags: ["kick", "drum", "one-shot", "punchy", "electronic"],
-    category: "drums.kick",
-    categoryEvidence: { by: "source", confidence: 1 },
-    form: "one-shot",
-    unit: "clip",
-    durationSec: 0.42,
-    sampleRate: 44100,
-    bitDepth: 24,
-    channels: 1,
-    previewUrl: "https://cdn.freesound.org/previews/2/2086_4021-hq.mp3",
-    formats: ["wav", "mp3", "ogg"],
-    license: cc0,
-    price: { free: true },
-    requiresAccount: true,
-    downloadable: true,
-    popularity: 18342,
-    score: 0.91,
-  };
-  const example808 = {
-    id: "freesound:448213",
-    provider: "freesound",
-    nativeId: "448213",
-    title: "808 Long F",
-    url: "https://freesound.org/people/lowend_lab/sounds/448213/",
-    author: "lowend_lab",
-    tags: ["808", "bass", "trap", "sub"],
-    category: "bass.808",
-    categoryEvidence: { by: "rules", confidence: 0.9 },
-    form: "one-shot",
-    unit: "clip",
-    rootNote: 29,
-    key: { tonic: "F", mode: "minor" },
-    durationSec: 2.6,
-    previewUrl: "https://cdn.freesound.org/previews/448/448213_9281-hq.mp3",
-    formats: ["wav", "mp3"],
-    license: {
-      id: "CC-BY-4.0",
-      name: "CC BY 4.0",
-      url: "https://creativecommons.org/licenses/by/4.0/",
-      commercialUse: true,
-      attributionRequired: true,
-      redistribution: true,
-      assertedBy: "source",
-      verdict: "yes-with-credit",
-      note: "Credit the author in your release notes or description.",
-    },
-    attribution: "“808 Long F” by lowend_lab (Freesound), https://freesound.org/people/lowend_lab/sounds/448213/, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+  const exampleClip = {
+    id: "wikimediacommons:Ocean_in_Sommaroy.webm",
+    provider: "wikimediacommons",
+    nativeId: "Ocean_in_Sommaroy.webm",
+    title: "Ocean in Sommaroy",
+    url: "https://commons.wikimedia.org/wiki/File:Ocean_in_Sommaroy.webm",
+    tags: [],
+    category: "nature.ocean",
+    categoryEvidence: { by: "rules", confidence: 0.77 },
+    orientation: "landscape",
+    width: 1920,
+    height: 1080,
+    durationSec: 15.47,
+    hasAudio: true,
+    posterUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Ocean_in_Sommaroy.webm/960px--Ocean_in_Sommaroy.webm.jpg",
+    previewUrl: "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5d/Ocean_in_Sommaroy.webm/Ocean_in_Sommaroy.webm.360p.vp9.webm",
+    previewType: "video/webm",
+    formats: ["webm", "mov"],
+    license: exampleLicense,
     price: { free: true },
     downloadable: true,
-    score: 0.87,
-  };
-  const exampleVocal = {
-    id: "ccmixter:61234",
-    provider: "ccmixter",
-    nativeId: "61234",
-    title: "Vocal Chop Loop 140 BPM F minor",
-    url: "https://ccmixter.org/files/singer_k/61234",
-    author: "singer_k",
-    tags: ["vocal", "chop", "female", "loop"],
-    category: "vocals.chop",
-    categoryEvidence: { by: "rules", confidence: 0.85 },
-    form: "loop",
-    unit: "clip",
-    bpm: 140,
-    key: { tonic: "F", mode: "minor" },
-    durationSec: 6.86,
-    previewUrl: "https://ccmixter.org/content/singer_k/singer_k_-_Vocal_Chop_Loop.mp3",
-    formats: ["mp3", "wav"],
-    license: {
-      id: "CC-BY-NC-3.0",
-      name: "CC BY-NC 3.0",
-      url: "https://creativecommons.org/licenses/by-nc/3.0/",
-      commercialUse: false,
-      attributionRequired: true,
-      redistribution: true,
-      assertedBy: "source",
-      verdict: "no",
-      note: "Non-commercial only.",
-    },
-    price: { free: true },
-    downloadable: true,
-    score: 0.64,
+    score: 0.81,
   };
   const exampleFiles = [
-    { url: "https://cdn.freesound.org/previews/2/2086_4021-hq.mp3", filename: "2086_punchy-kick-01.mp3", format: "mp3", role: "preview", sizeBytes: 16840 },
-    { url: "https://freesound.org/apiv2/sounds/2086/download/", filename: "punchy-kick-01.wav", format: "wav", role: "original", sampleRate: 44100, bitDepth: 24, channels: 1, sizeBytes: 55620, requiresAuth: true },
+    { url: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Ocean_in_Sommaroy.webm", filename: "Ocean_in_Sommaroy.webm", format: "webm", mime: "video/webm", role: "original", width: 1920, height: 1080, codec: "vp9", sizeBytes: 2928602 },
+    { url: "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5d/Ocean_in_Sommaroy.webm/Ocean_in_Sommaroy.webm.480p.vp9.webm", filename: "Ocean_in_Sommaroy.webm.480p.vp9.webm", format: "webm", mime: "video/webm", role: "rendition", width: 854, height: 480, codec: "vp9" },
   ];
-  const kitBrief = (s: typeof exampleKick | typeof example808, extra: Record<string, unknown> = {}) => ({
-    id: s.id,
-    title: s.title,
-    category: s.category,
-    form: s.form,
-    duration: s.durationSec,
-    source: s.provider,
-    url: s.url,
-    preview: `${server}/v1/clips/${encodeURIComponent(s.id)}/preview?proxy=1`,
-    license: `${s.license.name}: ${VERDICT_LABELS[s.license.verdict as keyof typeof VERDICT_LABELS]}`,
-    verdict: s.license.verdict,
-    ...extra,
-  });
 
   const spec = {
     openapi: "3.1.0",
     info: {
       title: "Video Assets Server API",
       version: "0.1.0",
-      summary: "One search API for free music clips: drums, 808s, loops, vocals, FX, foley and instruments, with licence verdicts.",
+      summary: "One search API for free stock video: b-roll, backgrounds, nature, cities, space and archive films, with licence verdicts.",
       description: [
-        `Search ${allProviders.length} clip sites at once (Freesound, Wikimedia Commons, Openverse, Internet Archive, ccMixter, BBC Sound Effects,`,
-        "Kenney, Mixkit and more), get each clip's licence with a plain verdict on commercial use, preview it, and download the",
-        "original WAV/AIFF/FLAC with its credits. A free, non-commercial service: files always come from the source sites, never",
-        "from copies hosted here.",
+        `Search ${allProviders.length} video sites at once (NASA, NASA's Scientific Visualization Studio, Wikimedia Commons, Internet Archive,`,
+        "and deep links into Pexels, Pixabay, Shutterstock and more), get each clip's licence with a plain verdict on commercial use,",
+        "watch it, and download the rendition you need with its credits. **No video passes through this server:** posters and previews",
+        "load from the sources, and downloads are redirects to the file on the source's CDN.",
         "",
-        "**Typical flow:** `GET /v1/search` → `GET /v1/clips/{id}` → `GET /v1/clips/{id}/download`. To assemble a drum kit",
-        "in one call, `POST /v1/kits`.",
+        "**Typical flow:** `GET /v1/search` → `GET /v1/clips/{id}` → `GET /v1/clips/{id}/download?height=1080`. To cut a b-roll",
+        "sequence from a shot list in one call, `POST /v1/sequences`.",
         "",
-        `**Licence verdicts:** every clip's \`license.verdict\` answers \"can this go into a commercially released track?\": ${verdicts}.`,
-        "`commercial=true` keeps only `yes` and `yes-with-credit`. Verdicts are a summary, not legal advice: read the licence before releasing.",
+        `**Licence verdicts:** every clip's \`license.verdict\` answers "can this go into a video I publish commercially?": ${verdicts}.`,
+        "`license.editorial=true` means people, insignia or brands appear without releases (fine for news and documentary, not for ads).",
+        "`commercial=true` keeps only `yes` and `yes-with-credit`. Verdicts are a summary, not legal advice: read the licence before publishing.",
         "",
         "**Authentication:** the public server at video.shep.bot is open. Self-hosted servers can require a key",
         "(`VIDEO_SERVER_API_KEY`); send it as `Authorization: Bearer <key>` or `x-api-key: <key>`. Keys are accepted in headers",
-        "only, never in the URL, so they stay out of logs, browser history and Referer headers. Freesound originals need your own",
-        "Freesound token in `x-freesound-token`.",
+        "only, never in the URL, so they stay out of logs, browser history and Referer headers.",
         "",
         "**For AI agents:** the same capabilities are exposed as MCP tools at `/mcp` (Streamable HTTP).",
         "See [Use with coding agents](/docs/mcp).",
@@ -214,9 +113,9 @@ export function openApiSpec(baseUrl?: string) {
     servers: [{ url: server, description: "This server" }],
     tags: [
       { name: "Search", description: "Find clips across every source in one call." },
-      { name: "Clips", description: "Details, previews, file selection and downloads for one clip." },
-      { name: "Kits", description: "Assemble a matching drum kit in one call." },
-      { name: "Sources", description: "The clip sites this server searches, what they hold, and how the server is used." },
+      { name: "Clips", description: "Details, renditions, downloads and credits for one clip." },
+      { name: "Sequences", description: "Turn a shot list into a b-roll sequence in one call." },
+      { name: "Sources", description: "The video sites this server searches, what they hold, and how the server is used." },
       { name: "MCP", description: "Model Context Protocol endpoint for AI agents." },
       { name: "System", description: "Health and machine-readable descriptions." },
     ],
@@ -233,8 +132,8 @@ export function openApiSpec(baseUrl?: string) {
         "RateLimit-Remaining": { description: "Requests left in the current window.", schema: { type: "integer" } },
         "RateLimit-Reset": { description: "Seconds until the window resets.", schema: { type: "integer" } },
         "Retry-After": { description: "Seconds to wait before retrying (on 429).", schema: { type: "integer" } },
-        "X-License": { description: "The clip's licence id and verdict, e.g. `CC-BY-4.0; verdict=yes-with-credit`.", schema: { type: "string" } },
-        "X-Attribution": { description: "The credit line to publish with your track (ASCII), when the licence asks for one.", schema: { type: "string" } },
+        "X-License": { description: "The clip's licence id and verdict, e.g. `CC-BY-4.0; verdict=yes-with-credit; editorial`.", schema: { type: "string" } },
+        "X-Attribution": { description: "The credit line to publish with your video (ASCII), when the licence asks for one.", schema: { type: "string" } },
       },
       responses: {
         TooManyRequests: {
@@ -248,61 +147,35 @@ export function openApiSpec(baseUrl?: string) {
         },
       },
       schemas: {
-        Category: {
-          type: "string",
-          enum: [...CATEGORIES],
-          description: `Dot-path category. A parent matches its children in filters (\`drums\` includes \`drums.kick\`). Top level: ${TOP_CATEGORIES.join(", ")}.`,
-        },
-        SampleForm: {
-          type: "string",
-          enum: [...SAMPLE_FORMS],
-          description:
-            "`one-shot` a single hit or note; `loop` loops seamlessly at a tempo; `phrase` a longer non-looping performance; " +
-            "`multisample` a playable instrument; `pack` a zip of many clips; `midi` a MIDI file; `preset` a synth preset.",
-        },
-        CommercialVerdict: {
-          type: "string",
-          enum: [...COMMERCIAL_VERDICTS],
-          description: `Can this go into a commercially released track? ${verdicts}.`,
-        },
-        NativeFilter: { type: "string", enum: [...NATIVE_FILTERS] },
-        MusicalKey: {
-          type: "object",
-          required: ["tonic", "mode"],
-          properties: { tonic: { type: "string", enum: [...PITCH_CLASSES] }, mode: { type: "string", enum: ["major", "minor"] } },
-          example: { tonic: "F", mode: "minor" },
-        },
+        Category: { type: "string", enum: CATEGORIES, description: "Dot-path category; a parent (`nature`) matches its children (`nature.ocean`)." },
+        VideoStyle: { type: "string", enum: VIDEO_STYLES },
+        Orientation: { type: "string", enum: ORIENTATIONS },
+        CommercialVerdict: { type: "string", enum: COMMERCIAL_VERDICTS, description: `Can this go into a commercially published video? ${verdicts}.` },
+        NativeFilter: { type: "string", enum: NATIVE_FILTERS },
         License: {
           type: "object",
           required: ["id", "name", "assertedBy", "verdict"],
           properties: {
-            id: { type: "string", description: "SPDX id where one exists (CC0-1.0, CC-BY-4.0, CC-BY-NC-4.0…), else `LicenseRef-*`.", examples: ["CC0-1.0", "CC-BY-4.0", "LicenseRef-BBC-RemArc"] },
-            name: { type: "string", examples: ["CC0 1.0", "CC BY 4.0", "Royalty free (Mixkit licence)"] },
+            id: { type: "string", description: "SPDX id where one exists (CC0-1.0, CC-BY-4.0…), else LicenseRef-*." },
+            name: { type: "string" },
             url: { type: "string", format: "uri" },
             commercialUse: { type: "boolean" },
             attributionRequired: { type: "boolean" },
             shareAlike: { type: "boolean" },
-            redistribution: { type: "boolean", description: "May the clip itself be passed on (in a pack, repo or dataset)? Almost always false." },
-            assertedBy: {
-              type: "string",
-              enum: ["source", "site", "uploader"],
-              description: "`source`: recorded per item by the site; `site`: one licence for the whole site; `uploader`: claimed by an anonymous uploader and not verified (capped at `check-terms`).",
-            },
+            redistribution: { type: "boolean", description: "May the clip itself be re-uploaded or passed on?" },
+            editorial: { type: "boolean", description: "People, insignia or brands without releases: fine for news and documentary, not for ads." },
+            assertedBy: { type: "string", enum: ["source", "site", "uploader"], description: "`uploader` = an unverified claim (verdict capped at check-terms)." },
             verdict: ref("CommercialVerdict"),
-            note: { type: "string", description: "One line on why the verdict is what it is." },
+            note: { type: "string" },
           },
-          example: cc0,
+          example: exampleLicense,
         },
-        Price: {
-          type: "object",
-          required: ["free"],
-          properties: { free: { type: "boolean" }, amount: { type: "number" }, currency: { type: "string" } },
-        },
+        Price: { type: "object", required: ["free"], properties: { free: { type: "boolean" }, amount: { type: "number" }, currency: { type: "string" } } },
         Clip: {
           type: "object",
-          required: ["id", "provider", "nativeId", "title", "url", "tags", "category", "unit", "downloadable"],
+          required: ["id", "provider", "nativeId", "title", "url", "tags", "category", "downloadable"],
           properties: {
-            id: { type: "string", description: "Globally unique `<provider>:<nativeId>`." },
+            id: { type: "string", description: "`<provider>:<nativeId>`" },
             provider: { type: "string" },
             nativeId: { type: "string" },
             title: { type: "string" },
@@ -311,40 +184,31 @@ export function openApiSpec(baseUrl?: string) {
             author: { type: "string" },
             authorUrl: { type: "string", format: "uri" },
             tags: { type: "array", items: { type: "string" } },
-            genres: { type: "array", items: { type: "string" } },
             category: ref("Category"),
-            categoryEvidence: {
-              type: "object",
-              required: ["by", "confidence"],
-              description: "How the category was decided: by the `source`, the `file` name, word `rules` or a `model`, and how sure (0..1).",
-              properties: { by: { type: "string", enum: ["source", "file", "rules", "model"] }, confidence: { type: "number", minimum: 0, maximum: 1 } },
-            },
-            form: ref("SampleForm"),
-            unit: { type: "string", enum: ["clip", "pack", "instrument"], description: "One sound, a pack of many, or a playable instrument." },
-            packSize: { type: "integer", description: "Number of sounds when `unit` is pack or instrument." },
-            bpm: { type: "number" },
-            key: ref("MusicalKey"),
-            rootNote: { type: "integer", minimum: 0, maximum: 127, description: "MIDI note of a pitched one-shot (60 = C4)." },
+            categoryEvidence: { type: "object", properties: { by: { type: "string", enum: ["source", "rules"] }, confidence: { type: "number" } } },
+            styles: { type: "array", items: ref("VideoStyle") },
+            orientation: ref("Orientation"),
+            width: { type: "integer", description: "Frame width of the best version." },
+            height: { type: "integer" },
+            fps: { type: "number" },
             durationSec: { type: "number" },
-            sampleRate: { type: "integer" },
-            bitDepth: { type: "integer" },
-            channels: { type: "integer" },
-            loudnessLufs: { type: "number" },
-            previewUrl: { type: "string", format: "uri", description: "Always-playable lower quality file (MP3/OGG) for auditioning." },
-            previewNeedsReferer: { type: "boolean", description: "Play it through `/v1/clips/{id}/preview` instead of `previewUrl`." },
-            thumbnailUrl: { type: "string", format: "uri", description: "Pack artwork or a waveform image." },
-            formats: { type: "array", items: { type: "string" }, description: "Known file formats: wav, aiff, flac, ogg, mp3, mid, zip…" },
+            hasAudio: { type: "boolean" },
+            year: { type: "integer", description: "Year the footage was made (archive films)." },
+            posterUrl: { type: "string", format: "uri", description: "Still frame, on the source's CDN." },
+            previewUrl: { type: "string", format: "uri", description: "Small playable version (mp4/webm) on the source's CDN." },
+            previewType: { type: "string", example: "video/mp4" },
+            formats: { type: "array", items: { type: "string" } },
             license: ref("License"),
-            attribution: { type: "string", description: "Ready-to-paste credit line, when the licence asks for one." },
+            attribution: { type: "string", description: "Ready-to-paste credit line when the licence asks for one." },
             price: ref("Price"),
-            requiresAccount: { type: "boolean", description: "The full-quality file needs an account on the source site (e.g. Freesound originals)." },
-            downloadable: { type: "boolean", description: "True when this server can fetch the files directly." },
-            createdAt: { type: "string" },
-            popularity: { type: "integer", description: "Downloads or plays on the source, when published." },
-            sameAs: { type: "array", items: { type: "string" }, description: "Ids of the same sound on other sources." },
-            score: { type: "number", description: "Relevance 0..1 assigned by the ranker." },
+            requiresAccount: { type: "boolean" },
+            downloadable: { type: "boolean" },
+            createdAt: { type: "string", format: "date-time" },
+            popularity: { type: "number" },
+            sameAs: { type: "array", items: { type: "string" } },
+            score: { type: "number" },
           },
-          example: exampleKick,
+          example: exampleClip,
         },
         ClipFile: {
           type: "object",
@@ -352,13 +216,16 @@ export function openApiSpec(baseUrl?: string) {
           properties: {
             url: { type: "string", format: "uri" },
             filename: { type: "string" },
-            format: { type: "string", description: "Lowercase extension: wav, aiff, flac, ogg, mp3, zip, mid…" },
-            role: { type: "string", enum: [...FILE_ROLES] },
-            sampleRate: { type: "integer" },
-            bitDepth: { type: "integer" },
-            channels: { type: "integer" },
+            format: { type: "string", description: "Container: mp4, webm, mov, ogv, mpeg… (Commons originals are WebM/Ogg, never MP4)." },
+            mime: { type: "string" },
+            role: { type: "string", enum: FILE_ROLES },
+            width: { type: "integer" },
+            height: { type: "integer" },
+            fps: { type: "number" },
+            codec: { type: "string" },
             sizeBytes: { type: "integer" },
-            requiresAuth: { type: "boolean", description: "Needs a login, a purchase or your own token on the source site." },
+            bitrate: { type: "integer" },
+            requiresAuth: { type: "boolean" },
           },
         },
         ClipDetails: {
@@ -366,38 +233,32 @@ export function openApiSpec(baseUrl?: string) {
             ref("Clip"),
             {
               type: "object",
-              required: ["files"],
               properties: {
                 files: { type: "array", items: ref("ClipFile") },
-                shareUrl: {
-                  type: "string",
-                  format: "uri",
-                  description: "Web page for people: opens this clip in the search app and unfurls in chat apps with a preview card.",
-                  example: `${server}/search?clip=freesound%3A2086`,
+                watch: {
+                  type: "object",
+                  description: "What a browser player should stream (straight from the source): mp4/webm near 720p.",
+                  properties: { url: { type: "string", format: "uri" }, type: { type: "string" }, width: { type: "integer" }, height: { type: "integer" } },
                 },
+                shareUrl: { type: "string", format: "uri" },
               },
             },
           ],
-          example: { ...exampleKick, files: exampleFiles, shareUrl: `${server}/search?clip=freesound%3A2086` },
+          example: { ...exampleClip, files: exampleFiles, watch: { url: exampleFiles[1]!.url, type: "video/webm", width: 854, height: 480 } },
         },
         ClipFilters: {
           type: "object",
-          description: "The filters in force after parsing the query (explicit parameters win over words in `q`).",
           properties: {
             categories: { type: "array", items: ref("Category") },
-            forms: { type: "array", items: ref("SampleForm") },
-            bpm: { type: "object", properties: { min: { type: "number" }, max: { type: "number" } } },
-            key: {
-              type: "object",
-              required: ["tonic"],
-              properties: { tonic: { type: "string", enum: [...PITCH_CLASSES] }, mode: { type: "string", enum: ["major", "minor"] } },
-            },
-            maxDurationSec: { type: "number" },
-            minDurationSec: { type: "number" },
+            styles: { type: "array", items: ref("VideoStyle") },
+            orientations: { type: "array", items: ref("Orientation") },
+            minResolution: { type: "integer", description: "Short side in pixels." },
+            duration: { type: "object", properties: { min: { type: "number" }, max: { type: "number" } } },
+            minFps: { type: "number" },
+            hasAudio: { type: "boolean" },
             commercialOnly: { type: "boolean" },
             freeOnly: { type: "boolean" },
           },
-          example: { categories: ["vocals"], forms: ["loop"], bpm: { min: 140, max: 140 }, key: { tonic: "F", mode: "minor" } },
         },
         ProviderSearchReport: {
           type: "object",
@@ -405,20 +266,12 @@ export function openApiSpec(baseUrl?: string) {
           properties: {
             provider: { type: "string" },
             name: { type: "string" },
-            status: {
-              type: "string",
-              enum: ["ok", "error", "timeout", "skipped", "link"],
-              description: "`link` = the site forbids or blocks automated access; use `searchUrl` to run the same search there. `skipped` says why in `error`.",
-            },
+            status: { type: "string", enum: ["ok", "error", "timeout", "skipped", "link"], description: "`link` = the source can only be searched on its own site: open `searchUrl`." },
             count: { type: "integer" },
-            total: { type: "integer", description: "Total hits the source reported." },
-            searchUrl: { type: "string", format: "uri", description: "The same search on the source website." },
+            total: { type: "integer" },
+            searchUrl: { type: "string", format: "uri" },
             error: { type: "string" },
-            filteredLocally: {
-              type: "array",
-              items: ref("NativeFilter"),
-              description: "Filters this source could not apply itself; the server applied them to the page it returned, so it may hold fewer results than `limit`.",
-            },
+            filteredLocally: { type: "array", items: ref("NativeFilter") },
             tookMs: { type: "integer" },
           },
         },
@@ -426,20 +279,10 @@ export function openApiSpec(baseUrl?: string) {
           type: "object",
           required: ["query", "filters", "results", "providers"],
           properties: {
-            query: { type: "string", description: "The free text left after BPM, key and form words were parsed out." },
+            query: { type: "string", description: "The words searched after the filters were parsed out." },
             filters: ref("ClipFilters"),
-            results: { type: "array", items: ref("Clip"), description: "Merged and ranked; a sound mirrored by several sources appears once." },
-            providers: { type: "array", items: ref("ProviderSearchReport"), description: "One status line per source." },
-          },
-          example: {
-            query: "vocal chop",
-            filters: { categories: ["vocals"], bpm: { min: 140, max: 140 }, key: { tonic: "F", mode: "minor" } },
-            results: [exampleVocal],
-            providers: [
-              { provider: "freesound", name: "Freesound", status: "ok", count: 18, total: 412, searchUrl: "https://freesound.org/search/?q=vocal+chop", tookMs: 640 },
-              { provider: "ccmixter", name: "ccMixter", status: "ok", count: 6, filteredLocally: ["key"], tookMs: 910 },
-              { provider: "splice", name: "Splice", status: "link", count: 0, searchUrl: "https://splice.com/sounds/search?q=vocal+chop", tookMs: 0 },
-            ],
+            results: { type: "array", items: ref("Clip") },
+            providers: { type: "array", items: ref("ProviderSearchReport") },
           },
         },
         Provider: {
@@ -451,11 +294,10 @@ export function openApiSpec(baseUrl?: string) {
             homepage: { type: "string", format: "uri" },
             description: { type: "string" },
             categories: { type: "array", items: ref("Category"), description: "Top-level categories the source carries." },
-            forms: { type: "array", items: ref("SampleForm"), description: "Forms it carries; absent = any." },
             access: {
               type: "string",
               enum: ["api", "static", "scrape", "link"],
-              description: "`api` official API; `static` a curated manifest filtered locally; `scrape` public pages; `link` deep links only (the site forbids or blocks automated access).",
+              description: "`api` official API; `static` a curated manifest filtered locally; `scrape` public pages; `link` deep links only (paid/partner API, no key yet, or terms that forbid aggregation).",
             },
             pricing: { type: "string", enum: ["free", "freemium", "paid"] },
             license: ref("License"),
@@ -475,118 +317,69 @@ export function openApiSpec(baseUrl?: string) {
             totalBytes: { type: "integer" },
             files: { type: "array", items: ref("ClipFile") },
           },
-          example: { id: exampleKick.id, license: cc0, totalBytes: 55620, files: [exampleFiles[1]] },
         },
-        KitRequest: {
+        SequenceRequest: {
           type: "object",
+          required: ["shots"],
           properties: {
-            style: { type: "string", maxLength: 80, description: "Genre or character words added to every slot's search.", examples: ["dark trap", "lofi", "techno", "90s boom bap"] },
-            slots: {
-              type: "array",
-              maxItems: 16,
-              items: { type: "string", maxLength: 40 },
-              description: "Slot names: category ids (`drums.kick`), short ids (`hat.closed`) or words (`crash`, `perc`, `riser`, `vocal chop`). Default: kick, snare, clap, hat.closed, hat.open, 808.",
+            shots: {
+              oneOf: [
+                { type: "array", items: { type: "string" }, maxItems: 24 },
+                { type: "string", description: "One shot per line; `(3s)` at the end sets that shot's length." },
+              ],
             },
-            bpm: { type: "number", minimum: 40, maximum: 300 },
-            key: { type: "string", maxLength: 20, description: 'Key for pitched slots (808, bass, synth), e.g. "F minor" or "F#m".' },
-            commercialOnly: { type: "boolean", default: true, description: "Only picks whose verdict is `yes` or `yes-with-credit`." },
-            providers: { type: "array", maxItems: 40, items: { type: "string" } },
-            perSlot: { type: "integer", minimum: 0, maximum: 5, default: 3, description: "Alternatives per slot." },
+            orientation: ref("Orientation"),
+            width: { type: "integer" },
+            height: { type: "integer" },
+            fps: { type: "number", default: 30 },
+            totalDuration: { type: "number", description: "Seconds, split over shots without their own length (default 4 s each)." },
+            commercialOnly: { type: "boolean", default: true },
+            providers: { type: "array", items: { type: "string" } },
+            alternatives: { type: "integer", minimum: 0, maximum: 5, default: 3 },
+            name: { type: "string" },
           },
-          example: { style: "dark trap", slots: ["kick", "snare", "hat.closed", "808"], bpm: 140, key: "F minor" },
+          example: { shots: ["sunrise over a city skyline (3s)", "coffee pour close-up", "people walking in the rain"], orientation: "portrait", totalDuration: 12 },
         },
-        KitSample: {
+        SequenceShot: {
           type: "object",
-          required: ["id", "title", "category", "source", "url", "license", "verdict"],
-          description: "A short summary of a clip picked for a kit; `GET /v1/clips/{id}` has the rest.",
+          required: ["index", "description", "durationSec", "inSec", "alternatives"],
           properties: {
-            id: { type: "string" },
-            title: { type: "string" },
-            category: ref("Category"),
-            form: ref("SampleForm"),
-            duration: { type: "number", description: "Seconds." },
-            key: { type: "string", examples: ["F minor"] },
-            source: { type: "string", description: "Provider id." },
-            url: { type: "string", format: "uri" },
-            preview: { type: "string", format: "uri", description: "Playable URL (through this server's CORS-enabled preview proxy)." },
-            license: { type: "string", description: "Licence name and verdict label." },
-            verdict: ref("CommercialVerdict"),
-            attribution: { type: "string" },
-          },
-        },
-        KitSlot: {
-          type: "object",
-          required: ["slot", "category", "alternatives", "reason"],
-          properties: {
-            slot: { type: "string" },
-            category: ref("Category"),
-            pick: ref("KitSample"),
-            alternatives: { type: "array", items: ref("KitSample") },
-            reason: { type: "string", description: "Why this pick won, or why the slot is empty." },
+            index: { type: "integer" },
+            description: { type: "string" },
+            durationSec: { type: "number" },
+            inSec: { type: "number", description: "In-point in the source clip (skips title cards on long films)." },
+            clip: ref("Clip"),
+            file: ref("ClipFile"),
+            alternatives: { type: "array", items: ref("Clip") },
+            note: { type: "string" },
           },
         },
-        Kit: {
+        SequenceResponse: {
           type: "object",
-          required: ["name", "slots", "licences", "creditsNeeded"],
+          required: ["plan", "exports"],
           properties: {
-            name: { type: "string", description: "Short kit id (from the style); also the Strudel bank name." },
-            style: { type: "string" },
-            bpm: { type: "number" },
-            key: { type: "string" },
-            slots: { type: "array", items: ref("KitSlot") },
-            warnings: { type: "array", items: { type: "string" } },
-            licences: {
+            plan: {
               type: "object",
-              description: "Number of picks per licence verdict.",
-              properties: Object.fromEntries(COMMERCIAL_VERDICTS.map((v) => [v, { type: "integer" }])),
-            },
-            creditsNeeded: { type: "boolean", description: "True when any pick must be credited." },
-            credits: { type: "array", items: { type: "string" }, description: "The credit lines to publish with your track." },
-            strudel: {
-              type: "object",
-              required: ["map", "snippet"],
               properties: {
-                map: { type: "object", additionalProperties: { oneOf: [{ type: "string" }, { type: "array", items: { type: "string" } }] }, description: "strudel.json clip map (`<kit>_bd`, `<kit>_sd`…)." },
-                snippet: { type: "string", description: "Ready-to-paste Strudel code." },
-                note: { type: "string" },
+                width: { type: "integer" },
+                height: { type: "integer" },
+                fps: { type: "number" },
+                durationSec: { type: "number" },
+                commercialSafe: { type: "boolean" },
+                shots: { type: "array", items: ref("SequenceShot") },
               },
             },
-            gm: {
+            exports: {
               type: "object",
-              required: ["bySlot", "sfz"],
-              description: "General MIDI drum mapping (kick 36, snare 38, clap 39, closed hat 42, open hat 46, 808 on 35) and an SFZ file for any SFZ sampler.",
+              description: "File contents, ready to save: an OpenTimelineIO timeline, an ffmpeg render script, a Remotion clip list and the credits. Media URLs point at the sources.",
               properties: {
-                bySlot: { type: "object", additionalProperties: { type: "integer", minimum: 0, maximum: 127 } },
-                sfz: { type: "string" },
+                "timeline.otio": { type: "string" },
+                "concat.sh": { type: "string" },
+                "remotion.json": { type: "string" },
+                "ATTRIBUTION.md": { type: "string" },
+                "credits.json": { type: "string" },
               },
             },
-          },
-          example: {
-            name: "dark-trap",
-            style: "dark trap",
-            bpm: 140,
-            key: "F minor",
-            slots: [
-              { slot: "kick", category: "drums.kick", pick: kitBrief(exampleKick), alternatives: [], reason: "one-shot, short, CC0" },
-              {
-                slot: "808",
-                category: "bass.808",
-                pick: kitBrief(example808, { key: "F minor", attribution: example808.attribution }),
-                alternatives: [],
-                reason: "in key (F minor), one-shot",
-              },
-            ],
-            licences: { yes: 1, "yes-with-credit": 1, restricted: 0, "clearance-required": 0, "check-terms": 0, no: 0 },
-            creditsNeeded: true,
-            credits: [example808.attribution],
-            strudel: {
-              map: {
-                dark_trap_bd: [`${server}/v1/clips/freesound%3A2086/preview?proxy=1`],
-                dark_trap_808: [`${server}/v1/clips/freesound%3A448213/preview?proxy=1`],
-              },
-              snippet: 'clips({...})\ns("bd ~ ~ bd, ~ 808").bank("dark_trap")',
-            },
-            gm: { bySlot: { kick: 36, "808": 35 }, sfz: "<group>\n<region> clip=… key=36\n" },
           },
         },
         CountWithBound: {
@@ -598,8 +391,8 @@ export function openApiSpec(baseUrl?: string) {
           type: "object",
           required: ["id", "name", "homepage", "total", "byCategory", "method", "countedAt"],
           properties: {
-            id: { type: "string", example: "freesound" },
-            name: { type: "string", example: "Freesound" },
+            id: { type: "string", example: "nasa" },
+            name: { type: "string", example: "NASA Image and Video Library" },
             homepage: { type: "string", format: "uri" },
             license: { type: "string", description: "The source's single licence id, when uniform." },
             pricing: { type: "string", enum: ["free", "freemium", "paid"] },
@@ -678,7 +471,7 @@ export function openApiSpec(baseUrl?: string) {
           type: "object",
           required: ["provider", "requests", "ok", "errors", "timeouts", "okRate", "p50Ms", "p95Ms"],
           properties: {
-            provider: { type: "string", example: "freesound" },
+            provider: { type: "string", example: "nasa" },
             requests: { type: "integer", description: "Searches that reached the source." },
             ok: { type: "integer" },
             errors: { type: "integer" },
@@ -728,40 +521,41 @@ export function openApiSpec(baseUrl?: string) {
     paths: {
       "/v1/search": {
         get: {
-          operationId: "searchSamples",
+          operationId: "searchClips",
           tags: ["Search"],
           summary: "Search every source",
           description:
             "Fans out to every enabled source in parallel (each with its own timeout), then merges and ranks. Words like " +
-            "`140 bpm`, `F minor` or `one shot` in `q` become filters (see `filters` in the response); explicit parameters win. " +
-            "Unknown BPM, key, form or duration stay in the list, ranked below known matches, unless `strict=true`. " +
-            "A slow or failing source never fails the search: it shows up in `providers` with its status.",
+            "`4k`, `1080p`, `vertical`, `9:16`, `10s`, `under 30 seconds`, `60fps`, `timelapse` in `q` become filters (see `filters` in the response); " +
+            "explicit parameters win. A single length (`10s`) means at least that long. Unknown orientation, resolution, length or fps stay in the list, " +
+            "ranked below known matches, unless `strict=true`. A slow or failing source never fails the search: it shows up in `providers` with its status.",
           parameters: [
-            { name: "q", in: "query", description: "Short query, written like a producer would.", schema: { type: "string", maxLength: 300 }, examples: { kick: { value: "punchy kick" }, vocal: { value: "vocal chop 140 bpm F minor" }, fx: { value: "riser" } } },
+            { name: "q", in: "query", description: "Short query, written like an editor would.", schema: { type: "string", maxLength: 300 }, examples: { ocean: { value: "ocean waves at sunset" }, vertical: { value: "4k vertical drone city night" }, archive: { value: "1950s newsreel factory" } } },
             {
               name: "category",
               in: "query",
-              description: `Comma-separated categories; a parent includes its children. Top level: ${TOP_CATEGORIES.join(", ")}; children like \`drums.kick\`, \`bass.808\`, \`vocals.chop\`, \`fx.riser\`.`,
+              description: `Comma-separated categories; a parent includes its children. Top level: ${TOP_CATEGORIES.join(", ")}; children like \`nature.ocean\`, \`city.skyline\`, \`space.launch\`, \`overlay.light\`.`,
               schema: { type: "string" },
-              example: "drums.kick",
+              example: "nature.ocean",
             },
-            { name: "form", in: "query", description: `Comma-separated forms: ${SAMPLE_FORMS.join(", ")}.`, schema: { type: "string" }, example: "one-shot" },
-            { name: "bpm", in: "query", description: 'Tempo or range: "140" or "120-128".', schema: { type: "string" }, example: "140" },
-            { name: "key", in: "query", description: 'Musical key: "F minor", "F#m", "Eb", "A major".', schema: { type: "string" }, example: "F minor" },
+            { name: "style", in: "query", description: `Comma-separated styles (ranked first; filtered only with strict=true): ${VIDEO_STYLES.join(", ")}.`, schema: { type: "string" }, example: "timelapse" },
+            { name: "orientation", in: "query", description: `Comma-separated: ${ORIENTATIONS.join(", ")}.`, schema: { type: "string" }, example: "portrait" },
+            { name: "min_resolution", in: "query", description: "Short side at least: 720, 1080, 1440, 2160, or hd / fhd / 4k.", schema: { type: "string" }, example: "1080" },
             { name: "min_duration", in: "query", description: "Minimum length in seconds.", schema: { type: "number", minimum: 0 } },
-            { name: "max_duration", in: "query", description: "Maximum length in seconds (e.g. 2 for one-shots).", schema: { type: "number", minimum: 0 } },
+            { name: "max_duration", in: "query", description: "Maximum length in seconds.", schema: { type: "number", minimum: 0 } },
+            { name: "min_fps", in: "query", description: "Minimum frame rate.", schema: { type: "number", minimum: 1 } },
+            bool("audio", "Only clips with (true) or without (false) a sound track."),
             bool("commercial", "Only clips whose licence verdict is `yes` or `yes-with-credit`."),
             bool("free", "Only free clips."),
-            bool("downloadable", "Only clips this server can download directly."),
-            bool("strict", "Drop clips whose BPM, key, form or duration is unknown when that filter is set."),
-            { name: "providers", in: "query", description: "Comma-separated source ids (see /v1/providers).", schema: { type: "string" }, example: "freesound,wikimedia" },
+            bool("downloadable", "Only clips with direct file links."),
+            bool("strict", "Drop clips whose orientation, resolution, length, fps or audio is unknown when that filter is set."),
+            { name: "providers", in: "query", description: "Comma-separated source ids (see /v1/providers).", schema: { type: "string" }, example: "nasa,wikimediacommons" },
             { name: "limit", in: "query", description: "Max results (default 24).", schema: { type: "integer", minimum: 1, maximum: 100 } },
             { name: "offset", in: "query", description: "Per-source offset for paging (e.g. 24 for page 2).", schema: { type: "integer", minimum: 0, maximum: 1000 } },
-            freesoundToken,
           ],
           responses: {
             200: { description: "Ranked results, the filters in force and a per-source report.", content: json(ref("SearchResponse")) },
-            400: errorResponse("Invalid parameters or unknown source id.", { error: '✖ bpm must look like "140" or "120-128", got "fast"' }),
+            400: errorResponse("Invalid parameters or unknown source id.", { error: '✖ min_resolution must be 720, 1080, 1440, 2160 or hd/fhd/4k, got "8k"' }),
             401: errorResponse("API key required (self-hosted servers only)."),
           },
         },
@@ -770,9 +564,9 @@ export function openApiSpec(baseUrl?: string) {
         get: {
           operationId: "getClip",
           tags: ["Clips"],
-          summary: "Clip details with files",
-          description: "Full metadata, the licence with its verdict and credit line, the preview and every file for one clip.",
-          parameters: [idParam, freesoundToken],
+          summary: "Clip details, renditions and watch URL",
+          description: "Full metadata, the licence with its verdict and credit line, every file (master, renditions, preview, poster, captions) and the file a browser player should stream.",
+          parameters: [idParam],
           responses: {
             200: { description: "The clip and its files.", content: json(ref("ClipDetails")) },
             400: errorResponse("Malformed id or unknown source."),
@@ -786,9 +580,9 @@ export function openApiSpec(baseUrl?: string) {
         get: {
           operationId: "selectFiles",
           tags: ["Clips"],
-          summary: "Pick the right files",
-          description: "The best file for a format and role (the original WAV by default), or every file with `all=true`, with sizes and the licence.",
-          parameters: [idParam, ...fileQuery, freesoundToken],
+          summary: "Pick the right file",
+          description: "The best file for a resolution and container (the master by default), or every file with `all=true`, with sizes and the licence.",
+          parameters: [idParam, ...fileQuery, bool("all", "Every file, including posters and captions.")],
           responses: {
             200: { description: "Selected files and total size.", content: json(ref("FileSelection")) },
             404: errorResponse("Unknown clip."),
@@ -799,214 +593,51 @@ export function openApiSpec(baseUrl?: string) {
         get: {
           operationId: "downloadClip",
           tags: ["Clips"],
-          summary: "Download",
+          summary: "Download (redirect to the source)",
           description:
-            "One plain file redirects (302) to the source, so the bytes never pass through this server. Several files, files the " +
-            "source only serves with extra request headers, or `bundle=true` stream as one zip with `ATTRIBUTION.md` and " +
-            "`credits.json` next to the audio. `X-License` and `X-Attribution` carry the licence on both. Clips that are only " +
-            "available on the source site (an account, a purchase, a login wall) answer 409 with the page `url`.",
-          parameters: [idParam, ...fileQuery, bool("bundle", "Always answer with a zip that includes ATTRIBUTION.md and credits.json."), freesoundToken],
+            "Answers 302 to the chosen file on the source's CDN: the video never passes through this server. `height` picks a rendition " +
+            "(the smallest at or above it), `format` a container. The licence and credit line come back as `X-License` and `X-Attribution` headers; " +
+            "get the credits as files from `/v1/clips/{id}/credits`.",
+          parameters: [idParam, ...fileQuery],
           responses: {
-            200: {
-              description: "Zip bundle with the files, ATTRIBUTION.md and credits.json.",
-              headers: { "X-License": { $ref: "#/components/headers/X-License" }, "X-Attribution": { $ref: "#/components/headers/X-Attribution" } },
-              content: { "application/zip": { schema: { type: "string", format: "binary" } } },
-            },
             302: {
-              description: "Redirect to the single file on the source.",
-              headers: { "X-License": { $ref: "#/components/headers/X-License" }, "X-Attribution": { $ref: "#/components/headers/X-Attribution" } },
+              description: "Redirect to the file.",
+              headers: { Location: { schema: { type: "string", format: "uri" } }, "X-License": { $ref: "#/components/headers/X-License" }, "X-Attribution": { $ref: "#/components/headers/X-Attribution" } },
             },
-            404: errorResponse("Unknown clip or no file matches the format/role."),
-            409: errorResponse("No direct download here; get the file from the source page (`url`).", {
-              error: "This clip has no direct download here; get it from the source page.",
-              url: "https://example-pack-store.com/packs/dark-trap-kit",
-              requiresAccount: true,
-            }),
+            404: errorResponse("Unknown clip, or no file matches."),
+            409: errorResponse("No direct download: get it from the source page.", { error: "This clip has no direct download here; get it from the source page.", url: "https://…", requiresAccount: false }),
           },
         },
       },
-      "/v1/clips/{id}/preview": {
+      "/v1/clips/{id}/credits": {
         get: {
-          operationId: "getPreview",
+          operationId: "clipCredits",
           tags: ["Clips"],
-          summary: "Play the preview",
-          description:
-            "Redirects (302) to the clip's preview. Previews the source only serves with a Referer, and any preview with " +
-            "`proxy=1`, are streamed through this server with `Access-Control-Allow-Origin: *`, so browser players, Strudel and " +
-            "web DAWs can load them. Previews only, at most 25 MB: this is not a general proxy.",
-          parameters: [idParam, bool("proxy", "Stream the preview through this server (CORS enabled) instead of redirecting."), freesoundToken],
-          responses: {
-            200: { description: "The preview audio.", content: { "audio/*": { schema: { type: "string", format: "binary" } } } },
-            302: { description: "Redirect to the preview on the source." },
-            404: errorResponse("Unknown clip, or it has no preview."),
-            413: errorResponse("Preview too large to proxy."),
-          },
-        },
-      },
-      "/v1/clips/{id}/peaks": {
-        get: {
-          operationId: "getPeaks",
-          tags: ["Clips"],
-          summary: "Waveform peaks",
-          description:
-            "Min/max pairs (-1..1) for drawing the clip's waveform, computed from its preview and cached. Pass them to " +
-            "wavesurfer.js as `peaks` with `duration`.",
-          parameters: [
-            idParam,
-            { name: "points", in: "query", description: "Number of min/max pairs (50–4000, default 800).", schema: { type: "integer", minimum: 50, maximum: 4000 } },
-          ],
+          summary: "Credits for a clip",
+          description: "ATTRIBUTION.md (default), credits.json, or a zip holding both. No video inside.",
+          parameters: [idParam, { name: "format", in: "query", schema: { type: "string", enum: ["md", "json", "zip"], default: "md" } }],
           responses: {
             200: {
-              description: "Peaks.",
-              content: json({ type: "object", required: ["peaks", "points", "durationSec"], properties: { peaks: { type: "array", items: { type: "number" } }, points: { type: "integer" }, durationSec: { type: "number" } } }),
+              description: "The credits.",
+              content: { "text/markdown": { schema: { type: "string" } }, "application/json": { schema: { type: "object" } }, "application/zip": { schema: { type: "string", format: "binary" } } },
             },
-            404: errorResponse("Unknown clip, or no audio file to analyse."),
-          },
-        },
-      },
-      "/v1/clips/{id}/similar": {
-        get: {
-          operationId: "findSimilar",
-          tags: ["Clips"],
-          summary: "Sounds like this one",
-          description:
-            "Nearest sounds by audio embedding (CLAP) among the clips this server has indexed, when embeddings are turned on; " +
-            "otherwise Freesound's own similarity for `freesound:` ids. `method` says which was used.",
-          parameters: [idParam, { name: "limit", in: "query", description: "Max results (default 12, max 50).", schema: { type: "integer", minimum: 1, maximum: 50 } }],
-          responses: {
-            200: {
-              description: "Similar clips.",
-              content: json({
-                type: "object",
-                required: ["id", "method", "results"],
-                properties: {
-                  id: { type: "string" },
-                  method: { type: "string", enum: ["clap", "freesound"] },
-                  results: { type: "array", items: ref("Clip") },
-                  indexed: { type: "integer", description: "Clips in the embedding index." },
-                  sameSound: { type: "array", items: { type: "string" }, description: "Ids of this same recording on other sources (near-identical audio and duration), left out of `results`." },
-                  note: { type: "string" },
-                },
-              }),
-            },
-            404: errorResponse("Unknown clip."),
-            501: errorResponse("Embeddings are off on this server and the clip is not from Freesound."),
-          },
-        },
-      },
-      "/v1/clips/{id}/midi": {
-        get: {
-          operationId: "extractMidi",
-          tags: ["Clips"],
-          summary: "MIDI from a melodic clip",
-          description:
-            "Transcribes a melodic clip (bass line, lead, arpeggio, vocal line) one note at a time and returns a Standard MIDI " +
-            "File, or the notes as JSON with `format=json`. Notes snap to the grid when the tempo is known (`bpm`, or the clip's own). " +
-            "Chords and drums are not transcribed; a warning says so.",
-          parameters: [
-            idParam,
-            { name: "bpm", in: "query", description: "Tempo of the loop (40–300).", schema: { type: "number" } },
-            { name: "quantize", in: "query", description: "Steps per beat: 1, 2, 4 (16ths, default) or 8; `false` keeps the played timing.", schema: { type: "string" } },
-            { name: "format", in: "query", description: "`json` for the notes instead of the file.", schema: { type: "string", enum: ["json"] } },
-          ],
-          responses: {
-            200: {
-              description: "The MIDI file, or the notes.",
-              content: {
-                "audio/midi": { schema: { type: "string", format: "binary" } },
-                "application/json": {
-                  schema: {
-                    type: "object",
-                    properties: {
-                      bpm: { type: "number" },
-                      bpmSource: { type: "string", enum: ["given", "analysis", "default"] },
-                      quantized: { type: "boolean" },
-                      notes: { type: "array", items: { type: "object", properties: { name: { type: "string" }, pitch: { type: "integer" }, start: { type: "number" }, end: { type: "number" }, velocity: { type: "integer" } } } },
-                      warnings: { type: "array", items: { type: "string" } },
-                    },
-                  },
-                },
-              },
-            },
-            400: errorResponse("Invalid bpm or quantize."),
             404: errorResponse("Unknown clip."),
           },
         },
       },
-      "/v1/embeddings": {
-        get: {
-          operationId: "embeddingsStatus",
-          tags: ["System"],
-          summary: "Embedding index status",
-          description: "Whether audio embeddings are on, the model, how many clips are indexed and the indexing queue.",
-          responses: { 200: { description: "Status.", content: json({ type: "object", additionalProperties: true }) } },
-        },
-      },
-      "/v1/map": {
-        get: {
-          operationId: "soundMap",
-          tags: ["Clips"],
-          summary: "Sound map",
-          description:
-            "The clips this server has embedded, laid out in 2-D so that sounds that sound alike sit close together " +
-            "(CLAP audio embeddings, then a UMAP-style layout). `x` and `y` run 0..1. One point per sound, at most `limit` points " +
-            "spread evenly over the index. Returns `{ enabled: false }` when embeddings are off on this server.",
-          parameters: [
-            { name: "category", in: "query", description: "Only this category and its children, e.g. `drums` or `fx.riser`.", schema: { type: "string" } },
-            { name: "provider", in: "query", description: "Only clips from this source.", schema: { type: "string" } },
-            { name: "limit", in: "query", description: "Max points (default 1500, max 2500).", schema: { type: "integer", minimum: 1, maximum: 2500 } },
-          ],
-          responses: {
-            200: {
-              description: "The map, or `{ enabled: false }`.",
-              content: json({
-                type: "object",
-                required: ["enabled"],
-                properties: {
-                  enabled: { type: "boolean" },
-                  model: { type: "string" },
-                  indexed: { type: "integer" },
-                  matching: { type: "integer" },
-                  generatedAt: { type: "string", format: "date-time" },
-                  points: {
-                    type: "array",
-                    items: {
-                      type: "object",
-                      required: ["id", "x", "y", "provider"],
-                      properties: {
-                        id: { type: "string" },
-                        x: { type: "number" },
-                        y: { type: "number" },
-                        provider: { type: "string" },
-                        title: { type: "string" },
-                        category: { type: "string" },
-                        durationSec: { type: "number" },
-                        verdict: { type: "string", enum: ["yes", "yes-with-credit", "restricted", "clearance-required", "check-terms", "no"] },
-                      },
-                    },
-                  },
-                },
-              }),
-            },
-            400: errorResponse("Unknown category or source."),
-          },
-        },
-      },
-      "/v1/kits": {
+      "/v1/sequences": {
         post: {
-          operationId: "buildKit",
-          tags: ["Kits"],
-          summary: "Build a drum kit",
+          operationId: "planSequence",
+          tags: ["Sequences"],
+          summary: "Plan a b-roll sequence from a shot list",
           description:
-            "One search per slot (default kick, snare, clap, closed hat, open hat, 808), steered by `style`, `bpm` and `key`, " +
-            "returning the best pick per slot with alternatives and the reason it won. Commercial-safe picks only unless " +
-            "`commercialOnly: false`. The response includes a Strudel clip map and snippet that play the picks through this " +
-            "server's preview proxy, a General MIDI / SFZ drum map, how many picks fall under each licence verdict, and the credit lines.",
-          parameters: [freesoundToken],
-          requestBody: { required: false, content: json(ref("KitRequest")) },
+            "One clip per shot, matching the target orientation, at least 1080p where possible, long enough for its shot, commercial-safe by default " +
+            "and directly downloadable; alternatives per shot. Returns the plan and the files to save: an OpenTimelineIO timeline, an ffmpeg script that " +
+            "renders the sequence, a Remotion clip list and the credits.",
+          requestBody: { required: true, content: json(ref("SequenceRequest")) },
           responses: {
-            200: { description: "The kit plan.", content: json(ref("Kit")) },
-            400: errorResponse("Invalid body (e.g. an unreadable key)."),
+            200: { description: "The plan and its exports.", content: json(ref("SequenceResponse")) },
+            400: errorResponse("Invalid body."),
           },
         },
       },
@@ -1061,14 +692,14 @@ export function openApiSpec(baseUrl?: string) {
           tags: ["MCP"],
           summary: "MCP endpoint (Streamable HTTP)",
           description:
-            "Stateless Model Context Protocol endpoint for AI agents. Tools: `search_samples`, `get_sample`, `build_kit`, " +
-            "`find_similar`, `list_sources` (and `download_sample` on local installs, which saves files with their credits). " +
+            "Stateless Model Context Protocol endpoint for AI agents. Tools: `search_videos`, `get_video`, `build_sequence`, " +
+            "`list_sources` (and `download_video` on local installs, which saves files with their credits). " +
             "Point any MCP client at this URL; see /docs/mcp for per-client setup.",
           requestBody: {
             required: true,
             content: json(
               { type: "object", description: "JSON-RPC 2.0 request" },
-              { jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: "search_samples", arguments: { query: "punchy kick", categories: ["drums.kick"], commercial_only: true } } },
+              { jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: "search_videos", arguments: { query: "ocean waves at sunset", orientation: "portrait", min_resolution: 1080, commercial_only: true } } },
             ),
           },
           responses: { 200: { description: "JSON-RPC 2.0 response.", content: json({ type: "object" }) } },

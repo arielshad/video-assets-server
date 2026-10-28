@@ -1,6 +1,6 @@
 /**
  * Share cards rendered on request: GET /og/query.png (search links) and
- * GET /og/clip.png?id= (clip links, with pack artwork or a waveform).
+ * GET /og/clip.png?id= (clip links, with the clip's poster frame).
  *
  * Rendering costs ~100–300 ms of CPU, so results are kept in a small LRU,
  * at most two cards render at once, and the routes sit behind the API rate
@@ -9,9 +9,9 @@
 import { VERDICT_LABELS } from "../core/licence.js";
 import type { ClipService } from "../core/service.js";
 import { categoryLabel } from "../core/vocab.js";
-import { fetchImage, pageCard, renderPng, sampleCard } from "../og/render.js";
+import { clipCard, fetchImage, pageCard, renderPng } from "../og/render.js";
 import { allProviders } from "../providers/index.js";
-import { sampleFacts, searchShare } from "./search-meta.js";
+import { clipFacts, searchShare } from "./search-meta.js";
 
 export interface OgImagesOptions {
   /** Host printed on the card, e.g. video.shep.bot. */
@@ -46,16 +46,16 @@ export class OgImages {
     return this.cached(`s:${id}`, async () => {
       const a = await this.service.getClip(id).catch(() => null);
       if (!a) return null;
-      const image = a.thumbnailUrl ? await fetchImage(a.thumbnailUrl, { fetch: this.opts.fetch }) : undefined;
+      const image = a.posterUrl ? await fetchImage(a.posterUrl, { fetch: this.opts.fetch }) : undefined;
       return renderPng(
-        sampleCard({
+        clipCard({
           title: a.title,
           source: allProviders.find((p) => p.id === a.provider)?.name ?? a.provider,
           type: categoryLabel(a.category),
           license: a.license?.name,
           verdict: a.license ? VERDICT_LABELS[a.license.verdict] : undefined,
           free: a.price?.free,
-          facts: sampleFacts(a).slice(1),
+          facts: clipFacts(a).slice(1),
           author: a.author,
           image,
           site: this.opts.site,

@@ -7,13 +7,9 @@ import { cors } from "hono/cors";
 import { z } from "zod";
 import { clientFamily, noopAnalytics, type Analytics, type Surface } from "../core/analytics.js";
 import { creditsJson, creditsMarkdown } from "../core/credits.js";
-import { planKit } from "../core/kit.js";
-import { analyzeSample, pickAnalysisFile, waveformPeaks } from "../core/analyze.js";
-import { kitExports } from "../mcp/kit-export.js";
-import { midiForSample, midiSummary } from "../mcp/exports.js";
-import { assertPublicUrl, fetchFile, clipFolderName, clipPath, selectFiles, totalBytes, zipStream } from "../core/download.js";
+import { assertPublicUrl, clipFolderName, clipPath, pickPlayback, selectFiles, totalBytes, zipStream } from "../core/download.js";
 import { HttpError } from "../core/http.js";
-import { keyFromText } from "../core/query.js";
+import { parseShotList, planSequence, sequenceExports } from "../core/sequence.js";
 import {
   ClipService,
   InvalidClipIdError,
@@ -21,10 +17,9 @@ import {
   UnsupportedError,
   errorMessage,
 } from "../core/service.js";
-import { ClipNotFoundError, SimilarUnavailableError, findSimilar } from "../core/similar.js";
 import { LocalStats, PrometheusStats, cachedStats, teeAnalytics, type StatsSource } from "../core/stats.js";
-import type { BpmRange, ClipDetails, ClipFile } from "../core/types.js";
-import { CATEGORIES, SAMPLE_FORMS, isCategory, type Category, type SampleForm } from "../core/vocab.js";
+import type { ClipDetails, ClipFile, DurationRange } from "../core/types.js";
+import { CATEGORIES, ORIENTATIONS, VIDEO_STYLES, resolutionTier, type Category } from "../core/vocab.js";
 import type { NetworkClassifier } from "../core/network.js";
 import { DailyCallers, SessionTokens, checkConsistency, pickClient, versionLabel } from "../mcp/attribution.js";
 import { createMcpServer } from "../mcp/server.js";
@@ -32,7 +27,7 @@ import { prefersMarkdown } from "./negotiate.js";
 import { openApiSpec } from "./openapi.js";
 import { RATE_LIMIT_HEADERS, clientIp, rateLimit, type RateLimitOptions } from "./ratelimit.js";
 import { OgImages } from "./og.js";
-import { sampleMeta, searchMeta, searchShare, shareableSampleId, type HeadMeta } from "./search-meta.js";
+import { clipMeta, searchMeta, searchShare, shareableClipId, type HeadMeta } from "./search-meta.js";
 import { Site, rewriteHead, type ServeOptions, type UmamiOptions } from "./site.js";
 
 export interface AppOptions {
@@ -89,10 +84,10 @@ function routeLabel(path: string): string {
     return path;
   }
   if (path.startsWith("/v1/clips/")) {
-    for (const tail of ["download", "files", "preview", "peaks", "similar", "midi"]) if (path.endsWith(`/${tail}`)) return `/v1/clips/:id/${tail}`;
+    for (const tail of ["download", "files", "credits"]) if (path.endsWith(`/${tail}`)) return `/v1/clips/:id/${tail}`;
     return "/v1/clips/:id";
   }
-  if (path === "/v1/kits") return path;
+  if (path === "/v1/sequences") return path;
   if (path.startsWith("/v1/")) return "/v1/other";
   if (path === "/og/query.png" || path === "/og/clip.png") return path;
   if (path.startsWith("/_astro/") || path.startsWith("/scalar/") || path.startsWith("/fonts/") || path.startsWith("/og/")) return "static-asset";
@@ -116,44 +111,32 @@ const bool = z
 
 const num = z.coerce.number().finite().optional();
 
-/** "140", "120-128" → a BPM range. */
-const bpmParam = z
+/** "1080", "4k", "hd" → pixels of the short side. */
+const resolutionParam = z
   .string()
   .optional()
-  .transform((v, ctx): BpmRange | undefined => {
+  .transform((v, ctx): number | undefined => {
     if (!v?.trim()) return undefined;
-    const m = /^\s*(\d{2,3}(?:\.\d+)?)\s*(?:-|–|\.\.)?\s*(\d{2,3}(?:\.\d+)?)?\s*$/.exec(v);
-    if (!m) {
-      ctx.addIssue({ code: "custom", message: `bpm must look like "140" or "120-128", got "${v}"` });
+    const t = v.trim().toLowerCase().replace(/p$/, "");
+    const named: Record<string, number> = { hd: 720, fhd: 1080, fullhd: 1080, "full-hd": 1080, qhd: 1440, "2k": 1440, "4k": 2160, uhd: 2160 };
+    const n = named[t] ?? Number(t);
+    if (!Number.isFinite(n) || n < 144 || n > 4320) {
+      ctx.addIssue({ code: "custom", message: `min_resolution must be 720, 1080, 1440, 2160 or hd/fhd/4k, got "${v}"` });
       return z.NEVER;
     }
-    const a = Number(m[1]);
-    const b = m[2] ? Number(m[2]) : a;
-    return { min: Math.min(a, b), max: Math.max(a, b) };
-  });
-
-/** "F minor", "F#m", "Eb", "A major" → a key filter. */
-const keyParam = z
-  .string()
-  .optional()
-  .transform((v, ctx) => {
-    if (!v?.trim()) return undefined;
-    const k = keyFromText(` ${v.trim()} `) ?? keyFromText(` key of ${v.trim()} `);
-    if (!k) {
-      ctx.addIssue({ code: "custom", message: `key must look like "F minor", "F#m" or "Eb", got "${v}"` });
-      return z.NEVER;
-    }
-    return k.mode ? { tonic: k.tonic, mode: k.mode } : { tonic: k.tonic };
+    return n;
   });
 
 const searchParams = z.object({
   q: z.string().max(300).default(""),
   category: csv.pipe(z.array(z.enum(CATEGORIES as [Category, ...Category[]])).optional()),
-  form: csv.pipe(z.array(z.enum(SAMPLE_FORMS)).optional()),
-  bpm: bpmParam,
-  key: keyParam,
-  max_duration: num,
+  style: csv.pipe(z.array(z.enum(VIDEO_STYLES)).optional()),
+  orientation: csv.pipe(z.array(z.enum(ORIENTATIONS)).optional()),
+  min_resolution: resolutionParam,
   min_duration: num,
+  max_duration: num,
+  min_fps: num,
+  audio: bool,
   commercial: bool,
   free: bool,
   downloadable: bool,
@@ -163,22 +146,25 @@ const searchParams = z.object({
   offset: z.coerce.number().int().min(0).max(1000).optional(),
 });
 
-const kitBody = z.object({
-  style: z.string().max(80).optional(),
-  slots: z.array(z.string().max(40)).max(16).optional(),
-  bpm: z.number().min(40).max(300).optional(),
-  key: z.string().max(20).optional(),
+const sequenceBody = z.object({
+  shots: z.union([z.array(z.string().min(2).max(300)).min(1).max(24), z.string().min(2).max(6000)]),
+  orientation: z.enum(ORIENTATIONS).optional(),
+  width: z.number().int().min(160).max(7680).optional(),
+  height: z.number().int().min(160).max(7680).optional(),
+  fps: z.number().min(1).max(120).optional(),
+  totalDuration: z.number().positive().max(3600).optional(),
   commercialOnly: z.boolean().optional(),
   providers: z.array(z.string()).max(40).optional(),
-  perSlot: z.number().int().min(0).max(5).optional(),
+  alternatives: z.number().int().min(0).max(5).optional(),
+  name: z.string().max(60).optional(),
 });
 
 const fileParams = z.object({
+  /** Wanted resolution (short side): the smallest file at or above it. */
+  height: z.coerce.number().int().min(144).max(4320).optional(),
   format: z.string().max(10).optional(),
-  role: z.enum(["original", "preview", "pack", "stem", "midi"]).optional(),
+  role: z.enum(["original", "rendition", "preview", "poster", "captions"]).optional(),
   all: bool,
-  /** Always answer with a zip that includes ATTRIBUTION.md and credits.json. */
-  bundle: bool,
 });
 
 /** Never hand source request headers (Referer, a caller's token) back to clients. */
@@ -188,12 +174,6 @@ export function publicFiles(files: ClipFile[]): Omit<ClipFile, "headers">[] {
 
 export function publicClip<T extends ClipDetails>(s: T): Omit<T, "files"> & { files: Omit<ClipFile, "headers">[] } {
   return { ...s, files: publicFiles(s.files) };
-}
-
-/** Credentials a caller may pass for sources that need their own account. */
-function callerCredentials(c: Context): Record<string, string> | undefined {
-  const token = c.req.header("x-freesound-token")?.trim();
-  return token ? { freesoundToken: token } : undefined;
 }
 
 function sameSecret(given: string | undefined, key: string): boolean {
@@ -222,13 +202,6 @@ function headerValue(s: string): string {
  * og:url; `pre` carries metadata looked up ahead of time (the clip).
  */
 function pageRewrite(route: string, params: URLSearchParams, origin: string, pre?: HeadMeta): ServeOptions["rewrite"] {
-  // The kit builder's waveform players inject a <style> that needs the nonce too.
-  if (route === "/kit") {
-    return (html) => {
-      const nonce = randomBytes(16).toString("base64");
-      return { html: html.replace("<head>", `<head><meta property="csp-nonce" content="${nonce}">`), styleNonce: nonce };
-    };
-  }
   if (route === "/search") {
     const meta = pre ?? searchMeta(params);
     const share = pre ? `clip=${encodeURIComponent(params.get("clip") ?? "")}` : searchShare(params)?.key;
@@ -244,7 +217,6 @@ function pageRewrite(route: string, params: URLSearchParams, origin: string, pre
   return undefined;
 }
 
-const PREVIEW_MAX_BYTES = 25 * 1024 * 1024;
 const OG_HEADERS = { "content-type": "image/png", "cache-control": "public, max-age=86400", "x-content-type-options": "nosniff" };
 /** Clip lookups for share-link metadata must not hold a page load for long. */
 const SHARE_LOOKUP_MS = 3500;
@@ -318,8 +290,7 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
     if (err instanceof UnknownProviderError || err instanceof InvalidClipIdError || err instanceof z.ZodError) {
       return c.json({ error: err instanceof z.ZodError ? z.prettifyError(err) : err.message }, 400);
     }
-    if (err instanceof UnsupportedError || err instanceof SimilarUnavailableError) return c.json({ error: err.message }, 501);
-    if (err instanceof ClipNotFoundError) return c.json({ error: "not found" }, 404);
+    if (err instanceof UnsupportedError) return c.json({ error: err.message }, 501);
     if (err instanceof HttpError) return c.json({ error: `Upstream error: ${err.message}` }, err.status === 404 ? 404 : 502);
     console.error(err);
     return c.json({ error: errorMessage(err) }, 500);
@@ -364,22 +335,22 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
     c.header("vary", "Accept");
     return c.json({
       name: "video-assets-server",
-      description: "Search and download music clips (drums, 808s, loops, vocals, FX, foley, instruments) across many sources, with licence verdicts for commercial use.",
+      description: "Search and download free stock video (b-roll, backgrounds, nature, cities, space, science, archive films) across many sources, with licence verdicts for commercial use.",
       agents: {
         instructions: "/AGENTS.md",
         llms: "/llms.txt",
-        ...(httpMcp && { mcp: `claude mcp add --transport http sounds ${(opts.publicBaseUrl ?? new URL(c.req.url).origin).replace(/\/$/, "")}/mcp` }),
+        ...(httpMcp && { mcp: `claude mcp add --transport http video ${(opts.publicBaseUrl ?? new URL(c.req.url).origin).replace(/\/$/, "")}/mcp` }),
       },
       endpoints: {
         providers: "/v1/providers",
         stats: "/v1/stats",
         catalog: "/v1/catalog",
-        search: "/v1/search?q=punchy+kick&category=drums.kick&form=one-shot&commercial=true",
+        search: "/v1/search?q=ocean+waves&orientation=portrait&min_resolution=1080&commercial=true",
         clip: "/v1/clips/{provider}:{id}",
         files: "/v1/clips/{provider}:{id}/files",
-        download: "/v1/clips/{provider}:{id}/download?format=wav",
-        preview: "/v1/clips/{provider}:{id}/preview",
-        kits: "POST /v1/kits",
+        download: "/v1/clips/{provider}:{id}/download?height=1080 (302 to the file on the source)",
+        credits: "/v1/clips/{provider}:{id}/credits?format=md|json|zip",
+        sequences: "POST /v1/sequences",
         ...(httpMcp && { mcp: "/mcp (Streamable HTTP)" }),
         openapi: "/openapi.json",
         docs: "/docs",
@@ -423,14 +394,16 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
   app.get("/v1/search", async (c) => {
     const p = searchParams.parse(c.req.query());
     const started = Date.now();
+    const duration: DurationRange | undefined = p.min_duration !== undefined || p.max_duration !== undefined ? { min: p.min_duration, max: p.max_duration } : undefined;
     const res = await service.search({
       query: p.q,
       categories: p.category,
-      forms: p.form as SampleForm[] | undefined,
-      bpm: p.bpm,
-      key: p.key,
-      maxDurationSec: p.max_duration,
-      minDurationSec: p.min_duration,
+      styles: p.style,
+      orientations: p.orientation,
+      minResolution: p.min_resolution,
+      duration,
+      minFps: p.min_fps,
+      hasAudio: p.audio,
       commercialOnly: p.commercial,
       freeOnly: p.free,
       downloadableOnly: p.downloadable,
@@ -438,12 +411,13 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
       providers: p.providers,
       limit: p.limit,
       offset: p.offset,
-      credentials: callerCredentials(c),
     });
     analytics.search({
       ...who(c),
       query: p.q,
       categories: res.filters.categories,
+      orientations: res.filters.orientations,
+      minResolution: res.filters.minResolution,
       freeOnly: p.free,
       downloadableOnly: p.downloadable,
       response: res,
@@ -452,196 +426,86 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
     return c.json(res);
   });
 
-  const lookup = async (c: Context): Promise<ClipDetails | null> => service.getClip(c.req.param("id")!, callerCredentials(c));
+  const lookup = async (c: Context): Promise<ClipDetails | null> => service.getClip(c.req.param("id")!);
 
   app.get("/v1/clips/:id", async (c) => {
     const id = c.req.param("id");
-    let clip = await lookup(c);
-    // ?analyze=true fills in duration, BPM (loops), key, root note and loudness from the audio.
-    if (clip && ["true", "1"].includes(c.req.query("analyze") ?? "")) {
-      clip = (await analyzeSample(clip, { http: service.http, deep: true, signal: AbortSignal.timeout(30_000) })).clip;
-    }
+    const clip = await lookup(c);
     analytics.clipView({ ...who(c), provider: id.split(":")[0] ?? "", found: Boolean(clip) });
     if (!clip) return c.json({ error: "not found" }, 404);
-    // A page for people: opens this clip on the website and unfurls with a preview card.
-    return c.json({ ...publicClip(clip), shareUrl: `${origin(c)}/search?clip=${encodeURIComponent(clip.id)}` });
+    // `watch` plays in a browser straight from the source (this server never streams video).
+    return c.json({ ...publicClip(clip), watch: pickPlayback(clip), shareUrl: `${origin(c)}/search?clip=${encodeURIComponent(clip.id)}` });
   });
 
   app.get("/v1/clips/:id/files", async (c) => {
     const p = fileParams.parse(c.req.query());
     const clip = await lookup(c);
     if (!clip) return c.json({ error: "not found" }, 404);
-    const files = selectFiles(clip, { format: p.format, role: p.role, all: p.all });
+    const files = selectFiles(clip, { height: p.height, format: p.format, role: p.role, all: p.all });
     return c.json({ id: clip.id, license: clip.license, attribution: clip.attribution, totalBytes: totalBytes(files), files: publicFiles(files) });
   });
 
   /**
-   * Download: a single plain file redirects to the source (fastest, no
-   * proxying). Several files, files that need request headers, or `bundle=true`
-   * stream one zip with ATTRIBUTION.md and credits.json next to the audio.
+   * Download: always a redirect to the chosen file on the source's CDN, so no
+   * video bytes pass through this server. `height` picks a rendition, `format`
+   * a container. The licence and credit line come back as headers.
    */
   app.get("/v1/clips/:id/download", async (c) => {
     const p = fileParams.parse(c.req.query());
     const clip = await lookup(c);
     if (!clip) return c.json({ error: "not found" }, 404);
-    const fetchable = clip.files.filter((f) => !f.requiresAuth);
+    const fetchable = clip.files.filter((f) => !f.requiresAuth && !f.headers);
     if (!fetchable.length) {
       return c.json({ error: "This clip has no direct download here; get it from the source page.", url: clip.url, requiresAccount: clip.requiresAccount ?? false }, 409);
     }
-    const files = selectFiles(clip, { format: p.format, role: p.role, all: p.all });
-    if (!files.length) return c.json({ error: "No files match the requested format/role." }, 404);
-    if (clip.license) c.header("x-license", headerValue(`${clip.license.id}; verdict=${clip.license.verdict}`));
+    const file = selectFiles({ files: fetchable }, { height: p.height, format: p.format, role: p.role })[0];
+    if (!file) return c.json({ error: "No file matches the requested height/format/role." }, 404);
+    if (clip.license) c.header("x-license", headerValue(`${clip.license.id}; verdict=${clip.license.verdict}${clip.license.editorial ? "; editorial" : ""}`));
     if (clip.attribution) c.header("x-attribution", headerValue(clip.attribution));
-    const only = files[0]!;
-    if (files.length === 1 && !only.headers && !p.bundle) {
-      assertPublicUrl(only.url);
-      analytics.download({ ...who(c), provider: clip.provider, kind: "redirect" });
-      return c.redirect(only.url, 302);
-    }
-    analytics.download({ ...who(c), provider: clip.provider, kind: "zip" });
-    const folder = clipFolderName(clip);
+    assertPublicUrl(file.url);
+    analytics.download({ ...who(c), provider: clip.provider, kind: "redirect", quality: resolutionTier(file.width, file.height) ?? "unknown" });
+    return c.redirect(file.url, 302);
+  });
+
+  /** Credits for one clip: ATTRIBUTION.md (default), credits.json, or a zip with both (no video inside). */
+  app.get("/v1/clips/:id/credits", async (c) => {
+    const clip = await lookup(c);
+    if (!clip) return c.json({ error: "not found" }, 404);
     const names = Object.fromEntries(service.listProviders().map((x) => [x.id, x.name]));
-    const body = zipStream(
-      service.http,
-      files.map((f) => ({ path: clipPath(clip, f), url: f.url, headers: f.headers })),
-      folder,
-      {
+    const format = c.req.query("format") ?? "md";
+    if (format === "json") return c.json(creditsJson([clip], { sourceNames: names }));
+    if (format === "zip") {
+      analytics.download({ ...who(c), provider: clip.provider, kind: "credits" });
+      const folder = clipFolderName(clip);
+      const body = zipStream(service.http, [], folder, {
         extra: [
           { path: "ATTRIBUTION.md", content: creditsMarkdown([clip], names) },
-          { path: "credits.json", content: JSON.stringify(creditsJson([clip]), null, 2) },
+          { path: "credits.json", content: JSON.stringify(creditsJson([clip], { sourceNames: names }), null, 2) },
         ],
-      },
-    );
-    return new Response(body, {
-      headers: {
-        ...Object.fromEntries(c.res.headers),
-        "content-type": "application/zip",
-        "content-disposition": `attachment; filename="${folder}.zip"`,
-      },
-    });
+      });
+      return new Response(body, { headers: { "content-type": "application/zip", "content-disposition": `attachment; filename="${folder}-credits.zip"` } });
+    }
+    return c.body(creditsMarkdown([clip], names), 200, { "content-type": "text/markdown; charset=utf-8" });
   });
 
-  /** Waveform peaks for players (wavesurfer `peaks` + `duration`), computed from the preview. Cached. */
-  app.get("/v1/clips/:id/peaks", async (c) => {
-    const clip = await lookup(c);
-    if (!clip) return c.json({ error: "not found" }, 404);
-    const file = pickAnalysisFile(clip);
-    if (!file) return c.json({ error: "No audio file to analyse." }, 404);
-    const points = Math.min(Math.max(Number(c.req.query("points") ?? 800) || 800, 50), 4000);
-    const peaks = await waveformPeaks(file, { points, http: service.http, signal: AbortSignal.timeout(30_000) });
-    c.header("cache-control", "public, max-age=86400");
-    return c.json(peaks);
-  });
-
-  /**
-   * Sounds like this one: nearest CLAP audio embeddings among the clips this
-   * server has indexed (when embeddings are on), or Freesound's similarity for
-   * freesound ids. `method` says which answered.
-   */
-  app.get("/v1/clips/:id/similar", async (c) => {
-    const limit = Math.min(Math.max(Number(c.req.query("limit") ?? 12) || 12, 1), 50);
-    const res = await findSimilar(service, c.req.param("id"), { limit, credentials: callerCredentials(c) });
-    return c.json(res);
-  });
-
-  /** Embedded clips laid out in 2-D, alike sounds together (empty when embeddings are off). */
-  app.get("/v1/map", async (c) => {
-    const category = c.req.query("category") || undefined;
-    const provider = c.req.query("provider") || undefined;
-    if (category && !isCategory(category)) return c.json({ error: `Unknown category: ${category}` }, 400);
-    if (provider && !service.getProvider(provider)) return c.json({ error: `Unknown source: ${provider}` }, 400);
-    if (!service.embeddings) return c.json({ enabled: false, points: [] });
-    const limit = Number(c.req.query("limit") ?? 1500) || 1500;
-    c.header("cache-control", "public, max-age=300");
-    return c.json(await service.embeddings.map({ category, provider, limit }));
-  });
-
-  /** Status of the optional embedding index and persistent store (for operators). */
-  app.get("/v1/embeddings", (c) => c.json(service.embeddings ? service.embeddings.status() : { enabled: false }));
-
-  /**
-   * MIDI from a melodic clip (one note at a time): the .mid file, or the
-   * notes as JSON with ?format=json. Audio is fetched from the source (≤25 MB).
-   */
-  app.get("/v1/clips/:id/midi", async (c) => {
-    const clip = await lookup(c);
-    if (!clip) return c.json({ error: "not found" }, 404);
-    const bpm = Number(c.req.query("bpm") ?? "") || undefined;
-    if (bpm !== undefined && (bpm < 40 || bpm > 300)) return c.json({ error: "bpm must be between 40 and 300" }, 400);
-    const qRaw = c.req.query("quantize");
-    const quantize = qRaw === undefined ? undefined : qRaw === "false" ? false : Number(qRaw);
-    if (quantize !== undefined && quantize !== false && ![1, 2, 4, 8].includes(quantize)) return c.json({ error: "quantize must be 1, 2, 4, 8 or false" }, 400);
-    const r = await midiForSample(service, clip, { bpm, quantize, signal: AbortSignal.timeout(60_000) });
-    if (c.req.query("format") === "json") return c.json({ id: clip.id, ...midiSummary(r) });
-    return new Response(new Uint8Array(r.extraction.midi), {
-      headers: {
-        "content-type": "audio/midi",
-        "content-disposition": `attachment; filename="${r.filename.replace(/"/g, "")}"`,
-        "cache-control": "public, max-age=86400",
-      },
-    });
-  });
-
-  /** Plan a drum kit: one pick per slot with alternatives, plus Strudel and General MIDI/SFZ maps. */
-  app.post("/v1/kits", async (c) => {
-    const body = kitBody.parse(await c.req.json().catch(() => ({})));
-    const key = body.key ? (keyFromText(` ${body.key} `) ?? keyFromText(` key of ${body.key} `)) : undefined;
-    if (body.key && !key) return c.json({ error: `key must look like "F minor" or "F#m", got "${body.key}"` }, 400);
-    const plan = await planKit(service, {
-      style: body.style,
-      slots: body.slots,
-      bpm: body.bpm,
-      key: key?.mode ? { tonic: key.tonic, mode: key.mode } : undefined,
+  /** Plan a b-roll sequence: one clip per shot with alternatives, plus OTIO, ffmpeg, Remotion and credits. */
+  app.post("/v1/sequences", async (c) => {
+    const body = sequenceBody.parse(await c.req.json().catch(() => ({})));
+    const shots = Array.isArray(body.shots) ? body.shots.flatMap((s) => parseShotList(s)) : parseShotList(body.shots);
+    if (!shots.length) return c.json({ error: "Give at least one shot description." }, 400);
+    const plan = await planSequence(service, {
+      shots,
+      orientation: body.orientation,
+      width: body.width,
+      height: body.height,
+      fps: body.fps,
+      totalDurationSec: body.totalDuration,
       commercialOnly: body.commercialOnly ?? true,
       providers: body.providers,
-      perSlot: body.perSlot,
-      credentials: callerCredentials(c),
+      alternatives: body.alternatives,
     });
     const names = Object.fromEntries(service.listProviders().map((x) => [x.id, x.name]));
-    return c.json(await kitExports(service, plan, { sourceNames: names, publicBaseUrl: origin(c) }));
-  });
-
-  /**
-   * The clip's preview, through this server: for sources whose previews need
-   * a Referer, and for players (Strudel, browser DAWs) that need CORS. Only
-   * previews, capped in size, so this is not a general proxy.
-   */
-  app.get("/v1/clips/:id/preview", async (c) => {
-    const clip = await lookup(c);
-    if (!clip) return c.json({ error: "not found" }, 404);
-    const preview = clip.files.find((f) => f.role === "preview" && !f.requiresAuth && f.url === clip.previewUrl) ??
-      clip.files.find((f) => f.role === "preview" && !f.requiresAuth) ??
-      (clip.previewUrl ? ({ url: clip.previewUrl, filename: "preview", format: "mp3", role: "preview" } as ClipFile) : undefined);
-    if (!preview) return c.json({ error: "This clip has no preview." }, 404);
-    if (!clip.previewNeedsReferer && !preview.headers) {
-      // Plain previews: let the client fetch them itself.
-      if (c.req.query("proxy") !== "1") return c.redirect(preview.url, 302);
-    }
-    const upstream = await fetchFile(service.http, preview.url, preview.headers);
-    const length = Number(upstream.headers.get("content-length") ?? 0);
-    if (length > PREVIEW_MAX_BYTES) {
-      await upstream.body?.cancel().catch(() => undefined);
-      return c.json({ error: "Preview too large to proxy." }, 413);
-    }
-    let seen = 0;
-    const capped = upstream.body!.pipeThrough(
-      new TransformStream<Uint8Array, Uint8Array>({
-        transform(chunk, ctrl) {
-          seen += chunk.byteLength;
-          if (seen > PREVIEW_MAX_BYTES) ctrl.error(new Error("preview too large"));
-          else ctrl.enqueue(chunk);
-        },
-      }),
-    );
-    return new Response(capped, {
-      headers: {
-        "content-type": upstream.headers.get("content-type") ?? "audio/mpeg",
-        ...(length ? { "content-length": String(length) } : {}),
-        "cache-control": "public, max-age=86400",
-        "access-control-allow-origin": "*",
-        "x-content-type-options": "nosniff",
-      },
-    });
+    return c.json({ plan, exports: sequenceExports(plan, { name: body.name, sourceNames: names }) });
   });
 
   if (!httpMcp) {
@@ -712,18 +576,18 @@ export function createApp(service: ClipService, opts: AppOptions = {}): Hono {
     body ? new Response(c.req.method === "HEAD" ? null : new Uint8Array(body), { headers: OG_HEADERS }) : c.json({ error: "not found" }, 404);
   app.on(["GET", "HEAD"], "/og/query.png", async (c) => png(c, await og.query(new URL(c.req.url).searchParams)));
   app.on(["GET", "HEAD"], "/og/clip.png", async (c) => {
-    const id = shareableSampleId(c.req.query("id"), providerIds);
+    const id = shareableClipId(c.req.query("id"), providerIds);
     return png(c, id ? await og.clip(id) : null);
   });
 
   /** Title, description and card for `/search?clip=<id>` share links (undefined if the clip can't be found quickly). */
   const sampleShareMeta = async (c: Context): Promise<HeadMeta | undefined> => {
-    const id = shareableSampleId(c.req.query("clip"), providerIds);
+    const id = shareableClipId(c.req.query("clip"), providerIds);
     if (!id) return undefined;
     const found = service.getClip(id).catch(() => null);
     const timeout = new Promise<null>((r) => setTimeout(() => r(null), SHARE_LOOKUP_MS).unref());
     const clip = await Promise.race([found, timeout]);
-    return clip ? sampleMeta(clip) : undefined;
+    return clip ? clipMeta(clip) : undefined;
   };
 
   // Everything else is the website (pages, /_astro assets, robots.txt, sitemap, llms.txt, ...).

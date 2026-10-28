@@ -1,21 +1,18 @@
-import { resolve } from "node:path";
+import { mkdir, writeFile } from "node:fs/promises";
+import { join, relative, resolve } from "node:path";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { analyzeSample } from "../core/analyze.js";
 import { clientFamily, noopAnalytics, type Analytics } from "../core/analytics.js";
 import { recordCredits } from "../core/credits-file.js";
-import { downloadClip, formatBytes, isPreviewOnly, clipPath, selectFiles, totalBytes } from "../core/download.js";
-import { planKit, type KitPlan } from "../core/kit.js";
+import { clipPath, downloadClip, formatBytes, pickPlayback, selectFiles, totalBytes } from "../core/download.js";
 import { VERDICT_LABELS } from "../core/licence.js";
-import { formatKey, keyFromText } from "../core/query.js";
+import { formatDuration } from "../core/query.js";
+import { parseShotList, planSequence, sequenceExports, type MediaPaths, type SequencePlan } from "../core/sequence.js";
 import { ClipService, errorMessage } from "../core/service.js";
-import { findSimilar } from "../core/similar.js";
-import type { Clip, ClipDetails, ClipFile } from "../core/types.js";
+import type { Clip, ClipDetails, ClipFile, Orientation } from "../core/types.js";
 import { compact } from "../core/util.js";
-import { CATEGORIES, SAMPLE_FORMS, type Category } from "../core/vocab.js";
+import { CATEGORIES, ORIENTATIONS, VIDEO_STYLES, resolutionLabel, type Category } from "../core/vocab.js";
 import { versionLabel } from "./attribution.js";
-import { instrumentForSample, midiSummary, midiForSample, writeMidiForSample } from "./exports.js";
-import { kitExports } from "./kit-export.js";
 
 export interface McpOptions {
   /** Allow tools to write to the local filesystem (stdio / trusted local use). */
@@ -44,34 +41,53 @@ export interface McpOptions {
 export const VERSION = "0.1.0";
 
 const categoryEnum = z.enum(CATEGORIES as [Category, ...Category[]]);
-const formEnum = z.enum(SAMPLE_FORMS);
+const styleEnum = z.enum(VIDEO_STYLES);
+const orientationEnum = z.enum(ORIENTATIONS);
 
 const LICENCE_RULES =
-  "Licences matter more for music than anywhere else: every result has license.verdict. " +
-  "'yes' = usable in a commercial release; 'yes-with-credit' = usable if you credit the author (use the `attribution` line); " +
-  "'restricted', 'clearance-required' and 'check-terms' = tell the user to read the terms before release; 'no' = non-commercial only. " +
-  "Never present a 'no' or 'check-terms' clip as cleared. Searches are commercial-safe by default (commercial_only=true); " +
-  "set commercial_only=false only when the user says the project is personal or non-commercial.";
+  "Every result has license.verdict. 'yes' = usable in a commercial video; 'yes-with-credit' = usable if you credit the source " +
+  "(use the `attribution` line in the description or end credits); 'restricted', 'clearance-required' and 'check-terms' = tell the user " +
+  "to read the terms first; 'no' = non-commercial only. license.editorial=true means people, insignia or brands appear without releases: " +
+  "fine for news, documentary and education, not for ads or anything implying endorsement. Never present a 'no', 'check-terms' or editorial " +
+  "clip as cleared for advertising. Searches are commercial-safe by default (commercial_only=true); set commercial_only=false only when the " +
+  "user says the project is personal, educational or non-commercial.";
+
+/** "1080", "4k", 2160 → pixels of the short side. */
+const resolutionParam = z
+  .union([z.number().int().min(144).max(4320), z.enum(["720", "1080", "1440", "2160", "hd", "fullhd", "4k"])])
+  .optional()
+  .describe("Minimum resolution (short side): 720, 1080, 1440 or 2160 (4K). A vertical 1080×1920 clip counts as 1080.");
+
+function resolutionPx(v: number | string | undefined): number | undefined {
+  if (v === undefined) return undefined;
+  if (typeof v === "number") return v;
+  return { hd: 720, fullhd: 1080, "4k": 2160 }[v] ?? Number(v);
+}
 
 export function createMcpServer(service: ClipService, opts: McpOptions): McpServer {
   const base = opts.publicBaseUrl?.replace(/\/$/, "");
+  const providerNames = service
+    .listProviders()
+    .filter((p) => p.access !== "link")
+    .map((p) => p.name)
+    .join(", ");
   const server = new McpServer(
     { name: "video-assets-server", version: VERSION },
     {
       instructions: [
-        "Search and download music clips (kicks, snares, hats, claps, 808s, loops, vocals, FX like risers and zaps, foley, ambience, instrument one-shots) from many sources at once",
-        "(Freesound, Wikimedia Commons, Openverse, Internet Archive, ccMixter, BBC Sound Effects, Strudel drum machines, MusicRadar SampleRadar, and more).",
-        "Queries understand BPM and key words ('140 bpm dark trap 808 in F minor').",
+        "Search free stock video (b-roll, backgrounds, nature, cities, space, science, archive films) across many sources at once",
+        `(${providerNames}), with deep links into stock sites that can't be searched automatically (Pexels, Pixabay, Shutterstock…).`,
+        "Queries understand resolution, orientation, length, frame rate and style words ('4k vertical drone ocean 10s', 'timelapse city night 60fps').",
         ...(opts.allowLocalDownload
           ? [
-              "Typical flow: search_samples -> get_sample (licence, files, analysed BPM/key) -> download_sample.",
-              "build_kit picks and downloads a whole drum kit in one call and writes a Strudel clip map, an SFZ/General MIDI map and the credits.",
+              "Typical flow: search_videos -> get_video (licence, renditions, watch URL) -> download_video.",
+              "build_sequence turns a shot list into a b-roll sequence in one call: picks a clip per shot, downloads them, and writes an OpenTimelineIO timeline, an ffmpeg script, a Remotion clip list and the credits.",
             ]
           : [
-              "Typical flow: search_samples -> get_sample -> fetch selection.downloadUrl.",
+              "Typical flow: search_videos -> get_video -> fetch selection.downloadUrl (a redirect to the file on the source's CDN).",
               "This server cannot write to your disk: if you have a shell, download the file yourself",
-              "(`curl -L -o \"clips/<selection.filename>\" \"<selection.downloadUrl>\"`); otherwise give the user the link.",
-              "build_kit returns a planned kit with download links and a Strudel snippet that plays straight from this server.",
+              '(`curl -L -o "footage/<selection.filename>" "<selection.downloadUrl>"`); otherwise give the user the link.',
+              "build_sequence plans a b-roll sequence from a shot list and returns an OpenTimelineIO timeline, an ffmpeg script and a Remotion clip list that read the media straight from the sources.",
             ]),
         LICENCE_RULES,
         "Results marked downloadable=false must be obtained from their `url` on the source site.",
@@ -119,64 +135,62 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
       }
     };
 
-  const links = (s: Pick<Clip, "id">) =>
+  const links = (c: Pick<Clip, "id">) =>
     base
       ? {
-          download: `${base}/v1/clips/${encodeURIComponent(s.id)}/download`,
-          preview: `${base}/v1/clips/${encodeURIComponent(s.id)}/preview`,
-          share: `${base}/search?clip=${encodeURIComponent(s.id)}`,
+          download: `${base}/v1/clips/${encodeURIComponent(c.id)}/download`,
+          credits: `${base}/v1/clips/${encodeURIComponent(c.id)}/credits`,
+          share: `${base}/search?clip=${encodeURIComponent(c.id)}`,
         }
       : undefined;
 
   server.registerTool(
-    "search_samples",
+    "search_videos",
     {
-      title: "Search clips",
+      title: "Search stock video",
       description:
-        "Search every clip source at once. Write the query like a producer would: 'punchy kick', 'dusty snare', 'open hat', " +
-        "'808 in F minor', 'vocal chop 140 bpm', 'riser', 'laser zap', 'vinyl crackle', 'rain ambience', 'piano C4'. " +
-        "BPM ('140 bpm', '120-128 bpm') and key ('F minor', 'F#m') in the query become filters; you can also pass them explicitly. " +
-        "Filter with `categories` (e.g. drums.kick, drums.hat.closed, bass.808, vocals.chop, fx.riser, foley, ambience; a parent like 'drums' matches all drums) " +
-        "and `forms` (one-shot, loop, phrase, multisample, pack, midi, preset). Results carry category, form, bpm, key, duration, " +
-        "a playable preview URL and the licence verdict. The response also lists deep links into sites that can't be searched automatically (Splice, Looperman, …). " +
+        "Search every video source at once. Write the query like an editor would: 'ocean waves at sunset', 'drone city skyline night', " +
+        "'rocket launch slow motion', 'clouds timelapse', 'abstract particles loop', '1950s newsreel factory', 'earth from space 4k'. " +
+        "Resolution ('4k', '1080p'), orientation ('vertical', '9:16', 'square'), length ('10s', 'under 30 seconds', '1-2 min') and frame rate ('60fps') " +
+        "in the query become filters; you can also pass them explicitly. A single length like '10s' means 'at least 10 seconds' (so the clip covers a shot that long). " +
+        "Filter with `categories` (e.g. nature.ocean, city.skyline, aerial, space.earth, space.launch, background.abstract, overlay.light, greenscreen, archive.newsreel; " +
+        "a parent like 'nature' matches all nature) and `styles` (timelapse, slow-motion, loop, animation, visualization, black-white). " +
+        "Results carry orientation, resolution, fps, duration, a poster image, a preview video URL (plays in a browser, straight from the source) and the licence verdict. " +
+        "The response also lists deep links into stock sites that can't be searched automatically. " +
         LICENCE_RULES,
       inputSchema: {
-        query: z.string().describe("What you are looking for, e.g. 'punchy kick', 'dark trap 808 in F minor', 'vocal chop', 'riser'."),
+        query: z.string().describe("What the footage shows, e.g. 'ocean waves at sunset', 'busy street timelapse', 'earth from space'."),
         categories: z.array(categoryEnum).optional().describe("Only these categories (parents match children)."),
-        forms: z.array(formEnum).optional().describe("Only these forms, e.g. ['one-shot'] or ['loop']."),
-        bpm: z.number().min(40).max(300).optional().describe("Tempo for loops (half/double time also match)."),
-        bpm_min: z.number().min(40).max(300).optional(),
-        bpm_max: z.number().min(40).max(300).optional(),
-        key: z.string().optional().describe("Musical key, e.g. 'F minor', 'F#m', 'C major'. Relative major/minor also match."),
-        max_duration: z.number().positive().optional().describe("Max length in seconds (e.g. 2 for drum one-shots)."),
-        commercial_only: z.boolean().optional().describe("Only clips usable in a commercial release (default true)."),
-        free_only: z.boolean().optional().describe("Exclude paid clips and packs."),
-        downloadable_only: z.boolean().optional().describe("Only clips this server can fetch directly."),
-        strict: z.boolean().optional().describe("Drop clips whose BPM/key/form is unknown when you filter on them."),
+        styles: z.array(styleEnum).optional().describe("Preferred styles; ranked first (only filtered with strict=true, since sources rarely tag them)."),
+        orientation: orientationEnum.optional().describe("landscape (16:9), portrait (9:16, Reels/TikTok/Shorts) or square."),
+        min_resolution: resolutionParam,
+        min_duration: z.number().nonnegative().optional().describe("Minimum length in seconds."),
+        max_duration: z.number().positive().optional().describe("Maximum length in seconds."),
+        min_fps: z.number().min(1).max(480).optional().describe("Minimum frame rate (e.g. 50 or 60 for slow-motion headroom)."),
+        has_audio: z.boolean().optional().describe("Only clips with (true) or without (false) a sound track."),
+        commercial_only: z.boolean().optional().describe("Only clips usable in commercial videos (default true)."),
+        free_only: z.boolean().optional().describe("Exclude paid clips."),
+        downloadable_only: z.boolean().optional().describe("Only clips with direct file links."),
+        strict: z.boolean().optional().describe("Drop clips whose orientation/resolution/length/fps is unknown when you filter on them."),
         providers: z.array(z.string()).optional().describe(`Only search these sources. Available: ${providerIds.join(", ")}.`),
         limit: z.number().int().min(1).max(50).optional().describe("Max results (default 12)."),
         offset: z.number().int().min(0).optional().describe("Per-source offset for paging (e.g. 12 for page 2)."),
       },
       annotations: { readOnlyHint: true, openWorldHint: true },
     },
-    timed("search_samples", async (args) => {
+    timed("search_videos", async (args) => {
       try {
         const started = Date.now();
-        const key = args.key ? keyFromText(` ${args.key} `) ?? keyFromText(` key of ${args.key} `) : undefined;
-        if (args.key && !key) return fail(`Could not read the key "${args.key}". Use e.g. "F minor", "F#m" or "C major".`);
-        const bpm =
-          args.bpm !== undefined
-            ? { min: args.bpm, max: args.bpm }
-            : args.bpm_min !== undefined || args.bpm_max !== undefined
-              ? { min: args.bpm_min, max: args.bpm_max }
-              : undefined;
+        const duration = args.min_duration !== undefined || args.max_duration !== undefined ? { min: args.min_duration, max: args.max_duration } : undefined;
         const res = await service.search({
           query: args.query,
           categories: args.categories,
-          forms: args.forms,
-          bpm,
-          key: key ? (key.mode ? { tonic: key.tonic, mode: key.mode } : { tonic: key.tonic }) : undefined,
-          maxDurationSec: args.max_duration,
+          styles: args.styles,
+          orientations: args.orientation ? [args.orientation] : undefined,
+          minResolution: resolutionPx(args.min_resolution),
+          duration,
+          minFps: args.min_fps,
+          hasAudio: args.has_audio,
           commercialOnly: args.commercial_only ?? true,
           freeOnly: args.free_only,
           downloadableOnly: args.downloadable_only,
@@ -190,6 +204,8 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
           client: clientOf(),
           query: args.query,
           categories: res.filters.categories,
+          orientations: res.filters.orientations,
+          minResolution: res.filters.minResolution,
           freeOnly: args.free_only,
           downloadableOnly: args.downloadable_only,
           response: res,
@@ -198,7 +214,7 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
         return json({
           query: res.query,
           filters: res.filters,
-          results: res.results.map((s) => summarize(s, links(s)?.preview)),
+          results: res.results.map((c) => summarize(c)),
           sources: res.providers
             .filter((p) => p.status === "ok")
             .map((p) => `${p.provider}: ${p.count}${p.total !== undefined ? `/${p.total}` : ""}`)
@@ -210,7 +226,7 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
             .map((p) => ({ provider: p.provider, reason: p.error, url: p.searchUrl })),
           hint: res.results.length
             ? undefined
-            : "Nothing matched. Try fewer words, drop the bpm/key filters, set commercial_only=false for personal projects, or open also_search_on links.",
+            : "Nothing matched. Try fewer or more general words, drop the resolution/length filters, set commercial_only=false for personal projects, or open also_search_on links.",
         });
       } catch (e) {
         return fail(e);
@@ -219,57 +235,53 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
   );
 
   server.registerTool(
-    "get_sample",
+    "get_video",
     {
-      title: "Get clip details and files",
+      title: "Get video details, renditions and watch link",
       description:
-        "Full details for a clip id from search_samples (e.g. 'freesound:2086'): licence and credit line, files, preview, and the " +
-        "musical facts. With analyze=true the preview is analysed to fill in missing duration, BPM (loops), key, root note and loudness. " +
+        "Full details for a clip id from search_videos (e.g. 'nasa:KSC-20240525-MH-RKL01-0001-Rocket_Lab_PREFIRE_1_Launch_1080p-M6988'): licence and credit line, " +
+        "every rendition (size, container, codec), a `watch` URL that plays in a browser straight from the source, and the poster. " +
         (opts.allowLocalDownload
-          ? "Use download_sample to fetch it."
-          : "selection.downloadUrl fetches the best file (a redirect, so follow redirects)."),
+          ? "Use download_video to fetch it."
+          : "selection.downloadUrl redirects to the chosen file on the source's CDN (follow redirects); pass `height` to pick a rendition."),
       inputSchema: {
         id: z.string().describe("Clip id in the form '<provider>:<id>'."),
-        format: z.string().optional().describe("Preferred format: wav, aiff, flac, ogg, mp3, zip."),
-        analyze: z.boolean().optional().describe("Analyse the audio for BPM/key/duration/loudness (a few seconds)."),
+        height: z.number().int().min(144).max(4320).optional().describe("Wanted resolution (short side): picks the smallest file at or above it."),
+        format: z.string().optional().describe("Preferred container: mp4, webm, mov."),
       },
       annotations: { readOnlyHint: true, openWorldHint: true },
     },
-    timed("get_sample", async (args) => {
+    timed("get_video", async (args) => {
       try {
-        let clip = await service.getClip(args.id);
+        const clip = await service.getClip(args.id);
         analytics.clipView({ surface: "mcp", client: clientOf(), provider: args.id.split(":")[0] ?? "", found: Boolean(clip) });
         if (!clip) return fail(`Clip not found: ${args.id}`);
-        let analysisNote: string | undefined;
-        if (args.analyze) {
-          const res = await analyzeSample(clip, { http: service.http, deep: true });
-          clip = res.clip;
-          if (!res.analysis) analysisNote = res.warnings.length ? `Analysis unavailable: ${res.warnings.join("; ")}` : "Nothing to analyse.";
-        }
-        const selected = clip.files.length ? selectFiles(clip, { format: args.format }) : [];
+        const selected = clip.files.length ? selectFiles(clip, { height: args.height, format: args.format }) : [];
         const size = totalBytes(selected);
         const l = links(clip);
+        const q = new URLSearchParams();
+        if (args.height) q.set("height", String(args.height));
+        if (args.format) q.set("format", args.format);
+        const pick = selected[0];
         return json(
           compact({
-            ...summarize(clip, l?.preview),
+            ...summarize(clip),
             description: clip.description?.slice(0, 600),
-            files: clip.files.map(describeFile),
-            selection: selected.length
+            watch: pickPlayback(clip)?.url,
+            files: clip.files.filter((f) => f.role !== "poster").map(describeFile),
+            selection: pick
               ? compact({
-                  files: selected.map((f) => f.filename),
-                  totalSize: size !== undefined ? formatBytes(size) : undefined,
-                  previewOnly: isPreviewOnly(selected) || undefined,
-                  downloadUrl: l ? `${l.download}${args.format ? `?format=${encodeURIComponent(args.format)}` : ""}` : undefined,
-                  filename: selected.length === 1 ? clipPath(clip, selected[0]!).split("/").pop() : undefined,
+                  file: pick.filename,
+                  resolution: pick.width ? `${pick.width}×${pick.height}` : undefined,
+                  format: pick.format,
+                  size: size !== undefined ? formatBytes(size) : undefined,
+                  downloadUrl: l ? `${l.download}${q.size ? `?${q}` : ""}` : pick.url,
+                  directUrl: pick.url,
+                  filename: clipPath(clip, pick).split("/").pop(),
                 })
               : undefined,
-            note:
-              analysisNote ??
-              (clip.files.some((f) => f.requiresAuth) && !selected.some((f) => f.role === "original")
-                ? "The full-quality original needs an account on the source site; only the preview can be fetched here."
-                : clip.files.length
-                  ? undefined
-                  : "No direct files: get it from the clip's page on the source site."),
+            credits: l?.credits,
+            note: clip.files.length ? undefined : "No direct files: get it from the clip's page on the source site.",
             shareUrl: l?.share,
           }),
         );
@@ -281,49 +293,44 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
 
   if (opts.allowLocalDownload) {
     server.registerTool(
-      "download_sample",
+      "download_video",
       {
-        title: "Download a clip",
+        title: "Download a video clip",
         description:
-          "Download a clip to a local folder (default: ./clips). Single sounds are filed by category " +
-          "(clips/drums/kick/…wav); packs go to clips/packs/<name>/ and are extracted. ATTRIBUTION.md and credits.json in the " +
-          "folder are updated with every download so the credits for a release are always in one place. " +
-          "Only works for clips with downloadable=true.",
+          "Download a clip to a local folder (default: ./footage), filed by category (footage/nature/ocean/…mp4). " +
+          "ATTRIBUTION.md and credits.json in the folder are updated with every download so the credits for a project are always in one place. " +
+          "Pass `height` to get a smaller rendition instead of the master (e.g. 1080 for a 4K clip). Only works for clips with downloadable=true.",
         inputSchema: {
-          id: z.string().describe("Clip id from search_samples, e.g. 'freesound:2086'."),
-          dest_dir: z.string().optional().describe("Destination folder (the project's clips folder)."),
-          format: z.string().optional().describe("Preferred format: wav, aiff, flac, ogg, mp3, zip."),
-          extract: z.boolean().optional().describe("Extract .zip packs (default true)."),
-          all_files: z.boolean().optional().describe("Download every file (stems, MIDI, previews too)."),
+          id: z.string().describe("Clip id from search_videos."),
+          dest_dir: z.string().optional().describe("Destination folder (the project's footage folder)."),
+          height: z.number().int().min(144).max(4320).optional().describe("Wanted resolution (short side), e.g. 1080."),
+          format: z.string().optional().describe("Preferred container: mp4, webm, mov."),
         },
         annotations: { readOnlyHint: false, destructiveHint: false, openWorldHint: true },
       },
-      timed("download_sample", async (args) => {
+      timed("download_video", async (args) => {
         try {
           const clip = await service.getClip(args.id);
           if (!clip) return fail(`Clip not found: ${args.id}`);
-          const files = selectFiles(clip, { format: args.format, all: args.all_files });
+          const files = selectFiles(clip, { height: args.height, format: args.format });
           if (!files.length) {
             return fail(
               clip.files.length
-                ? `No downloadable files match format=${args.format ?? "auto"}. Files: ${JSON.stringify(clip.files.map(describeFile))}`
+                ? `No downloadable files match. Files: ${JSON.stringify(clip.files.map(describeFile))}`
                 : `${clip.title} has no direct downloads. Get it from ${clip.url}`,
             );
           }
-          const dir = resolve(args.dest_dir ?? opts.downloadDir ?? "clips");
-          const result = await downloadClip(service.http, clip, files, dir, { extract: args.extract ?? true });
+          const dir = resolve(args.dest_dir ?? opts.downloadDir ?? "footage");
+          const result = await downloadClip(service.http, clip, files, dir);
           await recordCredits(dir, [clip], sourceNames);
-          analytics.download({ surface: "mcp", client: clientOf(), provider: clip.provider, kind: "local" });
+          analytics.download({ surface: "mcp", client: clientOf(), provider: clip.provider, kind: "local", quality: qualityOf(files[0]) });
           return json(
             compact({
               id: clip.id,
               title: clip.title,
               directory: result.directory,
-              files: result.files.slice(0, 50).map((f) => f.path),
-              fileCount: result.files.length,
+              files: result.files.map((f) => f.path),
               downloaded: formatBytes(result.bytes),
-              previewOnly: result.previewOnly || undefined,
-              note: result.previewOnly ? "Only the preview could be downloaded; the original needs an account on the source site." : undefined,
               license: licenceSummary(clip),
               attribution: clip.attribution,
               credits: `${dir}/ATTRIBUTION.md`,
@@ -338,89 +345,95 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
   }
 
   server.registerTool(
-    "build_kit",
+    "build_sequence",
     {
-      title: "Build a drum kit",
+      title: "Build a b-roll sequence from a shot list",
       description:
-        "Pick a matching set of one-shots in one call: one clip per slot (default kick, snare, clap, closed hat, open hat, 808), " +
-        "steered by a style ('dark trap', 'lofi', 'techno', '90s boom bap') and optionally a key for pitched slots. Commercial-safe and " +
-        "directly downloadable by default. Returns each pick with alternatives, plus a Strudel snippet and a General MIDI/SFZ drum map" +
-        (opts.allowLocalDownload ? ". With download=true the kit is saved to dest_dir with the maps and credits." : " with download links."),
+        "Pick one clip per shot in one call. Give the shots as a list ('sunrise over a city skyline', 'coffee pour close-up (3s)', 'people walking in the rain') " +
+        "and the target format (orientation or width/height, fps, total length). Each pick matches the orientation, is at least 1080p where possible and long " +
+        "enough for its shot, is commercial-safe by default and has direct files; alternatives are listed per shot. Returns the plan plus an OpenTimelineIO " +
+        "timeline (opens in DaVinci Resolve, Kdenlive; OTIO adapters for Premiere/FCP), an ffmpeg script that renders the sequence, a Remotion clip list and the credits" +
+        (opts.allowLocalDownload ? ". With download=true the clips are saved and every file is written to dest_dir." : ". Media URLs point at the sources."),
       inputSchema: {
-        style: z.string().optional().describe("Genre or character, e.g. 'dark trap', 'lofi dusty', 'hard techno'."),
-        slots: z
-          .array(z.string())
-          .optional()
-          .describe("Slots to fill, e.g. ['kick','snare','hat.closed','hat.open','clap','808','crash','perc','riser','vocal chop']."),
-        bpm: z.number().min(40).max(300).optional(),
-        key: z.string().optional().describe("Key for pitched slots (808, bass), e.g. 'F minor'."),
+        shots: z
+          .union([z.array(z.string().min(2)).min(1).max(24), z.string().min(2)])
+          .describe("Shot descriptions, as a list or as text with one shot per line. '(3s)' at the end of a shot sets its length."),
+        orientation: orientationEnum.optional().describe("Target orientation (default landscape)."),
+        width: z.number().int().min(160).max(7680).optional(),
+        height: z.number().int().min(160).max(7680).optional(),
+        fps: z.number().min(1).max(120).optional().describe("Target frame rate (default 30)."),
+        total_duration: z.number().positive().max(3600).optional().describe("Total length in seconds, split over shots without their own length (default 4 s each)."),
         commercial_only: z.boolean().optional().describe("Default true."),
         providers: z.array(z.string()).optional(),
-        alternatives: z.number().int().min(0).max(5).optional().describe("Alternatives per slot (default 3)."),
+        alternatives: z.number().int().min(0).max(5).optional().describe("Alternatives per shot (default 3)."),
+        name: z.string().max(60).optional().describe("Name of the sequence (file names)."),
         ...(opts.allowLocalDownload
           ? {
-              download: z.boolean().optional().describe("Download the picks (default false)."),
-              dest_dir: z.string().optional().describe("Folder for the kit (default ./clips/kits/<style>)."),
+              download: z.boolean().optional().describe("Download the picks and write the exports (default false)."),
+              dest_dir: z.string().optional().describe("Folder for the sequence (default ./footage/sequences/<name>)."),
             }
           : {}),
       },
       annotations: { readOnlyHint: !opts.allowLocalDownload, openWorldHint: true },
     },
-    timed("build_kit", async (args: Record<string, unknown>) => {
+    timed("build_sequence", async (args: Record<string, unknown>) => {
       try {
-        const keyText = typeof args.key === "string" ? args.key : undefined;
-        const key = keyText ? keyFromText(` ${keyText} `) ?? keyFromText(` key of ${keyText} `) : undefined;
-        if (keyText && !key) return fail(`Could not read the key "${keyText}".`);
-        const plan: KitPlan = await planKit(service, {
-          slots: args.slots as string[] | undefined,
-          style: args.style as string | undefined,
-          bpm: args.bpm as number | undefined,
-          key: key?.mode ? { tonic: key.tonic, mode: key.mode } : undefined,
+        const raw = args.shots as string[] | string;
+        const shots = Array.isArray(raw) ? raw.flatMap((s) => parseShotList(s)) : parseShotList(raw);
+        if (!shots.length) return fail("Give at least one shot description.");
+        const plan = await planSequence(service, {
+          shots,
+          orientation: args.orientation as Orientation | undefined,
+          width: args.width as number | undefined,
+          height: args.height as number | undefined,
+          fps: args.fps as number | undefined,
+          totalDurationSec: args.total_duration as number | undefined,
           commercialOnly: (args.commercial_only as boolean | undefined) ?? true,
           providers: args.providers as string[] | undefined,
-          perSlot: (args.alternatives as number | undefined) ?? 3,
+          alternatives: (args.alternatives as number | undefined) ?? 3,
         });
-        const out = await kitExports(service, plan, {
-          download: opts.allowLocalDownload && Boolean(args.download),
-          destDir: (args.dest_dir as string | undefined) ?? opts.downloadDir,
-          publicBaseUrl: base,
-          sourceNames,
-        });
-        return json(out);
-      } catch (e) {
-        return fail(e);
-      }
-    }),
-  );
-
-  server.registerTool(
-    "find_similar",
-    {
-      title: "Find similar sounds",
-      description:
-        "Sounds that sound like a given clip, from any source (e.g. 'strudel:…', 'freesound:2086'). " +
-        (service.embeddings
-          ? "Compares CLAP audio embeddings of previews against every sound this server has indexed so far (the index grows as clips are searched and opened); " +
-            "Freesound ids fall back to Freesound's own similarity when the index has nothing. "
-          : "Uses Freesound's audio similarity, so it works for freesound:* ids (audio embeddings for other sources are off on this server). ") +
-        "Results carry the same fields as search_samples, with score = similarity (0..1). " +
-        LICENCE_RULES,
-      inputSchema: {
-        id: z.string().describe("A clip id from search_samples, e.g. 'freesound:2086'."),
-        limit: z.number().int().min(1).max(30).optional(),
-      },
-      annotations: { readOnlyHint: true, openWorldHint: true },
-    },
-    timed("find_similar", async (args) => {
-      try {
-        const res = await findSimilar(service, args.id, { limit: args.limit ?? 12 });
+        const name = (args.name as string | undefined) ?? "sequence";
+        let media: MediaPaths | undefined;
+        let written: string | undefined;
+        if (opts.allowLocalDownload && args.download) {
+          const dir = resolve((args.dest_dir as string | undefined) ?? join(opts.downloadDir ?? "footage", "sequences", name.replace(/[^\w.-]+/g, "-")));
+          media = await downloadSequence(service, plan, dir);
+          const files = sequenceExports(plan, { name, sourceNames, media });
+          await mkdir(dir, { recursive: true });
+          for (const [file, content] of Object.entries(files)) await writeFile(join(dir, file), content, { mode: file.endsWith(".sh") ? 0o755 : 0o644 });
+          written = dir;
+          analytics.download({ surface: "mcp", client: clientOf(), provider: "sequence", kind: "local" });
+        }
+        const exportsOut = written ? undefined : sequenceExports(plan, { name, sourceNames });
         return json(
           compact({
-            id: res.id,
-            method: res.method,
-            results: res.results.map((s) => summarize(s, links(s)?.preview)),
-            indexed: res.indexed,
-            note: res.note,
+            name,
+            frame: `${plan.width}×${plan.height} @ ${plan.fps} fps`,
+            duration: formatDuration(plan.durationSec),
+            commercialSafe: plan.commercialSafe,
+            shots: plan.shots.map((s) =>
+              compact({
+                shot: s.index,
+                description: s.description,
+                seconds: s.durationSec,
+                in: s.inSec || undefined,
+                pick: s.clip ? summarize(s.clip) : undefined,
+                file: s.file ? compact({ url: s.file.url, resolution: s.file.width ? `${s.file.width}×${s.file.height}` : undefined, format: s.file.format }) : undefined,
+                alternatives: s.alternatives.length ? s.alternatives.map((a) => ({ id: a.id, title: a.title, verdict: a.license?.verdict })) : undefined,
+                note: s.note,
+              }),
+            ),
+            directory: written,
+            files: written ? ["timeline.otio", "concat.sh", "remotion.json", "ATTRIBUTION.md", "credits.json", "footage/…"] : undefined,
+            exports: exportsOut
+              ? {
+                  "concat.sh": exportsOut["concat.sh"],
+                  "timeline.otio": "Save the JSON below as timeline.otio",
+                  timeline: JSON.parse(exportsOut["timeline.otio"]),
+                  remotion: JSON.parse(exportsOut["remotion.json"]),
+                  "ATTRIBUTION.md": exportsOut["ATTRIBUTION.md"],
+                }
+              : undefined,
           }),
         );
       } catch (e) {
@@ -430,85 +443,10 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
   );
 
   server.registerTool(
-    "extract_midi",
-    {
-      title: "Extract MIDI from a melodic loop",
-      description:
-        "Transcribe a melodic clip (bass line, lead, arpeggio, vocal line) to MIDI, one note at a time; chords and drums are not " +
-        "transcribed. Notes snap to 16ths when the tempo is known (the clip's BPM or the `bpm` you pass). " +
-        (opts.allowLocalDownload
-          ? "The .mid file is written to <dest_dir>/midi/ and the notes are returned."
-          : "Returns the notes; the .mid file is at `midiUrl`."),
-      inputSchema: {
-        id: z.string().describe("Clip id from search_samples, e.g. 'freesound:2086'."),
-        bpm: z.number().min(40).max(300).optional().describe("Tempo of the loop when you know it."),
-        quantize: z.union([z.literal(4), z.literal(8), z.literal(false)]).optional().describe("Steps per beat (4 = 16ths, default) or false."),
-        ...(opts.allowLocalDownload ? { dest_dir: z.string().optional().describe("Project clips folder (default ./clips).") } : {}),
-      },
-      annotations: { readOnlyHint: !opts.allowLocalDownload, openWorldHint: true },
-    },
-    timed("extract_midi", async (args: { id: string; bpm?: number; quantize?: 4 | 8 | false; dest_dir?: string }) => {
-      try {
-        const clip = await service.getClip(args.id);
-        if (!clip) return fail(`Clip not found: ${args.id}`);
-        if (opts.allowLocalDownload) {
-          return json(await writeMidiForSample(service, clip, args.dest_dir ?? opts.downloadDir ?? "clips", { bpm: args.bpm, quantize: args.quantize }));
-        }
-        const r = await midiForSample(service, clip, { bpm: args.bpm, quantize: args.quantize, signal: AbortSignal.timeout(60_000) });
-        const q = new URLSearchParams();
-        if (args.bpm) q.set("bpm", String(args.bpm));
-        if (args.quantize !== undefined) q.set("quantize", String(args.quantize));
-        return json({
-          ...midiSummary(r),
-          midiUrl: base ? `${base}/v1/clips/${encodeURIComponent(clip.id)}/midi${q.size ? `?${q}` : ""}` : undefined,
-        });
-      } catch (e) {
-        return fail(e);
-      }
-    }),
-  );
-
-  if (opts.allowLocalDownload) {
-    server.registerTool(
-      "export_instrument",
-      {
-        title: "Turn a multisample pack into a playable instrument",
-        description:
-          "Download a multisample pack (orchestral notes, piano, guitar, synth notes: results with form 'multisample' or unit " +
-          "'instrument'/'pack') and build an SFZ instrument and a Decent Sampler preset from it, with key ranges, velocity layers and " +
-          "round robins worked out from the file names, embedded root notes or pitch detection. Files go to " +
-          "<dest_dir>/instruments/<name>/ with the credits. Warns about missing notes.",
-        inputSchema: {
-          id: z.string().describe("Clip id of the pack, e.g. 'curated:iowa-mis-cymbals'."),
-          variant: z.string().optional().describe("Which articulation/instrument to use when the pack holds several (see the summary)."),
-          octave_offset: z.number().int().min(-2).max(2).optional().describe("Shift note names by octaves for packs where C3 = MIDI 60."),
-          dest_dir: z.string().optional().describe("Project clips folder (default ./clips)."),
-        },
-        annotations: { readOnlyHint: false, destructiveHint: false, openWorldHint: true },
-      },
-      timed("export_instrument", async (args) => {
-        try {
-          const clip = await service.getClip(args.id);
-          if (!clip) return fail(`Clip not found: ${args.id}`);
-          return json(
-            await instrumentForSample(service, clip, args.dest_dir ?? opts.downloadDir ?? "clips", {
-              variant: args.variant,
-              octaveOffset: args.octave_offset,
-              sourceNames,
-            }),
-          );
-        } catch (e) {
-          return fail(e);
-        }
-      }),
-    );
-  }
-
-  server.registerTool(
     "list_sources",
     {
-      title: "List clip sources",
-      description: "Every clip source with what it is best for, categories, pricing, licence and capabilities.",
+      title: "List video sources",
+      description: "Every video source with what it is best for, categories, pricing, licence and capabilities.",
       inputSchema: {},
       annotations: { readOnlyHint: true },
     },
@@ -534,45 +472,78 @@ export function createMcpServer(service: ClipService, opts: McpOptions): McpServ
   return server;
 }
 
-function licenceSummary(s: Clip) {
-  return s.license
-    ? compact({ name: s.license.name, id: s.license.id, verdict: s.license.verdict, meaning: VERDICT_LABELS[s.license.verdict], note: s.license.note, url: s.license.url })
+/** Download every pick of a planned sequence into <dir>/footage and return the local path per shot (relative to dir). */
+async function downloadSequence(service: ClipService, plan: SequencePlan, dir: string): Promise<MediaPaths> {
+  const media: MediaPaths = {};
+  const footage = join(dir, "footage");
+  for (const s of plan.shots) {
+    if (!s.clip || !s.file) continue;
+    const details = await service.getClip(s.clip.id);
+    const file = details?.files.find((f) => f.url === s.file!.url);
+    if (!details || !file) continue;
+    const res = await downloadClip(service.http, details, [file], footage);
+    const path = res.files[0]?.path;
+    if (path) media[s.index] = relative(dir, path);
+  }
+  return media;
+}
+
+function qualityOf(f: ClipFile | undefined): string | undefined {
+  if (!f?.width || !f.height) return undefined;
+  const s = Math.min(f.width, f.height);
+  return s >= 2094 ? "uhd" : s >= 1396 ? "qhd" : s >= 1047 ? "fhd" : s >= 698 ? "hd" : "sd";
+}
+
+function licenceSummary(c: Clip) {
+  return c.license
+    ? compact({
+        name: c.license.name,
+        id: c.license.id,
+        verdict: c.license.verdict,
+        meaning: VERDICT_LABELS[c.license.verdict],
+        editorial: c.license.editorial || undefined,
+        note: c.license.note,
+        url: c.license.url,
+      })
     : { verdict: "check-terms", meaning: VERDICT_LABELS["check-terms"] };
 }
 
-export function summarize(s: Clip, proxyPreview?: string) {
+export function summarize(c: Clip) {
   return compact({
-    id: s.id,
-    title: s.title,
-    category: s.category,
-    form: s.form,
-    unit: s.unit !== "clip" ? s.unit : undefined,
-    bpm: s.bpm,
-    key: s.key ? formatKey(s.key) : undefined,
-    duration: s.durationSec,
-    source: s.provider,
-    url: s.url,
-    preview: s.previewNeedsReferer ? proxyPreview : (s.previewUrl ?? undefined),
-    license: licenceSummary(s),
-    attribution: s.attribution,
-    author: s.author,
-    free: s.price ? s.price.free : undefined,
-    price: s.price?.amount !== undefined ? `${s.price.amount} ${s.price.currency ?? ""}`.trim() : undefined,
-    formats: s.formats?.length ? s.formats : undefined,
-    downloadable: s.downloadable,
-    needsAccount: s.requiresAccount || undefined,
-    tags: s.tags.length ? s.tags.slice(0, 8) : undefined,
-    score: s.score,
+    id: c.id,
+    title: c.title,
+    category: c.category,
+    styles: c.styles?.length ? c.styles : undefined,
+    orientation: c.orientation,
+    resolution: c.width && c.height ? `${c.width}×${c.height}${resolutionLabel(c.width, c.height) ? ` (${resolutionLabel(c.width, c.height)})` : ""}` : undefined,
+    fps: c.fps,
+    duration: c.durationSec,
+    audio: c.hasAudio,
+    year: c.year,
+    source: c.provider,
+    url: c.url,
+    poster: c.posterUrl,
+    preview: c.previewUrl,
+    license: licenceSummary(c),
+    attribution: c.attribution,
+    author: c.author,
+    free: c.price ? c.price.free : undefined,
+    formats: c.formats?.length ? c.formats : undefined,
+    downloadable: c.downloadable,
+    needsAccount: c.requiresAccount || undefined,
+    tags: c.tags.length ? c.tags.slice(0, 8) : undefined,
+    score: c.score,
   });
 }
 
 function describeFile(f: ClipFile) {
   return compact({
     filename: f.filename,
-    format: f.format,
     role: f.role,
-    sampleRate: f.sampleRate,
-    bitDepth: f.bitDepth,
+    format: f.format,
+    resolution: f.width && f.height ? `${f.width}×${f.height}` : undefined,
+    fps: f.fps,
+    codec: f.codec,
     size: f.sizeBytes !== undefined ? formatBytes(f.sizeBytes) : undefined,
     needsLogin: f.requiresAuth || undefined,
   });

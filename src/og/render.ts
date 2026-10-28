@@ -30,11 +30,10 @@ const C = {
   line: "rgba(255,255,255,0.14)",
 };
 
-const LOGO =
-  "data:image/svg+xml;base64," +
-  Buffer.from(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g" x1="3" y1="4" x2="29" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#8b6cf6"/><stop offset="1" stop-color="#4cc9e6"/></linearGradient></defs><rect width="32" height="32" rx="7" fill="#16141f"/><g fill="url(#g)"><rect x="3.35" y="13" width="2.8" height="6" rx="1.4"/><rect x="7.85" y="9" width="2.8" height="14" rx="1.4"/><rect x="12.35" y="5" width="2.8" height="22" rx="1.4"/><rect x="16.85" y="10" width="2.8" height="12" rx="1.4"/><rect x="21.35" y="7.5" width="2.8" height="17" rx="1.4"/><rect x="25.85" y="12" width="2.8" height="8" rx="1.4"/></g></svg>`,
-  ).toString("base64");
+/** A play button inside a frame, in the brand gradient. Same mark as web/public/favicon.svg. */
+export const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g" x1="3" y1="4" x2="29" y2="28" gradientUnits="userSpaceOnUse"><stop stop-color="#8b6cf6"/><stop offset="1" stop-color="#4cc9e6"/></linearGradient></defs><rect width="32" height="32" rx="7" fill="#16141f"/><rect x="4" y="7" width="24" height="18" rx="3.5" stroke="url(#g)" stroke-width="2.4"/><path d="M13.5 11.6v8.8a.8.8 0 0 0 1.2.7l7-4.4a.8.8 0 0 0 0-1.4l-7-4.4a.8.8 0 0 0-1.2.7Z" fill="url(#g)"/></svg>`;
+
+const LOGO = "data:image/svg+xml;base64," + Buffer.from(LOGO_SVG).toString("base64");
 
 type Style = Record<string, string | number>;
 interface Node {
@@ -163,54 +162,48 @@ export function pageCard(c: PageCard): Node {
   );
 }
 
-export interface SampleCard {
+export interface ClipCard {
   title: string;
-  /** Source site name, e.g. "Freesound". */
+  /** Source site name, e.g. "NASA Image and Video Library". */
   source: string;
-  /** Human category, e.g. "Kick". */
+  /** Human category, e.g. "Ocean & beach". */
   type: string;
   license?: string;
   /** Short licence verdict, e.g. "Commercial use OK". */
   verdict?: string;
   free?: boolean;
-  /** Musical facts, e.g. ["one-shot", "0.4 s", "F minor"]. */
+  /** Video facts, e.g. ["4K", "vertical", "0:12", "60 fps"]. */
   facts?: string[];
   author?: string;
-  /** Pack artwork as a data: URI (PNG or JPEG). Without it the card draws a waveform. */
+  /** Poster frame as a data: URI (PNG or JPEG). Without it the card draws a film frame. */
   image?: string;
   site: string;
 }
 
-/** Deterministic pseudo-waveform bars from the title, so every card looks different but stable. */
-function waveBars(seed: string, n = 28): number[] {
-  let h = 2166136261;
-  for (const ch of seed) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
-  const out: number[] = [];
-  for (let i = 0; i < n; i++) {
-    h = Math.imul(h ^ (h >>> 13), 1274126177);
-    const env = Math.sin((Math.PI * (i + 1)) / (n + 1));
-    out.push(0.2 + 0.8 * env * (0.45 + ((h >>> 0) % 1000) / 1800));
-  }
-  return out;
-}
+const PLAY =
+  "data:image/svg+xml;base64," +
+  Buffer.from(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><circle cx="48" cy="48" r="46" fill="rgba(15,14,22,0.72)" stroke="rgba(255,255,255,0.55)" stroke-width="2"/><path d="M39 31v34a2 2 0 0 0 3 1.7l27-17a2 2 0 0 0 0-3.4l-27-17A2 2 0 0 0 39 31Z" fill="#f4f4f6"/></svg>`,
+  ).toString("base64");
 
-export function sampleCard(c: SampleCard): Node {
+export function clipCard(c: ClipCard): Node {
   const title = clip(c.title, 70);
   const chips = [c.type, c.verdict ?? c.license, c.free === undefined ? undefined : c.free ? "Free" : "Paid"].filter(Boolean) as string[];
+  const W = 480;
+  const H = 270;
+  const frameBox = { width: W, height: H, flexShrink: 0, alignSelf: "center", borderRadius: 22, overflow: "hidden", border: `1px solid ${C.line}`, backgroundColor: "#0f0e16", position: "relative", alignItems: "center", justifyContent: "center" } as Style;
   const art = c.image
     ? div(
-        { width: 420, height: 420, flexShrink: 0, alignSelf: "center", borderRadius: 28, overflow: "hidden", border: `1px solid ${C.line}`, backgroundColor: "#0f0e16" },
-        h("img", { src: c.image, width: 420, height: 420, style: { objectFit: "cover" } }),
+        frameBox,
+        h("img", { src: c.image, width: W, height: H, style: { objectFit: "cover", position: "absolute", top: 0, left: 0 } }),
+        h("img", { src: PLAY, width: 88, height: 88 }),
       )
-    : div(
-        { width: 420, height: 420, flexShrink: 0, alignSelf: "center", flexDirection: "row", alignItems: "center", justifyContent: "space-between", padding: 24, borderRadius: 28, border: `1px solid ${C.line}`, backgroundColor: "#0f0e16" },
-        ...waveBars(c.title).map((v) => div({ width: 8, height: Math.round(360 * v), borderRadius: 4, backgroundColor: C.primary })),
-      );
+    : div({ ...frameBox, backgroundImage: `linear-gradient(135deg, ${C.primary}, ${C.cyan})` }, h("img", { src: PLAY, width: 88, height: 88 }));
   return frame(
     div(
       { flexDirection: "row", width: "100%", height: "100%" },
       div(
-        { flexDirection: "column", flexGrow: 1, flexShrink: 1, paddingRight: 48 },
+        { flexDirection: "column", flexGrow: 1, flexShrink: 1, paddingRight: 44 },
         brand(),
         div({ marginTop: 50, fontSize: 24, fontWeight: 500, color: C.primary, textTransform: "uppercase", letterSpacing: 2 }, `On ${clip(c.source, 30)}`),
         div({ marginTop: 12, fontSize: titleSize(title, false), fontWeight: 600, lineHeight: 1.05, letterSpacing: -1.5 }, title),
@@ -230,7 +223,9 @@ export async function renderPng(card: Node): Promise<Buffer> {
 }
 
 /** Thumbnails are re-encoded to this square JPEG (decodes WebP/AVIF/GIF, which resvg can't). */
-const THUMB_PX = 420;
+/** Poster frames are resized to 16:9 at twice the card size (crisp after rasterising). */
+const THUMB_W = 960;
+const THUMB_H = 540;
 
 /**
  * Fetch artwork as a data: URI for a clip card. Only public http(s)
@@ -257,7 +252,7 @@ export async function fetchImage(url: string, opts: { timeoutMs?: number; maxByt
       const body = Buffer.from(await res.arrayBuffer());
       if (body.length > max) return undefined;
       const jpeg = await sharp(body, { limitInputPixels: 40_000_000, animated: false })
-        .resize(THUMB_PX, THUMB_PX, { fit: "cover" })
+        .resize(THUMB_W, THUMB_H, { fit: "cover" })
         .flatten({ background: "#0f0e16" })
         .jpeg({ quality: 85 })
         .toBuffer();

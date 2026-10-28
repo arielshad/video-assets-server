@@ -5,31 +5,34 @@ import { createApp } from "./api/app.js";
 import type { UmamiOptions } from "./api/site.js";
 import { Gauge } from "prom-client";
 import { PrometheusAnalytics, noopAnalytics, type Analytics } from "./core/analytics.js";
-import { setAnalysisCacheBackend } from "./core/analyze.js";
+import { recordCredits } from "./core/credits-file.js";
+import { downloadClip, formatBytes, selectFiles } from "./core/download.js";
 import { createHttpClient } from "./core/http.js";
 import { NetworkClassifier, startNetworkData } from "./core/network.js";
-import { formatKey } from "./core/query.js";
+import { formatDuration } from "./core/query.js";
+import { parseShotList, planSequence, sequenceExports } from "./core/sequence.js";
 import { ClipService } from "./core/service.js";
-import { EmbeddingIndex, embeddingIndexFromEnv, indexCatalogue } from "./core/similar.js";
-import { storeFromEnv } from "./core/store.js";
 import { teeAnalytics } from "./core/stats.js";
 import { TELEMETRY_HOST, TELEMETRY_NOTICE, TELEMETRY_WEBSITE_ID, UmamiTelemetry, telemetryDisabled } from "./core/telemetry.js";
+import type { Orientation } from "./core/types.js";
+import { resolutionLabel } from "./core/vocab.js";
 import { VERSION, createMcpServer } from "./mcp/server.js";
 import { allProviders } from "./providers/index.js";
 
-const HELP = `video-assets-server — search & download music clips from many sources
+const HELP = `video-assets-server — search & download free stock video from many sources
 
 Usage:
-  video-assets-server serve   Start the HTTP API (+ MCP at /mcp)
-  video-assets-server mcp     Run the MCP server over stdio (for Claude Desktop/Code, Cursor, ...)
-  video-assets-server search <query> [--category drums.kick] [--form one-shot] [--bpm 140] [--key "F minor"]
-                       [--commercial] [--free] [--providers freesound,wikimediacommons] [--limit N]
+  video-assets-server serve      Start the HTTP API + website (+ MCP at /mcp)
+  video-assets-server mcp        Run the MCP server over stdio (for Claude Desktop/Code, Cursor, ...)
+  video-assets-server search <query> [--category nature.ocean] [--style timelapse] [--orientation portrait]
+                       [--min-resolution 1080] [--min-duration 5] [--max-duration 30] [--commercial] [--free]
+                       [--providers nasa,wikimediacommons] [--limit N]
+  video-assets-server download <id> [--height 1080] [--format mp4] [--dir ./footage]
+  video-assets-server sequence <shots.txt | "shot 1; shot 2; ..."> [--orientation portrait] [--size 1080x1920]
+                       [--fps 30] [--total 30] [--download] [--dir ./footage/sequences/<name>] [--name promo]
 
-  video-assets-server index   [--providers strudel,curated,kenney] [--limit N] [--query q]
-                       Embed previews of static catalogues into the CLAP index (needs
-                       VIDEO_SERVER_DATA_DIR; downloads the model on first use)
-
-  Queries understand BPM and key words: video-assets-server search "dark 808 in F minor"
+  Queries understand resolution, orientation, length and frame rate:
+    video-assets-server search "4k vertical drone ocean 10s"
 
 Environment:
   PORT                         HTTP port (default 8787)
@@ -37,14 +40,10 @@ Environment:
   VIDEO_SERVER_API_KEY         Require this key on /v1 and /mcp
   VIDEO_SERVER_PUBLIC_URL      Public base URL used in links
   VIDEO_SERVER_PROVIDERS       Comma list to enable a subset of providers
-  SOUND_DOWNLOAD_DIR           Default folder for MCP downloads (default ./clips)
-  VIDEO_SERVER_HTTP_DOWNLOADS  "true" to expose download_sample on the HTTP MCP endpoint
+  VIDEO_DOWNLOAD_DIR           Default folder for MCP downloads (default ./footage)
+  VIDEO_SERVER_HTTP_DOWNLOADS  "true" to expose download_video on the HTTP MCP endpoint (writes to the server's disk)
   VIDEO_SERVER_HTTP_MCP        "false" to turn off MCP at /mcp (website and /v1 API stay up)
-  FREESOUND_API_KEY            Enables Freesound search and previews (free key: freesound.org/apiv2/apply)
-  FREESOUND_OAUTH_TOKEN        Local use only: your own Freesound OAuth2 token, to download originals
-  OPENVERSE_CLIENT_ID, OPENVERSE_CLIENT_SECRET
-                               Optional Openverse app credentials for higher rate limits
-  FFMPEG_PATH, FFPROBE_PATH    ffmpeg binaries for audio analysis (default: from PATH)
+  VIDEO_SERVER_USER_AGENT      User-Agent for source requests (include contact details; Wikimedia requires it)
   VIDEO_SERVER_RATE_LIMIT      Requests per client per window on /v1 and /mcp (default 120, 0 = off)
   VIDEO_SERVER_RATE_LIMIT_WINDOW  Window in seconds (default 60)
   METRICS_PORT                 Serve Prometheus metrics on this port at /metrics and log
@@ -61,47 +60,19 @@ Environment:
                                VIDEO_SERVER_TELEMETRY_WEBSITE_ID; event counts only, see /privacy)
   DO_NOT_TRACK                 "1" always turns telemetry off
   UMAMI_WEBSITE_ID, UMAMI_HOST Send web page views to your own Umami instead
-
-Optional search quality (v2):
-  VIDEO_SERVER_DATA_DIR        Persistent store (SQLite): analysis cache, embeddings, indexed
-                               clips, downloaded models. Off (all in memory) when unset
-  VIDEO_SERVER_ANALYSIS_TTL_DAYS  How long stored analyses are reused (default 30)
-  VIDEO_SERVER_EMBEDDINGS      "1" turns on CLAP audio embeddings: find-similar for any clip,
-                               text-to-audio re-ranking, zero-shot category fallback. Needs
-                               @huggingface/transformers installed and ~400 MB more memory
-  VIDEO_SERVER_CLAP_MODEL      Default Xenova/clap-htsat-unfused (or Xenova/larger_clap_music_and_speech)
-  VIDEO_SERVER_MODEL_DIR       Model cache (default <VIDEO_SERVER_DATA_DIR>/models, else a temp dir)
-  VIDEO_SERVER_INDEX_PER_MINUTE  Background embeddings per minute (default 20, 0 = off)
-  VIDEO_SERVER_EMBEDDINGS_THREADS, VIDEO_SERVER_EMBEDDINGS_CONCURRENCY
-                               ONNX threads per job (default 2) and jobs at once (default 1)
 `;
 
-/**
- * The service, plus the optional persistent store (VIDEO_SERVER_DATA_DIR) and
- * CLAP embeddings (VIDEO_SERVER_EMBEDDINGS=1). `background: false` turns off
- * the background indexer (one-shot commands).
- */
-async function buildService(opts: { background?: boolean; forceEmbeddings?: boolean } = {}): Promise<ClipService> {
+function buildService(): ClipService {
   const only = process.env.VIDEO_SERVER_PROVIDERS?.split(",").map((s) => s.trim()).filter(Boolean);
   const providers = only?.length ? allProviders.filter((p) => only.includes(p.id)) : allProviders;
-  const http = createHttpClient();
-  const store = storeFromEnv();
-  if (store) setAnalysisCacheBackend(store);
-  const env = opts.forceEmbeddings ? { ...process.env, VIDEO_SERVER_EMBEDDINGS: "1" } : process.env;
-  let embeddings: EmbeddingIndex | undefined;
-  try {
-    embeddings = await embeddingIndexFromEnv({ http, store, env, perMinute: opts.background === false ? 0 : undefined });
-  } catch (e) {
-    console.error(`video-assets-server: embeddings disabled (${e instanceof Error ? e.message : String(e)})`);
-  }
-  return new ClipService({ providers, http, embeddings });
+  return new ClipService({ providers, http: createHttpClient() });
 }
 
 async function main(argv: string[]): Promise<void> {
   const [cmd, ...rest] = argv;
   switch (cmd) {
     case "serve": {
-      const service = await buildService();
+      const service = buildService();
       const port = Number(process.env.PORT ?? 8787);
       const hostname = process.env.HOST ?? "0.0.0.0";
       const telemetry = startTelemetry("http");
@@ -120,7 +91,7 @@ async function main(argv: string[]): Promise<void> {
         publicBaseUrl: process.env.VIDEO_SERVER_PUBLIC_URL,
         allowServerDownloads: process.env.VIDEO_SERVER_HTTP_DOWNLOADS === "true",
         httpMcpDisabled,
-        downloadDir: process.env.SOUND_DOWNLOAD_DIR,
+        downloadDir: process.env.VIDEO_DOWNLOAD_DIR,
         prometheus: process.env.PROMETHEUS_URL ? { url: process.env.PROMETHEUS_URL } : undefined,
         umami: umamiFromEnv() ?? (telemetry ? { websiteId: TELEMETRY_WEBSITE_ID, host: TELEMETRY_HOST, anonymous: true } : undefined),
       });
@@ -130,12 +101,12 @@ async function main(argv: string[]): Promise<void> {
       return;
     }
     case "mcp": {
-      const service = await buildService();
+      const service = buildService();
       const telemetry = startTelemetry("stdio");
       const server = createMcpServer(service, {
         analytics: telemetry,
         allowLocalDownload: true,
-        downloadDir: process.env.SOUND_DOWNLOAD_DIR,
+        downloadDir: process.env.VIDEO_DOWNLOAD_DIR,
         publicBaseUrl: process.env.VIDEO_SERVER_PUBLIC_URL,
       });
       await server.connect(new StdioServerTransport());
@@ -144,64 +115,93 @@ async function main(argv: string[]): Promise<void> {
       return;
     }
     case "search": {
-      const service = await buildService({ background: false });
+      const service = buildService();
       const flags = parseFlags(rest);
-      const bpm = flags.bpm ? flags.bpm.split("-").map(Number) : undefined;
-      const query = [flags.positional.join(" "), flags.key ? `in ${flags.key}` : ""].join(" ").trim();
+      const num = (v?: string) => (v ? Number(v) : undefined);
       const res = await service.search({
-        query,
+        query: flags.positional.join(" "),
         categories: flags.category?.split(",") as never,
-        forms: flags.form?.split(",") as never,
-        bpm: bpm ? { min: bpm[0], max: bpm[1] ?? bpm[0] } : undefined,
+        styles: flags.style?.split(",") as never,
+        orientations: flags.orientation?.split(",") as never,
+        minResolution: flags["min-resolution"] ? Number(flags["min-resolution"].replace(/^4k$/i, "2160").replace(/p$/i, "")) : undefined,
+        duration: flags["min-duration"] || flags["max-duration"] ? { min: num(flags["min-duration"]), max: num(flags["max-duration"]) } : undefined,
         commercialOnly: flags.commercial !== undefined,
         freeOnly: flags.free !== undefined,
         providers: flags.providers?.split(","),
         limit: flags.limit ? Number(flags.limit) : 15,
       });
       if (Object.keys(res.filters).length) console.log(`Filters: ${JSON.stringify(res.filters)}\n`);
-      for (const a of res.results) {
-        const facts = [a.category, a.form, a.bpm ? `${a.bpm}bpm` : "", a.key ? formatKey(a.key) : "", a.durationSec ? `${a.durationSec}s` : ""].filter(Boolean).join(" · ");
-        const verdict = a.license?.verdict ?? "?";
-        console.log(`${a.score?.toFixed(2)}  ${verdict.padEnd(15)} ${a.id}\n      ${a.title} (${facts})\n      ${a.previewUrl ?? a.url}`);
+      for (const c of res.results) {
+        const facts = [c.category, resolutionLabel(c.width, c.height), c.orientation, formatDuration(c.durationSec), c.fps ? `${c.fps}fps` : "", c.year ? String(c.year) : ""]
+          .filter(Boolean)
+          .join(" · ");
+        const verdict = `${c.license?.verdict ?? "?"}${c.license?.editorial ? "*" : ""}`;
+        console.log(`${c.score?.toFixed(2)}  ${verdict.padEnd(16)} ${c.id}\n      ${c.title} (${facts})\n      ${c.previewUrl ?? c.url}`);
       }
+      if (res.results.some((c) => c.license?.editorial)) console.log("\n  * editorial: people, insignia or brands without releases; not for ads.");
       console.log("\nSources:");
       for (const p of res.providers) {
         console.log(`  ${p.provider.padEnd(18)} ${p.status.padEnd(8)} ${p.count} ${p.error ?? ""} ${p.status === "link" ? p.searchUrl : ""}`);
       }
       return;
     }
-    case "index": {
-      if (!process.env.VIDEO_SERVER_DATA_DIR) {
-        console.error("Set VIDEO_SERVER_DATA_DIR so the index is kept (e.g. VIDEO_SERVER_DATA_DIR=./data).");
-        process.exitCode = 1;
-        return;
-      }
+    case "download": {
       const flags = parseFlags(rest);
-      const service = await buildService({ background: false, forceEmbeddings: true });
-      const index = service.embeddings;
-      if (!index) throw new Error("could not start the embedding index");
-      const providers = (flags.providers ?? "strudel,curated,kenney").split(",").map((s) => s.trim()).filter(Boolean);
-      const limit = Number(flags.limit ?? 500) || 500;
-      const started = Date.now();
-      let last = 0;
-      const reports = await indexCatalogue(service, index, {
-        providers,
-        limit,
-        query: flags.query,
-        concurrency: flags.concurrency ? Number(flags.concurrency) : undefined,
-        onProgress: (r) => {
-          if (Date.now() - last < 2000) return;
-          last = Date.now();
-          console.error(`  ${r.provider}: ${r.indexed} indexed, ${r.already} already, ${r.failed} failed of ${r.seen}`);
-        },
+      const id = flags.positional[0];
+      if (!id) throw new Error("Usage: video-assets-server download <id> [--height 1080] [--format mp4] [--dir ./footage]");
+      const service = buildService();
+      const clip = await service.getClip(id);
+      if (!clip) throw new Error(`Clip not found: ${id}`);
+      const files = selectFiles(clip, { height: flags.height ? Number(flags.height) : undefined, format: flags.format });
+      if (!files.length) throw new Error(`${clip.title} has no direct downloads. Get it from ${clip.url}`);
+      const dir = flags.dir ?? process.env.VIDEO_DOWNLOAD_DIR ?? "footage";
+      const res = await downloadClip(service.http, clip, files, dir);
+      await recordCredits(dir, [clip], Object.fromEntries(service.listProviders().map((p) => [p.id, p.name])));
+      for (const f of res.files) console.log(`${f.path} (${formatBytes(f.bytes)})`);
+      console.log(`Licence: ${clip.license?.name ?? "unknown"} (${clip.license?.verdict ?? "check-terms"})${clip.attribution ? `\nCredit: ${clip.attribution}` : ""}\nCredits: ${dir}/ATTRIBUTION.md`);
+      return;
+    }
+    case "sequence": {
+      const flags = parseFlags(rest);
+      const arg = flags.positional.join(" ");
+      if (!arg) throw new Error('Usage: video-assets-server sequence <shots.txt | "shot 1; shot 2"> [--orientation portrait] [--total 30]');
+      const { existsSync, readFileSync } = await import("node:fs");
+      const text = existsSync(arg) ? readFileSync(arg, "utf8") : arg;
+      const size = /^(\d+)x(\d+)$/.exec(flags.size ?? "");
+      const service = buildService();
+      const name = flags.name ?? "sequence";
+      const plan = await planSequence(service, {
+        shots: parseShotList(text),
+        orientation: flags.orientation as Orientation | undefined,
+        width: size ? Number(size[1]) : undefined,
+        height: size ? Number(size[2]) : undefined,
+        fps: flags.fps ? Number(flags.fps) : undefined,
+        totalDurationSec: flags.total ? Number(flags.total) : undefined,
+        commercialOnly: flags["non-commercial"] === undefined,
       });
-      for (const r of reports) {
-        const skipped = Object.entries(r.skipped).map(([why, n]) => `${n} ${why}`).join(", ");
-        console.log(`${r.provider.padEnd(14)} seen ${r.seen}, indexed ${r.indexed}, already ${r.already}, failed ${r.failed}${skipped ? `, skipped: ${skipped}` : ""}`);
-        for (const e of r.errors.slice(0, 5)) console.log(`    ${e}`);
+      const { join, relative, resolve } = await import("node:path");
+      const { mkdir, writeFile } = await import("node:fs/promises");
+      const dir = resolve(flags.dir ?? join(process.env.VIDEO_DOWNLOAD_DIR ?? "footage", "sequences", name.replace(/[^\w.-]+/g, "-")));
+      const sourceNames = Object.fromEntries(service.listProviders().map((p) => [p.id, p.name]));
+      const media: Record<number, string> = {};
+      if (flags.download !== undefined) {
+        for (const s of plan.shots) {
+          if (!s.clip || !s.file) continue;
+          const details = await service.getClip(s.clip.id);
+          const file = details?.files.find((f) => f.url === s.file!.url);
+          if (!details || !file) continue;
+          const r = await downloadClip(service.http, details, [file], join(dir, "footage"));
+          if (r.files[0]) media[s.index] = relative(dir, r.files[0].path);
+        }
       }
-      const st = index.status();
-      console.log(`\nIndex: ${st.vectors} vectors (${st.model}) in ${((Date.now() - started) / 1000).toFixed(1)}s`);
+      await mkdir(dir, { recursive: true });
+      for (const [file, content] of Object.entries(sequenceExports(plan, { name, sourceNames, media }))) {
+        await writeFile(join(dir, file), content, { mode: file.endsWith(".sh") ? 0o755 : 0o644 });
+      }
+      for (const s of plan.shots) {
+        console.log(`${String(s.index).padStart(2)}. ${s.description} (${s.durationSec}s)\n    ${s.clip ? `${s.clip.id}: ${s.clip.title}` : "— nothing found"}${s.note ? `\n    note: ${s.note}` : ""}`);
+      }
+      console.log(`\n${plan.width}x${plan.height} @ ${plan.fps}fps, ${formatDuration(plan.durationSec)}, commercial-safe: ${plan.commercialSafe}\nWrote ${dir}/{timeline.otio,concat.sh,remotion.json,ATTRIBUTION.md,credits.json}\nRender: sh ${join(dir, "concat.sh")}`);
       return;
     }
     default:
