@@ -6,7 +6,7 @@
       "space.launch"
     ]
   },
-  "updatedAt": "2026-10-28T17:02:14.297Z",
+  "updatedAt": "2026-10-29T11:09:47.915Z",
   "clips": [
     {
       "id": "nasa:KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
@@ -458,6 +458,370 @@
         "mp4"
       ],
       "year": 2019
+    },
+    {
+      "id": "wikimediacommons:Launch_Replays_of_the_Antares_230_Rocket_with_Cygnus.webm",
+      "provider": "wikimediacommons",
+      "title": "Launch Replays of the Antares 230 Rocket with Cygnus",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Launch_Replays_of_the_Antares_230_Rocket_with_Cygnus.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Launch_Replays_of_the_Antares_230_Rocket_with_Cygnus.webm/960px--Launch_Replays_of_the_Antares_230_Rocket_with_Cygnus.webm.jpg",
+      "author": "NASA TV",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 437.74,
+      "year": 2016
+    },
+    {
+      "id": "wikimediacommons:Launch_of_Antares_Rocket_on_Return_to_Flight_Cygnus.webm",
+      "provider": "wikimediacommons",
+      "title": "Launch of Antares Rocket on Return to Flight Cygnus",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Launch_of_Antares_Rocket_on_Return_to_Flight_Cygnus.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Launch_of_Antares_Rocket_on_Return_to_Flight_Cygnus.webm/960px--Launch_of_Antares_Rocket_on_Return_to_Flight_Cygnus.webm.jpg",
+      "author": "NASA TV",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 636.02,
+      "year": 2016
+    },
+    {
+      "id": "wikimediacommons:Launch_Replays_of_Antares_Rocket_with_Cygnus_OA-8_from_Wallops.webm",
+      "provider": "wikimediacommons",
+      "title": "Launch Replays of Antares Rocket with Cygnus OA-8 from Wallops",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Launch_Replays_of_Antares_Rocket_with_Cygnus_OA-8_from_Wallops.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Launch_Replays_of_Antares_Rocket_with_Cygnus_OA-8_from_Wallops.webm/960px--Launch_Replays_of_Antares_Rocket_with_Cygnus_OA-8_from_Wallops.webm.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 292.06,
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:SLS_Solid_Rocket_Boosters_Separate_After_Artemis_I_Launch_(ART-DL-1_2022_320_0650_SHARED_art001m1013200650).webm",
+      "provider": "wikimediacommons",
+      "title": "SLS Solid Rocket Boosters Separate After Artemis I Launch (ART-DL-1 2022 320 0650 SHARED art001m1013200650)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:SLS_Solid_Rocket_Boosters_Separate_After_Artemis_I_Launch_(ART-DL-1_2022_320_0650_SHARED_art001m1013200650).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/SLS_Solid_Rocket_Boosters_Separate_After_Artemis_I_Launch_%28ART-DL-1_2022_320_0650_SHARED_art001m1013200650%29.webm/960px--SLS_Solid_Rocket_Boosters_Separate_After_Artemis_I_Launch_%28ART-DL-1_2022_320_0650_SHARED_art001m1013200650%29.webm.jpg",
+      "author": "NASA Johnson Space Center",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 81.63,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Australia_Sounding_Rocket_Campaign_Press_Kit_(SVS14164_-_DEUCE_Launch).webm",
+      "provider": "wikimediacommons",
+      "title": "Australia Sounding Rocket Campaign Press Kit (SVS14164 - DEUCE Launch)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Australia_Sounding_Rocket_Campaign_Press_Kit_(SVS14164_-_DEUCE_Launch).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Australia_Sounding_Rocket_Campaign_Press_Kit_%28SVS14164_-_DEUCE_Launch%29.webm/960px--Australia_Sounding_Rocket_Campaign_Press_Kit_%28SVS14164_-_DEUCE_Launch%29.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio - NASA/WFF/Keith Koehler, KBR Wyle Services, LLC/Joy Ng, Telophase/Miles S. Hatfi",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 7.45,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:World's_First_Live_360_Rocket_Launch-_Orbital_ATK_CRS-7.webm",
+      "provider": "wikimediacommons",
+      "title": "World's First Live 360 Rocket Launch- Orbital ATK CRS-7",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:World%27s_First_Live_360_Rocket_Launch-_Orbital_ATK_CRS-7.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/World%27s_First_Live_360_Rocket_Launch-_Orbital_ATK_CRS-7.webm/960px--World%27s_First_Live_360_Rocket_Launch-_Orbital_ATK_CRS-7.webm.jpg",
+      "author": "National Aeronautics and Space Administration",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2048,
+      "durationSec": 788.92,
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:Riding_on_a_Sounding_Rocket.webm",
+      "provider": "wikimediacommons",
+      "title": "Riding on a Sounding Rocket",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Riding_on_a_Sounding_Rocket.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Riding_on_a_Sounding_Rocket.webm/960px--Riding_on_a_Sounding_Rocket.webm.jpg",
+      "author": "NASA/Goddard Space Flight Center",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 269.89,
+      "year": 2011
+    },
+    {
+      "id": "wikimediacommons:Launch_of_NOAA-M_aboard_Titan_II_rocket.webm",
+      "provider": "wikimediacommons",
+      "title": "Launch of NOAA-M aboard Titan II rocket",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Launch_of_NOAA-M_aboard_Titan_II_rocket.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Launch_of_NOAA-M_aboard_Titan_II_rocket.webm/500px--Launch_of_NOAA-M_aboard_Titan_II_rocket.webm.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 720,
+      "height": 576,
+      "durationSec": 49.68,
+      "year": 2002
+    },
+    {
+      "id": "wikimediacommons:The_Rockot_light_class_carrier_rocket_launch_(2019-12-27).webm",
+      "provider": "wikimediacommons",
+      "title": "The Rockot light class carrier rocket launch (2019-12-27)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Rockot_light_class_carrier_rocket_launch_(2019-12-27).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/The_Rockot_light_class_carrier_rocket_launch_%282019-12-27%29.webm/960px--The_Rockot_light_class_carrier_rocket_launch_%282019-12-27%29.webm.jpg",
+      "author": "Ministry of Defence of the Russian Federation",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 17.05,
+      "year": 2019
+    },
+    {
+      "id": "wikimediacommons:Heat_Signature_From_Artemis_II_Rocket_Launch_(CIRA_2026-04-01_-_labels).webm",
+      "provider": "wikimediacommons",
+      "title": "Heat Signature From Artemis II Rocket Launch (CIRA 2026-04-01 - labels)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Heat_Signature_From_Artemis_II_Rocket_Launch_(CIRA_2026-04-01_-_labels).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Heat_Signature_From_Artemis_II_Rocket_Launch_%28CIRA_2026-04-01_-_labels%29.webm/960px--Heat_Signature_From_Artemis_II_Rocket_Launch_%28CIRA_2026-04-01_-_labels%29.webm.jpg",
+      "author": "GOES imagery: CSU/CIRA & NOAA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 3.2,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Heat_Signature_From_Artemis_II_Rocket_Launch_(CIRA_2026-04-01_-_nolabels).webm",
+      "provider": "wikimediacommons",
+      "title": "Heat Signature From Artemis II Rocket Launch (CIRA 2026-04-01 - nolabels)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Heat_Signature_From_Artemis_II_Rocket_Launch_(CIRA_2026-04-01_-_nolabels).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Heat_Signature_From_Artemis_II_Rocket_Launch_%28CIRA_2026-04-01_-_nolabels%29.webm/960px--Heat_Signature_From_Artemis_II_Rocket_Launch_%28CIRA_2026-04-01_-_nolabels%29.webm.jpg",
+      "author": "GOES imagery: CSU/CIRA & NOAA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 3.2,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Expedition_50-51_Soyuz_Rocket_Moves_to_Launch_Pad.webm",
+      "provider": "wikimediacommons",
+      "title": "Expedition 50-51 Soyuz Rocket Moves to Launch Pad",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Expedition_50-51_Soyuz_Rocket_Moves_to_Launch_Pad.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Expedition_50-51_Soyuz_Rocket_Moves_to_Launch_Pad.webm/960px--Expedition_50-51_Soyuz_Rocket_Moves_to_Launch_Pad.webm.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 576.7,
+      "year": 2016
+    },
+    {
+      "id": "wikimediacommons:Heat_Signature_From_Artemis_II_Rocket_Launch_(CIRA_2026-04-01_-_nolabels_potrait).webm",
+      "provider": "wikimediacommons",
+      "title": "Heat Signature From Artemis II Rocket Launch (CIRA 2026-04-01 - nolabels potrait)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Heat_Signature_From_Artemis_II_Rocket_Launch_(CIRA_2026-04-01_-_nolabels_potrait).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Heat_Signature_From_Artemis_II_Rocket_Launch_%28CIRA_2026-04-01_-_nolabels_potrait%29.webm/960px--Heat_Signature_From_Artemis_II_Rocket_Launch_%28CIRA_2026-04-01_-_nolabels_potrait%29.webm.jpg",
+      "author": "GOES imagery: CSU/CIRA & NOAA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "durationSec": 3.2,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Artemis_II’s_SLS_rocket_lifted_off_from_Launch_Pad_39B_at_NASA’s_Kennedy_Space_Center_(Official_NASA_Recap).webm",
+      "provider": "wikimediacommons",
+      "title": "Artemis II’s SLS rocket lifted off from Launch Pad 39B at NASA’s Kennedy Space Center (Official NASA Recap)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Artemis_II%E2%80%99s_SLS_rocket_lifted_off_from_Launch_Pad_39B_at_NASA%E2%80%99s_Kennedy_Space_Center_(Official_NASA_Recap).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Artemis_II%E2%80%99s_SLS_rocket_lifted_off_from_Launch_Pad_39B_at_NASA%E2%80%99s_Kennedy_Space_Center_%28Official_NASA_Recap%29.webm/960px--Artemis_II%E2%80%99s_SLS_rocket_lifted_off_from_Launch_Pad_39B_at_NASA%E2%80%99s_Kennedy_Space_Center_%28Official_NASA_Recap%29.webm.jpg",
+      "author": "NASA Headquarters",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 125.7,
+      "year": 2026
     }
   ]
 }

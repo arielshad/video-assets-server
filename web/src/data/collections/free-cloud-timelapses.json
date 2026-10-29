@@ -9,7 +9,7 @@
       "timelapse"
     ]
   },
-  "updatedAt": "2026-10-28T17:01:28.562Z",
+  "updatedAt": "2026-10-29T11:09:14.225Z",
   "clips": [
     {
       "id": "internetarchive:CEP238",
@@ -325,6 +325,412 @@
       },
       "free": true,
       "durationSec": 30
+    },
+    {
+      "id": "wikimediacommons:Moving_clouds_timelapse_1152x694x10fps.ogv",
+      "provider": "wikimediacommons",
+      "title": "Moving clouds timelapse 1152x694x10fps",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Moving_clouds_timelapse_1152x694x10fps.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Moving_clouds_timelapse_1152x694x10fps.ogv/960px--Moving_clouds_timelapse_1152x694x10fps.ogv.jpg",
+      "author": "Stefan von Halenbach ( SvonHalenbach ( talk ))",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1152,
+      "height": 694,
+      "durationSec": 8.5,
+      "year": 2008
+    },
+    {
+      "id": "wikimediacommons:Timelapse_Clouds_Compilation.ogv",
+      "provider": "wikimediacommons",
+      "title": "Timelapse Clouds Compilation",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Timelapse_Clouds_Compilation.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Timelapse_Clouds_Compilation.ogv/500px--Timelapse_Clouds_Compilation.ogv.jpg",
+      "author": "brownpau",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 640,
+      "height": 480,
+      "durationSec": 271.87,
+      "year": 2006
+    },
+    {
+      "id": "wikimediacommons:Timelapse_clouds.ogv",
+      "provider": "wikimediacommons",
+      "title": "Timelapse clouds",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Timelapse_clouds.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Timelapse_clouds.ogv/330px--Timelapse_clouds.ogv.jpg",
+      "author": "Eclipse.sx",
+      "license": {
+        "id": "CC-BY-SA-3.0",
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 360,
+      "height": 240,
+      "durationSec": 16.08,
+      "year": 2007
+    },
+    {
+      "id": "wikimediacommons:Timelapse_of_Clouds_over_Bellevue_Canyon.webm",
+      "provider": "wikimediacommons",
+      "title": "Timelapse of Clouds over Bellevue Canyon",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Timelapse_of_Clouds_over_Bellevue_Canyon.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Timelapse_of_Clouds_over_Bellevue_Canyon.webm/960px--Timelapse_of_Clouds_over_Bellevue_Canyon.webm.jpg",
+      "author": "Extemporalist",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 30,
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:Wolken_Zeitraffer_-_Clouds_Timelapse_4K_HD_24FPS.webm",
+      "provider": "wikimediacommons",
+      "title": "Wolken Zeitraffer - Clouds Timelapse 4K HD 24FPS",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Wolken_Zeitraffer_-_Clouds_Timelapse_4K_HD_24FPS.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Wolken_Zeitraffer_-_Clouds_Timelapse_4K_HD_24FPS.webm/960px--Wolken_Zeitraffer_-_Clouds_Timelapse_4K_HD_24FPS.webm.jpg",
+      "author": "https://www.youtube.com/user/FreeSwissVideo",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 56.07,
+      "year": 2013
+    },
+    {
+      "id": "wikimediacommons:Wolken_Zeitraffer_-_Clouds_Timelapse_(Royalty_Free)_(Kostenlos)_1280x720p_60FPS.webm",
+      "provider": "wikimediacommons",
+      "title": "Wolken Zeitraffer - Clouds Timelapse (Royalty Free) (Kostenlos) 1280x720p 60FPS",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Wolken_Zeitraffer_-_Clouds_Timelapse_(Royalty_Free)_(Kostenlos)_1280x720p_60FPS.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Wolken_Zeitraffer_-_Clouds_Timelapse_%28Royalty_Free%29_%28Kostenlos%29_1280x720p_60FPS.webm/960px--Wolken_Zeitraffer_-_Clouds_Timelapse_%28Royalty_Free%29_%28Kostenlos%29_1280x720p_60FPS.webm.jpg",
+      "author": "https://www.youtube.com/user/FreeSwissVideo",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 192.52,
+      "year": 2012
+    },
+    {
+      "id": "wikimediacommons:2012-07-29_21-56-24-timelapse-clouds-belfort.ogv",
+      "provider": "wikimediacommons",
+      "title": "2012-07-29 21-56-24-timelapse-clouds-belfort",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:2012-07-29_21-56-24-timelapse-clouds-belfort.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/2012-07-29_21-56-24-timelapse-clouds-belfort.ogv/960px--2012-07-29_21-56-24-timelapse-clouds-belfort.ogv.jpg",
+      "author": "Thomas Bresson",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 57.2,
+      "year": 2012
+    },
+    {
+      "id": "wikimediacommons:Wolken_Zeitraffer_-_Clouds_Timelapse_(Royalty_Free)_(Kostenlos)_3840x2160p_30FPS.webm",
+      "provider": "wikimediacommons",
+      "title": "Wolken Zeitraffer - Clouds Timelapse (Royalty Free) (Kostenlos) 3840x2160p 30FPS",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Wolken_Zeitraffer_-_Clouds_Timelapse_(Royalty_Free)_(Kostenlos)_3840x2160p_30FPS.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Wolken_Zeitraffer_-_Clouds_Timelapse_%28Royalty_Free%29_%28Kostenlos%29_3840x2160p_30FPS.webm/960px--Wolken_Zeitraffer_-_Clouds_Timelapse_%28Royalty_Free%29_%28Kostenlos%29_3840x2160p_30FPS.webm.jpg",
+      "author": "https://www.youtube.com/user/FreeSwissVideo",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 11.81,
+      "year": 2012
+    },
+    {
+      "id": "wikimediacommons:Timelapse-clouds-belfort-47.651795-6.846655.ogv",
+      "provider": "wikimediacommons",
+      "title": "Timelapse-clouds-belfort-47.651795-6.846655",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Timelapse-clouds-belfort-47.651795-6.846655.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Timelapse-clouds-belfort-47.651795-6.846655.ogv/960px--Timelapse-clouds-belfort-47.651795-6.846655.ogv.jpg",
+      "author": "Thomas Bresson",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 79.28,
+      "year": 2011
+    },
+    {
+      "id": "wikimediacommons:Paris_Cloud_Timelapse_-_2020-07-20.ogv",
+      "provider": "wikimediacommons",
+      "title": "Paris Cloud Timelapse - 2020-07-20",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Paris_Cloud_Timelapse_-_2020-07-20.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Paris_Cloud_Timelapse_-_2020-07-20.ogv/960px--Paris_Cloud_Timelapse_-_2020-07-20.ogv.jpg",
+      "author": "CrlNvl",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 2728,
+      "height": 1816,
+      "durationSec": 12.32,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:2011-09-05_22-54-01-timelapse-clouds-evening.ogv",
+      "provider": "wikimediacommons",
+      "title": "2011-09-05 22-54-01-timelapse-clouds-evening",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:2011-09-05_22-54-01-timelapse-clouds-evening.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/2011-09-05_22-54-01-timelapse-clouds-evening.ogv/960px--2011-09-05_22-54-01-timelapse-clouds-evening.ogv.jpg",
+      "author": "Thomas Bresson",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 47.88,
+      "year": 2011
+    },
+    {
+      "id": "wikimediacommons:Wolken_Zeitraffer_2_-_Clouds_Timelapse_2_(Royalty_Free)_(Kostenlos)_1280x720p_60FPS.webm",
+      "provider": "wikimediacommons",
+      "title": "Wolken Zeitraffer 2 - Clouds Timelapse 2 (Royalty Free) (Kostenlos) 1280x720p 60FPS",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Wolken_Zeitraffer_2_-_Clouds_Timelapse_2_(Royalty_Free)_(Kostenlos)_1280x720p_60FPS.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Wolken_Zeitraffer_2_-_Clouds_Timelapse_2_%28Royalty_Free%29_%28Kostenlos%29_1280x720p_60FPS.webm/960px--Wolken_Zeitraffer_2_-_Clouds_Timelapse_2_%28Royalty_Free%29_%28Kostenlos%29_1280x720p_60FPS.webm.jpg",
+      "author": "https://www.youtube.com/user/FreeSwissVideo",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 94.98,
+      "year": 2012
+    },
+    {
+      "id": "wikimediacommons:2011-08-05_21-45-00-timelapse-clouds-seloncourt.ogv",
+      "provider": "wikimediacommons",
+      "title": "2011-08-05 21-45-00-timelapse-clouds-seloncourt",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:2011-08-05_21-45-00-timelapse-clouds-seloncourt.ogv",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/2011-08-05_21-45-00-timelapse-clouds-seloncourt.ogv/960px--2011-08-05_21-45-00-timelapse-clouds-seloncourt.ogv.jpg",
+      "author": "Thomas Bresson",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 17.48,
+      "year": 2011
+    },
+    {
+      "id": "wikimediacommons:Morgen_Wolken_Zeitraffer_-_Morning_Clouds_Timelapse_(Royalty_Free)_(Kostenlos)_4096x2304p_100FPS.webm",
+      "provider": "wikimediacommons",
+      "title": "Morgen Wolken Zeitraffer - Morning Clouds Timelapse (Royalty Free) (Kostenlos) 4096x2304p 100FPS",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Morgen_Wolken_Zeitraffer_-_Morning_Clouds_Timelapse_(Royalty_Free)_(Kostenlos)_4096x2304p_100FPS.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Morgen_Wolken_Zeitraffer_-_Morning_Clouds_Timelapse_%28Royalty_Free%29_%28Kostenlos%29_4096x2304p_100FPS.webm/960px--Morgen_Wolken_Zeitraffer_-_Morning_Clouds_Timelapse_%28Royalty_Free%29_%28Kostenlos%29_4096x2304p_100FPS.webm.jpg",
+      "author": "https://www.youtube.com/user/FreeSwissVideo",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 43.42,
+      "year": 2012
     }
   ]
 }

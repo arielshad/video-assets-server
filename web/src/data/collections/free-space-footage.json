@@ -6,7 +6,7 @@
       "space"
     ]
   },
-  "updatedAt": "2026-10-28T17:01:49.115Z",
+  "updatedAt": "2026-10-29T11:09:29.224Z",
   "clips": [
     {
       "id": "nasa:MSFC_10112024_Trades in Space",
@@ -497,7 +497,8 @@
       },
       "free": true,
       "formats": [
-        "mp4"
+        "mp4",
+        "mov"
       ],
       "orientation": "landscape",
       "width": 3840,
@@ -780,6 +781,84 @@
       "free": true,
       "durationSec": 162,
       "year": 1986
+    },
+    {
+      "id": "wikimediacommons:STS-132_Liftoff_Space_Shuttle_Atlantis.ogv",
+      "provider": "wikimediacommons",
+      "title": "STS-132 Liftoff Space Shuttle Atlantis",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:STS-132_Liftoff_Space_Shuttle_Atlantis.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/STS-132_Liftoff_Space_Shuttle_Atlantis.ogv/960px--STS-132_Liftoff_Space_Shuttle_Atlantis.ogv.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 157.06,
+      "year": 2010
+    },
+    {
+      "id": "wikimediacommons:JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm",
+      "provider": "wikimediacommons",
+      "title": "JPL-19981024-DS1-0001-AVC2002150 Deep Space 1 Launches",
+      "category": "space",
+      "url": "https://commons.wikimedia.org/wiki/File:JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm/960px--JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm.jpg",
+      "author": "NASA Jet Propulsion Laboratory",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 960,
+      "height": 720,
+      "durationSec": 111.95,
+      "year": 1998
+    },
+    {
+      "id": "wikimediacommons:JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm",
+      "provider": "wikimediacommons",
+      "title": "JPL-20010922-DS1f-0001-AVC2002150 Comet Borrelly Flyby Deep Space 1",
+      "category": "space",
+      "url": "https://commons.wikimedia.org/wiki/File:JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm/960px--JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm.jpg",
+      "author": "NASA Jet Propulsion Laboratory",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 960,
+      "height": 720,
+      "durationSec": 44.5,
+      "year": 2001
     }
   ]
 }

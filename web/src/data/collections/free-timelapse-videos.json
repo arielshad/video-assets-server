@@ -6,7 +6,7 @@
       "timelapse"
     ]
   },
-  "updatedAt": "2026-10-28T17:01:55.502Z",
+  "updatedAt": "2026-10-29T11:09:32.647Z",
   "clips": [
     {
       "id": "nasa:Artemis I Stacking Timelapse Compiled",
@@ -723,6 +723,238 @@
       },
       "free": true,
       "durationSec": 50
+    },
+    {
+      "id": "wikimediacommons:Google_Timelapse_-_Whitesville,_West_Virginia-R8HPaKD6Ci8.webm",
+      "provider": "wikimediacommons",
+      "title": "Google Timelapse - Whitesville, West Virginia-R8HPaKD6Ci8",
+      "category": "space.earth",
+      "url": "https://commons.wikimedia.org/wiki/File:Google_Timelapse_-_Whitesville,_West_Virginia-R8HPaKD6Ci8.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Google_Timelapse_-_Whitesville%2C_West_Virginia-R8HPaKD6Ci8.webm/960px--Google_Timelapse_-_Whitesville%2C_West_Virginia-R8HPaKD6Ci8.webm.jpg",
+      "author": "Google Earth",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 12.33,
+      "year": 2016
+    },
+    {
+      "id": "wikimediacommons:Staircase_Falls_timelapse_Yosemite_CA_2023-07-13_07-23-07_1.webm",
+      "provider": "wikimediacommons",
+      "title": "Staircase Falls timelapse Yosemite CA 2023-07-13 07-23-07 1",
+      "category": "nature.water",
+      "url": "https://commons.wikimedia.org/wiki/File:Staircase_Falls_timelapse_Yosemite_CA_2023-07-13_07-23-07_1.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Staircase_Falls_timelapse_Yosemite_CA_2023-07-13_07-23-07_1.webm/960px--Staircase_Falls_timelapse_Yosemite_CA_2023-07-13_07-23-07_1.webm.jpg",
+      "author": "G. Edward Johnson",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 30.13,
+      "year": 2023
+    },
+    {
+      "id": "wikimediacommons:Sunset_timelapse_Lake_Huron_looking_west_from_Port_Albert.webm",
+      "provider": "wikimediacommons",
+      "title": "Sunset timelapse Lake Huron looking west from Port Albert",
+      "category": "nature.water",
+      "url": "https://commons.wikimedia.org/wiki/File:Sunset_timelapse_Lake_Huron_looking_west_from_Port_Albert.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Sunset_timelapse_Lake_Huron_looking_west_from_Port_Albert.webm/960px--Sunset_timelapse_Lake_Huron_looking_west_from_Port_Albert.webm.jpg",
+      "author": "Ian Furst",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 28.38,
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:204_Írárfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm",
+      "provider": "wikimediacommons",
+      "title": "204 Írárfoss long exposure timelapse Video by Giles Laurent",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:204_%C3%8Dr%C3%A1rfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/204_%C3%8Dr%C3%A1rfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm/960px--204_%C3%8Dr%C3%A1rfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm.jpg",
+      "author": "Giles Laurent",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 7.01,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Aurora-Iceland_Northern_Lights_timelapse_2026-02-06.hd.webm",
+      "provider": "wikimediacommons",
+      "title": "Aurora-Iceland Northern Lights timelapse 2026-02-06.hd",
+      "category": "nature.sky",
+      "url": "https://commons.wikimedia.org/wiki/File:Aurora-Iceland_Northern_Lights_timelapse_2026-02-06.hd.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Aurora-Iceland_Northern_Lights_timelapse_2026-02-06.hd.webm/960px--Aurora-Iceland_Northern_Lights_timelapse_2026-02-06.hd.webm.jpg",
+      "author": "G. Edward Johnson",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 8.43,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:203_Seljalandsfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm",
+      "provider": "wikimediacommons",
+      "title": "203 Seljalandsfoss long exposure timelapse Video by Giles Laurent",
+      "category": "science",
+      "url": "https://commons.wikimedia.org/wiki/File:203_Seljalandsfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/203_Seljalandsfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm/960px--203_Seljalandsfoss_long_exposure_timelapse_Video_by_Giles_Laurent.webm.jpg",
+      "author": "Giles Laurent",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 5.17,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Timelapse_of_I-285_and_SR_400_interchange_construction_in_Georgia_USA.webm",
+      "provider": "wikimediacommons",
+      "title": "Timelapse of I-285 and SR 400 interchange construction in Georgia USA",
+      "category": "city.street",
+      "url": "https://commons.wikimedia.org/wiki/File:Timelapse_of_I-285_and_SR_400_interchange_construction_in_Georgia_USA.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Timelapse_of_I-285_and_SR_400_interchange_construction_in_Georgia_USA.webm/960px--Timelapse_of_I-285_and_SR_400_interchange_construction_in_Georgia_USA.webm.jpg",
+      "author": "Georgia DOT",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 20.81,
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:Farsi_Wikipedia_18th_birthday_timelapse_1.webm",
+      "provider": "wikimediacommons",
+      "title": "Farsi Wikipedia 18th birthday timelapse 1",
+      "category": "people",
+      "url": "https://commons.wikimedia.org/wiki/File:Farsi_Wikipedia_18th_birthday_timelapse_1.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Farsi_Wikipedia_18th_birthday_timelapse_1.webm/960px--Farsi_Wikipedia_18th_birthday_timelapse_1.webm.jpg",
+      "author": "Merhad77",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 20.05,
+      "year": 2022
     }
   ]
 }

@@ -6,7 +6,7 @@
       "archive.film"
     ]
   },
-  "updatedAt": "2026-10-28T17:02:06.836Z",
+  "updatedAt": "2026-10-29T11:09:41.671Z",
   "clips": [
     {
       "id": "nasa:GRC-2022-CM-0138",
@@ -351,6 +351,392 @@
       "free": true,
       "durationSec": 4320,
       "year": 1961
+    },
+    {
+      "id": "wikimediacommons:Box_of_infinities_–_A_Mandelbox_film_4K_UHD_20190907.webm",
+      "provider": "wikimediacommons",
+      "title": "Box of infinities – A Mandelbox film 4K UHD 20190907",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Box_of_infinities_%E2%80%93_A_Mandelbox_film_4K_UHD_20190907.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Box_of_infinities_%E2%80%93_A_Mandelbox_film_4K_UHD_20190907.webm/960px--Box_of_infinities_%E2%80%93_A_Mandelbox_film_4K_UHD_20190907.webm.jpg",
+      "author": "PantheraLeo1359531",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 1413.7,
+      "year": 2019
+    },
+    {
+      "id": "wikimediacommons:A_short_film_about_20_years_of_work_and_existence_of_Wikimedia_Serbia.webm",
+      "provider": "wikimediacommons",
+      "title": "A short film about 20 years of work and existence of Wikimedia Serbia",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:A_short_film_about_20_years_of_work_and_existence_of_Wikimedia_Serbia.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/A_short_film_about_20_years_of_work_and_existence_of_Wikimedia_Serbia.webm/960px--A_short_film_about_20_years_of_work_and_existence_of_Wikimedia_Serbia.webm.jpg",
+      "author": "Milena Milenkovic (VMRS)",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 331.32,
+      "year": 2025
+    },
+    {
+      "id": "wikimediacommons:How_Films_Are_Made(1917).webm",
+      "provider": "wikimediacommons",
+      "title": "How Films Are Made(1917)",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:How_Films_Are_Made(1917).webm",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/How_Films_Are_Made%281917%29.webm/330px--How_Films_Are_Made%281917%29.webm.jpg",
+      "author": "Dhundiraj Govind Phalke",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 480,
+      "height": 360,
+      "durationSec": 1236.65,
+      "year": 1917
+    },
+    {
+      "id": "wikimediacommons:Vimukthi_(2010_Kannada_film)_trailer.ogv",
+      "provider": "wikimediacommons",
+      "title": "Vimukthi (2010 Kannada film) trailer",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Vimukthi_(2010_Kannada_film)_trailer.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Vimukthi_%282010_Kannada_film%29_trailer.ogv/960px--Vimukthi_%282010_Kannada_film%29_trailer.ogv.jpg",
+      "author": "P Sheshadri",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 298.65,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Sangsot-_Khasi_Film.webm",
+      "provider": "wikimediacommons",
+      "title": "Sangsot- Khasi Film",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Sangsot-_Khasi_Film.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Sangsot-_Khasi_Film.webm/960px--Sangsot-_Khasi_Film.webm.jpg",
+      "author": "Mediora Mylliem Umlong",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 968,
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:Zugang_gestalten!_2021_-_Conversation_of_film_and_difficult_heritage,_Dr._Rhea_L._Combs_&_Ellen_Harrington.webm",
+      "provider": "wikimediacommons",
+      "title": "Zugang gestalten! 2021 - Conversation of film and difficult heritage, Dr. Rhea L. Combs & Ellen Harrington",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Zugang_gestalten!_2021_-_Conversation_of_film_and_difficult_heritage,_Dr._Rhea_L._Combs_%26_Ellen_Harrington.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Zugang_gestalten%21_2021_-_Conversation_of_film_and_difficult_heritage%2C_Dr._Rhea_L._Combs_%26_Ellen_Harrington.webm/960px--Zugang_gestalten%21_2021_-_Conversation_of_film_and_difficult_heritage%2C_Dr._Rhea_L._Combs_%26_Ellen_Harrington.webm.jpg",
+      "author": "Nicolas Scheckenhofer, BB Veranstaltu File:https://fivtech.com/https://fivtech.com/ngstechnik & Eventmanagement",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 4168.6,
+      "year": 2021
+    },
+    {
+      "id": "wikimediacommons:The_Son_of_the_Sheik_(1926_film).ogv",
+      "provider": "wikimediacommons",
+      "title": "The Son of the Sheik (1926 film)",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Son_of_the_Sheik_(1926_film).ogv",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/The_Son_of_the_Sheik_%281926_film%29.ogv/330px--The_Son_of_the_Sheik_%281926_film%29.ogv.jpg",
+      "author": "George Fitzmaurice (director, 1885–1940), Frances Marion (screenwriter, 1888–1973), Fred de Gresac (screenwriter, died 1",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 400,
+      "height": 300,
+      "durationSec": 4123.52,
+      "year": 1926
+    },
+    {
+      "id": "wikimediacommons:Midnight_Limited_(1940_film).ogg",
+      "provider": "wikimediacommons",
+      "title": "Midnight Limited (1940 film)",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Midnight_Limited_(1940_film).ogg",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Midnight_Limited_%281940_film%29.ogg/330px--Midnight_Limited_%281940_film%29.ogg.jpg",
+      "author": "Monogram Pictures, Howard Bretherton",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogg"
+      ],
+      "orientation": "landscape",
+      "width": 384,
+      "height": 288,
+      "durationSec": 3685.07,
+      "year": 1940
+    },
+    {
+      "id": "wikimediacommons:Limpopo_(1939_Soviet_animated_film,_DVD_source).webm",
+      "provider": "wikimediacommons",
+      "title": "Limpopo (1939 Soviet animated film, DVD source)",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Limpopo_(1939_Soviet_animated_film,_DVD_source).webm",
+      "downloadable": true,
+      "styles": [
+        "animation",
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Limpopo_%281939_Soviet_animated_film%2C_DVD_source%29.webm/500px--Limpopo_%281939_Soviet_animated_film%2C_DVD_source%29.webm.jpg",
+      "author": "Киностудия «Союзмультфильм»; режиссёры Леонид Амальрик и Владимир Полковников",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 768,
+      "height": 576,
+      "durationSec": 750.92,
+      "year": 1939
+    },
+    {
+      "id": "wikimediacommons:Choosing_a_Classroom_Film_1963.ogv",
+      "provider": "wikimediacommons",
+      "title": "Choosing a Classroom Film 1963",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Choosing_a_Classroom_Film_1963.ogv",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Choosing_a_Classroom_Film_1963.ogv/330px--Choosing_a_Classroom_Film_1963.ogv.jpg",
+      "author": "McGraw-Hill Films",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 400,
+      "height": 300,
+      "durationSec": 1178.48,
+      "year": 1963
+    },
+    {
+      "id": "wikimediacommons:Li'l_Abner_(1940_film).webm",
+      "provider": "wikimediacommons",
+      "title": "Li'l Abner (1940 film)",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Li%27l_Abner_(1940_film).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Li%27l_Abner_%281940_film%29.webm/250px--Li%27l_Abner_%281940_film%29.webm.jpg",
+      "author": "Albert S. Rogell",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 312,
+      "height": 240,
+      "durationSec": 4268.4,
+      "year": 1940
+    },
+    {
+      "id": "wikimediacommons:Chandidas_(1932_film).webm",
+      "provider": "wikimediacommons",
+      "title": "Chandidas (1932 film)",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Chandidas_(1932_film).webm",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Chandidas_%281932_film%29.webm/330px--Chandidas_%281932_film%29.webm.jpg",
+      "author": "Debaki Bose",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 480,
+      "height": 360,
+      "durationSec": 6737.9,
+      "year": 1932
+    },
+    {
+      "id": "wikimediacommons:A_Black_Sherlock_Holmes_-_Ebony_Film_Company_1918.webm",
+      "provider": "wikimediacommons",
+      "title": "A Black Sherlock Holmes - Ebony Film Company 1918",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:A_Black_Sherlock_Holmes_-_Ebony_Film_Company_1918.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/A_Black_Sherlock_Holmes_-_Ebony_Film_Company_1918.webm/960px--A_Black_Sherlock_Holmes_-_Ebony_Film_Company_1918.webm.jpg",
+      "author": "Ebony Film Corporation",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 960,
+      "height": 720,
+      "durationSec": 1278.04,
+      "year": 1918
+    },
+    {
+      "id": "wikimediacommons:Lenin_in_October_(film)_1937.webm",
+      "provider": "wikimediacommons",
+      "title": "Lenin in October (film) 1937",
+      "category": "archive.film",
+      "url": "https://commons.wikimedia.org/wiki/File:Lenin_in_October_(film)_1937.webm",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Lenin_in_October_%28film%29_1937.webm/500px--Lenin_in_October_%28film%29_1937.webm.jpg",
+      "author": "Director Mikhail Romm and film crew",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 704,
+      "height": 512,
+      "durationSec": 6294.93,
+      "year": 1937
     }
   ]
 }

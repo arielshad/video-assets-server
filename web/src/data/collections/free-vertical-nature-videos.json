@@ -9,7 +9,7 @@
       "portrait"
     ]
   },
-  "updatedAt": "2026-10-28T17:01:55.791Z",
+  "updatedAt": "2026-10-29T11:09:33.536Z",
   "clips": [
     {
       "id": "nasa:iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
@@ -660,6 +660,58 @@
       },
       "free": true,
       "durationSec": 30
+    },
+    {
+      "id": "wikimediacommons:Saber_Tooth_Coin_Display_at_Denver_Museum_of_Nature_and_Science.webm",
+      "provider": "wikimediacommons",
+      "title": "Saber Tooth Coin Display at Denver Museum of Nature and Science",
+      "category": "nature",
+      "url": "https://commons.wikimedia.org/wiki/File:Saber_Tooth_Coin_Display_at_Denver_Museum_of_Nature_and_Science.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Saber_Tooth_Coin_Display_at_Denver_Museum_of_Nature_and_Science.webm/960px--Saber_Tooth_Coin_Display_at_Denver_Museum_of_Nature_and_Science.webm.jpg",
+      "author": "Bigmacthealmanac",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "durationSec": 6.47,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Спів_птахів.webm",
+      "provider": "wikimediacommons",
+      "title": "Спів птахів",
+      "category": "nature.animals",
+      "url": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%BF%D1%96%D0%B2_%D0%BF%D1%82%D0%B0%D1%85%D1%96%D0%B2.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/%D0%A1%D0%BF%D1%96%D0%B2_%D0%BF%D1%82%D0%B0%D1%85%D1%96%D0%B2.webm/960px--%D0%A1%D0%BF%D1%96%D0%B2_%D0%BF%D1%82%D0%B0%D1%85%D1%96%D0%B2.webm.jpg",
+      "author": "Валерія Матвєєва",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "durationSec": 10.5,
+      "year": 2026
     }
   ]
 }

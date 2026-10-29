@@ -6,7 +6,7 @@
       "archive.newsreel"
     ]
   },
-  "updatedAt": "2026-10-28T17:02:09.705Z",
+  "updatedAt": "2026-10-29T11:09:42.987Z",
   "clips": [
     {
       "id": "internetarchive:tmp_05001",
@@ -336,6 +336,387 @@
       "free": true,
       "durationSec": 85,
       "year": 1950
+    },
+    {
+      "id": "wikimediacommons:Hanover_concentration_camp_newsreel_(1945).webm",
+      "provider": "wikimediacommons",
+      "title": "Hanover concentration camp newsreel (1945)",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Hanover_concentration_camp_newsreel_(1945).webm",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Hanover_concentration_camp_newsreel_%281945%29.webm/500px--Hanover_concentration_camp_newsreel_%281945%29.webm.jpg",
+      "author": "US Army Signal Corps",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 640,
+      "height": 480,
+      "durationSec": 141.37,
+      "year": 1945
+    },
+    {
+      "id": "wikimediacommons:Iran_Hostage_Crisis_Newsreel.ogv",
+      "provider": "wikimediacommons",
+      "title": "Iran Hostage Crisis Newsreel",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Iran_Hostage_Crisis_Newsreel.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Iran_Hostage_Crisis_Newsreel.ogv/250px--Iran_Hostage_Crisis_Newsreel.ogv.jpg",
+      "author": "U.S. Information Agency",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 320,
+      "height": 240,
+      "durationSec": 120.02,
+      "year": 1980
+    },
+    {
+      "id": "wikimediacommons:German_newsreel_in_Danish_about_the_bombing_of_the_French_School_in_Copenhague,_21_March_1945.webm",
+      "provider": "wikimediacommons",
+      "title": "German newsreel in Danish about the bombing of the French School in Copenhague, 21 March 1945",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:German_newsreel_in_Danish_about_the_bombing_of_the_French_School_in_Copenhague,_21_March_1945.webm",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/German_newsreel_in_Danish_about_the_bombing_of_the_French_School_in_Copenhague%2C_21_March_1945.webm/960px--German_newsreel_in_Danish_about_the_bombing_of_the_French_School_in_Copenhague%2C_21_March_1945.webm.jpg",
+      "author": "Unknown Unknown",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 174.99,
+      "year": 1945
+    },
+    {
+      "id": "wikimediacommons:1941_Kellett_Universal_Newsreel.webm",
+      "provider": "wikimediacommons",
+      "title": "1941 Kellett Universal Newsreel",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:1941_Kellett_Universal_Newsreel.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/1941_Kellett_Universal_Newsreel.webm/960px--1941_Kellett_Universal_Newsreel.webm.jpg",
+      "author": "Universal Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1440,
+      "height": 1080,
+      "durationSec": 50.24,
+      "year": 1941
+    },
+    {
+      "id": "wikimediacommons:Flying_Tiger_newsreels.ogv",
+      "provider": "wikimediacommons",
+      "title": "Flying Tiger newsreels",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Flying_Tiger_newsreels.ogv",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Flying_Tiger_newsreels.ogv/250px--Flying_Tiger_newsreels.ogv.jpg",
+      "author": "US Air Forces",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 320,
+      "height": 240,
+      "durationSec": 214.62,
+      "year": 1942
+    },
+    {
+      "id": "wikimediacommons:Bongo_Board_female_models_newsreel_1953.ogv",
+      "provider": "wikimediacommons",
+      "title": "Bongo Board female models newsreel 1953",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Bongo_Board_female_models_newsreel_1953.ogv",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Bongo_Board_female_models_newsreel_1953.ogv/330px--Bongo_Board_female_models_newsreel_1953.ogv.jpg",
+      "author": "Universal-International Newsreel",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 400,
+      "height": 300,
+      "durationSec": 32.93,
+      "year": 1953
+    },
+    {
+      "id": "wikimediacommons:John_Pershing_Newsreel_1940.ogv",
+      "provider": "wikimediacommons",
+      "title": "John Pershing Newsreel 1940",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:John_Pershing_Newsreel_1940.ogv",
+      "downloadable": true,
+      "styles": [
+        "black-white"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/John_Pershing_Newsreel_1940.ogv/330px--John_Pershing_Newsreel_1940.ogv.jpg",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 400,
+      "height": 300,
+      "durationSec": 84.18,
+      "year": 2009
+    },
+    {
+      "id": "wikimediacommons:Newsreel_-_Iran's_Bride,_1959.webm",
+      "provider": "wikimediacommons",
+      "title": "Newsreel - Iran's Bride, 1959",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Newsreel_-_Iran%27s_Bride,_1959.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Newsreel_-_Iran%27s_Bride%2C_1959.webm/330px--Newsreel_-_Iran%27s_Bride%2C_1959.webm.jpg",
+      "author": "The Iranian Fine Arts Institute, Film Department",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 480,
+      "height": 360,
+      "durationSec": 237708.7,
+      "year": 1959
+    },
+    {
+      "id": "wikimediacommons:Universal_Newsreel_-_Gen._Butler_bares_\"plot\"_by_fascists.ogv",
+      "provider": "wikimediacommons",
+      "title": "Universal Newsreel - Gen. Butler bares \"plot\" by fascists",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Universal_Newsreel_-_Gen._Butler_bares_%22plot%22_by_fascists.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Universal_Newsreel_-_Gen._Butler_bares_%22plot%22_by_fascists.ogv/500px--Universal_Newsreel_-_Gen._Butler_bares_%22plot%22_by_fascists.ogv.jpg",
+      "author": "Universal Studios",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 640,
+      "height": 480,
+      "durationSec": 85.89,
+      "year": 1935
+    },
+    {
+      "id": "wikimediacommons:Carmel_newsreel_I_167.webm",
+      "provider": "wikimediacommons",
+      "title": "Carmel newsreel I 167",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Carmel_newsreel_I_167.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Carmel_newsreel_I_167.webm/330px--Carmel_newsreel_I_167.webm.jpg",
+      "author": "IsraelArchives",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 450,
+      "height": 360,
+      "durationSec": 437.3,
+      "year": 2014
+    },
+    {
+      "id": "wikimediacommons:Canadian_Army_Newsreel,_No._03_(1943).webm",
+      "provider": "wikimediacommons",
+      "title": "Canadian Army Newsreel, No. 03 (1943)",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Canadian_Army_Newsreel,_No._03_(1943).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Canadian_Army_Newsreel%2C_No._03_%281943%29.webm/960px--Canadian_Army_Newsreel%2C_No._03_%281943%29.webm.jpg",
+      "author": "Canadian Army Film Unit",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1584,
+      "height": 1080,
+      "durationSec": 608.04,
+      "year": 1943
+    },
+    {
+      "id": "wikimediacommons:Carmel_newsreel_I_147.webm",
+      "provider": "wikimediacommons",
+      "title": "Carmel newsreel I 147",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Carmel_newsreel_I_147.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Carmel_newsreel_I_147.webm/330px--Carmel_newsreel_I_147.webm.jpg",
+      "author": "IsraelArchives",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 450,
+      "height": 360,
+      "durationSec": 410.42,
+      "year": 2014
+    },
+    {
+      "id": "wikimediacommons:Newsreel_footage_of_FDR_at_1932_DNC.webm",
+      "provider": "wikimediacommons",
+      "title": "Newsreel footage of FDR at 1932 DNC",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Newsreel_footage_of_FDR_at_1932_DNC.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Newsreel_footage_of_FDR_at_1932_DNC.webm/960px--Newsreel_footage_of_FDR_at_1932_DNC.webm.jpg",
+      "author": "FDRLibrary",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 220.72,
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:Carmel_newsreel_I_160.webm",
+      "provider": "wikimediacommons",
+      "title": "Carmel newsreel I 160",
+      "category": "archive.newsreel",
+      "url": "https://commons.wikimedia.org/wiki/File:Carmel_newsreel_I_160.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Carmel_newsreel_I_160.webm/330px--Carmel_newsreel_I_160.webm.jpg",
+      "author": "IsraelArchives",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 450,
+      "height": 360,
+      "durationSec": 338.18,
+      "year": 2014
     }
   ]
 }

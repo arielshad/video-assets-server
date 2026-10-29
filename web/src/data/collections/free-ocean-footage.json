@@ -6,7 +6,7 @@
       "nature.ocean"
     ]
   },
-  "updatedAt": "2026-10-28T17:01:38.822Z",
+  "updatedAt": "2026-10-29T11:09:23.342Z",
   "clips": [
     {
       "id": "nasasvs:5687",
@@ -493,6 +493,370 @@
         "mp4"
       ],
       "year": 2016
+    },
+    {
+      "id": "wikimediacommons:Ocean_in_Sommaroy.webm",
+      "provider": "wikimediacommons",
+      "title": "Ocean in Sommaroy",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_in_Sommaroy.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Ocean_in_Sommaroy.webm/960px--Ocean_in_Sommaroy.webm.jpg",
+      "author": "Netha Hussain",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 15.47,
+      "year": 2019
+    },
+    {
+      "id": "wikimediacommons:An_Ocean_in_Bloom_(SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3).webm",
+      "provider": "wikimediacommons",
+      "title": "An Ocean in Bloom (SVS14648 - NHQ 2024 0724 AnOceanInBloom PROMO3)",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:An_Ocean_in_Bloom_(SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/An_Ocean_in_Bloom_%28SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3%29.webm/960px--An_Ocean_in_Bloom_%28SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3%29.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio - eMITS/Emme Watkins, Will Rothermel, KBR Wyle Services, LLC/Ryan Fitzgibbons, Co",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 60.7,
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:An_Ocean_in_Bloom_(SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3_Vertical).webm",
+      "provider": "wikimediacommons",
+      "title": "An Ocean in Bloom (SVS14648 - NHQ 2024 0724 AnOceanInBloom PROMO3 Vertical)",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:An_Ocean_in_Bloom_(SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3_Vertical).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/An_Ocean_in_Bloom_%28SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3_Vertical%29.webm/960px--An_Ocean_in_Bloom_%28SVS14648_-_NHQ_2024_0724_AnOceanInBloom_PROMO3_Vertical%29.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio - eMITS/Emme Watkins, Will Rothermel, KBR Wyle Services, LLC/Ryan Fitzgibbons, Co",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "durationSec": 60.7,
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:Global_Southern_Ocean_Mooring_Recovery.webm",
+      "provider": "wikimediacommons",
+      "title": "Global Southern Ocean Mooring Recovery",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Global_Southern_Ocean_Mooring_Recovery.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Global_Southern_Ocean_Mooring_Recovery.webm/960px--Global_Southern_Ocean_Mooring_Recovery.webm.jpg",
+      "author": "Ocean Observatories Initiative",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 11.96,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:V6_-_What_is_an_ocean_observatory.webm",
+      "provider": "wikimediacommons",
+      "title": "V6 - What is an ocean observatory",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:V6_-_What_is_an_ocean_observatory.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/V6_-_What_is_an_ocean_observatory.webm/960px--V6_-_What_is_an_ocean_observatory.webm.jpg",
+      "author": "Ocean Observatories Initiative",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 73.01,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Global_Southern_Ocean_Mooring_Recovery_close_up.webm",
+      "provider": "wikimediacommons",
+      "title": "Global Southern Ocean Mooring Recovery close up",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Global_Southern_Ocean_Mooring_Recovery_close_up.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Global_Southern_Ocean_Mooring_Recovery_close_up.webm/960px--Global_Southern_Ocean_Mooring_Recovery_close_up.webm.jpg",
+      "author": "Ocean Observatories Initiative",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 12.04,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Ocean_flows_at_surface_and_2000_meters_below_sea_level.webm",
+      "provider": "wikimediacommons",
+      "title": "Ocean flows at surface and 2000 meters below sea level",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_flows_at_surface_and_2000_meters_below_sea_level.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Ocean_flows_at_surface_and_2000_meters_below_sea_level.webm/960px--Ocean_flows_at_surface_and_2000_meters_below_sea_level.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 74.03,
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:Ocean_surface_waves.ogv",
+      "provider": "wikimediacommons",
+      "title": "Ocean surface waves",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Ocean_surface_waves.ogv/960px--Ocean_surface_waves.ogv.jpg",
+      "author": "Mostafameraji",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 21.32,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Ocean_surface_waves_08.ogv",
+      "provider": "wikimediacommons",
+      "title": "Ocean surface waves 08",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_08.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Ocean_surface_waves_08.ogv/960px--Ocean_surface_waves_08.ogv.jpg",
+      "author": "Mostafameraji",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 16.16,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Ocean_surface_waves_09.ogv",
+      "provider": "wikimediacommons",
+      "title": "Ocean surface waves 09",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_09.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Ocean_surface_waves_09.ogv/960px--Ocean_surface_waves_09.ogv.jpg",
+      "author": "Mostafameraji",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 11.04,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:A_Window_into_the_Changing_Planet_Ocean_Observatories_Initiative.webm",
+      "provider": "wikimediacommons",
+      "title": "A Window into the Changing Planet Ocean Observatories Initiative",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:A_Window_into_the_Changing_Planet_Ocean_Observatories_Initiative.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/A_Window_into_the_Changing_Planet_Ocean_Observatories_Initiative.webm/960px--A_Window_into_the_Changing_Planet_Ocean_Observatories_Initiative.webm.jpg",
+      "author": "Ocean Observatories Initiative",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 557.17,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Ocean_surface_waves_04.ogv",
+      "provider": "wikimediacommons",
+      "title": "Ocean surface waves 04",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_04.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Ocean_surface_waves_04.ogv/960px--Ocean_surface_waves_04.ogv.jpg",
+      "author": "Mostafameraji",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 19,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Ocean_surface_waves_02.ogv",
+      "provider": "wikimediacommons",
+      "title": "Ocean surface waves 02",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_02.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Ocean_surface_waves_02.ogv/960px--Ocean_surface_waves_02.ogv.jpg",
+      "author": "Mostafameraji",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 20.96,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:Ocean_surface_waves_10.ogv",
+      "provider": "wikimediacommons",
+      "title": "Ocean surface waves 10",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Ocean_surface_waves_10.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Ocean_surface_waves_10.ogv/960px--Ocean_surface_waves_10.ogv.jpg",
+      "author": "Mostafameraji",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 18.28,
+      "year": 2020
     }
   ]
 }

@@ -6,7 +6,7 @@
       "city"
     ]
   },
-  "updatedAt": "2026-10-28T17:01:18.758Z",
+  "updatedAt": "2026-10-29T11:09:05.051Z",
   "clips": [
     {
       "id": "internetarchive:CityTheP1939",
@@ -134,6 +134,373 @@
       "free": true,
       "durationSec": 4712,
       "year": 1931
+    },
+    {
+      "id": "wikimediacommons:Snowstorm_in_Quebec_City.webm",
+      "provider": "wikimediacommons",
+      "title": "Snowstorm in Quebec City",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Snowstorm_in_Quebec_City.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Snowstorm_in_Quebec_City.webm/500px--Snowstorm_in_Quebec_City.webm.jpg",
+      "author": "Wilfredor",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 848,
+      "height": 480,
+      "durationSec": 113.32,
+      "year": 2021
+    },
+    {
+      "id": "wikimediacommons:City_of_Military_Glory_ceremony_4_May_2010.ogv",
+      "provider": "wikimediacommons",
+      "title": "City of Military Glory ceremony 4 May 2010",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:City_of_Military_Glory_ceremony_4_May_2010.ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/City_of_Military_Glory_ceremony_4_May_2010.ogv/120px--City_of_Military_Glory_ceremony_4_May_2010.ogv.jpg",
+      "author": "Presidential Press and Information Office",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 176,
+      "height": 144,
+      "durationSec": 960.02,
+      "year": 2010
+    },
+    {
+      "id": "wikimediacommons:City_Hall_video_vc.ogg",
+      "provider": "wikimediacommons",
+      "title": "City Hall video vc",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:City_Hall_video_vc.ogg",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/City_Hall_video_vc.ogg/960px--City_Hall_video_vc.ogg.jpg",
+      "author": "https://www.flickr.com/photos/mrlaugh/",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogg"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 25.26,
+      "year": 2025
+    },
+    {
+      "id": "wikimediacommons:UAV_Attack_on_Moscow-City_(30.07.2023)_Oko_2.webm",
+      "provider": "wikimediacommons",
+      "title": "UAV Attack on Moscow-City (30.07.2023) Oko 2",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:UAV_Attack_on_Moscow-City_(30.07.2023)_Oko_2.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/UAV_Attack_on_Moscow-City_%2830.07.2023%29_Oko_2.webm/960px--UAV_Attack_on_Moscow-City_%2830.07.2023%29_Oko_2.webm.jpg",
+      "author": "DonSimon",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 91.23,
+      "year": 2023
+    },
+    {
+      "id": "wikimediacommons:Time-lapse_of_New_York_City_skyline_July_2023.webm",
+      "provider": "wikimediacommons",
+      "title": "Time-lapse of New York City skyline July 2023",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Time-lapse_of_New_York_City_skyline_July_2023.webm",
+      "downloadable": true,
+      "styles": [
+        "timelapse"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Time-lapse_of_New_York_City_skyline_July_2023.webm/960px--Time-lapse_of_New_York_City_skyline_July_2023.webm.jpg",
+      "author": "David Schwab",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 1221.15,
+      "year": 2023
+    },
+    {
+      "id": "wikimediacommons:UAV_Attack_on_Moscow-City_(30.07.2023)_IQ-tower.webm",
+      "provider": "wikimediacommons",
+      "title": "UAV Attack on Moscow-City (30.07.2023) IQ-tower",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:UAV_Attack_on_Moscow-City_(30.07.2023)_IQ-tower.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/UAV_Attack_on_Moscow-City_%2830.07.2023%29_IQ-tower.webm/960px--UAV_Attack_on_Moscow-City_%2830.07.2023%29_IQ-tower.webm.jpg",
+      "author": "DonSimon",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 50.94,
+      "year": 2023
+    },
+    {
+      "id": "wikimediacommons:Traffic_situation_in_Mango_Avenue_Cebu_City.webm",
+      "provider": "wikimediacommons",
+      "title": "Traffic situation in Mango Avenue Cebu City",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Traffic_situation_in_Mango_Avenue_Cebu_City.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Traffic_situation_in_Mango_Avenue_Cebu_City.webm/960px--Traffic_situation_in_Mango_Avenue_Cebu_City.webm.jpg",
+      "author": "Lady01v",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 48.75,
+      "year": 2025
+    },
+    {
+      "id": "wikimediacommons:The_Big_City_(1928)_trailer.webm",
+      "provider": "wikimediacommons",
+      "title": "The Big City (1928) trailer",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Big_City_(1928)_trailer.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/The_Big_City_%281928%29_trailer.webm/960px--The_Big_City_%281928%29_trailer.webm.jpg",
+      "author": "Metro-Goldwyn-Mayer",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1420,
+      "height": 1066,
+      "durationSec": 47.23,
+      "year": 1928
+    },
+    {
+      "id": "wikimediacommons:Traverse_City_National_Cherry_Festival_Zipper_video.webm",
+      "provider": "wikimediacommons",
+      "title": "Traverse City National Cherry Festival Zipper video",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Traverse_City_National_Cherry_Festival_Zipper_video.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Traverse_City_National_Cherry_Festival_Zipper_video.webm/960px--Traverse_City_National_Cherry_Festival_Zipper_video.webm.jpg",
+      "author": "Jeremy Thompson",
+      "license": {
+        "id": "CC-BY-2.0",
+        "name": "CC BY 2.0",
+        "url": "https://creativecommons.org/licenses/by/2.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 35.77,
+      "year": 2021
+    },
+    {
+      "id": "wikimediacommons:Pontifical_Academy_of_Sciences,_Vatican_City_-_building_(video).ogv",
+      "provider": "wikimediacommons",
+      "title": "Pontifical Academy of Sciences, Vatican City - building (video)",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Pontifical_Academy_of_Sciences,_Vatican_City_-_building_(video).ogv",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Pontifical_Academy_of_Sciences%2C_Vatican_City_-_building_%28video%29.ogv/330px--Pontifical_Academy_of_Sciences%2C_Vatican_City_-_building_%28video%29.ogv.jpg",
+      "author": "Mattes",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "portrait",
+      "width": 480,
+      "height": 640,
+      "durationSec": 19.83,
+      "year": 2009
+    },
+    {
+      "id": "wikimediacommons:Women's_March_in_Cities_Across_the_US.webm",
+      "provider": "wikimediacommons",
+      "title": "Women's March in Cities Across the US",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Women%27s_March_in_Cities_Across_the_US.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Women%27s_March_in_Cities_Across_the_US.webm/960px--Women%27s_March_in_Cities_Across_the_US.webm.jpg",
+      "author": "Voice of America",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 104.61,
+      "year": 2017
+    },
+    {
+      "id": "wikimediacommons:Why_Many_Cities_Suck_(but_Dutch_Cities_Don't).webm",
+      "provider": "wikimediacommons",
+      "title": "Why Many Cities Suck (but Dutch Cities Don't)",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Why_Many_Cities_Suck_(but_Dutch_Cities_Don%27t).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Why_Many_Cities_Suck_%28but_Dutch_Cities_Don%27t%29.webm/960px--Why_Many_Cities_Suck_%28but_Dutch_Cities_Don%27t%29.webm.jpg",
+      "author": "Not Just Bikes",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 214.26,
+      "year": 2019
+    },
+    {
+      "id": "wikimediacommons:Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm",
+      "provider": "wikimediacommons",
+      "title": "Bicycle lane on a snowy street in Quebec City 01",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm/960px--Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm.jpg",
+      "author": "Own work",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1440,
+      "durationSec": 625.88,
+      "year": 2020
+    },
+    {
+      "id": "wikimediacommons:ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm",
+      "provider": "wikimediacommons",
+      "title": "ESE view from Buffalo City Hall NY 2025-09-08 19-51-27 1",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm/960px--ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm.jpg",
+      "author": "G. Edward Johnson",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 2160,
+      "height": 3840,
+      "durationSec": 11.1,
+      "year": 2025
     }
   ]
 }
