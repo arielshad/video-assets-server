@@ -1,15 +1,20 @@
-# Video Assets Server
+<p align="center">
+  <img src="docs/images/banner.svg" width="100%" alt="Video Assets Server: stock footage search for the whole free web. 850k+ clips, one search, a licence verdict on each. HTTP API, MCP server, web UI and CLI.">
+</p>
 
-**video-assets-server** searches free stock video sites at once (b-roll, nature, cities, aerials,
-space, science, backgrounds, overlays, green screen and archive films) and tells you, for every
-clip, whether you can use it commercially. Watch clips in the browser, download them, or let your
-AI assistant cut a b-roll sequence for your video.
+**Stock footage search for the whole free web.** video-assets-server searches NASA, Wikimedia Commons
+and the Internet Archive at once (850k+ videos, no API keys) and links you to 19 more stock sites:
+b-roll, nature, cities, aerials, space, science, backgrounds, overlays, green screen and archive
+films. Every clip tells you whether you can use it commercially. Watch clips in the browser, download
+them, or let your AI assistant cut a b-roll sequence for your video.
 
 > *"Find 4 vertical b-roll shots for a 20-second ocean-cleanup reel."*
 >
 > Your assistant calls `build_sequence`, gets one clip per shot with alternatives and their licences,
 > and writes an OpenTimelineIO timeline, an ffmpeg script, a Remotion composition and the credits
 > into your project.
+
+![An example 20-second vertical sequence of four shots, each with its source and verdict, exported as timeline.otio, concat.sh, remotion.json and ATTRIBUTION.md.](docs/images/sequence-output.svg)
 
 - **One query, many sources.** Results are merged, de-duplicated and ranked, with a status line for every site.
 - **Video-aware search.** "4k vertical drone ocean 10s" becomes resolution, orientation and duration
@@ -30,6 +35,7 @@ Live at **<https://video.shep.bot>** (free, non-commercial). Planning notes and 
 
 ## Contents
 
+- [How it works](#how-it-works)
 - [Sources](#sources)
 - [Licence verdicts](#licence-verdicts)
 - [Quick start](#quick-start)
@@ -45,7 +51,20 @@ Live at **<https://video.shep.bot>** (free, non-commercial). Planning notes and 
 
 ---
 
+## How it works
+
+![The query "4k vertical drone ocean 10s" becomes filters: at least 2160 on the short side, portrait, the text "drone ocean", the categories nature.ocean and aerial, and at least 10 seconds.](docs/images/video-search.svg)
+
+Every site is searched in parallel with its own timeout. A slow or blocked site never fails the
+search: it shows up in the per-site report, with a link to the same search on that site.
+
+![The server only handles search, details and plans, asking the sources' APIs for metadata. Playback and downloads go straight from the source's CDN; a download is a 302 redirect with the licence in x-license and x-attribution headers.](docs/images/no-proxy.svg)
+
+---
+
 ## Sources
+
+![Searched with no API keys: Internet Archive (416k), Wikimedia Commons (415k), NASA Scientific Visualization Studio (10k) and NASA Image and Video Library (7.7k+). Linked (19): your query opens on their own search.](docs/images/sources.svg)
 
 **Searched (4), no API keys needed**
 
@@ -67,6 +86,8 @@ terms forbid automated access.
 including the rejected ones and why.
 
 ## Licence verdicts
+
+![Five verdicts from "use it" to "keep it out of commercial work": yes, yes-with-credit, restricted, check-terms, no; plus a separate editorial flag.](docs/images/licence-verdicts.svg)
 
 | Verdict | Means | Examples |
 |---|---|---|
@@ -105,6 +126,8 @@ docker run -p 8787:8787 ghcr.io/arielshad/video-assets-server
 ```
 
 ## MCP: use it from an AI assistant
+
+![You ask for 4 vertical b-roll shots; the assistant calls build_sequence, checks one pick with get_video, then build_sequence with download=true, and replies that timeline.otio opens in Resolve.](docs/images/sequence-flow.svg)
 
 ```bash
 # Hosted
@@ -167,7 +190,7 @@ video-assets-server mcp
   `credits.json` in that folder.
 - `build_sequence` searches once per shot, splits the total length across the shots and falls back to
   other orientations (with a crop note) when a shot finds nothing. Its exports:
-  - `sequence.otio`: OpenTimelineIO JSON for DaVinci Resolve, Premiere (via adapters) or Kdenlive;
+  - `timeline.otio`: OpenTimelineIO JSON for DaVinci Resolve, Premiere (via adapters) or Kdenlive;
   - `concat.sh`: ffmpeg trims, scales/crops to the target size and joins the shots;
   - `remotion.json`: props for a Remotion `<Series>`;
   - `ATTRIBUTION.md` and `credits.json`.

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 446" width="960" height="446" role="img" aria-labelledby="t d">
+  <title id="t">Sources</title>
+  <desc id="d">Searched, with no API keys (4 sites, 850k+ videos counted): Internet Archive about 417k, Wikimedia Commons about 416k, NASA Scientific Visualization Studio about 11k, NASA Image and Video Library 7.7k+. Linked, your query opened on their own search (19 sites): Pexels, Pixabay, Coverr, Mixkit, Freepik videos (Videvo), Vecteezy, Videezy, Europeana, Library of Congress, ActionVFX, ProductionCrate, Shutterstock, Adobe Stock, Getty Images, iStock, Storyblocks, Pond5, Envato Elements, Artgrid.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h { fill: #f0eef7; font-size: 16.5px; font-weight: 700; }
+    .sub { fill: #a29eb6; font-size: 13.5px; }
+    .name { fill: #e2dff0; font-size: 14px; }
+    .what { fill: #8a85a3; font-size: 12.5px; }
+    .num { font-size: 11.5px; font-weight: 700; }
+    .count { font-size: 12.5px; font-weight: 700; }
+  </style>
+  <rect width="960" height="446" rx="18" fill="#13111c"/>
+  <rect x="0.5" y="0.5" width="959" height="445" rx="17.5" fill="none" stroke="#2a2638"/>
+
+  <!-- searched -->
+  <rect x="30" y="30" width="480" height="386" rx="14" fill="#34d399" fill-opacity="0.06" stroke="#34d399" stroke-opacity="0.5"/>
+  <rect x="50" y="50" width="34" height="34" rx="9" fill="#34d399" fill-opacity="0.18"/>
+  <path d="M60 58v18l14-9z" fill="#6ee7b7"/>
+  <text class="h" x="50" y="114">Searched, no API keys</text>
+  <text class="sub" x="50" y="134">plays in your browser, downloads straight from the source</text>
+  <rect x="402" y="52" width="88" height="22" rx="11" fill="#34d399" fill-opacity="0.18"/>
+  <text class="count" x="446" y="67.5" text-anchor="middle" fill="#6ee7b7">850k+ videos</text>
+  <g>
+    <text class="name" x="50" y="178">Internet Archive</text><text class="what" x="490" y="178" text-anchor="end">Prelinger films, newsreels</text>
+    <rect x="50" y="188" width="440" height="12" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+    <rect x="50" y="188" width="440" height="12" rx="6" fill="#34d399" fill-opacity="0.75"/>
+    <text class="num" x="482" y="198.5" text-anchor="end" fill="#0f2a20">416k</text>
+    <text class="name" x="50" y="240">Wikimedia Commons</text><text class="what" x="490" y="240" text-anchor="end">nature, cities, history</text>
+    <rect x="50" y="250" width="440" height="12" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+    <rect x="50" y="250" width="439" height="12" rx="6" fill="#34d399" fill-opacity="0.75"/>
+    <text class="num" x="481" y="260.5" text-anchor="end" fill="#0f2a20">415k</text>
+    <text class="name" x="50" y="302">NASA Scientific Visualization Studio</text><text class="what" x="490" y="302" text-anchor="end">data visualisations, up to 4K</text>
+    <rect x="50" y="312" width="440" height="12" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+    <rect x="50" y="312" width="11" height="12" rx="6" fill="#34d399" fill-opacity="0.75"/>
+    <text class="num" x="69" y="322.5" text-anchor="start" fill="#a7f3d0">10k</text>
+    <text class="name" x="50" y="364">NASA Image and Video Library</text><text class="what" x="490" y="364" text-anchor="end">launches, Earth from orbit</text>
+    <rect x="50" y="374" width="440" height="12" rx="6" fill="#ffffff" fill-opacity="0.04"/>
+    <rect x="50" y="374" width="8" height="12" rx="6" fill="#34d399" fill-opacity="0.75"/>
+    <text class="num" x="66" y="384.5" text-anchor="start" fill="#a7f3d0">7.7k+</text>
+  </g>
+
+  <!-- linked -->
+  <rect x="530" y="30" width="400" height="386" rx="14" fill="#f5b85b" fill-opacity="0.06" stroke="#f5b85b" stroke-opacity="0.5"/>
+  <rect x="550" y="50" width="34" height="34" rx="9" fill="#f5b85b" fill-opacity="0.18"/>
+  <path d="M565 59h-6v18h18v-6M569 59h8v8M576 60l-9 9" stroke="#fcd9a0" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="h" x="550" y="114">Linked</text>
+  <text class="sub" x="550" y="134">your query, opened on their own search</text>
+  <rect x="842" y="52" width="70" height="22" rx="11" fill="#f5b85b" fill-opacity="0.18"/>
+  <text class="count" x="877" y="67.5" text-anchor="middle" fill="#fcd9a0">19 sites</text>
+  <g>
+    <circle cx="556" cy="173.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="178">Pexels</text>
+    <circle cx="556" cy="198.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="203">Pixabay</text>
+    <circle cx="556" cy="223.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="228">Coverr</text>
+    <circle cx="556" cy="248.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="253">Mixkit</text>
+    <circle cx="556" cy="273.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="278">Freepik videos (Videvo)</text>
+    <circle cx="556" cy="298.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="303">Vecteezy</text>
+    <circle cx="556" cy="323.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="328">Videezy</text>
+    <circle cx="556" cy="348.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="353">Europeana</text>
+    <circle cx="556" cy="373.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="378">Library of Congress</text>
+    <circle cx="556" cy="398.5" r="3.5" fill="#f5b85b"/><text class="name" x="568" y="403">ActionVFX</text>
+    <circle cx="744" cy="173.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="178">ProductionCrate</text>
+    <circle cx="744" cy="198.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="203">Shutterstock</text>
+    <circle cx="744" cy="223.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="228">Adobe Stock</text>
+    <circle cx="744" cy="248.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="253">Getty Images</text>
+    <circle cx="744" cy="273.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="278">iStock</text>
+    <circle cx="744" cy="298.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="303">Storyblocks</text>
+    <circle cx="744" cy="323.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="328">Pond5</text>
+    <circle cx="744" cy="348.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="353">Envato Elements</text>
+    <circle cx="744" cy="373.5" r="3.5" fill="#f5b85b"/><text class="name" x="756" y="378">Artgrid</text>
+  </g>
+</svg>
