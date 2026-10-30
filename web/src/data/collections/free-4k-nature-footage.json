@@ -7,7 +7,7 @@
     ],
     "minResolution": 2160
   },
-  "updatedAt": "2026-10-29T11:09:02.739Z",
+  "updatedAt": "2026-10-30T11:03:44.940Z",
   "clips": [
     {
       "id": "nasa:iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
@@ -764,32 +764,6 @@
       "year": 2022
     },
     {
-      "id": "wikimediacommons:The_Story_of_America-_The_Laws_of_Nature_and_Nature's_God.webm",
-      "provider": "wikimediacommons",
-      "title": "The Story of America- The Laws of Nature and Nature's God",
-      "category": "nature",
-      "url": "https://commons.wikimedia.org/wiki/File:The_Story_of_America-_The_Laws_of_Nature_and_Nature%27s_God.webm",
-      "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/The_Story_of_America-_The_Laws_of_Nature_and_Nature%27s_God.webm/960px--The_Story_of_America-_The_Laws_of_Nature_and_Nature%27s_God.webm.jpg",
-      "author": "The White House",
-      "license": {
-        "id": "CC-PDM-1.0",
-        "name": "Public domain",
-        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
-        "verdict": "yes",
-        "attributionRequired": false
-      },
-      "free": true,
-      "formats": [
-        "webm"
-      ],
-      "orientation": "landscape",
-      "width": 3840,
-      "height": 2160,
-      "durationSec": 652.69,
-      "year": 2026
-    },
-    {
       "id": "wikimediacommons:Piran,_A_walk_from_nature_to_the_city_Tartini,_museum,_boats,..webm",
       "provider": "wikimediacommons",
       "title": "Piran, A walk from nature to the city Tartini, museum, boats,.",
@@ -865,6 +839,32 @@
       "width": 3840,
       "height": 2160,
       "durationSec": 42.08,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Birds_of_Sulaibikhat_Marine_Nature_Reserve_4.webm",
+      "provider": "wikimediacommons",
+      "title": "Birds of Sulaibikhat Marine Nature Reserve 4",
+      "category": "nature",
+      "url": "https://commons.wikimedia.org/wiki/File:Birds_of_Sulaibikhat_Marine_Nature_Reserve_4.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Birds_of_Sulaibikhat_Marine_Nature_Reserve_4.webm/960px--Birds_of_Sulaibikhat_Marine_Nature_Reserve_4.webm.jpg",
+      "author": "Di7ane",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 18.12,
       "year": 2026
     }
   ]

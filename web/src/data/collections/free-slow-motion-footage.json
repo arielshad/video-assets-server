@@ -6,7 +6,7 @@
       "slow-motion"
     ]
   },
-  "updatedAt": "2026-10-28T17:01:44.638Z",
+  "updatedAt": "2026-10-30T11:04:07.544Z",
   "clips": [
     {
       "id": "nasa:KSC-20260401-MH-FMX01-Artemis_II_Liftoff_Slowmotion_WON_M19827_1",
@@ -458,6 +458,412 @@
         "editorial": true
       },
       "free": true
+    },
+    {
+      "id": "wikimediacommons:Cat_lapping_water_off_ground_in_slow_motion.gk.webm",
+      "provider": "wikimediacommons",
+      "title": "Cat lapping water off ground in slow motion.gk",
+      "category": "nature.animals",
+      "url": "https://commons.wikimedia.org/wiki/File:Cat_lapping_water_off_ground_in_slow_motion.gk.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Cat_lapping_water_off_ground_in_slow_motion.gk.webm/960px--Cat_lapping_water_off_ground_in_slow_motion.gk.webm.jpg",
+      "author": "Grendelkhan",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 23.67,
+      "year": 2016
+    },
+    {
+      "id": "wikimediacommons:Ultra_slow-motion_video_of_glass_tea_cup_smashed_on_concrete_floor.webm",
+      "provider": "wikimediacommons",
+      "title": "Ultra slow-motion video of glass tea cup smashed on concrete floor",
+      "category": "food",
+      "url": "https://commons.wikimedia.org/wiki/File:Ultra_slow-motion_video_of_glass_tea_cup_smashed_on_concrete_floor.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Ultra_slow-motion_video_of_glass_tea_cup_smashed_on_concrete_floor.webm/960px--Ultra_slow-motion_video_of_glass_tea_cup_smashed_on_concrete_floor.webm.jpg",
+      "author": "Pittigrilli",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 40,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Flying_bee_on_flower_in_slow_motion_V.2.webm",
+      "provider": "wikimediacommons",
+      "title": "Flying bee on flower in slow motion V.2",
+      "category": "nature.animals",
+      "url": "https://commons.wikimedia.org/wiki/File:Flying_bee_on_flower_in_slow_motion_V.2.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Flying_bee_on_flower_in_slow_motion_V.2.webm/330px--Flying_bee_on_flower_in_slow_motion_V.2.webm.jpg",
+      "author": "Pittigrilli",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 480,
+      "height": 368,
+      "durationSec": 22,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Slow_motion_video_of_cup_falling_on_floor.webm",
+      "provider": "wikimediacommons",
+      "title": "Slow motion video of cup falling on floor",
+      "category": "other",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow_motion_video_of_cup_falling_on_floor.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Slow_motion_video_of_cup_falling_on_floor.webm/330px--Slow_motion_video_of_cup_falling_on_floor.webm.jpg",
+      "author": "Pittigrilli",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 480,
+      "height": 308,
+      "durationSec": 8.05,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Beach_volleyball_in_slow_motion,_8_times_slower.webm",
+      "provider": "wikimediacommons",
+      "title": "Beach volleyball in slow motion, 8 times slower",
+      "category": "nature.ocean",
+      "url": "https://commons.wikimedia.org/wiki/File:Beach_volleyball_in_slow_motion,_8_times_slower.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Beach_volleyball_in_slow_motion%2C_8_times_slower.webm/960px--Beach_volleyball_in_slow_motion%2C_8_times_slower.webm.jpg",
+      "author": "Alexis Jazz",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 72.15,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Slow-motion_video_of_flame_front_extending_along_a_channel.webm",
+      "provider": "wikimediacommons",
+      "title": "Slow-motion video of flame front extending along a channel",
+      "category": "overlay.particles",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow-motion_video_of_flame_front_extending_along_a_channel.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Slow-motion_video_of_flame_front_extending_along_a_channel.webm/330px--Slow-motion_video_of_flame_front_extending_along_a_channel.webm.jpg",
+      "author": "Pittigrilli",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 480,
+      "height": 260,
+      "durationSec": 15.21,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Slow_motion_drop.webm",
+      "provider": "wikimediacommons",
+      "title": "Slow motion drop",
+      "category": "nature.water",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow_motion_drop.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Slow_motion_drop.webm/960px--Slow_motion_drop.webm.jpg",
+      "author": "Christoph Pantel",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 38.33,
+      "year": 2010
+    },
+    {
+      "id": "wikimediacommons:Milking_Juvenile_Malayan_Pit_Viper_(Calloselasma_rhodostoma)_Venom,_in_Slow_Motion.webm",
+      "provider": "wikimediacommons",
+      "title": "Milking Juvenile Malayan Pit Viper (Calloselasma rhodostoma) Venom, in Slow Motion",
+      "category": "nature.animals",
+      "url": "https://commons.wikimedia.org/wiki/File:Milking_Juvenile_Malayan_Pit_Viper_(Calloselasma_rhodostoma)_Venom,_in_Slow_Motion.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Milking_Juvenile_Malayan_Pit_Viper_%28Calloselasma_rhodostoma%29_Venom%2C_in_Slow_Motion.webm/960px--Milking_Juvenile_Malayan_Pit_Viper_%28Calloselasma_rhodostoma%29_Venom%2C_in_Slow_Motion.webm.jpg",
+      "author": "Joaquim Baeta",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 549.45,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Milking_Adult_Malayan_Pit_Viper_(Calloselasma_rhodostoma)_Venom,_in_Slow_Motion.webm",
+      "provider": "wikimediacommons",
+      "title": "Milking Adult Malayan Pit Viper (Calloselasma rhodostoma) Venom, in Slow Motion",
+      "category": "nature.animals",
+      "url": "https://commons.wikimedia.org/wiki/File:Milking_Adult_Malayan_Pit_Viper_(Calloselasma_rhodostoma)_Venom,_in_Slow_Motion.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Milking_Adult_Malayan_Pit_Viper_%28Calloselasma_rhodostoma%29_Venom%2C_in_Slow_Motion.webm/960px--Milking_Adult_Malayan_Pit_Viper_%28Calloselasma_rhodostoma%29_Venom%2C_in_Slow_Motion.webm.jpg",
+      "author": "Joaquim Baeta",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 318.61,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water.webm",
+      "provider": "wikimediacommons",
+      "title": "Slow motion video of waterdrops falling into yellow coloured water",
+      "category": "nature.water",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water.webm/500px--Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water.webm.jpg",
+      "author": "Pittigrilli",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 720,
+      "height": 1280,
+      "durationSec": 27,
+      "year": 2022
+    },
+    {
+      "id": "wikimediacommons:Slow_Motion_Salad_-_Sony_FS700.webm",
+      "provider": "wikimediacommons",
+      "title": "Slow Motion Salad - Sony FS700",
+      "category": "food",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow_Motion_Salad_-_Sony_FS700.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Slow_Motion_Salad_-_Sony_FS700.webm/960px--Slow_Motion_Salad_-_Sony_FS700.webm.jpg",
+      "author": "Jack Whaley",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1280,
+      "height": 720,
+      "durationSec": 68.28,
+      "year": 2015
+    },
+    {
+      "id": "wikimediacommons:Slow_motion_whoopee_cushions.ogv",
+      "provider": "wikimediacommons",
+      "title": "Slow motion whoopee cushions",
+      "category": "city",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow_motion_whoopee_cushions.ogv",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Slow_motion_whoopee_cushions.ogv/960px--Slow_motion_whoopee_cushions.ogv.jpg",
+      "author": "Trevor Cox",
+      "license": {
+        "id": "CC-BY-3.0",
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "ogv"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 119.47,
+      "year": 2011
+    },
+    {
+      "id": "wikimediacommons:Slow_Motion_Hand-Feeding_a_Tufted_Titmouse.webm",
+      "provider": "wikimediacommons",
+      "title": "Slow Motion Hand-Feeding a Tufted Titmouse",
+      "category": "nature.animals",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow_Motion_Hand-Feeding_a_Tufted_Titmouse.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Slow_Motion_Hand-Feeding_a_Tufted_Titmouse.webm/960px--Slow_Motion_Hand-Feeding_a_Tufted_Titmouse.webm.jpg",
+      "author": "Equationsmith",
+      "license": {
+        "id": "CC0-1.0",
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 37.13,
+      "year": 2023
+    },
+    {
+      "id": "wikimediacommons:Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water_V2.webm",
+      "provider": "wikimediacommons",
+      "title": "Slow motion video of waterdrops falling into yellow coloured water V2",
+      "category": "nature.water",
+      "url": "https://commons.wikimedia.org/wiki/File:Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water_V2.webm",
+      "downloadable": true,
+      "styles": [
+        "slow-motion"
+      ],
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water_V2.webm/330px--Slow_motion_video_of_waterdrops_falling_into_yellow_coloured_water_V2.webm.jpg",
+      "author": "Pittigrilli",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 372,
+      "height": 480,
+      "durationSec": 40.32,
+      "year": 2022
     }
   ]
 }
