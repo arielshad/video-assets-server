@@ -6,7 +6,7 @@
       "portrait"
     ]
   },
-  "updatedAt": "2026-10-29T11:09:36.868Z",
+  "updatedAt": "2026-10-31T10:39:19.852Z",
   "clips": [
     {
       "id": "nasa:NASA TV Is Now- NASA+",
@@ -674,30 +674,30 @@
       "year": 2026
     },
     {
-      "id": "wikimediacommons:Louche_effect_grapefruit-cello.webm",
+      "id": "wikimediacommons:Urmia_lake_drought.webm",
       "provider": "wikimediacommons",
-      "title": "Louche effect grapefruit-cello",
-      "category": "overlay",
-      "url": "https://commons.wikimedia.org/wiki/File:Louche_effect_grapefruit-cello.webm",
+      "title": "Urmia lake drought",
+      "category": "nature.water",
+      "url": "https://commons.wikimedia.org/wiki/File:Urmia_lake_drought.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Louche_effect_grapefruit-cello.webm/960px--Louche_effect_grapefruit-cello.webm.jpg",
-      "author": "Grendelkhan",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Urmia_lake_drought.webm/500px--Urmia_lake_drought.webm.jpg",
+      "author": "Own work using NASA pictures",
       "license": {
-        "id": "CC-BY-SA-3.0",
-        "name": "CC BY-SA 3.0",
-        "url": "https://creativecommons.org/licenses/by-sa/3.0/",
-        "verdict": "restricted",
-        "attributionRequired": true
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
       },
       "free": true,
       "formats": [
         "webm"
       ],
       "orientation": "portrait",
-      "width": 1080,
-      "height": 1920,
-      "durationSec": 14.25,
-      "year": 2013
+      "width": 720,
+      "height": 1080,
+      "durationSec": 15.07,
+      "year": 1984
     }
   ]
 }
