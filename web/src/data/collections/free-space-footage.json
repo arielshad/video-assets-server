@@ -6,7 +6,7 @@
       "space"
     ]
   },
-  "updatedAt": "2026-10-29T11:09:29.224Z",
+  "updatedAt": "2026-11-01T11:32:28.360Z",
   "clips": [
     {
       "id": "nasa:MSFC_10112024_Trades in Space",
@@ -697,33 +697,6 @@
       "free": true
     },
     {
-      "id": "nasasvs:15102",
-      "provider": "nasasvs",
-      "title": "Dying Star Creates Brand New Planet",
-      "category": "space",
-      "url": "https://svs.gsfc.nasa.gov/15102/",
-      "downloadable": true,
-      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015102/15102_SECONDGEN_WIDE_PRINT.jpg",
-      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015102/15102_SECONDGEN_WIDE_MP4.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA's Scientific Visualization Studio (Paul Morris)",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "orientation": "landscape",
-      "width": 1920,
-      "height": 1080,
-      "year": 2026
-    },
-    {
       "id": "internetarchive:BattleBeyondTheSun",
       "provider": "internetarchive",
       "title": "Battle Beyond The Sun",
@@ -859,6 +832,32 @@
       "height": 720,
       "durationSec": 44.5,
       "year": 2001
+    },
+    {
+      "id": "wikimediacommons:Explore_NASA’s_70-Meter_Deep_Space_Communications_Dish_(360°_Video)_(dsn-communicate-3).webm",
+      "provider": "wikimediacommons",
+      "title": "Explore NASA’s 70-Meter Deep Space Communications Dish (360° Video) (dsn-communicate-3)",
+      "category": "space",
+      "url": "https://commons.wikimedia.org/wiki/File:Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_(360%C2%B0_Video)_(dsn-communicate-3).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_%28360%C2%B0_Video%29_%28dsn-communicate-3%29.webm/960px--Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_%28360%C2%B0_Video%29_%28dsn-communicate-3%29.webm.jpg",
+      "author": "NASA",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 7200,
+      "height": 3600,
+      "durationSec": 143.79,
+      "year": 2021
     }
   ]
 }
