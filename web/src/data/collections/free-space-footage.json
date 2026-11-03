@@ -6,7 +6,7 @@
       "space"
     ]
   },
-  "updatedAt": "2026-11-01T11:32:28.360Z",
+  "updatedAt": "2026-11-03T12:27:04.171Z",
   "clips": [
     {
       "id": "nasa:MSFC_10112024_Trades in Space",
@@ -626,33 +626,6 @@
       "year": 2019
     },
     {
-      "id": "nasasvs:15103",
-      "provider": "nasasvs",
-      "title": "Artemis II Saw Impact Flashes on the Far Side of the Moon",
-      "category": "space.planets",
-      "url": "https://svs.gsfc.nasa.gov/15103/",
-      "downloadable": true,
-      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015103/ImpactFlashes_Horizontal.01009_print.jpg",
-      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015103/ImpactFlashesVertical_1.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA's Scientific Visualization Studio (James Tralie)",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "orientation": "landscape",
-      "width": 3840,
-      "height": 2160,
-      "year": 2026
-    },
-    {
       "id": "nasa:SSC_2018 Stennis Space Center Overview V5",
       "provider": "nasa",
       "title": "Stennis Space Center 2018 Overview V5",
@@ -858,6 +831,32 @@
       "height": 3600,
       "durationSec": 143.79,
       "year": 2021
+    },
+    {
+      "id": "wikimediacommons:Built_to_Explore_NASA's_Deep-Space_Rocket,_the_Space_Launch_System_(740786151978).webm",
+      "provider": "wikimediacommons",
+      "title": "Built to Explore NASA's Deep-Space Rocket, the Space Launch System (740786151978)",
+      "category": "space.launch",
+      "url": "https://commons.wikimedia.org/wiki/File:Built_to_Explore_NASA%27s_Deep-Space_Rocket,_the_Space_Launch_System_(740786151978).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Built_to_Explore_NASA%27s_Deep-Space_Rocket%2C_the_Space_Launch_System_%28740786151978%29.webm/960px--Built_to_Explore_NASA%27s_Deep-Space_Rocket%2C_the_Space_Launch_System_%28740786151978%29.webm.jpg",
+      "author": "Uploaded by Patricia Moore",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 37.51,
+      "year": 2020
     }
   ]
 }
