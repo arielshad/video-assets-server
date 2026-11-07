@@ -147,5 +147,20 @@
       "nasasvs": 10606,
       "nasa": 7747
     }
+  },
+  {
+    "date": "2026-11-07",
+    "listings": 854463,
+    "free": 854463,
+    "byCategory": {
+      "archive": 10461,
+      "space": 10606
+    },
+    "sources": {
+      "internetarchive": 419231,
+      "wikimediacommons": 416877,
+      "nasasvs": 10606,
+      "nasa": 7749
+    }
   }
 ]
