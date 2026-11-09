@@ -6,7 +6,7 @@
       "portrait"
     ]
   },
-  "updatedAt": "2026-11-05T12:49:12.941Z",
+  "updatedAt": "2026-11-09T13:27:04.075Z",
   "clips": [
     {
       "id": "nasa:NASA TV Is Now- NASA+",
@@ -672,32 +672,6 @@
         "mp4"
       ],
       "year": 2026
-    },
-    {
-      "id": "wikimediacommons:Urmia_lake_drought.webm",
-      "provider": "wikimediacommons",
-      "title": "Urmia lake drought",
-      "category": "nature.water",
-      "url": "https://commons.wikimedia.org/wiki/File:Urmia_lake_drought.webm",
-      "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Urmia_lake_drought.webm/500px--Urmia_lake_drought.webm.jpg",
-      "author": "Own work using NASA pictures",
-      "license": {
-        "id": "CC-PDM-1.0",
-        "name": "Public domain",
-        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
-        "verdict": "yes",
-        "attributionRequired": false
-      },
-      "free": true,
-      "formats": [
-        "webm"
-      ],
-      "orientation": "portrait",
-      "width": 720,
-      "height": 1080,
-      "durationSec": 15.07,
-      "year": 1984
     }
   ]
 }
