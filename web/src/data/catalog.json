@@ -1,19 +1,19 @@
 {
-  "countedAt": "2026-11-09T13:26:14.570Z",
+  "countedAt": "2026-11-10T13:04:24.448Z",
   "totals": {
     "listings": {
-      "count": 855156,
+      "count": 855538,
       "atLeast": true
     },
     "free": {
-      "count": 855156,
+      "count": 855538,
       "atLeast": true
     },
     "cc0": {
       "count": 0
     },
     "directDownload": {
-      "count": 855156,
+      "count": 855538,
       "atLeast": true
     },
     "addedLast30Days": 0,
@@ -29,8 +29,8 @@
     }
   },
   "byLicense": {
-    "Public domain / CC0": 313171,
-    "CC BY / BY-SA": 106561
+    "Public domain / CC0": 313419,
+    "CC BY / BY-SA": 106574
   },
   "sources": [
     {
@@ -39,20 +39,20 @@
       "homepage": "https://archive.org",
       "pricing": "free",
       "supportsDownload": true,
-      "total": 419732,
-      "free": 419732,
+      "total": 419993,
+      "free": 419993,
       "byCategory": {
         "archive": 10461
       },
       "byLicense": {
-        "Public domain / CC0": 313171,
-        "CC BY / BY-SA": 106561
+        "Public domain / CC0": 313419,
+        "CC BY / BY-SA": 106574
       },
       "categories": {
         "Prelinger Archives": 10461
       },
       "method": "advancedsearch.php numFound for movies with a CC0, public-domain or CC BY(-SA) licenseurl, TV captures and trailers excluded",
-      "countedAt": "2026-11-09T13:26:14.570Z"
+      "countedAt": "2026-11-10T13:04:24.448Z"
     },
     {
       "id": "wikimediacommons",
@@ -60,15 +60,15 @@
       "homepage": "https://commons.wikimedia.org",
       "pricing": "free",
       "supportsDownload": true,
-      "total": 417066,
-      "free": 417066,
+      "total": 417184,
+      "free": 417184,
       "byCategory": {},
       "categories": {
-        "Full HD or larger": 163645,
+        "Full HD or larger": 163732,
         "4K or larger": 21645
       },
       "method": "MediaWiki search totalhits for filetype:video (and filew/fileh for the size tiers)",
-      "countedAt": "2026-11-09T13:26:14.570Z"
+      "countedAt": "2026-11-10T13:04:24.448Z"
     },
     {
       "id": "nasasvs",
@@ -82,7 +82,7 @@
         "space": 10606
       },
       "method": "SVS search API count for all pages (some pages hold only images)",
-      "countedAt": "2026-11-09T13:26:14.570Z"
+      "countedAt": "2026-11-10T13:04:24.448Z"
     },
     {
       "id": "nasa",
@@ -90,15 +90,15 @@
       "homepage": "https://images.nasa.gov",
       "pricing": "free",
       "supportsDownload": true,
-      "total": 7752,
+      "total": 7755,
       "atLeast": true,
-      "free": 7752,
+      "free": 7755,
       "byCategory": {},
       "categories": {
-        "launches": 3436
+        "launches": 3437
       },
       "method": "images-api.nasa.gov search total_hits for media_type=video (q=nasa matches almost every item, so it is a lower bound)",
-      "countedAt": "2026-11-09T13:26:14.570Z"
+      "countedAt": "2026-11-10T13:04:24.448Z"
     }
   ],
   "linked": [

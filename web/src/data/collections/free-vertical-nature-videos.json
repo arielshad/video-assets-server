@@ -9,7 +9,7 @@
       "portrait"
     ]
   },
-  "updatedAt": "2026-10-29T11:09:33.536Z",
+  "updatedAt": "2026-11-10T13:05:14.608Z",
   "clips": [
     {
       "id": "nasa:iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
@@ -712,6 +712,31 @@
       "height": 1920,
       "durationSec": 10.5,
       "year": 2026
+    },
+    {
+      "id": "wikimediacommons:VID20250910124444_THE_NATURE_OF_MAYURBHANJ_ODISHA.webm",
+      "provider": "wikimediacommons",
+      "title": "VID20250910124444 THE NATURE OF MAYURBHANJ ODISHA",
+      "category": "nature",
+      "url": "https://commons.wikimedia.org/wiki/File:VID20250910124444_THE_NATURE_OF_MAYURBHANJ_ODISHA.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/VID20250910124444_THE_NATURE_OF_MAYURBHANJ_ODISHA.webm/960px--VID20250910124444_THE_NATURE_OF_MAYURBHANJ_ODISHA.webm.jpg",
+      "author": "087AM",
+      "license": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "portrait",
+      "width": 1080,
+      "height": 1920,
+      "year": 2025
     }
   ]
 }
