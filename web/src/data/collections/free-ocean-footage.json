@@ -6,7 +6,7 @@
       "nature.ocean"
     ]
   },
-  "updatedAt": "2026-10-29T11:09:23.342Z",
+  "updatedAt": "2026-11-11T12:14:35.019Z",
   "clips": [
     {
       "id": "nasasvs:5687",
@@ -857,6 +857,36 @@
       "height": 1080,
       "durationSec": 18.28,
       "year": 2020
+    },
+    {
+      "id": "nasasvs:5690",
+      "provider": "nasasvs",
+      "title": "Global Ocean Color from PACE: Apparent Visible Wavelength (AVW) – Updated Daily",
+      "category": "nature.ocean",
+      "url": "https://svs.gsfc.nasa.gov/5690/",
+      "downloadable": true,
+      "styles": [
+        "visualization"
+      ],
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005690/avw_most_recent_preview.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005690/avw_2048x1024_2x1_30p.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 4096,
+      "height": 2048,
+      "year": 2026
     }
   ]
 }
