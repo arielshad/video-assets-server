@@ -17,4 +17,4 @@ resources:
 images:
   - name: ghcr.io/arielshad/video-assets-server
     # Replaced by CI with the first image built from main.
-    newTag: sha-7c413bc3e0be4c008a4ae360f70b98afcfff742c
+    newTag: sha-d4ca72ed4757b3a7d4e5e1039d6347ecde1bc501
