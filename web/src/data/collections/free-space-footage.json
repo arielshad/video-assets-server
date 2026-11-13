@@ -6,7 +6,7 @@
       "space"
     ]
   },
-  "updatedAt": "2026-11-03T12:27:04.171Z",
+  "updatedAt": "2026-11-13T12:41:31.643Z",
   "clips": [
     {
       "id": "nasa:MSFC_10112024_Trades in Space",
@@ -355,33 +355,6 @@
       "year": 2022
     },
     {
-      "id": "nasasvs:15112",
-      "provider": "nasasvs",
-      "title": "Why The Universe Doesn’t Add Up (And How We’re Going To Try To Figure It Out)",
-      "category": "space",
-      "url": "https://svs.gsfc.nasa.gov/15112/",
-      "downloadable": true,
-      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015112/15112_TENSION_WIDE_PRINT.jpg",
-      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015112/15112_TENSION_1080_MP4.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA's Scientific Visualization Studio (Paul Morris)",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "orientation": "landscape",
-      "width": 3840,
-      "height": 2160,
-      "year": 2026
-    },
-    {
       "id": "internetarchive:Cheerios1960",
       "provider": "internetarchive",
       "title": "Cheerios/V-8",
@@ -552,34 +525,6 @@
         "mp4"
       ],
       "year": 2019
-    },
-    {
-      "id": "nasasvs:15106",
-      "provider": "nasasvs",
-      "title": "NASA FARMFLUX EARTH VENTURE SUBORBITAL-4",
-      "category": "space.earth",
-      "url": "https://svs.gsfc.nasa.gov/15106/",
-      "downloadable": true,
-      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015106/20260920_SVS15106_EVS4_FARMFLUX_BRIDGEWATER_VIRGINIA_B200_AIRCRAFT_INTEGRATION_SELECTED_BROLL_INSTRUMENTS_4096x2160_29.97fps.00001_print.jpg",
-      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015106/20260920_SVS15106_EVS4_FARMFLUX_GSFC_GLENN_WOLFE_STUDIO_INTERVIEW_4096x2160_29.97fps.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA's Scientific Visualization Studio (Grace Weikert, Milan Loiacono)",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true
-      },
-      "free": true,
-      "formats": [
-        "webm",
-        "mp4"
-      ],
-      "orientation": "landscape",
-      "width": 4096,
-      "height": 2160,
-      "year": 2026
     },
     {
       "id": "internetarchive:NASA-Ultra-High-Definition",
@@ -857,6 +802,58 @@
       "height": 1080,
       "durationSec": 37.51,
       "year": 2020
+    },
+    {
+      "id": "wikimediacommons:NASA’s_Laser_Communications_Experiment_Streamed_From_Deep_Space_(SVS31275_-_NASAs_Laser_Comms_Experiment).webm",
+      "provider": "wikimediacommons",
+      "title": "NASA’s Laser Communications Experiment Streamed From Deep Space (SVS31275 - NASAs Laser Comms Experiment)",
+      "category": "space",
+      "url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_(SVS31275_-_NASAs_Laser_Comms_Experiment).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment%29.webm/960px--NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment%29.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio - Marit Jentoft-Nilsen",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 15,
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:NASA’s_Laser_Communications_Experiment_Streamed_From_Deep_Space_(SVS31275_-_NASAs_Laser_Comms_Experiment_info).webm",
+      "provider": "wikimediacommons",
+      "title": "NASA’s Laser Communications Experiment Streamed From Deep Space (SVS31275 - NASAs Laser Comms Experiment info)",
+      "category": "space",
+      "url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_(SVS31275_-_NASAs_Laser_Comms_Experiment_info).webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment_info%29.webm/960px--NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment_info%29.webm.jpg",
+      "author": "NASA's Scientific Visualization Studio - Marit Jentoft-Nilsen",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "yes",
+        "attributionRequired": false
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 1920,
+      "height": 1080,
+      "durationSec": 47,
+      "year": 2024
     }
   ]
 }
