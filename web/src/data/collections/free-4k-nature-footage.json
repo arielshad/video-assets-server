@@ -7,7 +7,7 @@
     ],
     "minResolution": 2160
   },
-  "updatedAt": "2026-10-30T11:03:44.940Z",
+  "updatedAt": "2026-11-15T12:19:44.480Z",
   "clips": [
     {
       "id": "nasa:iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
@@ -640,26 +640,6 @@
       "year": 2014
     },
     {
-      "id": "internetarchive:LeafroyaltyFreeStockVideo",
-      "provider": "internetarchive",
-      "title": "Leaf (Royalty Free Stock Video)",
-      "category": "nature.forest",
-      "url": "https://archive.org/details/LeafroyaltyFreeStockVideo",
-      "downloadable": true,
-      "posterUrl": "https://archive.org/services/img/LeafroyaltyFreeStockVideo",
-      "author": "Jeffrey Beach (Beachfront Productions)",
-      "license": {
-        "id": "CC-BY-3.0",
-        "name": "CC BY 3.0",
-        "url": "https://creativecommons.org/licenses/by/3.0/",
-        "verdict": "check-terms",
-        "attributionRequired": true,
-        "editorial": true
-      },
-      "free": true,
-      "durationSec": 30
-    },
-    {
       "id": "wikimediacommons:Nature_montage_around_Aberfeldy.webm",
       "provider": "wikimediacommons",
       "title": "Nature montage around Aberfeldy",
@@ -865,6 +845,32 @@
       "width": 3840,
       "height": 2160,
       "durationSec": 18.12,
+      "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Birds_of_Sulaibikhat_Marine_Nature_Reserve_3.webm",
+      "provider": "wikimediacommons",
+      "title": "Birds of Sulaibikhat Marine Nature Reserve 3",
+      "category": "nature",
+      "url": "https://commons.wikimedia.org/wiki/File:Birds_of_Sulaibikhat_Marine_Nature_Reserve_3.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Birds_of_Sulaibikhat_Marine_Nature_Reserve_3.webm/960px--Birds_of_Sulaibikhat_Marine_Nature_Reserve_3.webm.jpg",
+      "author": "Di7ane",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 13.65,
       "year": 2026
     }
   ]

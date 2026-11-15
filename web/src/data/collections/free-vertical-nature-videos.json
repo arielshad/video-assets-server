@@ -9,7 +9,7 @@
       "portrait"
     ]
   },
-  "updatedAt": "2026-11-10T13:05:14.608Z",
+  "updatedAt": "2026-11-15T12:20:17.248Z",
   "clips": [
     {
       "id": "nasa:iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
@@ -642,26 +642,6 @@
       "year": 2014
     },
     {
-      "id": "internetarchive:LeafroyaltyFreeStockVideo",
-      "provider": "internetarchive",
-      "title": "Leaf (Royalty Free Stock Video)",
-      "category": "nature.forest",
-      "url": "https://archive.org/details/LeafroyaltyFreeStockVideo",
-      "downloadable": true,
-      "posterUrl": "https://archive.org/services/img/LeafroyaltyFreeStockVideo",
-      "author": "Jeffrey Beach (Beachfront Productions)",
-      "license": {
-        "id": "CC-BY-3.0",
-        "name": "CC BY 3.0",
-        "url": "https://creativecommons.org/licenses/by/3.0/",
-        "verdict": "check-terms",
-        "attributionRequired": true,
-        "editorial": true
-      },
-      "free": true,
-      "durationSec": 30
-    },
-    {
       "id": "wikimediacommons:Saber_Tooth_Coin_Display_at_Denver_Museum_of_Nature_and_Science.webm",
       "provider": "wikimediacommons",
       "title": "Saber Tooth Coin Display at Denver Museum of Nature and Science",
@@ -737,6 +717,26 @@
       "width": 1080,
       "height": 1920,
       "year": 2025
+    },
+    {
+      "id": "internetarchive:ukraine-war-combat-footage",
+      "provider": "internetarchive",
+      "title": "Russo-Ukrainian War Combat Footage Playlist",
+      "category": "nature",
+      "url": "https://archive.org/details/ukraine-war-combat-footage",
+      "downloadable": true,
+      "posterUrl": "https://archive.org/services/img/ukraine-war-combat-footage",
+      "author": "0kshr00mer",
+      "license": {
+        "id": "CC-PDM-1.0",
+        "name": "Public domain",
+        "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "verdict": "check-terms",
+        "attributionRequired": false,
+        "editorial": true
+      },
+      "free": true,
+      "year": 2020
     }
   ]
 }
