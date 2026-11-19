@@ -6,7 +6,7 @@
       "space"
     ]
   },
-  "updatedAt": "2026-11-13T12:41:31.643Z",
+  "updatedAt": "2026-11-19T13:58:55.936Z",
   "clips": [
     {
       "id": "nasa:MSFC_10112024_Trades in Space",
@@ -448,38 +448,6 @@
       "year": 2025
     },
     {
-      "id": "nasasvs:5686",
-      "provider": "nasasvs",
-      "title": "Lucy Mission Trajectory with Jupiter Trojans and Main Belt Asteroids",
-      "category": "space.planets",
-      "url": "https://svs.gsfc.nasa.gov/5686/",
-      "downloadable": true,
-      "styles": [
-        "visualization"
-      ],
-      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled.02510_preview.jpg",
-      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005686/lucy_trajectory_2026_labeled_1080p60.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA's Scientific Visualization Studio (Kel Elkins)",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true
-      },
-      "free": true,
-      "formats": [
-        "mp4",
-        "mov"
-      ],
-      "orientation": "landscape",
-      "width": 3840,
-      "height": 2160,
-      "fps": 60,
-      "year": 2026
-    },
-    {
       "id": "internetarchive:Starry_Sky_Time_Lapse",
       "provider": "internetarchive",
       "title": "Starry Sky Time Lapse (Free to Use HD Stock Video Footage)",
@@ -854,6 +822,33 @@
       "height": 1080,
       "durationSec": 47,
       "year": 2024
+    },
+    {
+      "id": "nasasvs:15121",
+      "provider": "nasasvs",
+      "title": "Hubble and Roman: A Partnership 36 Years in the Making",
+      "category": "space",
+      "url": "https://svs.gsfc.nasa.gov/15121/",
+      "downloadable": true,
+      "posterUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015121/15121_HUBROM_WIDE_PRINT.jpg",
+      "previewUrl": "https://svs.gsfc.nasa.gov/vis/a010000/a015100/a015121/15121_HUBROM_1080_MP4.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA's Scientific Visualization Studio",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "year": 2026
     }
   ]
 }
