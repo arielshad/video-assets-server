@@ -6,7 +6,7 @@
       "aerial"
     ]
   },
-  "updatedAt": "2026-11-02T12:54:48.958Z",
+  "updatedAt": "2026-11-21T13:06:10.805Z",
   "clips": [
     {
       "id": "nasa:KSC-20211228-MH-MTD01-0001-Launch_Complex_49_Area_DRONE-3294138",
@@ -332,31 +332,6 @@
         "mp4"
       ],
       "year": 2020
-    },
-    {
-      "id": "nasa:LA8FlightTest_Documentation",
-      "provider": "nasa",
-      "title": "LRC-10282021-H1-V-LA8 Flight Test",
-      "category": "aerial",
-      "url": "https://images.nasa.gov/details/LA8FlightTest_Documentation",
-      "downloadable": true,
-      "posterUrl": "https://images-assets.nasa.gov/video/LA8FlightTest_Documentation/LA8FlightTest_Documentation~large.jpg",
-      "previewUrl": "https://images-assets.nasa.gov/video/LA8FlightTest_Documentation/LA8FlightTest_Documentation~preview.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA/Gary Banziger",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true,
-        "editorial": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "year": 2021
     },
     {
       "id": "wikimediacommons:Charlotte,_North_Carolina_Night_Drone_Footage_2019.webm",
@@ -721,6 +696,31 @@
       "height": 1530,
       "durationSec": 56.92,
       "year": 2022
+    },
+    {
+      "id": "nasa:AFRC-2023-14003-01_Alta_X_First_Mission_Jay1",
+      "provider": "nasa",
+      "title": "NASA Armstrong Supports Wind Study",
+      "category": "aerial",
+      "url": "https://images.nasa.gov/details/AFRC-2023-14003-01_Alta_X_First_Mission_Jay1",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/AFRC-2023-14003-01_Alta_X_First_Mission_Jay1/AFRC-2023-14003-01_Alta_X_First_Mission_Jay1~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/AFRC-2023-14003-01_Alta_X_First_Mission_Jay1/AFRC-2023-14003-01_Alta_X_First_Mission_Jay1~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA AFRC",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2023
     }
   ]
 }

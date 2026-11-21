@@ -6,7 +6,7 @@
       "space.launch"
     ]
   },
-  "updatedAt": "2026-10-29T11:09:47.915Z",
+  "updatedAt": "2026-11-21T13:06:55.145Z",
   "clips": [
     {
       "id": "nasa:KSC-20230507-MH-RLS01-TROPICS_Rocket_Launch-Rocket_Lab-WON_3330130",
@@ -51,31 +51,6 @@
       },
       "free": true,
       "durationSec": 1963
-    },
-    {
-      "id": "nasa:NHQ_2020_0902_NASA CONDUCTS SPACE LAUNCH SYSTEM ROCKET FULL-SCALE BOOSTER TEST_FIX",
-      "provider": "nasa",
-      "title": "NASA Conducts Space Launch System Rocket Full-Scale Booster Test",
-      "category": "space.launch",
-      "url": "https://images.nasa.gov/details/NHQ_2020_0902_NASA%20CONDUCTS%20SPACE%20LAUNCH%20SYSTEM%20ROCKET%20FULL-SCALE%20BOOSTER%20TEST_FIX",
-      "downloadable": true,
-      "posterUrl": "https://images-assets.nasa.gov/video/NHQ_2020_0902_NASA CONDUCTS SPACE LAUNCH SYSTEM ROCKET FULL-SCALE BOOSTER TEST_FIX/NHQ_2020_0902_NASA CONDUCTS SPACE LAUNCH SYSTEM ROCKET FULL-SCALE BOOSTER TEST_FIX~large.jpg",
-      "previewUrl": "https://images-assets.nasa.gov/video/NHQ_2020_0902_NASA%20CONDUCTS%20SPACE%20LAUNCH%20SYSTEM%20ROCKET%20FULL-SCALE%20BOOSTER%20TEST_FIX/NHQ_2020_0902_NASA%20CONDUCTS%20SPACE%20LAUNCH%20SYSTEM%20ROCKET%20FULL-SCALE%20BOOSTER%20TEST_FIX~preview.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA HQ",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true,
-        "editorial": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "year": 2020
     },
     {
       "id": "internetarchive:mlrs_overview",
@@ -256,31 +231,6 @@
         "mp4"
       ],
       "year": 2024
-    },
-    {
-      "id": "nasa:MAF_20190917_Artemis 1 ES Join_BROLL",
-      "provider": "nasa",
-      "title": "NASA joins last of five sections for Space Launch System Rocket stage",
-      "category": "space.launch",
-      "url": "https://images.nasa.gov/details/MAF_20190917_Artemis%201%20ES%20Join_BROLL",
-      "downloadable": true,
-      "posterUrl": "https://images-assets.nasa.gov/video/MAF_20190917_Artemis 1 ES Join_BROLL/MAF_20190917_Artemis 1 ES Join_BROLL~large.jpg",
-      "previewUrl": "https://images-assets.nasa.gov/video/MAF_20190917_Artemis%201%20ES%20Join_BROLL/MAF_20190917_Artemis%201%20ES%20Join_BROLL~preview.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA/Jude Guidry, Jared Lyons, Eric Bordelon",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true,
-        "editorial": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "year": 2019
     },
     {
       "id": "nasa:KSC-20240605-MH-RKL01-0001-Rocket_Lab_PREFIRE_and_Ice_Launch_1080p-M6988",
@@ -822,6 +772,56 @@
       "height": 2160,
       "durationSec": 125.7,
       "year": 2026
+    },
+    {
+      "id": "nasa:NASA Conducts Space Launch System Rocket Full-Scale Booster Test",
+      "provider": "nasa",
+      "title": "NASA Conducts Space Launch System Rocket Full-Scale Booster Test",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/NASA%20Conducts%20Space%20Launch%20System%20Rocket%20Full-Scale%20Booster%20Test",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/NASA Conducts Space Launch System Rocket Full-Scale Booster Test/NASA Conducts Space Launch System Rocket Full-Scale Booster Test~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/NASA%20Conducts%20Space%20Launch%20System%20Rocket%20Full-Scale%20Booster%20Test/NASA%20Conducts%20Space%20Launch%20System%20Rocket%20Full-Scale%20Booster%20Test~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA HQ",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2020
+    },
+    {
+      "id": "nasa:MAF_20190917_Artemis 1 ES Join_Music_Artemis logo",
+      "provider": "nasa",
+      "title": "NASA joins last of five sections for Space Launch System Rocket stage",
+      "category": "space.launch",
+      "url": "https://images.nasa.gov/details/MAF_20190917_Artemis%201%20ES%20Join_Music_Artemis%20logo",
+      "downloadable": true,
+      "posterUrl": "https://images-assets.nasa.gov/video/MAF_20190917_Artemis 1 ES Join_Music_Artemis logo/MAF_20190917_Artemis 1 ES Join_Music_Artemis logo~large.jpg",
+      "previewUrl": "https://images-assets.nasa.gov/video/MAF_20190917_Artemis%201%20ES%20Join_Music_Artemis%20logo/MAF_20190917_Artemis%201%20ES%20Join_Music_Artemis%20logo~preview.mp4",
+      "previewType": "video/mp4",
+      "author": "NASA/Jared Lyons, Jude Guidry, Eric Bordelon",
+      "license": {
+        "id": "LicenseRef-NASA-Media",
+        "name": "NASA media (public domain in the US)",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "verdict": "yes-with-credit",
+        "attributionRequired": true,
+        "editorial": true
+      },
+      "free": true,
+      "formats": [
+        "mp4"
+      ],
+      "year": 2019
     }
   ]
 }

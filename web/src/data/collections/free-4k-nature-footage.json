@@ -7,7 +7,7 @@
     ],
     "minResolution": 2160
   },
-  "updatedAt": "2026-11-15T12:19:44.480Z",
+  "updatedAt": "2026-11-21T13:05:56.818Z",
   "clips": [
     {
       "id": "nasa:iss070m260171738_Expedition_70_Astronaut_Mogensen_Talks_with_WILD_Nature_Foundation_240117",
@@ -478,31 +478,6 @@
       "durationSec": 63
     },
     {
-      "id": "nasa:GSFC_20141113_Volcanoes_m10183_Change_Clouds",
-      "provider": "nasa",
-      "title": "How Do Active Volcanoes Change Clouds?",
-      "category": "nature.sky",
-      "url": "https://images.nasa.gov/details/GSFC_20141113_Volcanoes_m10183_Change_Clouds",
-      "downloadable": true,
-      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20141113_Volcanoes_m10183_Change_Clouds/GSFC_20141113_Volcanoes_m10183_Change_Clouds~large.jpg",
-      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20141113_Volcanoes_m10183_Change_Clouds/GSFC_20141113_Volcanoes_m10183_Change_Clouds~preview.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA/Joy Ng, Andrew Sayer, Brian Monroe, Kayvon Sharghi, Aaron Lepsch",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true,
-        "editorial": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "year": 2014
-    },
-    {
       "id": "internetarchive:Slashed_Dreams",
       "provider": "internetarchive",
       "title": "Slashed Dreams",
@@ -521,31 +496,6 @@
       },
       "free": true,
       "year": 1975
-    },
-    {
-      "id": "nasa:GSFC_20161007_GPM_m12389_Matthew_3D",
-      "provider": "nasa",
-      "title": "NASA Satellite Captures 3-D View Of Hurricane Matthew",
-      "category": "nature.sky",
-      "url": "https://images.nasa.gov/details/GSFC_20161007_GPM_m12389_Matthew_3D",
-      "downloadable": true,
-      "posterUrl": "https://images-assets.nasa.gov/video/GSFC_20161007_GPM_m12389_Matthew_3D/GSFC_20161007_GPM_m12389_Matthew_3D~large.jpg",
-      "previewUrl": "https://images-assets.nasa.gov/video/GSFC_20161007_GPM_m12389_Matthew_3D/GSFC_20161007_GPM_m12389_Matthew_3D~preview.mp4",
-      "previewType": "video/mp4",
-      "author": "NASA GSFC (Joy Ng et al.)",
-      "license": {
-        "id": "LicenseRef-NASA-Media",
-        "name": "NASA media (public domain in the US)",
-        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-        "verdict": "yes-with-credit",
-        "attributionRequired": true,
-        "editorial": true
-      },
-      "free": true,
-      "formats": [
-        "mp4"
-      ],
-      "year": 2016
     },
     {
       "id": "internetarchive:MountainFog",
@@ -872,6 +822,58 @@
       "height": 2160,
       "durationSec": 13.65,
       "year": 2026
+    },
+    {
+      "id": "wikimediacommons:Pwllheli_a'r_Cob_(Lôn_Cob_Bach),_Gwynedd_-_Lôn_Cob_Bach_Local_Nature_Reserves,_Pwllheli,_Wales.webm",
+      "provider": "wikimediacommons",
+      "title": "Pwllheli a'r Cob (Lôn Cob Bach), Gwynedd - Lôn Cob Bach Local Nature Reserves, Pwllheli, Wales",
+      "category": "nature",
+      "url": "https://commons.wikimedia.org/wiki/File:Pwllheli_a%27r_Cob_(L%C3%B4n_Cob_Bach),_Gwynedd_-_L%C3%B4n_Cob_Bach_Local_Nature_Reserves,_Pwllheli,_Wales.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Pwllheli_a%27r_Cob_%28L%C3%B4n_Cob_Bach%29%2C_Gwynedd_-_L%C3%B4n_Cob_Bach_Local_Nature_Reserves%2C_Pwllheli%2C_Wales.webm/960px--Pwllheli_a%27r_Cob_%28L%C3%B4n_Cob_Bach%29%2C_Gwynedd_-_L%C3%B4n_Cob_Bach_Local_Nature_Reserves%2C_Pwllheli%2C_Wales.webm.jpg",
+      "author": "Llywelyn2000",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 192.57,
+      "year": 2024
+    },
+    {
+      "id": "wikimediacommons:Sylne_Kovelskyi_Volynska-Moshne_nature_reserve.webm",
+      "provider": "wikimediacommons",
+      "title": "Sylne Kovelskyi Volynska-Moshne nature reserve",
+      "category": "nature",
+      "url": "https://commons.wikimedia.org/wiki/File:Sylne_Kovelskyi_Volynska-Moshne_nature_reserve.webm",
+      "downloadable": true,
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Sylne_Kovelskyi_Volynska-Moshne_nature_reserve.webm/960px--Sylne_Kovelskyi_Volynska-Moshne_nature_reserve.webm.jpg",
+      "author": "Viacheslav Galievskyi",
+      "license": {
+        "id": "CC-BY-SA-4.0",
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "verdict": "restricted",
+        "attributionRequired": true
+      },
+      "free": true,
+      "formats": [
+        "webm"
+      ],
+      "orientation": "landscape",
+      "width": 3840,
+      "height": 2160,
+      "durationSec": 65.97,
+      "year": 2020
     }
   ]
 }
