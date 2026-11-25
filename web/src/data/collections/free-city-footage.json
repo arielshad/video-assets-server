@@ -6,7 +6,7 @@
       "city"
     ]
   },
-  "updatedAt": "2026-10-29T11:09:05.051Z",
+  "updatedAt": "2026-11-25T15:03:04.124Z",
   "clips": [
     {
       "id": "internetarchive:CityTheP1939",
@@ -142,7 +142,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:Snowstorm_in_Quebec_City.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Snowstorm_in_Quebec_City.webm/500px--Snowstorm_in_Quebec_City.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Snowstorm_in_Quebec_City.webm/500px-Snowstorm_in_Quebec_City.webm.jpg",
       "author": "Wilfredor",
       "license": {
         "id": "CC0-1.0",
@@ -168,7 +168,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:City_of_Military_Glory_ceremony_4_May_2010.ogv",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/City_of_Military_Glory_ceremony_4_May_2010.ogv/120px--City_of_Military_Glory_ceremony_4_May_2010.ogv.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/City_of_Military_Glory_ceremony_4_May_2010.ogv/120px-City_of_Military_Glory_ceremony_4_May_2010.ogv.jpg",
       "author": "Presidential Press and Information Office",
       "license": {
         "id": "CC-BY-4.0",
@@ -194,7 +194,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:City_Hall_video_vc.ogg",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/City_Hall_video_vc.ogg/960px--City_Hall_video_vc.ogg.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/City_Hall_video_vc.ogg/960px-City_Hall_video_vc.ogg.jpg",
       "author": "https://www.flickr.com/photos/mrlaugh/",
       "license": {
         "id": "CC-BY-SA-4.0",
@@ -220,7 +220,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:UAV_Attack_on_Moscow-City_(30.07.2023)_Oko_2.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/UAV_Attack_on_Moscow-City_%2830.07.2023%29_Oko_2.webm/960px--UAV_Attack_on_Moscow-City_%2830.07.2023%29_Oko_2.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/UAV_Attack_on_Moscow-City_%2830.07.2023%29_Oko_2.webm/960px-UAV_Attack_on_Moscow-City_%2830.07.2023%29_Oko_2.webm.jpg",
       "author": "DonSimon",
       "license": {
         "id": "CC0-1.0",
@@ -249,7 +249,7 @@
       "styles": [
         "timelapse"
       ],
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Time-lapse_of_New_York_City_skyline_July_2023.webm/960px--Time-lapse_of_New_York_City_skyline_July_2023.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Time-lapse_of_New_York_City_skyline_July_2023.webm/960px-Time-lapse_of_New_York_City_skyline_July_2023.webm.jpg",
       "author": "David Schwab",
       "license": {
         "id": "CC-BY-3.0",
@@ -275,7 +275,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:UAV_Attack_on_Moscow-City_(30.07.2023)_IQ-tower.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/UAV_Attack_on_Moscow-City_%2830.07.2023%29_IQ-tower.webm/960px--UAV_Attack_on_Moscow-City_%2830.07.2023%29_IQ-tower.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/UAV_Attack_on_Moscow-City_%2830.07.2023%29_IQ-tower.webm/960px-UAV_Attack_on_Moscow-City_%2830.07.2023%29_IQ-tower.webm.jpg",
       "author": "DonSimon",
       "license": {
         "id": "CC0-1.0",
@@ -301,7 +301,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:Traffic_situation_in_Mango_Avenue_Cebu_City.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Traffic_situation_in_Mango_Avenue_Cebu_City.webm/960px--Traffic_situation_in_Mango_Avenue_Cebu_City.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Traffic_situation_in_Mango_Avenue_Cebu_City.webm/960px-Traffic_situation_in_Mango_Avenue_Cebu_City.webm.jpg",
       "author": "Lady01v",
       "license": {
         "id": "CC-BY-SA-4.0",
@@ -327,7 +327,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:The_Big_City_(1928)_trailer.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/The_Big_City_%281928%29_trailer.webm/960px--The_Big_City_%281928%29_trailer.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/The_Big_City_%281928%29_trailer.webm/960px-The_Big_City_%281928%29_trailer.webm.jpg",
       "author": "Metro-Goldwyn-Mayer",
       "license": {
         "id": "CC-PDM-1.0",
@@ -353,7 +353,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:Traverse_City_National_Cherry_Festival_Zipper_video.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Traverse_City_National_Cherry_Festival_Zipper_video.webm/960px--Traverse_City_National_Cherry_Festival_Zipper_video.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Traverse_City_National_Cherry_Festival_Zipper_video.webm/960px-Traverse_City_National_Cherry_Festival_Zipper_video.webm.jpg",
       "author": "Jeremy Thompson",
       "license": {
         "id": "CC-BY-2.0",
@@ -379,7 +379,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:Pontifical_Academy_of_Sciences,_Vatican_City_-_building_(video).ogv",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Pontifical_Academy_of_Sciences%2C_Vatican_City_-_building_%28video%29.ogv/330px--Pontifical_Academy_of_Sciences%2C_Vatican_City_-_building_%28video%29.ogv.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Pontifical_Academy_of_Sciences%2C_Vatican_City_-_building_%28video%29.ogv/330px-Pontifical_Academy_of_Sciences%2C_Vatican_City_-_building_%28video%29.ogv.jpg",
       "author": "Mattes",
       "license": {
         "id": "CC-PDM-1.0",
@@ -405,7 +405,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:Women%27s_March_in_Cities_Across_the_US.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Women%27s_March_in_Cities_Across_the_US.webm/960px--Women%27s_March_in_Cities_Across_the_US.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Women%27s_March_in_Cities_Across_the_US.webm/960px-Women%27s_March_in_Cities_Across_the_US.webm.jpg",
       "author": "Voice of America",
       "license": {
         "id": "CC-PDM-1.0",
@@ -431,7 +431,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:Why_Many_Cities_Suck_(but_Dutch_Cities_Don%27t).webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Why_Many_Cities_Suck_%28but_Dutch_Cities_Don%27t%29.webm/960px--Why_Many_Cities_Suck_%28but_Dutch_Cities_Don%27t%29.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Why_Many_Cities_Suck_%28but_Dutch_Cities_Don%27t%29.webm/960px-Why_Many_Cities_Suck_%28but_Dutch_Cities_Don%27t%29.webm.jpg",
       "author": "Not Just Bikes",
       "license": {
         "id": "CC-BY-3.0",
@@ -457,7 +457,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm/960px--Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm/960px-Bicycle_lane_on_a_snowy_street_in_Quebec_City_01.webm.jpg",
       "author": "Own work",
       "license": {
         "id": "CC-BY-3.0",
@@ -483,7 +483,7 @@
       "category": "city",
       "url": "https://commons.wikimedia.org/wiki/File:ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm/960px--ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm/960px-ESE_view_from_Buffalo_City_Hall_NY_2025-09-08_19-51-27_1.webm.jpg",
       "author": "G. Edward Johnson",
       "license": {
         "id": "CC-BY-4.0",

@@ -6,7 +6,7 @@
       "space"
     ]
   },
-  "updatedAt": "2026-11-19T13:58:55.936Z",
+  "updatedAt": "2026-11-25T15:03:50.407Z",
   "clips": [
     {
       "id": "nasa:MSFC_10112024_Trades in Space",
@@ -648,7 +648,7 @@
       "category": "space.launch",
       "url": "https://commons.wikimedia.org/wiki/File:STS-132_Liftoff_Space_Shuttle_Atlantis.ogv",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/STS-132_Liftoff_Space_Shuttle_Atlantis.ogv/960px--STS-132_Liftoff_Space_Shuttle_Atlantis.ogv.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/STS-132_Liftoff_Space_Shuttle_Atlantis.ogv/960px-STS-132_Liftoff_Space_Shuttle_Atlantis.ogv.jpg",
       "author": "NASA",
       "license": {
         "id": "CC-PDM-1.0",
@@ -674,7 +674,7 @@
       "category": "space",
       "url": "https://commons.wikimedia.org/wiki/File:JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm/960px--JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm/960px-JPL-19981024-DS1-0001-AVC2002150_Deep_Space_1_Launches.webm.jpg",
       "author": "NASA Jet Propulsion Laboratory",
       "license": {
         "id": "CC-PDM-1.0",
@@ -700,7 +700,7 @@
       "category": "space",
       "url": "https://commons.wikimedia.org/wiki/File:JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm/960px--JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm/960px-JPL-20010922-DS1f-0001-AVC2002150_Comet_Borrelly_Flyby_Deep_Space_1.webm.jpg",
       "author": "NASA Jet Propulsion Laboratory",
       "license": {
         "id": "CC-PDM-1.0",
@@ -726,7 +726,7 @@
       "category": "space",
       "url": "https://commons.wikimedia.org/wiki/File:Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_(360%C2%B0_Video)_(dsn-communicate-3).webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_%28360%C2%B0_Video%29_%28dsn-communicate-3%29.webm/960px--Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_%28360%C2%B0_Video%29_%28dsn-communicate-3%29.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_%28360%C2%B0_Video%29_%28dsn-communicate-3%29.webm/960px-Explore_NASA%E2%80%99s_70-Meter_Deep_Space_Communications_Dish_%28360%C2%B0_Video%29_%28dsn-communicate-3%29.webm.jpg",
       "author": "NASA",
       "license": {
         "id": "CC-PDM-1.0",
@@ -752,7 +752,7 @@
       "category": "space.launch",
       "url": "https://commons.wikimedia.org/wiki/File:Built_to_Explore_NASA%27s_Deep-Space_Rocket,_the_Space_Launch_System_(740786151978).webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Built_to_Explore_NASA%27s_Deep-Space_Rocket%2C_the_Space_Launch_System_%28740786151978%29.webm/960px--Built_to_Explore_NASA%27s_Deep-Space_Rocket%2C_the_Space_Launch_System_%28740786151978%29.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Built_to_Explore_NASA%27s_Deep-Space_Rocket%2C_the_Space_Launch_System_%28740786151978%29.webm/960px-Built_to_Explore_NASA%27s_Deep-Space_Rocket%2C_the_Space_Launch_System_%28740786151978%29.webm.jpg",
       "author": "Uploaded by Patricia Moore",
       "license": {
         "id": "CC-PDM-1.0",
@@ -778,7 +778,7 @@
       "category": "space",
       "url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_(SVS31275_-_NASAs_Laser_Comms_Experiment).webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment%29.webm/960px--NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment%29.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment%29.webm/960px-NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment%29.webm.jpg",
       "author": "NASA's Scientific Visualization Studio - Marit Jentoft-Nilsen",
       "license": {
         "id": "CC-PDM-1.0",
@@ -804,7 +804,7 @@
       "category": "space",
       "url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_(SVS31275_-_NASAs_Laser_Comms_Experiment_info).webm",
       "downloadable": true,
-      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment_info%29.webm/960px--NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment_info%29.webm.jpg",
+      "posterUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment_info%29.webm/960px-NASA%E2%80%99s_Laser_Communications_Experiment_Streamed_From_Deep_Space_%28SVS31275_-_NASAs_Laser_Comms_Experiment_info%29.webm.jpg",
       "author": "NASA's Scientific Visualization Studio - Marit Jentoft-Nilsen",
       "license": {
         "id": "CC-PDM-1.0",
