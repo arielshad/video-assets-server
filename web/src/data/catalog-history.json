@@ -447,5 +447,20 @@
       "nasasvs": 10618,
       "nasa": 7775
     }
+  },
+  {
+    "date": "2026-11-27",
+    "listings": 860704,
+    "free": 860704,
+    "byCategory": {
+      "archive": 10573,
+      "space": 10618
+    },
+    "sources": {
+      "internetarchive": 422689,
+      "wikimediacommons": 419622,
+      "nasasvs": 10618,
+      "nasa": 7775
+    }
   }
 ]
